@@ -138,3 +138,14 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.plus-darker {
+  mix-blend-mode: luminosity;
+}
+
+.section-title {
+  @apply font-heading text-3xl font-medium tracking-tight text-slate-900 md:text-3xl;
+}
+.section-paragraph {
+  @apply text-base text-slate-600 md:text-lg;
+}

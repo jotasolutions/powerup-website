@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { QrCode } from "lucide-react"
 import Image from "next/image"
+import { Highlighter } from "../ui/highlighter"
 
 export function HeroSection() {
   return (
@@ -9,8 +10,12 @@ export function HeroSection() {
         <div className="mx-auto flex flex-row max-w-6xl gap-10 items-center z-20 relative md:min-h-[580px]">
           <div className="space-y-6 w-[610px]">
             <h1 className="max-w-xl font-heading text-4xl leading-tight tracking-tight text-black">
-              Convierte la carta <div className="inline-block bg-primary p-1.5 rounded-md rotate-11 shadow-lg mx-1"><QrCode className="size-7 text-white" /></div> de tu restaurante en una maquina de ventas
+              Convierte la carta <div className="inline-block bg-primary p-1.5 rounded-md rotate-11 shadow-lg mx-1"><QrCode className="size-7 text-white" /></div> de tu restaurante en una maquina de 
+              <Highlighter action="circle" color="#FF9800">
+                 ventas
+              </Highlighter>
             </h1>
+            
             <p className="max-w-xl text-xl leading-8 text-slate-700 font-heading">
               Ingenieria de menu y neuromarketing para <strong className="font-medium">vender más</strong> a traves de la carta digital.
               Sin conocimiento tecnico.
@@ -39,7 +44,7 @@ export function HeroSection() {
             </div>
           </div>
           <div className="mx-auto   ">
-           imagen aqui
+            imagen aqui
           </div>
         </div>
         <Image
