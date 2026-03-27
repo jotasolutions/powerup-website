@@ -6,8 +6,8 @@ export function SellMoreSection() {
     <SectionContainer>
       <div className="space-y-10">
         <div className="space-y-3 text-center">
-          <h2 className="font-heading text-3xl text-slate-900 md:text-4xl">Vende mas sin esfuerzo</h2>
-          <p className="text-lg text-slate-700">
+          <h2 className="section-title">Vende mas sin esfuerzo</h2>
+          <p className="section-paragraph">
             Tu carta le da al cliente los motivos para gastar mas. Sola.
           </p>
         </div>
@@ -15,8 +15,11 @@ export function SellMoreSection() {
           {sellMoreFeatures.map((item) => (
             <article key={item.title} className="space-y-4">
               <div className="h-56 rounded-2xl border border-sky-100 bg-sky-50" />
-              <h3 className="text-2xl font-medium text-slate-700">{item.title}</h3>
-              <p className="text-lg leading-8 text-slate-600">{item.description}</p>
+              <div className="space-y-2 pr-2">
+                <h3 className="text-xl font-medium text-slate-700">{item.title}</h3>
+                <p className="text-base leading-6 text-slate-600">{item.description}</p>
+              </div>
+
             </article>
           ))}
         </div>

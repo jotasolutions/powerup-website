@@ -58,21 +58,58 @@ export const analyticsFeatures = [
   },
 ]
 
+export const featuresBento = [
+  {
+    title: "Traducciones automáticas con IA",
+    description:
+      "Tu carta en varios idiomas sin trabajo manual: el cliente elige y entiende cada plato al instante.",
+  },
+  {
+    title: "Realidad aumentada",
+    description:
+      "Muestra platos en 3D sobre la mesa para que decidan con los ojos antes de pedir.",
+  },
+  {
+    title: "Colores y diseño personalizado",
+    description:
+      "Adapta la carta a tu marca con tipografías, paleta y bloques que encajan con tu local.",
+  },
+  {
+    title: "Platos y promociones dinámicas programables",
+    description:
+      "Programa ofertas por horario, día o stock y actualiza la carta sin reimprimir nada.",
+  },
+  {
+    title: "Optimiza tu visibilidad online en Google Maps",
+    description:
+      "Mantén datos y carta alineados con lo que buscan en Maps y en la ficha de tu negocio.",
+  },
+] as const
+
 export const steps = [
   {
     title: "Regístrate y añade tu restaurante",
     description:
       "Elige tu restaurante desde Google Maps o indica si es un restaurante nuevo.",
+    image: "/images/hiw-step-1.png",
+    imageClass: "object-contain absolute -left-16 -bottom-24 w-[320px] h-auto",
+    stepNumerClass: "left-1/4 top-5 bg-[#C6E9FC] border border-4 border-[#ECF8FE]",
   },
   {
     title: "Sube tu carta actual",
     description:
       "Envíala como PDF, fotos o desde otros proveedores y nosotros la convertimos.",
+    image: "/images/hiw-step-2.png",
+    imageClass: "object-contain absolute -left-18 -bottom-34 w-[300px] h-auto",
+    stepNumerClass: "right-1/4 top-1/3 bg-[#C5F5F7] border border-4 border-[#ECFCFC]",
   },
   {
     title: "Publica y optimiza",
     description:
       "Lanza tu carta digital y aplica recomendaciones para vender más desde el primer día.",
+    image: "/images/hiw-step-3.png",
+    imageClass: "object-contain relative w-full h-auto scale-110 absolute -bottom-8 -left-10",
+    stepNumerClass: "left-1/6 top-4 bg-[#BCF5EE] border border-4 border-[#ECFCFC]",
   },
 ]
 

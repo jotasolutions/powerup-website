@@ -4,6 +4,7 @@ import { AttractPeopleSection } from "@/components/landing/AttractPeopleSection"
 import { FaqSection } from "@/components/landing/FaqSection"
 import { FooterSection } from "@/components/landing/FooterSection"
 import { HeroSection } from "@/components/landing/HeroSection"
+import { FeaturesSection } from "@/components/landing/FeaturesSection"
 import { HowItWorksSection } from "@/components/landing/HowItWorksSection"
 import { IntroSection } from "@/components/landing/IntroSection"
 import { MenuShowcaseSection } from "@/components/landing/MenuShowcaseSection"
@@ -19,6 +20,7 @@ export default function Home() {
       <AttractPeopleSection />
       <AnalyticsSection />
       <HowItWorksSection />
+      <FeaturesSection />
       <MenuShowcaseSection />
       <PricingSection />
       <FaqSection />
