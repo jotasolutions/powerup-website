@@ -1,8 +1,3 @@
-export const ctaCopy = {
-  primary: "Crear carta gratis",
-  secondary: "Aprende cómo vende más",
-  note: "No requiere tarjeta",
-}
 
 export const sellMoreFeatures = [
   {
@@ -112,6 +107,46 @@ export const steps = [
     stepNumerClass: "left-1/6 top-4 bg-[#BCF5EE] border border-4 border-[#ECFCFC]",
   },
 ]
+
+export const adminCarouselSlides = [
+  {
+    src: "/images/admin/edit_menu.mp4",
+    alt: "Panel de administración: gestión del menú y previsualización",
+    width: 889,
+    height: 483,
+    title: "Edita tu menú del día",
+  },
+  {
+    src: "/images/admin/enable.mp4",
+    alt: "Panel de administración: vista adicional del producto",
+    width: 3020,
+    height: 1658,
+    title: "Activa o desactiva platos",
+  },
+  {
+    src: "/images/admin/programa.mp4",
+    alt: "Panel de administración: vista adicional del producto",
+    width: 3020,
+    height: 1658,
+    title: "Programa tus platos y secciones",
+  },
+  {
+    src: "/images/admin/reorder.mp4",
+    alt: "Panel de administración: vista adicional del producto",
+    width: 3020,
+    height: 1658,
+    title: "Reordena tu carta",
+  },
+  {
+    src: "/images/admin/webpage.mp4",
+    alt: "Panel de administración: vista adicional del producto",
+    width: 3020,
+    height: 1658,
+    title: "Modifica tu pagina web",
+  },
+] as const
+
+export type AdminCarouselSlide = (typeof adminCarouselSlides)[number]
 
 export const faqs = [
   "¿Se pueden gestionar varios restaurantes con el mismo plan?",

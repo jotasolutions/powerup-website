@@ -5,6 +5,7 @@ import { SectionContainer } from "@/components/landing/SectionContainer"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Check, Globe, LayoutGrid, X } from "lucide-react"
+import { CTAButton } from "../CTAButton"
 
 type Billing = "annual" | "monthly"
 
@@ -179,10 +180,7 @@ export function PricingSection() {
               )}
             </div>
 
-            <Button size="lg" className="mt-8 w-full gap-2 text-base font-semibold shadow-sm">
-              <LayoutGrid className="size-4" />
-              Crear carta gratis
-            </Button>
+            <CTAButton />
           </article>
 
           {/* PowerUp Free */}
@@ -225,10 +223,7 @@ export function PricingSection() {
               </div>
             </div>
 
-            <Button size="lg" className="mt-8 w-full gap-2 text-base font-semibold shadow-sm">
-              <LayoutGrid className="size-4" />
-              Crear carta gratis
-            </Button>
+            <CTAButton />
           </article>
         </div>
       </div>

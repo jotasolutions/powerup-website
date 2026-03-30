@@ -1,4 +1,5 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
+import { CTAButton } from "../CTAButton"
 
 export function AboutSection() {
   return (
@@ -16,9 +17,7 @@ export function AboutSection() {
           <p className="text-sm font-medium text-slate-700">
             Startup espanola acelerada por Lanzadera
           </p>
-          <button className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground">
-            Crear carta gratis
-          </button>
+          <CTAButton />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="h-44 rounded-2xl bg-slate-200" />

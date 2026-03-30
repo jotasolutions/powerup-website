@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { QrCode } from "lucide-react"
 import Image from "next/image"
 import { Highlighter } from "../ui/highlighter"
+import { CTAButton } from "../CTAButton"
 
 export function HeroSection() {
   return (
@@ -10,21 +11,18 @@ export function HeroSection() {
         <div className="mx-auto flex flex-row max-w-6xl gap-10 items-center z-20 relative md:min-h-[580px]">
           <div className="space-y-6 w-[610px]">
             <h1 className="max-w-xl font-heading text-4xl leading-tight tracking-tight text-black">
-              Convierte la carta <div className="inline-block bg-primary p-1.5 rounded-md rotate-11 shadow-lg mx-1"><QrCode className="size-7 text-white" /></div> de tu restaurante en una maquina de 
+              Convierte la carta <div className="inline-block bg-primary p-1.5 rounded-md rotate-11 shadow-lg mx-1"><QrCode className="size-7 text-white" /></div> de tu restaurante en una maquina de
               <Highlighter action="circle" color="#FF9800">
-                 ventas
+                ventas
               </Highlighter>
             </h1>
-            
+
             <p className="max-w-xl text-xl leading-8 text-slate-700 font-heading">
               Ingenieria de menu y neuromarketing para <strong className="font-medium">vender más</strong> a traves de la carta digital.
               Sin conocimiento tecnico.
             </p>
             <div className="flex flex-wrap items-center gap-2.5">
-              <Button className="min-w-44">
-                <span className="text-base"><QrCode className="size-4" /></span>
-                Crear carta gratis
-              </Button>
+              <CTAButton />
               <Button variant="outline" className="min-w-40">
                 Ver carta de ejemplo
               </Button>

@@ -1,4 +1,5 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
+import { CTAButton } from "../CTAButton"
 
 export function FooterSection() {
   return (
@@ -8,9 +9,7 @@ export function FooterSection() {
           <h2 className="max-w-3xl font-heading text-3xl text-white md:text-4xl">
             La carta es la palanca mas potente para impulsar las ventas de los restaurantes
           </h2>
-          <button className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground">
-            Crear carta gratis
-          </button>
+          <CTAButton />
         </div>
         <div className="grid gap-8 text-sm md:grid-cols-4">
           <div>

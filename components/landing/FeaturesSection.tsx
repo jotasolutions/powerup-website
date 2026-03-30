@@ -1,8 +1,9 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
-import { ctaCopy, featuresBento } from "@/components/landing/section-data"
+import {  featuresBento } from "@/components/landing/section-data"
 import { Button } from "@/components/ui/button"
 import { CreditCard, QrCode } from "lucide-react"
 import Link from "next/link"
+import { CTAButton } from "../CTAButton"
 
 function FeatureCard({
   title,
@@ -64,17 +65,8 @@ export function FeaturesSection() {
             Ver todas las características →
           </Link>
           <div className="flex flex-col items-center gap-3">
-            <Button size="lg" className="rounded-2xl px-6 text-base">
-              <QrCode className="size-4" />
-              {ctaCopy.primary}
-            </Button>
-            <p className="flex items-center gap-2 text-sm text-slate-500">
-              <span className="relative inline-flex shrink-0 text-slate-500" aria-hidden>
-                <CreditCard className="size-4" />
-                <span className="absolute left-1/2 top-1/2 h-0.5 w-[130%] -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-slate-500" />
-              </span>
-              {ctaCopy.note}
-            </p>
+            <CTAButton />
+            
           </div>
         </div>
       </div>

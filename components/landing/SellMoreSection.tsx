@@ -1,5 +1,6 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
-import { ctaCopy, sellMoreFeatures } from "@/components/landing/section-data"
+import { sellMoreFeatures } from "@/components/landing/section-data"
+import { CTAButton } from "../CTAButton"
 
 export function SellMoreSection() {
   return (
@@ -24,10 +25,7 @@ export function SellMoreSection() {
           ))}
         </div>
         <div className="space-y-2 text-center">
-          <button className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground">
-            {ctaCopy.primary}
-          </button>
-          <p className="text-sm text-slate-500">{ctaCopy.note}</p>
+          <CTAButton />
         </div>
       </div>
     </SectionContainer>

@@ -10,6 +10,7 @@ import { IntroSection } from "@/components/landing/IntroSection"
 import { MenuShowcaseSection } from "@/components/landing/MenuShowcaseSection"
 import { PricingSection } from "@/components/landing/PricingSection"
 import { SellMoreSection } from "@/components/landing/SellMoreSection"
+import { AdminSection } from "@/components/landing/AdminSection"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <AnalyticsSection />
       <HowItWorksSection />
       <FeaturesSection />
+      <AdminSection />
       <MenuShowcaseSection />
       <PricingSection />
       <FaqSection />

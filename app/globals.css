@@ -149,3 +149,75 @@
 .section-paragraph {
   @apply text-base text-slate-600 md:text-lg;
 }
+
+/* react-responsive-carousel — admin section only */
+.admin-carousel .carousel {
+  padding-bottom: 2.5rem;
+}
+
+.admin-carousel .carousel.carousel-slider .control-arrow {
+  top: 50%;
+  bottom: auto;
+  margin-top: 0;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+  border-radius: 9999px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 14px oklch(0.145 0 0 / 0.08);
+  opacity: 1;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-carousel .carousel.carousel-slider .control-arrow:hover {
+  background: var(--card);
+  opacity: 1;
+}
+
+/* Default lib uses ::before triangles; Lucide chevrons replace them */
+.admin-carousel .carousel .control-arrow::before {
+  display: none !important;
+}
+
+.admin-carousel .carousel .control-arrow.control-prev {
+  left: 0.25rem;
+}
+
+.admin-carousel .carousel .control-arrow.control-next {
+  right: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .admin-carousel .carousel.carousel-slider .control-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .admin-carousel .carousel .control-arrow.control-prev {
+    left: 0;
+  }
+
+  .admin-carousel .carousel .control-arrow.control-next {
+    right: 0;
+  }
+}
+
+.admin-carousel .carousel .control-dots {
+  bottom: 0;
+  margin: 0;
+}
+
+.admin-carousel .carousel .control-dots .dot {
+  box-shadow: none;
+  opacity: 0.35;
+  background: oklch(0.45 0 0);
+}
+
+.admin-carousel .carousel .control-dots .dot.selected {
+  opacity: 1;
+  background: var(--primary);
+}

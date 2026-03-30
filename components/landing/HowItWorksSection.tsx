@@ -1,6 +1,7 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { steps } from "@/components/landing/section-data"
 import Image from "next/image"
+import { CTAButton } from "../CTAButton"
 export function HowItWorksSection() {
   return (
     <SectionContainer>
@@ -29,7 +30,9 @@ export function HowItWorksSection() {
             </article>
           ))}
         </div>
-
+        <div className="flex justify-center">
+          <CTAButton />
+        </div>
       </div>
     </SectionContainer>
   )
