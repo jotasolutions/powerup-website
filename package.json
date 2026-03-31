@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-label": "^2.1.8",
     "@react-google-maps/api": "^2.20.8",
+    "antd": "^6.3.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "ldrs": "^1.1.9",

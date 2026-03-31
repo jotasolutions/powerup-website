@@ -30,6 +30,7 @@ import {
     InputGroupTextarea,
 } from "@/components/ui/input-group"
 import RegisterGoogleRestForm from "./forms/RegisterGoogleRestForm"
+import { FilesInput } from "./files-input"
 
 const formSchema = z.object({
     name: z
@@ -71,6 +72,8 @@ export function AdvisorWidget() {
                 <p className="text-sm text-slate-500">
                     Descubre cómo mejorar tu carta para aumentar tus ventas
                 </p>
+                <FilesInput accept="image/png, image/jpeg, application/pdf" name={"Image"}
+                                    onChange={(files: any) => console.log(files)} />
                 <RegisterGoogleRestForm onCompleted={(values: any) => console.log(values)} />
                 <form id="form-rhf-demo" onSubmit={form.handleSubmit(onSubmit)}>
                     <FieldGroup>
@@ -98,6 +101,7 @@ export function AdvisorWidget() {
                       
                     </FieldGroup>
                 </form>
+               
                 <Button type="submit" form="form-rhf-demo" className="w-full border-none bg-[#25946F] hover:bg-[#25946F]/90">
                         Enviar
                     </Button>
