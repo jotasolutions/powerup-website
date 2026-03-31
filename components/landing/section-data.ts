@@ -148,6 +148,39 @@ export const adminCarouselSlides = [
 
 export type AdminCarouselSlide = (typeof adminCarouselSlides)[number]
 
+export const differentiationPillars = [
+  {
+    id: "neuromarketing" as const,
+    title: "Neuromarketing",
+    footnote: "Basado en más de 80 estudios científicos",
+    segments: [
+      {
+        text:
+          "Aplicamos principios como efecto ancla, orden estratégico de categorías, nombres descriptivos y resaltado inteligente para ",
+      },
+      {
+        text: "aumentar el ticket medio de forma natural.",
+        bold: true,
+      },
+    ],
+  },
+  {
+    id: "analytics" as const,
+    title: "Analíticas",
+    footnote: "Métricas claras y sin configuración técnica",
+    segments: [
+      {
+        text:
+          "Medimos qué platos se ven, cuánto tiempo pasan en la carta y qué se ignora. Cada semana recibes un informe con ",
+      },
+      {
+        text: "recomendaciones accionables para mejorar.",
+        bold: true,
+      },
+    ],
+  },
+] as const
+
 export const faqs = [
   "¿Se pueden gestionar varios restaurantes con el mismo plan?",
   "¿Puedo añadir el menú a mi sitio web o redes sociales?",

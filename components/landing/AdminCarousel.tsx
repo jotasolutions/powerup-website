@@ -22,6 +22,7 @@ export function AdminCarousel({ slides }: AdminCarouselProps) {
         interval={7000}
         infiniteLoop
         swipeable
+        showThumbs={false}
         useKeyboardArrows
         emulateTouch
         dynamicHeight={false}

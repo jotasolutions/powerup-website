@@ -60,7 +60,7 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.576 0.097 234.5);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.98 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -164,8 +164,8 @@
   padding: 0;
   border-radius: 9999px;
   background: var(--background);
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 14px oklch(0.145 0 0 / 0.08);
+  border: none;
+  @apply shadow-md;
   opacity: 1;
   transform: translateY(-50%);
   display: flex;
