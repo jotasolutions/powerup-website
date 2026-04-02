@@ -158,7 +158,6 @@ function RegisterGoogleRestForm({ onCompleted }: { onCompleted: any }) {
 
 
     return (
-        <form onSubmit={form.handleSubmit(onFormSubmit)}>
             <form className="space-y-8" onSubmit={form.handleSubmit(onFormSubmit)}>
                 <div className="flex flex-col gap-4 mt-4">
 
@@ -197,7 +196,6 @@ function RegisterGoogleRestForm({ onCompleted }: { onCompleted: any }) {
                 </div>
               
             </form>
-        </form>
     )
 }
 

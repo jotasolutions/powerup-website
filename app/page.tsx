@@ -13,6 +13,8 @@ import { SellMoreSection } from "@/components/landing/SellMoreSection"
 import { AdminSection } from "@/components/landing/AdminSection"
 import { DifferentiationSection } from "@/components/landing/DifferentiationSection"
 import { AdvisorSection } from "@/components/landing/AdvisorSection"
+import { WebsiteSection } from "@/components/landing/WebsiteSection"
+import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
 
 export default function Home() {
   return (
@@ -27,6 +29,8 @@ export default function Home() {
       <AdminSection />
       <DifferentiationSection />
       <AdvisorSection/>
+      <WebsiteSection/>
+      <TestimonialsSection/>
       <MenuShowcaseSection />
       <PricingSection />
       <FaqSection />

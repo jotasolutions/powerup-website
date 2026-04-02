@@ -37,8 +37,8 @@ export function AdvisorSection() {
                     <div className="h-[130px] w-full relative">
                         <motion.div
                             className="absolute z-20   w-[214px] origin-bottom-left"
-                            initial={{ rotate: 0, bottom: -50, opacity: 0, left: 50 }}
-                            whileInView={{ rotate: -10, bottom: 10, opacity: 1, left: 20 }}
+                            initial={{ rotate: 0, bottom: -50, opacity: 0, left: 50, scale: 0.8 }}
+                            whileInView={{ rotate: -10, bottom: 10, opacity: 1, left: 20, scale: 1 }}
                             viewport={advisorImageViewport}
                             transition={{
                                 duration: 0.5,
@@ -55,8 +55,8 @@ export function AdvisorSection() {
                         </motion.div>
                         <motion.div
                             className="absolute z-10  w-[280px] origin-bottom-right"
-                            initial={{ rotate: 0, opacity: 0, bottom: -50, right: 70 }}
-                            whileInView={{ rotate: 6, opacity: 1, bottom: 0, right: 40 }}
+                            initial={{ rotate: 0, opacity: 0, bottom: -50, right: 70, scale: 0.8 }}
+                            whileInView={{ rotate: 6, opacity: 1, bottom: 0, right: 40, scale: 1 }}
                             viewport={advisorImageViewport}
                             transition={{
                                 delay: 0.12,
