@@ -124,9 +124,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
@@ -146,6 +148,7 @@
 .section-title {
   @apply font-heading text-3xl font-medium tracking-tight text-slate-900 md:text-3xl;
 }
+
 .section-paragraph {
   @apply text-base text-slate-600 md:text-lg;
 }
@@ -220,4 +223,57 @@
 .admin-carousel .carousel .control-dots .dot.selected {
   opacity: 1;
   background: var(--primary);
+}
+
+.testimonials-carousel .slide img {
+  width: inherit !important;
+}
+
+.testimonials-carousel .rest-image {
+  width: 100% !important;
+}
+
+.testimonials-carousel .carousel {
+  padding-bottom: 0;
+}
+.testimonials-carousel .carousel.carousel-slider {
+  position: relative;
+}
+
+
+.testimonials-carousel .carousel.carousel-slider .control-arrow {
+  @apply bg-slate-100;
+  top: auto;
+  bottom: 0;
+  margin-top: 0;
+  transform: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 9999px;
+  border: none;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  z-index: 2;
+}
+.testimonials-carousel .carousel.carousel-slider .control-arrow:hover {
+  @apply bg-slate-200;
+  opacity: 1;
+}
+.testimonials-carousel .carousel .control-arrow::before {
+  display: none !important;
+}
+.testimonials-carousel .carousel .control-arrow.control-prev {
+  left: auto;
+  right: 2.75rem;
+}
+.testimonials-carousel .carousel .control-arrow.control-next {
+  right: 0;
+}
+.testimonials-carousel .carousel .control-arrow.control-disabled {
+  opacity: 0.35;
+  pointer-events: none;
 }
