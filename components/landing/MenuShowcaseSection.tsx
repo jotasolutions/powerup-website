@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
@@ -10,22 +10,45 @@ import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
 
 const showcaseItems = [
-  { src: "/videos/recording1.mp4", url: "https://www.youtube.com/recording1" },
-  { src: "/videos/recording2.mp4", url: "https://www.youtube.com/recording2" },
-  { src: "/videos/recording3.mp4", url: "https://www.youtube.com/recording3" },
-  { src: "/videos/recording4.mp4", url: "https://www.youtube.com/recording4" },
-  { src: "/videos/recording4.mp4", url: "https://www.youtube.com/recording4" },
-  { src: "/videos/recording4.mp4", url: "https://www.youtube.com/recording4" },
-  { src: "/videos/recording4.mp4", url: "https://www.youtube.com/recording4" },
+  {
+    src: "/videos/recording1.mp4",
+    url: "https://www.youtube.com/recording1",
+    image: "/videos/iphone17-black.png"
+  },
+  {
+    src: "/videos/recording2.mp4",
+    url: "https://www.youtube.com/recording2",
+    image: "/videos/iphone17-sage.png"
+  },
+  {
+    src: "/videos/recording3.mp4",
+    url: "https://www.youtube.com/recording3",
+    image: "/videos/iphone17-blue.png"
+  },
+  {
+    src: "/videos/recording3.mp4",
+    url: "https://www.youtube.com/recording3",
+    image: "/videos/iphone17-sage.png"
+  },
+  {
+    src: "/videos/recording3.mp4",
+    url: "https://www.youtube.com/recording3",
+    image: "/videos/iphone17-black.png"
+  },
 ] as const
 
 export function MenuShowcaseSection() {
   const [selectedItem, setSelectedItem] = useState(1)
+  const touchStartX = useRef<number | null>(null)
   const firstSlideIndex = 0
   const lastSlideIndex = showcaseItems.length - 1
   const slideWidth = 251
   const slideGap = 72
   const slideStep = slideWidth + slideGap
+  const swipeThreshold = 40
+
+  const goPrev = () => setSelectedItem((current) => Math.max(firstSlideIndex, current - 1))
+  const goNext = () => setSelectedItem((current) => Math.min(lastSlideIndex, current + 1))
 
   return (
     <SectionContainer>
@@ -42,7 +65,7 @@ export function MenuShowcaseSection() {
                 ? "hover:bg-slate-200"
                 : "pointer-events-none opacity-40"
             )}
-            onClick={() => setSelectedItem((current) => Math.max(firstSlideIndex, current - 1))}
+            onClick={goPrev}
           >
             <ChevronLeft className="size-5 text-slate-700" strokeWidth={2} aria-hidden />
           </button>
@@ -56,14 +79,30 @@ export function MenuShowcaseSection() {
                 ? "hover:bg-slate-200"
                 : "pointer-events-none opacity-40"
             )}
-            onClick={() => setSelectedItem((current) => Math.min(lastSlideIndex, current + 1))}
+            onClick={goNext}
           >
             <ChevronRight className="size-5 text-slate-700" strokeWidth={2} aria-hidden />
           </button>
 
-          <div className="overflow-hidden">
+          <div
+            className="overflow-hidden"
+            onTouchStart={(event) => {
+              touchStartX.current = event.touches[0]?.clientX ?? null
+            }}
+            onTouchEnd={(event) => {
+              if (touchStartX.current === null) return
+
+              const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX.current
+              const deltaX = touchStartX.current - touchEndX
+              touchStartX.current = null
+
+              if (Math.abs(deltaX) < swipeThreshold) return
+              if (deltaX > 0) goNext()
+              if (deltaX < 0) goPrev()
+            }}
+          >
             <div
-              className="flex px-[calc(50%-125.5px)] transition-transform duration-500 ease-out"
+              className="flex px-[calc(50%-125.5px)] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
               style={{
                 gap: `${slideGap}px`,
                 transform: `translateX(-${selectedItem * slideStep}px)`,
@@ -72,33 +111,44 @@ export function MenuShowcaseSection() {
               {showcaseItems.map((item, index) => (
                 <div key={`${item.src}-${index}`} className="w-[251px] shrink-0 pb-10">
                   <div className="relative aspect-[15/32] w-[251px]">
-                    <video
-                      className={cn(
-                        "absolute inset-y-[10.5%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-500",
-                        index === selectedItem
-                          ? "grayscale-0 opacity-100 scale-100"
-                          : "grayscale opacity-20 scale-80"
-                      )}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                    >
-                      <source src={item.src} type="video/mp4" />
-                      Tu navegador no soporta el video.
-                    </video>
-                    <Image
-                      src="/videos/iphone17-frame.png"
-                      alt="iPhone frame"
-                      fill
-                      className={cn(
-                        "pointer-events-none z-20 object-contain transition-all duration-500",
-                        index === selectedItem ? "opacity-100 scale-100" : "opacity-20 scale-80"
-                      )}
-                      sizes="251px"
-                      priority
-                    />
+                    {/**
+                     * Keep only current and adjacent slides warm to reduce decoding work.
+                     */}
+                    {(() => {
+                      const distanceFromActive = Math.abs(index - selectedItem)
+                      const isActive = distanceFromActive === 0
+                      const isNearActive = distanceFromActive <= 1
+
+                      return (
+                        <>
+                          <video
+                            className={cn(
+                              "absolute inset-y-[10.5%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                              isActive ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-35 scale-80"
+                            )}
+                            autoPlay={isActive}
+                            muted
+                            loop
+                            playsInline
+                            preload={isNearActive ? "metadata" : "none"}
+                          >
+                            <source src={item.src} type="video/mp4" />
+                            Tu navegador no soporta el video.
+                          </video>
+                          <Image
+                            src={item.image}
+                            alt="iPhone frame"
+                            fill
+                            className={cn(
+                              "pointer-events-none z-20 object-contain transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                              isActive ? "opacity-100 scale-100" : "opacity-35 scale-80"
+                            )}
+                            sizes="251px"
+                            priority={isActive}
+                          />
+                        </>
+                      )
+                    })()}
                   </div>
                 </div>
               ))}

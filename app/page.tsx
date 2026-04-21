@@ -15,8 +15,11 @@ import { DifferentiationSection } from "@/components/landing/DifferentiationSect
 import { AdvisorSection } from "@/components/landing/AdvisorSection"
 import { WebsiteSection } from "@/components/landing/WebsiteSection"
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
+import { getPricingDataAction } from "@/app/actions/pricing"
 
-export default function Home() {
+export default async function Home() {
+  const pricingData = await getPricingDataAction()
+
   return (
     <main className="bg-white text-slate-900">
       <HeroSection />
@@ -32,7 +35,12 @@ export default function Home() {
       <WebsiteSection/>
       <TestimonialsSection/>
       <MenuShowcaseSection />
-      <PricingSection />
+      <PricingSection
+        monthlyPrice={pricingData.monthlyPrice}
+        yearlyPrice={pricingData.yearlyPrice}
+        monthlyPriceInCents={pricingData.monthlyPriceInCents}
+        yearlyPriceInCents={pricingData.yearlyPriceInCents}
+      />
       <FaqSection />
       <AboutSection />
       <FooterSection />
