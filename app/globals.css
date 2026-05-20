@@ -135,9 +135,10 @@
 }
 
 .hero-container {
-  background-image: url("/images/hero-gradient.svg");
+  background-image: url("/images/hero-bg-4.svg");
   background-size: cover;
   background-position: center;
+  opacity: 1;
   background-repeat: no-repeat;
 }
 
@@ -146,7 +147,7 @@
 }
 
 .section-title {
-  @apply font-heading text-3xl font-medium tracking-tight text-slate-900 md:text-3xl;
+  @apply font-heading text-3xl font-medium tracking-tight leading-10 text-slate-900 md:text-3xl;
 }
 
 .section-paragraph {

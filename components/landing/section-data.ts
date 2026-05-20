@@ -1,19 +1,28 @@
+import feature1 from '../../public/images/features/feature1.json'
+import feature2 from '../../public/images/features/feature2.json'
+import feature3 from '../../public/images/features/feature3.json'
+import feature4 from '../../public/images/features/feature4.json'
+import feature5 from '../../public/images/features/feature5.json'
+import feature6 from '../../public/images/features/feature6.json'
 
 export const sellMoreFeatures = [
   {
     title: "Sugiere maridaje en cada plato",
     description:
       "Recomienda automáticamente bebidas o acompañamientos ideales mientras el cliente decide.",
+      animation: feature1,
   },
   {
     title: "Ofrece ingredientes extra",
     description:
       "Añade extras y suplementos directamente en la carta para aumentar el ticket medio.",
+      animation: feature2,
   },
   {
     title: "Pop-ups que saltan a la vista",
     description:
       "Destaca platos, promociones o campañas justo en el momento clave.",
+      animation: feature3,
   },
 ]
 
@@ -22,16 +31,19 @@ export const attractFeatures = [
     title: "Haz que ChatGPT te recomiende",
     description:
       "Optimiza tu carta para aparecer en recomendaciones y comparativas antes de la visita.",
+      animation: feature4,
   },
   {
     title: "Tu carta siempre actualizada en Google",
     description:
       "Sincroniza cambios para que tu información esté al día en los canales donde te buscan.",
+      animation: feature5,
   },
   {
     title: "Los clientes deciden desde casa",
     description:
       "Convierte la navegación previa en intención de compra con una carta más clara y persuasiva.",
+      animation: feature6,
   },
 ]
 
@@ -182,10 +194,28 @@ export const differentiationPillars = [
 ] as const
 
 export const faqs = [
-  "¿Se pueden gestionar varios restaurantes con el mismo plan?",
-  "¿Puedo añadir el menú a mi sitio web o redes sociales?",
-  "¿Hay permanencia?",
-  "¿Se puede pedir y pagar a través de la carta?",
-  "¿La gente se tiene que descargar una app?",
-  "¿Tengo que tener ya una página web para poder tener un menú digital?",
+  {
+    question: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+  },
+  {
+    question: "¿Puedo añadir el menú a mi sitio web o redes sociales?",
+    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+  },
+  {
+    question: "¿Hay permanencia?",
+    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+  },
+  {
+    question: "¿Se puede pedir y pagar a través de la carta?",
+    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+  },
+  {
+    question: "¿La gente se tiene que descargar una app?",
+    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+  },
+  {
+    question: "¿Tengo que tener ya una página web para poder tener un menú digital?",
+    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+  }
 ]

@@ -1,32 +1,150 @@
+'use client'
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { attractFeatures } from "@/components/landing/section-data"
 import { CTAButton } from "../CTAButton"
+import { useEffect, useRef } from "react"
+import type { LottieRefCurrentProps } from "lottie-react"
+import { motion, useInView, useReducedMotion } from "motion/react"
+import Lottie from "lottie-react"
+import Image from "next/image"
+
+const revealViewport = {
+  once: true,
+  margin: "0px 0px -80px 0px",
+} as const
+
+const revealEase = [0.22, 1, 0.36, 1] as const
+
+const textReveal = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0 },
+} as const
+
+function AttractCard({
+  title,
+  description,
+  animation,
+  index,
+}: {
+  title: string
+  description: string
+  animation: unknown
+  index: number
+}) {
+  const lottieRef = useRef<LottieRefCurrentProps | null>(null)
+  const cardRef = useRef<HTMLDivElement>(null)
+  const prefersReducedMotion = useReducedMotion()
+  const cardDelay = (index + 1) * 0.8
+  const isCardInView = useInView(cardRef, {
+    once: true,
+    margin: revealViewport.margin,
+  })
+
+  useEffect(() => {
+    if (!isCardInView) return
+
+    const play = () => lottieRef.current?.goToAndPlay(0, true)
+
+    if (prefersReducedMotion) {
+      play()
+      return
+    }
+
+    const id = window.setTimeout(play, (cardDelay * 1000 + 400))
+    return () => window.clearTimeout(id)
+  }, [isCardInView, cardDelay, prefersReducedMotion])
+
+  return (
+    <article className="space-y-4">
+      <motion.div
+        ref={cardRef}
+        className="h-63 overflow-hidden rounded-2xl bg-gradient-to-b from-[#F0FFF5] to-[#CBFFDC] relative"
+        initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+        whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+        viewport={revealViewport}
+        transition={{ duration: 0.55, ease: revealEase, delay: cardDelay }}
+        onMouseEnter={() => lottieRef.current?.goToAndPlay(0, true)}
+      >
+        <Lottie
+          lottieRef={lottieRef}
+          animationData={animation}
+          loop={false}
+          autoplay={false}
+          className="z-20 relative"
+          style={{ width: '338px', height: 'auto' }}
+        />
+        <Image
+          src="/images/cercles.svg"
+          alt="cercles"
+          width={1000}
+          height={1000}
+          className="absolute top-1/4 left-0 w-full h-full object-cover mix-blend-overlay z-10 scale-150 opacity-90"
+        />
+      </motion.div>
+      <div className="space-y-2 pr-2">
+        <motion.h3
+          className="text-xl font-medium text-slate-700"
+          initial={prefersReducedMotion ? false : "hidden"}
+          whileInView={prefersReducedMotion ? undefined : "visible"}
+          viewport={revealViewport}
+          variants={textReveal}
+          transition={{ duration: 0.45, ease: revealEase, delay: cardDelay + 0.18 }}
+        >
+          {title}
+        </motion.h3>
+        <motion.p
+          className="text-base leading-6 text-slate-600"
+          initial={prefersReducedMotion ? false : "hidden"}
+          whileInView={prefersReducedMotion ? undefined : "visible"}
+          viewport={revealViewport}
+          variants={textReveal}
+          transition={{ duration: 0.45, ease: revealEase, delay: cardDelay + 0.32 }}
+        >
+          {description}
+        </motion.p>
+      </div>
+    </article>
+  )
+}
 
 export function AttractPeopleSection() {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <SectionContainer>
       <div className="space-y-10">
-        <div className="space-y-3 text-center">
+        <motion.div
+          className="space-y-3 text-center"
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={revealViewport}
+          transition={{ duration: 0.5, ease: revealEase }}
+        >
           <h2 className="section-title">Atrae a mas gente</h2>
           <p className="section-paragraph">
             Haz que te encuentren, te comparen y te elijan antes de venir.
           </p>
-        </div>
+        </motion.div>
         <div className="grid gap-6 md:grid-cols-3">
-          {attractFeatures.map((item) => (
-            <article key={item.title} className="space-y-4">
-              <div className="h-56 rounded-2xl border border-sky-100 bg-sky-50" />
-              <div className="space-y-2 pr-2">
-                <h3 className="text-xl font-medium text-slate-700">{item.title}</h3>
-                <p className="text-base leading-6 text-slate-600">{item.description}</p>
-              </div>
-
-            </article>
+          {attractFeatures.map((item, index) => (
+            <AttractCard
+              key={item.title}
+              index={index}
+              title={item.title}
+              description={item.description}
+              animation={item.animation}
+            />
           ))}
         </div>
-        <div className="space-y-2 text-center">
+        <motion.div
+          className="space-y-2 text-center"
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={revealViewport}
+          transition={{ duration: 0.5, ease: revealEase, delay: 0.35 }}
+        >
           <CTAButton />
-        </div>
+        </motion.div>
       </div>
     </SectionContainer>
   )

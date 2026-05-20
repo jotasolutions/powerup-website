@@ -3,7 +3,7 @@
 import { type ReactNode, useState } from "react"
 import Image from "next/image"
 import NumberFlow from "@number-flow/react"
-import { Check, Globe, QrCode, X } from "lucide-react"
+import { ArrowRight, Check, Globe, QrCode, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { CTAButton } from "../CTAButton"
@@ -190,48 +190,51 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
           </article>
         </div>
 
-        <article className="relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xl md:p-8">
-          <div className="space-y-2">
-            <h3 className="font-heading text-2xl font-semibold text-slate-900">PowerUp Free</h3>
-            <p className="max-w-sm text-base leading-relaxed text-slate-800">
-              Una carta digital básica para gestionar tu menú
-            </p>
-          </div>
-          <div className="mt-5">
-            <p className="text-2xl font-semibold tracking-tight text-slate-900">Gratis</p>
-            <p className="text-xs text-slate-500">Para siempre</p>
-          </div>
-
-          <p className="mt-6 text-xs font-medium text-slate-500">Incluye:</p>
-
-          <div className="mb-6 mt-2 space-y-1">
-            <div className="boder-slate-200 rounded-xl border bg-gray-100/50 p-4">
-              <div className="flex gap-3">
-                <FeatureIconBox className="bg-[#CEEDB8]">
-                  <QrCode className="size-6 text-green-600" strokeWidth={2} />
-                </FeatureIconBox>
-                <div className="min-w-0 flex-1 space-y-1">
-                  <p className="font-semibold text-slate-900">Carta Digital Básica</p>
-                  <p className="text-sm text-slate-600">Tu carta, moderna y diseñada para vender más</p>
-                  <ul className="mt-4 space-y-2">
-                    <ListItem status="yes">Gestión de tu carta en tiempo real</ListItem>
-                    <ListItem status="partial">Analíticas básicas</ListItem>
-                    <ListItem status="no">Características para vender más</ListItem>
-                  </ul>
-                </div>
-              </div>
-
-              <Button
-                variant="outline"
-                className="mt-4 w-full border-slate-300 bg-white text-primary shadow-none hover:bg-slate-50"
-              >
-                Ver todas las características
-              </Button>
+        <div className="text-center space-y-4">
+          <article className="relative flex flex-col overflow-hidden rounded-2xl text-left border border-slate-200/80 bg-white p-6 shadow-xl md:p-8">
+            <div className="space-y-2">
+              <h3 className="font-heading text-2xl font-semibold text-slate-900">PowerUp Free</h3>
+              <p className="max-w-sm text-base leading-relaxed text-slate-800">
+                Una carta digital básica para gestionar tu menú
+              </p>
             </div>
-          </div>
+            <div className="mt-5">
+              <p className="text-2xl font-semibold tracking-tight text-slate-900">Gratis</p>
+              <p className="text-xs text-slate-500">Para siempre</p>
+            </div>
 
-          <CTAButton />
-        </article>
+            <p className="mt-6 text-xs font-medium text-slate-500">Incluye:</p>
+
+            <div className="mb-6 mt-2 space-y-1">
+              <div className="boder-slate-200 rounded-xl border bg-gray-100/50 p-4">
+                <div className="flex gap-3">
+                  <FeatureIconBox className="bg-[#CEEDB8]">
+                    <QrCode className="size-6 text-green-600" strokeWidth={2} />
+                  </FeatureIconBox>
+                  <div className="min-w-0 flex-1 space-y-1">
+                    <p className="font-semibold text-slate-900">Carta Digital Básica</p>
+                    <p className="text-sm text-slate-600">Tu carta, moderna y diseñada para vender más</p>
+                    <ul className="mt-4 space-y-2">
+                      <ListItem status="yes">Gestión de tu carta en tiempo real</ListItem>
+                      <ListItem status="partial">Analíticas básicas</ListItem>
+                      <ListItem status="no">Características para vender más</ListItem>
+                    </ul>
+                  </div>
+                </div>
+
+                <Button
+                  variant="outline"
+                  className="mt-4 w-full border-slate-300 bg-white text-primary shadow-none hover:bg-slate-50"
+                >
+                  Ver todas las características
+                </Button>
+              </div>
+            </div>
+
+            <CTAButton />
+          </article>
+          <Button variant="link">Ver las diferencias entre Pro y Free <ArrowRight className="size-4" /></Button>
+        </div>
       </div>
     </>
   )

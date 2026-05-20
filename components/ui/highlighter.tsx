@@ -21,6 +21,7 @@ interface HighlighterProps {
   color?: string
   strokeWidth?: number
   animationDuration?: number
+  delay?: number
   iterations?: number
   padding?: number
   multiline?: boolean
@@ -33,6 +34,7 @@ export function Highlighter({
   color = "#ffd1dc",
   strokeWidth = 1.5,
   animationDuration = 600,
+  delay = 0,
   iterations = 2,
   padding = 2,
   multiline = true,
@@ -52,6 +54,7 @@ export function Highlighter({
     const element = elementRef.current
     let annotation: RoughAnnotation | null = null
     let resizeObserver: ResizeObserver | null = null
+    let timeoutId: number | null = null
 
     if (shouldShow && element) {
       const annotationConfig = {
@@ -64,19 +67,24 @@ export function Highlighter({
         multiline,
       }
 
-      const currentAnnotation = annotate(element, annotationConfig)
-      annotation = currentAnnotation
-      currentAnnotation.show()
-
-      resizeObserver = new ResizeObserver(() => {
-        currentAnnotation.hide()
+      timeoutId = window.setTimeout(() => {
+        const currentAnnotation = annotate(element, annotationConfig)
+        annotation = currentAnnotation
         currentAnnotation.show()
-      })
 
-      resizeObserver.observe(element)
+        resizeObserver = new ResizeObserver(() => {
+          currentAnnotation.hide()
+          currentAnnotation.show()
+        })
+
+        resizeObserver.observe(element)
+      }, delay)
     }
 
     return () => {
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId)
+      }
       annotation?.remove()
       if (resizeObserver) {
         resizeObserver.disconnect()
@@ -88,6 +96,7 @@ export function Highlighter({
     color,
     strokeWidth,
     animationDuration,
+    delay,
     iterations,
     padding,
     multiline,
