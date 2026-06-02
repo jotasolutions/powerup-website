@@ -46,7 +46,7 @@ export function HeroSection() {
                 </Highlighter>
               </h1>
             </BlurFade>
-           
+
             <BlurFade delay={0.4}>
               <p className="max-w-lg text-xl leading-8 text-slate-700 font-heading font-medium">
                 Ingenieria de menu y neuromarketing para vender más a traves de la carta digital.
@@ -54,24 +54,32 @@ export function HeroSection() {
               </p>
             </BlurFade>
             <div className="flex flex-wrap items-center gap-2.5">
-              <CTAButton />
-              <Button variant="secondary" className="min-w-40">
-                Ver carta de ejemplo
-              </Button>
+              <BlurFade delay={0.6}>
+                <CTAButton />
+              </BlurFade>
+              <BlurFade delay={0.8}>
+                <Button variant="secondary" className="min-w-40">
+                  Ver carta de ejemplo
+                </Button>
+              </BlurFade>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                <span className="size-7 rounded-full border border-slate-300 bg-slate-100" />
-                <span className="size-7 rounded-full border border-slate-300 bg-slate-200" />
-                <span className="size-7 rounded-full border border-slate-300 bg-slate-100" />
-                <span className="size-7 rounded-full border border-slate-300 bg-slate-200" />
+            <BlurFade delay={0.9}>
+              <div className="flex items-center gap-3">
+
+                <div className="flex -space-x-2">
+                  <Image src="/images/testimonials/marisa/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+                  <Image src="/images/testimonials/taberna-casera/logo.webp" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+                  <Image src="/images/testimonials/arau/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+                  <Image src="/images/testimonials/goyos/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+                </div>
+                <p className="text-2xl font-semibold text-slate-900">4.4</p>
+                <div>
+                  <p className="text-xs font-semibold text-slate-700">Excellent</p>
+                  <p className="text-xs tracking-wide text-emerald-700">★★★★★</p>
+                </div>
+
               </div>
-              <p className="text-3xl font-semibold text-slate-900">4.4</p>
-              <div>
-                <p className="text-sm font-semibold text-slate-700">Excellent</p>
-                <p className="text-xs tracking-wide text-emerald-700">★★★★★</p>
-              </div>
-            </div>
+            </BlurFade>
           </div>
           <Image
             src="/images/hero/hero-hand-4.png"

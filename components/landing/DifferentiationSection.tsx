@@ -9,6 +9,7 @@ import Link from "next/link"
 import { CTAButton } from "../CTAButton"
 import Image from "next/image"
 import { Button } from "../ui/button"
+import { BlurFade } from "../ui/blur-fade"
 
 const iconMap = {
   neuromarketing: Brain,
@@ -80,64 +81,80 @@ export function DifferentiationSection() {
                 />
               </motion.div>
             </div>
-            <h2 className="section-title ">
-              La carta que piensa como tú venderías
-            </h2>
-            <p className="section-paragraph  max-w-xl mx-auto">
-              No solo digitalizamos tu carta. Optimizamos cómo se presentan y medimos qué
-              funciona para mejorarlo continuamente.
-            </p>
+            <BlurFade inView inViewMargin="-80px">
+              <h2 className="section-title ">
+                La carta que piensa como tú venderías
+              </h2>
+            </BlurFade>
+            <BlurFade inView inViewMargin="-80px" delay={0.12}>
+              <p className="section-paragraph  max-w-xl mx-auto">
+                No solo digitalizamos tu carta. Optimizamos cómo se presentan y medimos qué
+                funciona para mejorarlo continuamente.
+              </p>
+            </BlurFade>
           </div>
 
           <div className="mt-12 grid gap-10 md:mt-14 md:grid-cols-2 md:gap-12 lg:gap-16">
             <article className="flex flex-col gap-4">
-              <div
-                className="flex size-16 items-center justify-center rounded-2xl bg-[#FFCCBE] text-[#C45C2A] border-4 border-[#FFEFE9]"
-              >
-                <Brain className="size-8" strokeWidth={1.75} aria-hidden />
-              </div>
-              <h3 className="text-xl font-medium ">
-                Neuromarketing
-              </h3>
-              <p className="text-base leading-relaxed">
-                Aplicamos principios como efecto ancla, orden estratégico de categorías, nombres descriptivos y resaltado inteligente para <strong className="font-medium">aumentar el ticket medio de forma natural.</strong>
-              </p>
-              <p className="flex items-center gap-2 text-sm text-gray-700">
-                <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
-                  <Check className="size-2.5" strokeWidth={4} aria-hidden />
-                </span>
-                Basado en más de 80 estudios científicos
-              </p>
-              <Button  className="w-fit mt-4" variant="secondary">
-                Saber más
-                <ArrowRight className="size-3.5" />
-              </Button>
+              <BlurFade delay={0.20}>
+                <div
+                  className="flex size-16 items-center justify-center rounded-2xl bg-[#FFCCBE] text-[#C45C2A] border-4 border-[#FFEFE9]"
+                >
+                  <Brain className="size-8" strokeWidth={1.75} aria-hidden />
+                </div>
+              </BlurFade>
+              <BlurFade delay={0.25}>
+                <h3 className="text-xl font-medium ">
+                  Neuromarketing
+                </h3>
+              </BlurFade>
+              <BlurFade delay={0.30}>
+                <p className="text-base leading-relaxed">
+                  Aplicamos principios como efecto ancla, orden estratégico de categorías, nombres descriptivos y resaltado inteligente para <strong className="font-medium">aumentar el ticket medio de forma natural.</strong>
+                </p>
+                <p className="flex items-center gap-2 text-sm text-gray-700">
+                  <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
+                    <Check className="size-2.5" strokeWidth={4} aria-hidden />
+                  </span>
+                  Basado en más de 80 estudios científicos
+                </p>
+                <Button className="w-fit mt-4" variant="secondary">
+                  Saber más
+                  <ArrowRight className="size-3.5" />
+                </Button>
+              </BlurFade>
             </article>
             <article className="flex flex-col gap-4">
-              <div
-                className="flex size-16 items-center justify-center rounded-2xl bg-[#FFE6BE] text-[#C89746] border-4 border-[#FFF5E6]"
-              >
-                <PieChart className="size-8" strokeWidth={1.75} aria-hidden />
-              </div>
-              <h3 className="text-xl font-medium ">
-                Analíticas
-              </h3>
-              <p className="text-base leading-relaxed">
-                Medimos qué platos se ven, cuánto tiempo pasan en la carta y qué se ignora. Cada semana recibes un informe con <strong className="font-medium">recomendaciones accionables para mejorar.</strong>
-              </p>
-              <p className="flex items-center gap-2 text-sm text-gray-700">
-                <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
-                  <Check className="size-2.5" strokeWidth={4} aria-hidden />
-                </span>
-                Métricas claras y sin configuración técnica
-              </p>
-              <Button  className="w-fit mt-4" variant="secondary">
-                Saber más
-                <ArrowRight className="size-3.5" />
-              </Button>
+              <BlurFade delay={0.35}>
+                <div
+                  className="flex size-16 items-center justify-center rounded-2xl bg-[#FFE6BE] text-[#C89746] border-4 border-[#FFF5E6]"
+                >
+                  <PieChart className="size-8" strokeWidth={1.75} aria-hidden />
+                </div>
+              </BlurFade>
+              <BlurFade delay={0.40}>
+                <h3 className="text-xl font-medium ">
+                  Analíticas
+                </h3>
+              </BlurFade>
+              <BlurFade delay={0.45}>
+                <p className="text-base leading-relaxed">
+                  Medimos qué platos se ven, cuánto tiempo pasan en la carta y qué se ignora. Cada semana recibes un informe con <strong className="font-medium">recomendaciones accionables para mejorar.</strong>
+                </p>
+                <p className="flex items-center gap-2 text-sm text-gray-700">
+                  <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
+                    <Check className="size-2.5" strokeWidth={4} aria-hidden />
+                  </span>
+                  Métricas claras y sin configuración técnica
+                </p>
+                <Button className="w-fit mt-4" variant="secondary">
+                  Saber más
+                  <ArrowRight className="size-3.5" />
+                </Button>
+              </BlurFade>
             </article>
           </div>
-
+          <BlurFade delay={0.50}>
           <div className="mt-12 flex flex-col items-center gap-3 md:mt-14">
             <CTAButton />
             <p className="flex items-center gap-2 text-sm text-slate-500">
@@ -150,6 +167,7 @@ export function DifferentiationSection() {
               No requiere tarjeta
             </p>
           </div>
+          </BlurFade>
         </div>
       </>
     </SectionContainer>

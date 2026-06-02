@@ -7,6 +7,7 @@ import type { LottieRefCurrentProps } from "lottie-react"
 import { motion, useInView, useReducedMotion } from "motion/react"
 import Lottie from "lottie-react"
 import Image from "next/image"
+import { BlurFade } from "../ui/blur-fade"
 
 const revealViewport = {
   once: true,
@@ -113,18 +114,16 @@ export function AttractPeopleSection() {
   return (
     <SectionContainer>
       <div className="space-y-10">
-        <motion.div
-          className="space-y-3 text-center"
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={revealViewport}
-          transition={{ duration: 0.5, ease: revealEase }}
-        >
-          <h2 className="section-title">Atrae a mas gente</h2>
-          <p className="section-paragraph">
-            Haz que te encuentren, te comparen y te elijan antes de venir.
-          </p>
-        </motion.div>
+        <div className="space-y-3 text-center">
+          <BlurFade inView inViewMargin="-80px">
+            <h2 className="section-title">Atrae a mas gente</h2>
+          </BlurFade>
+          <BlurFade inView inViewMargin="-80px" delay={0.12}>
+            <p className="section-paragraph">
+              Haz que te encuentren, te comparen y te elijan antes de venir.
+            </p>
+          </BlurFade>
+        </div>
         <div className="grid gap-6 md:grid-cols-3">
           {attractFeatures.map((item, index) => (
             <AttractCard

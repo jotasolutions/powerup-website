@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { CreditCard, QrCode } from "lucide-react"
 import Link from "next/link"
 import { CTAButton } from "../CTAButton"
+import { BlurFade } from "../ui/blur-fade"
 
 function FeatureCard({
   title,
@@ -40,12 +41,16 @@ export function FeaturesSection() {
     >
       <div className="space-y-10 md:space-y-12">
         <div className="mx-auto max-w-3xl space-y-3 text-center">
-          <h2 className="section-title">
-            La carta digital más completa
-          </h2>
-          <p className="section-paragraph">
-            Aplicamos ingeniería de menú, marketing gastronómico y diseño optimizado
-          </p>
+          <BlurFade inView inViewMargin="-80px">
+            <h2 className="section-title">
+              La carta digital más completa
+            </h2>
+          </BlurFade>
+          <BlurFade inView inViewMargin="-80px" delay={0.12}>
+            <p className="section-paragraph">
+              Aplicamos ingeniería de menú, marketing gastronómico y diseño optimizado
+            </p>
+          </BlurFade>
         </div>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-6 md:gap-3">

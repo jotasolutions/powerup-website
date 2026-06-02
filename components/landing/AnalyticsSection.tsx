@@ -1,16 +1,21 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { analyticsFeatures } from "@/components/landing/section-data"
 import { CTAButton } from "../CTAButton"
+import { BlurFade } from "../ui/blur-fade"
 
 export function AnalyticsSection() {
   return (
     <SectionContainer>
       <div className="space-y-10">
         <div className="space-y-3 text-center">
-          <h2 className="section-title">Conoce a tus clientes</h2>
-          <p className="section-paragraph">
-            Toma decisiones basadas en como se comportan tus clientes.
-          </p>
+          <BlurFade inView inViewMargin="-80px">
+            <h2 className="section-title">Conoce a tus clientes</h2>
+          </BlurFade>
+          <BlurFade inView inViewMargin="-80px" delay={0.12}>
+            <p className="section-paragraph">
+              Toma decisiones basadas en como se comportan tus clientes.
+            </p>
+          </BlurFade>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {analyticsFeatures.map((item) => (

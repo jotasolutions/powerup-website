@@ -5,6 +5,7 @@ import { CTAButton } from "../CTAButton"
 import { useEffect, useRef } from "react"
 import type { LottieRefCurrentProps } from "lottie-react"
 import { motion, useInView, useReducedMotion } from "motion/react"
+import { BlurFade } from "../ui/blur-fade"
 
 import Lottie from "lottie-react"
 import Image from "next/image"
@@ -114,18 +115,16 @@ export function SellMoreSection() {
   return (
     <SectionContainer>
       <div className="space-y-10">
-        <motion.div
-          className="space-y-3 text-center"
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={revealViewport}
-          transition={{ duration: 0.5, ease: revealEase }}
-        >
-          <h2 className="section-title">Vende mas sin esfuerzo</h2>
-          <p className="section-paragraph">
-            Tu carta le da al cliente los motivos para gastar mas. Sola.
-          </p>
-        </motion.div>
+        <div className="space-y-3 text-center">
+          <BlurFade inView inViewMargin="-80px">
+            <h2 className="section-title">Vende mas sin esfuerzo</h2>
+          </BlurFade>
+          <BlurFade inView inViewMargin="-80px" delay={0.12}>
+            <p className="section-paragraph">
+              Tu carta le da al cliente los motivos para gastar mas. Sola.
+            </p>
+          </BlurFade>
+        </div>
         <div className="grid gap-6 md:grid-cols-3">
           {sellMoreFeatures.map((item, index) => (
             <SellMoreCard

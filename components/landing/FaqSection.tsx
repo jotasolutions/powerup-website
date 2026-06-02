@@ -4,11 +4,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 import { MessagesSquare } from "lucide-react"
 import { Button } from "../ui/button"
 import { CTAButton } from "../CTAButton"
+import { BlurFade } from "../ui/blur-fade"
 
 export function FaqSection() {
   return (
     <SectionContainer >
-      <h2 className="section-title">Te estaras preguntando</h2>
+      <BlurFade inView inViewMargin="-80px">
+        <h2 className="section-title">Te estaras preguntando</h2>
+      </BlurFade>
       <div className="flex flex-row mt-8 gap-12">
         <aside className="flex-1">
           <Accordion  >

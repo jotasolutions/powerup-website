@@ -4,6 +4,7 @@ import { SectionContainer } from "@/components/landing/SectionContainer"
 import { WebsiteWidgetsMockup } from "@/components/landing/WebsiteWidgetsMockup"
 import { Check, CreditCard } from "lucide-react"
 import { CTAButton } from "../CTAButton"
+import { BlurFade } from "../ui/blur-fade"
 
 const checklist = [
   "Totalmente editable",
@@ -18,13 +19,17 @@ export function WebsiteSection() {
       <div className="grid items-center gap-12 lg:grid-cols-2 ">
         <div className="space-y-8 ">
           <div className="space-y-4">
-            <h2 className="section-title">
-              Crea tu web tipo &quot;linktree&quot;, sin desarrolladores
-            </h2>
-            <p className="section-paragraph">
-              Todo lo que necesita la web de tu restaurante, pero que finalmente
-              puedes controlar tú mismo. Siempre actualizada y al mejor precio.
-            </p>
+            <BlurFade inView inViewMargin="-80px">
+              <h2 className="section-title">
+                Crea tu web tipo &quot;linktree&quot;, sin desarrolladores
+              </h2>
+            </BlurFade>
+            <BlurFade inView inViewMargin="-80px" delay={0.12}>
+              <p className="section-paragraph">
+                Todo lo que necesita la web de tu restaurante, pero que finalmente
+                puedes controlar tú mismo. Siempre actualizada y al mejor precio.
+              </p>
+            </BlurFade>
           </div>
 
           <ul className="space-y-3">

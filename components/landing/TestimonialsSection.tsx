@@ -9,6 +9,7 @@ import { CTAButton } from "../CTAButton";
 import { Carousel } from "react-responsive-carousel";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { BlurFade } from "../ui/blur-fade";
 
 export function TestimonialsSection() {
     const testimonials = [
@@ -47,12 +48,16 @@ export function TestimonialsSection() {
         <SectionContainer id="testimonials">
             <div className="grid items-center gap-12 lg:grid-cols-2 ">
                 <div className="space-y-8">
-                    <h2 className="section-title">Más de <Highlighter action="circle" color="#FF9800">
-                        <span className="font-medium text-[#50B27F]">+1500</span>
-                    </Highlighter> restaurantes ya están vendiendo más</h2>
-                    <p className="section-paragraph">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra quis felis condimentum volutpat.
-                    </p>
+                    <BlurFade inView inViewMargin="-80px">
+                        <h2 className="section-title">Más de <Highlighter action="circle" color="#FF9800">
+                            <span className="font-medium text-[#50B27F]">+1500</span>
+                        </Highlighter> restaurantes ya están vendiendo más</h2>
+                    </BlurFade>
+                    <BlurFade inView inViewMargin="-80px" delay={0.12}>
+                        <p className="section-paragraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra quis felis condimentum volutpat.
+                        </p>
+                    </BlurFade>
                     <div className="grid gap-4 grid-cols-2">
                         <div className="space-y-2">
                             <p className="text-gray-800">Tripadvisor</p>

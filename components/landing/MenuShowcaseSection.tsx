@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
+import { BlurFade } from "../ui/blur-fade"
 
 const showcaseItems = [
   {
@@ -53,7 +54,9 @@ export function MenuShowcaseSection() {
   return (
     <SectionContainer>
       <div className="space-y-20 text-center">
-        <h2 className="section-title">Esta puede ser tu carta</h2>
+        <BlurFade inView inViewMargin="-80px">
+          <h2 className="section-title">Esta puede ser tu carta</h2>
+        </BlurFade>
 
         <div className="relative w-full">
           <button

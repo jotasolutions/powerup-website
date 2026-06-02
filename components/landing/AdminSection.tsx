@@ -2,6 +2,7 @@ import { AdminCarousel } from "@/components/landing/AdminCarousel"
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { adminCarouselSlides } from "@/components/landing/section-data"
 import { CTAButton } from "../CTAButton"
+import { BlurFade } from "../ui/blur-fade"
 
 export function AdminSection() {
   return (
@@ -11,10 +12,14 @@ export function AdminSection() {
     >
       <div className="space-y-10 md:space-y-12">
         <div className="mx-auto max-w-3xl space-y-3 text-center">
-          <h2 className="section-title">Gestión rápida y sencilla</h2>
-          <p className="section-paragraph">
-            Gestiona tu carta en segundos, desde cualquier dispositivo
-          </p>
+          <BlurFade inView inViewMargin="-80px">
+            <h2 className="section-title">Gestión rápida y sencilla</h2>
+          </BlurFade>
+          <BlurFade inView inViewMargin="-80px" delay={0.12}>
+            <p className="section-paragraph">
+              Gestiona tu carta en segundos, desde cualquier dispositivo
+            </p>
+          </BlurFade>
         </div>
 
         <AdminCarousel slides={adminCarouselSlides} />
