@@ -75,7 +75,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
           alt="free website overlay"
           width={100}
           height={100}
-          className="absolute -top-2 -left-30 h-auto w-[120px]"
+          className="absolute -left-24 -top-2 hidden h-auto w-[96px] sm:block md:-left-[7.5rem] md:w-[120px]"
         />
         <AnimatedTabs
           value={billing}
@@ -89,16 +89,16 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
         />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 md:items-start md:gap-8">
+      <div className="grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-8">
         <div className="rounded-3xl bg-gradient-to-b from-[#92E0B8] to-white p-[3px] shadow-xl">
-          <article className="relative flex h-full flex-col overflow-hidden rounded-[19px] bg-gradient-to-b from-[#DFFFEA] via-[#ffffff] to-white p-6 md:p-8">
+          <article className="relative flex h-full flex-col overflow-hidden rounded-[19px] bg-gradient-to-b from-[#DFFFEA] via-[#ffffff] to-white p-5 sm:p-6 md:p-8">
             {billing === "annual" && annualDiscountPercent > 0 && (
               <span className="absolute right-4 top-6 mb-2 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
                 {annualDiscountPercent}% descuento
               </span>
             )}
             <div className="space-y-2">
-              <h3 className="plus-darker font-heading text-2xl font-semibold text-slate-900 opacity-80">
+              <h3 className="plus-darker font-heading text-xl font-semibold text-slate-900 opacity-80 sm:text-2xl">
                 PowerUp Pro
               </h3>
               <p className="max-w-sm text-base leading-relaxed text-slate-800">
@@ -106,7 +106,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
               </p>
             </div>
             <div className="mt-5">
-              <p className="text-2xl font-semibold tracking-tight text-slate-900">
+              <p className="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
                 <NumberFlow
                   value={currentPriceInEuros}
                   locales="es-ES"
@@ -132,7 +132,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
                   </FeatureIconBox>
                   <div className="min-w-0 flex-1 space-y-1">
                     <p className="font-semibold text-slate-900">Carta Digital Avanzada</p>
-                    <p className="text-sm text-slate-600">Tu carta, moderna y diseñada para vender más</p>
+                    <p className="text-xs text-slate-600 sm:text-sm">Tu carta, moderna y diseñada para vender más</p>
                     <ul className="mt-4 space-y-2">
                       <ListItem status="yes">Gestión de tu carta en tiempo real</ListItem>
                       <ListItem status="yes">Analíticas avanzadas</ListItem>
@@ -164,7 +164,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
                       </FeatureIconBox>
                       <div className="min-w-0 flex-1 space-y-1">
                         <p className="font-semibold text-slate-900">Sitio web del restaurante</p>
-                        <p className="text-sm text-slate-600">
+                        <p className="text-xs text-slate-600 sm:text-sm">
                           Tu web profesional, sin diseñadores y siempre actualizada
                         </p>
                         <ul className="mt-4 space-y-2">
@@ -191,15 +191,15 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
         </div>
 
         <div className="text-center space-y-4">
-          <article className="relative flex flex-col overflow-hidden rounded-2xl text-left border border-slate-200/80 bg-white p-6 shadow-xl md:p-8">
+          <article className="relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-5 text-left shadow-xl sm:p-6 md:p-8">
             <div className="space-y-2">
-              <h3 className="font-heading text-2xl font-semibold text-slate-900">PowerUp Free</h3>
+              <h3 className="font-heading text-xl font-semibold text-slate-900 sm:text-2xl">PowerUp Free</h3>
               <p className="max-w-sm text-base leading-relaxed text-slate-800">
                 Una carta digital básica para gestionar tu menú
               </p>
             </div>
             <div className="mt-5">
-              <p className="text-2xl font-semibold tracking-tight text-slate-900">Gratis</p>
+              <p className="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">Gratis</p>
               <p className="text-xs text-slate-500">Para siempre</p>
             </div>
 
@@ -213,7 +213,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
                   </FeatureIconBox>
                   <div className="min-w-0 flex-1 space-y-1">
                     <p className="font-semibold text-slate-900">Carta Digital Básica</p>
-                    <p className="text-sm text-slate-600">Tu carta, moderna y diseñada para vender más</p>
+                    <p className="text-xs text-slate-600 sm:text-sm">Tu carta, moderna y diseñada para vender más</p>
                     <ul className="mt-4 space-y-2">
                       <ListItem status="yes">Gestión de tu carta en tiempo real</ListItem>
                       <ListItem status="partial">Analíticas básicas</ListItem>

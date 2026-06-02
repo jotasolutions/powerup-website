@@ -11,7 +11,6 @@ import widget2 from "../../public/images/hero/widget2.json";
 import widget3 from "../../public/images/hero/widget3.json";
 import widget4 from "../../public/images/hero/widget4.json";
 import Lottie, { type LottieComponentProps } from "lottie-react";
-import { TextAnimate } from "../ui/text-animate"
 import { BlurFade } from "../ui/blur-fade"
 
 export function DelayedLottie({
@@ -30,15 +29,15 @@ export function DelayedLottie({
 
 export function HeroSection() {
   return (
-    <section id="hero-section" className="w-full px-4 pb-8 pt-4 md:pb-10">
-      <div className="rounded-3xl  px-6 p md:px-14  hero-container overflow-hidden relative w-full  mx-auto">
-        <div className="mx-auto flex flex-row max-w-6xl gap-10 items-center z-20 relative md:min-h-[677px]">
-          <div className="space-y-6 ">
+    <section id="hero-section" className="w-full px-3 pb-6 pt-3 sm:px-4 md:pb-10 md:pt-4">
+      <div className="hero-container relative mx-auto w-full overflow-hidden rounded-3xl px-4 pt-6 sm:px-6 sm:pb-0 sm:pt-8 md:px-10 lg:px-14">
+        <div className="relative z-20 mx-auto flex max-w-6xl flex-col gap-8 lg:min-h-[677px] lg:flex-row lg:items-center lg:gap-10">
+          <div className="space-y-5 lg:max-w-xl lg:space-y-6">
             <BlurFade>
-              <h1 className="max-w-[590px] font-heading text-4xl leading-tight  text-black font-medium">
+              <h1 className="max-w-[590px] font-heading text-3xl leading-tight font-medium text-black sm:text-4xl lg:text-5xl">
                 Convierte la carta
-                <div className="inline-block bg-primary p-1.5 rounded-md rotate-11 shadow-lg mx-3">
-                  <QrCode className="size-7 text-white" />
+                <div className="mx-2 inline-block rotate-11 rounded-md bg-primary p-1.5 shadow-lg sm:mx-3">
+                  <QrCode className="size-6 text-white sm:size-7" />
                 </div>
                 de tu restaurante en una maquina de <span className="mx-0.5"></span>
                 <Highlighter action="circle" color="#FF9800" delay={1500} >
@@ -48,17 +47,19 @@ export function HeroSection() {
             </BlurFade>
 
             <BlurFade delay={0.4}>
-              <p className="max-w-lg text-xl leading-8 text-slate-700 font-heading font-medium">
+              <p className="max-w-lg font-heading text-base font-medium leading-7 text-slate-700 sm:text-lg sm:leading-8 lg:text-xl">
                 Ingenieria de menu y neuromarketing para vender más a traves de la carta digital.
                 Sin conocimiento tecnico.
               </p>
             </BlurFade>
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center">
               <BlurFade delay={0.6}>
-                <CTAButton />
+                <div className="w-full sm:w-auto">
+                  <CTAButton />
+                </div>
               </BlurFade>
               <BlurFade delay={0.8}>
-                <Button variant="secondary" className="min-w-40">
+                <Button variant="secondary" className="w-full sm:min-w-40 sm:w-auto">
                   Ver carta de ejemplo
                 </Button>
               </BlurFade>
@@ -82,40 +83,49 @@ export function HeroSection() {
             </BlurFade>
           </div>
           <Image
-            src="/images/hero/hero-hand-4.png"
-            alt="hand"
-            width={1000}
-            height={1000}
-            className="w-[550px] h-auto object-contain absolute bottom-0 right-0 z-30"
-          />
-          <Lottie
-            animationData={widget1}
-            loop={false}
-            autoplay={true}
-            style={{ width: '320px', height: 'auto' }}
-            className="absolute top-[90px] right-[270px] z-30"
-          />
-          <DelayedLottie
-            delayMs={400}
-            animationData={widget2}
-            loop={false}
-            style={{ width: '320px', height: 'auto' }}
-            className="absolute top-[290px] right-[365px] z-10"
-          />
-          <DelayedLottie
-            delayMs={800}
-            animationData={widget3}
-            loop={false}
-            style={{ width: '320px', height: 'auto' }}
-            className="absolute bottom-[0px] right-[300px] z-40"
-          />
-          <DelayedLottie
-            delayMs={1200}
-            animationData={widget4}
-            loop={false}
-            style={{ width: '320px', height: 'auto' }}
-            className="absolute bottom-[0px] right-[-20px] z-40"
-          />
+              src="/images/mobile-hero.png"
+              alt="hand"
+              width={1000}
+              height={1000}
+              className="block md:hidden"
+            />
+          <div className="hidden md:block relative w-full min-h-[330px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-[620px] lg:flex-1">
+            <Image
+              src="/images/hero/hero-hand-4.png"
+              alt="hand"
+              width={1000}
+              height={1000}
+              className="absolute bottom-0 right-0 z-30 h-auto w-[310px] object-contain sm:w-[420px] md:w-[500px] lg:w-[550px]"
+            />
+            <Lottie
+              animationData={widget1}
+              loop={false}
+              autoplay={true}
+              style={{ width: '320px', height: 'auto' }}
+              className="absolute right-[145px] top-[24px] z-30 w-[170px] sm:right-[190px] sm:top-[42px] sm:w-[230px] md:right-[260px] md:top-[70px] md:w-[280px] lg:right-[270px] lg:top-[90px] lg:w-[320px]"
+            />
+            <DelayedLottie
+              delayMs={400}
+              animationData={widget2}
+              loop={false}
+              style={{ width: '320px', height: 'auto' }}
+              className="absolute right-[178px] top-[112px] z-10 w-[160px] sm:right-[255px] sm:top-[175px] sm:w-[220px] md:right-[335px] md:top-[265px] md:w-[260px] lg:right-[365px] lg:top-[290px] lg:w-[320px]"
+            />
+            <DelayedLottie
+              delayMs={800}
+              animationData={widget3}
+              loop={false}
+              style={{ width: '320px', height: 'auto' }}
+              className="absolute bottom-0 right-[165px] z-40 w-[150px] sm:right-[220px] sm:w-[210px] md:right-[275px] md:w-[250px] lg:right-[300px] lg:w-[320px]"
+            />
+            <DelayedLottie
+              delayMs={1200}
+              animationData={widget4}
+              loop={false}
+              style={{ width: '320px', height: 'auto' }}
+              className="absolute bottom-0 right-[-10px] z-40 w-[160px] sm:right-[10px] sm:w-[220px] md:right-[-10px] md:w-[260px] lg:right-[-20px] lg:w-[320px]"
+            />
+          </div>
         </div>
         <Image
           src="/images/hero-lines.svg"
@@ -125,7 +135,7 @@ export function HeroSection() {
           className="absolute top-0 left-0 w-full h-full object-cover mix-blend-overlay z-10 opacity-40"
         />
       </div>
-      <div className="mx-auto mt-3 flex max-w-2xl flex-wrap items-center justify-center gap-x-6 gap-y-2 opacity-70  px-4 py-2 md:justify-between">
+      <div className="mx-auto mt-3 flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2 px-4 py-2 opacity-70 md:justify-between">
         <Image
           src="/images/companies/google-cloud.svg"
           alt="Google Cloud"

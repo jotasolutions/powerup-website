@@ -53,17 +53,17 @@ export function MenuShowcaseSection() {
 
   return (
     <SectionContainer>
-      <div className="space-y-20 text-center">
+      <div className="space-y-10 text-center sm:space-y-14 md:space-y-20">
         <BlurFade inView inViewMargin="-80px">
           <h2 className="section-title">Esta puede ser tu carta</h2>
         </BlurFade>
 
-        <div className="relative w-full">
+        <div className="relative w-full px-2 sm:px-6">
           <button
             type="button"
             aria-label="Slide anterior"
             className={cn(
-              "absolute left-0 top-1/2 z-30 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-slate-100 transition-colors",
+              "absolute left-0 top-1/2 z-30 inline-flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-slate-100 transition-colors sm:size-10",
               selectedItem > firstSlideIndex
                 ? "hover:bg-slate-200"
                 : "pointer-events-none opacity-40"
@@ -77,7 +77,7 @@ export function MenuShowcaseSection() {
             type="button"
             aria-label="Siguiente slide"
             className={cn(
-              "absolute right-0 top-1/2 z-30 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-slate-100 transition-colors",
+              "absolute right-0 top-1/2 z-30 inline-flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-slate-100 transition-colors sm:size-10",
               selectedItem < lastSlideIndex
                 ? "hover:bg-slate-200"
                 : "pointer-events-none opacity-40"
@@ -112,7 +112,7 @@ export function MenuShowcaseSection() {
               }}
             >
               {showcaseItems.map((item, index) => (
-                <div key={`${item.src}-${index}`} className="w-[251px] shrink-0 pb-10">
+                <div key={`${item.src}-${index}`} className="w-[251px] shrink-0 pb-8 sm:pb-10">
                   <div className="relative aspect-[15/32] w-[251px]">
                     {/**
                      * Keep only current and adjacent slides warm to reduce decoding work.
@@ -160,7 +160,7 @@ export function MenuShowcaseSection() {
 
           {showcaseItems[selectedItem] && (
             <Link href={showcaseItems[selectedItem].url} target="_blank">
-              <Button variant="outline">
+              <Button variant="outline" className="mt-3">
                 Ver carta <ExternalLink className="size-4" />
               </Button>
             </Link>

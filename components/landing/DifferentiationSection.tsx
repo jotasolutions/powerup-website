@@ -1,25 +1,12 @@
 "use client"
 
-import { differentiationPillars } from "@/components/landing/section-data"
 import { SectionContainer } from "@/components/landing/SectionContainer"
-import { cn } from "@/lib/utils"
 import { ArrowRight, Brain, Check, CreditCard, PieChart } from "lucide-react"
 import { motion } from "motion/react"
-import Link from "next/link"
 import { CTAButton } from "../CTAButton"
 import Image from "next/image"
 import { Button } from "../ui/button"
 import { BlurFade } from "../ui/blur-fade"
-
-const iconMap = {
-  neuromarketing: Brain,
-  analytics: PieChart,
-} as const
-
-const iconBgClass = {
-  neuromarketing: "bg-[#FFE8DC] text-[#C45C2A]",
-  analytics: "bg-[#FFF4D0] text-[#B8860B]",
-} as const
 
 /** Must match mockup `transition.duration` so the brain scales after the slide ends. */
 const MOCKUP_SLIDE_DURATION_S = 1.2
@@ -28,7 +15,7 @@ export function DifferentiationSection() {
   return (
     <SectionContainer
       id="diferenciacion"
-      className="bg-gradient-to-b from-[#EFF9FF] to-white py-14 md:py-20 relative"
+      className="relative bg-gradient-to-b from-[#EFF9FF] to-white py-12 md:py-20"
     >
       <>
         <Image
@@ -39,9 +26,9 @@ export function DifferentiationSection() {
           className="absolute top-0 left-0 w-full h-full object-cover mix-blend-overlay z-10"
         />
 
-        <div className="rounded-3xl max-w-5xl mx-auto border border-slate-200/80 bg-white p-8  md:p-12 lg:p-14 z-20 relative">
+        <div className="relative z-20 mx-auto max-w-5xl rounded-3xl border border-slate-200/80 bg-white p-5 sm:p-7 md:p-10 lg:p-14">
           <div className="mx-auto max-w-3xl space-y-4 text-center">
-            <div className="relative h-56 overflow-hidden -mt-30">
+            <div className="relative -mt-12 h-44 overflow-hidden sm:-mt-16 sm:h-52 md:h-56">
               <motion.div
                 className="absolute bottom-0 left-1/2 mb-2 -translate-x-1/2"
                 initial={{ opacity: 1, y: 200 }}
@@ -54,7 +41,7 @@ export function DifferentiationSection() {
                   alt="Carta digital mockup"
                   width={400}
                   height={400}
-                  className="mx-auto h-auto w-[375px] rounded-xl object-contain"
+                  className="mx-auto h-auto w-[260px] rounded-xl object-contain sm:w-[320px] md:w-[375px]"
                   priority
                 />
               </motion.div>
@@ -76,7 +63,7 @@ export function DifferentiationSection() {
                   alt="Ilustración cerebro"
                   width={130}
                   height={130}
-                  className="mx-auto h-auto w-[100px] object-contain drop-shadow-xl "
+                  className="mx-auto h-auto w-[72px] object-contain drop-shadow-xl sm:w-[90px] md:w-[100px]"
                   priority
                 />
               </motion.div>
@@ -94,7 +81,7 @@ export function DifferentiationSection() {
             </BlurFade>
           </div>
 
-          <div className="mt-12 grid gap-10 md:mt-14 md:grid-cols-2 md:gap-12 lg:gap-16">
+          <div className="mt-10 grid gap-8 sm:mt-12 md:mt-14 md:grid-cols-2 md:gap-10 lg:gap-16">
             <article className="flex flex-col gap-4">
               <BlurFade delay={0.20}>
                 <div
@@ -104,12 +91,12 @@ export function DifferentiationSection() {
                 </div>
               </BlurFade>
               <BlurFade delay={0.25}>
-                <h3 className="text-xl font-medium ">
+                <h3 className="text-lg font-medium sm:text-xl">
                   Neuromarketing
                 </h3>
               </BlurFade>
               <BlurFade delay={0.30}>
-                <p className="text-base leading-relaxed">
+                <p className="text-sm leading-relaxed sm:text-base">
                   Aplicamos principios como efecto ancla, orden estratégico de categorías, nombres descriptivos y resaltado inteligente para <strong className="font-medium">aumentar el ticket medio de forma natural.</strong>
                 </p>
                 <p className="flex items-center gap-2 text-sm text-gray-700">
@@ -118,7 +105,7 @@ export function DifferentiationSection() {
                   </span>
                   Basado en más de 80 estudios científicos
                 </p>
-                <Button className="w-fit mt-4" variant="secondary">
+                <Button className="mt-4 w-fit" variant="secondary">
                   Saber más
                   <ArrowRight className="size-3.5" />
                 </Button>
@@ -133,12 +120,12 @@ export function DifferentiationSection() {
                 </div>
               </BlurFade>
               <BlurFade delay={0.40}>
-                <h3 className="text-xl font-medium ">
+                <h3 className="text-lg font-medium sm:text-xl">
                   Analíticas
                 </h3>
               </BlurFade>
               <BlurFade delay={0.45}>
-                <p className="text-base leading-relaxed">
+                <p className="text-sm leading-relaxed sm:text-base">
                   Medimos qué platos se ven, cuánto tiempo pasan en la carta y qué se ignora. Cada semana recibes un informe con <strong className="font-medium">recomendaciones accionables para mejorar.</strong>
                 </p>
                 <p className="flex items-center gap-2 text-sm text-gray-700">

@@ -212,13 +212,13 @@ export function WebsiteWidgetsMockup() {
   }, [geometry, reduceMotion, widgetRefs])
 
   return (
-    <div ref={containerRef} className="relative mx-auto w-full">
+    <div ref={containerRef} className="relative mx-auto w-full max-w-[620px]">
       <Image
         src="/images/tropico-website-mockup.png"
         alt="Vista previa de la página web tipo linktree para restaurante"
         width={1500}
         height={1500}
-        className="relative z-20 mx-auto h-auto w-full scale-120 object-contain"
+        className="relative z-20 mx-auto h-auto w-full scale-105 object-contain sm:scale-110 lg:scale-120"
         onLoad={measure}
         priority
       />
@@ -228,7 +228,7 @@ export function WebsiteWidgetsMockup() {
           key={w.src}
           ref={widgetRefs[i]}
           className={cn(
-            "absolute z-30 w-[132px] rounded-lg shadow-xl",
+            "absolute z-30 w-[86px] rounded-lg shadow-xl sm:w-[108px] md:w-[132px]",
             w.className,
           )}
           initial={{ rotate: REST_ROTATE_DEG, opacity: 1, x: 0, y: 0 }}
@@ -248,7 +248,7 @@ export function WebsiteWidgetsMockup() {
       {!reduceMotion && (
         <motion.div
           ref={handRef}
-          className="pointer-events-none absolute left-0 top-0 z-40 w-[36px] -translate-x-1/2 -translate-y-1/2"
+          className="pointer-events-none absolute left-0 top-0 z-40 w-[28px] -translate-x-1/2 -translate-y-1/2 sm:w-[32px] md:w-[36px]"
           initial={false}
           style={{
             left: 0,

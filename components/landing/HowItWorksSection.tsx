@@ -80,7 +80,7 @@ export function HowItWorksSection() {
 
   return (
     <SectionContainer>
-      <div className="space-y-10">
+      <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
             <h2 className="section-title">Empezar es muy facil</h2>
@@ -91,13 +91,13 @@ export function HowItWorksSection() {
             </p>
           </BlurFade>
         </div>
-        <div className="flex flex-row justify-between gap-12 relative">
-          <HiwVectorLine className="pointer-events-none absolute -top-24 left-[2%] h-full w-[80%]" />
+        <div className="relative flex flex-col gap-10 md:flex-row md:justify-between md:gap-8 lg:gap-12">
+          <HiwVectorLine className="pointer-events-none absolute -top-24 left-[2%] hidden h-full w-[80%] md:block" />
           {steps.map((item, index) => (
-            <article key={item.title} className="space-y-4 w-1/3">
-              <div className="relative h-55">
+            <article key={item.title} className="w-full space-y-4 md:w-1/3">
+              <div className="relative h-[13.75rem] sm:h-[15rem]">
                 <motion.div
-                  className={`absolute text-xl font-heading font-medium w-13 h-13 rounded-full flex items-center justify-center ${item.stepNumerClass}`}
+                  className={`absolute flex size-12 items-center justify-center rounded-full font-heading text-lg font-medium sm:text-xl md:size-[3.25rem] ${item.stepNumerClass}`}
                   initial={prefersReducedMotion ? false : { scale: 0, opacity: 0 }}
                   whileInView={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
                   viewport={revealViewport}
@@ -113,9 +113,9 @@ export function HowItWorksSection() {
                 </motion.div>
                 <Image src={item.image} alt={item.title} width={300} height={300} className={item.imageClass} />
               </div>
-              <div className="space-y-2 pr-2">
+              <div className="space-y-2 pr-1 sm:pr-2">
                 <motion.h3
-                  className="text-xl font-medium text-slate-700"
+                  className="text-lg font-medium text-slate-700 sm:text-xl"
                   initial={prefersReducedMotion ? false : "hidden"}
                   whileInView={prefersReducedMotion ? undefined : "visible"}
                   viewport={revealViewport}
@@ -125,7 +125,7 @@ export function HowItWorksSection() {
                   {item.title}
                 </motion.h3>
                 <motion.p
-                  className="text-base leading-6 text-slate-600"
+                  className="text-sm leading-6 text-slate-600 sm:text-base"
                   initial={prefersReducedMotion ? false : "hidden"}
                   whileInView={prefersReducedMotion ? undefined : "visible"}
                   viewport={revealViewport}

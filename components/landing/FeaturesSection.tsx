@@ -1,7 +1,5 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import {  featuresBento } from "@/components/landing/section-data"
-import { Button } from "@/components/ui/button"
-import { CreditCard, QrCode } from "lucide-react"
 import Link from "next/link"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
@@ -19,12 +17,12 @@ function FeatureCard({
     <article
       className={`flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 rounded-2xl p-2 ${className ?? ""}`}
     >
-      <div className="min-h-[224px] flex-1  md:min-h-[224px] bg-gradient-to-b from-[#F7F7F9] to-[#EFF6FF] rounded-xl border border-slate-100" aria-hidden />
+      <div className="min-h-[180px] flex-1 rounded-xl border border-slate-100 bg-gradient-to-b from-[#F7F7F9] to-[#EFF6FF] sm:min-h-[224px]" aria-hidden />
       <div className="flex flex-1 flex-col gap-1  p-3">
         <h3 className="font-heading text-base font-medium">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed text-slate-600 ">{description}</p>
+        <p className="text-xs leading-relaxed text-slate-600 sm:text-sm">{description}</p>
       </div>
     </article>
   )
@@ -53,7 +51,7 @@ export function FeaturesSection() {
           </BlurFade>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-6 md:gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-6 md:gap-3">
           {topRow.map((item) => (
             <FeatureCard key={item.title} {...item} className="md:col-span-2" />
           ))}

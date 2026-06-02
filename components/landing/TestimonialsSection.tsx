@@ -46,8 +46,8 @@ export function TestimonialsSection() {
     ];
     return (
         <SectionContainer id="testimonials">
-            <div className="grid items-center gap-12 lg:grid-cols-2 ">
-                <div className="space-y-8">
+            <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
+                <div className="space-y-6 md:space-y-8">
                     <BlurFade inView inViewMargin="-80px">
                         <h2 className="section-title">Más de <Highlighter action="circle" color="#FF9800">
                             <span className="font-medium text-[#50B27F]">+1500</span>
@@ -58,10 +58,10 @@ export function TestimonialsSection() {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra quis felis condimentum volutpat.
                         </p>
                     </BlurFade>
-                    <div className="grid gap-4 grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div className="space-y-2">
                             <p className="text-gray-800">Tripadvisor</p>
-                            <div className="flex items-center gap-2 font-heading text-2xl font-medium">
+                            <div className="flex items-center gap-2 font-heading text-xl font-medium sm:text-2xl">
                                 <div>4.4</div>
                                 <Image src="/images/excellent-stars.png" alt="Tripadvisor" width={500} height={500} className="w-[112px] h-auto object-contain" />
                             </div>
@@ -69,7 +69,7 @@ export function TestimonialsSection() {
                         </div>
                         <div className="space-y-4">
                             <p className="text-gray-800">Google Maps</p>
-                            <div className="flex items-center gap-3 font-heading text-2xl font-medium">
+                            <div className="flex items-center gap-3 font-heading text-xl font-medium sm:text-2xl">
                                 <div>4.2</div>
                                 <div className="flex gap-0.5">
                                     {[...Array(5)].map((_, i) => (
@@ -80,7 +80,9 @@ export function TestimonialsSection() {
 
                         </div>
                     </div>
-                    <CTAButton />
+                    <div className="w-full sm:w-auto">
+                        <CTAButton />
+                    </div>
                 </div>
                 <div>
                     <Carousel
@@ -124,16 +126,16 @@ export function TestimonialsSection() {
                         )}
                     >
                         {testimonials.map((testimonial, key) => (
-                            <div className="space-y-4 text-left pb-12" key={key}>
+                            <div className="space-y-4 pb-12 text-left" key={key}>
                                 <div className="relative">
-                                    <Image src={testimonial.bgImage} alt={testimonial.place} width={1000} height={1000} className="w-full h-[200px] object-cover rounded-2xl rest-image" />
-                                    <Image src={testimonial.logo} alt={testimonial.place} width={100} height={100} className="w-[80px] h-[80px] object-cover rounded-lg absolute bottom-3 left-3" />
+                                    <Image src={testimonial.bgImage} alt={testimonial.place} width={1000} height={1000} className="rest-image h-[180px] w-full rounded-2xl object-cover sm:h-[200px]" />
+                                    <Image src={testimonial.logo} alt={testimonial.place} width={100} height={100} className="absolute bottom-3 left-3 h-[64px] w-[64px] rounded-lg object-cover sm:h-[80px] sm:w-[80px]" />
                                 </div>
                                 {testimonial.extraContent}
-                                <p className="text-lg font-medium">&ldquo;{testimonial.review}&rdquo;</p>
-                                <div className="flex items-center justify-between">
+                                <p className="text-base font-medium sm:text-lg">&ldquo;{testimonial.review}&rdquo;</p>
+                                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                     <div className="flex items-center gap-4">
-                                        <Image src={testimonial.userImage} alt={testimonial.userName} width={100} height={100} className="w-[50px] h-[50px] object-cover rounded-full" />
+                                        <Image src={testimonial.userImage} alt={testimonial.userName} width={100} height={100} className="h-[44px] w-[44px] rounded-full object-cover sm:h-[50px] sm:w-[50px]" />
                                         <div>
                                             <p className="font-medium">{testimonial.userName}</p>
                                             <p className="text-gray-500 text-sm">{testimonial.place}</p>

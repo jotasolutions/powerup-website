@@ -39,7 +39,7 @@ export default function ScrollRevealParagraph({
   });
 
   const words = paragraph.split(" ");
-  const paragraphClasses = `text-3xl font-heading leading-relaxed font-medium ${className}`;
+  const paragraphClasses = `text-2xl md:text-3xl font-heading leading-relaxed font-medium ${className}`;
   const clampedRevealProgress = Math.min(Math.max(revealProgress, 0.1), 1);
   const clampedRevealStart = Math.min(Math.max(revealStart, 0), 0.95);
   const delayedProgress = useTransform(
@@ -73,7 +73,7 @@ export default function ScrollRevealParagraph({
             alt="Ticket medio widget"
             width={800}
             height={800}
-            className="h-auto w-[145px] md:w-[210px] rounded-xl border-green-50 border-4"
+            className="hidden md:block h-auto w-[145px] md:w-[210px] rounded-xl border-green-50 border-4"
           />
         </motion.div>
         <motion.div
@@ -85,7 +85,7 @@ export default function ScrollRevealParagraph({
             alt="Ticket medio widget"
             width={800}
             height={800}
-            className="h-auto w-[145px] md:w-[100px] rounded-xl border-gray-50 border-4"
+            className="hidden md:block h-auto w-[145px] md:w-[100px] rounded-xl border-gray-50 border-4"
           />
         </motion.div>
         <motion.div
@@ -97,12 +97,12 @@ export default function ScrollRevealParagraph({
             alt="Ticket medio widget"
             width={800}
             height={800}
-            className="h-auto w-[250px] rounded-xl border-gray-50 border-4"
+            className="hidden md:block h-auto w-[250px] rounded-xl border-gray-50 border-4"
           />
         </motion.div>
         <motion.svg
           viewBox="0 0 168 68"
-          className="absolute top-1/3 right-0 h-auto w-[150px] -translate-y-1/2"
+          className="hidden md:block absolute top-1/3 right-0 h-auto w-[150px] -translate-y-1/2"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden

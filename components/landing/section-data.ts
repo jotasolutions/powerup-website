@@ -99,24 +99,24 @@ export const steps = [
     description:
       "Elige tu restaurante desde Google Maps o indica si es un restaurante nuevo.",
     image: "/images/hiw-step-1.png",
-    imageClass: "object-contain absolute -left-16 -bottom-24 w-[320px] h-auto",
-    stepNumerClass: "left-1/4 top-5 bg-[#C6E9FC] border border-4 border-[#ECF8FE]",
+    imageClass: "absolute bottom-0 left-1/2 h-auto w-[220px] -translate-x-1/2 object-contain sm:w-[270px] md:-bottom-24 md:-left-16 md:w-[320px] md:translate-x-0",
+    stepNumerClass: "left-[18%] top-5 border border-4 border-[#ECF8FE] bg-[#C6E9FC] sm:left-1/4",
   },
   {
     title: "Sube tu carta actual",
     description:
       "Envíala como PDF, fotos o desde otros proveedores y nosotros la convertimos.",
     image: "/images/hiw-step-2.png",
-    imageClass: "object-contain absolute -left-18 -bottom-34 w-[300px] h-auto",
-    stepNumerClass: "right-1/4 top-1/3 bg-[#C5F5F7] border border-4 border-[#ECFCFC]",
+    imageClass: "absolute bottom-0 left-1/2 h-auto w-[210px] -translate-x-1/2 object-contain sm:w-[250px] md:-bottom-[8.5rem] md:-left-[4.5rem] md:w-[300px] md:translate-x-0",
+    stepNumerClass: "right-[18%] top-1/3 border border-4 border-[#ECFCFC] bg-[#C5F5F7] sm:right-1/4",
   },
   {
     title: "Publica y optimiza",
     description:
       "Lanza tu carta digital y aplica recomendaciones para vender más desde el primer día.",
     image: "/images/hiw-step-3.png",
-    imageClass: "object-contain relative w-full h-auto scale-110 absolute -bottom-8 -left-10",
-    stepNumerClass: "left-1/6 top-4 bg-[#BCF5EE] border border-4 border-[#ECFCFC]",
+    imageClass: "absolute bottom-0 left-1/2 h-auto w-[220px] -translate-x-1/2 scale-105 object-contain sm:w-[260px] md:-bottom-8 md:-left-10 md:w-full md:translate-x-0 md:scale-110",
+    stepNumerClass: "left-[12%] top-4 border border-4 border-[#ECFCFC] bg-[#BCF5EE] sm:left-1/6",
   },
 ]
 

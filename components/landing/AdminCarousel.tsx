@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -61,11 +60,8 @@ export function AdminCarousel({ slides }: AdminCarouselProps) {
           </button>
         )}
       >
-        {slides.map((slide, index) => (
-          <div
-            key={slide.src}
-            className="px-[5rem] py-8 space-y-4"
-          >
+        {slides.map((slide) => (
+          <div key={slide.src} className="space-y-4 px-2 py-6 sm:px-10 md:px-[5rem] md:py-8">
             <h3 className="text-base font-medium text-slate-900">{slide.title}</h3>
             <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-xl ">
              

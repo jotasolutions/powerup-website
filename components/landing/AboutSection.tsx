@@ -16,7 +16,7 @@ const aboutImageViewport = {
 export function AboutSection() {
   return (
     <SectionContainer >
-      <div className="grid gap-13 md:grid-cols-2 md:items-center">
+      <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
         <div className="space-y-4 col-span-1">
           <BlurFade inView inViewMargin="-80px">
             <h2 className="section-title">
@@ -40,7 +40,7 @@ export function AboutSection() {
           </BlurFade>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-row  justify-center gap-5" >
+          <div className="flex flex-row justify-center gap-4 sm:gap-5" >
             <motion.div
               className=""
               initial={{ rotate: 7, bottom: -50, opacity: 0, left: 50, scale: 0.5 }}
@@ -51,7 +51,7 @@ export function AboutSection() {
                 ease: [0.7, -0.6, 0.32, 1.6]
               }}
             >
-              <Image src="/images/about-fede.png" alt="about 1" width={170} height={170} className="bg-slate-200 w-[170px] aspect-square object-cover rounded-2xl -rotate-7 shadow-2xl" />
+              <Image src="/images/about-fede.png" alt="about 1" width={170} height={170} className="aspect-square w-[128px] -rotate-7 rounded-2xl bg-slate-200 object-cover shadow-2xl sm:w-[170px]" />
             </motion.div>
             <motion.div
               initial={{ y: 10, opacity: 0, filter: `blur(6px)` }}
@@ -65,13 +65,13 @@ export function AboutSection() {
               }}
             >
 
-              <div className="mt-5">
+              <div className="mt-2 sm:mt-5">
                 <div className="font-medium">Federico Bello</div>
                 <div className="text-sm text-slate-800">Director</div>
               </div>
             </motion.div>
           </div>
-          <div className="flex flex-row  justify-end gap-5" >
+          <div className="flex flex-row justify-end gap-4 sm:gap-5" >
             <motion.div
               initial={{ y: 10, opacity: 0, filter: `blur(6px)` }}
               whileInView={{ y: -6, opacity: 1, filter: `blur(0px)` }}
@@ -84,7 +84,7 @@ export function AboutSection() {
               }}
             >
 
-              <div className="flex flex-col items-end mt-8">
+              <div className="mt-6 flex flex-col items-end sm:mt-8">
                 <div className="font-medium">Dani jimenez</div>
                 <div className="text-sm text-slate-800">Tecnologia</div>
               </div>
@@ -100,10 +100,10 @@ export function AboutSection() {
                 delay: 0.12
               }}
             >
-              <Image src="/images/about-dani.png" alt="about 1" width={170} height={170} className="bg-slate-200 w-[170px] aspect-square object-cover rounded-2xl shadow-2xl " />
+              <Image src="/images/about-dani.png" alt="about 1" width={170} height={170} className="aspect-square w-[128px] rounded-2xl bg-slate-200 object-cover shadow-2xl sm:w-[170px]" />
             </motion.div>
           </div>
-          <div className="flex flex-row  justify-start gap-5 items-end pl-8 -mt-13" >
+          <div className="-mt-6 flex flex-row items-end justify-start gap-4 pl-4 sm:-mt-8 sm:gap-5 sm:pl-8" >
             <motion.div
               className=""
               initial={{ rotate: 7, bottom: -50, opacity: 0, left: 50, scale: 0.5 }}
@@ -115,7 +115,7 @@ export function AboutSection() {
                 delay: 0.24
               }}
             >
-              <Image src="/images/about-jordi.png" alt="about 1" width={170} height={170} className="bg-slate-200 w-[170px] aspect-square object-cover rounded-2xl shadow-2xl" />
+              <Image src="/images/about-jordi.png" alt="about 1" width={170} height={170} className="aspect-square w-[128px] rounded-2xl bg-slate-200 object-cover shadow-2xl sm:w-[170px]" />
             </motion.div>
             <motion.div
               initial={{ y: 10, opacity: 0, filter: `blur(6px)` }}

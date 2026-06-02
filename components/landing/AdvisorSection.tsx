@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowBigDown, BadgeCheck, RotateCw } from "lucide-react";
+import { BadgeCheck, RotateCw } from "lucide-react";
 import { motion } from "motion/react";
 import { AdvisorWidget } from "../AdvisorWidget";
 import { SectionContainer } from "./SectionContainer";
@@ -31,14 +31,14 @@ export function AdvisorSection() {
         <SectionContainer
             id="advisor"
         >
-            <div className="mx-auto max-w-5xl items-center space-y-3 bg-gradient-to-b from-[#F0FEE2] to-[#E2FEE2] rounded-3xl border border-[#D0F6EA] p-12 flex flex-row gap-12">
+            <div className="mx-auto flex max-w-5xl flex-col gap-8 rounded-3xl border border-[#D0F6EA] bg-gradient-to-b from-[#F0FEE2] to-[#E2FEE2] p-5 sm:p-8 md:p-10 lg:flex-row lg:items-center lg:gap-12 lg:p-12">
 
-                <div className="flex-1 space-y-7">
-                    <div className="h-[130px] w-full relative">
+                <div className="flex-1 space-y-6 lg:space-y-7">
+                    <div className="relative h-[110px] w-full sm:h-[130px]">
                         <motion.div
-                            className="absolute z-20   w-[214px] origin-bottom-left"
+                            className="absolute z-20 w-[150px] origin-bottom-left sm:w-[214px]"
                             initial={{ rotate: 0, bottom: -50, opacity: 0, left: 50, scale: 0.8 }}
-                            whileInView={{ rotate: -10, bottom: 10, opacity: 1, left: 20, scale: 1 }}
+                            whileInView={{ rotate: -10, bottom: 6, opacity: 1, left: 8, scale: 1 }}
                             viewport={advisorImageViewport}
                             transition={{
                                 duration: 0.5,
@@ -54,9 +54,9 @@ export function AdvisorSection() {
                             />
                         </motion.div>
                         <motion.div
-                            className="absolute z-10  w-[280px] origin-bottom-right"
+                            className="absolute z-10 w-[200px] origin-bottom-right sm:w-[280px]"
                             initial={{ rotate: 0, opacity: 0, bottom: -50, right: 70, scale: 0.8 }}
-                            whileInView={{ rotate: 6, opacity: 1, bottom: 0, right: 40, scale: 1 }}
+                            whileInView={{ rotate: 6, opacity: 1, bottom: -2, right: 6, scale: 1 }}
                             viewport={advisorImageViewport}
                             transition={{
                                 delay: 0.12,
@@ -74,7 +74,7 @@ export function AdvisorSection() {
                         </motion.div>
                     </div>
                     <div className=" space-y-3">
-                        <h3 className="font-heading font-medium text-3xl plus-darker opacity-65">Evalua tu carta GRATIS</h3>
+                        <h3 className="plus-darker font-heading text-2xl font-medium opacity-65 sm:text-3xl">Evalua tu carta GRATIS</h3>
                         <p className="plus-darker opacity-65">Recibe un análisis completo con sugerencias prácticas y <strong className="font-semibold">recomendaciones a medida para aumentar tus ventas hasta un 30%.</strong> Como lo haría un experto.</p>
                     </div>
                     {checkItems.map((checkItem, index) => (
@@ -87,7 +87,9 @@ export function AdvisorSection() {
                         </div>
                     ))}
                 </div>
-                <AdvisorWidget />
+                <div className="w-full lg:w-auto">
+                    <AdvisorWidget />
+                </div>
 
             </div>
         </SectionContainer>

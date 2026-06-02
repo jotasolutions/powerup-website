@@ -12,7 +12,7 @@ export function FaqSection() {
       <BlurFade inView inViewMargin="-80px">
         <h2 className="section-title">Te estaras preguntando</h2>
       </BlurFade>
-      <div className="flex flex-row mt-8 gap-12">
+      <div className="mt-8 flex flex-col gap-8 md:flex-row md:gap-10 lg:gap-12">
         <aside className="flex-1">
           <Accordion  >
             {faqs.map((question, index) => (
@@ -25,13 +25,13 @@ export function FaqSection() {
             ))}
           </Accordion>
         </aside>
-        <aside className="h-fit w-full md:w-[380px] rounded-2xl border border-slate-200 p-6 space-y-6">
+        <aside className="h-fit w-full rounded-2xl border border-slate-200 p-5 space-y-5 sm:p-6 md:w-[320px] lg:w-[380px] md:space-y-6">
           <div className="flex size-16 shrink-0 items-center justify-center rounded-xl text-white bg-[#D6FFC3] border border-3 border-[#E6FFEB]">
             <MessagesSquare className="text-[#479E3B] size-8" />
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-slate-900">¿Sigues con dudas?</h3>
-            <p className="text-base leading-6 text-slate-600">
+            <h3 className="text-lg font-semibold text-slate-900 sm:text-xl">¿Sigues con dudas?</h3>
+            <p className="text-sm leading-6 text-slate-600 sm:text-base">
               Nuestro equipo respondera todas tus preguntas en un momento.
             </p>
           </div>

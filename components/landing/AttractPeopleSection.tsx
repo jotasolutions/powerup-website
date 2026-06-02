@@ -59,7 +59,7 @@ function AttractCard({
     <article className="space-y-4">
       <motion.div
         ref={cardRef}
-        className="h-63 overflow-hidden rounded-2xl bg-gradient-to-b from-[#F0FFF5] to-[#CBFFDC] relative"
+        className="relative h-[15.75rem] overflow-hidden rounded-2xl bg-gradient-to-b from-[#F0FFF5] to-[#CBFFDC] sm:h-[16.75rem]"
         initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
         whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={revealViewport}
@@ -72,7 +72,7 @@ function AttractCard({
           loop={false}
           autoplay={false}
           className="z-20 relative"
-          style={{ width: '338px', height: 'auto' }}
+          style={{ width: '100%', height: 'auto' }}
         />
         <Image
           src="/images/cercles.svg"
@@ -82,9 +82,9 @@ function AttractCard({
           className="absolute top-1/4 left-0 w-full h-full object-cover mix-blend-overlay z-10 scale-150 opacity-90"
         />
       </motion.div>
-      <div className="space-y-2 pr-2">
+      <div className="space-y-2 pr-1 sm:pr-2">
         <motion.h3
-          className="text-xl font-medium text-slate-700"
+          className="text-lg font-medium text-slate-700 sm:text-xl"
           initial={prefersReducedMotion ? false : "hidden"}
           whileInView={prefersReducedMotion ? undefined : "visible"}
           viewport={revealViewport}
@@ -94,7 +94,7 @@ function AttractCard({
           {title}
         </motion.h3>
         <motion.p
-          className="text-base leading-6 text-slate-600"
+          className="text-sm leading-6 text-slate-600 sm:text-base"
           initial={prefersReducedMotion ? false : "hidden"}
           whileInView={prefersReducedMotion ? undefined : "visible"}
           viewport={revealViewport}
@@ -113,7 +113,7 @@ export function AttractPeopleSection() {
 
   return (
     <SectionContainer>
-      <div className="space-y-10">
+      <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
             <h2 className="section-title">Atrae a mas gente</h2>
@@ -124,7 +124,7 @@ export function AttractPeopleSection() {
             </p>
           </BlurFade>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {attractFeatures.map((item, index) => (
             <AttractCard
               key={item.title}
