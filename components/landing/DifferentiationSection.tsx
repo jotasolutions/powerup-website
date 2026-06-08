@@ -96,19 +96,21 @@ export function DifferentiationSection() {
                 </h3>
               </BlurFade>
               <BlurFade delay={0.30}>
-                <p className="text-sm leading-relaxed sm:text-base">
-                  Aplicamos principios como efecto ancla, orden estratégico de categorías, nombres descriptivos y resaltado inteligente para <strong className="font-medium">aumentar el ticket medio de forma natural.</strong>
-                </p>
-                <p className="flex items-center gap-2 text-sm text-gray-700">
-                  <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
-                    <Check className="size-2.5" strokeWidth={4} aria-hidden />
-                  </span>
-                  Basado en más de 80 estudios científicos
-                </p>
-                <Button className="mt-4 w-fit" variant="secondary">
-                  Saber más
-                  <ArrowRight className="size-3.5" />
-                </Button>
+                <div className="flex flex-col gap-2">
+                  <p className="text-sm leading-relaxed sm:text-base">
+                    Aplicamos principios como efecto ancla, orden estratégico de categorías, nombres descriptivos y resaltado inteligente para <strong className="font-medium">aumentar el ticket medio de forma natural.</strong>
+                  </p>
+                  <p className="flex items-center gap-2 text-sm text-gray-700">
+                    <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
+                      <Check className="size-2.5" strokeWidth={4} aria-hidden />
+                    </span>
+                    Basado en más de 80 estudios científicos
+                  </p>
+                  <Button className="mt-4 w-fit" variant="secondary">
+                    Saber más
+                    <ArrowRight className="size-3.5" />
+                  </Button>
+                </div>
               </BlurFade>
             </article>
             <article className="flex flex-col gap-4">
@@ -125,35 +127,37 @@ export function DifferentiationSection() {
                 </h3>
               </BlurFade>
               <BlurFade delay={0.45}>
-                <p className="text-sm leading-relaxed sm:text-base">
-                  Medimos qué platos se ven, cuánto tiempo pasan en la carta y qué se ignora. Cada semana recibes un informe con <strong className="font-medium">recomendaciones accionables para mejorar.</strong>
-                </p>
-                <p className="flex items-center gap-2 text-sm text-gray-700">
-                  <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
-                    <Check className="size-2.5" strokeWidth={4} aria-hidden />
-                  </span>
-                  Métricas claras y sin configuración técnica
-                </p>
-                <Button className="w-fit mt-4" variant="secondary">
-                  Saber más
-                  <ArrowRight className="size-3.5" />
-                </Button>
+                <div className="flex flex-col gap-2">
+                  <p className="text-sm leading-relaxed sm:text-base">
+                    Medimos qué platos se ven, cuánto tiempo pasan en la carta y qué se ignora. Cada semana recibes un informe con <strong className="font-medium">recomendaciones accionables para mejorar.</strong>
+                  </p>
+                  <p className="flex items-center gap-2 text-sm text-gray-700">
+                    <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
+                      <Check className="size-2.5" strokeWidth={4} aria-hidden />
+                    </span>
+                    Métricas claras y sin configuración técnica
+                  </p>
+                  <Button className="w-fit mt-4" variant="secondary">
+                    Saber más
+                    <ArrowRight className="size-3.5" />
+                  </Button>
+                </div>
               </BlurFade>
             </article>
           </div>
           <BlurFade delay={0.50}>
-          <div className="mt-12 flex flex-col items-center gap-3 md:mt-14">
-            <CTAButton />
-            <p className="flex items-center gap-2 text-sm text-slate-500">
-              <span className="relative inline-flex shrink-0 text-slate-400" aria-hidden>
-                <CreditCard className="size-4" />
-                <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                  <span className="h-px w-[130%] rotate-45 bg-current opacity-70" />
+            <div className="mt-12 flex flex-col items-center gap-3 md:mt-14">
+              <CTAButton />
+              <p className="flex items-center gap-2 text-sm text-slate-500">
+                <span className="relative inline-flex shrink-0 text-slate-400" aria-hidden>
+                  <CreditCard className="size-4" />
+                  <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                    <span className="h-px w-[130%] rotate-45 bg-current opacity-70" />
+                  </span>
                 </span>
-              </span>
-              No requiere tarjeta
-            </p>
-          </div>
+                No requiere tarjeta
+              </p>
+            </div>
           </BlurFade>
         </div>
       </>

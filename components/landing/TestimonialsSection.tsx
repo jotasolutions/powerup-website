@@ -24,24 +24,34 @@ export function TestimonialsSection() {
             extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">x1,2</span> Facturacion en 6 meses</div>
         },
         {
-            bgImage: "/images/testimonials/marisa/bgimage.png",
-            logo: "/images/testimonials/marisa/logo.png",
-            place: "La Taberna Casera",
-            review: "La mejor carta digital que he probado. Me ha ayudado a vender más y a mejorar mi restaurante.",
-            link: "https://www.google.com/maps/place/?cid=1234567890",
+            bgImage: "/images/testimonials/trattoria/bgimage.png",
+            logo: "/images/testimonials/trattoria/logo.webp",
+            place: "Trattoria Piemontese",
+            review: "Un día miré las analíticas y había gente entrando desde ChatGPT. Ahora, si alguien pregunta dónde comer comida piemontesa por la zona, aparezco yo con la carta actualizada al día.",
+            link: "https://carta.powerup.menu/trattoria-piemontese/categories",
             userImage: "/images/testimonials/marisa/marisa.png",
-            userName: "Jose Luis",
-            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">x1,2</span> Facturacion en 6 meses</div>
+            userName: "Paolo",
+            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">Recibe visitas de ChatGPT</span>— lo ve en sus analíticas</div>
         },
         {
             bgImage: "/images/testimonials/goyos/bgimage.png",
             logo: "/images/testimonials/goyos/logo.png",
-            place: "Goyos",
-            review: "La mejor carta digital que he probado. Me ha ayudado a vender más y a mejorar mi restaurante.",
+            place: "Spaccanapoli",
+            review: "Cambiar un precio o quitar un plato era llamar a la imprenta y esperar días. Ahora lo hago desde el móvil en diez segundos, las veces que haga falta.",
+            link: "https://www.google.com/maps/place/?cid=1234567890",
+            userImage: "/images/testimonials/marisa/marisa.png",
+            userName: "Dario",
+            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">+9.000 cambios</span> sin visitas a la imprenta</div>
+        },
+        {
+            bgImage: "/images/testimonials/goyos/bgimage.png",
+            logo: "/images/testimonials/goyos/logo.png",
+            place: "Restaurante Goyos",
+            review: "Aquí viene mucho extranjero. Con la carta en su idioma y una buena foto en cada plato, ya no tengo que explicar nada: ven la brasa o el arroz, lo señalan y lo piden. Antes muchos se quedaban con la duda y pedían lo de siempre.",
             link: "https://www.google.com/maps/place/?cid=1234567890",
             userImage: "/images/testimonials/marisa/marisa.png",
             userName: "Arturo",
-            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">x1,2</span> Facturacion en 6 meses</div>
+            extraContent: <div className="text-lg font-medium text-gray-400">Carta traducida y con foto en cada plato</div>
         }
     ];
     return (
@@ -127,15 +137,19 @@ export function TestimonialsSection() {
                     >
                         {testimonials.map((testimonial, key) => (
                             <div className="space-y-4 pb-12 text-left" key={key}>
-                                <div className="relative">
+                                <div className="relative w-full h-[180px] sm:h-[200px]">
                                     <Image src={testimonial.bgImage} alt={testimonial.place} width={1000} height={1000} className="rest-image h-[180px] w-full rounded-2xl object-cover sm:h-[200px]" />
-                                    <Image src={testimonial.logo} alt={testimonial.place} width={100} height={100} className="absolute bottom-3 left-3 h-[64px] w-[64px] rounded-lg object-cover sm:h-[80px] sm:w-[80px]" />
+                                    <div className="absolute bottom-3 left-3 h-[64px] w-[64px] overflow-hidden rounded-lg sm:h-[80px] sm:w-[80px]">
+                                        <Image src={testimonial.logo} alt={testimonial.place} width={100} height={100} className="carousel-contained-image object-cover" />
+                                    </div>
                                 </div>
                                 {testimonial.extraContent}
                                 <p className="text-base font-medium sm:text-lg">&ldquo;{testimonial.review}&rdquo;</p>
                                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                     <div className="flex items-center gap-4">
-                                        <Image src={testimonial.userImage} alt={testimonial.userName} width={100} height={100} className="h-[44px] w-[44px] rounded-full object-cover sm:h-[50px] sm:w-[50px]" />
+                                        <div className="h-[44px] w-[44px] shrink-0 overflow-hidden rounded-full sm:h-[50px] sm:w-[50px]">
+                                            <Image src={testimonial.userImage} alt={testimonial.userName} width={100} height={100} className="carousel-contained-image object-cover" />
+                                        </div>
                                         <div>
                                             <p className="font-medium">{testimonial.userName}</p>
                                             <p className="text-gray-500 text-sm">{testimonial.place}</p>
