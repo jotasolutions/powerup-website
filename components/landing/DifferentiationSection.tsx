@@ -96,7 +96,7 @@ export function DifferentiationSection() {
                 </h3>
               </BlurFade>
               <BlurFade delay={0.30}>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
                   <p className="text-sm leading-relaxed sm:text-base">
                     Aplicamos principios como efecto ancla, orden estratégico de categorías, nombres descriptivos y resaltado inteligente para <strong className="font-medium">aumentar el ticket medio de forma natural.</strong>
                   </p>
@@ -127,7 +127,7 @@ export function DifferentiationSection() {
                 </h3>
               </BlurFade>
               <BlurFade delay={0.45}>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
                   <p className="text-sm leading-relaxed sm:text-base">
                     Medimos qué platos se ven, cuánto tiempo pasan en la carta y qué se ignora. Cada semana recibes un informe con <strong className="font-medium">recomendaciones accionables para mejorar.</strong>
                   </p>

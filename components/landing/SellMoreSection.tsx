@@ -60,7 +60,7 @@ function SellMoreCard({
     <article className="space-y-4">
       <motion.div
         ref={cardRef}
-        className="relative h-[15.75rem] overflow-hidden rounded-2xl bg-gradient-to-b from-[#ECF8FF] to-[#C1EAFF] sm:h-[16.75rem]"
+        className="relative h-[258px overflow-hidden rounded-2xl bg-gradient-to-b from-[#ECF8FF] to-[#C1EAFF] sm:h-[258px]"
         initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
         whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={revealViewport}

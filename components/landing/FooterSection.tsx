@@ -8,7 +8,7 @@ export function FooterSection() {
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-4 border-b border-solid border-[#CFF5FF] pb-8 border-b-2">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="section-title max-w-2xl">
+            <h2 className="max-w-xl text-2xl font-medium max-w-md">
               La carta es la palanca mas potente para impulsar las ventas de los restaurantes
             </h2>
           </BlurFade>
