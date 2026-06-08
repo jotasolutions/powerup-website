@@ -80,7 +80,7 @@ export function AnimatedTabs({
         aria-hidden
       />
 
-      <div className="relative z-10 flex items-center gap-1">
+      <div className="relative z-10 flex items-center gap-1 w-full">
         {tabs.map((tab, index) => {
           const tabValue = tab.value ?? tab.label
           const isActive = tabValue === activeValue
@@ -88,12 +88,13 @@ export function AnimatedTabs({
           return (
             <button
               key={tabValue}
+              type="button"
               ref={(el) => {
                 tabRefs.current[index] = el
               }}
               onClick={() => handleChange(tabValue)}
               className={cn(
-                "h-8 rounded-full px-4 text-sm font-medium transition-colors hover:cursor-pointer",
+                "h-8 rounded-full px-4 text-sm font-medium transition-colors flex-1 hover:cursor-pointer",
                 isActive ? "text-slate-900" : "plus-darker opacity-70 text-slate-900"
               )}
             >

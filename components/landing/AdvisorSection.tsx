@@ -87,7 +87,7 @@ export function AdvisorSection() {
                         </div>
                     ))}
                 </div>
-                <div className="w-full lg:w-auto">
+                <div className="w-full lg:flex-1 flex justify-end">
                     <AdvisorWidget />
                 </div>
 

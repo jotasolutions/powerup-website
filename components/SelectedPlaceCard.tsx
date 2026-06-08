@@ -11,10 +11,10 @@ function SelectedPlaceCard({place, onRemove}: { place: Place, onRemove?: any }) 
     }
     return (
         <div
-            className="flex gap-10 justify-between items-start p-2  w-full rounded-xl bg-slate-50 border border-slate-200">
+            className="flex gap-2 justify-between items-start p-2  w-full rounded-xl bg-slate-50 border border-slate-200">
             <div className="flex gap-4 flex-row">
                 <img loading="lazy" src={place.photoUrl} alt={`${place.name} restaurant`}
-                     className="object-cover self-stretch rounded-lg aspect-square w-[70px] h-[70px] bg-slate-200 "/>
+                     className="object-cover self-stretch rounded-lg aspect-square w-[50px] h-[50px] bg-slate-200 "/>
                 <div className="flex flex-col">
                     <div className="font-medium text-sm text-slate-900 dark:text-slate-100">{place.name}</div>
                     <p className="hidden sm:block mt-1 text-slate-700 dark:text-slate-300  text-xs">{place.address} {place.streetNumber}, {place.city}</p>
