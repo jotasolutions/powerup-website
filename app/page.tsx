@@ -16,12 +16,14 @@ import { AdvisorSection } from "@/components/landing/AdvisorSection"
 import { WebsiteSection } from "@/components/landing/WebsiteSection"
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
 import { getPricingDataAction } from "@/app/actions/pricing"
+import { NavMenu } from "@/components/landing/NavMenu"
 
 export default async function Home() {
   const pricingData = await getPricingDataAction()
 
   return (
     <main className="bg-white text-slate-900">
+      <NavMenu />
       <HeroSection />
       <IntroSection />
       <SellMoreSection />

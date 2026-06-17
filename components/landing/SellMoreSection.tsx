@@ -113,7 +113,7 @@ export function SellMoreSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <SectionContainer>
+    <SectionContainer id="vende-mas">
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
