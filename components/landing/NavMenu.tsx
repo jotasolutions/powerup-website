@@ -23,7 +23,7 @@ export function NavMenu() {
   const { scrollY } = useScroll()
   const [isMobileOpen, setIsMobileOpen] = useState(false)
 
-  const maxWidthRaw = useTransform(scrollY, SCROLL_RANGE, [1500, 960])
+  const maxWidthRaw = useTransform(scrollY, SCROLL_RANGE, [1450, 960])
   const borderRadiusRaw = useTransform(scrollY, SCROLL_RANGE, [0, 16])
   const paddingXRaw = useTransform(scrollY, SCROLL_RANGE, [0, 8])
   const shellOpacity = useTransform(scrollY, SCROLL_RANGE, [0, 1])
@@ -46,7 +46,7 @@ export function NavMenu() {
   }, [isMobileOpen])
 
   return (
-    <header className="sticky top-4 z-50 px-2 sm:px-4">
+    <header className="sticky top-4 z-50 px-2 sm:px-4 mb-2">
       <motion.div
         className="relative mx-auto w-full"
         style={{

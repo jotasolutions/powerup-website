@@ -5,6 +5,7 @@ import { MessagesSquare } from "lucide-react"
 import { Button } from "../ui/button"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
+import Image from "next/image"
 
 export function FaqSection() {
   return (
@@ -25,18 +26,20 @@ export function FaqSection() {
             ))}
           </Accordion>
         </aside>
-        <aside className="h-fit w-full rounded-2xl border border-slate-200 p-5 space-y-5 sm:p-6 md:w-[320px] lg:w-[380px] md:space-y-6">
-          <div className="flex size-16 shrink-0 items-center justify-center rounded-xl text-white bg-[#D6FFC3] border border-3 border-[#E6FFEB]">
-            <MessagesSquare className="text-[#479E3B] size-8" />
+        <aside className="h-fit w-full rounded-2xl border border-slate-200 p-4 space-y-4   lg:w-[300px] ">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-lg text-white bg-[#D6FFC3] border border-3 border-[#E6FFEB]">
+            <MessagesSquare className="text-[#479E3B] size-5" />
+            
           </div>
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-slate-900 sm:text-xl">¿Sigues con dudas?</h3>
-            <p className="text-sm leading-6 text-slate-600 sm:text-base">
+            <h3 className="text-dm font-semibold text-slate-900 sm:text-base">¿Sigues con dudas?</h3>
+            <p className="text-sm leading-5 text-slate-600 ">
               Nuestro equipo respondera todas tus preguntas en un momento.
             </p>
           </div>
-          <Button variant="outline" size="lg" className="w-full">
-            Preguntanos
+          <Button variant="outline" className="w-full">
+            <Image src="/images/about-jordi.png" alt="about 1" width={32} height={32} className="rounded-full size-6" />
+            Pregúntanos
           </Button>
         </aside>
       </div>

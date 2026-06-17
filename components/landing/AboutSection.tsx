@@ -31,8 +31,9 @@ export function AboutSection() {
             </p>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.24}>
-            <p className="text-sm font-medium text-slate-700">
-              Startup espanola acelerada por Lanzadera
+            <p className="text-sm font-medium text-black flex items-center gap-2 opacity-60" >
+              <Image src="/images/spain.svg" alt="spain" width={20} height={20} className="size-5" />
+              Startup española acelerada por Lanzadera
             </p>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.36}>
