@@ -61,12 +61,14 @@ export function FeaturesSection() {
         </div>
 
         <div className="flex flex-col items-center gap-6 pt-2">
+          {/*
           <Link
             href="#"
             className="text-base font-medium text-primary transition-colors hover:text-primary/90 hover:underline"
           >
             Ver todas las características →
           </Link>
+          */}
           <div className="flex flex-col items-center gap-3">
             <CTAButton />
             

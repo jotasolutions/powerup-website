@@ -65,34 +65,36 @@ export function TestimonialsSection() {
                     </BlurFade>
                     <BlurFade inView inViewMargin="-80px" delay={0.12}>
                         <p className="section-paragraph">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra quis felis condimentum volutpat.
+                            Una taberna, una trattoria, un asador. Venden más, los encuentran en Google y se olvidaron de la imprenta. Te lo cuentan ellos.
                         </p>
                     </BlurFade>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        <div className="space-y-2">
-                            <p className="text-gray-800">Tripadvisor</p>
-                            <div className="flex items-center gap-2 font-heading text-xl font-medium sm:text-2xl">
-                                <div>4.4</div>
-                                <Image src="/images/excellent-stars.png" alt="Tripadvisor" width={500} height={500} className="w-[112px] h-auto object-contain" />
-                            </div>
-
-                        </div>
-                        <div className="space-y-4">
-                            <p className="text-gray-800">Google Maps</p>
-                            <div className="flex items-center gap-3 font-heading text-xl font-medium sm:text-2xl">
-                                <div>4.2</div>
-                                <div className="flex gap-0.5">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className="size-4 text-yellow-500" fill="currentColor" strokeWidth={1.75} />
-                                    ))}
+                        <Link href="https://www.trustpilot.com/review/powerup.menu" target="_blank">
+                            <div className="space-y-2">
+                                <p className="text-gray-800">Tripadvisor</p>
+                                <div className="flex items-center gap-2 font-heading text-xl font-medium sm:text-2xl">
+                                    <div>4.5</div>
+                                    <Image src="/images/excellent-stars.png" alt="Tripadvisor" width={500} height={500} className="w-[112px] h-auto object-contain" />
                                 </div>
-                            </div>
 
-                        </div>
+                            </div>
+                        </Link>
+                        <Link href="https://maps.app.goo.gl/GphQ9hQkbkkyY6mk9" target="_blank">
+                            <div className="space-y-4">
+                                <p className="text-gray-800">Google Maps</p>
+                                <div className="flex items-center gap-3 font-heading text-xl font-medium sm:text-2xl">
+                                    <div>4.2</div>
+                                    <div className="flex gap-0.5">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star key={i} className="size-4 text-yellow-500" fill="currentColor" strokeWidth={1.75} />
+                                        ))}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </Link>
                     </div>
-                    <div className="w-full sm:w-auto">
-                        <CTAButton />
-                    </div>
+
                 </div>
                 <div>
                     <Carousel
@@ -164,6 +166,9 @@ export function TestimonialsSection() {
                     </Carousel>
 
                 </div>
+            </div>
+            <div className="flex justify-center mt-12">
+                <CTAButton />
             </div>
         </SectionContainer>
     )

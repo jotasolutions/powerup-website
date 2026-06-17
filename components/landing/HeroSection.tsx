@@ -36,7 +36,6 @@ export function HeroSection() {
       <div className="hero-container relative mx-auto w-full overflow-hidden rounded-3xl px-4 pt-6 sm:px-6 sm:pb-0 sm:pt-8 md:px-10 lg:px-14">
 
         <div className="absolute  top-0 w-[700px] h-full z-20 scale-80 -right-10 xl:scale-100 xl:right-0">
-          <BlurFade delay={0.2}>
             <Image
               src="/images/hero/hero-hand-8.png"
               alt="hand"
@@ -44,7 +43,6 @@ export function HeroSection() {
               height={1000}
               className="absolute top-[180px] xl:top-[140px] -right-30 z-30  w-[650px] object-contain "
             />
-          </BlurFade>
           <Lottie
             animationData={widget1}
             loop={false}
@@ -124,7 +122,7 @@ export function HeroSection() {
                   <Image src="/images/testimonials/arau/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
                   <Image src="/images/testimonials/goyos/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
                 </div>
-                <p className="text-2xl font-semibold text-slate-900">4.4</p>
+                <p className="text-2xl font-semibold text-slate-900">4.5</p>
                 <div>
                   <p className="text-xs font-semibold text-slate-700">Excellent</p>
                   <p className="text-xs tracking-wide text-emerald-700">★★★★★</p>

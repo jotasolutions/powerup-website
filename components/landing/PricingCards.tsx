@@ -140,13 +140,14 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
                     </ul>
                   </div>
                 </div>
-
+                {/*
                 <Button
                   variant="outline"
                   className="mt-4 w-full border-slate-300 bg-white text-primary shadow-none hover:bg-slate-50"
                 >
                   Ver todas las características
                 </Button>
+                */}
               </div>
 
               {billing === "annual" && (
@@ -174,13 +175,14 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
                         </ul>
                       </div>
                     </div>
-
+                    {/*
                     <Button
                       variant="outline"
                       className="mt-4 w-full border-slate-300 bg-white text-primary shadow-none hover:bg-slate-50"
                     >
                       Conoce la página web
                     </Button>
+                    */}
                   </div>
                 </>
               )}
@@ -221,19 +223,22 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
                     </ul>
                   </div>
                 </div>
-
+                {/*
                 <Button
                   variant="outline"
                   className="mt-4 w-full border-slate-300 bg-white text-primary shadow-none hover:bg-slate-50"
                 >
                   Ver todas las características
                 </Button>
+                */}
               </div>
             </div>
 
             <CTAButton />
           </article>
+          {/*
           <Button variant="link">Ver las diferencias entre Pro y Free <ArrowRight className="size-4" /></Button>
+          */}
         </div>
       </div>
     </>

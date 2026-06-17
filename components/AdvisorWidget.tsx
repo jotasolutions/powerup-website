@@ -21,7 +21,8 @@ import RegisterGoogleRestForm from "./forms/RegisterGoogleRestForm"
 import FilesInput2, { S3UploadedFile } from "./files-input2"
 import { useState } from "react"
 import { Checkbox } from "./ui/checkbox"
-import { validateWhatsappNumber } from "@/server/actions/WhatsappActions"
+import { Place } from "@/utils/types"
+import { submitAdvisorLeadAction } from "@/app/actions/advisor"
 
 const step1Schema = z.object({
     name: z
@@ -31,7 +32,7 @@ const step1Schema = z.object({
 })
 
 const step2Schema = z.object({
-    email: z.email("Introduce un email válido."),
+    email: z.string().email("Introduce un email válido."),
     phone: z.string().min(9, "Introduce un número de teléfono válido."),
     role: z.enum(["owner", "manager", "other"]),
     acceptTerms: z.boolean().refine((value) => value, {
@@ -40,9 +41,10 @@ const step2Schema = z.object({
 })
 
 export function AdvisorWidget() {
-    const [status, setStatus] = useState<"step1" | "step2" | "submitting" | "success">("step2");
+    const [status, setStatus] = useState<"step1" | "step2" | "submitting" | "success">("step1");
     const [uploadedFiles, setUploadedFiles] = useState<S3UploadedFile[]>([]);
     const [isUploadingFiles, setIsUploadingFiles] = useState(false);
+    const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
     const importerS3Directory = `advisor`;
 
     const step1Form = useForm<z.infer<typeof step1Schema>>({
@@ -62,9 +64,13 @@ export function AdvisorWidget() {
         },
     });
 
-    function onStep1Submit(_values: z.infer<typeof step1Schema>) {
+    function onStep1Submit() {
         if (uploadedFiles.length === 0) {
             toast.error("Sube al menos un archivo antes de continuar.");
+            return;
+        }
+        if (!selectedPlace?.placeId || !selectedPlace.name) {
+            toast.error("Selecciona un restaurante válido antes de continuar.");
             return;
         }
         setStatus("step2");
@@ -75,23 +81,34 @@ export function AdvisorWidget() {
     async function onStep2Submit(values: z.infer<typeof step2Schema>) {
         setStatus("submitting");
         try {
-            await validateWhatsappNumber(values.phone);
+            const actionResult = await submitAdvisorLeadAction({
+                name: step1Form.getValues("name"),
+                email: values.email,
+                phone: values.phone,
+                restaurantName: selectedPlace?.name ?? "",
+                role: values.role,
+                files: uploadedFiles,
+                placeId: selectedPlace?.placeId,
+                imageUrl: selectedPlace?.photoUrl,
+            });
+
+            if (!actionResult.success) {
+                throw new Error(actionResult.error || "advisor_submit_failed");
+            }
+
+            toast.success("Formulario completado", {
+                description: `Gracias ${step1Form.getValues("name")}, te contactaremos pronto.`,
+            });
+            setStatus("success");
         } catch (error) {
-            toast.error("El número ingresado no es un número válido de WhatsApp.");
+            console.log(error);
+            if (error instanceof Error && error.message === "invalid_whatsapp_number") {
+                toast.error("El número ingresado no es un número válido de WhatsApp.");
+            } else {
+                toast.error("No hemos podido enviar tu solicitud. Inténtalo de nuevo.");
+            }
             setStatus("step2");
-            return;
         }
-        toast.success("Formulario completado", {
-            description: `Gracias ${step1Form.getValues("name")}, te contactaremos pronto.`,
-        });
-        console.log("AdvisorWidget payload", {
-            name: step1Form.getValues("name"),
-            email: values.email,
-            phone: values.phone,
-            role: values.role,
-            uploadedFiles,
-        });
-        setStatus("success");
     }
 
     return (
@@ -111,7 +128,7 @@ export function AdvisorWidget() {
                         onUploadedFiles={setUploadedFiles}
                         onUploadingChange={setIsUploadingFiles}
                     />
-                    <RegisterGoogleRestForm onCompleted={(values: unknown) => console.log(values)} />
+                    <RegisterGoogleRestForm onCompleted={setSelectedPlace} />
                     <form id="advisor-step1" onSubmit={step1Form.handleSubmit(onStep1Submit)}>
                         <FieldGroup>
                             <Controller
@@ -196,6 +213,7 @@ export function AdvisorWidget() {
                                         <FieldLabel>Qué rol te define mejor</FieldLabel>
                                         <AnimatedTabs
                                             className="w-full"
+                                            fullWidth
                                             tabs={[
                                                 { label: "Propietario", value: "owner" },
                                                 { label: "Gerente", value: "manager" },
@@ -240,7 +258,7 @@ export function AdvisorWidget() {
             )}
 
             {status === "success" && (
-                <div className="rounded-md border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900">
+                <div className="p-4 text-sm text-emerald-900">
                     Solicitud enviada correctamente. Te contactaremos en breve.
                 </div>
             )}

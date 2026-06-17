@@ -106,10 +106,12 @@ export function DifferentiationSection() {
                     </span>
                     Basado en más de 80 estudios científicos
                   </p>
+                  {/*
                   <Button className="mt-4 w-fit" variant="secondary">
                     Saber más
                     <ArrowRight className="size-3.5" />
                   </Button>
+                  */}
                 </div>
               </BlurFade>
             </article>
@@ -137,10 +139,12 @@ export function DifferentiationSection() {
                     </span>
                     Métricas claras y sin configuración técnica
                   </p>
+                  {/*
                   <Button className="w-fit mt-4" variant="secondary">
                     Saber más
                     <ArrowRight className="size-3.5" />
                   </Button>
+                  */}
                 </div>
               </BlurFade>
             </article>

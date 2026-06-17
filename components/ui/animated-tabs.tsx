@@ -12,6 +12,7 @@ export interface AnimatedTabsProps {
   value?: string
   defaultValue?: string
   onValueChange?: (value: string) => void
+  fullWidth?: boolean
   className?: string
 }
 
@@ -20,6 +21,7 @@ export function AnimatedTabs({
   value,
   defaultValue,
   onValueChange,
+  fullWidth = false,
   className,
 }: AnimatedTabsProps) {
   const fallback = tabs[0]?.value ?? tabs[0]?.label ?? ""
@@ -67,7 +69,8 @@ export function AnimatedTabs({
     <div
       ref={rootRef}
       className={cn(
-        "relative mx-auto inline-flex w-fit items-center rounded-full bg-[#D7EEEE] p-1",
+        "relative mx-auto inline-flex items-center rounded-full bg-[#D7EEEE] p-1",
+        fullWidth ? "w-full" : "w-fit",
         className
       )}
     >
@@ -80,7 +83,7 @@ export function AnimatedTabs({
         aria-hidden
       />
 
-      <div className="relative z-10 flex items-center gap-1 w-full">
+      <div className={cn("relative z-10 flex items-center gap-1", fullWidth ? "w-full" : "w-fit")}>
         {tabs.map((tab, index) => {
           const tabValue = tab.value ?? tab.label
           const isActive = tabValue === activeValue
@@ -94,7 +97,8 @@ export function AnimatedTabs({
               }}
               onClick={() => handleChange(tabValue)}
               className={cn(
-                "h-8 rounded-full px-4 text-sm font-medium transition-colors flex-1 hover:cursor-pointer",
+                "h-8 rounded-full px-4 text-sm font-medium whitespace-nowrap transition-colors hover:cursor-pointer",
+                fullWidth ? "min-w-0 flex-1" : "flex-none",
                 isActive ? "text-slate-900" : "plus-darker opacity-70 text-slate-900"
               )}
             >
