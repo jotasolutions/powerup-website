@@ -49,21 +49,24 @@ export function NavMenu() {
     <header className="sticky top-4 z-50 px-2 sm:px-4 mb-2">
       <motion.div
         className="relative mx-auto w-full"
+        transition={{ duration: 0.28, ease: [0.68, -0.55, 0.27, 1.55] }}
         style={{
           maxWidth: maxWidthPx,
-          borderRadius: borderRadiusPx,
+  
           paddingLeft: paddingXPx,
           paddingRight: paddingXPx,
         }}
+        
+   
       >
         <motion.div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-background/70 shadow-md backdrop-blur-md"
-          style={{ opacity: shellOpacity, borderRadius: borderRadiusPx }}
+          className="pointer-events-none absolute inset-0 -z-10 bg-background/70 shadow-md backdrop-blur-md rounded-xl"
+          style={{ opacity: shellOpacity,  }}
         />
 
         <div className="grid h-13 grid-cols-[1fr_auto] items-center gap-2 md:grid-cols-[1fr_auto_1fr] md:gap-4">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="#hero-section" className="flex items-center gap-2">
             <div className="flex size-9 items-center justify-center rounded-lg bg-primary">
               <Image src="/images/isotipo-negativo.png" alt="PowerUp Menu" width={20} height={20} className="object-contain" />
             </div>

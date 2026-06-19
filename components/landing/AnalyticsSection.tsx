@@ -17,13 +17,13 @@ export function AnalyticsSection() {
             </p>
           </BlurFade>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-12 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {analyticsFeatures.map((item) => (
             <article key={item.title} className="space-y-4">
               <div className="h-48 rounded-2xl border border-sky-100 bg-sky-50 sm:h-56" />
               <div className="space-y-2 pr-1 sm:pr-2">
                 <h3 className="text-lg font-medium text-slate-700 sm:text-xl">{item.title}</h3>
-                <p className="text-sm leading-6 text-slate-600 sm:text-base">{item.description}</p>
+                <p className="text-base leading-relaxed text-slate-600 sm:text-base">{item.description}</p>
               </div>
 
             </article>

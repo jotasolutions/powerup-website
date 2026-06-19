@@ -16,7 +16,7 @@ const aboutImageViewport = {
 export function AboutSection() {
   return (
     <SectionContainer >
-      <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-10">
+      <div className="flex flex-col-reverse gap-8 md:grid md:grid-cols-2 md:items-center gap-12 md:gap-10 ">
         <div className="space-y-4 col-span-1">
           <BlurFade inView inViewMargin="-80px">
             <h2 className="section-title">
@@ -52,7 +52,7 @@ export function AboutSection() {
                 ease: [0.7, -0.6, 0.32, 1.6]
               }}
             >
-              <Image src="/images/about-fede.png" alt="about 1" width={170} height={170} className="aspect-square w-[128px] -rotate-7 rounded-2xl bg-slate-200 object-cover shadow-2xl sm:w-[170px]" />
+              <Image src="/images/about-fede.png" alt="about 1" width={170} height={170} className="aspect-square w-[100px] md:w-[128px]  -rotate-7 rounded-2xl bg-slate-200 object-cover shadow-2xl" />
             </motion.div>
             <motion.div
               initial={{ y: 10, opacity: 0, filter: `blur(6px)` }}
@@ -101,7 +101,7 @@ export function AboutSection() {
                 delay: 0.12
               }}
             >
-              <Image src="/images/about-dani.png" alt="about 1" width={170} height={170} className="aspect-square w-[128px] rounded-2xl bg-slate-200 object-cover shadow-2xl sm:w-[170px]" />
+              <Image src="/images/about-dani.png" alt="about 1" width={170} height={170} className="aspect-square  w-[100px] md:w-[128px] rounded-2xl bg-slate-200 object-cover shadow-2xl " />
             </motion.div>
           </div>
           <div className="-mt-6 flex flex-row items-end justify-start gap-4 pl-4 sm:-mt-8 sm:gap-5 sm:pl-8" >
@@ -116,7 +116,7 @@ export function AboutSection() {
                 delay: 0.24
               }}
             >
-              <Image src="/images/about-jordi.png" alt="about 1" width={170} height={170} className="aspect-square w-[128px] rounded-2xl bg-slate-200 object-cover shadow-2xl sm:w-[170px]" />
+              <Image src="/images/about-jordi.png" alt="about 1" width={170} height={170} className="aspect-square  w-[100px] md:w-[128px] rounded-2xl bg-slate-200 object-cover shadow-2xl" />
             </motion.div>
             <motion.div
               initial={{ y: 10, opacity: 0, filter: `blur(6px)` }}

@@ -94,7 +94,7 @@ function AttractCard({
           {title}
         </motion.h3>
         <motion.p
-          className="text-sm leading-6 text-slate-600 sm:text-base"
+          className="text-base leading-relaxed text-slate-600 sm:text-base"
           initial={prefersReducedMotion ? false : "hidden"}
           whileInView={prefersReducedMotion ? undefined : "visible"}
           viewport={revealViewport}
@@ -124,7 +124,7 @@ export function AttractPeopleSection() {
             </p>
           </BlurFade>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-12 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {attractFeatures.map((item, index) => (
             <AttractCard
               key={item.title}
