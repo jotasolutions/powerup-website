@@ -51,35 +51,26 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, isLoading, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, isLoading, asChild = false, children, disabled, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
-    if (isLoading) {
-      return (
-        <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref}
-          {...props}
-          disabled={true}
-        >
-
-
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        disabled={isLoading || disabled}
+        {...props}
+      >
+        {isLoading ? (
           <DotWave
             size="42"
             speed="1"
             color="white"
           />
-        </Comp>
-      )
-    } else {
-      return (
-        <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref}
-          {...props}
-        />
-      )
-    }
-
+        ) : (
+          children
+        )}
+      </Comp>
+    )
   }
 )
 

@@ -1,12 +1,10 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { faqs } from "@/components/landing/section-data"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
-import { MessagesSquare } from "lucide-react"
 import { Button } from "../ui/button"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 import Image from "next/image"
-import { Icons } from "../ui/icons"
 
 export function FaqSection() {
   return (
