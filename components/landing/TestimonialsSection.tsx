@@ -49,7 +49,7 @@ export function TestimonialsSection() {
             place: "Restaurante Goyos",
             review: "Aquí viene mucho extranjero. Con la carta en su idioma y una buena foto en cada plato, ya no tengo que explicar nada: ven la brasa o el arroz, lo señalan y lo piden. Antes muchos se quedaban con la duda y pedían lo de siempre.",
             link: "https://www.google.com/maps/place/?cid=1234567890",
-            userImage: "/images/testimonials/goyos/arturo.jpeg",
+            userImage: "/images/testimonials/goyos/arturo.jpg",
             userName: "Arturo",
             extraContent: <div className="text-lg font-medium text-gray-400">Carta traducida y con foto en cada plato</div>
         }
