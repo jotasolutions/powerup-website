@@ -29,17 +29,17 @@ export function TestimonialsSection() {
             place: "Trattoria Piemontese",
             review: "Un día miré las analíticas y había gente entrando desde ChatGPT. Ahora, si alguien pregunta dónde comer comida piemontesa por la zona, aparezco yo con la carta actualizada al día.",
             link: "https://carta.powerup.menu/trattoria-piemontese/categories",
-            userImage: "/images/testimonials/marisa/marisa.png",
+            userImage: "/images/testimonials/trattoria/paolo2.jpg",
             userName: "Paolo",
             extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">Recibe visitas de ChatGPT</span>— lo ve en sus analíticas</div>
         },
         {
             bgImage: "/images/testimonials/goyos/bgimage.png",
-            logo: "/images/testimonials/goyos/logo.png",
+            logo: "/images/testimonials/spaccanapoli/logo.png",
             place: "Spaccanapoli",
             review: "Cambiar un precio o quitar un plato era llamar a la imprenta y esperar días. Ahora lo hago desde el móvil en diez segundos, las veces que haga falta.",
             link: "https://www.google.com/maps/place/?cid=1234567890",
-            userImage: "/images/testimonials/marisa/marisa.png",
+            userImage: "/images/testimonials/spaccanapoli/dario.jpg",
             userName: "Dario",
             extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">+9.000 cambios</span> sin visitas a la imprenta</div>
         },
@@ -49,7 +49,7 @@ export function TestimonialsSection() {
             place: "Restaurante Goyos",
             review: "Aquí viene mucho extranjero. Con la carta en su idioma y una buena foto en cada plato, ya no tengo que explicar nada: ven la brasa o el arroz, lo señalan y lo piden. Antes muchos se quedaban con la duda y pedían lo de siempre.",
             link: "https://www.google.com/maps/place/?cid=1234567890",
-            userImage: "/images/testimonials/marisa/marisa.png",
+            userImage: "/images/testimonials/goyos/arturo.jpeg",
             userName: "Arturo",
             extraContent: <div className="text-lg font-medium text-gray-400">Carta traducida y con foto en cada plato</div>
         }

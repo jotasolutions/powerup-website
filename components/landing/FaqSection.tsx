@@ -6,6 +6,7 @@ import { Button } from "../ui/button"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 import Image from "next/image"
+import { Icons } from "../ui/icons"
 
 export function FaqSection() {
   return (
@@ -27,9 +28,9 @@ export function FaqSection() {
           </Accordion>
         </aside>
         <aside className="h-fit w-full rounded-2xl border border-slate-200 p-4 space-y-4   lg:w-[300px] ">
-          <div className="flex size-12 shrink-0 items-center justify-center rounded-lg text-white bg-[#D6FFC3] border border-3 border-[#E6FFEB]">
-            <MessagesSquare className="text-[#479E3B] size-5" />
-            
+        <div className="relative size-8 shrink-0">
+              <Image src="/images/about-jordi.png" alt="about 1" width={32} height={32} className="rounded-full size-8" />
+              <div className="absolute bottom-0 right-0 size-3 border border-white border-2 translate-x-1/4 translate-y-1/4 rounded-full border border-white bg-green-500" />
           </div>
           <div className="space-y-2">
             <h3 className="text-dm font-semibold text-slate-900 sm:text-base">¿Sigues con dudas?</h3>
@@ -37,8 +38,9 @@ export function FaqSection() {
               Nuestro equipo respondera todas tus preguntas en un momento.
             </p>
           </div>
-          <Button variant="outline" className="w-full">
-            <Image src="/images/about-jordi.png" alt="about 1" width={32} height={32} className="rounded-full size-6" />
+          <Button variant="whatsapp" className="w-full">
+            <Image src="/icons/whatsapp-icon.svg" alt="whatsapp" width={16} height={16} />
+
             Pregúntanos
           </Button>
         </aside>
