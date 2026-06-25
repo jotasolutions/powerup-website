@@ -36,7 +36,7 @@ function SellMoreCard({
   const lottieRef = useRef<LottieRefCurrentProps | null>(null)
   const cardRef = useRef<HTMLDivElement>(null)
   const prefersReducedMotion = useReducedMotion()
-  const cardDelay = (index + 1) * 0.8
+  const cardDelay = 0.3 * index;
   const isCardInView = useInView(cardRef, {
     once: true,
     margin: revealViewport.margin,
@@ -60,7 +60,7 @@ function SellMoreCard({
     <article className="space-y-4">
       <motion.div
         ref={cardRef}
-        className="relative h-[258px overflow-hidden rounded-2xl bg-gradient-to-b from-[#ECF8FF] to-[#C1EAFF] sm:h-[258px]"
+        className="relative  overflow-hidden rounded-2xl bg-gradient-to-b from-[#ECF8FF] to-[#C1EAFF] sm:h-[258px]"
         initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
         whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={revealViewport}

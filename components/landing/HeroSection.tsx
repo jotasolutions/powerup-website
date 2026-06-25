@@ -62,7 +62,7 @@ export function HeroSection() {
             animationData={widget3}
             loop={false}
             style={{ width: '290px', height: 'auto' }}
-            className="absolute lg:top-[480px]  lg:right-[360px]  z-40 w-[150px] hidden md:block md:-bottom-[200px] md:right-[350px]"
+            className="absolute lg:top-[280px]  lg:right-[360px]  z-40 w-[150px] hidden md:block md:-bottom-[200px] md:right-[350px]"
           />
           <DelayedLottie
             delayMs={1200}

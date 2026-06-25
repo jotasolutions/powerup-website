@@ -1,0 +1,12 @@
+{
+  "namespace": "PowerUpMenuDS",
+  "source": "powerup-menu-website@0.1.0",
+  "shape": "package",
+  "provider": null,
+  "componentCount": 70,
+  "skippedStoryIds": [],
+  "runtimeFontPrefixes": [
+    "Inter",
+    "Poppins"
+  ]
+}

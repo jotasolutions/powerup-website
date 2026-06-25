@@ -1,0 +1,18 @@
+{
+  "projectId": "bffb78b9-fa67-4410-8388-ad1cd1e87090",
+  "shape": "package",
+  "pkg": "powerup-menu-website",
+  "globalName": "PowerUpMenuDS",
+  "srcDir": "components/ui",
+  "tsconfig": "tsconfig.json",
+  "cssEntry": ".design-sync/compiled.css",
+  "runtimeFontPrefixes": ["Inter", "Poppins"],
+  "componentSrcMap": {
+    "ScrollRevealParagraph": null
+  },
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "Dialog": { "cardMode": "single" },
+    "Popover": { "cardMode": "single" }
+  }
+}

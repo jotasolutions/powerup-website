@@ -4,25 +4,27 @@ import feature3 from '../../public/images/features/feature3.json'
 import feature4 from '../../public/images/features/feature4.json'
 import feature5 from '../../public/images/features/feature5.json'
 import feature6 from '../../public/images/features/feature6.json'
+import reports from '../../public/images/features/reports.json'
+import mostViewedDishes from '../../public/images/features/most-viewed.json'
 
 export const sellMoreFeatures = [
   {
     title: "Sugiere maridaje en cada plato",
     description:
       "Recomienda automáticamente bebidas o acompañamientos ideales mientras el cliente decide.",
-      animation: feature1,
+    animation: feature1,
   },
   {
     title: "Ofrece ingredientes extra",
     description:
       "Añade extras y suplementos directamente en la carta para aumentar el ticket medio.",
-      animation: feature2,
+    animation: feature2,
   },
   {
     title: "Pop-ups que saltan a la vista",
     description:
       "Destaca platos, promociones o campañas justo en el momento clave.",
-      animation: feature3,
+    animation: feature3,
   },
 ]
 
@@ -31,19 +33,19 @@ export const attractFeatures = [
     title: "Haz que ChatGPT te recomiende",
     description:
       "Optimiza tu carta para aparecer en recomendaciones y comparativas antes de la visita.",
-      animation: feature4,
+    animation: feature4,
   },
   {
     title: "Tu carta siempre actualizada en Google",
     description:
       "Sincroniza cambios para que tu información esté al día en los canales donde te buscan.",
-      animation: feature5,
+    animation: feature5,
   },
   {
     title: "Los clientes deciden desde casa",
     description:
       "Convierte la navegación previa en intención de compra con una carta más clara y persuasiva.",
-      animation: feature6,
+    animation: feature6,
   },
 ]
 
@@ -52,11 +54,13 @@ export const analyticsFeatures = [
     title: "Informes semanales automáticos",
     description:
       "Recibe reportes con recomendaciones para priorizar mejoras de forma continua.",
+    animation: reports,
   },
   {
     title: "Entiende cómo usan tu carta",
     description:
       "Descubre qué productos miran más y qué bloques generan más interacción.",
+      animation: mostViewedDishes
   },
   {
     title: "Píxeles para campañas rentables",

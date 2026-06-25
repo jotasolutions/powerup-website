@@ -1,0 +1,51 @@
+Checkbox from powerup-menu-website. Use via `window.PowerUpMenuDS.Checkbox` (bundle loaded from the root `_ds_bundle.js`).
+
+## Examples
+
+### Unchecked
+
+```jsx
+() => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+    <Checkbox id="terms" />
+    <Label htmlFor="terms">Acepto los términos y condiciones</Label>
+  </div>
+)
+```
+
+### Checked
+
+```jsx
+() => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+    <Checkbox id="newsletter" defaultChecked />
+    <Label htmlFor="newsletter">Recibir novedades y ofertas</Label>
+  </div>
+)
+```
+
+### Disabled
+
+```jsx
+() => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+    <Checkbox id="disabled-opt" disabled />
+    <Label htmlFor="disabled-opt" style={{ opacity: 0.5 }}>Opción no disponible</Label>
+  </div>
+)
+```
+
+### Group
+
+```jsx
+() => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+    {['Desayuno', 'Almuerzo', 'Cena', 'Brunch'].map((item) => (
+      <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <Checkbox id={item} defaultChecked={item === 'Almuerzo' || item === 'Cena'} />
+        <Label htmlFor={item}>{item}</Label>
+      </div>
+    ))}
+  </div>
+)
+```
