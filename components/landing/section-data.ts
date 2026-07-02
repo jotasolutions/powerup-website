@@ -6,6 +6,7 @@ import feature5 from '../../public/images/features/feature5.json'
 import feature6 from '../../public/images/features/feature6.json'
 import reports from '../../public/images/features/reports.json'
 import mostViewedDishes from '../../public/images/features/most-viewed.json'
+import campaigns from '../../public/images/features/campaigns.json'
 
 export const sellMoreFeatures = [
   {
@@ -60,12 +61,13 @@ export const analyticsFeatures = [
     title: "Entiende cómo usan tu carta",
     description:
       "Descubre qué productos miran más y qué bloques generan más interacción.",
-      animation: mostViewedDishes
+    animation: mostViewedDishes
   },
   {
     title: "Píxeles para campañas rentables",
     description:
       "Activa campañas con mejor segmentación apoyándote en datos reales de intención.",
+    animation: campaigns
   },
 ]
 
@@ -74,26 +76,31 @@ export const featuresBento = [
     title: "Traducciones automáticas con IA",
     description:
       "Tu carta en varios idiomas sin trabajo manual: el cliente elige y entiende cada plato al instante.",
+    imageUrl: "/images/features/features-bento-1.png",
   },
   {
     title: "Realidad aumentada",
     description:
       "Muestra platos en 3D sobre la mesa para que decidan con los ojos antes de pedir.",
+      imageUrl: "/images/features/features-bento-2.png",
   },
   {
     title: "Colores y diseño personalizado",
     description:
       "Adapta la carta a tu marca con tipografías, paleta y bloques que encajan con tu local.",
+      imageUrl: "/images/features/features-bento-3.png",
   },
   {
     title: "Platos y promociones dinámicas programables",
     description:
       "Programa ofertas por horario, día o stock y actualiza la carta sin reimprimir nada.",
+    imageUrl: "/images/features/features-bento-4.png",
   },
   {
     title: "Optimiza tu visibilidad online en Google Maps",
     description:
       "Mantén datos y carta alineados con lo que buscan en Maps y en la ficha de tu negocio.",
+    imageUrl: "/images/features/features-bento-5.png",
   },
 ] as const
 
