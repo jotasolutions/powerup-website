@@ -133,39 +133,53 @@ export const steps = [
 
 export const adminCarouselSlides = [
   {
-    src: "/images/admin/edit_menu.mp4",
-    alt: "Panel de administración: gestión del menú y previsualización",
+    src: "/videos/admin-demo/create-promo.mp4",
+    alt: "Panel de administración: creación de promociones",
     width: 889,
     height: 483,
-    title: "Edita tu menú del día",
+    title: "Crea promociones",
   },
   {
-    src: "/images/admin/enable.mp4",
-    alt: "Panel de administración: vista adicional del producto",
+    src: "/videos/admin-demo/cross-selling.mp4",
+    alt: "Panel de administración: cross-selling",
+    width: 3020,
+    height: 1658,
+    title: "Añade maridaje a los platos",
+  },
+  {
+    src: "/videos/admin-demo/dishes-visibility.mp4",
+    alt: "Panel de administración: activación de platos",
     width: 3020,
     height: 1658,
     title: "Activa o desactiva platos",
   },
   {
-    src: "/images/admin/programa.mp4",
-    alt: "Panel de administración: vista adicional del producto",
+    src: "/videos/admin-demo/extra-ingredients.mp4",
+    alt: "Panel de administración: añadir extras",
     width: 3020,
     height: 1658,
-    title: "Programa tus platos y secciones",
+    title: "Añade extras a los platos",
   },
   {
-    src: "/images/admin/reorder.mp4",
-    alt: "Panel de administración: vista adicional del producto",
+    src: "/videos/admin-demo/reorder.mp4",
+    alt: "Panel de administración: reordenación de platos",
     width: 3020,
     height: 1658,
     title: "Reordena tu carta",
   },
   {
-    src: "/images/admin/webpage.mp4",
-    alt: "Panel de administración: vista adicional del producto",
+    src: "/videos/admin-demo/schedule.mp4",
+    alt: "Panel de administración: programación de platos o secciones",
     width: 3020,
     height: 1658,
-    title: "Modifica tu pagina web",
+    title: "Programa tus platos o secciones",
+  },
+  {
+    src: "/videos/admin-demo/website.mp4",
+    alt: "Panel de administración: edición de página web",
+    width: 3020,
+    height: 1658,
+    title: "Edita tu página web",
   },
 ] as const
 
@@ -206,27 +220,33 @@ export const differentiationPillars = [
 
 export const faqs = [
   {
-    question: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
-    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+    question: "¿Qué es PowerUp Menu y en qué se diferencia de tener la carta en PDF o papel?",
+    answer:
+      "PowerUp Menu es tu carta digital: la editas tú mismo en segundos, sin imprenta ni ayuda técnica — eso ya te diferencia de un PDF o una carta en papel. Y no se queda en mostrar bonito: está pensada para ayudarte a vender más.",
   },
   {
-    question: "¿Puedo añadir el menú a mi sitio web o redes sociales?",
-    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+    question: "¿Quién configura mi carta y cuánto tarda en estar lista?",
+    answer:
+      "La configuras tú mismo: importa tu carta directamente desde Uber Eats o Just Eat —así se traen también las fotos de los platos— o sube una foto o PDF. Si tu caso es más complejo, nuestro equipo te la monta sin coste en 24-48 horas laborables.",
   },
   {
-    question: "¿Hay permanencia?",
-    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+    question: "¿Puedo cambiar precios, platos y disponibilidad yo mismo, en cualquier momento?",
+    answer:
+      "Sí, al momento y sin esperas. Dario, de Spaccanapoli, ha hecho más de 9.000 cambios desde el móvil en vez de llamar a la imprenta.",
   },
   {
-    question: "¿Se puede pedir y pagar a través de la carta?",
-    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+    question: "¿Mis clientes van a pedir y pagar desde la carta, o van a seguir pidiendo al camarero?",
+    answer:
+      "PowerUp Menu no gestiona pedidos ni pagos — el pedido lo sigue tomando tu camarero, igual que ahora. Lo que sí hace es doble: fuera del restaurante, ayuda a que te encuentren en Google y en las IA que la gente usa para buscar dónde comer; dentro, mientras tus clientes deciden, les ayuda a fijarse en lo que más te interesa vender, para subir el ticket medio.",
   },
   {
-    question: "¿La gente se tiene que descargar una app?",
-    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
+    question: "¿Puedo personalizar el diseño de mi carta con mis colores y mi marca?",
+    answer:
+      "Sí, puedes personalizar colores y aspectos básicos tú mismo. Si quieres un diseño más a medida, trabajamos contigo directamente con nuestro equipo de diseño.",
   },
   {
-    question: "¿Tengo que tener ya una página web para poder tener un menú digital?",
-    answer: "¿Se pueden gestionar varios restaurantes con el mismo plan?",
-  }
+    question: "¿Qué diferencia hay entre el plan gratuito y el Pro?",
+    answer:
+      "El plan Free es gratis para siempre: carta digital con hasta 3 idiomas y estadísticas simples de uso, con publicidad no invasiva del sector hostelero. El plan Pro quita la publicidad y añade más idiomas, herramientas para vender más como recomendaciones y promociones, y si lo pagas al año, tu propia página web.",
+  },
 ]

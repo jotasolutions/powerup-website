@@ -17,7 +17,9 @@ export type StripeRecurringPrice = {
 }
 
 export class StripeRepository {
+     
   async getRecurringPrice(priceId: string): Promise<StripeRecurringPrice> {
+ 
     const price = await stripe.prices.retrieve(priceId)
 
     if (!price.unit_amount) {
