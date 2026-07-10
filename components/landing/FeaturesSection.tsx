@@ -4,7 +4,8 @@ import { featuresBento } from "@/components/landing/section-data"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 import Image from "next/image"
-import { motion, useInView, useReducedMotion } from "motion/react"
+import { motion, useReducedMotion } from "motion/react"
+import { cardStagger, revealEase, revealViewport } from "@/lib/motion"
 
 function FeatureCard({
   title,
@@ -23,16 +24,18 @@ function FeatureCard({
   imageWide?: boolean
   index: number
 }) {
-  const revealEase = [0.22, 1, 0.36, 1] as const
+  const prefersReducedMotion = useReducedMotion()
   const imageWidth = imageWide ? 1256 : 836
   const imageHeight = 550
+  const delay = cardStagger(index)
 
   return (
     <motion.article
       className={`flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 p-3 ${className ?? ""}`}
-      initial={{ opacity: 0, y: 28 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, ease: revealEase, delay: 0.2 * index }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={revealViewport}
+      transition={{ duration: 0.55, ease: revealEase, delay }}
     >
       <div
         className={`flex min-h-[196px] flex-1 flex-col overflow-hidden rounded-xl border border-slate-100 bg-gradient-to-b from-[#F7F7F9] to-[#EFF6FF] px-2 pt-2 sm:min-h-[212px]${imageBottom ? " justify-end pb-0" : " justify-center pb-2"}`}

@@ -3,6 +3,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { useReducedMotion } from "motion/react"
 
 import type { AdminCarouselSlide } from "@/components/landing/section-data"
 import { cn } from "@/lib/utils"
@@ -12,12 +13,14 @@ type AdminCarouselProps = {
 }
 
 export function AdminCarousel({ slides }: AdminCarouselProps) {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <div className="admin-carousel mx-auto w-full max-w-6xl">
       <Carousel
         showArrows
         showStatus={false}
-        autoPlay
+        autoPlay={!prefersReducedMotion}
         interval={7000}
         infiniteLoop
         swipeable
@@ -65,7 +68,7 @@ export function AdminCarousel({ slides }: AdminCarouselProps) {
             <h3 className="text-base font-medium text-slate-900">{slide.title}</h3>
             <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-xl ">
              
-              <video autoPlay loop muted playsInline>
+              <video autoPlay={!prefersReducedMotion} loop muted playsInline>
                 <source src={slide.src} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

@@ -1,13 +1,14 @@
 "use client"
 
 import { BadgeCheck, RotateCw } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { AdvisorWidget } from "../AdvisorWidget";
 import { SectionContainer } from "./SectionContainer";
 import Image from "next/image";
+import { revealEase } from "@/lib/motion";
 
 const advisorImageViewport = {
-    once: false as const,
+    once: true as const,
     /** Require a meaningful portion of the element in view (default is very loose). */
     amount: 0.45,
     /** Shrink the “in view” band from the bottom so the scroll trigger fires later. */
@@ -15,6 +16,7 @@ const advisorImageViewport = {
 }
 
 export function AdvisorSection() {
+    const prefersReducedMotion = useReducedMotion()
     const checkItems = [
         {
             icon: <RotateCw  className="size-5 mt-1" />,
@@ -37,12 +39,13 @@ export function AdvisorSection() {
                     <div className="relative h-[110px] w-full sm:h-[130px]">
                         <motion.div
                             className="absolute z-20 w-[150px] origin-bottom-left sm:w-[214px]"
-                            initial={{ rotate: 0, bottom: -50, opacity: 0, left: 50, scale: 0.8 }}
-                            whileInView={{ rotate: -10, bottom: 6, opacity: 1, left: 8, scale: 1 }}
+                            initial={prefersReducedMotion ? false : { x: 40, y: 26, opacity: 0, scale: 0.8 }}
+                            whileInView={prefersReducedMotion ? undefined : { x: 8, y: -6, opacity: 1, scale: 1 }}
+                            animate={prefersReducedMotion ? { x: 8, y: -6, opacity: 1, scale: 1 } : undefined}
                             viewport={advisorImageViewport}
                             transition={{
                                 duration: 0.5,
-                                ease: [0.7, -0.6, 0.32, 1.6]
+                                ease: revealEase
                             }}
                         >
                             <Image
@@ -55,13 +58,14 @@ export function AdvisorSection() {
                         </motion.div>
                         <motion.div
                             className="absolute z-10 w-[200px] origin-bottom-right sm:w-[280px]"
-                            initial={{ rotate: 0, opacity: 0, bottom: -50, right: 70, scale: 0.8 }}
-                            whileInView={{ rotate: 6, opacity: 1, bottom: -2, right: 6, scale: 1 }}
+                            initial={prefersReducedMotion ? false : { x: -48, y: 26, opacity: 0, scale: 0.8 }}
+                            whileInView={prefersReducedMotion ? undefined : { x: -6, y: 2, opacity: 1, scale: 1 }}
+                            animate={prefersReducedMotion ? { x: -6, y: 2, opacity: 1, scale: 1 } : undefined}
                             viewport={advisorImageViewport}
                             transition={{
                                 delay: 0.12,
                                 duration: 0.5,
-                                ease: [0.7, -0.6, 0.32, 1.6]
+                                ease: revealEase
                             }}
                         >
                             <Image

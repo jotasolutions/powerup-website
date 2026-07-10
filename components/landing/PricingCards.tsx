@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { CTAButton } from "../CTAButton"
 import { AnimatedTabs } from "../ui/animated-tabs"
+import { useReducedMotion } from "motion/react"
 
 type Billing = "annual" | "monthly"
 
@@ -57,6 +58,7 @@ function ListItem({
 }
 
 export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: PricingCardsProps) {
+  const prefersReducedMotion = useReducedMotion()
   const [billing, setBilling] = useState<Billing>("annual")
   const yearlyCostIfMonthly = monthlyPriceInCents * 12
   const annualMonthlyEquivalentInCents = yearlyPriceInCents / 12
@@ -107,16 +109,25 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
             </div>
             <div className="mt-5">
               <p className="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
-                <NumberFlow
-                  value={currentPriceInEuros}
-                  locales="es-ES"
-                  format={{
+                {prefersReducedMotion ? (
+                  new Intl.NumberFormat("es-ES", {
                     style: "currency",
                     currency: "EUR",
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2,
-                  }}
-                />
+                  }).format(currentPriceInEuros)
+                ) : (
+                  <NumberFlow
+                    value={currentPriceInEuros}
+                    locales="es-ES"
+                    format={{
+                      style: "currency",
+                      currency: "EUR",
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    }}
+                  />
+                )}
                 <span className="text-lg font-semibold">/mes</span>
               </p>
               <p className="text-xs text-slate-500">{billing === "annual" ? "Facturado anual + IVA" : "+ IVA"}</p>

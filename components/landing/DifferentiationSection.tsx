@@ -1,17 +1,19 @@
 "use client"
 
 import { SectionContainer } from "@/components/landing/SectionContainer"
-import { ArrowRight, Brain, Check, CreditCard, PieChart } from "lucide-react"
-import { motion } from "motion/react"
+import { Brain, Check, CreditCard, PieChart } from "lucide-react"
+import { motion, useReducedMotion } from "motion/react"
 import { CTAButton } from "../CTAButton"
 import Image from "next/image"
-import { Button } from "../ui/button"
 import { BlurFade } from "../ui/blur-fade"
+import { revealEase, uiSpring } from "@/lib/motion"
 
 /** Must match mockup `transition.duration` so the brain scales after the slide ends. */
 const MOCKUP_SLIDE_DURATION_S = 1.2
 
 export function DifferentiationSection() {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <SectionContainer
       id="diferenciacion"
@@ -31,10 +33,14 @@ export function DifferentiationSection() {
             <div className="relative -mt-12 h-44 overflow-hidden sm:-mt-16 sm:h-52 md:h-56">
               <motion.div
                 className="absolute bottom-0 left-1/2 mb-2 -translate-x-1/2"
-                initial={{ opacity: 1, y: 200 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={prefersReducedMotion ? false : { opacity: 1, y: 200 }}
+                whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+                animate={prefersReducedMotion ? { opacity: 1, y: 0 } : undefined}
                 viewport={{ once: true, margin: "0px 0px -60px 0px" }}
-                transition={{ duration: MOCKUP_SLIDE_DURATION_S, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: prefersReducedMotion ? 0 : MOCKUP_SLIDE_DURATION_S,
+                  ease: revealEase,
+                }}
               >
                 <Image
                   src="/images/carta-mockup2.png"
@@ -47,15 +53,13 @@ export function DifferentiationSection() {
               </motion.div>
               <motion.div
                 className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
+                initial={prefersReducedMotion ? false : { scale: 0.9, opacity: 0 }}
+                whileInView={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
+                animate={prefersReducedMotion ? { scale: 1, opacity: 1 } : undefined}
                 viewport={{ once: true, margin: "0px 0px -60px 0px" }}
                 transition={{
-                  delay: 0.7,
-                  type: "spring",
-                  stiffness: 380,
-                  damping: 20,
-                  mass: 0.85,
+                  ...(prefersReducedMotion ? { duration: 0 } : uiSpring),
+                  delay: prefersReducedMotion ? 0 : 0.7,
                 }}
               >
                 <Image

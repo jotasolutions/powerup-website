@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useRef, useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useReducedMotion } from "motion/react"
 
 import type { AdminMobileCarouselSlide } from "@/components/landing/section-data"
 import { cn } from "@/lib/utils"
@@ -12,6 +13,7 @@ type AdminMobileCarouselProps = {
 }
 
 export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
+  const prefersReducedMotion = useReducedMotion()
   const [selectedItem, setSelectedItem] = useState(0)
   const touchStartX = useRef<number | null>(null)
   const firstSlideIndex = 0
@@ -72,7 +74,7 @@ export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
         }}
       >
         <div
-          className="flex px-[calc(50%-125.5px)] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="flex px-[calc(50%-125.5px)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
           style={{
             gap: `${slideGap}px`,
             transform: `translateX(-${selectedItem * slideStep}px)`,
@@ -87,10 +89,10 @@ export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
                 <div className="relative aspect-[15/32] w-[251px]">
                   <video
                     className={cn(
-                      "absolute inset-y-[10.5%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                      "absolute inset-y-[10.5%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-[transform,opacity,filter] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
                       isActive ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-35 scale-80"
                     )}
-                    autoPlay
+                    autoPlay={!prefersReducedMotion}
                     muted
                     loop
                     playsInline
@@ -105,7 +107,7 @@ export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
                     alt="iPhone frame"
                     fill
                     className={cn(
-                      "pointer-events-none z-20 object-contain transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                      "pointer-events-none z-20 object-contain transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
                       isActive ? "opacity-100 scale-100" : "opacity-35 scale-80"
                     )}
                     sizes="251px"
