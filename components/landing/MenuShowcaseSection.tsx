@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
@@ -12,35 +12,62 @@ import { BlurFade } from "../ui/blur-fade"
 
 const showcaseItems = [
   {
-    src: "/videos/recording1.mp4",
-    url: "https://www.youtube.com/recording1",
-    image: "/videos/iphone17-black.png"
-  },
-  {
-    src: "/videos/recording2.mp4",
-    url: "https://www.youtube.com/recording2",
+    src: "/videos/cartas-demo/1080.mp4",
+    url: "https://carta.powerup.menu/1018-pizza-las-rozas?utm_source=homepage",
     image: "/videos/iphone17-sage.png"
   },
   {
-    src: "/videos/recording3.mp4",
-    url: "https://www.youtube.com/recording3",
-    image: "/videos/iphone17-blue.png"
+    src: "/videos/cartas-demo/arau.mp4",
+    url: "https://carta.powerup.menu/arau-grilled-brunch?utm_source=homepage",
+    image: "/videos/iphone17-black.png"
   },
   {
-    src: "/videos/recording3.mp4",
-    url: "https://www.youtube.com/recording3",
+    src: "/videos/cartas-demo/casa-mediterrania.mp4",
+    url: "https://carta.powerup.menu/casa-mediterrania?utm_source=homepage",
+    image: "/videos/iphone17-black.png"
+  },
+  {
+    src: "/videos/cartas-demo/chipa.mp4",
+    url: "https://carta.powerup.menu/empanadas-chipa?utm_source=homepage",
+    image: "/videos/iphone17-black.png"
+  },
+  {
+    src: "/videos/cartas-demo/goyos.mp4",
+    url: "https://carta.powerup.menu/restaurante-goyos?utm_source=homepage",
     image: "/videos/iphone17-sage.png"
   },
   {
-    src: "/videos/recording3.mp4",
-    url: "https://www.youtube.com/recording3",
+    src: "/videos/cartas-demo/marisa.mp4",
+    url: "https://carta.powerup.menu/taberna-marisa?utm_source=homepage",
+    image: "/videos/iphone17-white.png"
+  },
+  {
+    src: "/videos/cartas-demo/rinconcito.mp4",
+    url: "https://carta.powerup.menu/restaurante-el-rinconcito-de-doa-juanita?utm_source=homepage",
+    image: "/videos/iphone17-sage.png"
+  },
+  {
+    src: "/videos/cartas-demo/trattoria.mp4",
+    url: "https://carta.powerup.menu/trattoria-piemontese?utm_source=homepage",
     image: "/videos/iphone17-black.png"
+  },
+  {
+    src: "/videos/cartas-demo/tropico.mp4",
+    url: "https://carta.powerup.menu/trpico-brunch-barcelona-balmes?utm_source=homepage",
+    image: "/videos/iphone17-sage.png"
   },
 ] as const
 
 export function MenuShowcaseSection() {
   const [selectedItem, setSelectedItem] = useState(1)
   const touchStartX = useRef<number | null>(null)
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+
+  useEffect(() => {
+    videoRefs.current.forEach((video) => {
+      void video?.play()
+    })
+  }, [])
   const firstSlideIndex = 0
   const lastSlideIndex = showcaseItems.length - 1
   const slideWidth = 251
@@ -114,26 +141,24 @@ export function MenuShowcaseSection() {
               {showcaseItems.map((item, index) => (
                 <div key={`${item.src}-${index}`} className="w-[251px] shrink-0 pb-8 sm:pb-10">
                   <div className="relative aspect-[15/32] w-[251px]">
-                    {/**
-                     * Keep only current and adjacent slides warm to reduce decoding work.
-                     */}
                     {(() => {
-                      const distanceFromActive = Math.abs(index - selectedItem)
-                      const isActive = distanceFromActive === 0
-                      const isNearActive = distanceFromActive <= 1
+                      const isActive = index === selectedItem
 
                       return (
                         <>
                           <video
+                            ref={(element) => {
+                              videoRefs.current[index] = element
+                            }}
                             className={cn(
-                              "absolute inset-y-[10.5%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                              "absolute inset-y-[10%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
                               isActive ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-35 scale-80"
                             )}
-                            autoPlay={isActive}
+                            autoPlay
                             muted
                             loop
                             playsInline
-                            preload={isNearActive ? "metadata" : "none"}
+                            preload="metadata"
                           >
                             <source src={item.src} type="video/mp4" />
                             Tu navegador no soporta el video.
