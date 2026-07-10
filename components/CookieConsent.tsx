@@ -6,6 +6,7 @@ import {
   CookieSettings,
   type CategoryConfig,
 } from "@/components/cookie-consent";
+import { GoogleTagManager } from "@/components/GoogleTagManager";
 
 const cookieCategories: CategoryConfig[] = [
   {
@@ -42,8 +43,18 @@ export function CookieConsent({ children }: { children: React.ReactNode }) {
         privacyPolicyUrl: "/privacy#cookies",
         position: "bottom-left",
         categories: cookieCategories,
+        googleConsentMode: {
+          enabled: true,
+          mapping: {
+            analytics_storage: "analytics",
+            ad_storage: "marketing",
+            ad_user_data: "marketing",
+            ad_personalization: "marketing",
+          },
+        },
       }}
     >
+      <GoogleTagManager />
       {children}
       <CookieBanner />
       <CookieSettings />

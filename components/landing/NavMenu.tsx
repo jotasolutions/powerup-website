@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
 
 const navItems = [
   { label: "Evalua tu carta", href: "#advisor" },
-  { label: "Precios", href: "#pricing" },
+  { label: "Precios", href: "/pricing" },
   { label: "Vende mas", href: "#vende-mas" },
 ]
 
