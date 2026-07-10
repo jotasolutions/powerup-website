@@ -76,31 +76,36 @@ export const featuresBento = [
     title: "Traducciones automáticas con IA",
     description:
       "Tu carta en varios idiomas sin trabajo manual: el cliente elige y entiende cada plato al instante.",
-    imageUrl: "/images/features/features-bento-1.png",
+    imageUrl: "/images/features/features-bento-1@2x.png",
   },
   {
     title: "Realidad aumentada",
     description:
       "Muestra platos en 3D sobre la mesa para que decidan con los ojos antes de pedir.",
-      imageUrl: "/images/features/features-bento-2.png",
+    imageUrl: "/images/features/features-bento-2@2x.png",
+    imageBottom: true,
   },
   {
     title: "Colores y diseño personalizado",
     description:
       "Adapta la carta a tu marca con tipografías, paleta y bloques que encajan con tu local.",
-      imageUrl: "/images/features/features-bento-3.png",
+    imageUrl: "/images/features/features-bento-3@2x.png",
+    imageBottom: true,
   },
   {
     title: "Platos y promociones dinámicas programables",
     description:
       "Programa ofertas por horario, día o stock y actualiza la carta sin reimprimir nada.",
-    imageUrl: "/images/features/features-bento-4.png",
+    imageUrl: "/images/features/features-bento-4@2x.png",
+    imageWide: true,
   },
   {
     title: "Optimiza tu visibilidad online en Google Maps",
     description:
       "Mantén datos y carta alineados con lo que buscan en Maps y en la ficha de tu negocio.",
-    imageUrl: "/images/features/features-bento-5.png",
+    imageUrl: "/images/features/features-bento-5@2x.png",
+    imageBottom: true,
+    imageWide: true,
   },
 ] as const
 
@@ -184,6 +189,41 @@ export const adminCarouselSlides = [
 ] as const
 
 export type AdminCarouselSlide = (typeof adminCarouselSlides)[number]
+
+export const adminMobileCarouselSlides = [
+  {
+    src: "/videos/admin-demo-mobile/add-promo.mp4",
+    alt: "Panel de administración móvil: creación de promociones",
+    title: "Crea promociones",
+    frame: "/videos/iphone17-black.png",
+  },
+  {
+    src: "/videos/admin-demo-mobile/cross-selling.mp4",
+    alt: "Panel de administración móvil: cross-selling",
+    title: "Añade maridaje a los platos",
+    frame: "/videos/iphone17-black.png",
+  },
+  {
+    src: "/videos/admin-demo-mobile/activate-dish.mp4",
+    alt: "Panel de administración móvil: activación de platos",
+    title: "Activa o desactiva platos",
+    frame: "/videos/iphone17-black.png",
+  },
+  {
+    src: "/videos/admin-demo-mobile/extra-ingredient.mp4",
+    alt: "Panel de administración móvil: añadir extras",
+    title: "Añade extras a los platos",
+    frame: "/videos/iphone17-black.png",
+  },
+  {
+    src: "/videos/admin-demo-mobile/reorder-dishes.mp4",
+    alt: "Panel de administración móvil: reordenación de platos",
+    title: "Reordena tu carta",
+    frame: "/videos/iphone17-black.png",
+  },
+] as const
+
+export type AdminMobileCarouselSlide = (typeof adminMobileCarouselSlides)[number]
 
 export const differentiationPillars = [
   {

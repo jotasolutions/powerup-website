@@ -34,8 +34,8 @@ export function TestimonialsSection() {
             extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">Recibe visitas de ChatGPT</span>— lo ve en sus analíticas</div>
         },
         {
-            bgImage: "/images/testimonials/goyos/bgimage.png",
-            logo: "/images/testimonials/spaccanapoli/logo.png",
+            bgImage: "/images/testimonials/spaccanapoli/restaurant.png",
+            logo: "/images/testimonials/spaccanapoli/spacca-logo.jpg",
             place: "Spaccanapoli",
             review: "Cambiar un precio o quitar un plato era llamar a la imprenta y esperar días. Ahora lo hago desde el móvil en diez segundos, las veces que haga falta.",
             link: "https://www.google.com/maps/place/?cid=1234567890",

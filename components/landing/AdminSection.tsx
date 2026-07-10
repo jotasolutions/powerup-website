@@ -1,6 +1,10 @@
 import { AdminCarousel } from "@/components/landing/AdminCarousel"
+import { AdminMobileCarousel } from "@/components/landing/AdminMobileCarousel"
 import { SectionContainer } from "@/components/landing/SectionContainer"
-import { adminCarouselSlides } from "@/components/landing/section-data"
+import {
+  adminCarouselSlides,
+  adminMobileCarouselSlides,
+} from "@/components/landing/section-data"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 
@@ -22,7 +26,13 @@ export function AdminSection() {
           </BlurFade>
         </div>
 
-        <AdminCarousel slides={adminCarouselSlides} />
+        <div className="md:hidden">
+          <AdminMobileCarousel slides={adminMobileCarouselSlides} />
+        </div>
+
+        <div className="hidden md:block">
+          <AdminCarousel slides={adminCarouselSlides} />
+        </div>
         <div className="flex justify-center">
           <CTAButton />
         </div>

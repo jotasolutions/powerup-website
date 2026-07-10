@@ -12,32 +12,47 @@ function FeatureCard({
   description,
   className,
   imageUrl,
-  index
+  imageBottom,
+  imageWide,
+  index,
 }: {
   title: string
   description: string
   className?: string
   imageUrl: string
+  imageBottom?: boolean
+  imageWide?: boolean
   index: number
 }) {
   const revealEase = [0.22, 1, 0.36, 1] as const
-  return (
+  const imageWidth = imageWide ? 1256 : 836
+  const imageHeight = 550
 
+  return (
     <motion.article
-      className={`flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 rounded-2xl p-2 ${className ?? ""}`}
+      className={`flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 p-3 ${className ?? ""}`}
       initial={{ opacity: 0, y: 28 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: revealEase, delay: 0.2 * index }}
     >
-      <div className="min-h-[180px] flex-1 rounded-xl border border-slate-100 bg-gradient-to-b from-[#F7F7F9] to-[#EFF6FF] sm:min-h-[224px]" aria-hidden >
-
-        <Image src={imageUrl} alt={title} width={500} height={500} className="w-full object-cover h-[224px]" />
+      <div
+        className={`flex min-h-[196px] flex-1 flex-col overflow-hidden rounded-xl border border-slate-100 bg-gradient-to-b from-[#F7F7F9] to-[#EFF6FF] px-2 pt-2 sm:min-h-[212px]${imageBottom ? " justify-end pb-0" : " justify-center pb-2"}`}
+        aria-hidden
+      >
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={imageWidth}
+          height={imageHeight}
+          unoptimized
+          className={`h-auto w-full object-contain${imageBottom ? " object-bottom" : ""}`}
+        />
       </div>
-      <div className="flex flex-1 flex-col gap-1  p-3">
-        <h3 className="font-heading text-base font-medium">
+      <div className="flex flex-1 flex-col gap-2 p-3">
+        <h3 className="font-heading text-base font-medium sm:text-[1.05rem]">
           {title}
         </h3>
-        <p className="text-xs leading-relaxed text-slate-600 sm:text-sm">{description}</p>
+        <p className="text-sm leading-relaxed text-slate-600">{description}</p>
       </div>
     </motion.article>
   )
