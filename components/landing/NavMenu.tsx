@@ -6,9 +6,11 @@ import { motion, useScroll, useSpring, useTransform } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 
 const navItems = [
   { label: "Evalua tu carta", href: "#advisor" },
+  { label: "Página web", href: "/pagina-web" },
   { label: "Precios", href: "/pricing" },
   { label: "Vende mas", href: "#vende-mas" },
 ]
@@ -66,7 +68,11 @@ export function NavMenu() {
         />
 
         <div className="grid h-13 grid-cols-[1fr_auto] items-center gap-2 md:grid-cols-[1fr_auto_1fr] md:gap-4">
-          <Link href="/" className="flex items-center gap-2">
+          <Link
+            href="/"
+            className="flex items-center gap-2"
+            {...trackAttrs("logo_click", { label: "PowerUp Menu", location: "nav" })}
+          >
             <div className="flex size-9 items-center justify-center rounded-lg bg-primary">
               <Image src="/images/isotipo-negativo.png" alt="PowerUp Menu" width={20} height={20} className="object-contain" />
             </div>
@@ -87,6 +93,11 @@ export function NavMenu() {
                   <Link
                     href={item.href}
                     className="block rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
+                    {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                      label: item.label,
+                      location: "nav_desktop",
+                      linkUrl: item.href,
+                    })}
                   >
                     {item.label}
                   </Link>
@@ -101,6 +112,11 @@ export function NavMenu() {
               target="_blank"
               rel="noopener noreferrer"
               className={buttonVariants({ variant: "ghost", size: "sm" })}
+              {...trackAttrs(ANALYTICS_EVENTS.LOGIN_CLICK, {
+                label: "Login",
+                location: "nav_desktop",
+                linkUrl: loginUrl,
+              })}
             >
               Login
             </Link>
@@ -109,6 +125,11 @@ export function NavMenu() {
               target="_blank"
               rel="noopener noreferrer"
               className={buttonVariants({ variant: "default", size: "sm" })}
+              {...trackAttrs(ANALYTICS_EVENTS.SIGN_UP_CLICK, {
+                label: "Crea tu carta",
+                location: "nav_desktop",
+                linkUrl: signUpUrl,
+              })}
             >
               <QrCode className="size-4" />
               Crea tu carta
@@ -138,6 +159,11 @@ export function NavMenu() {
                       href={item.href}
                       className="block rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
                       onClick={() => setIsMobileOpen(false)}
+                      {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                        label: item.label,
+                        location: "nav_mobile",
+                        linkUrl: item.href,
+                      })}
                     >
                       {item.label}
                     </Link>
@@ -151,6 +177,11 @@ export function NavMenu() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={buttonVariants({ variant: "ghost", className: "w-full" })}
+                {...trackAttrs(ANALYTICS_EVENTS.LOGIN_CLICK, {
+                  label: "Login",
+                  location: "nav_mobile",
+                  linkUrl: loginUrl,
+                })}
               >
                 Login
               </Link>
@@ -159,6 +190,11 @@ export function NavMenu() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={buttonVariants({ variant: "default", className: "w-full", size: "sm" })}
+                {...trackAttrs(ANALYTICS_EVENTS.SIGN_UP_CLICK, {
+                  label: "Crea tu carta",
+                  location: "nav_mobile",
+                  linkUrl: signUpUrl,
+                })}
               >
                 Crea tu carta
               </Link>

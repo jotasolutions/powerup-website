@@ -3,10 +3,11 @@ import { CookieSettingsLink } from "@/components/CookieSettingsLink"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 import Link from "next/link"
+import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 
 export function FooterSection() {
   return (
-    <SectionContainer className="bg-gradient-to-b from-white to-[#DEF8FF] via-[#DEF8FF]">
+    <SectionContainer id="footer" className="bg-gradient-to-b from-white to-[#DEF8FF] via-[#DEF8FF]">
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-4 border-b border-solid border-[#CFF5FF] pb-8 border-b-2">
           <BlurFade inView inViewMargin="-80px">
@@ -33,8 +34,26 @@ export function FooterSection() {
           <div className="space-y-2 flex flex-col gap-0">
             <p className="font-medium">Legal</p>
             
-            <Link href="/terms">Términos y condiciones</Link>
-            <Link href="/privacy">Política de privacidad</Link>
+            <Link
+              href="/terms"
+              {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                label: "Términos y condiciones",
+                location: "footer",
+                linkUrl: "/terms",
+              })}
+            >
+              Términos y condiciones
+            </Link>
+            <Link
+              href="/privacy"
+              {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                label: "Política de privacidad",
+                location: "footer",
+                linkUrl: "/privacy",
+              })}
+            >
+              Política de privacidad
+            </Link>
             <CookieSettingsLink />
           </div>
         </div>

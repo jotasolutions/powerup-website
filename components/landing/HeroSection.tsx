@@ -15,6 +15,7 @@ import { BlurFade } from "../ui/blur-fade"
 import { motion } from "motion/react"
 import Link from "next/link"
 import { EXAMPLE_MENU_URL, ExampleMenuQr } from "./ExampleMenuQr"
+import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 
 export function DelayedLottie({
   delayMs,
@@ -32,7 +33,12 @@ export function DelayedLottie({
 
 export function HeroSection() {
   return (
-    <section id="hero-section" className="w-full px-3 pb-6 pt-3  sm:px-4 md:pb-10 md:pt-4 max-w-[1500px] mx-auto">
+    <section
+      id="hero-section"
+      data-track-section="hero"
+      data-track-location="hero"
+      className="w-full px-3 pb-6 pt-3  sm:px-4 md:pb-10 md:pt-4 max-w-[1500px] mx-auto"
+    >
       <div className="hero-container relative mx-auto w-full overflow-hidden rounded-3xl p-4 pb-2 sm:pb-4 sm:px-6 sm:pb-0 sm:pt-8 md:px-10 lg:px-14">
 
         <div className="absolute hidden  -top-20 w-[700px] h-full z-20 md:block md:-top-[130px] md:-right-40 md:scale-70 lg:-right-26 lg:-top-20 lg:scale-80  xl:scale-100 xl:right-0 xl:top-0">
@@ -120,6 +126,11 @@ export function HeroSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={buttonVariants({ variant: "secondary", className: "w-full sm:min-w-40 sm:w-auto h-13 sm:h-10" })}
+                    {...trackAttrs(ANALYTICS_EVENTS.EXAMPLE_MENU_CLICK, {
+                      label: "Ver carta de ejemplo",
+                      location: "hero",
+                      linkUrl: EXAMPLE_MENU_URL,
+                    })}
                   >
                     Ver carta de ejemplo
                   </Link>

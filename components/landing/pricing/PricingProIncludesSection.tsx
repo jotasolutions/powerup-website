@@ -31,7 +31,7 @@ function ProFeaturePanel({
     <BlurFade inView inViewMargin="-80px" delay={index * 0.08}>
       <div
         className={cn(
-          "flex w-full flex-col items-center gap-8 rounded-3xl bg-white p-8 md:p-10",
+          "flex w-full flex-col items-center gap-8 rounded-3xl bg-white px-2 py-6 md:px-10 md:py-10",
           bordered && "border-2 border-zinc-400"
         )}
       >

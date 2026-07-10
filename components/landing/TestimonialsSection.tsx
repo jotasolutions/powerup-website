@@ -11,6 +11,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BlurFade } from "../ui/blur-fade";
+import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics";
 
 export function TestimonialsSection() {
     const testimonials = [
@@ -70,7 +71,16 @@ export function TestimonialsSection() {
                         </p>
                     </BlurFade>
                     <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                        <Link href="https://www.trustpilot.com/review/powerup.menu" target="_blank">
+                        <Link
+                          href="https://www.trustpilot.com/review/powerup.menu"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, {
+                            label: "Trustpilot",
+                            location: "testimonials",
+                            linkUrl: "https://www.trustpilot.com/review/powerup.menu",
+                          })}
+                        >
                             <div className="space-y-2">
                                 <p className="text-gray-800">Tripadvisor</p>
                                 <div className="flex items-center gap-1.5 font-heading text-base font-medium sm:gap-2 sm:text-2xl">
@@ -80,7 +90,16 @@ export function TestimonialsSection() {
 
                             </div>
                         </Link>
-                        <Link href="https://maps.app.goo.gl/GphQ9hQkbkkyY6mk9" target="_blank">
+                        <Link
+                          href="https://maps.app.goo.gl/GphQ9hQkbkkyY6mk9"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, {
+                            label: "Google Maps",
+                            location: "testimonials",
+                            linkUrl: "https://maps.app.goo.gl/GphQ9hQkbkkyY6mk9",
+                          })}
+                        >
                             <div className="space-y-2">
                                 <p className="text-gray-800">Google Maps</p>
                                 <div className="flex items-center gap-1.5 font-heading text-base font-medium sm:gap-3 sm:text-2xl">
@@ -158,7 +177,16 @@ export function TestimonialsSection() {
                                             <p className="text-gray-500 text-sm">{testimonial.place}</p>
                                         </div>
                                     </div>
-                                    <Link href={testimonial.link} target="_blank">
+                                    <Link
+                                      href={testimonial.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, {
+                                        label: `Ver carta - ${testimonial.place}`,
+                                        location: "testimonials_carousel",
+                                        linkUrl: testimonial.link,
+                                      })}
+                                    >
                                         <Button variant="outline">Ver carta</Button>
                                     </Link>
                                 </div>

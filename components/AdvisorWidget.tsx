@@ -23,6 +23,7 @@ import { useState } from "react"
 import { Checkbox } from "./ui/checkbox"
 import { Place } from "@/utils/types"
 import { submitAdvisorLeadAction } from "@/app/actions/advisor"
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics"
 
 const step1Schema = z.object({
     name: z
@@ -73,6 +74,11 @@ export function AdvisorWidget() {
             toast.error("Selecciona un restaurante válido antes de continuar.");
             return;
         }
+        trackEvent(ANALYTICS_EVENTS.ADVISOR_STEP_1, {
+            location: "advisor",
+            restaurant_name: selectedPlace.name,
+            files_count: uploadedFiles.length,
+        });
         setStatus("step2");
     }
 
@@ -98,6 +104,12 @@ export function AdvisorWidget() {
 
             toast.success("Formulario completado", {
                 description: `Gracias ${step1Form.getValues("name")}, te contactaremos pronto.`,
+            });
+            trackEvent(ANALYTICS_EVENTS.GENERATE_LEAD, {
+                location: "advisor",
+                form_name: "advisor",
+                restaurant_name: selectedPlace?.name ?? "",
+                role: values.role,
             });
             setStatus("success");
         } catch (error) {

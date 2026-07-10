@@ -7,6 +7,8 @@ import {
   type CategoryConfig,
 } from "@/components/cookie-consent";
 import { GoogleTagManager } from "@/components/GoogleTagManager";
+import { AnalyticsListener } from "@/components/analytics/AnalyticsListener";
+import { Suspense } from "react";
 
 const cookieCategories: CategoryConfig[] = [
   {
@@ -55,6 +57,9 @@ export function CookieConsent({ children }: { children: React.ReactNode }) {
       }}
     >
       <GoogleTagManager />
+      <Suspense fallback={null}>
+        <AnalyticsListener />
+      </Suspense>
       {children}
       <CookieBanner />
       <CookieSettings />

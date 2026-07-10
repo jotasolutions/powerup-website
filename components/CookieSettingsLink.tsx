@@ -1,6 +1,7 @@
 "use client";
 
 import { useCookieConsent } from "@/components/cookie-consent";
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 
 export function CookieSettingsLink() {
   const { openSettings, state } = useCookieConsent();
@@ -12,7 +13,10 @@ export function CookieSettingsLink() {
   return (
     <button
       type="button"
-      onClick={openSettings}
+      onClick={() => {
+        trackEvent(ANALYTICS_EVENTS.COOKIE_SETTINGS_OPEN, { location: "footer" });
+        openSettings();
+      }}
       className="text-left text-sm hover:opacity-80"
     >
       Cookies

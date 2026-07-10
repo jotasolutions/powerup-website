@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { CTAButton } from "../CTAButton"
 import { AnimatedTabs } from "../ui/animated-tabs"
+import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics"
 
 type Billing = "annual" | "monthly"
 
@@ -80,7 +81,13 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
         <AnimatedTabs
           value={billing}
           onValueChange={(value) => {
-            setBilling(value as Billing)
+            const nextBilling = value as Billing
+            setBilling(nextBilling)
+            trackEvent(ANALYTICS_EVENTS.PRICING_BILLING_TAB_CLICK, {
+              billing_period: nextBilling,
+              event_label: nextBilling === "annual" ? "Pago anual" : "Pago mensual",
+              location: "pricing",
+            })
           }}
           tabs={[
             { label: "Pago anual", value: "annual" },
