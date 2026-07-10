@@ -163,7 +163,9 @@
 
 .admin-carousel,
 .testimonials-carousel {
-  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .admin-carousel .carousel.carousel-slider,
@@ -252,9 +254,24 @@
 
 .testimonials-carousel .carousel {
   padding-bottom: 0;
+  width: 100%;
+  max-width: 100%;
 }
+
+.testimonials-carousel .carousel .slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.testimonials-carousel .carousel .slide {
+  text-align: left;
+}
+
 .testimonials-carousel .carousel.carousel-slider {
   position: relative;
+  width: 100%;
+  max-width: 100%;
 }
 
 

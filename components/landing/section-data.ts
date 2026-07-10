@@ -76,34 +76,34 @@ export const featuresBento = [
     title: "Traducciones automáticas con IA",
     description:
       "Tu carta en varios idiomas sin trabajo manual: el cliente elige y entiende cada plato al instante.",
-    imageUrl: "/images/features/features-bento-1@2x.png",
+    imageUrl: "/images/features/features-bento-1.png",
   },
   {
     title: "Realidad aumentada",
     description:
       "Muestra platos en 3D sobre la mesa para que decidan con los ojos antes de pedir.",
-    imageUrl: "/images/features/features-bento-2@2x.png",
+    imageUrl: "/images/features/features-bento-2.png",
     imageBottom: true,
   },
   {
     title: "Colores y diseño personalizado",
     description:
       "Adapta la carta a tu marca con tipografías, paleta y bloques que encajan con tu local.",
-    imageUrl: "/images/features/features-bento-3@2x.png",
+    imageUrl: "/images/features/features-bento-3.png",
     imageBottom: true,
   },
   {
     title: "Platos y promociones dinámicas programables",
     description:
       "Programa ofertas por horario, día o stock y actualiza la carta sin reimprimir nada.",
-    imageUrl: "/images/features/features-bento-4@2x.png",
+    imageUrl: "/images/features/features-bento-4.png",
     imageWide: true,
   },
   {
     title: "Optimiza tu visibilidad online en Google Maps",
     description:
       "Mantén datos y carta alineados con lo que buscan en Maps y en la ficha de tu negocio.",
-    imageUrl: "/images/features/features-bento-5@2x.png",
+    imageUrl: "/images/features/features-bento-5.png",
     imageBottom: true,
     imageWide: true,
   },

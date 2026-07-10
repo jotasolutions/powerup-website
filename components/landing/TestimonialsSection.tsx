@@ -7,6 +7,7 @@ import { SectionContainer } from "./SectionContainer"
 import Image from "next/image"
 import { CTAButton } from "../CTAButton";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BlurFade } from "../ui/blur-fade";
@@ -56,7 +57,7 @@ export function TestimonialsSection() {
     ];
     return (
         <SectionContainer id="testimonials">
-            <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
+            <div className="grid min-w-0 items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
                 <div className="space-y-6 md:space-y-8">
                     <BlurFade inView inViewMargin="-80px">
                         <h2 className="section-title">Más de <Highlighter action="circle" color="#FF9800">
@@ -68,25 +69,25 @@ export function TestimonialsSection() {
                             Una taberna, una trattoria, un asador. Venden más, los encuentran en Google y se olvidaron de la imprenta. Te lo cuentan ellos.
                         </p>
                     </BlurFade>
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
                         <Link href="https://www.trustpilot.com/review/powerup.menu" target="_blank">
                             <div className="space-y-2">
                                 <p className="text-gray-800">Tripadvisor</p>
-                                <div className="flex items-center gap-2 font-heading text-xl font-medium sm:text-2xl">
-                                    <div>4.5</div>
-                                    <Image src="/images/excellent-stars.png" alt="Tripadvisor" width={500} height={500} className="w-[112px] h-auto object-contain" />
+                                <div className="flex items-center gap-1.5 font-heading text-base font-medium sm:gap-2 sm:text-2xl">
+                                    <div className="shrink-0">4.5</div>
+                                    <Image src="/images/excellent-stars.png" alt="Tripadvisor" width={500} height={500} className="h-auto w-[72px] shrink object-contain sm:w-[112px]" />
                                 </div>
 
                             </div>
                         </Link>
                         <Link href="https://maps.app.goo.gl/GphQ9hQkbkkyY6mk9" target="_blank">
-                            <div className="space-y-4">
+                            <div className="space-y-2">
                                 <p className="text-gray-800">Google Maps</p>
-                                <div className="flex items-center gap-3 font-heading text-xl font-medium sm:text-2xl">
-                                    <div>4.2</div>
-                                    <div className="flex gap-0.5">
+                                <div className="flex items-center gap-1.5 font-heading text-base font-medium sm:gap-3 sm:text-2xl">
+                                    <div className="shrink-0">4.2</div>
+                                    <div className="flex shrink-0 gap-0.5">
                                         {[...Array(5)].map((_, i) => (
-                                            <Star key={i} className="size-4 text-yellow-500" fill="currentColor" strokeWidth={1.75} />
+                                            <Star key={i} className="size-3.5 text-yellow-500 sm:size-4" fill="currentColor" strokeWidth={1.75} />
                                         ))}
                                     </div>
                                 </div>
@@ -96,9 +97,9 @@ export function TestimonialsSection() {
                     </div>
 
                 </div>
-                <div>
+                <div className="min-w-0 w-full">
                     <Carousel
-                        className="testimonials-carousel"
+                        className="testimonials-carousel w-full max-w-full"
                         showArrows
                         showStatus={false}
                         showIndicators={false}

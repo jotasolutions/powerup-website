@@ -82,7 +82,7 @@ export function DifferentiationSection() {
           </div>
 
           <div className="mt-10 grid gap-8 sm:mt-12 md:mt-14 md:grid-cols-2 md:gap-10 lg:gap-16">
-            <article className="flex flex-col gap-4">
+            <article className="flex flex-col items-center gap-4 text-center">
               <BlurFade delay={0.20}>
                 <div
                   className="flex size-16 items-center justify-center rounded-2xl bg-[#FFCCBE] text-[#C45C2A] border-4 border-[#FFEFE9]"
@@ -100,8 +100,8 @@ export function DifferentiationSection() {
                   <p className="text-sm leading-relaxed sm:text-base">
                     Aplicamos principios como efecto ancla, orden estratégico de categorías, nombres descriptivos y resaltado inteligente para <strong className="font-medium">aumentar el ticket medio de forma natural.</strong>
                   </p>
-                  <p className="flex items-center gap-2 text-sm text-gray-700">
-                    <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
+                  <p className="flex items-center justify-center gap-2 text-sm text-gray-700">
+                    <span className="scale-80 hidden size-5 shrink-0 items-center justify-center rounded-full border border-2 border-gray-600 text-gray-700 sm:flex">
                       <Check className="size-2.5" strokeWidth={4} aria-hidden />
                     </span>
                     Basado en más de 80 estudios científicos
@@ -115,7 +115,7 @@ export function DifferentiationSection() {
                 </div>
               </BlurFade>
             </article>
-            <article className="flex flex-col gap-4">
+            <article className="flex flex-col items-center gap-4 text-center">
               <BlurFade delay={0.35}>
                 <div
                   className="flex size-16 items-center justify-center rounded-2xl bg-[#FFE6BE] text-[#C89746] border-4 border-[#FFF5E6]"
@@ -133,8 +133,8 @@ export function DifferentiationSection() {
                   <p className="text-sm leading-relaxed sm:text-base">
                     Medimos qué platos se ven, cuánto tiempo pasan en la carta y qué se ignora. Cada semana recibes un informe con <strong className="font-medium">recomendaciones accionables para mejorar.</strong>
                   </p>
-                  <p className="flex items-center gap-2 text-sm text-gray-700">
-                    <span className="scale-80 flex size-5 shrink-0 items-center justify-center rounded-full text-gray-700 border border-gray-600 border-2">
+                  <p className="flex items-center justify-center gap-2 text-sm text-gray-700">
+                    <span className="scale-80 hidden size-5 shrink-0 items-center justify-center rounded-full border border-2 border-gray-600 text-gray-700 sm:flex">
                       <Check className="size-2.5" strokeWidth={4} aria-hidden />
                     </span>
                     Métricas claras y sin configuración técnica

@@ -94,10 +94,10 @@ export function HowItWorksSection() {
         <div className="relative flex flex-col gap-10 md:flex-row md:justify-between md:gap-8 lg:gap-12">
           <HiwVectorLine className="pointer-events-none absolute -top-24 left-[2%] hidden h-full w-[80%] md:block" />
           {steps.map((item, index) => (
-            <article key={item.title} className="w-full space-y-4 md:w-1/3">
-              <div className="relative h-[13.75rem] sm:h-[15rem]">
+            <article key={item.title} className="w-full space-y-3 md:w-1/3 md:space-y-4">
+              <div className="md:relative md:h-[15rem]">
                 <motion.div
-                  className={`absolute flex size-12 items-center justify-center rounded-full font-heading text-lg font-medium sm:text-xl md:size-[3.25rem] ${item.stepNumerClass}`}
+                  className={`flex size-12 shrink-0 items-center justify-center rounded-full font-heading text-lg font-medium sm:text-xl md:absolute md:size-[3.25rem] ${item.stepNumerClass}`}
                   initial={prefersReducedMotion ? false : { scale: 0, opacity: 0 }}
                   whileInView={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
                   viewport={revealViewport}
@@ -111,9 +111,15 @@ export function HowItWorksSection() {
                 >
                   <div className="plus-darker opacity-70">{index + 1}</div>
                 </motion.div>
-                <Image src={item.image} alt={item.title} width={300} height={300} className={item.imageClass} />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={300}
+                  height={300}
+                  className={`hidden md:block ${item.imageClass}`}
+                />
               </div>
-              <div className="space-y-2 pr-1 sm:pr-2">
+              <div className="space-y-2 pr-1 sm:pr-2 md:pr-2">
                 <motion.h3
                   className="text-lg font-medium text-slate-700 sm:text-xl"
                   initial={prefersReducedMotion ? false : "hidden"}

@@ -16,7 +16,7 @@ const checklist = [
 export function WebsiteSection() {
   return (
     <SectionContainer id="pagina-web" >
-      <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
+      <div className="flex flex-col-reverse items-center gap-8 md:gap-10 lg:grid lg:grid-cols-2 lg:gap-12">
         <div className="space-y-6 md:space-y-8">
           <div className="space-y-4">
             <BlurFade inView inViewMargin="-80px">

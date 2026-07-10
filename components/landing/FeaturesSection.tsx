@@ -1,7 +1,6 @@
 'use client'
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { featuresBento } from "@/components/landing/section-data"
-import Link from "next/link"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 import Image from "next/image"
