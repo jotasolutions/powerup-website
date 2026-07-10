@@ -66,7 +66,7 @@ export function NavMenu() {
         />
 
         <div className="grid h-13 grid-cols-[1fr_auto] items-center gap-2 md:grid-cols-[1fr_auto_1fr] md:gap-4">
-          <Link href="#hero-section" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="flex size-9 items-center justify-center rounded-lg bg-primary">
               <Image src="/images/isotipo-negativo.png" alt="PowerUp Menu" width={20} height={20} className="object-contain" />
             </div>

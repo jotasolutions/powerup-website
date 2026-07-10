@@ -234,8 +234,8 @@ export function AdvisorWidget() {
                                             <Checkbox id="advisor-step2-accept-terms" checked={field.value}
                                                 onCheckedChange={field.onChange} />
                                             <span className="leading-relaxed inline-block text-xs">
-                                                Acepto los <Link target="_blank" className="underline"
-                                                    href="https://powerup.menu/terms">Términos y condiciones</Link> y quiero recibir información de como mejorar mi oferta gastronomica</span>
+                                                Acepto los <Link className="underline"
+                                                    href="/terms">Términos y condiciones</Link> y quiero recibir información de como mejorar mi oferta gastronomica</span>
                                         </label>
                                         {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                                     </Field>

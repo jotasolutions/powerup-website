@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import { CookieConsent } from "@/components/CookieConsent";
 import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
@@ -43,12 +44,14 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${inter.variable} ${poppins.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
-        <main>{children}</main>
-        <Toaster />
+        <CookieConsent>
+          <main>{children}</main>
+          <Toaster />
+        </CookieConsent>
       </body>
     </html>
   );

@@ -1,6 +1,8 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
+import { CookieSettingsLink } from "@/components/CookieSettingsLink"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
+import Link from "next/link"
 
 export function FooterSection() {
   return (
@@ -28,11 +30,12 @@ export function FooterSection() {
             <p>Contacto</p>
             <p>Ayuda</p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 flex flex-col gap-0">
             <p className="font-medium">Legal</p>
-            <p>Aviso legal</p>
-            <p>Terminos y condiciones</p>
-            <p>Cookies</p>
+            
+            <Link href="/terms">Términos y condiciones</Link>
+            <Link href="/privacy">Política de privacidad</Link>
+            <CookieSettingsLink />
           </div>
         </div>
         <p className="text-xs plus-darker opacity-60">© 2026 PowerUP Menu. Todos los derechos reservados</p>
