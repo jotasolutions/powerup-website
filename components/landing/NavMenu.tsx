@@ -2,7 +2,7 @@
 
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Menu, QrCode, X } from "lucide-react"
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react"
+import { motion, useScroll, useSpring, useTransform } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -20,29 +20,21 @@ const SCROLL_RANGE: [number, number] = [0, 64]
 const springConfig = { stiffness: 420, damping: 42, mass: 0.55 }
 
 export function NavMenu() {
-  const prefersReducedMotion = useReducedMotion()
   const { scrollY } = useScroll()
   const [isMobileOpen, setIsMobileOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
 
   const maxWidthRaw = useTransform(scrollY, SCROLL_RANGE, [1450, 960])
+  const borderRadiusRaw = useTransform(scrollY, SCROLL_RANGE, [0, 16])
   const paddingXRaw = useTransform(scrollY, SCROLL_RANGE, [0, 8])
   const shellOpacity = useTransform(scrollY, SCROLL_RANGE, [0, 1])
 
   const maxWidth = useSpring(maxWidthRaw, springConfig)
+  const borderRadius = useSpring(borderRadiusRaw, springConfig)
   const paddingX = useSpring(paddingXRaw, springConfig)
 
   const maxWidthPx = useTransform(maxWidth, (value) => `${value}px`)
+  const borderRadiusPx = useTransform(borderRadius, (value) => `${value}px`)
   const paddingXPx = useTransform(paddingX, (value) => `${value}px`)
-
-  useEffect(() => {
-    if (!prefersReducedMotion) return
-
-    const onScroll = () => setIsScrolled(window.scrollY > 32)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [prefersReducedMotion])
 
   useEffect(() => {
     if (!isMobileOpen) return
@@ -57,16 +49,20 @@ export function NavMenu() {
     <header className="sticky top-4 z-50 px-2 sm:px-4 mb-2">
       <motion.div
         className="relative mx-auto w-full"
+        transition={{ duration: 0.28, ease: [0.68, -0.55, 0.27, 1.55] }}
         style={{
-          maxWidth: prefersReducedMotion ? (isScrolled ? "960px" : "1450px") : maxWidthPx,
-          paddingLeft: prefersReducedMotion ? (isScrolled ? "8px" : "0px") : paddingXPx,
-          paddingRight: prefersReducedMotion ? (isScrolled ? "8px" : "0px") : paddingXPx,
+          maxWidth: maxWidthPx,
+  
+          paddingLeft: paddingXPx,
+          paddingRight: paddingXPx,
         }}
+        
+   
       >
         <motion.div
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-10 bg-background/70 shadow-md backdrop-blur-md rounded-xl"
-          style={{ opacity: prefersReducedMotion ? (isScrolled ? 1 : 0) : shellOpacity }}
+          style={{ opacity: shellOpacity,  }}
         />
 
         <div className="grid h-13 grid-cols-[1fr_auto] items-center gap-2 md:grid-cols-[1fr_auto_1fr] md:gap-4">

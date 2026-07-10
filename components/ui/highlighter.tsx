@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useRef } from "react"
 import type React from "react"
-import { useInView, useReducedMotion } from "motion/react"
+import { useInView } from "motion/react"
 import { annotate } from "rough-notation"
 import { type RoughAnnotation } from "rough-notation/lib/model"
 
@@ -41,7 +41,6 @@ export function Highlighter({
   isView = false,
 }: HighlighterProps) {
   const elementRef = useRef<HTMLSpanElement>(null)
-  const prefersReducedMotion = useReducedMotion()
 
   const isInView = useInView(elementRef, {
     once: true,
@@ -52,10 +51,6 @@ export function Highlighter({
   const shouldShow = !isView || isInView
 
   useLayoutEffect(() => {
-    if (prefersReducedMotion) {
-      return
-    }
-
     const element = elementRef.current
     let annotation: RoughAnnotation | null = null
     let resizeObserver: ResizeObserver | null = null
@@ -105,32 +100,10 @@ export function Highlighter({
     iterations,
     padding,
     multiline,
-    prefersReducedMotion,
   ])
 
-  const reducedMotionClasses = (() => {
-    if (action === "circle") {
-      return "rounded-full border"
-    }
-    if (action === "highlight") {
-      return "rounded-sm px-1"
-    }
-    return "underline decoration-2 underline-offset-2"
-  })()
-
-  const reducedMotionStyles =
-    action === "highlight"
-      ? ({ backgroundColor: `${color}4D` } as const)
-      : ({ borderColor: color, textDecorationColor: color } as const)
-
   return (
-    <span
-      ref={elementRef}
-      className={`relative inline-block bg-transparent ${
-        prefersReducedMotion ? reducedMotionClasses : ""
-      }`}
-      style={prefersReducedMotion ? reducedMotionStyles : undefined}
-    >
+    <span ref={elementRef} className="relative inline-block bg-transparent">
       {children}
     </span>
   )

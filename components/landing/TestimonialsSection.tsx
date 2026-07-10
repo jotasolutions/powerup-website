@@ -11,10 +11,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BlurFade } from "../ui/blur-fade";
-import { useReducedMotion } from "motion/react";
 
 export function TestimonialsSection() {
-    const prefersReducedMotion = useReducedMotion()
     const testimonials = [
         {
             bgImage: "/images/testimonials/marisa/bgimage.png",
@@ -105,7 +103,7 @@ export function TestimonialsSection() {
                         showArrows
                         showStatus={false}
                         showIndicators={false}
-                        autoPlay={!prefersReducedMotion}
+                        autoPlay
                         interval={7000}
                         infiniteLoop
                         swipeable

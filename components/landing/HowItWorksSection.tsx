@@ -6,16 +6,19 @@ import { CTAButton } from "../CTAButton"
 import { useRef } from "react"
 import { motion, useInView, useReducedMotion } from "motion/react"
 import { BlurFade } from "../ui/blur-fade"
-import {
-  cardStagger,
-  revealEase,
-  revealViewport,
-  textReveal,
-  textStagger,
-  uiSpring,
-} from "@/lib/motion"
+
+const revealViewport = {
+  once: true,
+  margin: "0px 0px -80px 0px",
+} as const
 
 const lineEase = "linear" as const
+const textEase = [0.22, 1, 0.36, 1] as const
+
+const textReveal = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0 },
+} as const
 
 const HIW_PATH =
   "M1.50488 127.056C71.5049 47.0562 210.505 -47.9438 385.005 83.0526C519.505 184.021 602.005 158.053 591.005 83.0526C583.379 31.0562 527.444 -20.2119 487.005 12.0543C440.005 49.5548 515.005 223.053 681.005 96.0525C847.005 -30.9475 979.505 29.0562 1011 90.0525"
@@ -99,8 +102,11 @@ export function HowItWorksSection() {
                   whileInView={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
                   viewport={revealViewport}
                   transition={{
-                    ...uiSpring,
-                    delay: cardStagger(index + 1),
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    mass: 0.8,
+                    delay: (index + 1) * 0.22,
                   }}
                 >
                   <div className="plus-darker opacity-70">{index + 1}</div>
@@ -120,11 +126,7 @@ export function HowItWorksSection() {
                   whileInView={prefersReducedMotion ? undefined : "visible"}
                   viewport={revealViewport}
                   variants={textReveal}
-                  transition={{
-                    duration: 0.45,
-                    ease: revealEase,
-                    delay: textStagger(cardStagger(index + 1), 0.18),
-                  }}
+                  transition={{ duration: 0.45, ease: textEase, delay: (index + 1) * 0.22 + 0.18 }}
                 >
                   {item.title}
                 </motion.h3>
@@ -134,11 +136,7 @@ export function HowItWorksSection() {
                   whileInView={prefersReducedMotion ? undefined : "visible"}
                   viewport={revealViewport}
                   variants={textReveal}
-                  transition={{
-                    duration: 0.45,
-                    ease: revealEase,
-                    delay: textStagger(cardStagger(index + 1), 0.32),
-                  }}
+                  transition={{ duration: 0.45, ease: textEase, delay: (index + 1) * 0.22 + 0.32 }}
                 >
                   {item.description}
                 </motion.p>

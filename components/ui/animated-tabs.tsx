@@ -75,7 +75,7 @@ export function AnimatedTabs({
       )}
     >
       <span
-        className="absolute inset-y-1 z-0 rounded-full bg-white shadow-lg transition-all duration-200 ease-out motion-reduce:transition-none"
+        className="absolute inset-y-1 z-0 rounded-full bg-white shadow-lg transition-all duration-200 ease-out"
         style={{
           left: indicator.left,
           width: indicator.width,

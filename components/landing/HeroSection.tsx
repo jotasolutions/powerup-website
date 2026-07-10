@@ -12,31 +12,25 @@ import widget3 from "../../public/images/hero/widget3.json";
 import widget4 from "../../public/images/hero/widget4.json";
 import Lottie, { type LottieComponentProps } from "lottie-react";
 import { BlurFade } from "../ui/blur-fade"
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 import Link from "next/link"
 import { EXAMPLE_MENU_URL, ExampleMenuQr } from "./ExampleMenuQr"
-import { revealEase, uiSpring } from "@/lib/motion"
 
 export function DelayedLottie({
   delayMs,
-  shouldPlay = true,
   ...props
-}: LottieComponentProps & { delayMs: number; shouldPlay?: boolean }) {
+}: LottieComponentProps & { delayMs: number }) {
   const lottieRef = useRef<LottieRefCurrentProps | null>(null)
   useEffect(() => {
-    if (!shouldPlay) return
-
     const id = window.setTimeout(() => {
       lottieRef.current?.play()
     }, delayMs)
     return () => window.clearTimeout(id)
-  }, [delayMs, shouldPlay])
+  }, [delayMs])
   return <Lottie {...props} autoplay={false} lottieRef={lottieRef} />
 }
 
 export function HeroSection() {
-  const prefersReducedMotion = useReducedMotion()
-
   return (
     <section id="hero-section" className="w-full px-3 pb-6 pt-3  sm:px-4 md:pb-10 md:pt-4 max-w-[1500px] mx-auto">
       <div className="hero-container relative mx-auto w-full overflow-hidden rounded-3xl p-4 pb-2 sm:pb-4 sm:px-6 sm:pb-0 sm:pt-8 md:px-10 lg:px-14">
@@ -52,13 +46,12 @@ export function HeroSection() {
           <Lottie
             animationData={widget1}
             loop={false}
-            autoplay={!prefersReducedMotion}
+            autoplay={true}
             style={{ width: '290px', height: 'auto' }}
             className="absolute right-[105px] top-[100px] z-10 w-[170px] hidden lg:block"
           />
           <DelayedLottie
             delayMs={400}
-            shouldPlay={!prefersReducedMotion}
             animationData={widget2}
             loop={false}
             style={{ width: '290px', height: 'auto' }}
@@ -66,7 +59,6 @@ export function HeroSection() {
           />
           <DelayedLottie
             delayMs={800}
-            shouldPlay={!prefersReducedMotion}
             animationData={widget3}
             loop={false}
             style={{ width: '290px', height: 'auto' }}
@@ -74,7 +66,6 @@ export function HeroSection() {
           />
           <DelayedLottie
             delayMs={1200}
-            shouldPlay={!prefersReducedMotion}
             animationData={widget4}
             loop={false}
             style={{ width: '300px', height: 'auto' }}
@@ -84,9 +75,9 @@ export function HeroSection() {
         <div className="relative z-20 mx-auto pt-4 sm:pt-0 flex max-w-6xl flex-col gap-6 md:gap-8 max-w-[390px] sm:max-w-[500px] md:max-w-[100%] md:min-h-[350px] lg:min-h-[500px] xl:min-h-[677px] lg:flex-row lg:items-center lg:gap-10">
           <motion.div
             className="block md:hidden w-full max-w-[320px] mx-auto"
-            initial={prefersReducedMotion ? false : { y: 30, opacity: 0 }}
-            animate={prefersReducedMotion ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: revealEase }}
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <Image
               src="/images/mobile-hero2.png"
@@ -160,11 +151,14 @@ export function HeroSection() {
         </div>
         <motion.div
           className="absolute bottom-3 right-3 z-30 hidden origin-center flex-col items-center gap-2 rounded-lg bg-slate-800 p-3 text-white lg:flex"
-          initial={prefersReducedMotion ? false : { scale: 0.92, opacity: 0 }}
-          animate={prefersReducedMotion ? { scale: 1, opacity: 1 } : { scale: 1, opacity: 1 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
           transition={{
-            ...(prefersReducedMotion ? { duration: 0 } : uiSpring),
-            delay: prefersReducedMotion ? 0 : 2,
+            delay: 2,
+            type: "spring",
+            stiffness: 380,
+            damping: 20,
+            mass: 0.85,
           }}
         >
           <p className="text-xs font-medium">Ver ejemplo</p>
@@ -180,9 +174,9 @@ export function HeroSection() {
       </div>
       <motion.div
         className="mx-auto mt-3 flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2 px-4 py-2 md:justify-between"
-        initial={prefersReducedMotion ? false : { opacity: 0 }}
+        initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
-        transition={{ duration: prefersReducedMotion ? 0 : 0.5, delay: prefersReducedMotion ? 0 : 1, ease: revealEase }}
+        transition={{ duration: 0.5, delay: 1, ease: "easeOut" }}
       >
         <Image
           src="/images/companies/google-cloud.svg"

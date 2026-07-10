@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
-import { useReducedMotion } from "motion/react"
 
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { cn } from "@/lib/utils"
@@ -60,18 +59,15 @@ const showcaseItems = [
 ] as const
 
 export function MenuShowcaseSection() {
-  const prefersReducedMotion = useReducedMotion()
   const [selectedItem, setSelectedItem] = useState(1)
   const touchStartX = useRef<number | null>(null)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
 
   useEffect(() => {
-    if (prefersReducedMotion) return
-
     videoRefs.current.forEach((video) => {
       void video?.play()
     })
-  }, [prefersReducedMotion])
+  }, [])
   const firstSlideIndex = 0
   const lastSlideIndex = showcaseItems.length - 1
   const slideWidth = 251
@@ -136,7 +132,7 @@ export function MenuShowcaseSection() {
             }}
           >
             <div
-              className="flex px-[calc(50%-125.5px)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+              className="flex px-[calc(50%-125.5px)] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
               style={{
                 gap: `${slideGap}px`,
                 transform: `translateX(-${selectedItem * slideStep}px)`,
@@ -155,10 +151,10 @@ export function MenuShowcaseSection() {
                               videoRefs.current[index] = element
                             }}
                             className={cn(
-                              "absolute inset-y-[10%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-[transform,opacity,filter] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
+                              "absolute inset-y-[10%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
                               isActive ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-35 scale-80"
                             )}
-                            autoPlay={!prefersReducedMotion}
+                            autoPlay
                             muted
                             loop
                             playsInline
@@ -172,7 +168,7 @@ export function MenuShowcaseSection() {
                             alt="iPhone frame"
                             fill
                             className={cn(
-                              "pointer-events-none z-20 object-contain transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
+                              "pointer-events-none z-20 object-contain transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
                               isActive ? "opacity-100 scale-100" : "opacity-35 scale-80"
                             )}
                             sizes="251px"
