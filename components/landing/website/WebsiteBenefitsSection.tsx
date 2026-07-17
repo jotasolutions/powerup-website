@@ -36,7 +36,7 @@ function useScreenshotReveal(panelRef: RefObject<HTMLElement | null>) {
   const scrollYProgress = usePanelScrollProgress(panelRef)
 
   // Entra desde abajo con fade; se queda fija y solo se desvanece al final
-  const opacity = useTransform(scrollYProgress, [0, 0.22, 0.82, 1], [0, 1, 1, 0])
+  const opacity = useTransform(scrollYProgress, [0, 0.15, 0.96, 1], [0, 1, 1, 0])
 
   return { opacity }
 }
@@ -62,11 +62,11 @@ function PanelAnimatedContent({
   icon: LucideIcon
   side: "left" | "right"
 }) {
-  const { opacity, y } = usePanelReveal(sectionRef)
+  const { opacity } = usePanelReveal(sectionRef)
 
   return (
     <motion.div
-      style={{ opacity, y }}
+      style={{ opacity }}
       className={cn(
         "w-full max-w-xs space-y-4 lg:max-xl:max-w-[18.75rem]",
         side === "left"
@@ -146,11 +146,11 @@ function PhoneScreenshot({
   src: string
   alt: string
 }) {
-  const { opacity, y } = useScreenshotReveal(panelRef)
+  const { opacity } = useScreenshotReveal(panelRef)
 
   return (
     <motion.div
-      style={{ opacity, y }}
+      style={{ opacity }}
       className="absolute inset-y-[10%] left-[10%] z-10 h-[80%] w-[80%] overflow-hidden rounded-[1.9rem]"
     >
       <Image
