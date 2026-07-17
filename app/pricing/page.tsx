@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { getPricingDataAction } from "@/app/actions/pricing"
 import { FooterSection } from "@/components/landing/FooterSection"
 import { HowItWorksSection } from "@/components/landing/HowItWorksSection"
-import { IntroSection } from "@/components/landing/IntroSection"
 import { NavMenu } from "@/components/landing/NavMenu"
 import { PricingSection } from "@/components/landing/PricingSection"
 import { PricingComparisonSection } from "@/components/landing/pricing/PricingComparisonSection"
@@ -11,6 +10,7 @@ import { PricingProIncludesSection } from "@/components/landing/pricing/PricingP
 import { PricingTrialSection } from "@/components/landing/pricing/PricingTrialSection"
 import { PricingValueSection } from "@/components/landing/pricing/PricingValueSection"
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
+import { BigTextSection } from "@/components/landing/BigTextSection"
 
 export const metadata: Metadata = {
   title: "Precios | PowerUp Menu",
@@ -37,7 +37,7 @@ export default async function PricingPage() {
       <PricingFreeIncludesSection />
       <PricingProIncludesSection />
       <PricingValueSection />
-      <IntroSection paragraph="Crea tu carta y potencia las ventas con ingredientes extras y maridando platos. Con esos cambios en pocos días ya habrás amortizado el precio del plan Pro" />
+      <BigTextSection paragraph="Crea tu carta y potencia las ventas con ingredientes extras y maridando platos. Con esos cambios en pocos días ya habrás amortizado el precio del plan Pro" />
       <PricingComparisonSection />
       <TestimonialsSection />
       <HowItWorksSection />

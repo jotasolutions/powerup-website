@@ -6,7 +6,6 @@ import { FooterSection } from "@/components/landing/FooterSection"
 import { HeroSection } from "@/components/landing/HeroSection"
 import { FeaturesSection } from "@/components/landing/FeaturesSection"
 import { HowItWorksSection } from "@/components/landing/HowItWorksSection"
-import { IntroSection } from "@/components/landing/IntroSection"
 import { MenuShowcaseSection } from "@/components/landing/MenuShowcaseSection"
 import { PricingSection } from "@/components/landing/PricingSection"
 import { SellMoreSection } from "@/components/landing/SellMoreSection"
@@ -17,6 +16,7 @@ import { WebsiteSection } from "@/components/landing/WebsiteSection"
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
 import { getPricingDataAction } from "@/app/actions/pricing"
 import { NavMenu } from "@/components/landing/NavMenu"
+import { BigTextSection } from "@/components/landing/BigTextSection"
 
 export default async function Home() {
   const pricingData = await getPricingDataAction()
@@ -25,7 +25,7 @@ export default async function Home() {
     <main className="bg-white text-slate-900">
       <NavMenu />
       <HeroSection />
-      <IntroSection />
+      <BigTextSection />
       <SellMoreSection />
       <AttractPeopleSection />
       <AnalyticsSection />

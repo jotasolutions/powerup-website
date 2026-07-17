@@ -6,9 +6,10 @@ const defaultParagraph =
 
 type IntroSectionProps = {
   paragraph?: string
+  showImages?: boolean
 }
 
-export function IntroSection({ paragraph = defaultParagraph }: IntroSectionProps) {
+export function BigTextSection({ paragraph = defaultParagraph, showImages = true }: IntroSectionProps) {
   return (
     <SectionContainer className="py-0 md:py-0 lg:py-0">
       <div className="py-6 md:py-8">
@@ -19,6 +20,7 @@ export function IntroSection({ paragraph = defaultParagraph }: IntroSectionProps
             revealProgress={0.6}
             revealStart={0.12}
             paragraph={paragraph}
+            showImages={showImages}
           />
         </div>
       </div>

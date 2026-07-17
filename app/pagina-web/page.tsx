@@ -14,11 +14,12 @@ import { WebsitePricingSection } from "@/components/landing/website/WebsitePrici
 import {
   WebsiteAnalyticsSection,
   WebsitePagesSection,
-  WebsitePainPointSection,
   WebsiteWelcomeSection,
 } from "@/components/landing/website/WebsiteSplitSections"
 import { WebsiteShowcaseSection } from "@/components/landing/website/WebsiteShowcaseSection"
 import { PricingSection } from "@/components/landing/PricingSection"
+import { WebsitePainPointSection } from "@/components/landing/website/WebsitePainPointSection"
+import { BigTextSection } from "@/components/landing/BigTextSection"
 
 export const metadata: Metadata = {
   title: "Página web para restaurantes | PowerUp Menu",
@@ -37,6 +38,7 @@ export default async function WebsitePage() {
       <NavMenu />
       <WebsiteHeroSection />
       <WebsitePainPointSection />
+      <BigTextSection showImages={false} paragraph="La página de tu restaurante debería posicionarte en Google y tener algunos enlaces. Para eso no necesitas pagar cientos de euros para que un estudio te haga una a medida. Nosotros la incluímos con la carta QR" />
       <WebsiteBenefitsSection />
       <WebsiteShowcaseSection />
       <WebsiteOutstandSection />

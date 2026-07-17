@@ -6,7 +6,6 @@ import { WebsiteSplitSection } from "./WebsiteSplitSection"
 import {
   websiteAnalyticsItems,
   websitePagesItems,
-  websitePainPoints,
   websiteWelcomeItems,
 } from "./website-section-data"
 
@@ -19,17 +18,7 @@ function PlaceholderPanel({ className }: { className?: string }) {
   )
 }
 
-export function WebsitePainPointSection() {
-  return (
-    <WebsiteSplitSection
-      id="website-pain-point"
-      title="Tu web no puede estar frenando tu negocio"
-      items={websitePainPoints}
-      image={<PlaceholderPanel className="min-h-[360px]" />}
-      ctaLabel="Pruébalo gratis"
-    />
-  )
-}
+
 
 export function WebsitePagesSection() {
   return (

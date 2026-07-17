@@ -21,6 +21,7 @@ export interface ScrollRevealParagraphProps {
   stickyClassName?: string;
   revealProgress?: number;
   revealStart?: number;
+  showImages?: boolean;
 }
 
 export default function ScrollRevealParagraph({
@@ -30,6 +31,7 @@ export default function ScrollRevealParagraph({
   stickyClassName = "sticky top-0 flex min-h-[100dvh] items-center relative",
   revealProgress = 1,
   revealStart = 0,
+  showImages = true,
 }: ScrollRevealParagraphProps) {
   const shouldReduceMotion = useReducedMotion();
   const scrollTrack = useRef<HTMLDivElement>(null);
@@ -64,67 +66,73 @@ export default function ScrollRevealParagraph({
   return (
     <div className={trackClassName} ref={scrollTrack}>
       <div className={stickyClassName}>
-        <motion.div
-          className="absolute top-1/6 left-0 rotate-11 shadow-xl rounded-2xl"
-          style={{ opacity: ticketOpacity, y: ticketY }}
-        >
-          <Image
-            src="/images/ticket-medio-widget.png"
-            alt="Ticket medio widget"
-            width={800}
-            height={800}
-            className="hidden md:block h-auto w-[145px] md:w-[210px] rounded-xl border-green-50 border-4"
-          />
-        </motion.div>
-        <motion.div
-          className="absolute bottom-1/6 left-0 -rotate-11 shadow-xl rounded-2xl"
-          style={{ opacity: qrOpacity, y: qrY }}
-        >
-          <Image
-            src="/images/qr-widget.png"
-            alt="Ticket medio widget"
-            width={800}
-            height={800}
-            className="hidden md:block h-auto w-[145px] md:w-[100px] rounded-xl border-gray-50 border-4"
-          />
-        </motion.div>
-        <motion.div
-          className="absolute bottom-1/6 right-0 rotate-3 shadow-xl rounded-2xl"
-          style={{ opacity: crossSellingOpacity, y: crossSellingY }}
-        >
-          <Image
-            src="/images/cross-selling-widget.png"
-            alt="Ticket medio widget"
-            width={800}
-            height={800}
-            className="hidden md:block h-auto w-[250px] rounded-xl border-gray-50 border-4"
-          />
-        </motion.div>
-        <motion.svg
-          viewBox="0 0 168 68"
-          className="hidden md:block absolute top-1/3 right-0 h-auto w-[150px] -translate-y-1/2"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden
-        >
-          <path
-            d={YELLOW_ARROW_PATH}
-            stroke="#FFCD45"
-            strokeWidth="2.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="opacity-0"
-          />
-          <motion.path
-            d={YELLOW_ARROW_PATH}
-            stroke="#FFCD45"
-            strokeWidth="2.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={{ pathLength: arrowPathLength }}
-          />
-        </motion.svg>
-        
+        {showImages && (
+          <>
+            <motion.div
+              className="absolute top-1/6 left-0 rotate-11 shadow-xl rounded-2xl"
+              style={{ opacity: ticketOpacity, y: ticketY }}
+            >
+              <Image
+                src="/images/ticket-medio-widget.png"
+                alt="Ticket medio widget"
+                width={800}
+                height={800}
+                className="hidden md:block h-auto w-[145px] md:w-[210px] rounded-xl border-green-50 border-4"
+              />
+            </motion.div>
+            <motion.div
+              className="absolute bottom-1/6 left-0 -rotate-11 shadow-xl rounded-2xl"
+              style={{ opacity: qrOpacity, y: qrY }}
+            >
+              <Image
+                src="/images/qr-widget.png"
+                alt="Ticket medio widget"
+                width={800}
+                height={800}
+                className="hidden md:block h-auto w-[145px] md:w-[100px] rounded-xl border-gray-50 border-4"
+              />
+            </motion.div>
+            <motion.div
+              className="absolute bottom-1/6 right-0 rotate-3 shadow-xl rounded-2xl"
+              style={{ opacity: crossSellingOpacity, y: crossSellingY }}
+            >
+              <Image
+                src="/images/cross-selling-widget.png"
+                alt="Ticket medio widget"
+                width={800}
+                height={800}
+                className="hidden md:block h-auto w-[250px] rounded-xl border-gray-50 border-4"
+              />
+            </motion.div>
+
+
+            <motion.svg
+              viewBox="0 0 168 68"
+              className="hidden md:block absolute top-1/3 right-0 h-auto w-[150px] -translate-y-1/2"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden
+            >
+              <path
+                d={YELLOW_ARROW_PATH}
+                stroke="#FFCD45"
+                strokeWidth="2.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="opacity-0"
+              />
+              <motion.path
+                d={YELLOW_ARROW_PATH}
+                stroke="#FFCD45"
+                strokeWidth="2.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ pathLength: arrowPathLength }}
+              />
+            </motion.svg>
+          </>
+        )}
+
         <p className={paragraphClasses}>
           {words.map((word, i) => {
             const start = (i / words.length) * clampedRevealProgress;

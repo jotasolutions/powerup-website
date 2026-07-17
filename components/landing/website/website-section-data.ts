@@ -1,15 +1,14 @@
 import type { LucideIcon } from "lucide-react"
 import {
   BarChart3,
+  BookOpen,
   CalendarCheck2,
   Globe,
+  Layers,
   LayoutPanelTop,
   MonitorSmartphone,
   Paintbrush2,
   PencilRuler,
-  SearchCheck,
-  ShieldCheck,
-  Smartphone,
 } from "lucide-react"
 
 import type { ShowcaseItem } from "@/components/landing/ShowcaseCarousel"
@@ -17,56 +16,54 @@ import type { ShowcaseItem } from "@/components/landing/ShowcaseCarousel"
 export const websiteHeroContent = {
   title: "Tu restaurante merece una web moderna, bonita y lista en minutos.",
   description:
-    "La mejor forma de atraer clientes, vender más y dar una imagen profesional.",
+    "Crea tu sitio web profesional sin diseñadores, sin plugins y sin complicarte.",
   badge: "Incluida gratis con el plan Pro anual de PowerUp.",
 }
 
-export const websitePainPoints = [
-  "Web lenta o desactualizada",
-  "Difícil de modificar",
-  "No funciona bien en móviles",
-  "Diseño antiguo que no refleja tu marca",
-] as const
 
 type BenefitItem = {
   title: string
   description: string
   icon: LucideIcon
+  image: string
 }
 
-export const websiteBenefitsLeft: BenefitItem[] = [
+export const websiteBenefits: BenefitItem[] = [
   {
     title: "Diseño moderno y rápido",
-    description: "Plantillas limpias y optimizadas para cargar rápido.",
+    description: "Plantillas limpias y optimizadas para cargar rápido en cualquier dispositivo.",
     icon: Paintbrush2,
+    image: "/images/website-feature-sections/feature1.jpeg",
   },
   {
-    title: "Menú digital actualizado",
-    description: "Tu carta y tu web siempre alineadas sin trabajo duplicado.",
+    title: "Carta integrada (sin PDFs)",
+    description: "Tu menú digital vive dentro de la web, siempre actualizado y sin archivos sueltos.",
     icon: LayoutPanelTop,
+    image: "/images/website-feature-sections/feature2.jpg",
   },
   {
-    title: "Adaptado a móviles",
-    description: "Se ve perfecto en móvil, tablet y ordenador desde el primer día.",
-    icon: Smartphone,
+    title: "Páginas ilimitadas",
+    description: "Crea todas las páginas que necesites: promos, eventos, menús de temporada y más.",
+    icon: Layers,
+    image: "/images/website-feature-sections/feature3.jpeg",
   },
-]
-
-export const websiteBenefitsRight: BenefitItem[] = [
   {
-    title: "Gestión sencilla de reservas",
-    description: "Añade botones de reservar, llamar o WhatsApp en segundos.",
+    title: "Pantalla de bienvenida",
+    description: "Presenta tu restaurante con fotos, textos y un mensaje que conecte con tus clientes.",
+    icon: BookOpen,
+    image: "/images/website-feature-sections/feature4.jpeg",
+  },
+  {
+    title: "Botón de reservar y llamar",
+    description: "Convierte visitas en reservas con acciones directas en los puntos clave de tu web.",
     icon: CalendarCheck2,
+    image: "/images/website-feature-sections/feature5.jpeg",
   },
   {
-    title: "SEO para restaurantes",
-    description: "Estructura pensada para aparecer mejor en Google y mapas.",
-    icon: SearchCheck,
-  },
-  {
-    title: "Soporte y actualizaciones",
-    description: "Mejoras constantes sin depender de agencias externas.",
-    icon: ShieldCheck,
+    title: "Dominio propio",
+    description: "Publica tu web con la dirección de tu restaurante y refuerza tu marca online.",
+    icon: Globe,
+    image: "/images/website-feature-sections/feature7.png",
   },
 ]
 
