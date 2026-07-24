@@ -11,9 +11,9 @@ import { WebsiteFinalCtaSection } from "@/components/landing/website/WebsiteFina
 import { WebsiteHeroSection } from "@/components/landing/website/WebsiteHeroSection"
 import { WebsiteOutstandSection } from "@/components/landing/website/WebsiteOutstandSection"
 import { WebsitePricingSection } from "@/components/landing/website/WebsitePricingSection"
+import { WebsitePagesSection } from "@/components/landing/website/WebsitePagesSection"
 import {
   WebsiteAnalyticsSection,
-  WebsitePagesSection,
   WebsiteWelcomeSection,
 } from "@/components/landing/website/WebsiteSplitSections"
 import { WebsiteShowcaseSection } from "@/components/landing/website/WebsiteShowcaseSection"
@@ -45,7 +45,6 @@ export default async function WebsitePage() {
       <WebsitePagesSection />
       <WebsiteAnalyticsSection />
       <WebsiteBuilderSection />
-      <WebsiteWelcomeSection />
       <TestimonialsSection />
       <WebsiteComparisonSection />
       <PricingSection

@@ -5,7 +5,6 @@ import Image from "next/image"
 import { WebsiteSplitSection } from "./WebsiteSplitSection"
 import {
   websiteAnalyticsItems,
-  websitePagesItems,
   websiteWelcomeItems,
 } from "./website-section-data"
 
@@ -14,31 +13,6 @@ function PlaceholderPanel({ className }: { className?: string }) {
     <div
       className={`min-h-[320px] rounded-3xl border border-slate-200 bg-slate-100 ${className ?? ""}`}
       aria-hidden
-    />
-  )
-}
-
-
-
-export function WebsitePagesSection() {
-  return (
-    <WebsiteSplitSection
-      id="website-pages"
-      title="Páginas para todo lo que necesites"
-      description="Crea páginas para promociones, temporadas o eventos sin depender de diseñadores."
-      items={websitePagesItems}
-      image={
-        <div className="relative min-h-[360px] overflow-hidden rounded-3xl border border-slate-200 bg-white">
-          <Image
-            src="/images/tropico-website-mockup.png"
-            alt="Secciones de una web de restaurante"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 540px"
-          />
-        </div>
-      }
-      ctaLabel="Pruébalo gratis"
     />
   )
 }

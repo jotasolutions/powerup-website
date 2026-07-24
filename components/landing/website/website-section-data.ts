@@ -91,10 +91,10 @@ export const websiteShowcaseItems: ShowcaseItem[] = [
 ]
 
 export const websitePagesItems = [
-  "Página de inicio, carta y contacto",
-  "Información de ubicación y horarios",
-  "Formulario de reserva integrado",
-  "Enlace a redes sociales",
+  "Páginas ilimitadas para cualquier campaña",
+  "Construye cada página usando bloques",
+  "Los botones que quieras: Reservar, llamar, formularios...",
+  "Indexadas en Google y en ChatGPT",
 ] as const
 
 export const websiteAnalyticsItems = [
