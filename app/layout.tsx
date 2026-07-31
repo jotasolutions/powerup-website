@@ -5,6 +5,8 @@ import { AttributionCapture } from "@/components/AttributionCapture";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 const inter = Inter({
   variable: "--font-inter",
@@ -56,6 +58,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Toaster />
         </CookieConsent>
+        <SpeedInsights />
       </body>
     </html>
   );
