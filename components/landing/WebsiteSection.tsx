@@ -50,19 +50,8 @@ export function WebsiteSection() {
 
 
             <div className="flex w-full flex-col gap-2 sm:w-auto">
-              <CTAButton />
-              <p className="flex items-center gap-2 text-sm text-slate-500">
-                <span
-                  className="relative inline-flex shrink-0 text-slate-500"
-                  aria-hidden
-                >
-                  <CreditCard className="size-4" />
-                  <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                    <span className="h-px w-[130%] rotate-45 bg-current opacity-70" />
-                  </span>
-                </span>
-                No requiere tarjeta
-              </p>
+              <CTAButton label="Más información de la web" href="/pagina-web" icon={null} target="_self" />
+            
             </div>
           </div>
         </div>

@@ -2,37 +2,50 @@
 
 import { Button } from "@/components/ui/button";
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics";
+import {
+  useAttributedCtaUrl,
+  useCtaLabel,
+  useIsWebsiteLanding,
+} from "@/lib/attribution";
 import type { ReactNode } from "react";
 import { QrCode } from "lucide-react";
 import Link from "next/link";
-
-const SIGN_UP_URL = "https://admin.powerup.menu/sign-up";
 
 type CTAButtonProps = {
   location?: string;
   label?: string;
   icon?: ReactNode;
+  /** Overrides the default CTA destination (sign-up or website wizard). */
+  href?: string;
+  target?: string;
 };
 
 export function CTAButton({
   location,
-  label = "Crear carta gratis",
+  label,
   icon = <QrCode className="size-4" />,
+  href,
+  target = "_blank",
 }: CTAButtonProps) {
+  const ctaUrl = useAttributedCtaUrl(href);
+  const resolvedLabel = useCtaLabel(label);
+  const isWebsiteLanding = useIsWebsiteLanding();
+  const resolvedIcon = isWebsiteLanding ? null : icon;
+
   return (
     <Link
-      href={SIGN_UP_URL}
-      target="_blank"
+      href={ctaUrl}
+      target={target}
       rel="noopener noreferrer"
       {...trackAttrs(ANALYTICS_EVENTS.SIGN_UP_CLICK, {
-        label,
+        label: resolvedLabel,
         location,
-        linkUrl: SIGN_UP_URL,
+        linkUrl: ctaUrl,
       })}
     >
       <Button className="w-full sm:w-auto h-13 sm:h-10">
-        {icon}
-        {label}
+        {resolvedIcon}
+        {resolvedLabel}
       </Button>
     </Link>
   );

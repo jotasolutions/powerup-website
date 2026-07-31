@@ -107,7 +107,7 @@ function ScrollFeaturePanel({
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen items-center justify-center pt-16 lg:pt-20"
+      className="relative flex min-h-screen items-center justify-center pt-16 lg:pt-20 "
     >
       {isMounted ? (
         <PanelAnimatedContent
@@ -120,7 +120,7 @@ function ScrollFeaturePanel({
       ) : (
         <div
           className={cn(
-            "w-full max-w-xs space-y-4 opacity-0 lg:max-xl:max-w-[18.75rem]",
+            "w-full max-w-xs space-y-4 opacity-0 lg:max-xl:max-w-[18.75rem] ",
             side === "left"
               ? "mr-auto ml-8 lg:ml-0"
               : "mr-8 ml-auto md:mr-auto md:ml-8 lg:mr-0 lg:ml-auto",
@@ -151,7 +151,7 @@ function PhoneScreenshot({
   return (
     <motion.div
       style={{ opacity }}
-      className="absolute inset-y-[10%] left-[10%] z-10 h-[80%] w-[80%] overflow-hidden rounded-[1.9rem]"
+      className="absolute inset-y-[10%] left-[10%] z-10 h-[80%] w-[80%] overflow-hidden rounded-[1.9rem] "
     >
       <Image
         src={src}
@@ -173,7 +173,9 @@ function StickyPhoneMockup({
   showScreenshots: boolean
 }) {
   return (
-    <div className="pointer-events-none sticky top-4 z-10 flex justify-center md:top-0 md:h-screen md:items-center md:justify-end lg:justify-center">
+    <div className="pointer-events-none sticky top-10 z-10 flex justify-center md:top-0 md:h-screen md:items-center  md:justify-end lg:justify-center">
+      <div className="md:hidden block absolute left-0 bottom-0 w-full h-full bg-gradient-to-t from-transparent via-white to-white"></div>
+ 
       <div className="relative aspect-[15/32] w-full max-w-52 md:max-lg:scale-80 md:max-w-[20.75rem]">
         {showScreenshots
           ? websiteBenefits.map((item, index) => {
@@ -261,7 +263,7 @@ export function WebsiteBenefitsSection() {
           </div>
         </div>
 
-        <div className="mt-10 flex justify-center pb-12 md:mt-14 md:pb-20">
+        <div className="mt-10 md:flex md:justify-center w-full pb-12 md:mt-14 md:pb-20">
           <CTAButton label="Crear mi web gratis" location="website_benefits" icon={null} />
         </div>
       </div>

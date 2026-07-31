@@ -69,24 +69,27 @@ export const websiteBenefits: BenefitItem[] = [
 
 export const websiteShowcaseItems: ShowcaseItem[] = [
   {
-    src: "/videos/cartas-demo/tropico.mp4",
+    src: "/images/website-landing/websites/tropico.PNG",
     image: "/videos/iphone17-sage.png",
   },
+
   {
-    src: "/videos/cartas-demo/1080.mp4",
-    image: "/videos/iphone17-black.png",
-  },
-  {
-    src: "/videos/cartas-demo/goyos.mp4",
+    src: "/images/website-landing/websites/la-fresca.PNG",
     image: "/videos/iphone17-white.png",
   },
   {
-    src: "/videos/cartas-demo/trattoria.mp4",
+    src: "/images/website-landing/websites/trattoria.PNG",
     image: "/videos/iphone17-blue.png",
+    url: "https://trattoriapiemontese.es",
   },
   {
-    src: "/videos/cartas-demo/marisa.mp4",
+    src: "/images/website-landing/websites/casa-mediterranea.PNG",
     image: "/videos/iphone17-sage.png",
+  },
+  {
+    src: "/images/website-landing/websites/jafritta.PNG",
+    image: "/videos/iphone17-black.png",
+    url: "https://jafritta.com",
   },
 ]
 

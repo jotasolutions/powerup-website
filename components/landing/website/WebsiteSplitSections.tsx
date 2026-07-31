@@ -4,7 +4,7 @@ import Image from "next/image"
 
 import { WebsiteSplitSection } from "./WebsiteSplitSection"
 import {
-  websiteAnalyticsItems,
+
   websiteWelcomeItems,
 } from "./website-section-data"
 
@@ -17,19 +17,6 @@ function PlaceholderPanel({ className }: { className?: string }) {
   )
 }
 
-export function WebsiteAnalyticsSection() {
-  return (
-    <WebsiteSplitSection
-      id="website-analytics"
-      title="Mide el tráfico de tu web"
-      description="Conoce a tus clientes y mejora tus resultados con métricas claras."
-      items={websiteAnalyticsItems}
-      image={<PlaceholderPanel className="min-h-[360px]" />}
-      imagePosition="right"
-      ctaLabel="Pruébalo gratis"
-    />
-  )
-}
 
 export function WebsiteWelcomeSection() {
   return (

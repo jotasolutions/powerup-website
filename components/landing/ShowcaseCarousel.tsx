@@ -132,27 +132,41 @@ export function ShowcaseCarousel({
         >
           {items.map((item, index) => {
             const isActive = index === selectedItem
+            const isVideo = /\.mp4($|\?)/i.test(item.src)
+            const mediaClassName = cn(
+              "absolute inset-y-[10%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+              isActive ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-35 scale-80"
+            )
 
             return (
               <div key={`${item.src}-${index}`} className="w-[251px] shrink-0 pb-8 sm:pb-10">
                 <div className="relative aspect-[15/32] w-[251px]">
-                  <video
-                    ref={(element) => {
-                      videoRefs.current[index] = element
-                    }}
-                    className={cn(
-                      "absolute inset-y-[10%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                      isActive ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-35 scale-80"
-                    )}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                  >
-                    <source src={item.src} type="video/mp4" />
-                    Tu navegador no soporta el video.
-                  </video>
+                  {isVideo ? (
+                    <video
+                      ref={(element) => {
+                        videoRefs.current[index] = element
+                      }}
+                      className={mediaClassName}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    >
+                      <source src={item.src} type="video/mp4" />
+                      Tu navegador no soporta el video.
+                    </video>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt="Ejemplo de web de restaurante"
+                      width={201}
+                      height={434}
+                      className={mediaClassName}
+                      sizes="201px"
+                      priority={isActive}
+                    />
+                  )}
                   <Image
                     src={item.image}
                     alt="iPhone frame"

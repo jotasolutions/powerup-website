@@ -10,14 +10,11 @@ import { WebsiteComparisonSection } from "@/components/landing/website/WebsiteCo
 import { WebsiteFinalCtaSection } from "@/components/landing/website/WebsiteFinalCtaSection"
 import { WebsiteHeroSection } from "@/components/landing/website/WebsiteHeroSection"
 import { WebsiteOutstandSection } from "@/components/landing/website/WebsiteOutstandSection"
-import { WebsitePricingSection } from "@/components/landing/website/WebsitePricingSection"
+import { WebsiteAnalyticsSection } from "@/components/landing/website/WebsiteAnalyticsSection"
 import { WebsitePagesSection } from "@/components/landing/website/WebsitePagesSection"
-import {
-  WebsiteAnalyticsSection,
-  WebsiteWelcomeSection,
-} from "@/components/landing/website/WebsiteSplitSections"
+
 import { WebsiteShowcaseSection } from "@/components/landing/website/WebsiteShowcaseSection"
-import { PricingSection } from "@/components/landing/PricingSection"
+import { WebsitePricingSection } from "@/components/landing/website/WebsitePricingSection"
 import { WebsitePainPointSection } from "@/components/landing/website/WebsitePainPointSection"
 import { BigTextSection } from "@/components/landing/BigTextSection"
 
@@ -34,7 +31,12 @@ export default async function WebsitePage() {
   const pricingData = await getPricingDataAction()
 
   return (
-    <main className="bg-white text-slate-900">
+    <main className="relative bg-white text-slate-900">
+      {/* Fondo detrás del nav: no envolver el sticky o deja de pegarse al salir del wrapper */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[#E2FEFD]"
+      />
       <NavMenu />
       <WebsiteHeroSection />
       <WebsitePainPointSection />
@@ -47,13 +49,11 @@ export default async function WebsitePage() {
       <WebsiteBuilderSection />
       <TestimonialsSection />
       <WebsiteComparisonSection />
-      <PricingSection
-        monthlyPrice={pricingData.monthlyPrice}
+      <WebsitePricingSection
         yearlyPrice={pricingData.yearlyPrice}
-        monthlyPriceInCents={pricingData.monthlyPriceInCents}
         yearlyPriceInCents={pricingData.yearlyPriceInCents}
       />
-      <WebsiteFinalCtaSection />
+    
       <FooterSection />
     </main>
   )

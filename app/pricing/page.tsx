@@ -36,8 +36,10 @@ export default async function PricingPage() {
       <PricingTrialSection />
       <PricingFreeIncludesSection />
       <PricingProIncludesSection />
-      <PricingValueSection />
-      <BigTextSection paragraph="Crea tu carta y potencia las ventas con ingredientes extras y maridando platos. Con esos cambios en pocos días ya habrás amortizado el precio del plan Pro" />
+
+      <BigTextSection 
+      showImages={false}
+      paragraph="Crea tu carta y potencia las ventas con ingredientes extras y maridando platos. Con esos cambios en pocos días ya habrás amortizado el precio del plan Pro" />
       <PricingComparisonSection />
       <TestimonialsSection />
       <HowItWorksSection />

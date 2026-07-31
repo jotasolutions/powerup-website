@@ -196,7 +196,7 @@ export function TestimonialsSection() {
 
                 </div>
             </div>
-            <div className="flex justify-center mt-12">
+            <div className="md:flex md:justify-center mt-12 w-full">
                 <CTAButton />
             </div>
         </SectionContainer>

@@ -7,16 +7,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
+import { useAttributedCtaUrl, useCtaLabel, useIsWebsiteLanding } from "@/lib/attribution"
 
 const navItems = [
-  { label: "Evalua tu carta", href: "#advisor" },
+  { label: "Evalua tu carta", href: "/#advisor" },
   { label: "Página web", href: "/pagina-web" },
   { label: "Precios", href: "/pricing" },
-  { label: "Vende mas", href: "#vende-mas" },
 ]
 
 const loginUrl = "https://admin.powerup.menu/sign-in"
-const signUpUrl = "https://admin.powerup.menu/sign-up"
 
 const SCROLL_RANGE: [number, number] = [0, 64]
 const springConfig = { stiffness: 420, damping: 42, mass: 0.55 }
@@ -24,6 +23,9 @@ const springConfig = { stiffness: 420, damping: 42, mass: 0.55 }
 export function NavMenu() {
   const { scrollY } = useScroll()
   const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const attributedSignUpUrl = useAttributedCtaUrl()
+  const ctaLabel = useCtaLabel("Crea tu carta")
+  const isWebsiteLanding = useIsWebsiteLanding()
 
   const maxWidthRaw = useTransform(scrollY, SCROLL_RANGE, [1450, 960])
   const borderRadiusRaw = useTransform(scrollY, SCROLL_RANGE, [0, 16])
@@ -121,18 +123,18 @@ export function NavMenu() {
               Login
             </Link>
             <Link
-              href={signUpUrl}
+              href={attributedSignUpUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={buttonVariants({ variant: "default", size: "sm" })}
               {...trackAttrs(ANALYTICS_EVENTS.SIGN_UP_CLICK, {
-                label: "Crea tu carta",
+                label: ctaLabel,
                 location: "nav_desktop",
-                linkUrl: signUpUrl,
+                linkUrl: attributedSignUpUrl,
               })}
             >
-              <QrCode className="size-4" />
-              Crea tu carta
+              {!isWebsiteLanding ? <QrCode className="size-4" /> : null}
+              {ctaLabel}
             </Link>
           </div>
 
@@ -186,17 +188,17 @@ export function NavMenu() {
                 Login
               </Link>
               <Link
-                href={signUpUrl}
+                href={attributedSignUpUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={buttonVariants({ variant: "default", className: "w-full", size: "sm" })}
                 {...trackAttrs(ANALYTICS_EVENTS.SIGN_UP_CLICK, {
-                  label: "Crea tu carta",
+                  label: ctaLabel,
                   location: "nav_mobile",
-                  linkUrl: signUpUrl,
+                  linkUrl: attributedSignUpUrl,
                 })}
               >
-                Crea tu carta
+                {ctaLabel}
               </Link>
             </div>
           </div>

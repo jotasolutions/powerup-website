@@ -8,26 +8,29 @@ import { cn } from "@/lib/utils"
 import { Check } from "lucide-react"
 import image from "next/image"
 import { SectionContainer } from "../SectionContainer"
-import { websitePagesItems } from "./website-section-data"
+import { websiteAnalyticsItems } from "./website-section-data"
 
-export function WebsitePagesSection() {
+export function WebsiteAnalyticsSection() {
   return (
     <SectionContainer id="website-pages">
       <div
         className={cn(
-          "flex flex-col-reverse md:grid items-center gap-8 md:gap-10 lg:grid-cols-2",
-        
+          "grid items-center gap-8 md:gap-10 lg:grid-cols-2",
+
         )}
       >
+        <div className="bg-purple-100 rounded-3xl overflow-hidden">
+          <Image src="/images/website-landing/website-metrics.png" alt="Páginas para todo lo que necesites" width={900} height={600} />
+        </div>
         <div className="space-y-6">
           <BlurFade inView>
-            <h2 className="section-title max-w-[460px]">Páginas para tooooodo lo que necesites</h2>
+            <h2 className="section-title max-w-[460px]">Mide lo que pasa</h2>
           </BlurFade>
-            <BlurFade inView inViewMargin="-80px" delay={0.1}>
-              <p className="section-paragraph">Crea páginas para promociones, temporadas o eventos sin depender de diseñadores.</p>
-            </BlurFade>
+          <BlurFade inView inViewMargin="-80px" delay={0.1}>
+            <p className="section-paragraph">PowerUp analiza automáticamente cómo usan tu web:</p>
+          </BlurFade>
           <ul className="space-y-4">
-            {websitePagesItems.map((item) => (
+            {websiteAnalyticsItems.map((item: string) => (
               <li
                 key={item}
                 className="flex items-start gap-3 text-sm text-slate-700 sm:text-base font-medium"
@@ -41,9 +44,7 @@ export function WebsitePagesSection() {
           </ul>
           <CTAButton label="Pruébalo gratis" location="website-pages" />
         </div>
-        <div className="bg-green-100 rounded-3xl overflow-hidden">
-          <Image src="/images/website-landing/website-pages9.png" alt="Páginas para todo lo que necesites" width={900} height={600} />
-        </div>
+
       </div>
     </SectionContainer>
   )

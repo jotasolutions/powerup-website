@@ -35,7 +35,7 @@ export function WebsiteOutstandSection() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                
+
               />
             </motion.svg>
           </div>
@@ -63,7 +63,10 @@ export function WebsiteOutstandSection() {
             </p>
           </BlurFade>
         </div>
-        <CTAButton label="Pruébalo gratis" location="website_outstand" />
+
+        <div className="w-full">
+          <CTAButton label="Pruébalo gratis" location="website_outstand" />
+        </div>
       </div>
     </SectionContainer>
   )

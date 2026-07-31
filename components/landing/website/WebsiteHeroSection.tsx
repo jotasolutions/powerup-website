@@ -16,26 +16,27 @@ export function WebsiteHeroSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <SectionContainer id="website-hero" className="pt-8 md:pt-12 bg-gradient-to-b from-[#E2FEFD]  to-white">
-      <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
+    <SectionContainer id="website-hero" className="pt-8 md:pt-12 bg-gradient-to-b from-[#E2FEFD] to-white">
+      <div className="flex flex-col flex-col-reverse items-center gap-8 md:grid md:gap-10 lg:grid-cols-2 lg:gap-12">
         <div className="space-y-6">
           <BlurFade inView inViewMargin="-80px">
-            <h1 className="font-heading text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl lg:text-4xl">
+            <h1 className="text-center md:text-left font-heading text-2xl md:text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl lg:text-4xl">
               {websiteHeroContent.title}
             </h1>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
-            <p className="section-paragraph max-w-[80%]">{websiteHeroContent.description}</p>
+            <p className="section-paragraph text-center md:text-left md:max-w-[80%]">{websiteHeroContent.description}</p>
           </BlurFade>
          
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <CTAButton icon={null} label="Crear mi web gratis" location="website_hero" />
             <Link
-              href="#website-examples"
+              target="_blank"
+              href="https://tropicobrunch.powerup.menu/"
               {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, {
                 label: "Ver ejemplo",
                 location: "website_hero",
-                linkUrl: "#website-examples",
+                linkUrl: "https://tropicobrunch.powerup.menu/",
               })}
             >
               <Button variant="outline" className="w-full sm:w-auto">
@@ -44,10 +45,10 @@ export function WebsiteHeroSection() {
             </Link>
           </div>
           <BlurFade inView inViewMargin="-80px" delay={0.18}>
-            <p className="text-xs text-slate-600 sm:text-base">{websiteHeroContent.badge}</p>
+            <p className="text-center md:text-left text-xs text-slate-600 sm:text-base">{websiteHeroContent.badge}</p>
           </BlurFade>
         </div>
-        <div className="rounded-4xl p-4 relative h-[500px] overflow-hidden" style={{backgroundImage: "url('/images/brunch-restaurant.png')", backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="w-full rounded-4xl p-4 relative h-[280px] md:h-[500px] overflow-hidden" style={{backgroundImage: "url('/images/brunch-restaurant.png')", backgroundSize: "cover", backgroundPosition: "center"}}>
           <div className="absolute inset-0 bg-black opacity-20 z-10 pointer-events-none" />
           <motion.div
             className="absolute right-0 top-20 z-20"
@@ -60,7 +61,7 @@ export function WebsiteHeroSection() {
               alt="Vista previa de la página web tipo linktree para restaurante"
               width={1500}
               height={1500}
-              className="scale-105 object-contain sm:scale-110 lg:scale-140"
+              className="scale-160 md:scale-105 object-contain sm:scale-110 lg:scale-140"
               priority
             />
           </motion.div>

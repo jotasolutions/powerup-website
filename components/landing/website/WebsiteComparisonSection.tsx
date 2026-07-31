@@ -71,7 +71,7 @@ export function WebsiteComparisonSection() {
           </table>
         </div>
 
-        <div className="flex justify-center">
+        <div className="md:flex md:justify-center mt-12 w-full">
           <CTAButton label="Pruébalo gratis" location="website_comparison" />
         </div>
       </div>
