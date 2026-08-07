@@ -50,7 +50,7 @@ export function WebsiteOutstandSection() {
         </div>
         <div className="space-y-4">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="landing-section-title">Diseñada para que te elijan a ti</h2>
+            <h2 className="landing-section-title">Diseñada para que te elijan a tí</h2>
           </BlurFade>
           <BlurFade inView >
             <p className="section-paragraph max-w-2xl">

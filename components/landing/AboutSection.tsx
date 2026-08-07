@@ -26,7 +26,7 @@ export function AboutSection() {
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
             <p className="section-paragraph">
               PowerUp nace de la combinacion entre tecnologia y estrategia gastronomica. Unimos
-              ingenieria de menu, marketing y desarrollo de producto para ayudar a restaurantes a
+              ingenieria de menú, marketing y desarrollo de producto para ayudar a restaurantes a
               vender mas con su carta digital.
             </p>
           </BlurFade>
@@ -86,7 +86,7 @@ export function AboutSection() {
             >
 
               <div className="mt-6 flex flex-col items-end sm:mt-8">
-                <div className="font-medium">Dani jimenez</div>
+                <div className="font-medium">Dani Jimenez</div>
                 <div className="text-sm text-slate-800">Tecnologia</div>
               </div>
             </motion.div>

@@ -109,7 +109,7 @@ export function HeroSection() {
 
             <BlurFade delay={0.4}>
               <p className="text-center text-base  sm:text-sm leading-6 md:text-left md:max-w-lg md:leading-7 xl:max-w-lg font-heading md:text-base  md:leading-7 text-slate-700  md:text-base lg:text-lg xl:text-xl">
-                Ingenieria de menu y neuromarketing para vender más a traves de la carta digital.
+                Ingenieria de menú y neuromarketing para vender más a traves de la carta digital.
                 Sin conocimiento tecnico.
               </p>
             </BlurFade>
