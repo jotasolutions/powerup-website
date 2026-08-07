@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Compara los planes Free y Pro de PowerUp Menu. Prueba 30 días gratis sin tarjeta y elige el plan que mejor encaje con tu restaurante.",
   alternates: {
-    canonical: "https://carta.powerup.menu/pricing",
+    canonical: "/pricing",
   },
 }
 

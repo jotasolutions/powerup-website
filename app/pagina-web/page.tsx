@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     "Crea una web moderna para tu restaurante en minutos, sin diseñadores ni código. Incluida con PowerUp Pro anual.",
   alternates: {
-    canonical: "https://carta.powerup.menu/pagina-web",
+    canonical: "/pagina-web",
   },
 }
 

@@ -51,7 +51,7 @@ export function WebsitePainPointSection() {
                                     <span className="mt-1 flex size-5 shrink-0 items-center justify-center">
                                         <ThumbsDown className="size-4" strokeWidth={2.75} aria-hidden />
                                     </span>
-                                    <span>Se queda desactuailizada y a Google no le gusta</span>
+                                    <span>Se queda desactualizada y a Google no le gusta</span>
                                 </li>
                             </BlurFade>
                         </ul>

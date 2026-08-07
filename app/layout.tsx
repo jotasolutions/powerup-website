@@ -20,6 +20,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://powerup.menu"),
   title: "Carta Digital QR - Potencia las ventas de tu restaurante",
   description: "Carta Digital QR - Potencia las ventas de tu restaurante",
   manifest: "/site.webmanifest",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     shortcut: ["/icons/favicon-32x32.png"],
   },
   alternates: {
-    canonical: "https://carta.powerup.menu",
+    canonical: "/",
   },
   openGraph: {
     title: "Carta Digital QR - Potencia las ventas de tu restaurante",

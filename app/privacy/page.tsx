@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Política de privacidad | PowerUp Menu",
   description: "Política de privacidad de PowerUp Menu.",
   alternates: {
-    canonical: "https://carta.powerup.menu/privacy",
+    canonical: "/privacy",
   },
 }
 

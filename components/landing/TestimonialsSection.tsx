@@ -20,7 +20,7 @@ export function TestimonialsSection() {
             logo: "/images/testimonials/marisa/logo.png",
             place: "La Taberna de Marisa",
             review: "La mejor carta digital que he probado. Me ha ayudado a vender más y a mejorar mi restaurante.",
-            link: "https://www.google.com/maps/place/?cid=1234567890",
+            link: "https://carta.powerup.menu/taberna-marisa",
             userImage: "/images/testimonials/marisa/marisa.png",
             userName: "Marisa",
             extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">x1,2</span> Facturacion en 6 meses</div>
@@ -40,7 +40,7 @@ export function TestimonialsSection() {
             logo: "/images/testimonials/spaccanapoli/spacca-logo.jpg",
             place: "Spaccanapoli",
             review: "Cambiar un precio o quitar un plato era llamar a la imprenta y esperar días. Ahora lo hago desde el móvil en diez segundos, las veces que haga falta.",
-            link: "https://www.google.com/maps/place/?cid=1234567890",
+            link: "https://carta.powerup.menu/spaccanapoli-ruzafa",
             userImage: "/images/testimonials/spaccanapoli/dario.jpg",
             userName: "Dario",
             extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">+9.000 cambios</span> sin visitas a la imprenta</div>
@@ -50,7 +50,7 @@ export function TestimonialsSection() {
             logo: "/images/testimonials/goyos/logo.png",
             place: "Restaurante Goyos",
             review: "Aquí viene mucho extranjero. Con la carta en su idioma y una buena foto en cada plato, ya no tengo que explicar nada: ven la brasa o el arroz, lo señalan y lo piden. Antes muchos se quedaban con la duda y pedían lo de siempre.",
-            link: "https://www.google.com/maps/place/?cid=1234567890",
+            link: "https://carta.powerup.menu/restaurante-goyos",
             userImage: "/images/testimonials/goyos/arturo.jpg",
             userName: "Arturo",
             extraContent: <div className="text-lg font-medium text-gray-400">Carta traducida y con foto en cada plato</div>
@@ -82,10 +82,10 @@ export function TestimonialsSection() {
                           })}
                         >
                             <div className="space-y-2">
-                                <p className="text-gray-800">Tripadvisor</p>
+                                <p className="text-gray-800">Trustpilot</p>
                                 <div className="flex items-center gap-1.5 font-heading text-base font-medium sm:gap-2 sm:text-2xl">
                                     <div className="shrink-0">4.5</div>
-                                    <Image src="/images/excellent-stars.png" alt="Tripadvisor" width={500} height={500} className="h-auto w-[72px] shrink object-contain sm:w-[112px]" />
+                                    <Image src="/images/excellent-stars.png" alt="Trustpilot" width={500} height={500} className="h-auto w-[72px] shrink object-contain sm:w-[112px]" />
                                 </div>
 
                             </div>

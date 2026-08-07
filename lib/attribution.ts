@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 export const ATTRIBUTION_STORAGE_KEY = "powerup_attribution"
 export const SIGN_UP_URL = "https://admin.powerup.menu/sign-up"
-export const WEBSITE_WIZARD_URL = "https://powerup-website-wizard.vercel.app/"
+export const WEBSITE_WIZARD_URL = "https://alta-pagina-web.powerup.menu/"
 export const WEBSITE_CTA_LABEL = "Crear mi web gratis"
 export const DEFAULT_CTA_LABEL = "Crear carta gratis"
 

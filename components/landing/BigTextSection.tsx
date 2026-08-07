@@ -2,7 +2,7 @@ import { SectionContainer } from "@/components/landing/SectionContainer"
 import ScrollRevealParagraph from "../ui/smoothui/scroll-reveal-paragraph"
 
 const defaultParagraph =
-  "Tu carta es el momento en el que el cliente decide cuanto va a gastar. Si la optimizas, vendes mas. Aplicamos ingenieria de menu y analisis de datos en tu carta digital para que venda mas sin que tengas que ser experto."
+  "Tu carta es el momento en el que el cliente decide cuanto va a gastar. Si la optimizas, vendes mas. Aplicamos ingenieria de menú y analisis de datos en tu carta digital para que venda mas sin que tengas que ser experto."
 
 type IntroSectionProps = {
   paragraph?: string

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Términos y condiciones | PowerUp Menu",
   description: "Términos y condiciones de uso de PowerUp Menu.",
   alternates: {
-    canonical: "https://carta.powerup.menu/terms",
+    canonical: "/terms",
   },
 }
 

@@ -1,4 +1,4 @@
-const SITE_URL = "https://carta.powerup.menu"
+import { SITE_URL } from "@/lib/site"
 
 export const LLMS_TXT = `# PowerUp Menu
 > PowerUp Menu es una carta digital QR para restaurantes que ayuda a vender más: se edita en segundos, aplica neuromarketing, mejora la visibilidad en Google e IA, e incluye analíticas accionables. Startup española acelerada por Lanzadera.
