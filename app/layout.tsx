@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Carta Digital QR - Potencia las ventas de tu restaurante",
     description: "La única carta que vende por tí",
     images: [
-      "/images/opengraph.png"
+      "/images/og-image.png"
     ]
   },
 };
