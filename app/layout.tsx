@@ -38,7 +38,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Carta Digital QR - Potencia las ventas de tu restaurante",
     description: "La única carta que vende por tí",
-    images: "https://www.powerup.menu/wp-content/uploads/2024/01/opengraph.png"
+    images: [
+      "/images/opengraph.png"
+    ]
   },
 };
 
