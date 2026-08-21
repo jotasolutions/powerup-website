@@ -32,6 +32,45 @@ function clearStaleDataLayerKeys(nextPayload: Record<string, unknown>): void {
   );
 }
 
+/** Dedup ventana: eventos con misma firma dentro de X ms se descartan. */
+const DEDUP_WINDOW_MS = 2000;
+const recentSignatures = new Map<string, number>();
+
+function eventSignature(payload: Record<string, unknown>): string {
+  // Firma sin event_id (siempre cambia) y sin timestamps.
+  // Usa las claves de identidad del evento.
+  const identity = {
+    event: payload.event,
+    page_path: payload.page_path,
+    cta_id: payload.cta_id,
+    location: payload.location,
+    link_url: payload.link_url,
+  };
+  return JSON.stringify(identity);
+}
+
+function isDuplicate(payload: Record<string, unknown>): boolean {
+  const sig = eventSignature(payload);
+  const now = Date.now();
+  const last = recentSignatures.get(sig);
+
+  if (last && now - last < DEDUP_WINDOW_MS) {
+    return true;
+  }
+
+  recentSignatures.set(sig, now);
+
+  // Limpieza para no leakear memoria
+  if (recentSignatures.size > 50) {
+    const cutoff = now - DEDUP_WINDOW_MS;
+    for (const [key, ts] of recentSignatures.entries()) {
+      if (ts < cutoff) recentSignatures.delete(key);
+    }
+  }
+
+  return false;
+}
+
 export function pushToDataLayer(payload: Record<string, unknown>): void {
   if (typeof window === "undefined" || !hasAnalyticsConsent()) return;
 
@@ -39,7 +78,7 @@ export function pushToDataLayer(payload: Record<string, unknown>): void {
     ...payload,
     event_id: crypto.randomUUID(),
   };
-
+  if (isDuplicate(nextPayload)) return;
   clearStaleDataLayerKeys(nextPayload);
   lastEventKeys = Object.keys(nextPayload);
   sendGTMEvent(nextPayload);
