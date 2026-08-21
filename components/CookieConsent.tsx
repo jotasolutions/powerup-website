@@ -7,6 +7,7 @@ import {
   type CategoryConfig,
 } from "@/components/cookie-consent";
 import { GoogleTagManager } from "@/components/GoogleTagManager";
+import { MetaPixel } from "@/components/MetaPixel";
 import { AnalyticsListener } from "@/components/analytics/AnalyticsListener";
 import { Suspense } from "react";
 
@@ -57,6 +58,7 @@ export function CookieConsent({ children }: { children: React.ReactNode }) {
       }}
     >
       <GoogleTagManager />
+      <MetaPixel />
       <Suspense fallback={null}>
         <AnalyticsListener />
       </Suspense>
