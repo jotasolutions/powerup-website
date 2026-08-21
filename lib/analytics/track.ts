@@ -1,5 +1,9 @@
 import { loadConsentState } from "@/components/cookie-consent/utils";
+import { sendGTMEvent } from "@next/third-parties/google";
 import type { AnalyticsEventName, AnalyticsEventParams } from "./events";
+
+/** Keys we previously pushed; cleared before the next event to avoid GTM merge bleed. */
+let lastEventKeys: string[] = [];
 
 function hasAnalyticsConsent(): boolean {
   const state = loadConsentState();
@@ -16,11 +20,29 @@ function cleanParams(
   ) as Record<string, string | number | boolean>;
 }
 
+function clearStaleDataLayerKeys(nextPayload: Record<string, unknown>): void {
+  const staleKeys = lastEventKeys.filter(
+    (key) => key !== "event" && !(key in nextPayload)
+  );
+
+  if (staleKeys.length === 0) return;
+
+  sendGTMEvent(
+    Object.fromEntries(staleKeys.map((key) => [key, undefined]))
+  );
+}
+
 export function pushToDataLayer(payload: Record<string, unknown>): void {
   if (typeof window === "undefined" || !hasAnalyticsConsent()) return;
 
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(payload);
+  const nextPayload: Record<string, unknown> = {
+    ...payload,
+    event_id: crypto.randomUUID(),
+  };
+
+  clearStaleDataLayerKeys(nextPayload);
+  lastEventKeys = Object.keys(nextPayload);
+  sendGTMEvent(nextPayload);
 }
 
 export function trackEvent(

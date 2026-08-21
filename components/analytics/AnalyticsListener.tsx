@@ -22,7 +22,7 @@ export function AnalyticsListener() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const hasAnalyticsConsent = useConsentValue("analytics");
-  const isFirstPageView = useRef(true);
+  const lastTrackedPath = useRef<string | null>(null);
   const viewedSections = useRef(new Set<string>());
 
   useEffect(() => {
@@ -82,10 +82,11 @@ export function AnalyticsListener() {
     const query = searchParams.toString();
     const pagePath = query ? `${pathname}?${query}` : pathname;
 
-    if (isFirstPageView.current) {
-      isFirstPageView.current = false;
-      return;
-    }
+    // Same URL → skip (re-renders / React Strict Mode).
+    if (lastTrackedPath.current === pagePath) return;
+
+    lastTrackedPath.current = pagePath;
+    viewedSections.current = new Set();
 
     trackPageView({ page_path: pagePath });
   }, [hasAnalyticsConsent, pathname, searchParams]);
