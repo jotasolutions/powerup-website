@@ -6,6 +6,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SITE_URL } from "@/lib/site"
 
 
 const inter = Inter({
@@ -20,7 +21,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://powerup.menu"),
+  metadataBase: new URL(SITE_URL),
   title: "Carta Digital QR - Potencia las ventas de tu restaurante",
   description: "Ingenieria de menu y neuromarketing para vender más a traves de la carta digital. Sin conocimiento tecnico.",
   manifest: "/site.webmanifest",

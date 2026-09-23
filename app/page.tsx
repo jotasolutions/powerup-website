@@ -17,12 +17,46 @@ import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
 import { getPricingDataAction } from "@/app/actions/pricing"
 import { NavMenu } from "@/components/landing/NavMenu"
 import { BigTextSection } from "@/components/landing/BigTextSection"
+import { SITE_URL } from "@/lib/site"
+import { jsonLdScript } from "@/lib/json-ld"
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "PowerUp Menu",
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/icons/apple-icon-180x180.png`,
+  sameAs: [
+    "https://www.trustpilot.com/review/powerup.menu",
+    "https://lanzadera.es/proyecto/powerup-menu/",
+    "https://startupvalencia.org/directory-list/listing/powerup-menu/",
+    "https://www.linkedin.com/company/powerup-menu/",
+  ],
+}
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: `${SITE_URL}/`,
+  name: "PowerUp Menu",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+}
 
 export default async function Home() {
   const pricingData = await getPricingDataAction()
 
   return (
     <main className="bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(websiteJsonLd) }}
+      />
       <NavMenu />
       <HeroSection />
       <BigTextSection />
