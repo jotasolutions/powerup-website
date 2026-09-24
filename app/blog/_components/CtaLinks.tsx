@@ -23,8 +23,19 @@ export function SignUpTextLink({ label, className, children }: { label: string; 
 }
 
 /** Maestro is another site: blog UTMs, plus any stored attribution params it doesn't already set. */
-export function MaestroLink({ campaign, className, children }: { campaign: string; className?: string; children: ReactNode }) {
-  const href = useAttributedUrl(maestroUrl(campaign))
+export function MaestroLink({
+  campaign,
+  content,
+  className,
+  children,
+}: {
+  campaign: string
+  /** utm_content: where in the article the link sits ("banner", "enlace-final"). */
+  content: string
+  className?: string
+  children: ReactNode
+}) {
+  const href = useAttributedUrl(maestroUrl(campaign, content))
   return (
     <a
       href={href}

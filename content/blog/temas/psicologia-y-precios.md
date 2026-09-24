@@ -1,6 +1,7 @@
 ---
 # Placeholder de maquetación: lo escribe o aprueba el hilo de contenido. No publicar.
 descripcion: "Artículos sobre psicología del comensal y precios de la carta."
+keyword_principal: "neuromarketing para restaurantes"
 draft: true
 ---
 

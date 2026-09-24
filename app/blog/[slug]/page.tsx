@@ -3,7 +3,8 @@ import { notFound } from "next/navigation"
 import { getAuthor, isPerson, type Author } from "@/lib/blog/authors"
 import { BLOG_PATH, clusterPath, markdownPath, postPath } from "@/lib/blog/config"
 import { blogMetadata } from "@/lib/blog/metadata"
-import { getPost, getRelatedPosts, getVisiblePosts, renderPostBody } from "@/lib/blog/posts"
+import { getPost, getRelatedPosts, getVisiblePosts } from "@/lib/blog/posts"
+import { renderPostBody } from "@/lib/blog/render"
 import { blogPostingJsonLd, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/blog/structured-data"
 import { getCluster } from "@/lib/blog/taxonomy"
 import { Breadcrumbs, type Crumb } from "../_components/Breadcrumbs"
@@ -11,7 +12,8 @@ import { FaqSection, GEO_SECTION_IDS, KeyPoints, ShortAnswer, Sources } from "..
 import { JsonLd } from "../_components/JsonLd"
 import { PostByline } from "../_components/PostByline"
 import { PostGrid, PostThumb } from "../_components/PostCards"
-import { BottomCta, InlineCta, SidebarCta } from "../_components/PostCta"
+import { AdvisorPromoSidebar } from "../_components/AdvisorPromo"
+import { BottomCta, InlineCta } from "../_components/PostCta"
 import styles from "../_components/prose.module.css"
 import { container } from "../_components/styles"
 import { TableOfContents } from "../_components/TableOfContents"
@@ -50,7 +52,9 @@ export default async function PostPage({ params }: Props) {
   const cluster = getCluster(post.cluster)
   const author = getAuthor(post.autor) as Author
   const reviewer = post.revisado_por ? getAuthor(post.revisado_por) : undefined
-  const { html, toc } = await renderPostBody(post, [...Object.values(GEO_SECTION_IDS), "toc-title", "sigue-leyendo"])
+  const rendered = await renderPostBody(post, [...Object.values(GEO_SECTION_IDS), "toc-title", "sigue-leyendo"])
+  if (!rendered) notFound()
+  const { html, toc } = rendered
   const tocItems = [
     ...toc,
     ...(post.faq ? [{ id: GEO_SECTION_IDS.faq, text: "Preguntas frecuentes", level: 2 as const }] : []),
@@ -61,7 +65,6 @@ export default async function PostPage({ params }: Props) {
     ...(cluster.hub ? [{ name: cluster.label, path: clusterPath(cluster.slug) }] : []),
   ]
   const related = getRelatedPosts(post)
-  const hasAside = tocItems.length > 0 || post.cta === "strong"
 
   return (
     <>
@@ -101,12 +104,11 @@ export default async function PostPage({ params }: Props) {
             {post.fuentes && <Sources items={post.fuentes} />}
           </div>
         </article>
-        {hasAside && (
-          <aside className="flex flex-col gap-5 pt-10 lg:sticky lg:top-24 lg:col-start-2 lg:row-start-2 lg:self-start lg:pt-12">
-            <TableOfContents items={tocItems} />
-            <SidebarCta post={post} />
-          </aside>
-        )}
+        {/* The Advisor card goes on every article, Maestro ones included: the product is always present. */}
+        <aside className="flex flex-col gap-5 pt-10 lg:sticky lg:top-24 lg:col-start-2 lg:row-start-2 lg:self-start lg:pt-12">
+          <TableOfContents items={tocItems} />
+          <AdvisorPromoSidebar />
+        </aside>
         {post.cta === "soft" && (
           <div className="pt-10 lg:col-start-1">
             <InlineCta post={post} />

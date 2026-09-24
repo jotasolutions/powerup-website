@@ -1,4 +1,5 @@
 import { absoluteUrl, postPath } from "@/lib/blog/config"
+import { withProductionFallback } from "@/lib/blog/isolation"
 import { postToMarkdown } from "@/lib/blog/markdown-export"
 import { getPost, getVisiblePosts } from "@/lib/blog/posts"
 
@@ -14,8 +15,11 @@ export function generateStaticParams() {
 // send search engines two conflicting signals.
 export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const post = getPost((await params).slug)
-  if (!post) return new Response("Not found", { status: 404 })
-  return new Response(postToMarkdown(post), {
+  const markdown = post
+    ? withProductionFallback(`${post.slug}.md (versión Markdown)`, () => postToMarkdown(post), () => undefined)
+    : undefined
+  if (!post || markdown === undefined) return new Response("Not found", { status: 404 })
+  return new Response(markdown, {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
       Link: `<${absoluteUrl(postPath(post.slug))}>; rel="canonical"`,

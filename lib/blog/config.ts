@@ -20,13 +20,19 @@ export const absoluteUrl = (path: string) => `${SITE_URL}${path}`
 const MAESTRO_URL = "https://maestro.powerup.menu/"
 const EXAMPLE_MENU_URL = "https://carta.powerup.menu/trpico-brunch-barcelona-balmes"
 
-function withBlogUtm(baseUrl: string, campaign: string) {
+/** `content` tells apart where the click came from: "banner", "texto" (inside the article)… */
+export function withBlogUtm(baseUrl: string, campaign: string, content?: string) {
   const url = new URL(baseUrl)
   url.searchParams.set("utm_source", "powerup-blog")
   url.searchParams.set("utm_medium", "cta")
   url.searchParams.set("utm_campaign", campaign)
+  if (content) url.searchParams.set("utm_content", content)
   return url.toString()
 }
 
-export const maestroUrl = (campaign: string) => withBlogUtm(MAESTRO_URL, campaign)
+export function isMaestroUrl(href: string): boolean {
+  return URL.canParse(href) && new URL(href).hostname === new URL(MAESTRO_URL).hostname
+}
+
+export const maestroUrl = (campaign: string, content?: string) => withBlogUtm(MAESTRO_URL, campaign, content)
 export const exampleMenuUrl = (campaign: string) => withBlogUtm(EXAMPLE_MENU_URL, campaign)

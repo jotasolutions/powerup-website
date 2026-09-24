@@ -1,5 +1,0 @@
-/* Google Places appends its suggestion list to <body>, outside the Advisor dialog's portal. */
-.pac-container {
-  z-index: 1000;
-  pointer-events: auto;
-}

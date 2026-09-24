@@ -1,10 +1,10 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { createContext, useCallback, useContext, useState, type ReactNode } from "react"
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
-import "./advisor-dialog.css"
+import styles from "./advisor-dialog.module.css"
 
 const AdvisorWidget = dynamic(() => import("@/components/AdvisorWidget").then((module) => module.AdvisorWidget), {
   ssr: false,
@@ -20,6 +20,12 @@ const OpenAdvisorContext = createContext<() => void>(() => {})
 export function AdvisorDialogProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
   const openAdvisor = useCallback(() => setOpen(true), [])
+
+  useEffect(() => {
+    if (!open) return
+    document.body.classList.add(styles.advisorOpen)
+    return () => document.body.classList.remove(styles.advisorOpen)
+  }, [open])
 
   return (
     <OpenAdvisorContext.Provider value={openAdvisor}>

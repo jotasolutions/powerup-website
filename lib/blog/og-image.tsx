@@ -3,6 +3,7 @@ import "server-only"
 import { readFile } from "node:fs/promises"
 import path from "node:path"
 import { ImageResponse } from "next/og"
+import { withProductionFallbackAsync } from "./isolation"
 
 export const OG_SIZE = { width: 1200, height: 630 }
 export const OG_CONTENT_TYPE = "image/png"
@@ -42,7 +43,21 @@ function QrIcon() {
   )
 }
 
-export async function renderOgImage({ eyebrow, title }: { eyebrow: string; title: string }) {
+/** In production a failure returns a 404 for this image instead of failing the build. */
+export async function renderOgImage({ eyebrow, title }: { eyebrow: string; title: string }): Promise<Response> {
+  return withProductionFallbackAsync(
+    `Imagen para redes de "${title}"`,
+    async () => {
+      const image = await buildOgImage({ eyebrow, title })
+      // The image renders while its body is read: read it here, so a failure lands in this
+      // fallback instead of in Next's prerender.
+      return new Response(await image.arrayBuffer(), { headers: image.headers })
+    },
+    () => new Response("Not found", { status: 404 }),
+  )
+}
+
+async function buildOgImage({ eyebrow, title }: { eyebrow: string; title: string }) {
   return new ImageResponse(
     (
       <div

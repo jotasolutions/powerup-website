@@ -2,12 +2,11 @@ import "server-only"
 
 import fs from "node:fs"
 import path from "node:path"
-import matter from "gray-matter"
 import { cache } from "react"
 import { z } from "zod"
 import { isProductionBuild } from "./draft"
-import { getLinkContext, getPostsByCluster, warnOnce } from "./posts"
-import { renderMarkdown } from "./markdown"
+import { readMarkdownFile, reportContentErrors, withProductionFallback } from "./isolation"
+import { getAllPosts, getPostsByCluster } from "./posts"
 import { clusterTextSchema, type ClusterTextFrontmatter } from "./schema"
 import { HUB_CLUSTERS, isHubCluster, type Cluster, type ClusterSlug } from "./taxonomy"
 
@@ -26,17 +25,30 @@ function loadClusterTexts(): Map<ClusterSlug, ClusterText> {
       errors.push(`temas/${file}: "${slug}" no es un clúster con página`)
       continue
     }
-    const { data, content } = matter(fs.readFileSync(path.join(TEXTS_DIR, file), "utf8"))
-    const parsed = clusterTextSchema.safeParse(data)
+    const source = readMarkdownFile(path.join(TEXTS_DIR, file), `temas/${file}`, errors)
+    if (!source) continue
+    const parsed = clusterTextSchema.safeParse(source.data)
     if (!parsed.success) errors.push(`temas/${file}:\n${z.prettifyError(parsed.error)}`)
-    else texts.set(slug, { ...parsed.data, body: content })
+    else texts.set(slug, { ...parsed.data, body: source.content })
   }
 
-  if (errors.length > 0) throw new Error(`Textos de clúster inválidos:\n\n${errors.join("\n\n")}`)
+  // Two URLs chasing the same search compete with each other. A clash is reported, but the text
+  // stays: it's an SEO problem, not a broken page.
+  const owners = new Map(getAllPosts().map((post) => [post.keyword_principal.toLowerCase(), `${post.slug}.md`]))
+  for (const [slug, text] of texts) {
+    const keyword = text.keyword_principal.toLowerCase()
+    const owner = owners.get(keyword)
+    if (owner) errors.push(`keyword_principal "${text.keyword_principal}" repetida en temas/${slug}.md y ${owner}`)
+    else owners.set(keyword, `temas/${slug}.md`)
+  }
+
+  reportContentErrors("Textos de clúster inválidos", errors)
   return texts
 }
 
-export const getClusterTexts = cache(loadClusterTexts)
+export const getClusterTexts = cache(() =>
+  withProductionFallback("Textos de clúster", loadClusterTexts, () => new Map<ClusterSlug, ClusterText>()),
+)
 
 /**
  * In production a cluster page exists only with a finished (non-draft) editorial text and at
@@ -48,12 +60,4 @@ export function getClusterPages(): Cluster[] {
     const text = getClusterTexts().get(cluster.slug)
     return Boolean(text && !text.draft && getPostsByCluster(cluster.slug).length > 0)
   })
-}
-
-export async function renderClusterText(slug: ClusterSlug, reservedIds: string[]) {
-  const text = getClusterTexts().get(slug)
-  if (!text) return undefined
-  const rendered = await renderMarkdown(text.body, { links: getLinkContext(), reservedIds })
-  for (const warning of rendered.warnings) warnOnce(`temas/${slug}.md: ${warning}`)
-  return { ...text, ...rendered }
 }

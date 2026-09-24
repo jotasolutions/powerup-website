@@ -56,9 +56,12 @@ export const postFrontmatterSchema = z
     if (post.fecha_modificacion && post.fecha_modificacion < post.fecha_publicacion) {
       ctx.addIssue({ code: "custom", path: ["fecha_modificacion"], message: "no puede ser anterior a fecha_publicacion" })
     }
-    for (const field of GEO_FIELDS[post.content_strategy]) {
-      if (post[field] === undefined) {
-        ctx.addIssue({ code: "custom", path: [field], message: `obligatorio con content_strategy: ${post.content_strategy}` })
+    // Like revisado_por, the GEO blocks are part of finishing a post: a draft may lack them.
+    if (!post.draft) {
+      for (const field of GEO_FIELDS[post.content_strategy]) {
+        if (post[field] === undefined) {
+          ctx.addIssue({ code: "custom", path: [field], message: `obligatorio para publicar con content_strategy: ${post.content_strategy}` })
+        }
       }
     }
   })
@@ -67,6 +70,8 @@ export type PostFrontmatter = z.infer<typeof postFrontmatterSchema>
 
 export const clusterTextSchema = z.strictObject({
   descripcion: text,
+  // The broad term: posts take the more specific searches (unique across posts and themes).
+  keyword_principal: text,
   seo_title: text.optional(),
   draft: z.boolean().default(true),
   faq: z.array(faqItem).min(1).optional(),

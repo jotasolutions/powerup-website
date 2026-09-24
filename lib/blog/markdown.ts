@@ -10,6 +10,8 @@ import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
 import { unified } from "unified"
 import { SKIP, visit } from "unist-util-visit"
+import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
+import { isMaestroUrl, withBlogUtm } from "./config"
 import { isLegacyUpload, resolveLink, type LinkContext } from "./legacy-links"
 import { asciiSlug } from "./slug"
 
@@ -38,7 +40,17 @@ function containsTag(node: Element, tags: string[]): boolean {
   )
 }
 
-function rewriteLegacyContent(tree: Root, links: LinkContext, warnings: string[]) {
+/** In-text links to Maestro get the same UTMs and click tracking as the Maestro CTAs. */
+function tagMaestroLink(node: Element, campaign: string) {
+  const href = withBlogUtm(String(node.properties.href), campaign, "texto")
+  const attrs = trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, { label: "maestro", location: "blog", linkUrl: href })
+  Object.assign(node.properties, { href, target: "_blank", rel: ["noopener", "noreferrer"] })
+  for (const [name, value] of Object.entries(attrs)) {
+    node.properties[name.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase())] = value
+  }
+}
+
+function rewriteLegacyContent(tree: Root, links: LinkContext, campaign: string, warnings: string[]) {
   visit(tree, "element", (node, index, parent) => {
     if (!parent || index === undefined) return
     if (node.tagName === "img") {
@@ -52,6 +64,10 @@ function rewriteLegacyContent(tree: Root, links: LinkContext, warnings: string[]
     }
     if (node.tagName !== "a") return
     const href = String(node.properties.href ?? "")
+    if (isMaestroUrl(href)) {
+      tagMaestroLink(node, campaign)
+      return
+    }
     const action = resolveLink(href, links)
     if (action.type === "rewrite") node.properties.href = action.href
     if (action.type === "unresolved") warnings.push(`enlace al blog viejo sin destino: ${href}`)
@@ -127,7 +143,7 @@ function addHeadingIds(tree: Root, reservedIds: string[]): TocItem[] {
 
 export async function renderMarkdown(
   markdown: string,
-  { links, reservedIds = [] }: { links: LinkContext; reservedIds?: string[] },
+  { links, reservedIds = [], campaign }: { links: LinkContext; reservedIds?: string[]; campaign: string },
 ): Promise<RenderedMarkdown> {
   const warnings: string[] = []
   let toc: TocItem[] = []
@@ -140,7 +156,7 @@ export async function renderMarkdown(
     .use(rehypeSanitize, sanitizeSchema)
     .use(() => (tree: Root) => {
       collapseDoubleClobberPrefix(tree)
-      rewriteLegacyContent(tree, links, warnings)
+      rewriteLegacyContent(tree, links, campaign, warnings)
       pruneEmptyBlocks(tree)
       wrapTables(tree)
       toc = addHeadingIds(tree, reservedIds)

@@ -2,14 +2,12 @@ import "server-only"
 
 import fs from "node:fs"
 import path from "node:path"
-import matter from "gray-matter"
 import { cache } from "react"
 import { z } from "zod"
 import { AUTHORS, getAuthor, isPerson, type PersonAuthor } from "./authors"
 import { POSTS_PER_PAGE } from "./config"
 import { isProductionBuild } from "./draft"
-import { loadRedirectMap, type LinkContext } from "./legacy-links"
-import { renderMarkdown } from "./markdown"
+import { readMarkdownFile, reportContentErrors, withProductionFallback } from "./isolation"
 import { readingMinutes } from "./reading-time"
 import { postFrontmatterSchema, type PostFrontmatter } from "./schema"
 import { getCluster } from "./taxonomy"
@@ -49,15 +47,22 @@ function loadPosts(): Post[] {
   const posts: Post[] = []
 
   for (const file of files) {
-    const { data, content } = matter(fs.readFileSync(path.join(CONTENT_DIR, file), "utf8"))
+    const source = readMarkdownFile(path.join(CONTENT_DIR, file), file, errors)
+    if (!source) continue
+    const { data, content } = source
     const parsed = postFrontmatterSchema.safeParse(data)
     if (!parsed.success) {
       errors.push(`${file}:\n${z.prettifyError(parsed.error)}`)
       continue
     }
     const post = parsed.data
-    if (file !== `${post.slug}.md`) errors.push(`${file}: el slug "${post.slug}" no coincide con el nombre del archivo`)
-    checkAuthorRefs(post, file, errors)
+    const fileErrors: string[] = []
+    if (file !== `${post.slug}.md`) fileErrors.push(`${file}: el slug "${post.slug}" no coincide con el nombre del archivo`)
+    checkAuthorRefs(post, file, fileErrors)
+    if (fileErrors.length > 0) {
+      errors.push(...fileErrors)
+      continue
+    }
     if (post.seo_title.length > SEO_TITLE_MAX) {
       warnOnce(`${file}: seo_title de ${post.seo_title.length} caracteres (recomendado ≤ ${SEO_TITLE_MAX})`)
     }
@@ -76,18 +81,22 @@ function loadPosts(): Post[] {
   }
 
   const slugByKeyword = new Map<string, string>()
-  for (const post of posts) {
+  const valid = posts.filter((post) => {
     const keyword = post.keyword_principal.toLowerCase()
     const other = slugByKeyword.get(keyword)
-    if (other) errors.push(`keyword_principal "${post.keyword_principal}" repetida en ${other}.md y ${post.slug}.md`)
-    else slugByKeyword.set(keyword, post.slug)
-  }
+    if (!other) {
+      slugByKeyword.set(keyword, post.slug)
+      return true
+    }
+    errors.push(`keyword_principal "${post.keyword_principal}" repetida en ${other}.md y ${post.slug}.md`)
+    return false
+  })
 
-  if (errors.length > 0) throw new Error(`Contenido del blog inválido:\n\n${errors.join("\n\n")}`)
-  return posts.sort((a, b) => b.fecha_publicacion.getTime() - a.fecha_publicacion.getTime())
+  reportContentErrors("Contenido del blog inválido", errors)
+  return valid.sort((a, b) => b.fecha_publicacion.getTime() - a.fecha_publicacion.getTime())
 }
 
-export const getAllPosts = cache(loadPosts)
+export const getAllPosts = cache(() => withProductionFallback("Posts del blog", loadPosts, (): Post[] => []))
 
 /** Drafts are hidden only in production; see isProductionBuild(). */
 export const getVisiblePosts = cache(() =>
@@ -130,17 +139,4 @@ export function getAuthorPages(): PersonAuthor[] {
   if (!isProductionBuild()) return people
   const posts = getVisiblePosts()
   return people.filter((person) => posts.some((post) => post.autor === person.id || post.revisado_por === person.id))
-}
-
-export const getLinkContext = cache(
-  (): LinkContext => ({
-    publishedSlugs: new Set(getVisiblePosts().map((post) => post.slug)),
-    ...loadRedirectMap(),
-  }),
-)
-
-export async function renderPostBody(post: Post, reservedIds: string[]) {
-  const rendered = await renderMarkdown(post.body, { links: getLinkContext(), reservedIds })
-  for (const warning of rendered.warnings) warnOnce(`${post.slug}.md: ${warning}`)
-  return rendered
 }

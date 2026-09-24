@@ -1,6 +1,7 @@
 ---
 # Placeholder de maquetación: lo escribe o aprueba el hilo de contenido. No publicar.
 descripcion: "Artículos sobre rentabilidad y costes del restaurante."
+keyword_principal: "rentabilidad de un restaurante"
 draft: true
 ---
 

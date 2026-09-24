@@ -1,0 +1,72 @@
+slug_origen,tipo,status_code,destino,nota
+cartadigital-de-restaurante,REDIRIGIR-CONSOLIDAR,301,/blog/carta-restaurante,
+value-pricing,REDIRIGIR-CONSOLIDAR,301,/blog/precios-psicologicos,
+que-es-venta-cruzada,REDIRIGIR-CONSOLIDAR,301,/blog/como-aumentar-el-ticket-medio,
+precio-dinamico,REDIRIGIR-CONSOLIDAR,301,/blog/precios-psicologicos,
+penetration-pricing,REDIRIGIR-CONSOLIDAR,301,/blog/precios-psicologicos,
+tecnicas-de-pricing,REDIRIGIR-CONSOLIDAR,301,/blog/precios-psicologicos,
+diseno-carta-restaurante,REDIRIGIR-CONSOLIDAR,301,/blog/carta-restaurante,
+psicologia-del-menu,REDIRIGIR-CONSOLIDAR,301,/blog/que-es-la-psicologia-del-menu,
+carta-digital-restaurante,REDIRIGIR-CONSOLIDAR,301,/blog/carta-restaurante,
+bundling-pricing,REDIRIGIR-CONSOLIDAR,301,/blog/precios-psicologicos,
+platosparacompartir,REDIRIGIR-CONSOLIDAR,301,/blog/como-aumentar-el-ticket-medio,
+contaminacion-cruzada,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+plan-de-limpieza-restaurante,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+metodos-conservacion-alimentos,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+gestion-de-residuos-en-restaurantes,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+punto-de-pedido,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+descubre-si-conoces-las-normas-higienico-sanitarias-en-restauracion,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+simbolos-alergenos,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+que-elementos-componen-el-marketing-gastronomico,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+storytelling-para-restaurantes,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+menu-de-comida,REDIRIGIR-GENERICO,301,/blog/tema/ingenieria-de-menu,crear la carta es el tema de ingeniería de menú
+gestion-de-restaurantes,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+que-se-entiende-por-appcc-o-haccp,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+modelo-de-inventario,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+comunicacion-personal,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+mantenimiento-de-equipos-de-cocina,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+food-truck,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+marketing-de-gastronomia,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+segmentacion-de-clientes,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+concepto-de-restaurante,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+tendencias-de-restauracion,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+como-se-hace-el-inventario-fifo,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+normativa-alergenos,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+seguridad-alimentaria,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+gestionar-las-sobras,REDIRIGIR-GENERICO,301,/blog/tema/rentabilidad-y-costes,el desperdicio es un coste
+fidelizacion-para-restaurantes,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+por-que-las-valoraciones-online-son-importantes-para-restaurantes,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+customer-loyalty-para-tu-restaurante,REDIRIGIR-GENERICO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+como-calificar-un-platillo,REDIRIGIR-404,301,/blog/como-calificar-un-plato-de-comida,
+tendencias-gastronomicas,DESCARTAR,410,,DESCARTAR en la clasificación
+gestion-de-stock,DESCARTAR,410,,DESCARTAR en la clasificación
+valorar-el-servicio-al-cliente,DESCARTAR,410,,DESCARTAR en la clasificación
+menu-rapido,DESCARTAR,410,,DESCARTAR en la clasificación
+comida-rapida,DESCARTAR,410,,DESCARTAR en la clasificación
+comida-ecologica,DESCARTAR,410,,DESCARTAR en la clasificación
+lista-de-alergenos,DESCARTAR,410,,DESCARTAR en la clasificación
+gamification,DESCARTAR,410,,DESCARTAR en la clasificación
+como-construir-brand-identity,DESCARTAR,410,,DESCARTAR en la clasificación
+promocionar-restaurante,DESCARTAR,410,,DESCARTAR en la clasificación
+blog-powerup-menu,PAGINA,301,/blog,portada del blog viejo
+maintenance,PAGINA,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+ingenieria-de-menu,PAGINA,301,/blog/tema/ingenieria-de-menu,mismo tema
+casos-practicos,PAGINA,301,/blog/tema/casos-practicos,mismo tema
+marketing-gastronomico,PAGINA,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+la-paradoja-de-la-eleccion,SLUG-VIEJO,301,/blog/paradoja-de-la-eleccion,slug anterior del mismo post
+tecnicas-de-pricing-en-restauracion,SLUG-VIEJO,301,/blog/precios-psicologicos,slug anterior de tecnicas-de-pricing
+estrategia-de-precios,SLUG-VIEJO,301,/blog/precios-psicologicos,mismo tema
+conservacion-de-alimentos,SLUG-VIEJO,410,,slug anterior de metodos-conservacion-alimentos
+brand-identity,SLUG-VIEJO,410,,slug anterior de como-construir-brand-identity
+que-son-las-tendencias-gastronomicas,SLUG-VIEJO,410,,mismo tema que tendencias-gastronomicas
+/,ARCHIVO,301,/blog,portada del blog viejo
+category/ingenieria-de-menu,ARCHIVO,301,/blog/tema/ingenieria-de-menu,mismo tema
+category/ingenieria-de-menu/page/2,ARCHIVO,301,/blog/tema/ingenieria-de-menu,mismo tema
+category/ingenieria-de-menu/page/3,ARCHIVO,301,/blog/tema/ingenieria-de-menu,mismo tema
+category/casos-practicos,ARCHIVO,301,/blog/tema/casos-practicos,mismo tema
+category/marketing-gastronomico,ARCHIVO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+category/uncategorized,ARCHIVO,410,,sin equivalente en el blog nuevo (decisión 2 de Fede)
+feed,ARCHIVO,301,/blog/feed.xml,RSS del blog nuevo
+comments/feed,ARCHIVO,410,,el blog nuevo no tiene comentarios
+tag/*,PATRON,410,,etiquetas: sin equivalente
+author/*,PATRON,410,,páginas de autor del blog viejo

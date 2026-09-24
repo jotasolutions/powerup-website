@@ -5,30 +5,15 @@ import { trackAttrs } from "@/lib/analytics/attributes"
 import { exampleMenuUrl } from "@/lib/blog/config"
 import type { Post } from "@/lib/blog/posts"
 import { cn } from "@/lib/utils"
-import { AdvisorPromoSidebar } from "./AdvisorPromo"
 import { CircledWord } from "./CircledWord"
 import { MaestroLink, SignUpTextLink } from "./CtaLinks"
 import { buttonPrimary, buttonSecondary, eyebrow } from "./styles"
 
-// `destino_comercial` says where the CTA goes, `cta` how strong it is:
-//   soft   → text link after the article
-//   medium → bottom banner
-//   strong → sidebar card (Advisor for PowerUp, a Maestro card for Maestro) + bottom banner
-
-export function SidebarCta({ post }: { post: Post }) {
-  if (post.cta !== "strong") return null
-  if (post.destino_comercial === "powerup") return <AdvisorPromoSidebar />
-  return (
-    <div className="flex flex-col items-start gap-3 rounded-[22px] border border-border bg-[#F8F0FF] p-[22px]">
-      <p className={eyebrow}>Maestro · Consultoría</p>
-      <p className="font-heading text-xl font-medium leading-tight tracking-tight text-slate-900">Consultoría de rentabilidad para tu restaurante</p>
-      <p className="text-sm leading-normal text-slate-600">Food cost, carta y estrategia de precios, con el equipo de Maestro.</p>
-      <MaestroLink campaign={post.slug} className={cn(buttonPrimary, "h-10 px-4")}>
-        Conocer Maestro
-      </MaestroLink>
-    </div>
-  )
-}
+// The CTA after each article, decided per article (never per theme): the carta digital by
+// default, Maestro when `destino_comercial: maestro`. `cta` only picks its form:
+//   soft          → text link
+//   medium/strong → banner (they look the same for now)
+// The Advisor card in the sidebar and the site menu keep the product on every article.
 
 export function InlineCta({ post }: { post: Post }) {
   if (post.cta !== "soft") return null
@@ -46,7 +31,7 @@ export function InlineCta({ post }: { post: Post }) {
       ) : (
         <>
           ¿Quieres revisar la rentabilidad de tu carta?{" "}
-          <MaestroLink campaign={post.slug} className={link}>
+          <MaestroLink campaign={post.slug} content="enlace-final" className={link}>
             Conoce Maestro, la consultoría de rentabilidad de PowerUp Menu
           </MaestroLink>
           .
@@ -106,7 +91,7 @@ export function BottomCta({ post }: { post: Post }) {
             <p className="font-heading text-[17px] leading-relaxed text-slate-700">
               Maestro es el servicio de consultoría de rentabilidad de PowerUp Menu: food cost, carta y estrategia de precios.
             </p>
-            <MaestroLink campaign={post.slug} className={cn(buttonPrimary, "self-start")}>
+            <MaestroLink campaign={post.slug} content="banner" className={cn(buttonPrimary, "self-start")}>
               Conocer Maestro
             </MaestroLink>
           </div>

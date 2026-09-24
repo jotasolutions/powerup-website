@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { getClusterPages, getClusterTexts, renderClusterText } from "@/lib/blog/clusters"
+import { getClusterPages, getClusterTexts } from "@/lib/blog/clusters"
 import { BLOG_PATH, clusterPath } from "@/lib/blog/config"
+import { isProductionBuild } from "@/lib/blog/draft"
 import { blogMetadata } from "@/lib/blog/metadata"
 import { getPostsByCluster } from "@/lib/blog/posts"
+import { renderClusterText } from "@/lib/blog/render"
 import { breadcrumbJsonLd, collectionPageJsonLd, faqPageJsonLd } from "@/lib/blog/structured-data"
 import { cn } from "@/lib/utils"
 import { Breadcrumbs } from "../../_components/Breadcrumbs"
@@ -44,6 +46,9 @@ export default async function ClusterPage({ params }: Props) {
 
   const posts = getPostsByCluster(cluster.slug)
   const text = await renderClusterText(cluster.slug, [GEO_SECTION_IDS.faq, "articulos-del-tema"])
+  // In production a cluster page only exists with a finished text, so a missing one here means it
+  // failed to render: the page is left out rather than published without its text.
+  if (!text && isProductionBuild()) notFound()
   const description = text?.descripcion ?? `Artículos de PowerUp Menu sobre ${cluster.label.toLowerCase()}.`
   const path = clusterPath(cluster.slug)
 

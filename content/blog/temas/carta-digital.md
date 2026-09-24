@@ -1,6 +1,7 @@
 ---
 # Placeholder de maquetación: lo escribe o aprueba el hilo de contenido. No publicar.
 descripcion: "Artículos sobre la carta digital del restaurante."
+keyword_principal: "carta digital para restaurantes"
 draft: true
 ---
 

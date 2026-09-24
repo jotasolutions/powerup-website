@@ -4,7 +4,8 @@ import { getAuthor } from "./authors"
 import { absoluteUrl, postPath } from "./config"
 import { isoDate } from "./format"
 import { rewriteMarkdownLinks } from "./legacy-links"
-import { getLinkContext, type Post } from "./posts"
+import { getLinkContext } from "./links"
+import type { Post } from "./posts"
 
 /** Plain-Markdown version of a post for /blog/md/<slug>; it points back to the HTML page as canonical. */
 export function postToMarkdown(post: Post): string {
@@ -16,7 +17,7 @@ export function postToMarkdown(post: Post): string {
   ]
   if (post.respuesta_corta) parts.push(`## En pocas palabras\n\n${post.respuesta_corta}`)
   if (post.puntos_clave) parts.push(`## Puntos clave\n\n${post.puntos_clave.map((point) => `- ${point}`).join("\n")}`)
-  parts.push(rewriteMarkdownLinks(post.body.trim(), getLinkContext()))
+  parts.push(rewriteMarkdownLinks(post.body.trim(), getLinkContext(), post.slug))
   if (post.faq) {
     parts.push(`## Preguntas frecuentes\n\n${post.faq.map((item) => `### ${item.pregunta}\n\n${item.respuesta}`).join("\n\n")}`)
   }
