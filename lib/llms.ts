@@ -1,4 +1,7 @@
+import { blogLlmsSection } from "@/lib/blog/llms"
 import { SITE_URL } from "@/lib/site"
+
+const BLOG_SECTION = blogLlmsSection()
 
 export const LLMS_TXT = `# PowerUp Menu
 > PowerUp Menu es una carta digital QR para restaurantes que ayuda a vender más: se edita en segundos, aplica neuromarketing, mejora la visibilidad en Google e IA, e incluye analíticas accionables. Startup española acelerada por Lanzadera.
@@ -14,7 +17,7 @@ Admin: https://admin.powerup.menu/sign-in
 - [Precios](${SITE_URL}/pricing): Comparativa Free vs Pro, prueba 30 días gratis sin tarjeta
 - [Página web para restaurantes](${SITE_URL}/pagina-web): Web moderna incluida con PowerUp Pro anual
 
-## Producto
+${BLOG_SECTION}## Producto
 - [Carta de ejemplo](https://carta.powerup.menu/trpico-brunch-barcelona-balmes): Ejemplo público de carta digital PowerUp
 - [Opiniones en Trustpilot](https://www.trustpilot.com/review/powerup.menu): Reseñas de restaurantes clientes
 
@@ -88,7 +91,7 @@ Sí, colores y aspectos básicos. Diseños más a medida con el equipo de PowerU
 ### ¿Free vs Pro?
 Free: carta + 3 idiomas + stats simples + publicidad sectorial. Pro: sin ads, más idiomas, ventas, analíticas; web incluida con pago anual.
 
-## Enlaces útiles
+${BLOG_SECTION}## Enlaces útiles
 - Sitio: ${SITE_URL}/
 - Precios: ${SITE_URL}/pricing
 - Página web: ${SITE_URL}/pagina-web

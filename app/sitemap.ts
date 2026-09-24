@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 
+import { blogSitemapEntries } from "@/lib/blog/sitemap"
 import { SITE_URL } from "@/lib/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -48,5 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.2,
     },
+    ...blogSitemapEntries(),
   ]
 }
