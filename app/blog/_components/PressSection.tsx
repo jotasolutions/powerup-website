@@ -2,6 +2,7 @@ import Image from "next/image"
 import { ANALYTICS_EVENTS } from "@/lib/analytics/events"
 import { trackAttrs } from "@/lib/analytics/attributes"
 import incibeSeal from "../_assets/incibe-ventures.png"
+import startupValenciaLogo from "../_assets/startup-valencia.png"
 import { container, sectionTitle } from "./styles"
 
 // Quotes checked verbatim against each article. Outlet logos are initials on purpose:
@@ -51,10 +52,9 @@ function Backers() {
             href="https://startupvalencia.org/directory-list/listing/powerup-menu/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-heading text-lg font-semibold tracking-tight text-slate-500"
             {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, { label: "Startup Valencia", location: "blog" })}
           >
-            Startup Valencia
+            <Image src={startupValenciaLogo} alt="Startup Valencia" className={logoClass} />
           </a>
         </li>
         <li>
