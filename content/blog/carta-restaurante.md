@@ -71,7 +71,7 @@ En una carta digital, los cambios se hacen al momento: un precio, un plato agota
 
 Un PDF está en el idioma en que se diseñó. Para tenerlo en inglés o en francés, hay que hacer un archivo por idioma y mantenerlos todos al día.
 
-Una carta digital puede ofrecer la carta en varios idiomas y dejar que cada cliente elija el suyo. En PowerUp Menu las traducciones son automáticas: hasta tres idiomas en el plan gratuito y sin límite en el Pro.
+Una carta digital puede ofrecer la carta en varios idiomas y dejar que cada cliente elija el suyo. En PowerUp Menu las traducciones son automáticas: hasta tres idiomas en el plan gratuito y sin límite en el Pro. Qué idiomas poner y cómo traducir los platos típicos lo contamos en [carta en varios idiomas](/blog/carta-en-varios-idiomas).
 
 ## Alérgenos: lo que dice la ley
 

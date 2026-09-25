@@ -14,6 +14,13 @@ Todos los posts llevan portada. Dentro del texto, para cada figura, en este orde
      de la home), los widgets y los pasos de «cómo funciona». El export del diseño las trae en
      `assets/`.
    - Se copian a `public/blog/` en vez de enlazarlas: así un cambio en la web no rompe el blog.
+   - **Las versiones `@2x` de `public/images/features/` están mal exportadas:** el negro se
+     convirtió en transparencia, así que las letras salen huecas y la franja negra de una bandera,
+     vacía. Antes de usarlas se pasan por `lib/blog/scripts/restaurar-negro.mts`. Las `@1x` están
+     bien, pero son pequeñas. Para comprobar una imagen, se pone sobre un fondo magenta: si se ha
+     perdido el negro, los huecos se ven rosas.
+   - La imagen de idiomas (`features-bento-1`) pone «Deutch»; en la copia del blog está corregido a
+     «Deutsch».
    - Fuera: las que llevan cifras que el blog no puede respaldar (como «Ticket medio +27 %») y
      todo lo que sugiera que PowerUp Menu gestiona pedidos o pagos. El pedido lo toma el camarero.
 3. **Si son datos o un proceso del post, se dibuja una figura propia en SVG**, con los números
