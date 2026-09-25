@@ -60,7 +60,7 @@ function AnalyticsCard({
     <article className="space-y-4">
       <motion.div
         ref={cardRef}
-        className="relative flex items-end overflow-hidden rounded-2xl bg-gradient-to-b from-[#F8F0FF] to-[#ecdff7] sm:h-[258px]"
+        className="relative flex items-end overflow-hidden rounded-2xl bg-gradient-to-b from-pm-pastel-purple to-[#ecdff7] sm:h-[258px]"
         initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
         whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={revealViewport}

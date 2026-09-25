@@ -35,7 +35,7 @@ export default async function WebsitePage() {
       {/* Fondo detrás del nav: no envolver el sticky o deja de pegarse al salir del wrapper */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[#E2FEFD]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-pm-pastel-cyan"
       />
       <NavMenu />
       <WebsiteHeroSection />

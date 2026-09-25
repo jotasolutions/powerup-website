@@ -23,19 +23,17 @@ export function WebsiteOutstandSection() {
             >
               <path
                 d={YELLOW_ARROW_PATH}
-                stroke="#FFCD45"
+                className="stroke-pm-yellow opacity-0"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="opacity-0"
               />
               <motion.path
                 d={YELLOW_ARROW_PATH}
-                stroke="#FFCD45"
+                className="stroke-pm-yellow"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-
               />
             </motion.svg>
           </div>

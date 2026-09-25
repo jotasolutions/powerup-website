@@ -57,9 +57,16 @@ export function Highlighter({
     let timeoutId: number | null = null
 
     if (shouldShow && element) {
+      // rough-notation writes color into an SVG `stroke` attribute, where
+      // var() is not reliably resolved — pass the computed value instead.
+      const cssVar = color.match(/^var\((--[\w-]+)\)$/)?.[1]
+      const resolvedColor = cssVar
+        ? getComputedStyle(element).getPropertyValue(cssVar).trim() || color
+        : color
+
       const annotationConfig = {
         type: action,
-        color,
+        color: resolvedColor,
         strokeWidth,
         animationDuration,
         iterations,

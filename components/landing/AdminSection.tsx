@@ -12,7 +12,7 @@ export function AdminSection() {
   return (
     <SectionContainer
       id="admin"
-      className="bg-gradient-to-b from-white via-[#E2FEFD] to-white py-16 md:py-20 "
+      className="bg-gradient-to-b from-white via-pm-pastel-cyan to-white py-16 md:py-20 "
     >
       <div className="space-y-10 md:space-y-12">
         <div className="mx-auto max-w-3xl space-y-3 text-center">

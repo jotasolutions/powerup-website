@@ -16,7 +16,7 @@ export function WebsiteHeroSection() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <SectionContainer id="website-hero" className="pt-8 md:pt-12 bg-gradient-to-b from-[#E2FEFD] to-white">
+    <SectionContainer id="website-hero" className="pt-8 md:pt-12 bg-gradient-to-b from-pm-pastel-cyan to-white">
       <div className="flex flex-col flex-col-reverse items-center gap-8 md:grid md:gap-10 lg:grid-cols-2 lg:gap-12">
         <div className="space-y-6">
           <BlurFade inView inViewMargin="-80px">

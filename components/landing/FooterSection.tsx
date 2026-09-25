@@ -7,7 +7,7 @@ import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 
 export function FooterSection() {
   return (
-    <SectionContainer id="footer" className="bg-gradient-to-b from-white to-[#DEF8FF] via-[#DEF8FF]">
+    <SectionContainer id="footer" className="bg-gradient-to-b from-white to-pm-pastel-blue via-pm-pastel-blue">
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-4 border-b border-solid border-[#CFF5FF] pb-8 border-b-2">
           <BlurFade inView inViewMargin="-80px">

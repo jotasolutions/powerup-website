@@ -85,7 +85,7 @@ export function DifferentiationSection() {
             <article className="flex flex-col items-center gap-4 text-center">
               <BlurFade delay={0.20}>
                 <div
-                  className="flex size-16 items-center justify-center rounded-2xl bg-[#FFCCBE] text-[#C45C2A] border-4 border-[#FFEFE9]"
+                  className="flex size-16 items-center justify-center rounded-2xl bg-[#FFCCBE] text-pm-orange-ink border-4 border-[#FFEFE9]"
                 >
                   <Brain className="size-8" strokeWidth={1.75} aria-hidden />
                 </div>
@@ -118,7 +118,7 @@ export function DifferentiationSection() {
             <article className="flex flex-col items-center gap-4 text-center">
               <BlurFade delay={0.35}>
                 <div
-                  className="flex size-16 items-center justify-center rounded-2xl bg-[#FFE6BE] text-[#C89746] border-4 border-[#FFF5E6]"
+                  className="flex size-16 items-center justify-center rounded-2xl bg-[#FFE6BE] text-pm-amber-ink border-4 border-[#FFF5E6]"
                 >
                   <PieChart className="size-8" strokeWidth={1.75} aria-hidden />
                 </div>

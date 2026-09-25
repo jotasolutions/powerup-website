@@ -49,6 +49,22 @@
 
   --text-4xl: 2.5rem;
   --text-4xl--line-height: 1.1;
+
+  /* PowerUp brand colors (--pm-*, defined in :root) → bg-pm-*, text-pm-*, … */
+  --color-pm-orange: var(--pm-orange);
+  --color-pm-yellow: var(--pm-yellow);
+  --color-pm-green: var(--pm-green);
+  --color-pm-orange-ink: var(--pm-orange-ink);
+  --color-pm-amber-ink: var(--pm-amber-ink);
+  --color-pm-pastel-mint: var(--pm-pastel-mint);
+  --color-pm-pastel-lime: var(--pm-pastel-lime);
+  --color-pm-pastel-amber: var(--pm-pastel-amber);
+  --color-pm-pastel-cyan: var(--pm-pastel-cyan);
+  --color-pm-pastel-blue: var(--pm-pastel-blue);
+  --color-pm-pastel-purple: var(--pm-pastel-purple);
+  --color-pm-stroke-mint: var(--pm-stroke-mint);
+  --color-pm-stroke-peach: var(--pm-stroke-peach);
+  --color-pm-logo-blue: var(--pm-logo-blue);
 }
 
 :root {
@@ -84,6 +100,36 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* ---- PowerUp brand colors — single source of truth (§6-BIS) ----------
+     Values verbatim from the July token decision; do not convert/round. */
+
+  /* Accents */
+  --pm-orange: #FF9800;
+  --pm-yellow: #FFCD45;
+  --pm-green: #50B27F; /* brand green only — success/WhatsApp/checks are NOT this */
+  --pm-orange-ink: #C45C2A;
+  --pm-amber-ink: #C89746;
+
+  /* Pastels — role: FILL (backgrounds, gradient stops) */
+  --pm-pastel-mint: #DFFFEA;
+  --pm-pastel-lime: #CEEDB8;
+  --pm-pastel-amber: #FFEBAB;
+  --pm-pastel-cyan: #E2FEFD;
+  --pm-pastel-blue: #DEF8FF;
+  --pm-pastel-purple: #F8F0FF;
+
+  /* Strokes — role: STROKE/BORDER (lines, icon strokes, gradient borders) */
+  --pm-stroke-mint: #92E0B8;
+  --pm-stroke-peach: #FBBD8A;
+  /* Deprecated aliases (§6-BIS names) — use --pm-stroke-* */
+  --pm-pastel-mint-border: var(--pm-stroke-mint);
+  --pm-pastel-peach: var(--pm-stroke-peach);
+
+  /* Logo blue: medido de los PNG del isotipo; distinto de --primary
+     (oklch 0.576 0.097 234.5). Divergencia = decisión de marca ABIERTA,
+     no unificar. */
+  --pm-logo-blue: #154F62;
 }
 
 .dark {

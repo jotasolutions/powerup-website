@@ -7,7 +7,7 @@ import { BlurFade } from "@/components/ui/blur-fade"
 
 export function WebsiteShowcaseSection() {
   return (
-    <SectionContainer id="website-showcase" className="bg-gradient-to-b from-white via-[#E2FEFD]  to-white">
+    <SectionContainer id="website-showcase" className="bg-gradient-to-b from-white via-pm-pastel-cyan  to-white">
       <div className="space-y-10 text-center sm:space-y-14 md:space-y-20">
         <BlurFade inView inViewMargin="-80px">
           <h2 className="landing-section-title text-2xl md:text-3xl lg:text-4xl max-w-lg mx-auto">

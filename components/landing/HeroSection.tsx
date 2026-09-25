@@ -101,7 +101,7 @@ export function HeroSection() {
                   <QrCode className="size-4 md:size-6 text-white sm:size-7" />
                 </div>
                 de tu restaurante en una maquina de <span className="mx-0.5"></span>
-                <Highlighter action="circle" color="#FF9800" delay={1500} >
+                <Highlighter action="circle" color="var(--pm-orange)" delay={1500} >
                   ventas
                 </Highlighter>
               </h1>

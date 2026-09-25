@@ -97,8 +97,8 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-8">
-        <div className="rounded-3xl bg-gradient-to-b from-[#92E0B8] to-white p-[3px] shadow-xl">
-          <article className="relative flex h-full flex-col overflow-hidden rounded-[19px] bg-gradient-to-b from-[#DFFFEA] via-[#ffffff] to-white p-5 sm:p-6 md:p-8">
+        <div className="rounded-3xl bg-gradient-to-b from-pm-stroke-mint to-white p-[3px] shadow-xl">
+          <article className="relative flex h-full flex-col overflow-hidden rounded-[19px] bg-gradient-to-b from-pm-pastel-mint via-[#ffffff] to-white p-5 sm:p-6 md:p-8">
             {billing === "annual" && annualDiscountPercent > 0 && (
               <span className="absolute right-4 top-6 mb-2 inline-flex rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
                 {annualDiscountPercent}% descuento
@@ -134,7 +134,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
             <div className="mb-6 mt-2 space-y-1">
               <div className="boder-slate-200 rounded-xl border bg-gray-100/50 p-4">
                 <div className="flex gap-3">
-                  <FeatureIconBox className="bg-[#CEEDB8]">
+                  <FeatureIconBox className="bg-pm-pastel-lime">
                     <QrCode className="size-6 text-green-600" strokeWidth={2} />
                   </FeatureIconBox>
                   <div className="min-w-0 flex-1 space-y-1">
@@ -167,8 +167,8 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
 
                   <div className="boder-slate-200 rounded-xl border bg-gray-100/50 p-4">
                     <div className="flex gap-3">
-                      <FeatureIconBox className="bg-[#FFEBAB]">
-                        <Globe className="size-6 text-[#FBBD8A]" strokeWidth={2} />
+                      <FeatureIconBox className="bg-pm-pastel-amber">
+                        <Globe className="size-6 text-pm-stroke-peach" strokeWidth={2} />
                       </FeatureIconBox>
                       <div className="min-w-0 flex-1 space-y-1">
                         <p className="font-semibold text-slate-900">Sitio web del restaurante</p>
@@ -217,7 +217,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
             <div className="mb-6 mt-2 space-y-1">
               <div className="boder-slate-200 rounded-xl border bg-gray-100/50 p-4">
                 <div className="flex gap-3">
-                  <FeatureIconBox className="bg-[#CEEDB8]">
+                  <FeatureIconBox className="bg-pm-pastel-lime">
                     <QrCode className="size-6 text-green-600" strokeWidth={2} />
                   </FeatureIconBox>
                   <div className="min-w-0 flex-1 space-y-1">

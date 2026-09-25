@@ -8,7 +8,7 @@ export function WebsiteFinalCtaSection() {
   return (
     <SectionContainer
       id="website-final-cta"
-      className="bg-gradient-to-b from-white via-[#DEF8FF] to-white"
+      className="bg-gradient-to-b from-white via-pm-pastel-blue to-white"
     >
       <div className="mx-auto max-w-4xl space-y-6 text-center">
         <BlurFade inView inViewMargin="-80px">

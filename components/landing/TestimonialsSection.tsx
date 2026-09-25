@@ -23,7 +23,7 @@ export function TestimonialsSection() {
             link: "https://carta.powerup.menu/taberna-marisa",
             userImage: "/images/testimonials/marisa/marisa.png",
             userName: "Marisa",
-            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">x1,2</span> Facturacion en 6 meses</div>
+            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-pm-green">x1,2</span> Facturacion en 6 meses</div>
         },
         {
             bgImage: "/images/testimonials/trattoria/bgimage.png",
@@ -33,7 +33,7 @@ export function TestimonialsSection() {
             link: "https://carta.powerup.menu/trattoria-piemontese/categories",
             userImage: "/images/testimonials/trattoria/paolo2.jpg",
             userName: "Paolo",
-            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">Recibe visitas de ChatGPT</span>— lo ve en sus analíticas</div>
+            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-pm-green">Recibe visitas de ChatGPT</span>— lo ve en sus analíticas</div>
         },
         {
             bgImage: "/images/testimonials/spaccanapoli/restaurant.png",
@@ -43,7 +43,7 @@ export function TestimonialsSection() {
             link: "https://carta.powerup.menu/spaccanapoli-ruzafa",
             userImage: "/images/testimonials/spaccanapoli/dario.jpg",
             userName: "Dario",
-            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">+9.000 cambios</span> sin visitas a la imprenta</div>
+            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-pm-green">+9.000 cambios</span> sin visitas a la imprenta</div>
         },
         {
             bgImage: "/images/testimonials/goyos/bgimage.png",
@@ -61,8 +61,8 @@ export function TestimonialsSection() {
             <div className="grid min-w-0 items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
                 <div className="space-y-6 md:space-y-8">
                     <BlurFade inView inViewMargin="-80px">
-                        <h2 className="section-title">Más de <Highlighter action="circle" color="#FF9800">
-                            <span className="font-medium text-[#50B27F]">+1500</span>
+                        <h2 className="section-title">Más de <Highlighter action="circle" color="var(--pm-orange)">
+                            <span className="font-medium text-pm-green">+1500</span>
                         </Highlighter> restaurantes ya están vendiendo más</h2>
                     </BlurFade>
                     <BlurFade inView inViewMargin="-80px" delay={0.12}>
