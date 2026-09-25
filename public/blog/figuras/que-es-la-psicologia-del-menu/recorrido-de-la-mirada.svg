@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 392" width="560" height="392">
+  <title>Recorrido medio de la mirada en una carta de dos páginas</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .num { font-size: 16px; font-weight: 700; fill: #FFFFFF; }
+    .title { font-size: 16px; font-weight: 700; fill: #0F172A; }
+    .note { font-size: 15px; fill: #475569; }
+  </style>
+  <defs>
+    <marker id="punta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#3482AA"/>
+    </marker>
+  </defs>
+  <rect width="560" height="392" fill="#FFFFFF"/>
+
+  <!-- Open menu: two pages, three areas each (top, middle, bottom) -->
+  <rect x="30" y="20" width="250" height="300" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="280" y="20" width="250" height="300" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <path d="M280 20V320" stroke="#94A3B8" stroke-width="2"/>
+  <g fill="#DEF8FF">
+    <rect x="50" y="36" width="210" height="80" rx="10"/>
+    <rect x="50" y="128" width="210" height="80" rx="10"/>
+    <rect x="300" y="36" width="210" height="80" rx="10"/>
+    <rect x="300" y="128" width="210" height="80" rx="10"/>
+  </g>
+  <g fill="#F1F5F9">
+    <rect x="50" y="220" width="210" height="80" rx="10"/>
+    <rect x="300" y="220" width="210" height="80" rx="10"/>
+  </g>
+  <g fill="#CBD5E1">
+    <rect x="96" y="58" width="130" height="9" rx="4.5"/><rect x="96" y="76" width="100" height="7" rx="3.5"/><rect x="96" y="92" width="116" height="7" rx="3.5"/>
+    <rect x="96" y="150" width="120" height="9" rx="4.5"/><rect x="96" y="168" width="110" height="7" rx="3.5"/><rect x="96" y="184" width="90" height="7" rx="3.5"/>
+    <rect x="96" y="242" width="126" height="9" rx="4.5"/><rect x="96" y="260" width="96" height="7" rx="3.5"/><rect x="96" y="276" width="112" height="7" rx="3.5"/>
+    <rect x="346" y="58" width="124" height="9" rx="4.5"/><rect x="346" y="76" width="104" height="7" rx="3.5"/><rect x="346" y="92" width="92" height="7" rx="3.5"/>
+    <rect x="346" y="150" width="130" height="9" rx="4.5"/><rect x="346" y="168" width="96" height="7" rx="3.5"/><rect x="346" y="184" width="114" height="7" rx="3.5"/>
+    <rect x="346" y="242" width="110" height="9" rx="4.5"/><rect x="346" y="260" width="120" height="7" rx="3.5"/><rect x="346" y="276" width="88" height="7" rx="3.5"/>
+  </g>
+
+  <!-- Path 1 → 6, like reading a book -->
+  <g fill="none" stroke="#3482AA" stroke-width="3" marker-end="url(#punta)">
+    <path d="M72 90V142"/>
+    <path d="M72 182V234"/>
+    <path d="M88 266C150 300 230 110 312 64" stroke-dasharray="6 5"/>
+    <path d="M322 90V142"/>
+    <path d="M322 182V234"/>
+  </g>
+  <g fill="#3482AA">
+    <circle cx="72" cy="66" r="16"/><circle cx="72" cy="158" r="16"/><circle cx="72" cy="250" r="16" fill="#94A3B8"/>
+    <circle cx="322" cy="66" r="16"/><circle cx="322" cy="158" r="16"/><circle cx="322" cy="250" r="16" fill="#94A3B8"/>
+  </g>
+  <text class="num" x="72" y="72" text-anchor="middle">1</text>
+  <text class="num" x="72" y="164" text-anchor="middle">2</text>
+  <text class="num" x="72" y="256" text-anchor="middle">3</text>
+  <text class="num" x="322" y="72" text-anchor="middle">4</text>
+  <text class="num" x="322" y="164" text-anchor="middle">5</text>
+  <text class="num" x="322" y="256" text-anchor="middle">6</text>
+
+  <text class="title" x="30" y="352">Recorrido medio: como al leer un libro</text>
+  <text class="note" x="30" y="376">Las zonas de abajo de cada página (3 y 6) se miraron menos.</text>
+</svg>

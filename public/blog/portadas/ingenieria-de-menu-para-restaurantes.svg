@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Cinco platos repartidos en los cuatro cuadrantes de la ingeniería de menú</title>
+  <defs>
+    <clipPath id="plot"><rect x="36" y="36" width="328" height="228" rx="14"/></clipPath>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <!-- Same five dishes as the article's figure, scaled to the card. -->
+  <g clip-path="url(#plot)">
+    <rect x="36" y="36" width="115" height="111" fill="#F8F0FF"/>
+    <rect x="151" y="36" width="213" height="111" fill="#DFFFEA"/>
+    <rect x="36" y="147" width="115" height="117" fill="#F1F5F9"/>
+    <rect x="151" y="147" width="213" height="117" fill="#FFEBAB"/>
+  </g>
+  <path d="M151 36V264M36 147H364" fill="none" stroke="#475569" stroke-width="2" stroke-dasharray="7 6"/>
+  <g fill="#3482AA" stroke="#FFFFFF" stroke-width="3">
+    <circle cx="200" cy="90" r="12"/>
+    <circle cx="323" cy="160" r="12"/>
+    <circle cx="97" cy="71" r="12"/>
+    <circle cx="282" cy="180" r="12"/>
+    <circle cx="97" cy="198" r="12"/>
+  </g>
+</svg>

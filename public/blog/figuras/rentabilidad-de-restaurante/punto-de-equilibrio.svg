@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 408" width="560" height="408">
+  <title>Punto de equilibrio del ejemplo: 1.765 comensales al mes</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .legend { font-size: 15px; fill: #334155; }
+    .tick { font-size: 15px; fill: #475569; }
+    .area { font-size: 15px; font-weight: 700; fill: #475569; }
+    .key { font-size: 15px; font-weight: 700; fill: #3482AA; }
+  </style>
+  <rect width="560" height="408" fill="#FFFFFF"/>
+
+  <path d="M20 16H44" stroke="#FF9800" stroke-width="3"/>
+  <text class="legend" x="52" y="21">Gastos fijos: 30.000 € al mes</text>
+  <path d="M20 38H44" stroke="#50B27F" stroke-width="3"/>
+  <text class="legend" x="52" y="43">Margen acumulado: 17 € por comensal</text>
+
+  <!-- x = 80 + comensales × 0.15 (0–3.000); y = 356 − euros × 0.005 (0–60.000 €).
+       30.000 € → y 206; 3.000 comensales × 17 € = 51.000 € → y 101; cruce en 1.765 → x 344.7 -->
+  <path d="M80 356L344.7 206H80Z" fill="#F1F5F9"/>
+  <path d="M344.7 206L530 101V206Z" fill="#DFFFEA"/>
+  <text class="area" x="150" y="245" text-anchor="middle">Pérdidas</text>
+  <text class="area" x="468" y="190" text-anchor="middle">Beneficio</text>
+
+  <path d="M80 56V356H530" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+  <path d="M80 206H530" stroke="#FF9800" stroke-width="3"/>
+  <path d="M80 356L530 101" stroke="#50B27F" stroke-width="3"/>
+  <path d="M344.7 206V356" stroke="#3482AA" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="344.7" cy="206" r="7" fill="#3482AA" stroke="#FFFFFF" stroke-width="2"/>
+  <text class="key" x="336" y="192" text-anchor="end">Punto de equilibrio</text>
+
+  <text class="tick" x="72" y="361" text-anchor="end">0 €</text>
+  <text class="tick" x="72" y="211" text-anchor="end">30.000 €</text>
+  <text class="tick" x="72" y="61" text-anchor="end">60.000 €</text>
+  <text class="tick" x="80" y="376" text-anchor="middle">0</text>
+  <text class="tick" x="230" y="376" text-anchor="middle">1.000</text>
+  <text class="tick" x="380" y="376" text-anchor="middle">2.000</text>
+  <text class="tick" x="530" y="376" text-anchor="end">3.000</text>
+  <text class="key" x="344.7" y="398" text-anchor="middle">1.765</text>
+  <text class="tick" x="530" y="398" text-anchor="end">comensales al mes</text>
+</svg>

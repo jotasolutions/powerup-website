@@ -1,44 +1,51 @@
 ---
-# REESCRIBIR: texto original de WordPress (Wayback), base para la reescritura de la Etapa B.
-title: "Descubre cómo hemos ayudado a Jose Luis de La Taberna Casera"
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original, confirmados por Fede (25-09-2026; hay un vídeo de José Luis). Pendiente de su revisión.
+title: "Caso práctico: La Taberna Casera y su carta digital con fotos"
 slug: "casostudiocartadigital"
-seo_title: "Descubre cómo hemos ayudado a Jose Luis de La Taberna Casera"
-seo_description: "Lee nuestro caso estudio sobre el restaurante La Taberna Casera en Valencia y descubre cómo ha mejorado su oferta gastronómica y su presencia online."
-excerpt: "Lee nuestro caso estudio sobre el restaurante La Taberna Casera en Valencia y descubre cómo ha mejorado su oferta gastronómica y su presencia online."
+seo_title: "Caso práctico: La Taberna Casera y su carta digital"
+seo_description: "Cómo usaba La Taberna Casera, un restaurante de Valencia, la carta digital de PowerUp Menu, y qué destacó su dueño, José Luis: que el cliente ve el plato antes de pedirlo."
+excerpt: "En La Taberna Casera, en Valencia, los clientes veían en la carta cómo sale cada plato de la cocina. Su dueño, José Luis, nos contó qué cambió con la carta digital."
 cluster: "casos-practicos"
 keyword_principal: "caso práctico: La Taberna Casera"
 content_strategy: "hybrid"
 destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2024-06-10
+fecha_modificacion: 2026-09-25
 autor: "powerup-menu"
 draft: true
+image: "/blog/portadas/casostudiocartadigital.svg"
+image_alt: "Logo de La Taberna Casera."
+respuesta_corta: "La Taberna Casera es un restaurante de Valencia que usaba la carta digital de PowerUp Menu. Cuando publicamos este caso, en junio de 2024, su dueño, José Luis, destacó sobre todo una cosa: con la carta digital, los clientes ven cómo van a salir los platos de la cocina antes de pedirlos. En sus palabras, «eso hace que se venda más»."
+puntos_clave:
+  - "Restaurante: La Taberna Casera, en Valencia."
+  - "Qué usaba: la carta digital de PowerUp Menu, con imágenes de los platos tal como se sirven."
+  - "Qué destacó su dueño, José Luis: que los clientes ven exactamente cómo van a salir los platos antes de pedirlos."
+  - "Según José Luis, también hubo menos errores en los pedidos y el restaurante ganó visibilidad en los buscadores."
+  - "Caso publicado en junio de 2024, después de un periodo largo de uso."
 ---
 
-## **Propósito Caso Studio**
+En junio de 2024 publicamos este caso. La Taberna Casera, un restaurante de Valencia, llevaba un periodo largo usando la carta digital de PowerUp Menu, y le pedimos a su dueño, José Luis, que nos contara qué había cambiado y qué podíamos mejorar.
 
-En este artículo, **mostraremos cómo [PowerUp Menu](https://blog.powerup.menu/blog-powerup-menu/) ha ayudado al restaurante de José Luis**, la Taberna Casera, situado en Valencia, a obtener mayores beneficios.
+## Lo que más destacó: ver el plato antes de pedirlo
 
-Al adoptar nuestro innovador menú digital, la Taberna Casera ha transformado completamente la experiencia culinaria ofrecida a sus clientes, mejorando significativamente también la gestión del restaurante.
+Con la carta digital, los clientes de La Taberna Casera podían ver imágenes de los platos tal como se sirven antes de pedirlos. Es lo que más valoró José Luis:
 
-Exploramos las mejoras en la gestión del local y en la satisfacción de los clientes, ilustrando el impacto positivo que la Taberna Casera ha obtenido con la implementación de nuestro menú digital.
+> «Ahora los clientes ven exactamente cómo van a salir los platos directamente de la cocina y eso hace que se venda más.»
 
-## **Beneficios de implementar la carta de PowerUp Menu**
+La imagen hace que el cliente sepa qué va a recibir antes de pedirlo, que es justo lo que describe José Luis. El pedido lo sigue tomando el camarero: la carta digital de PowerUp Menu sirve para ver los platos y decidir.
 
-Después de utilizar PowerUp Menu durante un período prolongado, invitamos a José Luis a reflexionar y compartir con nosotros los impactos que nuestro servicio ha tenido en su restaurante.
+## Menos errores y más visibilidad
 
-El objetivo de este análisis es comprender el nivel de satisfacción de nuestro cliente y, además, identificar dónde podemos realizar modificaciones para aportar mayores beneficios.
+José Luis nos contó dos efectos más:
 
-### **Mejora del impacto visual con PowerUp Menu**
+- **Menos errores en los pedidos.** Poder ver los platos antes de pedírselos al camarero también redujo las equivocaciones en lo que se pedía.
+- **Más visibilidad en internet.** Con una carta que se abre desde cualquier dispositivo, el restaurante mejoró su posición en los buscadores y le llegó un público más amplio.
 
-José Luis comenta que, con PowerUp Menu, **sus clientes ahora pueden visualizar una vista previa de los platos tal como se sirven**. Esta funcionalidad no solo ha estimulado el apetito y el interés, sino que también ha reducido los errores en las órdenes, mejorando la precisión y la satisfacción general.
+## Qué puedes aprender de este caso
 
-José Luis: “*Ahora los clientes ven exactamente cómo van a salir los platos directamente de la cocina y eso hace que se venda más*.”
+- **Si pones fotos, que sean de los platos como se sirven.** Lo que valoraba José Luis es que el cliente ve exactamente lo que va a recibir.
+- **Las fotos no tienen por qué costarte trabajo extra.** En PowerUp Menu, si ya tienes la carta en Uber Eats o Just Eat, al importarla se traen también las fotos de los platos.
+- **Mide el efecto.** Cómo se presenta cada plato forma parte de la [psicología del menú](/blog/que-es-la-psicologia-del-menu). Si un plato se mira mucho y se pide poco, prueba a cambiar su foto o su descripción: en [cómo aumentar el ticket medio](/blog/como-aumentar-el-ticket-medio) explicamos cómo.
 
-¿Cuáles son las consecuencias de esta implementación?
-
-Esto ha permitido a la Taberna Casera comunicar más eficazmente su oferta gastronómica a los clientes y potenciar aún más su presencia en el mundo digital.
-
-### **Cómo PowerUp Menu ha potenciado la visibilidad online de la Taberna Casera**
-
-La digitalización del menú de **la Taberna Casera ha mejorado significativamente su visibilidad online** mediante el aprovechamiento de las funcionalidades del servicio. De hecho, con un menú fácilmente accesible desde varios dispositivos, el restaurante ha logrado un mejor posicionamiento en los motores de búsqueda, atrayendo así a un público más amplio y variado.
+Si estás pensando en dar el paso, en [digitalización de restaurantes](/blog/digitalizacion-de-restaurantes) repasamos por dónde empezar. Y en el tema [Casos prácticos](/blog/tema/casos-practicos) tienes otros casos.

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Los cuatro cuadrantes de la matriz de ingeniería de menú</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; }
+  </style>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <rect x="40" y="36" width="156" height="110" rx="14" fill="#F8F0FF"/>
+  <rect x="204" y="36" width="156" height="110" rx="14" fill="#DFFFEA"/>
+  <rect x="40" y="154" width="156" height="110" rx="14" fill="#F1F5F9"/>
+  <rect x="204" y="154" width="156" height="110" rx="14" fill="#FFEBAB"/>
+  <!-- One sign per quadrant: move it (enigmas), keep it (estrellas), remove it (perros), reprice it (caballos de batalla). -->
+  <text x="118" y="111" text-anchor="middle" style="font-size:56px;fill:#3482AA">?</text>
+  <path d="M282 59L289.64 80.48L312.43 81.11L294.36 95.02L300.81 116.89L282 104L263.19 116.89L269.64 95.02L251.57 81.11L274.36 80.48Z" fill="#50B27F"/>
+  <path d="M100 191L136 227M136 191L100 227" fill="none" stroke="#64748B" stroke-width="8" stroke-linecap="round"/>
+  <text x="282" y="228" text-anchor="middle" style="font-size:52px;fill:#0F172A">€</text>
+</svg>

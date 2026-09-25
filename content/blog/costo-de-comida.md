@@ -1,69 +1,96 @@
 ---
-# REESCRIBIR: texto original de WordPress (Wayback), base para la reescritura de la Etapa B.
-title: "¿Cómo calcular el costo de la comida en un restaurante?"
+# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Sin fecha original en Wayback: la de publicación es la de la reescritura (aprobado por Fede). Pendiente de su revisión.
+title: "Cómo calcular el food cost de tu restaurante"
 slug: "costo-de-comida"
-seo_title: "¿Cómo calcular el costo de la comida en un restaurante?"
-seo_description: "Aprende a calcular el costo de la comida en un restaurante con este artículo. Descubre cómo determinar los precios de los ingredientes."
-excerpt: "Aprende a calcular el costo de la comida en un restaurante con este artículo. Descubre cómo determinar los precios de los ingredientes."
+seo_title: "Cómo calcular el food cost de tu restaurante"
+seo_description: "Qué es el food cost, cómo se calcula plato a plato con el escandallo y para todo el restaurante en un mes, y qué hacer cuando sube."
+excerpt: "El food cost es lo que te cuesta la comida que vendes. Así se calcula plato a plato y para todo el restaurante, con ejemplos."
 cluster: "rentabilidad-y-costes"
 keyword_principal: "cómo calcular el food cost"
 content_strategy: "hybrid"
 destino_comercial: "maestro"
 cta: "medium"
-fecha_publicacion: 2026-09-24 # provisional: pasa a ser la fecha de la reescritura
+fecha_publicacion: 2026-09-24
 autor: "powerup-menu"
 draft: true
+image: "/blog/portadas/costo-de-comida.svg"
+image_alt: "Ilustración: un gráfico circular con la parte que se lleva el coste de la comida."
+respuesta_corta: "El food cost es el coste de los ingredientes de lo que vendes, expresado como porcentaje de las ventas. Se calcula de dos formas: plato a plato, con el escandallo (coste de los ingredientes de una ración ÷ precio sin IVA), y para todo el restaurante en un periodo (coste de la comida consumida ÷ ventas de comida sin IVA). Si el segundo sale más alto que el primero, algo se pierde por el camino."
+puntos_clave:
+  - "Food cost de un plato = coste de los ingredientes por ración ÷ precio sin IVA × 100."
+  - "Coste de la comida consumida en un periodo = existencias iniciales + compras − existencias finales."
+  - "Food cost del periodo = coste de la comida consumida ÷ ventas de comida sin IVA × 100."
+  - "Si el food cost real supera al de los escandallos, hay algo que las recetas no recogen: mermas, raciones más grandes o errores de inventario."
+faq:
+  - pregunta: "¿Qué food cost es normal?"
+    respuesta: "Depende del tipo de cocina y de los precios de tu carta: no hay una cifra que valga para todos. Más útil que compararte con una media es seguir el tuyo cada mes y el de cada plato."
+  - pregunta: "¿El food cost incluye las bebidas?"
+    respuesta: "Normalmente se calcula aparte. Las bebidas tienen su propio indicador, el beverage cost, que se calcula igual."
+  - pregunta: "¿Qué es el escandallo?"
+    respuesta: "Es la ficha de coste de un plato: cada ingrediente, la cantidad que lleva una ración y lo que cuesta."
+fuentes:
+  - titulo: "Economipedia: Coste de ventas"
+    url: "https://economipedia.com/definiciones/costo-de-ventas.html"
+  - titulo: "Agencia Tributaria: Manual práctico de IVA, tipo impositivo reducido del 10%"
+    url: "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-iva-2025/capitulo-04-sujetos-pasivos-repercusion-impositivo/tipo-impositivo/tipo-impositivo-reducido-10-ciento.html"
 ---
 
-Entender el costo de los alimentos es fundamental para la gestión de un restaurante. Este parámetro crucial permite determinar la rentabilidad de los platos, comparando el costo de las materias primas utilizadas en la preparación con el precio de venta del producto terminado.
+El food cost es el coste de los ingredientes de lo que vendes. Es una cifra que conviene vigilar de cerca, porque se mueve con cada compra y con cada ración que sale del pase. Se calcula de dos formas, y las dos sirven para cosas distintas.
 
-**Comprender como calcular el [precio de un plato](https://blog.powerup.menu/tecnicas-de-pricing/) de restaurante es fundamental para la gestión de un restaurante**. Este parámetro crucial permite determinar la rentabilidad de los platos, comparando el coste de las materias primas utilizadas en la preparación con el precio de venta del producto terminado.
+## Food cost de un plato: el escandallo
 
-## **¿Qué es el food cost?**
+El escandallo es la ficha de coste de un plato: cada ingrediente, la cantidad que lleva una ración y lo que cuesta. Con él, el food cost del plato es:
 
-El food cost, o costo de los alimentos, es un indicador para la gestión financiera de tu restaurante y representa el costo de los ingredientes alimentarios utilizados en relación a los costos sostenidos en el mismo periodo.
+**Food cost del plato = coste de los ingredientes por ración ÷ precio sin IVA × 100**
 
-### ¿Por qué es importante calcular el costo de los alimentos?
+El precio va sin IVA porque el IVA no es tuyo: en España, las comidas y bebidas para consumir en el local llevan un 10%, así que el precio sin IVA es el de la carta dividido entre 1,10.
 
-Calcular el *costo de los alimentos* es crucial ya que proporciona una visión detallada de los costos asociados con la preparación de los platos.**Esto permite evaluar la rentabilidad general del restaurante y ajustar los precios** de los platos de manera adecuada para maximizar los beneficios.
+Ejemplo: un plato de pasta cuesta 13,20 € en carta, es decir, 12,00 € sin IVA. Si sus ingredientes por ración cuestan 2,10 €, su food cost es del 17,5%.
 
-## **¿Cómo calcular el costo de alimentos?**
+### Cuenta las mermas
 
-¿Cómo calcular el costo de los alimentos?
+Muchos ingredientes no se aprovechan enteros: el pescado se limpia, la verdura se pela y la carne pierde peso al cocinarse. El coste que cuenta es el de lo que llega al plato, no el de lo que compras.
 
-Para calcular el costo de los alimentos, es esencial considerar diversos aspectos:
+Ejemplo: si compras merluza a 14 € el kilo y, una vez limpia, aprovechas 600 gramos de cada kilo, el kilo que de verdad usas te cuesta 23,33 €. Ese es el precio que va al escandallo.
 
-1. **Análisis del Costo de Compra de Materias Primas**
+<figure>
+<img src="/blog/figuras/costo-de-comida/merma.svg" width="560" height="200" alt="Un kilo de merluza comprado a 14 €: se aprovechan 600 gramos y 400 son merma, así que el kilo que de verdad usas cuesta 14 € ÷ 0,6 = 23,33 €, el precio que va al escandallo.">
+<figcaption>Ejemplo del artículo: la merma sube el coste de cada kilo que de verdad usas.</figcaption>
+</figure>
 
-En primer lugar, debemos tener en cuenta los costos de las materias primas durante la preparación de los platos.
+## Food cost del restaurante en un periodo
 
-- En este contexto, **sería recomendable conservar los recibos de compra de materias primas** para tener un registro completo de los gastos.
+El escandallo te dice lo que *debería* costar cada plato. Para saber lo que te ha costado de verdad la comida en un mes, se usa el inventario:
 
-1. **Cantidad de Ingredientes**
+**Coste de la comida consumida = existencias iniciales + compras − existencias finales**
 
-Además de las materias primas, es necesario considerar la cantidad de ingredientes utilizados en cada plato. Durante esta fase, **también es importante tener en cuenta los desperdicios alimentarios y las pérdidas de ingredientes durante la preparación**.
+**Food cost del periodo = coste de la comida consumida ÷ ventas de comida sin IVA × 100**
 
-Es fundamental medir cuidadosamente:
+Ejemplo: empiezas el mes con 3.000 € de género en cámaras y almacén, compras 9.500 € y lo terminas con 2.700 €. Has consumido 9.800 € de comida. Si ese mes vendes 32.000 € en comida sin IVA, tu food cost es del 30,6%.
 
-- las cantidades de ingredientes utilizados y registrar con precisión las porciones empleadas durante la preparación;
-- Debemos considerar los desperdicios y las pérdidas durante el proceso de preparación, mediante anotaciones detalladas u observaciones directas.
+<figure>
+<img src="/blog/figuras/costo-de-comida/food-cost-del-mes.svg" width="560" height="220" alt="Cálculo del food cost del mes del ejemplo: 3.000 € de género al empezar, más 9.500 € de compras, menos 2.700 € al terminar, dan 9.800 € de comida consumida; dividida entre 32.000 € de ventas de comida sin IVA, el food cost es del 30,6%.">
+<figcaption>Ejemplo del artículo: el food cost del restaurante en un mes.</figcaption>
+</figure>
 
-1. **Costos Operativos Adicionales**
+## Lo que te dice la diferencia entre los dos
 
-Además de los costos directos, también debemos**considerar los costos operativos relacionados con el personal y la gestión de [inventario](https://blog.powerup.menu/gestion-de-stock/)**.
+Si sumas el coste de los escandallos de todo lo que vendiste en el mes, tienes el food cost teórico. El del inventario es el real. Si el real sale más alto, hay algo que las recetas no recogen:
 
-Esto incluye:
+- mermas mayores de las que calculaste;
+- raciones más generosas que las del escandallo;
+- producto que se estropea o se tira;
+- errores al contar el inventario o al registrar las compras.
 
-- Registrar los costos del personal, como salarios y beneficios
-- Monitorear los costos asociados con la gestión del inventario, como compras, almacenamiento y mantenimiento.
-- El uso de software empresarial puede ser útil para rastrear los costos y facilitar el análisis financiero.
+Cuanto más se separan las dos cifras, más dinero se pierde por el camino.
 
-### **¿Cuál es la fórmula para calcular el costo de alimentos? 🤔**
+## Qué hacer cuando sube
 
-% de Food Cost = costi considerati / Ingresos x 100 💹
+1. **Revisa los precios de compra.** Si un proveedor ha subido, el escandallo de cada plato con ese ingrediente ya no vale.
+2. **Empieza por los platos que más vendes.** Un desvío pequeño en un plato que vendes cada día puede costarte más que uno grande en un plato que casi no sale.
+3. **Mide las raciones.** Si cada cocinero sirve una cantidad distinta, el escandallo no se cumple.
+4. **Revisa el precio en la carta.** A veces el problema no es el coste, sino un precio que se quedó atrás. Antes de subirlo, mira cuánto [margen de contribución](/blog/margen-de-contribucion) te deja cada plato.
 
-El resultato de un food cost que ronda el **35%** **se considera normal**.
+## Si quieres revisarlo con alguien
 
-Este parámetro nos proporciona una forma de monitorear de cerca la cantidad de ingredientes utilizados en cada receta. Esto permite una evaluación constante de la calidad y cantidad de las materias primas utilizadas. 📉🍔
-
-Además, nos permite evaluar posibles mejoras tanto en términos de calidad como de cantidad de los ingredientes utilizados en la preparación de los plato👨‍🍳
+Escandallar una carta entera y cuadrarla con el inventario lleva tiempo. [Maestro](https://maestro.powerup.menu/), el servicio de consultoría de rentabilidad de PowerUp Menu, trabaja contigo el food cost, la carta y los precios. Y para las bebidas, el cálculo equivalente lo explicamos en [el coste de las bebidas](/blog/coste-de-bebidas).

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 452" width="560" height="452">
+  <title>La matriz de ingeniería de menú: los cuatro cuadrantes y qué hacer en cada uno</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .name { font-size: 18px; font-weight: 700; fill: #0F172A; }
+    .action { font-size: 16px; fill: #334155; }
+    .axis { font-size: 16px; font-weight: 700; fill: #334155; }
+    .end { font-size: 15px; fill: #64748B; }
+  </style>
+  <rect width="560" height="452" fill="#FFFFFF"/>
+
+  <rect x="90" y="34" width="221" height="173" rx="14" fill="#F8F0FF"/>
+  <rect x="319" y="34" width="221" height="173" rx="14" fill="#DFFFEA"/>
+  <rect x="90" y="215" width="221" height="173" rx="14" fill="#F1F5F9"/>
+  <rect x="319" y="215" width="221" height="173" rx="14" fill="#FFEBAB"/>
+
+  <text class="name" x="200.5" y="114" text-anchor="middle">Enigmas</text>
+  <text class="action" x="200.5" y="140" text-anchor="middle">Cambiarlos de sitio</text>
+  <text class="name" x="429.5" y="114" text-anchor="middle">Estrellas</text>
+  <text class="action" x="429.5" y="140" text-anchor="middle">Mantenerlas</text>
+  <text class="name" x="200.5" y="295" text-anchor="middle">Perros</text>
+  <text class="action" x="200.5" y="321" text-anchor="middle">Retirarlos</text>
+  <text class="name" x="429.5" y="295" text-anchor="middle">Caballos de batalla</text>
+  <text class="action" x="429.5" y="321" text-anchor="middle">Revisar su precio</text>
+
+  <path d="M74 388V40M90 404H534" fill="none" stroke="#475569" stroke-width="2"/>
+  <path d="M74 30L68 42H80ZM544 404L532 398V410Z" fill="#475569"/>
+  <text class="axis" x="74" y="20" text-anchor="middle">Margen</text>
+  <text class="end" x="64" y="60" text-anchor="end">Alto</text>
+  <text class="end" x="64" y="384" text-anchor="end">Bajo</text>
+  <text class="axis" x="316" y="444" text-anchor="middle">Popularidad</text>
+  <text class="end" x="92" y="426">Baja</text>
+  <text class="end" x="530" y="426" text-anchor="end">Alta</text>
+</svg>

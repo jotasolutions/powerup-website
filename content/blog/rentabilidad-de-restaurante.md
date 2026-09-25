@@ -1,85 +1,84 @@
 ---
-# REESCRIBIR: texto original de WordPress (Wayback), base para la reescritura de la Etapa B.
-title: "¿Qué es la rentabilidad de un restaurante?"
+# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+title: "Cómo calcular la rentabilidad de un restaurante"
 slug: "rentabilidad-de-restaurante"
-seo_title: "¿Qué es la rentabilidad de un restaurante?"
-seo_description: "Descubre cómo optimizar la rentabilidad de tu restaurante: identifica los elementos clave, aprende a calcularla y aplica estrategias efectivas."
-excerpt: "Descubre cómo optimizar la rentabilidad de tu restaurante: identifica los elementos clave, aprende a calcularla y aplica estrategias efectivas."
+seo_title: "Cómo calcular la rentabilidad de un restaurante"
+seo_description: "Margen de contribución, margen neto y punto de equilibrio: las tres cifras para saber si tu restaurante gana dinero y dónde se va."
+excerpt: "Tres cifras para saber si tu restaurante gana dinero: cuánto deja cada plato, cuánto queda al final de mes y cuánto necesitas vender para no perder."
 cluster: "rentabilidad-y-costes"
 keyword_principal: "cómo calcular la rentabilidad de un restaurante"
 content_strategy: "hybrid"
 destino_comercial: "maestro"
 cta: "strong"
 fecha_publicacion: 2024-06-24
+fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
 draft: true
+image: "/blog/portadas/rentabilidad-de-restaurante.svg"
+image_alt: "Ilustración: dos líneas que se cruzan en el punto de equilibrio."
+respuesta_corta: "La rentabilidad de un restaurante se ve con tres cifras: el margen de contribución de cada plato (lo que deja para pagar los gastos fijos), el margen neto (lo que queda de cada euro vendido después de todos los gastos) y el punto de equilibrio (lo que tienes que vender para cubrir los gastos fijos). Con las tres sabes si ganas dinero y por dónde se escapa."
+puntos_clave:
+  - "Margen de contribución de un plato = precio sin IVA − coste de sus ingredientes."
+  - "Margen neto = beneficio neto ÷ ventas sin IVA × 100: lo que te queda de cada euro vendido."
+  - "Punto de equilibrio = gastos fijos ÷ margen de contribución por unidad: lo que tienes que vender para no perder."
+  - "Para ganar más hay dos caminos: más margen en cada venta o menos gastos fijos para las mismas ventas."
+faq:
+  - pregunta: "¿Qué margen neto tiene que tener un restaurante?"
+    respuesta: "No hay una cifra que valga para todos: depende del tipo de local, de la zona y de lo que pagas de alquiler, entre otras cosas. Lo útil es calcular el tuyo cada mes y ver hacia dónde va."
+  - pregunta: "¿Cada cuánto conviene calcular estas cifras?"
+    respuesta: "El margen de cada plato, cuando cambian los precios de compra o los de la carta. El margen neto y el punto de equilibrio, al cerrar cada mes."
+fuentes:
+  - titulo: "Economipedia: Margen de contribución"
+    url: "https://economipedia.com/definiciones/margen-de-contribucion.html"
+  - titulo: "Economipedia: Margen neto"
+    url: "https://economipedia.com/definiciones/margen-neto.html"
+  - titulo: "Economipedia: Punto de equilibrio"
+    url: "https://economipedia.com/definiciones/punto-de-equilibrio.html"
 ---
 
-La rentabilidad de los restaurantes **indica básicamente cuánto dinero consigue obtener el restaurante en relación con lo que invierte en su actividad económica**.
+Un restaurante puede tener las mesas llenas y perder dinero. Facturar mucho no es lo mismo que ganar: lo que cuenta es lo que queda después de pagarlo todo. Estas son las tres cifras que te lo dicen.
 
-La **ingenieria de menu** juega un ruolo cruciale in questo contesto, poiché consente di ottimizzare i piatti offerti per massimizzare i profitti.
+## 1. El margen de contribución de cada plato
 
-Una mayor rentabilidad indica que el restaurante está yendo en la dirección correcta, mientras que, por el contrario, podría señalar posibles problemas financieros y/o operativos.
+Es el precio del plato sin IVA menos lo que cuestan sus ingredientes. Lo que queda es lo que ese plato aporta para pagar los gastos fijos: alquiler, sueldos, suministros. Cuando están cubiertos, es beneficio.
 
-## **¿Qué elementos determinan la rentabilidad de un restaurante?**
+Es la cifra que te dice qué platos te sostienen y cuáles no. Lo explicamos paso a paso, con ejemplos, en [cómo calcular el margen de contribución](/blog/margen-de-contribucion).
 
-Para entender mejor la *rentabilidad*de un restaurante, debemos identificar los principales factores que pueden influir en ella:
+## 2. El margen neto
 
-**Costos de producción**\
-Incluyen todos los costos necesarios para la ejecución de la actividad económica (materias primas, utensilios y equipos, alquiler, etc.).
+El margen neto es el porcentaje de las ventas que queda como beneficio cuando ya has restado todos los gastos:
 
-**Gestión del personal**\
-En este caso, se incluyen costos como la formación del personal la reducción de la [rotación](https://blog.powerup.menu/rotacion-del-menu/), etc.
+**Margen neto = beneficio neto ÷ ventas sin IVA × 100**
 
-**Gestión de existencias e inventario**\
-La gestión y el control de las existencias, el monitoreo de las roturas de [stock](https://blog.powerup.menu/gestion-de-stock/) y la reducción de desperdicios pueden contribuir a mejorar la rentabilidad.
+Ejemplo: si en un mes vendes 60.000 € sin IVA y, después de pagar compras, sueldos, alquiler, suministros e impuestos, te quedan 4.200 €, tu margen neto es del 7%. De cada euro vendido, te quedan 7 céntimos.
 
-**Optimización de la fase operativa**\
-La optimización de algunas prácticas operativas, como la preparación de alimentos, puede reducir los costos operativos y aumentar la rentabilidad de un restaurante.
+El margen neto responde a la pregunta de fondo: ¿el negocio gana dinero? Pero no te dice dónde se pierde. Para eso están las otras dos cifras.
 
-**Marketing y posicionamiento**\
-Adoptar una estrategia de marketing permite mejorar el posicionamiento en el mercado y contribuir a un mayor beneficio.
+## 3. El punto de equilibrio
 
-## **¿Cómo calcular rentabilidad de un restaurante?**
+El punto de equilibrio es lo que tienes que vender para cubrir todos los gastos, sin ganar ni perder. Se calcula dividiendo los gastos fijos entre el margen de contribución por unidad vendida.
 
-Hay varios indicadores que pueden utilizarse para evaluar la rentabilidad de un restaurante. Aquí algunos de los principales:
+En un restaurante, la unidad más práctica es el comensal:
 
-**Margen de beneficio bruto**\
-Representa el porcentaje de ingresos que queda después de restar los costos directos de las mercancías vendidas.\
+**Punto de equilibrio (en comensales) = gastos fijos del mes ÷ margen de contribución medio por comensal**
 
-(Ingresos – Costo de las mercancías vendidas) / Ingresos \* 100.\
+Ejemplo: tus gastos fijos son de 30.000 € al mes. Cada comensal gasta de media 25 € sin IVA, y lo que consume te cuesta 8 € en ingredientes. El margen medio por comensal es de 17 €, así que necesitas unos 1.765 comensales al mes para cubrir gastos: unos 59 al día si abres 30 días. A partir de ahí, cada comensal deja beneficio.
 
-*Un margen bruto de un restaurante más alto indica una mayor rentabilidad.*
+Es la cifra más útil para decidir: te dice cuánto tiene que vender el restaurante antes de empezar a ganar, y cuánto cambia esa cifra si subes un precio o bajas un gasto.
 
-**Margen de beneficio neto**\
-El margen de beneficio neto indica el porcentaje de ingresos que queda después de restar *todos los costos*, incluidos los costos operativos, intereses e impuestos.\
+<figure>
+<img src="/blog/figuras/rentabilidad-de-restaurante/punto-de-equilibrio.svg" width="560" height="408" alt="Gráfico del punto de equilibrio del ejemplo: los gastos fijos son 30.000 € al mes y cada comensal deja 17 € de margen; la línea del margen acumulado cruza la de los gastos fijos en unos 1.765 comensales al mes. Por debajo de esa cifra hay pérdidas y, por encima, beneficio.">
+<figcaption>Ejemplo del artículo: 25 € de ticket medio sin IVA y 8 € de ingredientes dejan 17 € de margen por comensal.</figcaption>
+</figure>
 
-(Ingresos – Todos los costos) / Ingresos \* 100.\
+## Dónde mirar cuando no salen las cuentas
 
-*Un margen de beneficio neto más alto significa que el restaurante es más rentable.*
+Si el margen neto es bajo o el punto de equilibrio queda lejos, hay que mirar en tres sitios:
 
-## **Estrategias para Aumentar la Rentabilidad de un Restaurante**
+- **El coste de la comida.** Si los ingredientes se llevan demasiado de cada venta, empieza por [cómo calcular el food cost](/blog/costo-de-comida).
+- **El coste de personal.** El salario es solo una parte de lo que cuesta cada puesto: en [organigrama y coste de personal](/blog/organigrama-de-un-restaurante) explicamos cómo calcularlo de verdad.
+- **La carta.** Qué platos destacar, cuáles revisar de precio y cuáles quitar: es de lo que trata la [ingeniería de menú](/blog/ingenieria-de-menu-para-restaurantes).
 
-Para garantizar la rentabilidad de un restaurante, es esencial ir más allá de la simple gestión de costos y calidad. **La adopción de estrategias innovadoras puede marcar la diferencia y posicionar al restaurante de manera competitiva en el mercado**. Aquí tienes algunas estrategias clave a considerar:
+## Si quieres revisarlo con alguien
 
-**Mejora de la Experiencia del Cliente**
-
-Invertir en soluciones innovadoras para mejorar la experiencia del cliente es fundamental. Esto podría incluir la implementación de un menú digital, lo que facilita un servicio más rápido y eficiente (aggiungere link).
-
-**Gestión Optimizada del Inventario**
-
-La gestión del inventario es crucial para reducir los desperdicios y maximizar los beneficios. Para optimizar los costos de las materias primas, se pueden implementar sistemas avanzados de control de inventario o negociar con los proveedores para obtener precios ventajosos.
-
-**Promoción de los [Platos Populares](https://blog.powerup.menu/menu-rapido/)**
-
-Analizar las ventas para identificar los platos más populares y rentables y promoverlos activamente en el menú puede aumentar los ingresos. Al mismo tiempo, eliminar los platos menos rentables puede simplificar el menú y centrar la atención en lo que funciona mejor para el restaurante.
-
-**Enfoque en la Innovación y la Calidad**
-
-Mantener un enfoque constante en la innovación y la calidad de los platos y el servicio puede diferenciar al restaurante de la competencia y crear una ventaja competitiva a largo plazo
-
-**Usar una carta digital**
-
-Utilizar una carta digital como la de [PowerUp Menu p](https://www.powerup.menu/)uede hacer que, aplicando estrategias de ingenieria de menu, aumenten los ingresos.
-
-💡Podría interesarte: [¿Qué es la ingeniería del menú?](https://blog.powerup.menu/ingenieria-de-menus/)
+Calcular estas cifras con los números de tu restaurante lleva tiempo, y decidir qué cambiar, todavía más. [Maestro](https://maestro.powerup.menu/) es el servicio de consultoría de rentabilidad de PowerUp Menu: trabaja contigo el food cost, la carta y la estrategia de precios.

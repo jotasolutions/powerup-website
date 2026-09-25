@@ -1,86 +1,80 @@
 ---
-# MANTENER: texto de WordPress (Wayback). En la Etapa B solo se corrigen erratas, encabezados y enlaces.
-title: "Clasificación de los platos a través de la matriz de ingeniería del menú"
+# Reescrito en la Etapa B (tanda 2, 24-09-2026): pasó de MANTENER a REESCRIBIR con el OK de Fede, porque el original confundía la matriz con la BCG e intercambiaba dos categorías. Pendiente de su revisión.
+title: "Matriz de ingeniería de menú: cómo clasificar tus platos"
 slug: "matriz-de-ingenieria-del-menu"
 seo_title: "Matriz de ingeniería de menú: cómo clasificar tus platos"
-seo_description: "¿Reconoces los platos más rentables? En esta guía te explicaremos cómo hacerlo y cómo orientar tus estrategias."
-excerpt: "¿Reconoces los platos más rentables? En esta guía te explicaremos cómo hacerlo y cómo orientar tus estrategias."
+seo_description: "Los cuatro cuadrantes de la matriz de ingeniería de menú, cómo colocar cada plato y qué hacer con estrellas, caballos de batalla, enigmas y perros."
+excerpt: "La matriz de ingeniería de menú coloca cada plato en uno de cuatro cuadrantes según su popularidad y su margen. Así se construye y así se lee."
 cluster: "ingenieria-de-menu"
 keyword_principal: "matriz de ingeniería de menú"
-content_strategy: "google-first"
+content_strategy: "hybrid"
 destino_comercial: "maestro"
 cta: "medium"
 fecha_publicacion: 2024-07-01
+fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
 draft: true
+image: "/blog/portadas/matriz-de-ingenieria-del-menu.svg"
+image_alt: "Ilustración de los cuatro cuadrantes de la matriz de ingeniería de menú."
+respuesta_corta: "La matriz de ingeniería de menú es un gráfico de cuatro cuadrantes: en un eje va la popularidad de cada plato y en el otro, su margen de contribución. Cada plato cae en uno de ellos: estrellas (populares y rentables), caballos de batalla (populares pero con poco margen), enigmas (con margen pero poco populares) y perros (ni una cosa ni otra). No es la matriz BCG de Boston Consulting Group, aunque se le parezca: aquella clasifica productos por crecimiento y cuota de mercado."
+puntos_clave:
+  - "Eje de popularidad: el corte está en el 70% de la cuota de ventas que le tocaría a cada plato si todos se vendieran igual."
+  - "Eje de margen: el corte está en el margen de contribución medio de la carta."
+  - "Estrellas se mantienen, caballos de batalla se revisan de precio, enigmas se cambian de sitio y perros se retiran."
+  - "La matriz BCG, que popularizó Bruce Henderson en 1970, es otra herramienta: clasifica productos por el crecimiento de su mercado y su cuota de mercado."
+faq:
+  - pregunta: "¿Es lo mismo que la matriz BCG?"
+    respuesta: "No. Se parecen en la forma, cuatro cuadrantes, pero la matriz BCG de Boston Consulting Group clasifica productos de una empresa por el crecimiento de su mercado y su cuota de mercado. La de ingeniería de menú clasifica platos por su popularidad y su margen de contribución."
+  - pregunta: "¿Qué hago si un plato cambia de cuadrante?"
+    respuesta: "Busca el motivo: un cambio en el precio de compra, la temporada o su posición en la carta puede moverlo. Por eso conviene repetir la matriz cada temporada."
+fuentes:
+  - titulo: "AHLEI (2025): The Power of Menu Engineering, Part One"
+    url: "https://ahlei.servsafebrands.com/resources-overview/news-and-insights/the-power-of-menu-engineering-part-one"
+  - titulo: "AHLEI (2025): The Power of Menu Engineering, Part Two"
+    url: "https://ahlei.servsafebrands.com/resources-overview/news-and-insights/the-power-of-menu-engineering-part-two"
+  - titulo: "BCG: What Is the Growth Share Matrix?"
+    url: "https://www.bcg.com/about/overview/our-history/growth-share-matrix"
 ---
 
-#### Table of Contents
+La ingeniería de menú clasifica cada plato de la carta según dos datos: cuánto se vende y cuánto deja. La matriz es la forma de verlo de un vistazo: un gráfico con cuatro cuadrantes en el que cada plato cae en uno.
 
-La matriz de [ingenieria de menu](https://blog.powerup.menu/ingenieria-de-menu/), también conocida como Matriz BCG o **Matriz de Boston**, es una representación gráfica que divide los platos del menú en cuatro cuadrantes según dos criterios principales: popularidad y rentabilidad.
+## Los dos ejes
 
-Esta matriz fue ideada y desarrollada por Bruce Henderson del Boston Consulting Group a principios de los años 70 y **se ha convertido en una herramienta fundamental para las decisiones de asignación de recursos y planificación estratégica**.
+- **Popularidad:** la cuota de ventas del plato dentro de su sección. El corte entre alta y baja está en el 70% de la cuota que le tocaría si todos los platos se vendieran igual. Con cinco platos, a cada uno le tocaría el 20%, así que el corte está en el 14%.
+- **Margen de contribución:** lo que deja cada ración, es decir, su precio sin IVA menos el coste de los ingredientes. El corte está en el margen medio de la sección: la suma de los márgenes de todas las raciones vendidas, dividida entre el número de raciones.
 
-En el caso de la ingeniería del menú, resulta ser una herramienta muy útil para la clasificación de los platos en función de su rentabilidad y popularidad.
+## Los cuatro cuadrantes
 
-## ¿Por qué es importante la clasificación de los platos?
+| Cuadrante | Popularidad | Margen | Qué hacer |
+| --- | --- | --- | --- |
+| Estrellas | Alta | Alto | Mantenerlas |
+| Caballos de batalla | Alta | Bajo | Revisar su precio |
+| Enigmas | Baja | Alto | Cambiarlos de sitio en la carta |
+| Perros | Baja | Bajo | Retirarlos |
 
-La clasificación de los platos **nos permite entender cuáles son los más rentables y cuáles menos.**
+<figure>
+<img src="/blog/figuras/matriz-de-ingenieria-del-menu/cuadrantes.svg" width="560" height="452" alt="Matriz de ingeniería de menú: arriba a la derecha, las estrellas, con popularidad y margen altos, que se mantienen; abajo a la derecha, los caballos de batalla, populares pero con poco margen, a los que se revisa el precio; arriba a la izquierda, los enigmas, con margen pero poco populares, que se cambian de sitio en la carta; y abajo a la izquierda, los perros, que se retiran.">
+<figcaption>Los cuatro cuadrantes de la matriz y qué hacer en cada uno.</figcaption>
+</figure>
 
-Además de comprender qué platos pueden generar mayor beneficio económico, la clasificación es importante porque facilita una gestión eficiente de los recursos, distribuyendo ingredientes y el tiempo del personal de manera más efectiva y reduciendo los desperdicios alimentarios.
+## Cómo colocar tus platos, paso a paso
 
-Otro aspecto crucial es que **nos permite comprender las preferencias del cliente según sus elecciones y,** por lo tanto,**adaptar la oferta gastronómica a sus gustos,** aumentando así la satisfacción y la fidelización.
+1. **Elige una sección y un periodo**, por ejemplo los principales del último mes.
+2. **Calcula la cuota de ventas de cada plato** y compárala con el corte de popularidad.
+3. **Calcula el margen de cada plato** y compáralo con el margen medio de la sección.
+4. **Coloca cada plato en su cuadrante.** Con alta popularidad y margen alto, es una estrella; con alta popularidad y margen bajo, un caballo de batalla; y así con los otros dos.
 
-## ¿Cómo clasificar los platos utilizando la matriz de Boston?
+En [qué es la ingeniería de menú](/blog/ingenieria-de-menu-para-restaurantes) tienes un ejemplo completo, con cinco platos y todos los cálculos.
 
-Utilizando la rentabilidad y la popularidad de los platos como criterios, podemos evaluar su desempeño y tomar decisiones estratégicas para optimizar el menú a través [menu engineering](https://blog.powerup.menu/ingenieria-de-menu-para-restaurantes/) analysis.
+## Qué hacer en cada cuadrante
 
-### PASO 1: Recopilación de datos
+- **Estrellas.** Son los platos que sostienen la carta. Mantenlos, cuida su calidad y dales buenas posiciones. En [cómo aumentar el ticket medio](/blog/como-aumentar-el-ticket-medio) explicamos qué posiciones se eligen más.
+- **Caballos de batalla.** Se venden mucho, pero cada ración deja poco. Revisa su precio o su coste: ajustar la ración o cambiar algún ingrediente puede subir su margen.
+- **Enigmas.** Dejan mucho margen, pero se piden poco. Cámbialos de sitio en la carta, mejora su descripción o su foto, o haz que el equipo de sala los recomiende.
+- **Perros.** Ni se venden ni dejan margen. Retíralos o reformúlalos. Si alguno tiene que quedarse, por ejemplo porque es un plato de la casa, que sea una decisión consciente.
 
-Supongamos que analizamos las ventas del último mes y recopilamos los resultados necesarios para determinar la rentabilidad y la popularidad de cada plato en el menú.
+## No es la matriz BCG
 
-- **Popularidad** : contamos las ventas mensuales de cada plato. Basándonos en las ventas mensuales/semanales, asignamos una puntuación del 1 al 10 a cada plato vendido.
+La matriz de ingeniería de menú se parece a la matriz BCG de Boston Consulting Group: las dos tienen cuatro cuadrantes. Pero son herramientas distintas. La matriz BCG, que popularizó el fundador de BCG, Bruce Henderson, en 1970, clasifica los productos de una empresa por el crecimiento de su mercado y su cuota de mercado. La de ingeniería de menú, desarrollada por Michael Kasavana y Donald Smith hacia 1982, clasifica los platos de una carta por su popularidad y su margen.
 
-- **Rentabilidad** : calculamos el margen de beneficio de cada plato para determinar cuáles contribuyen más a los beneficios del restaurante. Después de calcular el margen de beneficio para cada plato, asignamos una puntuación del 1 al 10 para clasificarlos en la matriz.
-
-#### PASO 2: determinar la rentabilidad y popularidad a través de la matriz
-
-Una vez que tenemos todos los datos necesarios, es momento de clasificar los platos utilizando la matriz de Boston. La *matriz engineering matriz clasifica* en cuatro categorías basadas en dos criterios principales: la popularidad y la rentabilidad.
-
-- Popularidad
-
-Alta popularidad: Platos muy solicitados, con ventas elevadas
-
-Baja popolarità: Platos poco solicitados, con ventas bajas
-
-- Rentabilidad
-
-Alta rentabilidad : Platos que generan altos márgenes de beneficio
-
-Bassa rentabilidad : Platos que generan bajos márgenes de beneficio
-
-La combinación de **estos criterios clasifica los platos en cuatro categorías** de la matriz de ingeniería de menú: Estrellas, Vacas, Puzzles y Perros.
-
-- Durante esta fase, es necesario colocar los platos del menú en la sección correspondiente según los datos y cálculos obtenidos previamente.
-
-**Estrellas** Alta popularidad y alta rentabilidad
-
-**Caballo** Baja popularidad y alta rentabilidad
-
-**Puzzle** Alta popularidad y baja rentabilidad
-
-**Perro** Baja popularidad y baja rentabilidadm
-
-Una vez que los platos están ubicados en la Matriz, es importante analizar la posición de cada uno y adoptar estrategias adecuadas para cada categoría.
-
-##### PASO 3: IMPLEMENTACIÓN DE ESTRATEGIAS
-
-Una vez identificados los resultados, **podemos implementar estrategias para mejorar el desempeño de los platos** mediante la implementación de estrategias adecuadas.
-
-**Estrellas**: continuar invirtiendo para mantenerlos en la cima, mejorando la calidad y oferta de estos platos.
-
-**Puzzle**: decidir si aumentar la inversión para mejorar la rentabilidad o retirarlos del menú.
-
-**Caballo**: mantener la calidad y el precio de estos platos para seguir generando beneficios estables.
-
-**Perro**: Considerar retirarlos del menú o reformularse para mejorar su atractivo y rentabilidad.
+Si quieres construir la matriz de tu carta con alguien, [Maestro](https://maestro.powerup.menu/), el servicio de consultoría de rentabilidad de PowerUp Menu, trabaja contigo el food cost, la carta y la estrategia de precios.

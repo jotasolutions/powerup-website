@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 444" width="560" height="444">
+  <title>Los cinco platos del ejemplo según su popularidad y su margen</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .tick { font-size: 16px; fill: #475569; }
+    .cut { font-size: 16px; font-weight: 700; fill: #3482AA; }
+    .quad { font-size: 16px; font-weight: 700; fill: #0F172A; }
+    .dish { font-size: 18px; font-weight: 600; fill: #0F172A; }
+    .axis { font-size: 16px; fill: #475569; }
+  </style>
+  <rect width="560" height="444" fill="#FFFFFF"/>
+
+  <!-- Plot: x = 70 + popularidad × 11.75 (0–40 %), y = 376 − margen × 23.43 (0–14 €).
+       Cuts: 14 % → x 234.5; 7,20 € → y 207.3 -->
+  <rect x="70" y="48" width="164.5" height="159.3" fill="#F8F0FF"/>
+  <rect x="234.5" y="48" width="305.5" height="159.3" fill="#DFFFEA"/>
+  <rect x="70" y="207.3" width="164.5" height="168.7" fill="#F1F5F9"/>
+  <rect x="234.5" y="207.3" width="305.5" height="168.7" fill="#FFEBAB"/>
+
+  <text class="quad" x="78" y="72">Enigmas</text>
+  <text class="quad" x="532" y="72" text-anchor="end">Estrellas</text>
+  <text class="quad" x="78" y="366">Perros</text>
+  <text class="quad" x="532" y="366" text-anchor="end">Caballos de batalla</text>
+
+  <path d="M70 48V376H540" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+  <path d="M234.5 48V376M70 207.3H540" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="6 5"/>
+
+  <text class="tick" x="70" y="400" text-anchor="middle">0%</text>
+  <text class="tick" x="187.5" y="400" text-anchor="middle">10%</text>
+  <text class="cut" x="234.5" y="400" text-anchor="middle">14%</text>
+  <text class="tick" x="305" y="400" text-anchor="middle">20%</text>
+  <text class="tick" x="422.5" y="400" text-anchor="middle">30%</text>
+  <text class="tick" x="540" y="400" text-anchor="end">40%</text>
+  <text class="tick" x="62" y="381" text-anchor="end">0 €</text>
+  <text class="tick" x="62" y="264" text-anchor="end">5 €</text>
+  <text class="cut" x="62" y="212" text-anchor="end">7,20 €</text>
+  <text class="tick" x="62" y="147" text-anchor="end">10 €</text>
+
+  <text class="axis" x="70" y="30">Margen por ración</text>
+  <text class="axis" x="305" y="432" text-anchor="middle">Popularidad: cuota de ventas en la sección</text>
+
+  <g fill="#3482AA" stroke="#FFFFFF" stroke-width="2.5">
+    <circle cx="305" cy="123" r="9"/>
+    <circle cx="481.3" cy="223.7" r="9"/>
+    <circle cx="158.1" cy="94.9" r="9"/>
+    <circle cx="422.5" cy="254.2" r="9"/>
+    <circle cx="158.1" cy="282.3" r="9"/>
+  </g>
+  <text class="dish" x="317" y="129">Arroz</text>
+  <text class="dish" x="469" y="230" text-anchor="end">Hamburguesa</text>
+  <text class="dish" x="146" y="101" text-anchor="end">Merluza</text>
+  <text class="dish" x="434.5" y="260">Pollo</text>
+  <text class="dish" x="146" y="288" text-anchor="end">Lasaña</text>
+</svg>

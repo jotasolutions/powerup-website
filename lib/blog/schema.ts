@@ -1,8 +1,8 @@
 import { z } from "zod"
 import { CLUSTER_SLUGS } from "./taxonomy"
 
-/** Would collide with the blog's own routes (/blog/tema, /blog/autor, /blog/md, ...). */
-export const RESERVED_SLUGS: readonly string[] = ["tema", "autor", "md", "feed.xml", "pagina"]
+/** Would collide with the blog's own routes (/blog/tema, /blog/autor, /blog/md, ...) or its image folders in public/blog. */
+export const RESERVED_SLUGS: readonly string[] = ["tema", "autor", "md", "feed.xml", "pagina", "portadas", "figuras"]
 
 const text = z.string().trim().min(1)
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "solo minúsculas sin acentos, números y guiones")

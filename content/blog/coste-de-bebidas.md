@@ -13,6 +13,8 @@ cta: "medium"
 fecha_publicacion: 2024-08-29
 autor: "powerup-menu"
 draft: true
+image: "/blog/portadas/coste-de-bebidas.svg"
+image_alt: "Ilustración: una botella, una copa y el símbolo del porcentaje."
 ---
 
 Para determinar los precios de las bebidas, al igual que con la comida, **es fundamental utilizar un indicador económico para la gestión financiera de un restaurante**: *el coste de las bebidas o beverage cost*. Este indicador se utiliza para evaluar la rentabilidad de las operaciones relacionadas con la venta de bebidas de un establecimiento.
@@ -23,7 +25,7 @@ El coste de bebidas representa el coste porcentual de las bebidas vendidas en re
 
 ## ¿Por qué es importante el indicador de coste de bebidas?
 
-Nos permite establecer precios específicos para las bebidas con el objetivo de aumentar la rentabilidad. A través del monitoreo del indicador, podemos identificar posibles desperdicios e implementar estrategias para mejorar las operaciones. Podemos identificar posibles ineficiencias e implementar estrategias para optimizar las operaciones.
+Nos permite establecer precios específicos para las bebidas con el objetivo de aumentar la rentabilidad. A través del monitoreo del indicador, podemos identificar posibles desperdicios e implementar estrategias para mejorar las operaciones.
 
 ## ¿Cómo calcular el coste de bebidas?
 
@@ -31,15 +33,13 @@ Nos permite establecer precios específicos para las bebidas con el objetivo de 
 
 ### 1. Análisis inicial del inventario
 
-- **Análisis inicial del inventario**
-
 Durante esta fase es importante recopilar la cantidad de bebidas vendidas durante un determinado período considerado (semana, mes o año). Además, es importante considerar el coste de las bebidas presentes en el [inventario](https://blog.powerup.menu/gestion-de-stock/), es decir, el precio de compra que un restaurante ha incurrido para ese período (incluyendo eventuales impuestos y gastos de entrega).
 
-### **Registro de todas las bebidas vendidas (en el período considerado)**
+#### Registro de todas las bebidas vendidas (en el período considerado)
 
 Una vez finalizado el período considerado, se registra el número y el costo de todas las bebidas vendidas durante ese período.
 
-#### **Cálculo del inventario final**
+#### Cálculo del inventario final
 
 Durante el cálculo del coste de bebidas, el inventario final es un componente esencial para determinar el costo de las bebidas consumidas durante el período considerado. Aquí se explica cómo se utiliza:
 
@@ -53,7 +53,7 @@ Ejemplos:
 
 Este paso es fundamental para aislar el coste de las bebidas efectivamente consumidas y calcular el indicador del costo final de las bebidas.
 
-## 2 .Cálculo del costo de bebidas
+### 2. Cálculo del coste de bebidas
 
 El coste de bebidas se calcula comparando el costo de las bebidas consumidas con el total de las ventas de bebidas en el período considerado.
 
@@ -71,8 +71,8 @@ Un valor alto puede indicar una gestión no óptima de los inventarios. Por ejem
 
 Un valor bajo del coste de bebidas sugiere una gestión más eficiente de los inventarios y los costos de compra de las bebidas.
 
-## Conclusiones: La Gestión Eficiente del Beverage Cost
+## Conclusiones: la gestión eficiente del beverage cost
 
 En conclusión, una gestión precisa del beverage cost es crucial para garantizar la rentabilidad de un restaurante. Monitorizar y calcular regularmente este indicador no solo permite fijar precios más competitivos para las bebidas, sino también identificar y corregir ineficiencias operativas.
 
-**Un beverage cost bien gestionado contribuye a optimizar los beneficios y a mejorar la sostenibilidad económica del restaurant**e, asegurando que cada bebida vendida no solo satisfaga a los clientes, sino que también tenga un impacto positivo en el balance del restaurante. Invertir tiempo y recursos en el análisis de este parámetro es, por lo tanto, una estrategia efectiva para quienes buscan alcanzar y mantener el éxito en el sector de la restauración.
+**Un beverage cost bien gestionado contribuye a optimizar los beneficios y a mejorar la sostenibilidad económica del restaurante**, asegurando que cada bebida vendida no solo satisfaga a los clientes, sino que también tenga un impacto positivo en el balance del restaurante. Invertir tiempo y recursos en el análisis de este parámetro es, por lo tanto, una estrategia efectiva para quienes buscan alcanzar y mantener el éxito en el sector de la restauración.

@@ -1,82 +1,98 @@
 ---
-# REESCRIBIR: texto original de WordPress (Wayback), base para la reescritura de la Etapa B.
-title: "Descubre cómo maximizar la eficiencia organizativa a través organigrama de restaurante"
+# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress, con foco en el coste de personal (decisión de Fede). Pendiente de su revisión.
+title: "Organigrama y coste de personal de un restaurante"
 slug: "organigrama-de-un-restaurante"
-seo_title: "Descubre cómo maximizar la eficiencia organizativa a través organigrama de restaurante"
-seo_description: "¿Cómo optimizar la gestión de tu restaurante? Descubre la importancia del organigrama de un restaurante y cómo usarlo para maximizar la eficiencia operativa."
-excerpt: "¿Cómo optimizar la gestión de tu restaurante? Descubre la importancia del organigrama de un restaurante y cómo usarlo para maximizar la eficiencia operativa."
+seo_title: "Organigrama y coste de personal de un restaurante"
+seo_description: "Cómo se organiza el personal de un restaurante y cuánto cuesta de verdad cada puesto: salario, cotizaciones a la Seguridad Social y su peso sobre las ventas."
+excerpt: "Quién hace qué en un restaurante y cuánto cuesta de verdad cada puesto: el salario es solo una parte. Cómo calcular el coste de personal y su peso sobre las ventas."
 cluster: "rentabilidad-y-costes"
 keyword_principal: "coste de personal en un restaurante"
 content_strategy: "hybrid"
 destino_comercial: "maestro"
 cta: "soft"
 fecha_publicacion: 2023-10-13
+fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
 draft: true
+image: "/blog/portadas/organigrama-de-un-restaurante.svg"
+image_alt: "Ilustración de un organigrama: la dirección arriba y, debajo, la cocina y la sala."
+respuesta_corta: "El coste de personal de un restaurante es bastante más que la suma de los sueldos: a cada salario hay que añadir las cotizaciones a la Seguridad Social a cargo de la empresa, que en 2026 pasan del 30% de la base de cotización en un contrato indefinido. Ordenar los puestos en un organigrama, por áreas como cocina y sala, ayuda a ver cuánto cuesta cada una y a compararlo con lo que vende el restaurante."
+puntos_clave:
+  - "El convenio estatal de hostelería agrupa los puestos en áreas funcionales; en un restaurante, las principales son cocina y sala."
+  - "Coste de un puesto = salario bruto + cotizaciones a la Seguridad Social a cargo de la empresa."
+  - "En 2026, la empresa cotiza un 23,60% por contingencias comunes, un 5,50% por desempleo (6,70% en contratos temporales), un 0,75% de MEI, un 0,20% de Fogasa y un 0,60% de formación profesional, más la tarifa de accidentes de trabajo."
+  - "Coste de personal sobre ventas = coste total de personal ÷ ventas sin IVA × 100."
+faq:
+  - pregunta: "¿Qué es el MEI?"
+    respuesta: "El mecanismo de equidad intergeneracional: una cotización adicional destinada a las pensiones. En 2026, la parte a cargo de la empresa es del 0,75%."
+  - pregunta: "¿Qué es la tarifa de accidentes de trabajo?"
+    respuesta: "Es la cotización por accidentes de trabajo y enfermedades profesionales. La paga solo la empresa y su porcentaje depende de la actividad, según una tarifa oficial."
+  - pregunta: "¿Dónde veo los salarios de cada puesto?"
+    respuesta: "En el convenio colectivo de hostelería que se aplica a tu restaurante, que fija los salarios mínimos de cada categoría."
+fuentes:
+  - titulo: "Seguridad Social: Bases y tipos de cotización 2026"
+    url: "https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/36537"
+  - titulo: "VI Acuerdo Laboral de ámbito estatal para el sector de la Hostelería (ALEH VI), BOE"
+    url: "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-6344"
 ---
 
-La definición de la estructura de un restaurante es un aspecto fundamental para garantizar su correcto funcionamiento.
+En un restaurante, el equipo es a la vez lo que hace posible el servicio y uno de los gastos que más hay que vigilar. Un organigrama sirve para las dos cosas: deja claro quién hace qué y permite ver cuánto cuesta cada parte del equipo.
 
-En esta sección, podrás explorar la estructura interna de un restaurante a través de un organigrama, una herramienta gráfica que representa los roles y responsabilidades de cada miembro del personal dentro de un restaurante.
+## Cómo se organiza el personal de un restaurante
 
-¡Vamos a descubrir más sobre qué se trata!
+Un organigrama es un esquema de los puestos de trabajo y de quién depende de quién. En hostelería, el convenio estatal del sector, el ALEH VI, agrupa los puestos en seis áreas funcionales. En un restaurante, las dos principales son:
 
----
+- **Cocina y economato:** la preparación y elaboración de la comida, y la compra, el almacenamiento y la conservación del género.
+- **Restaurante, sala y bar:** la atención al cliente y el servicio de comidas y bebidas.
 
-## ¿Qué es un organigrama?
+Un organigrama sencillo para un restaurante mediano podría ser este:
 
-¿Estás pensando en cómo mejorar la parte organizativa de tu negocio?
+- **Dirección o gerencia**, de la que dependen:
+  - **Cocina:** jefe o jefa de cocina, cocineros y ayudantes.
+  - **Sala:** encargado o encargada de sala y camareros.
 
-Imagina un *cuadro*que muestra quién es responsable de qué. Este sistema **ayuda a entender las tareas**y **responsabilidades de cada individuo** en un negocio de restauración, simplifica la comunicación y asegura que todo funcione de manera ordenada para proporcionar una exitosa experiencia culinaria.
+<figure>
+<img src="/blog/figuras/organigrama-de-un-restaurante/organigrama.svg" width="560" height="372" alt="Organigrama de un restaurante mediano: de la dirección o gerencia dependen las dos áreas principales, la cocina (jefe o jefa de cocina, cocineros y ayudantes) y la sala (encargado o encargada de sala y camareros).">
+<figcaption>Un organigrama sencillo para un restaurante mediano.</figcaption>
+</figure>
 
-¡Descubramos juntos **qué es y cómo funciona esta herramienta** esencial para tu negocio de restauración! 👨‍🍳
+El tamaño y los puestos cambian con cada local. Lo importante es que cada persona sepa a quién responde y que tú sepas cuánto cuesta cada área.
 
-📦**¿Cómo funciona?**
+## Lo que cuesta de verdad un puesto
 
-Imagina una imagen con «casillas» para cada persona. Cada casilla representa a una persona y su trabajo. Esto ayuda a ver cómo todas las personas trabajan juntas para hacer funcionar el restaurante.
+El salario bruto es solo una parte de lo que cuesta un trabajador. Encima de él, la empresa paga sus propias cotizaciones a la Seguridad Social. En el régimen general, en 2026 son:
 
-**¿Por qué es importante?**
+| Concepto | A cargo de la empresa |
+| --- | --- |
+| Contingencias comunes | 23,60% |
+| Desempleo (contrato indefinido) | 5,50% |
+| Desempleo (contrato temporal) | 6,70% |
+| MEI (mecanismo de equidad intergeneracional) | 0,75% |
+| Fogasa | 0,20% |
+| Formación profesional | 0,60% |
+| Accidentes de trabajo y enfermedades profesionales | según la tarifa de la actividad |
 
-Ayuda a comprender los roles y responsabilidades de cada persona y facilita la comunicación y la colaboración.
+En un contrato indefinido, eso suma un 30,65% de la base de cotización, más la tarifa de accidentes de trabajo.
 
-💼**¿Qué hace?**
+Ejemplo: para un puesto con una base de cotización de 1.800 € al mes, la empresa paga 551,70 € de cotizaciones, sin contar la tarifa de accidentes. El puesto cuesta unos 2.351,70 € al mes, no 1.800 €.
 
-El organigrama explica cómo las personas están conectadas entre sí y cómo se divide el trabajo.
+<figure>
+<img src="/blog/figuras/organigrama-de-un-restaurante/coste-de-un-puesto.svg" width="560" height="184" alt="Barra con el coste mensual de un puesto con una base de cotización de 1.800 €: la empresa paga además 551,70 € de cotizaciones, así que el puesto le cuesta unos 2.351,70 € al mes, un 30,65% más que la base.">
+<figcaption>Ejemplo del artículo: contrato indefinido, cotizaciones de 2026, sin contar la tarifa de accidentes de trabajo.</figcaption>
+</figure>
 
-Para una mejor comprensión, te mostramos un ejemplo de cómo se lee el concepto.
+## El coste de personal sobre las ventas
 
-### ¿Cuál es el organigrama de un restaurante?
+Para saber si el equipo está bien dimensionado, compara lo que cuesta con lo que vende el restaurante:
 
-Aqui un exemplo de Organigrama de restaurante
+**Coste de personal sobre ventas = coste total de personal ÷ ventas sin IVA × 100**
 
-En el ejemplo proporcionado, el organigrama del restaurante ofrece una representación clara de la estructura jerárquica de las actividades, resaltando los diferentes niveles de responsabilidad y la cadena de mando dentro de la organización.
+Ejemplo: si el equipo cuesta 18.000 € al mes, con sueldos y cotizaciones, y vendes 60.000 € sin IVA, el coste de personal es el 30% de las ventas.
 
-Las interacciones entre los miembros y las responsabilidades a menudo se ilustran mediante flechas o conexiones entre los diversos roles, destacando las interacciones y dependencias entre los miembros del personal.
+Calcúlalo también por áreas: cuánto cuesta la cocina y cuánto la sala. Así ves dónde está el peso y puedes compararlo mes a mes.
 
-###  Actualización y revisión del organigrama de un restaurante
+## Cómo usar el organigrama para ajustar el coste
 
-Mantener el organigrama actualizado es fundamental para el éxito de un restaurante. A medida que el personal cambia o las necesidades del restaurante evolucionan, es importante **revisar regularmente el organigrama** para reflejar estos cambios.
-
-**Un organigrama actualizado** mantiene la estructura organizativa coherente con las necesidades del restaurante, asegurando que las responsabilidades de cada rol estén claramente definidas y asignadas correctamente. Esto contribuye a crear **un ambiente de trabajo eficiente y bien coordinado**, donde cada miembro del equipo sabe a quién referirse y qué se espera de él.
-
-La revisión periódica del organigrama permite identificar **posibles carencias en habilidades o recursos humanos**, facilitando la planificación estratégica para abordarlas de manera proactiva. Además, un organigrama actualizado ayuda a **integrar a nuevos empleados**, ayudándoles a comprender mejor su papel dentro de la estructura existente.
-
-Por último, un organigrama siempre actualizado permite al restaurante **adaptarse más fácilmente a los cambios**, garantizando una gestión fluida y cohesiva del local y manteniendo altos estándares de calidad en el servicio a los clientes.
-
----
-
-En conclusión, **el organigrama de un restaurante es una valiosa herramienta visual**que define las jerarquías y las responsabilidades dentro del establecimiento, mostrando los roles de cocineros, camareros, gerentes y otros miembros del equipo.
-
-**Esta representación jerárquica es fundamental para gestionar eficazmente el restaurante** y mantener altos estándares de calidad en la experiencia culinaria ofrecida a los clientes 🌟
-
----
-
-## ¿Quieres mostrar a tus clientes el trabajo de tu personal en el restaurante?
-
-Aquí tienes la solución.
-
-Prueba el menú digital de [Powerup Menu](http://powerup.menu) y descubre cómo agregar o modificar el personal de tu restaurante. ¡No esperes más!
-
-¡Prueba nuestro menú digital ahora!
-
-Destaca a tu equipo en tu menú con [Powerup Menu](https://blog.powerup.menu/blog-powerup-menu/) **🚀**
+- **Cruza los turnos con la demanda.** Si sabes qué días y a qué horas vendes más, puedes ajustar el personal de cada turno a lo que de verdad se vende.
+- **Revísalo cuando cambie algo.** Una carta nueva, un horario distinto o una terraza cambian las necesidades de cocina y de sala.
+- **Mira el coste con el resto de cifras.** El coste de personal pesa distinto según lo que deja cada venta: en [cómo calcular la rentabilidad de un restaurante](/blog/rentabilidad-de-restaurante) explicamos cómo ver todo junto.

@@ -1,7 +1,7 @@
 import "server-only"
 
 import { getClusterTexts } from "./clusters"
-import { withProductionFallbackAsync } from "./isolation"
+import { reportContentErrors, withProductionFallbackAsync } from "./isolation"
 import { getLinkContext } from "./links"
 import { renderMarkdown } from "./markdown"
 import { warnOnce, type Post } from "./posts"
@@ -14,6 +14,8 @@ export async function renderPostBody(post: Post, reservedIds: string[]) {
     () => renderMarkdown(post.body, { links: getLinkContext(), reservedIds, campaign: post.slug }),
     () => undefined,
   )
+  // The broken images are already out of the HTML: in production the post goes on without them.
+  if (rendered) reportContentErrors(`${post.slug}.md: imágenes`, rendered.imageErrors)
   for (const warning of rendered?.warnings ?? []) warnOnce(`${post.slug}.md: ${warning}`)
   return rendered
 }
@@ -28,6 +30,7 @@ export async function renderClusterText(slug: ClusterSlug, reservedIds: string[]
     () => undefined,
   )
   if (!rendered) return undefined
+  reportContentErrors(`temas/${slug}.md: imágenes`, rendered.imageErrors)
   for (const warning of rendered.warnings) warnOnce(`temas/${slug}.md: ${warning}`)
   return { ...text, ...rendered }
 }

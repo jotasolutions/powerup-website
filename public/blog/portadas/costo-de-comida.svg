@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Un gráfico circular con la parte del food cost</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <!-- 30,6 % of the ring, starting at the top: circumference 2π·80 = 502.65 → 153.8 -->
+  <circle cx="200" cy="150" r="80" fill="none" stroke="#E2E8F0" stroke-width="36"/>
+  <circle cx="200" cy="150" r="80" fill="none" stroke="#3482AA" stroke-width="36" stroke-dasharray="153.8 502.65" transform="rotate(-90 200 150)"/>
+  <circle cx="200" cy="150" r="40" fill="#DFFFEA"/>
+  <path d="M188 128V146M194 128V146M200 128V146M188 146H200M194 146V174M214 128C222 134 222 150 214 154V174" fill="none" stroke="#50B27F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

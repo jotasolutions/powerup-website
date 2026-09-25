@@ -48,7 +48,8 @@ export function blogPostingJsonLd(post: Post, author: Author, reviewer: PersonAu
     "@id": `${url}#article`,
     headline: post.title,
     description: post.seo_description,
-    image: absoluteUrl(post.image ?? `${path}/opengraph-image`),
+    // Always the generated 1200×630 PNG, even when the post has a cover: covers can be SVG.
+    image: absoluteUrl(`${path}/opengraph-image`),
     datePublished: post.fecha_publicacion.toISOString(),
     dateModified: post.fecha_modificacion.toISOString(),
     inLanguage: "es-ES",

@@ -101,6 +101,16 @@
   color: #64748b;
 }
 
+/* The grid is for several images side by side: with one image, its caption spanning every track
+   keeps the empty columns open and squeezes the image into the first one. */
+.prose :where(figure:has(> img:only-of-type)) {
+  display: block;
+}
+
+.prose :where(figure:has(> img:only-of-type) > figcaption) {
+  margin-top: 10px;
+}
+
 .prose :where(img) {
   max-width: 100%;
   height: auto;

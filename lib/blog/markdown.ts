@@ -12,12 +12,14 @@ import { unified } from "unified"
 import { SKIP, visit } from "unist-util-visit"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 import { isMaestroUrl, withBlogUtm } from "./config"
+import { bodyImageProblem } from "./images"
 import { isLegacyUpload, resolveLink, type LinkContext } from "./legacy-links"
 import { asciiSlug } from "./slug"
 
 export type TocItem = { id: string; text: string; level: 2 | 3 }
 
-export type RenderedMarkdown = { html: string; toc: TocItem[]; warnings: string[] }
+/** `imageErrors` lists images left out of `html`; callers report them like any content error. */
+export type RenderedMarkdown = { html: string; toc: TocItem[]; warnings: string[]; imageErrors: string[] }
 
 // GitHub's default allowlist drops <figure>/<figcaption>, which WordPress uses for every captioned image.
 const sanitizeSchema = {
@@ -50,11 +52,23 @@ function tagMaestroLink(node: Element, campaign: string) {
   }
 }
 
-function rewriteLegacyContent(tree: Root, links: LinkContext, campaign: string, warnings: string[]) {
+function rewriteLegacyContent(
+  tree: Root,
+  links: LinkContext,
+  campaign: string,
+  warnings: string[],
+  imageErrors: string[],
+) {
   visit(tree, "element", (node, index, parent) => {
     if (!parent || index === undefined) return
     if (node.tagName === "img") {
       if (isLegacyUpload(String(node.properties.src ?? ""))) {
+        replaceChild(parent, index)
+        return index
+      }
+      const problem = bodyImageProblem(node.properties)
+      if (problem) {
+        imageErrors.push(problem)
         replaceChild(parent, index)
         return index
       }
@@ -146,6 +160,7 @@ export async function renderMarkdown(
   { links, reservedIds = [], campaign }: { links: LinkContext; reservedIds?: string[]; campaign: string },
 ): Promise<RenderedMarkdown> {
   const warnings: string[] = []
+  const imageErrors: string[] = []
   let toc: TocItem[] = []
 
   const file = await unified()
@@ -156,7 +171,7 @@ export async function renderMarkdown(
     .use(rehypeSanitize, sanitizeSchema)
     .use(() => (tree: Root) => {
       collapseDoubleClobberPrefix(tree)
-      rewriteLegacyContent(tree, links, campaign, warnings)
+      rewriteLegacyContent(tree, links, campaign, warnings, imageErrors)
       pruneEmptyBlocks(tree)
       wrapTables(tree)
       toc = addHeadingIds(tree, reservedIds)
@@ -164,5 +179,5 @@ export async function renderMarkdown(
     .use(rehypeStringify)
     .process(markdown)
 
-  return { html: String(file), toc, warnings }
+  return { html: String(file), toc, warnings, imageErrors }
 }

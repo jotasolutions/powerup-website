@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Un plato y cinco estrellas de valoración</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <path d="M100.00 53.00L104.11 64.34L116.17 64.75L106.66 72.16L109.99 83.75L100.00 77.00L90.01 83.75L93.34 72.16L83.83 64.75L95.89 64.34Z" fill="#FF9800"/><path d="M150.00 53.00L154.11 64.34L166.17 64.75L156.66 72.16L159.99 83.75L150.00 77.00L140.01 83.75L143.34 72.16L133.83 64.75L145.89 64.34Z" fill="#FF9800"/><path d="M200.00 53.00L204.11 64.34L216.17 64.75L206.66 72.16L209.99 83.75L200.00 77.00L190.01 83.75L193.34 72.16L183.83 64.75L195.89 64.34Z" fill="#FF9800"/><path d="M250.00 53.00L254.11 64.34L266.17 64.75L256.66 72.16L259.99 83.75L250.00 77.00L240.01 83.75L243.34 72.16L233.83 64.75L245.89 64.34Z" fill="#FF9800"/><path d="M300.00 53.00L304.11 64.34L316.17 64.75L306.66 72.16L309.99 83.75L300.00 77.00L290.01 83.75L293.34 72.16L283.83 64.75L295.89 64.34Z" fill="#E2E8F0"/>
+  <circle cx="200" cy="186" r="76" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="4"/>
+  <circle cx="200" cy="186" r="52" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="3"/>
+  <circle cx="186" cy="178" r="16" fill="#FFEBAB"/>
+  <circle cx="212" cy="194" r="13" fill="#DFFFEA"/>
+  <circle cx="206" cy="170" r="9" fill="#FBBD8A"/>
+  <path d="M96 140V232M88 140V160C88 166 104 166 104 160V140M304 140C318 150 318 176 304 180V232" fill="none" stroke="#94A3B8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

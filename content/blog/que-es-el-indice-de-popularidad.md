@@ -1,75 +1,104 @@
 ---
-# MANTENER: texto de WordPress (Wayback). En la Etapa B solo se corrigen erratas, encabezados y enlaces.
-title: "¿Qué es el índice de popularidad?"
+# Reescrito en la Etapa B (24-09-2026): pasó de MANTENER a REESCRIBIR con el OK de Fede, porque el original no daba ninguna fórmula y mezclaba la popularidad con el margen y las reseñas. Pendiente de su revisión.
+title: "Índice de popularidad de un plato: qué es y cómo se calcula"
 slug: "que-es-el-indice-de-popularidad"
-seo_title: "¿Qué es el índice de popularidad de un plato?"
-seo_description: "¿Qué es el índice de popularidad?"
-excerpt: "¿Qué es el índice de popularidad?"
+seo_title: "Índice de popularidad de un plato: qué es y cómo calcularlo"
+seo_description: "Qué es el índice de popularidad de un plato, cómo se calcula con las ventas de cada sección, qué es el corte del 70% y cómo usarlo en la ingeniería de menú."
+excerpt: "El índice de popularidad dice cuánto se vende un plato frente a los demás de su sección. Cómo se calcula, qué es el corte del 70% y qué hacer con el resultado."
 cluster: "ingenieria-de-menu"
 keyword_principal: "índice de popularidad de un plato"
-content_strategy: "google-first"
+content_strategy: "hybrid"
 destino_comercial: "maestro"
 cta: "medium"
 fecha_publicacion: 2023-11-06
+fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
 draft: true
+image: "/blog/portadas/que-es-el-indice-de-popularidad.svg"
+image_alt: "Ilustración: las barras de cinco platos y la línea del corte de popularidad."
+respuesta_corta: "El índice de popularidad de un plato es su parte de las ventas de su sección: las raciones vendidas de ese plato divididas entre el total de raciones de la sección, por cien. En la ingeniería de menú se compara con un corte: el 70% de la parte que le tocaría a cada plato si todos se vendieran igual. Con cinco platos, a cada uno le tocaría el 20%, así que un plato es popular si su índice llega al 14%."
+puntos_clave:
+  - "Índice de popularidad = raciones vendidas del plato ÷ raciones vendidas de la sección × 100."
+  - "Corte de popularidad = (100 ÷ número de platos de la sección) × 0,7. Con cinco platos, el 14%."
+  - "Solo mide cuánto se vende un plato: el margen es el otro eje de la ingeniería de menú, y las reseñas son otro dato."
+  - "En español, unos textos llaman índice de popularidad a la parte de ventas de cada plato y otros, al corte del 70%. La clasificación sale igual."
+faq:
+  - pregunta: "¿Se calcula con toda la carta o por secciones?"
+    respuesta: "Por secciones: los principales con los principales y los postres con los postres. Si mezclas secciones, los platos de las secciones que más se venden parecen populares solo por eso."
+  - pregunta: "¿Las reseñas cuentan para el índice de popularidad?"
+    respuesta: "No. El índice solo mide ventas. Las reseñas y las opiniones de los clientes son útiles, pero son otro dato."
+  - pregunta: "¿Qué hago si un plato no está a la venta todos los días?"
+    respuesta: "Compáralo teniendo en cuenta los días en que estuvo a la venta. Si no, su índice sale más bajo de lo que es, porque compite con platos que estuvieron todos los días."
+fuentes:
+  - titulo: "AHLEI (2025): The Power of Menu Engineering, Part One"
+    url: "https://ahlei.servsafebrands.com/resources-overview/news-and-insights/the-power-of-menu-engineering-part-one"
+  - titulo: "AHLEI (2025): The Power of Menu Engineering, Part Two"
+    url: "https://ahlei.servsafebrands.com/resources-overview/news-and-insights/the-power-of-menu-engineering-part-two"
+  - titulo: "Francisco José Ortega Reina: Ingeniería de menús o menu engineering (ingenieriademenu.com)"
+    url: "https://ingenieriademenu.com/menu-engineering-ingenieria-de-menus/"
+  - titulo: "Eloy Rodríguez (2017): Ingeniería de menús o menu engineering"
+    url: "https://eloyrodriguez.com/menu-engineering-ingenieria-menus/"
+  - titulo: "Antonio J. Borrego Olmedo (2016): Índice de popularidad, un complemento a la ingeniería del menú (AS Gestión)"
+    url: "https://asgestion.com/indice-de-popularidad-un-complemento-a-la-ingenieria-del-menu/"
 ---
 
-## Índice de Tendencias y Preferencias de comida popolare
+En la ingeniería de menú, cada plato se juzga por dos datos: cuánto se vende y cuánto deja. El índice de popularidad es el primero. Aquí verás cómo se calcula, con qué se compara y qué no mide.
 
-¿Qué es el índice de popularidad? El índice de popularidad de los platos en un restaurante **es una métrica utilizada para medir la preferencia de los clientes**hacia los diferentes platos ofrecidos en el menú.
+## Qué es el índice de popularidad
 
-Este índice es de gran importancia, ya que **ayuda a los restaurantes a identificar los platos más solicitados y apreciados**, proporcionando una base para decisiones gerenciales orientadas a optimizar la oferta culinaria y maximizar la satisfacción de los clientes. En resumen, ayuda a los administradores a tomar decisiones estratégicas específicas👨‍🍳
+Es la parte de las ventas de su sección que se lleva un plato. Si en un mes vendiste 200 principales y 40 fueron de arroz, el índice de popularidad del arroz es del 20%.
 
-## ¿Cómo se calcula el índice de popularidad de un plato?
+Forma parte de la ingeniería de menú, el método que desarrollaron Michael Kasavana y Donald Smith en la Universidad Estatal de Michigan hacia 1982. En inglés se llama *menu mix*.
 
-Para medir la popularidad de los platos en un restaurante, **existen varias variables a considerar**:
+## Cómo se calcula
 
-1️⃣ **Número de pedidos**:
+**Índice de popularidad = raciones vendidas del plato ÷ raciones vendidas de la sección × 100**
 
-¿Cuántos platos se ordenan en un período determinado?
+Solo necesitas las ventas de cada plato en un periodo, por ejemplo un mes, que te da la caja o el TPV. Calcúlalo por secciones: los principales con los principales y los postres con los postres.
 
-2️⃣ **[Margen de contribucion](https://blog.powerup.menu/margen-de-contribucion/)**:
+## El corte: cuándo un plato es popular
 
-Esta variable revela la rentabilidad de cada plato, no solo su popularidad.
+El índice por sí solo no dice si un plato es popular: hay que compararlo con un corte. La regla del método es que un plato es popular si su índice llega al 70% de la parte que le tocaría si todos los platos de la sección se vendieran igual:
 
-3️⃣ **Reseñas y retroalimentación de los clientes**:
+**Corte de popularidad = (100 ÷ número de platos de la sección) × 0,7**
 
-Las opiniones en línea y la retroalimentación directa indican cuáles platos son apreciados.
+| Platos en la sección | Parte igualitaria | Corte (70%) |
+| --- | --- | --- |
+| 4 | 25% | 17,5% |
+| 5 | 20% | 14% |
+| 10 | 10% | 7% |
 
-4️⃣ **Precios**:
+## Un ejemplo
 
-Los costos pueden influir en la atracción de un plato.
+Supón una sección de cinco principales, con estas ventas en un mes:
 
-5️⃣ **Duración en el menú**:
+| Plato | Raciones | Índice de popularidad | ¿Popular? |
+| --- | --- | --- | --- |
+| Arroz | 40 | 20% | Sí |
+| Hamburguesa | 70 | 35% | Sí |
+| Merluza | 15 | 7,5% | No |
+| Pollo | 60 | 30% | Sí |
+| Lasaña | 15 | 7,5% | No |
 
-Cuánto tiempo un plato permanece en el menú revela su popularidad a lo largo del tiempo.
+Se vendieron 200 raciones. Con cinco platos, el corte está en el 14%: el arroz, la hamburguesa y el pollo son populares; la merluza y la lasaña, no. En [qué es la ingeniería de menú](/blog/ingenieria-de-menu-para-restaurantes) tienes este mismo ejemplo con los márgenes y la clasificación completa.
 
-6️⃣ **Encuestas e entrevistas**:
+<figure>
+<img src="/blog/figuras/que-es-el-indice-de-popularidad/indice-por-plato.svg" width="560" height="372" alt="Gráfico de barras con el índice de popularidad de los cinco platos del ejemplo y la línea del corte en el 14%: la hamburguesa (35%), el pollo (30%) y el arroz (20%) lo superan y son populares; la merluza y la lasaña, con un 7,5% cada una, quedan por debajo.">
+<figcaption>Los cinco platos del ejemplo. Con cinco platos, el corte está en el 14%.</figcaption>
+</figure>
 
-Recopilar datos de los clientes proporciona valiosa información sobre las preferencias.
+## Un mismo nombre para dos cosas
 
-7️⃣ **Análisis comparativo de ventas**:
+Si buscas información, verás que no todos los textos usan el nombre igual. Unos llaman índice de popularidad a la parte de las ventas de cada plato, como aquí. Otros llaman así al corte, el 70% de la parte igualitaria, que en otros textos se llama «mix ideal corregido». El método es el mismo y la clasificación sale igual: se compara la parte de las ventas de cada plato con el corte.
 
-Comparar las ventas de platos similares muestra la popularidad relativa.
+## Lo que no mide
 
-8️⃣ **Estacionalidad y tendencias culinarias**:
+- **No mide el margen.** Un plato puede venderse mucho y dejar poco. El margen es el otro eje de la ingeniería de menú: en [cómo calcular el margen de contribución](/blog/margen-de-contribucion) explicamos cómo sacarlo.
+- **No mide si el plato gusta.** Las reseñas y las opiniones de los clientes son otro dato, útil, pero distinto.
+- **No tiene en cuenta los días de venta.** Si un plato solo está en la carta algunos días, su índice sale más bajo de lo que es. Hay propuestas para corregirlo, como la «popularidad absoluta» de Antonio J. Borrego Olmedo (2016): divide la parte de las ventas del plato entre su parte de los días de venta.
 
-Las preferencias estacionales y las tendencias emergentes influyen en las elecciones del menú.
+## Qué hacer con el resultado
 
-9️⃣ **[Segmentación](https://blog.powerup.menu/segmentacion-de-clientes/) geográfica o demográfica**:
+Cruzado con el margen, el índice de popularidad coloca cada plato en una de cuatro categorías: estrellas, caballos de batalla, enigmas y perros. Lo tienes paso a paso en [qué es la ingeniería de menú](/blog/ingenieria-de-menu-para-restaurantes) y, como gráfico, en [la matriz de ingeniería de menú](/blog/matriz-de-ingenieria-del-menu).
 
-Considerar las preferencias específicas de diferentes áreas o grupos de clientes es importante.
-
-Estas variables ayudan a los restaurantes a tomar decisiones informadas sobre qué incluir en el menú y las estrategias de marketing. 🍽️🧐📈📋
-
----
-
-\
-¡El índice de popularidad es más que una simple herramienta de gestión! 😊
-
-Es una oportunidad para identificar los platos destacados, pero también para comprender mejor las tendencias culinarias emergentes, las preferencias estacionales y las oportunidades de innovación. 🍽️🍂
-
-Los restaurantes pueden utilizar estos datos para mantener un menú fresco y dinámico, atrayendo a una clientela diversificada y estimulando la curiosidad culinaria de los clientes🤩
-
-En última instancia, **el índice de popularidad de los platos es una guía valiosa para asegurar el éxito y la competitividad de un restaurante**🏆
+Si prefieres hacer el análisis acompañado, [Maestro](https://maestro.powerup.menu/), el servicio de consultoría de rentabilidad de PowerUp Menu, trabaja contigo el food cost, la carta y la estrategia de precios.

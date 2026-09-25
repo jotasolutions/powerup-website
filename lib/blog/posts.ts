@@ -7,6 +7,7 @@ import { z } from "zod"
 import { AUTHORS, getAuthor, isPerson, type PersonAuthor } from "./authors"
 import { POSTS_PER_PAGE } from "./config"
 import { isProductionBuild } from "./draft"
+import { imagePathProblem } from "./images"
 import { readMarkdownFile, reportContentErrors, withProductionFallback } from "./isolation"
 import { readingMinutes } from "./reading-time"
 import { postFrontmatterSchema, type PostFrontmatter } from "./schema"
@@ -62,6 +63,13 @@ function loadPosts(): Post[] {
     if (fileErrors.length > 0) {
       errors.push(...fileErrors)
       continue
+    }
+    const coverProblem = post.image ? imagePathProblem(post.image) : undefined
+    if (coverProblem) {
+      // Fails outside production; in production the post goes on with its cluster's tint.
+      errors.push(`${file}: image ${coverProblem}`)
+      post.image = undefined
+      post.image_alt = undefined
     }
     if (post.seo_title.length > SEO_TITLE_MAX) {
       warnOnce(`${file}: seo_title de ${post.seo_title.length} caracteres (recomendado ≤ ${SEO_TITLE_MAX})`)

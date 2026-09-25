@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Una botella y una copa</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <!-- Bottle -->
+  <path d="M146 44H170V92C188 104 192 118 192 140V246C192 252 188 256 182 256H134C128 256 124 252 124 246V140C124 118 128 104 146 92Z" fill="#3482AA"/>
+  <rect x="124" y="160" width="68" height="54" fill="#DEF8FF"/>
+  <rect x="140" y="178" width="36" height="8" rx="4" fill="#3482AA"/>
+  <rect x="144" y="194" width="28" height="6" rx="3" fill="#94A3B8"/>
+  <!-- Glass -->
+  <path d="M228 110H300C300 150 288 176 264 180V236H286V252H242V236H264" fill="none" stroke="#334155" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M231 132H297C294 156 284 172 264 176C244 172 234 156 231 132Z" fill="#FBBD8A"/>
+  <path d="M228 110C228 150 240 176 264 180" fill="none" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+  <!-- Percentage badge -->
+  <circle cx="318" cy="76" r="34" fill="#DFFFEA"/>
+  <text x="318" y="90" text-anchor="middle" style="font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:38px;font-weight:700;fill:#50B27F">%</text>
+</svg>

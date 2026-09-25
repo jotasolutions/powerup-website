@@ -1,82 +1,106 @@
 ---
-# REESCRIBIR: texto original de WordPress (Wayback), base para la reescritura de la Etapa B.
-title: "¿Qué es la ingenieria de menu para restaurantes?"
+# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+title: "Qué es la ingeniería de menú y cómo aplicarla en tu restaurante"
 slug: "ingenieria-de-menu-para-restaurantes"
-seo_title: "¿Qué es la ingenieria de menu para restaurantes?"
-seo_description: "Descubre la ingenieria des menus, sus principios y por qué con esta disciplina se puede aumentar los ingresos de un restaurante."
-excerpt: "Descubre la ingenieria des menus, sus principios y por qué con esta disciplina se puede aumentar los ingresos de un restaurante."
+seo_title: "Qué es la ingeniería de menú y cómo aplicarla"
+seo_description: "El método de Kasavana y Smith paso a paso: popularidad, margen de contribución, las cuatro categorías de platos y qué hacer con cada una."
+excerpt: "La ingeniería de menú cruza la popularidad y el margen de cada plato para decidir qué mantener, qué subir de precio, qué mover en la carta y qué quitar."
 cluster: "ingenieria-de-menu"
 keyword_principal: "qué es la ingeniería de menú"
 content_strategy: "hybrid"
 destino_comercial: "maestro"
 cta: "strong"
 fecha_publicacion: 2023-10-02
+fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
 draft: true
+image: "/blog/portadas/ingenieria-de-menu-para-restaurantes.svg"
+image_alt: "Ilustración: cinco platos repartidos en los cuatro cuadrantes de la ingeniería de menú."
+respuesta_corta: "La ingeniería de menú es un método para analizar la carta plato a plato, desarrollado por Michael Kasavana y Donald Smith en la Universidad Estatal de Michigan hacia 1982. Cruza dos datos de cada plato, su popularidad y su margen de contribución, y lo clasifica en una de cuatro categorías: estrellas, caballos de batalla, enigmas y perros. Cada categoría pide una decisión: mantener el plato, revisar su precio, cambiarlo de sitio en la carta o retirarlo."
+puntos_clave:
+  - "Un plato es popular si su cuota de ventas llega al 70% de la que le tocaría si todos los platos se vendieran igual."
+  - "Un plato tiene margen alto si su margen de contribución llega a la media de la carta, ponderada por las ventas."
+  - "Estrellas: se mantienen. Caballos de batalla: se revisa su precio. Enigmas: se cambian de sitio en la carta. Perros: se retiran."
+  - "Solo hacen falta dos datos por plato: cuántas raciones vendiste en el periodo y cuánto margen deja cada una."
+faq:
+  - pregunta: "¿Cada cuánto hay que repetir el análisis?"
+    respuesta: "Cada vez que cambies la carta o suban los precios de compra, y como mínimo una vez por temporada, con las ventas de ese periodo."
+  - pregunta: "¿Sirve para un restaurante pequeño?"
+    respuesta: "Sí. Basta con las ventas de cada plato, que da la caja o el TPV, y con el escandallo de cada plato para saber su coste."
+  - pregunta: "¿Qué diferencia hay con la psicología del menú?"
+    respuesta: "La ingeniería de menú decide qué platos conviene destacar; la psicología del menú se ocupa de cómo presentarlos en la carta para que se elijan."
+fuentes:
+  - titulo: "AHLEI (2025): The Power of Menu Engineering, Part One"
+    url: "https://ahlei.servsafebrands.com/resources-overview/news-and-insights/the-power-of-menu-engineering-part-one"
+  - titulo: "AHLEI (2025): The Power of Menu Engineering, Part Two"
+    url: "https://ahlei.servsafebrands.com/resources-overview/news-and-insights/the-power-of-menu-engineering-part-two"
 ---
 
-**¿Alguna vez has pensado en lo fantástico que sería aumentar tus ganancias y reducir los costos de tu negocio simplemente optimizando tu menú?**
+La carta no es solo una lista de platos: es la herramienta con la que decides qué vendes y cuánto ganas con cada venta. La ingeniería de menú es un método para revisarla con números, plato a plato.
 
-Te presentamos una buena noticia: a través de la **ingeniería de menú**, esto es absolutamente posible.
+## Qué es la ingeniería de menú
 
-🚀 Este enfoque, que combina marketing, gestión empresarial, diseño gráfico y neurociencias, puede **aumentar las ventas de tu negocio de restauración en un 10-15%**.
+La desarrollaron Michael Kasavana y Donald Smith en la escuela de hostelería de la Universidad Estatal de Michigan, hacia 1982. La idea es sencilla: de cada plato importan dos cosas.
 
-## ¿Qué es la Ingeniería de Menú?
+- **Su popularidad:** cuánto se vende en comparación con los demás.
+- **Su margen de contribución:** cuánto deja cada ración, es decir, su precio sin IVA menos el coste de los ingredientes. Si no lo tienes calculado, empieza por [cómo calcular el margen de contribución](/blog/margen-de-contribucion).
 
-La [ingenieria de menu](https://blog.powerup.menu/), o *menu engineering*, es una disciplina en expansión en el sector de la restauración por su capacidad para **generar ganancias significativas**.
+Al cruzar las dos, cada plato cae en una de cuatro categorías, y cada categoría pide una decisión distinta.
 
-**Se tratta de estructurar y presentar tu oferta culinaria de manera que cada elemento del menú contribuya óptimamente a la experiencia del cliente y al éxito financiero de tu establecimiento**
+## Lo que necesitas
 
-Aplicar la ingeniería de menú, te permite de organizar los platos en un proceso estratégico, haciéndolos más especiales o interesantes y estimulando así las ventas.
+- Las raciones vendidas de cada plato en un periodo, por ejemplo un mes. Te las da la caja o el TPV.
+- El margen de contribución de cada plato.
 
-Este enfoque no solo mejora la *rentabilidad* de cada elemento de tu oferta gastronómica, sino que también eleva su *popularidad*, convirtiendo tu menú en un catalizador de elecciones que los clientes no solo desean sino que recuerdan.
+Conviene analizar la carta por secciones: los principales con los principales y los postres con los postres.
 
-### ¿Cómo aumentar la popularidad y rentabilidad de los platos?
+## Paso 1: la popularidad
 
-La **rentabilidad y la popularidad** son dos aspectos cruciales que permiten analizar los platos que ofreces cada día a tus clientes.
+Primero se calcula la cuota de ventas de cada plato: sus raciones entre el total de raciones de la sección. Si todos los platos se vendieran igual, a cada uno le tocaría la misma cuota: con cinco platos, el 20%.
 
-¿*Como funciona la ingeniería de menú*?
+La regla del método es que un plato es popular si su cuota llega al 70% de esa cuota igualitaria. Con cinco platos, el corte está en el 14%.
 
-Mediante un estudio detallado de los **costes y de la frecuencia** con que se piden los platos, permite de identificar los **«platos estrella»** que combinan una alta demanda con una **elevada rentabilidad**, y los **«ocultos»**, que a pesar de su alta calidad, raramente son elegidos por los clientes.
+## Paso 2: el margen
 
-Consulta cómo clasificar los platos a través de la [matriz de ingeniería del menú](https://blog.powerup.menu/matriz-de-ingenieria-del-menu/)
+Después se calcula el margen de contribución medio de la sección: la suma de los márgenes de todas las raciones vendidas, dividida entre el número de raciones. Un plato tiene margen alto si su margen llega a esa media.
 
-La evaluación permite **optimizar el menú** no solo desde un punto de vista económico, sino también en términos de oferta culinaria, asegurando que cada plato contribuya significativamente tanto a la **satisfacción del cliente** como a la **rentabilidad del restaurante**.
+## Paso 3: clasifica cada plato
 
-En este proceso, el [índice de popularidad](https://blog.powerup.menu/que-es-el-indice-de-popularidad/) surge como una herramienta esencial. El índice mide el grado de popularidad de cada plato y, así, proporciona una base sólida para tomar decisiones informadas sobre qué platos destacar o modificar.
+| Categoría | Popularidad | Margen | Qué hacer |
+| --- | --- | --- | --- |
+| Estrella | Alta | Alto | Mantenerlo |
+| Caballo de batalla | Alta | Bajo | Revisar su precio |
+| Enigma | Baja | Alto | Cambiarlo de sitio en la carta |
+| Perro | Baja | Bajo | Retirarlo |
 
-Destacar los platos más **rentables y populares**, mientras se renuevan o eliminan aquellos menos exitosos, conduce a la creación de un **menú dinámico** que despierta el **interés del cliente** y **maximiza los beneficios de tu restaurante**.
+## Un ejemplo completo
 
-## Componentes Clave de la Ingenieria de menus
+Supón una sección de cinco principales, con estas ventas en un mes:
 
-**¿Cuáles son los componentes de la ingeniería de menús?**
+| Plato | Raciones | Cuota | Margen por ración | Categoría |
+| --- | --- | --- | --- | --- |
+| Arroz | 40 | 20% | 10,80 € | Estrella |
+| Hamburguesa | 70 | 35% | 6,50 € | Caballo de batalla |
+| Merluza | 15 | 7,5% | 12,00 € | Enigma |
+| Pollo | 60 | 30% | 5,20 € | Caballo de batalla |
+| Lasaña | 15 | 7,5% | 4,00 € | Perro |
 
-La ingeniería de menú involucra varios componentes interdisciplinarios, cada uno esencial para el éxito de la estrategia:
+Se vendieron 200 raciones en total. El corte de popularidad está en el 14%: el arroz, la hamburguesa y el pollo lo superan. Entre todas las raciones dejaron 1.439 €, así que el margen medio es de unos 7,20 €: el arroz y la merluza están por encima.
 
-#### [Psicología del Menú](https://blog.powerup.menu/que-es-la-psicologia-del-menu/)
+<figure>
+<img src="/blog/figuras/ingenieria-de-menu-para-restaurantes/popularidad-y-margen.svg" width="560" height="444" alt="Gráfico de los cinco platos del ejemplo según su popularidad y su margen: el arroz es la única estrella; la hamburguesa y el pollo, caballos de batalla; la merluza, enigma; la lasaña, perro.">
+<figcaption>Los cinco platos del ejemplo. Las líneas marcan los cortes: 14% de popularidad y 7,20 € de margen medio.</figcaption>
+</figure>
 
-**Comprender la reacción de los clientes a las opciones del menú** a través del diseño y las descripciones de los platos para influir en las ventas.
+Las decisiones que salen de la tabla:
 
-#### Gestión de Precios y Ganancias
+- **Arroz:** es la estrella. Mantenlo, con buena posición en la carta.
+- **Hamburguesa y pollo:** se venden mucho pero dejan poco. Revisa su precio o su coste, por ejemplo la ración o algún ingrediente.
+- **Merluza:** deja mucho pero se pide poco. Cámbiala de sitio, mejora su descripción o recomiéndala.
+- **Lasaña:** ni se vende ni deja margen. Retírala o reformúlala.
 
-Establecer precios que **cubran los costos y maximicen las ganancias**, asegurando la estabilidad económica del negocio.
+## Qué viene después
 
-#### Estacionalidad y Sostenibilidad
+La tabla te dice qué hacer, y la carta es donde lo haces: qué platos van en las posiciones que más se ven y cómo se presentan. De eso trata la [psicología del menú](/blog/que-es-la-psicologia-del-menu). Y para ver la clasificación como un gráfico de cuatro cuadrantes, sigue con [la matriz de ingeniería de menú](/blog/matriz-de-ingenieria-del-menu).
 
-Promover el uso de **ingredientes frescos y sostenibles** para reflejar el compromiso con la responsabilidad ambiental.
-
-#### Variación e Innovación
-
-Ofrecer una amplia gama de platos para satisfacer diferentes preferencias y presentar constantemente **nuevas experiencias culinarias**.
-
-#### Gestión de Necesidades Dietéticas
-
-Adaptarse a las restricciones alimentarias de los clientes, como alergias e intolerancias.
-
-#### Estética
-
-**Presentar los platos en el menú de manera atractiva** para estimular el apetito y crear una experiencia culinaria memorable.
-
-## Conclusión
-
-**Antes de ver resultados positivos con la ingeniería de menú, es crucial comprender bien sus componentes, objetivos y lógica.** Solo entonces podrás aplicarlos correctamente para transformar tu menú en una poderosa herramienta de personalización y optimización. A través de un menú optimizado según tus necesidades empresariales, no solo podrás adaptar los costos y las cantidades a tu público objetivo, sino también **maximizar tus ganancias y la satisfacción del cliente**.
+Si prefieres hacer el análisis acompañado, [Maestro](https://maestro.powerup.menu/), el servicio de consultoría de rentabilidad de PowerUp Menu, trabaja contigo el food cost, la carta y la estrategia de precios.
