@@ -83,6 +83,8 @@ Tanto en un PDF como en una carta digital puedes poner los alérgenos de cada pl
 
 Es un mito que Google no lea los PDF: los indexa como cualquier otra página, siempre que no estén protegidos. La diferencia entre una carta y otra no está en aparecer en el buscador, sino en lo que ocurre cuando el cliente la abre.
 
+Otra cosa es la carta que enseña tu ficha de Google Maps: de dónde la saca Google y cómo tenerla al día lo contamos en [tu carta en Google Maps](/blog/carta-en-google-maps).
+
 ## Comparativa
 
 | | Carta en PDF | Carta digital |
