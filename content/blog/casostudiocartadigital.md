@@ -1,9 +1,9 @@
 ---
-# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original, confirmados por Fede (25-09-2026; hay un vídeo de José Luis). Pendiente de su revisión.
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original, confirmados por Fede (25-09-2026; hay un vídeo de José Luis). Fuente: su carta pública, carta.powerup.menu/taberna-casera, activa el 25-09-2026 (por eso «usa» y no «usaba»); la figura es una captura de ese día (OK de Fede a usar capturas de cartas de clientes). Pendiente de su revisión.
 title: "Caso práctico: La Taberna Casera y su carta digital con fotos"
 slug: "casostudiocartadigital"
 seo_title: "Caso práctico: La Taberna Casera y su carta digital"
-seo_description: "Cómo usaba La Taberna Casera, un restaurante de Valencia, la carta digital de PowerUp Menu, y qué destacó su dueño, José Luis: que el cliente ve el plato antes de pedirlo."
+seo_description: "Cómo usa La Taberna Casera, un restaurante de Valencia, la carta digital de PowerUp Menu, y qué destacó su dueño, José Luis: que el cliente ve el plato antes de pedirlo."
 excerpt: "En La Taberna Casera, en Valencia, los clientes veían en la carta cómo sale cada plato de la cocina. Su dueño, José Luis, nos contó qué cambió con la carta digital."
 cluster: "casos-practicos"
 keyword_principal: "caso práctico: La Taberna Casera"
@@ -16,24 +16,32 @@ autor: "powerup-menu"
 draft: true
 image: "/blog/portadas/casostudiocartadigital.svg"
 image_alt: "Logo de La Taberna Casera."
-respuesta_corta: "La Taberna Casera es un restaurante de Valencia que usaba la carta digital de PowerUp Menu. Cuando publicamos este caso, en junio de 2024, su dueño, José Luis, destacó sobre todo una cosa: con la carta digital, los clientes ven cómo van a salir los platos de la cocina antes de pedirlos. En sus palabras, «eso hace que se venda más»."
+respuesta_corta: "La Taberna Casera es un restaurante de Valencia que usa la carta digital de PowerUp Menu. Cuando publicamos este caso, en junio de 2024, su dueño, José Luis, destacó sobre todo una cosa: con la carta digital, los clientes ven cómo van a salir los platos de la cocina antes de pedirlos. En sus palabras, «eso hace que se venda más»."
 puntos_clave:
   - "Restaurante: La Taberna Casera, en Valencia."
-  - "Qué usaba: la carta digital de PowerUp Menu, con imágenes de los platos tal como se sirven."
+  - "Qué usa: la carta digital de PowerUp Menu, con imágenes de los platos tal como se sirven."
   - "Qué destacó su dueño, José Luis: que los clientes ven exactamente cómo van a salir los platos antes de pedirlos."
   - "Según José Luis, también hubo menos errores en los pedidos y el restaurante ganó visibilidad en los buscadores."
   - "Caso publicado en junio de 2024, después de un periodo largo de uso."
+fuentes:
+  - titulo: "Carta digital de La Taberna Casera en PowerUp Menu"
+    url: "https://carta.powerup.menu/taberna-casera"
 ---
 
 En junio de 2024 publicamos este caso. La Taberna Casera, un restaurante de Valencia, llevaba un periodo largo usando la carta digital de PowerUp Menu, y le pedimos a su dueño, José Luis, que nos contara qué había cambiado y qué podíamos mejorar.
 
 ## Lo que más destacó: ver el plato antes de pedirlo
 
-Con la carta digital, los clientes de La Taberna Casera podían ver imágenes de los platos tal como se sirven antes de pedirlos. Es lo que más valoró José Luis:
+Con la carta digital, los clientes de La Taberna Casera pueden ver imágenes de los platos tal como se sirven antes de pedirlos. Es lo que más valoró José Luis:
 
 > «Ahora los clientes ven exactamente cómo van a salir los platos directamente de la cocina y eso hace que se venda más.»
 
 La imagen hace que el cliente sepa qué va a recibir antes de pedirlo, que es justo lo que describe José Luis. El pedido lo sigue tomando el camarero: la carta digital de PowerUp Menu sirve para ver los platos y decidir.
+
+<figure>
+<img src="/blog/figuras/casostudiocartadigital/carta-digital.jpg" width="560" height="432" alt="Dos pantallas de la carta digital de La Taberna Casera en el móvil, en las secciones Tapas y entrantes y Arroces: cada plato lleva su foto, su descripción y su precio, como las croquetas de pulpo o la paella valenciana. El cliente ve cómo es el plato antes de pedírselo al camarero.">
+<figcaption>La carta digital de La Taberna Casera: las secciones Tapas y entrantes y Arroces. Captura de septiembre de 2026.</figcaption>
+</figure>
 
 ## Menos errores y más visibilidad
 

@@ -23,7 +23,8 @@ async function check(url: string): Promise<string> {
   }
   try {
     let response = await fetch(url, { ...init, method: "HEAD", signal: AbortSignal.timeout(15_000) })
-    if (response.status === 403 || response.status === 405) {
+    // Some servers fail HEAD but serve the page to GET: the cartas answer HEAD with a 500 at random.
+    if (!response.ok) {
       response = await fetch(url, { ...init, method: "GET", signal: AbortSignal.timeout(15_000) })
     }
     return response.ok ? `ok ${response.status}` : `ERROR ${response.status}`

@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original. Fuente: su carta pública; figura: la grabación de su carta que ya enseña la home (25-09-2026, OK de Fede). Pendiente de la revisión de Fede.
 title: "Caso práctico: La Taberna de Marisa pasa su carta a digital"
 slug: "la-taberna-marisa"
 seo_title: "Caso práctico: La Taberna de Marisa y su carta digital"
@@ -11,7 +11,7 @@ content_strategy: "hybrid"
 destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2024-08-26
-fecha_modificacion: 2026-09-24
+fecha_modificacion: 2026-09-25
 autor: "powerup-menu"
 draft: true
 image: "/blog/portadas/la-taberna-marisa.jpg"
@@ -22,6 +22,9 @@ puntos_clave:
   - "Qué hizo: pasó su carta impresa a la carta digital de PowerUp Menu, con un diseño personalizado con los colores del restaurante."
   - "Qué cambió: dejó de imprimir y reimprimir la carta, y puede cambiar o añadir platos en cualquier momento."
   - "Caso publicado en agosto de 2024."
+fuentes:
+  - titulo: "Carta digital de La Taberna de Marisa en PowerUp Menu"
+    url: "https://carta.powerup.menu/taberna-marisa"
 ---
 
 En agosto de 2024 publicamos el caso de La Taberna de Marisa, un restaurante valenciano tradicional en el centro de Valencia. Pasó su carta impresa a la carta digital de PowerUp Menu con dos objetivos: trabajar de forma más eficiente y mejorar la experiencia de sus clientes, manteniendo su cocina de siempre.
@@ -29,6 +32,11 @@ En agosto de 2024 publicamos el caso de La Taberna de Marisa, un restaurante val
 ## Una carta digital con los colores de la casa
 
 El cambio no consistió solo en pasar la carta al móvil. Se personalizó el diseño con los colores del restaurante, para reforzar su imagen y que la carta fuera fácil de usar para sus clientes.
+
+<figure>
+<img src="/blog/figuras/la-taberna-marisa/carta-digital.jpg" width="560" height="432" alt="Dos pantallas de la carta digital de La Taberna de Marisa en el móvil. En la portada, el logo de la casa y las secciones de la carta; en la sección Para compartir, cada plato con su foto y su precio. Todo va en el granate y el crema del restaurante: la carta digital lleva su imagen.">
+<figcaption>La carta digital de La Taberna de Marisa: la portada y la sección Para compartir, en la grabación que enseña la web de PowerUp Menu desde agosto de 2026.</figcaption>
+</figure>
 
 En PowerUp Menu, los colores y los aspectos básicos del diseño los personaliza el propio restaurante. Para un diseño más a medida, se trabaja con el equipo de diseño de PowerUp.
 
