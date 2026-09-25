@@ -95,7 +95,7 @@ En PowerUp Menu, el plan Pro permite mostrar en cada plato recomendaciones, mari
 
 Un plato que muchos clientes miran y pocos piden te está diciendo algo. Puede fallar la descripción, la foto, la posición en la carta o el precio. Una carta en papel no te lo muestra. Las analíticas de una carta digital sí: en el plan Pro de PowerUp Menu ves qué platos se miran, cuánto tiempo pasa el cliente en la carta y qué ignora.
 
-Cambia una sola cosa de ese plato y mira qué pasa con sus pedidos. Si mejoran, ya sabes cuál era el problema.
+Cambia una sola cosa de ese plato y mira qué pasa con sus pedidos. Si mejoran, ya sabes cuál era el problema. En [qué mirar cada lunes](/blog/que-mirar-cada-lunes) lo convertimos en una revisión semanal de toda la carta.
 
 ## 5. Cambia una cosa cada vez y mide
 
