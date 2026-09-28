@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 1, 24-09-2026) sobre el original de WordPress y el texto del diseño. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 1, 24-09-2026) sobre el original de WordPress y el texto del diseño. Revisado y firmado por Fede (28-09-2026).
 title: "Cómo aumentar el ticket medio de tu restaurante desde la carta"
 slug: "como-aumentar-el-ticket-medio"
 seo_title: "Cómo aumentar el ticket medio de un restaurante"
@@ -13,7 +13,8 @@ cta: "strong"
 fecha_publicacion: 2024-03-27
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/como-aumentar-el-ticket-medio.svg"
 image_alt: "Ilustración: una carta con una sugerencia en un plato y una flecha verde hacia arriba."
 respuesta_corta: "El ticket medio es lo que gasta de media cada cliente: la facturación de un periodo dividida entre los comensales de ese periodo. Se puede subir desde la carta, sin tocar la cocina: colocando al principio y al final de cada sección los platos que más te interesa vender, mostrando los precios sin el símbolo de la moneda, sugiriendo un acompañamiento en cada plato y revisando con datos qué se mira y no se pide."

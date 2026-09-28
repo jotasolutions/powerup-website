@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Precios psicológicos en restaurantes: qué funciona según los estudios"
 slug: "precios-psicologicos"
 seo_title: "Precios psicológicos en restaurantes: qué funciona"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2024-02-24
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/precios-psicologicos.svg"
 image_alt: "Ilustración: una etiqueta de precio de 9,90 € con el 9 resaltado."
 respuesta_corta: "Los precios psicológicos son formas de fijar o de presentar un precio que cambian cómo lo percibe el cliente, sin cambiar lo que paga. Los mejor estudiados son tres: un precio acabado en 9 parece más barato solo cuando cambia la primera cifra (4,99 € frente a 5 €); los precios redondos encajan mejor con las compras que se deciden por gusto, y los no redondos, con las que se deciden por razones prácticas; y en un restaurante de Nueva York, quienes vieron los precios sin el símbolo de la moneda gastaron más. En España, el precio de la carta tiene que ser siempre el final, con los impuestos incluidos."

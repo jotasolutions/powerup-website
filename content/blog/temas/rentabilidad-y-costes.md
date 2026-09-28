@@ -1,9 +1,9 @@
 ---
-# Redactado en la Etapa B (24-09-2026). Pendiente de la revisión de Fede.
+# Redactado en la Etapa B (24-09-2026). Revisado por Fede (28-09-2026).
 descripcion: "Cómo saber si tu restaurante gana dinero: margen de contribución, food cost, coste de personal, margen neto y punto de equilibrio, con ejemplos."
 keyword_principal: "rentabilidad de un restaurante"
 seo_title: "Rentabilidad de un restaurante: costes y márgenes"
-draft: true
+draft: false
 faq:
   - pregunta: "¿Cómo se sabe si un restaurante es rentable?"
     respuesta: "Con tres cifras: el margen de contribución de cada plato, el margen neto del negocio y el punto de equilibrio. Juntas dicen si ganas dinero y por dónde se escapa."

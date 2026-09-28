@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Qué es la psicología del menú: lo que está probado y lo que no"
 slug: "que-es-la-psicologia-del-menu"
 seo_title: "Qué es la psicología del menú y cómo aplicarla"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2024-02-06
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/que-es-la-psicologia-del-menu.svg"
 image_alt: "Ilustración: una carta abierta con el recorrido de la mirada."
 respuesta_corta: "La psicología del menú estudia cómo el diseño de la carta influye en lo que eligen los clientes: el orden de los platos, cómo se escriben los precios, cuántas opciones hay y cómo se presentan. Algunos efectos están medidos: los productos al principio o al final de su sección se eligieron hasta el doble que en el medio, y los precios sin el símbolo de la moneda llevaron a gastar más. Otros no se han confirmado, como el «punto dulce» de la carta: en un estudio con seguimiento ocular, los clientes leyeron la carta como un libro."

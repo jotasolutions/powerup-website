@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 1, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 1, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Cómo calcular el margen de contribución de cada plato"
 slug: "margen-de-contribucion"
 seo_title: "Cómo calcular el margen de contribución de tus platos"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2023-10-30
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/margen-de-contribucion.svg"
 image_alt: "Ilustración: dos precios divididos en ingredientes, margen e IVA."
 respuesta_corta: "El margen de contribución de un plato es su precio de venta sin IVA menos su coste variable, que en un restaurante son sobre todo los ingredientes. Es lo que ese plato aporta para pagar los gastos fijos y, una vez cubiertos, generar beneficio. Calcularlo plato a plato te dice qué platos conviene destacar y cuáles revisar."

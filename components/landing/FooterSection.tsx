@@ -23,6 +23,18 @@ export function FooterSection() {
           </div>
           <div className="space-y-2">
             <p className="font-medium ">Recursos</p>
+            <p>
+              <Link
+                href="/blog"
+                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                  label: "Blog",
+                  location: "footer",
+                  linkUrl: "/blog",
+                })}
+              >
+                Blog
+              </Link>
+            </p>
             <p>Aprende a vender mas</p>
             <p>Prensa</p>
           </div>

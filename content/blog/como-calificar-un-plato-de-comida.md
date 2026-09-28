@@ -12,7 +12,8 @@ destino_comercial: "powerup"
 cta: "soft"
 fecha_publicacion: 2024-06-15 # aproximada: primera captura en Wayback. La fecha real no aparece en ningún sitio; la carpeta de su imagen apunta a noviembre de 2023 (Fede, 25-09-2026)
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/como-calificar-un-plato-de-comida.svg"
 image_alt: "Ilustración: un plato con cubiertos y cinco estrellas de valoración."
 ---

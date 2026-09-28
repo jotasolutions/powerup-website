@@ -12,7 +12,8 @@ destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2024-08-07
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/menus-dinamicos-temporales.svg"
 image_alt: "Ilustración: una carta con un reloj y un interruptor de programación."
 ---

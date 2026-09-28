@@ -12,7 +12,8 @@ destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2024-01-15
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/paradoja-de-la-eleccion.svg"
 image_alt: "Ilustración: muchas opciones de platos y un signo de interrogación."
 ---

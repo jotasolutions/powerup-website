@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress, con foco en el coste de personal (decisión de Fede). Pendiente de su revisión.
+# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress, con foco en el coste de personal (decisión de Fede). Revisado y firmado por Fede (28-09-2026).
 title: "Organigrama y coste de personal de un restaurante"
 slug: "organigrama-de-un-restaurante"
 seo_title: "Organigrama y coste de personal de un restaurante"
@@ -13,7 +13,8 @@ cta: "soft"
 fecha_publicacion: 2023-10-13
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/organigrama-de-un-restaurante.svg"
 image_alt: "Ilustración de un organigrama: la dirección arriba y, debajo, la cocina y la sala."
 respuesta_corta: "El coste de personal de un restaurante es bastante más que la suma de los sueldos: a cada salario hay que añadir las cotizaciones a la Seguridad Social a cargo de la empresa, que en 2026 pasan del 30% de la base de cotización en un contrato indefinido. Ordenar los puestos en un organigrama, por áreas como cocina y sala, ayuda a ver cuánto cuesta cada una y a compararlo con lo que vende el restaurante."

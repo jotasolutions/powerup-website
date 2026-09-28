@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Sin fecha original en Wayback: la de publicación es la de la reescritura (aprobado por Fede). Pendiente de su revisión.
+# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Sin fecha original en Wayback: la de publicación es la de la reescritura (aprobado por Fede). Revisado y firmado por Fede (28-09-2026).
 title: "Cómo calcular el food cost de tu restaurante"
 slug: "costo-de-comida"
 seo_title: "Cómo calcular el food cost de tu restaurante"
@@ -12,7 +12,8 @@ destino_comercial: "maestro"
 cta: "medium"
 fecha_publicacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/costo-de-comida.svg"
 image_alt: "Ilustración: un gráfico circular con la parte que se lleva el coste de la comida."
 respuesta_corta: "El food cost es el coste de los ingredientes de lo que vendes, expresado como porcentaje de las ventas. Se calcula de dos formas: plato a plato, con el escandallo (coste de los ingredientes de una ración ÷ precio sin IVA), y para todo el restaurante en un periodo (coste de la comida consumida ÷ ventas de comida sin IVA). Si el segundo sale más alto que el primero, algo se pierde por el camino."

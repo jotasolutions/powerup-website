@@ -1,5 +1,5 @@
 ---
-# Nuevo (plan v3.5, 25-09-2026): reconstruye «Siete idiomas en la carta» del boceto, sin lo que la web no confirma (el número de idiomas, los alérgenos traducidos). La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Pendiente de la revisión de Fede.
+# Nuevo (plan v3.5, 25-09-2026): reconstruye «Siete idiomas en la carta» del boceto, sin lo que la web no confirma (el número de idiomas, los alérgenos traducidos). La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Revisado y firmado por Fede (28-09-2026).
 title: "Carta en varios idiomas: qué cambia cuando el turista entiende lo que pide"
 slug: "carta-en-varios-idiomas"
 seo_title: "Carta en varios idiomas: cuáles poner y cómo traducirla"
@@ -12,7 +12,8 @@ destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2026-09-25
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/carta-en-varios-idiomas.png"
 image_alt: "Botones de idioma de la carta digital de PowerUp Menu, cada uno con su bandera: portugués, ruso, inglés, español, alemán, italiano, holandés, catalán y francés."
 respuesta_corta: "Una carta en varios idiomas deja que el turista entienda qué pide sin depender de que el camarero hable su idioma. Para elegir los idiomas, fíjate en de dónde vienen tus clientes: en 2025, según el INE, los tres países de los que llegaron más turistas a España fueron Reino Unido, Francia y Alemania. Al traducir, conserva el nombre de los platos típicos y explica qué son, y ten también en esos idiomas la información de alérgenos."

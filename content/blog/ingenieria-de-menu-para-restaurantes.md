@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Qué es la ingeniería de menú y cómo aplicarla en tu restaurante"
 slug: "ingenieria-de-menu-para-restaurantes"
 seo_title: "Qué es la ingeniería de menú y cómo aplicarla"
@@ -13,7 +13,8 @@ cta: "strong"
 fecha_publicacion: 2023-10-02
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/ingenieria-de-menu-para-restaurantes.svg"
 image_alt: "Ilustración: cinco platos repartidos en los cuatro cuadrantes de la ingeniería de menú."
 respuesta_corta: "La ingeniería de menú es un método para analizar la carta plato a plato, desarrollado por Michael Kasavana y Donald Smith en la Universidad Estatal de Michigan hacia 1982. Cruza dos datos de cada plato, su popularidad y su margen de contribución, y lo clasifica en una de cuatro categorías: estrellas, caballos de batalla, enigmas y perros. Cada categoría pide una decisión: mantener el plato, revisar su precio, cambiarlo de sitio en la carta o retirarlo."

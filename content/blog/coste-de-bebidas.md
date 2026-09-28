@@ -12,7 +12,8 @@ destino_comercial: "maestro"
 cta: "medium"
 fecha_publicacion: 2024-08-29
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/coste-de-bebidas.svg"
 image_alt: "Ilustración: una botella, una copa y el símbolo del porcentaje."
 ---

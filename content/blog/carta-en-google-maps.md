@@ -1,5 +1,5 @@
 ---
-# Nuevo (plan v3.5, 25-09-2026): reconstruye «Tu carta en Google Maps» del boceto. Del producto, lo que confirmó Fede el 25-09: en el plan Pro, la sincronización actualiza cada día la sección de menú nativa de la ficha. De Google, solo lo que dice su ayuda. La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Pendiente de la revisión de Fede.
+# Nuevo (plan v3.5, 25-09-2026): reconstruye «Tu carta en Google Maps» del boceto. Del producto, lo que confirmó Fede el 25-09: en el plan Pro, la sincronización actualiza cada día la sección de menú nativa de la ficha. De Google, solo lo que dice su ayuda. La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Revisado y firmado por Fede (28-09-2026).
 title: "Tu carta en Google Maps: los clientes deciden desde casa"
 slug: "carta-en-google-maps"
 seo_title: "Tu carta en Google Maps: cómo tenerla al día"
@@ -12,7 +12,8 @@ destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2026-09-25
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/carta-en-google-maps.png"
 image_alt: "Ilustración: una búsqueda de restaurantes italianos cercanos en Google Maps y, al lado, la ficha de un restaurante inventado con la pestaña Menú abierta y sus platos."
 respuesta_corta: "Cuando alguien encuentra tu restaurante en Google, la ficha le enseña tu carta en la pestaña «Menú». Google puede sacarla de cinco sitios: lo que escribes en el editor de la ficha, una foto o un PDF de la carta, tu web, un proveedor externo o las fotos que suben los clientes. Si hay varias fuentes, eliges cuál se muestra. Lo difícil es tenerla al día: cada cambio hay que repetirlo en la ficha, salvo que tu carta digital se sincronice con ella."

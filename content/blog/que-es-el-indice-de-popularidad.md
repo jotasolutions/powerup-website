@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (24-09-2026): pasó de MANTENER a REESCRIBIR con el OK de Fede, porque el original no daba ninguna fórmula y mezclaba la popularidad con el margen y las reseñas. Pendiente de su revisión.
+# Reescrito en la Etapa B (24-09-2026): pasó de MANTENER a REESCRIBIR con el OK de Fede, porque el original no daba ninguna fórmula y mezclaba la popularidad con el margen y las reseñas. Revisado y firmado por Fede (28-09-2026).
 title: "Índice de popularidad de un plato: qué es y cómo se calcula"
 slug: "que-es-el-indice-de-popularidad"
 seo_title: "Índice de popularidad de un plato: qué es y cómo calcularlo"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2023-11-06
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/que-es-el-indice-de-popularidad.svg"
 image_alt: "Ilustración: las barras de cinco platos y la línea del corte de popularidad."
 respuesta_corta: "El índice de popularidad de un plato es su parte de las ventas de su sección: las raciones vendidas de ese plato divididas entre el total de raciones de la sección, por cien. En la ingeniería de menú se compara con un corte: el 70% de la parte que le tocaría a cada plato si todos se vendieran igual. Con cinco platos, a cada uno le tocaría el 20%, así que un plato es popular si su índice llega al 14%."

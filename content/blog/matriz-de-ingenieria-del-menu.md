@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 2, 24-09-2026): pasó de MANTENER a REESCRIBIR con el OK de Fede, porque el original confundía la matriz con la BCG e intercambiaba dos categorías. Pendiente de su revisión.
+# Reescrito en la Etapa B (tanda 2, 24-09-2026): pasó de MANTENER a REESCRIBIR con el OK de Fede, porque el original confundía la matriz con la BCG e intercambiaba dos categorías. Revisado y firmado por Fede (28-09-2026).
 title: "Matriz de ingeniería de menú: cómo clasificar tus platos"
 slug: "matriz-de-ingenieria-del-menu"
 seo_title: "Matriz de ingeniería de menú: cómo clasificar tus platos"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2024-07-01
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/matriz-de-ingenieria-del-menu.svg"
 image_alt: "Ilustración de los cuatro cuadrantes de la matriz de ingeniería de menú."
 respuesta_corta: "La matriz de ingeniería de menú es un gráfico de cuatro cuadrantes: en un eje va la popularidad de cada plato y en el otro, su margen de contribución. Cada plato cae en uno de ellos: estrellas (populares y rentables), caballos de batalla (populares pero con poco margen), enigmas (con margen pero poco populares) y perros (ni una cosa ni otra). No es la matriz BCG de Boston Consulting Group, aunque se le parezca: aquella clasifica productos por crecimiento y cuota de mercado."

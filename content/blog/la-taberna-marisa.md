@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original. Fuente: su carta pública; figura: la grabación de su carta que ya enseña la home (25-09-2026, OK de Fede). Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original. Fuente: su carta pública; figura: la grabación de su carta que ya enseña la home (25-09-2026, OK de Fede). Revisado y firmado por Fede (28-09-2026).
 title: "Caso práctico: La Taberna de Marisa pasa su carta a digital"
 slug: "la-taberna-marisa"
 seo_title: "Caso práctico: La Taberna de Marisa y su carta digital"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2024-08-26
 fecha_modificacion: 2026-09-25
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/la-taberna-marisa.jpg"
 image_alt: "El interior de La Taberna de Marisa: una barra larga con taburetes de madera, paredes de piedra y jamones colgados detrás de la barra."
 respuesta_corta: "La Taberna de Marisa es un restaurante valenciano tradicional en el centro de Valencia que pasó su carta impresa a la carta digital de PowerUp Menu. Según el caso que publicamos en agosto de 2024, el cambio tuvo tres efectos: un diseño con los colores del restaurante, el fin de las reimpresiones de la carta y la posibilidad de cambiar o añadir platos en cualquier momento."

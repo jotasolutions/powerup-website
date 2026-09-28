@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original, confirmados por Fede (25-09-2026; hay un vídeo de José Luis). Fuente: su carta pública, carta.powerup.menu/taberna-casera, activa el 25-09-2026 (por eso «usa» y no «usaba»); la figura es una captura de ese día (OK de Fede a usar capturas de cartas de clientes). Pendiente de su revisión.
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Negocio real: solo hechos del original, confirmados por Fede (25-09-2026; hay un vídeo de José Luis). Fuente: su carta pública, carta.powerup.menu/taberna-casera, activa el 25-09-2026 (por eso «usa» y no «usaba»); la figura es una captura de ese día (OK de Fede a usar capturas de cartas de clientes). Revisado y firmado por Fede (28-09-2026).
 title: "Caso práctico: La Taberna Casera y su carta digital con fotos"
 slug: "casostudiocartadigital"
 seo_title: "Caso práctico: La Taberna Casera y su carta digital"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2024-06-10
 fecha_modificacion: 2026-09-25
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/casostudiocartadigital.svg"
 image_alt: "Logo de La Taberna Casera."
 respuesta_corta: "La Taberna Casera es un restaurante de Valencia que usa la carta digital de PowerUp Menu. Cuando publicamos este caso, en junio de 2024, su dueño, José Luis, destacó sobre todo una cosa: con la carta digital, los clientes ven cómo van a salir los platos de la cocina antes de pedirlos. En sus palabras, «eso hace que se venda más»."

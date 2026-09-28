@@ -1,5 +1,5 @@
 ---
-# Nuevo (plan v3.5, 25-09-2026): reconstruye «Qué mirar cada lunes» del boceto. Lo propio frente a la matriz y el índice de popularidad: cruzar lo que se mira en la carta digital con lo que se vende en la caja. Del producto, solo lo que dice la web (analíticas avanzadas e informes semanales del plan Pro; analíticas básicas del gratis). La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Pendiente de la revisión de Fede.
+# Nuevo (plan v3.5, 25-09-2026): reconstruye «Qué mirar cada lunes» del boceto. Lo propio frente a la matriz y el índice de popularidad: cruzar lo que se mira en la carta digital con lo que se vende en la caja. Del producto, solo lo que dice la web (analíticas avanzadas e informes semanales del plan Pro; analíticas básicas del gratis). La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Revisado y firmado por Fede (28-09-2026).
 title: "Qué mirar cada lunes en tu carta: los platos que se miran y no se piden"
 slug: "que-mirar-cada-lunes"
 seo_title: "Platos más vistos y menos pedidos: qué mirar cada semana"
@@ -12,7 +12,8 @@ destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2026-09-25
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/que-mirar-cada-lunes.svg"
 image_alt: "Ilustración: la hoja del lunes marcada como revisada y una lista de tres platos con lo que se mira y lo que se pide de cada uno; el del medio se mira mucho y se pide poco."
 respuesta_corta: "Cada semana conviene cruzar dos datos de cada plato: cuánto se mira en la carta digital y cuánto se pide, según la caja. Con ellos, tres preguntas: qué platos se miran mucho y se piden poco, qué platos o secciones no mira casi nadie y qué pasó con el cambio de la semana anterior. La ingeniería de menú mira las ventas y el margen; las miradas dicen en qué punto se queda un plato: si no se ve o si se ve y no convence."

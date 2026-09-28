@@ -1,9 +1,9 @@
 ---
-# Redactado en la Etapa B (24-09-2026). Pendiente de la revisión de Fede.
+# Redactado en la Etapa B (24-09-2026). Revisado por Fede (28-09-2026).
 descripcion: "Qué es una carta digital, en qué se diferencia de un PDF con código QR, qué exige la ley sobre alérgenos y cómo dar el paso en tu restaurante."
 keyword_principal: "carta digital para restaurantes"
 seo_title: "Carta digital para restaurantes: guía práctica"
-draft: true
+draft: false
 faq:
   - pregunta: "¿Qué es una carta digital para restaurantes?"
     respuesta: "Una página web pensada para el móvil que el cliente abre al escanear un código QR. A diferencia de un PDF, se adapta a la pantalla y se puede cambiar al momento."

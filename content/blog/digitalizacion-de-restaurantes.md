@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Digitalización de restaurantes: qué digitalizar y por dónde empezar"
 slug: "digitalizacion-de-restaurantes"
 seo_title: "Digitalización de restaurantes: por dónde empezar"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2024-04-02
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/digitalizacion-de-restaurantes.svg"
 image_alt: "Ilustración: un código QR y un móvil con la carta digital abierta."
 respuesta_corta: "Digitalizar un restaurante es pasar a herramientas digitales tareas que antes se hacían en papel o de memoria: la carta, las reservas, el cobro, la facturación, el control de costes o la relación con los clientes. Según el estudio que SEGITTUR y Hostelería de España presentaron en 2026, la adopción en el sector sigue siendo fragmentada: muchos negocios usan herramientas que no se integran entre sí. Lo sensato es empezar por un problema concreto, elegir una herramienta que lo resuelva y medir si ahorra tiempo o aumenta las ventas."

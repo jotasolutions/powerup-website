@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Rotación de la carta: cuándo y cómo cambiar los platos de tu restaurante"
 slug: "rotacion-del-menu"
 seo_title: "Rotación de la carta: cuándo y cómo cambiar los platos"
@@ -13,7 +13,8 @@ cta: "medium"
 fecha_publicacion: 2024-03-01
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/rotacion-del-menu.svg"
 image_alt: "Ilustración: cuatro cartas con la misma base fija y una parte distinta en cada temporada."
 respuesta_corta: "Rotar la carta es cambiar una parte de los platos cada cierto tiempo, por ejemplo con cada temporada, en lugar de mantener la misma carta todo el año. Lo más práctico es combinar una base fija con una parte que cambia. Qué platos salen se decide con datos: según la ingeniería de menú, los que ni se venden ni dejan margen son los primeros candidatos. No hay que confundirla con la rotación de mesas, que mide cuántos grupos de clientes ocupan una misma mesa en un servicio."

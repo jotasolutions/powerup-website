@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 1, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 1, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Carta digital o carta en PDF: qué le conviene a tu restaurante"
 slug: "carta-restaurante"
 seo_title: "Carta digital o carta en PDF: diferencias y cuál elegir"
@@ -13,7 +13,8 @@ cta: "strong"
 fecha_publicacion: 2024-01-08
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/carta-restaurante.png"
 image_alt: "Tres móviles con una carta digital: platos con foto, promociones y secciones."
 respuesta_corta: "Una carta en PDF es la carta de papel metida en el móvil: hay que ampliar y desplazarse para leerla, y cada cambio obliga a rehacer el archivo. Una carta digital pensada para la pantalla se lee sin zoom, se cambia al momento y puede ofrecer la carta en varios idiomas y mostrar qué platos se miran. Si tu carta cambia a menudo o recibes clientes de fuera, la diferencia se nota."

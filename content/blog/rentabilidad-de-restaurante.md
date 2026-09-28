@@ -1,5 +1,5 @@
 ---
-# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Pendiente de la revisión de Fede.
+# Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Cómo calcular la rentabilidad de un restaurante"
 slug: "rentabilidad-de-restaurante"
 seo_title: "Cómo calcular la rentabilidad de un restaurante"
@@ -13,7 +13,8 @@ cta: "strong"
 fecha_publicacion: 2024-06-24
 fecha_modificacion: 2026-09-24
 autor: "powerup-menu"
-draft: true
+revisado_por: "federico-bello"
+draft: false
 image: "/blog/portadas/rentabilidad-de-restaurante.svg"
 image_alt: "Ilustración: dos líneas que se cruzan en el punto de equilibrio."
 respuesta_corta: "La rentabilidad de un restaurante se ve con tres cifras: el margen de contribución de cada plato (lo que deja para pagar los gastos fijos), el margen neto (lo que queda de cada euro vendido después de todos los gastos) y el punto de equilibrio (lo que tienes que vender para cubrir los gastos fijos). Con las tres sabes si ganas dinero y por dónde se escapa."

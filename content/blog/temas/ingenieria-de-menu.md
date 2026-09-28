@@ -1,9 +1,9 @@
 ---
-# Redactado en la Etapa B (24-09-2026). Pendiente de la revisión de Fede.
+# Redactado en la Etapa B (24-09-2026). Revisado por Fede (28-09-2026).
 descripcion: "Qué es la ingeniería de menú, cómo se clasifican los platos por popularidad y margen, y cómo usarla para decidir qué mantener, qué subir de precio y qué quitar."
 keyword_principal: "ingeniería de menú"
 seo_title: "Ingeniería de menú: guía para restaurantes"
-draft: true
+draft: false
 faq:
   - pregunta: "¿Qué es la ingeniería de menú?"
     respuesta: "Es un método para analizar la carta plato a plato, desarrollado por Michael Kasavana y Donald Smith en la Universidad Estatal de Michigan hacia 1982. Cruza la popularidad de cada plato con su margen de contribución y lo clasifica en una de cuatro categorías: estrellas, caballos de batalla, enigmas y perros."

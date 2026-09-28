@@ -1,9 +1,9 @@
 ---
-# Redactado en la Etapa B (24-09-2026). Pendiente de la revisión de Fede.
+# Redactado en la Etapa B (24-09-2026). Revisado por Fede (28-09-2026).
 descripcion: "Cómo influyen el orden de los platos, la forma de escribir los precios y el número de opciones en lo que piden tus clientes: lo que dicen los estudios y cómo aplicarlo."
 keyword_principal: "neuromarketing para restaurantes"
 seo_title: "Neuromarketing para restaurantes: psicología y precios"
-draft: true
+draft: false
 faq:
   - pregunta: "¿Qué es el neuromarketing para restaurantes?"
     respuesta: "Es aplicar a la carta y a los precios lo que se sabe sobre cómo percibimos y decidimos: el orden de los platos, cómo se escriben los precios o cuántas opciones se ofrecen."
