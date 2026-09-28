@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 290" width="560" height="290">
+  <title>Del precio de carta al margen de contribución: arroz y ensalada</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .legend { font-size: 15px; fill: #334155; }
+    .dish { font-size: 17px; font-weight: 700; fill: #0F172A; }
+    .in { font-size: 15px; font-weight: 700; fill: #0F172A; }
+    .note { font-size: 15px; fill: #475569; }
+  </style>
+  <defs>
+    <clipPath id="arroz"><rect x="20" y="86" width="429" height="44" rx="10"/></clipPath>
+    <clipPath id="ensalada"><rect x="20" y="208" width="257.4" height="44" rx="10"/></clipPath>
+  </defs>
+  <rect width="560" height="290" fill="#FFFFFF"/>
+
+  <rect x="20" y="12" width="14" height="14" rx="3" fill="#FBBD8A"/>
+  <text class="legend" x="40" y="25">Ingredientes</text>
+  <rect x="150" y="12" width="14" height="14" rx="3" fill="#50B27F"/>
+  <text class="legend" x="170" y="25">Margen de contribución</text>
+  <rect x="362" y="12" width="14" height="14" rx="3" fill="#CBD5E1"/>
+  <text class="legend" x="382" y="25">IVA (10%)</text>
+
+  <!-- 26 px = 1 € -->
+  <text class="dish" x="20" y="74">Arroz: 16,50 € en carta</text>
+  <g clip-path="url(#arroz)">
+    <rect x="20" y="86" width="109.2" height="44" fill="#FBBD8A"/>
+    <rect x="129.2" y="86" width="280.8" height="44" fill="#50B27F"/>
+    <rect x="410" y="86" width="39" height="44" fill="#CBD5E1"/>
+  </g>
+  <text class="in" x="74.6" y="113" text-anchor="middle">4,20 €</text>
+  <text x="269.6" y="114" text-anchor="middle" style="font-size:18px;font-weight:700;fill:#FFFFFF">10,80 €</text>
+  <text class="note" x="457" y="113">IVA 1,50 €</text>
+  <text class="note" x="20" y="152">Margen: 72% del precio sin IVA</text>
+
+  <text class="dish" x="20" y="196">Ensalada: 9,90 € en carta</text>
+  <g clip-path="url(#ensalada)">
+    <rect x="20" y="208" width="46.8" height="44" fill="#FBBD8A"/>
+    <rect x="66.8" y="208" width="187.2" height="44" fill="#50B27F"/>
+    <rect x="254" y="208" width="23.4" height="44" fill="#CBD5E1"/>
+  </g>
+  <text x="43.4" y="235" text-anchor="middle" style="font-size:13px;font-weight:700;fill:#0F172A">1,80 €</text>
+  <text x="160.4" y="236" text-anchor="middle" style="font-size:18px;font-weight:700;fill:#FFFFFF">7,20 €</text>
+  <text class="note" x="285" y="235">IVA 0,90 €</text>
+  <text class="note" x="20" y="274">Margen: 80% del precio sin IVA</text>
+</svg>

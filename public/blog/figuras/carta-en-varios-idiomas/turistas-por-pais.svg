@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 392" width="560" height="392">
+  <title>Turistas internacionales que llegaron a España en 2025, por país de residencia, y su idioma</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .country { font-size: 16px; font-weight: 600; fill: #0F172A; }
+    .language { font-size: 16px; fill: #475569; }
+    .value { font-size: 17px; font-weight: 700; fill: #0F172A; }
+  </style>
+  <rect width="560" height="392" fill="#FFFFFF"/>
+
+  <!-- INE, FRONTUR, año 2025. Bar width = millions × 11.54 (19,07 M → 220 px), from x = 262. -->
+  <g>
+    <text class="country" x="20" y="34">Reino Unido</text>
+    <text class="language" x="20" y="54">inglés</text>
+    <rect x="262" y="26" width="220" height="24" rx="6" fill="#3482AA"/>
+    <text class="value" x="490" y="44">19,1 M</text>
+  </g>
+  <g>
+    <text class="country" x="20" y="80">Francia</text>
+    <text class="language" x="20" y="100">francés</text>
+    <rect x="262" y="72" width="147.7" height="24" rx="6" fill="#3482AA"/>
+    <text class="value" x="417.7" y="90">12,8 M</text>
+  </g>
+  <g>
+    <text class="country" x="20" y="126">Alemania</text>
+    <text class="language" x="20" y="146">alemán</text>
+    <rect x="262" y="118" width="138.7" height="24" rx="6" fill="#3482AA"/>
+    <text class="value" x="408.7" y="136">12,0 M</text>
+  </g>
+  <g>
+    <text class="country" x="20" y="172">Italia</text>
+    <text class="language" x="20" y="192">italiano</text>
+    <rect x="262" y="164" width="65.6" height="24" rx="6" fill="#3482AA"/>
+    <text class="value" x="335.6" y="182">5,7 M</text>
+  </g>
+  <g>
+    <text class="country" x="20" y="218">Países nórdicos</text>
+    <text class="language" x="20" y="238">danés, finés, noruego y sueco</text>
+    <rect x="262" y="210" width="59.7" height="24" rx="6" fill="#3482AA"/>
+    <text class="value" x="329.7" y="228">5,2 M</text>
+  </g>
+  <g>
+    <text class="country" x="20" y="264">Países Bajos</text>
+    <text class="language" x="20" y="284">neerlandés</text>
+    <rect x="262" y="256" width="57.7" height="24" rx="6" fill="#3482AA"/>
+    <text class="value" x="327.7" y="274">5,0 M</text>
+  </g>
+  <g>
+    <text class="country" x="20" y="310">Estados Unidos</text>
+    <text class="language" x="20" y="330">inglés</text>
+    <rect x="262" y="302" width="51.4" height="24" rx="6" fill="#3482AA"/>
+    <text class="value" x="321.4" y="320">4,5 M</text>
+  </g>
+  <g>
+    <text class="country" x="20" y="356">Portugal</text>
+    <text class="language" x="20" y="376">portugués</text>
+    <rect x="262" y="348" width="38.9" height="24" rx="6" fill="#3482AA"/>
+    <text class="value" x="308.9" y="366">3,4 M</text>
+  </g>
+</svg>

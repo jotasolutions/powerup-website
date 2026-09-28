@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Organigrama: dirección arriba y, debajo, cocina y sala</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <path d="M200 88V114M112 114H288M112 114V136M288 114V136" fill="none" stroke="#94A3B8" stroke-width="3"/>
+  <rect x="130" y="40" width="140" height="48" rx="12" fill="#3482AA"/>
+  <rect x="152" y="58" width="96" height="12" rx="6" fill="#FFFFFF" opacity="0.85"/>
+  <rect x="42" y="136" width="140" height="44" rx="12" fill="#FFEBAB"/>
+  <rect x="218" y="136" width="140" height="44" rx="12" fill="#DEF8FF"/>
+  <g fill="#E2E8F0">
+    <rect x="62" y="198" width="120" height="14" rx="7"/>
+    <rect x="62" y="222" width="100" height="14" rx="7"/>
+    <rect x="62" y="246" width="110" height="14" rx="7"/>
+    <rect x="238" y="198" width="120" height="14" rx="7"/>
+    <rect x="238" y="222" width="90" height="14" rx="7"/>
+  </g>
+  <path d="M52 180V253M52 205H62M52 229H62M52 253H62M228 180V229M228 205H238M228 229H238" fill="none" stroke="#CBD5E1" stroke-width="3"/>
+</svg>

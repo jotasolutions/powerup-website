@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 372" width="560" height="372">
+  <title>Organigrama de un restaurante mediano</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .head { font-size: 18px; font-weight: 700; fill: #0F172A; }
+    .role { font-size: 17px; font-weight: 500; fill: #334155; }
+  </style>
+  <rect width="560" height="372" fill="#FFFFFF"/>
+
+  <path d="M280 76V104M145 104H415M145 104V132M415 104V132" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  <rect x="150" y="20" width="260" height="56" rx="12" fill="#3482AA"/>
+  <text x="280" y="54" text-anchor="middle" style="font-size:18px;font-weight:700;fill:#FFFFFF">Dirección o gerencia</text>
+
+  <rect x="20" y="132" width="250" height="50" rx="12" fill="#FFEBAB"/>
+  <text class="head" x="145" y="163" text-anchor="middle">Cocina</text>
+  <path d="M40 182V330M40 222H56M40 276H56M40 330H56" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  <g fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5">
+    <rect x="56" y="200" width="214" height="44" rx="10"/>
+    <rect x="56" y="254" width="214" height="44" rx="10"/>
+    <rect x="56" y="308" width="214" height="44" rx="10"/>
+  </g>
+  <text class="role" x="72" y="228">Jefe/a de cocina</text>
+  <text class="role" x="72" y="282">Cocineros</text>
+  <text class="role" x="72" y="336">Ayudantes</text>
+
+  <rect x="290" y="132" width="250" height="50" rx="12" fill="#DEF8FF"/>
+  <text class="head" x="415" y="163" text-anchor="middle">Sala</text>
+  <path d="M310 182V276M310 222H326M310 276H326" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  <g fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5">
+    <rect x="326" y="200" width="214" height="44" rx="10"/>
+    <rect x="326" y="254" width="214" height="44" rx="10"/>
+  </g>
+  <text class="role" x="342" y="228">Encargado/a de sala</text>
+  <text class="role" x="342" y="282">Camareros</text>
+</svg>

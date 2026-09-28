@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Barras de cinco platos y la línea del corte de popularidad</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <!-- The article's five dishes: y = 250 − índice × 4.5; corte 14 % → y 187 -->
+  <rect x="58" y="160" width="44" height="90" rx="6" fill="#3482AA"/>
+  <rect x="118" y="92.5" width="44" height="157.5" rx="6" fill="#3482AA"/>
+  <rect x="178" y="216.3" width="44" height="33.7" rx="6" fill="#CBD5E1"/>
+  <rect x="238" y="115" width="44" height="135" rx="6" fill="#3482AA"/>
+  <rect x="298" y="216.3" width="44" height="33.7" rx="6" fill="#CBD5E1"/>
+  <path d="M44 250H356" fill="none" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M44 187H356" fill="none" stroke="#0F172A" stroke-width="3" stroke-dasharray="9 7"/>
+</svg>

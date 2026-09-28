@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" width="560" height="360">
+  <title>Una carta que rota por temporadas: base fija y parte que cambia</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .season { font-size: 16px; font-weight: 700; fill: #0F172A; }
+    .legend { font-size: 16px; fill: #334155; }
+  </style>
+  <rect width="560" height="360" fill="#FFFFFF"/>
+
+  <text class="season" x="77.5" y="30" text-anchor="middle">Primavera</text>
+  <text class="season" x="212.5" y="30" text-anchor="middle">Verano</text>
+  <text class="season" x="347.5" y="30" text-anchor="middle">Otoño</text>
+  <text class="season" x="482.5" y="30" text-anchor="middle">Invierno</text>
+
+  <g fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5">
+    <rect x="20" y="44" width="115" height="250" rx="14"/>
+    <rect x="155" y="44" width="115" height="250" rx="14"/>
+    <rect x="290" y="44" width="115" height="250" rx="14"/>
+    <rect x="425" y="44" width="115" height="250" rx="14"/>
+  </g>
+
+  <!-- The same fixed base in every season -->
+  <g fill="#DEF8FF">
+    <rect x="30" y="56" width="95" height="104" rx="10"/>
+    <rect x="165" y="56" width="95" height="104" rx="10"/>
+    <rect x="300" y="56" width="95" height="104" rx="10"/>
+    <rect x="435" y="56" width="95" height="104" rx="10"/>
+  </g>
+  <g fill="#334155">
+    <rect x="42" y="74" width="62" height="10" rx="5"/><rect x="42" y="102" width="50" height="10" rx="5"/><rect x="42" y="130" width="58" height="10" rx="5"/>
+    <rect x="177" y="74" width="62" height="10" rx="5"/><rect x="177" y="102" width="50" height="10" rx="5"/><rect x="177" y="130" width="58" height="10" rx="5"/>
+    <rect x="312" y="74" width="62" height="10" rx="5"/><rect x="312" y="102" width="50" height="10" rx="5"/><rect x="312" y="130" width="58" height="10" rx="5"/>
+    <rect x="447" y="74" width="62" height="10" rx="5"/><rect x="447" y="102" width="50" height="10" rx="5"/><rect x="447" y="130" width="58" height="10" rx="5"/>
+  </g>
+
+  <!-- The seasonal part: different in each column -->
+  <rect x="30" y="170" width="95" height="112" rx="10" fill="#DFFFEA"/>
+  <rect x="165" y="170" width="95" height="112" rx="10" fill="#FFEBAB"/>
+  <rect x="300" y="170" width="95" height="112" rx="10" fill="#FBBD8A"/>
+  <rect x="435" y="170" width="95" height="112" rx="10" fill="#F8F0FF"/>
+  <g fill="#475569">
+    <rect x="42" y="190" width="60" height="10" rx="5"/><rect x="42" y="218" width="44" height="10" rx="5"/><rect x="42" y="246" width="54" height="10" rx="5"/>
+    <rect x="177" y="190" width="48" height="10" rx="5"/><rect x="177" y="218" width="62" height="10" rx="5"/><rect x="177" y="246" width="40" height="10" rx="5"/>
+    <rect x="312" y="190" width="56" height="10" rx="5"/><rect x="312" y="218" width="40" height="10" rx="5"/><rect x="312" y="246" width="60" height="10" rx="5"/>
+    <rect x="447" y="190" width="44" height="10" rx="5"/><rect x="447" y="218" width="58" height="10" rx="5"/><rect x="447" y="246" width="50" height="10" rx="5"/>
+  </g>
+
+  <rect x="20" y="308" width="32" height="16" rx="4" fill="#DEF8FF" stroke="#CBD5E1"/>
+  <text class="legend" x="62" y="321">Base fija: se queda todo el año</text>
+  <rect x="20" y="334" width="8" height="16" fill="#DFFFEA"/>
+  <rect x="28" y="334" width="8" height="16" fill="#FFEBAB"/>
+  <rect x="36" y="334" width="8" height="16" fill="#FBBD8A"/>
+  <rect x="44" y="334" width="8" height="16" fill="#F8F0FF"/>
+  <text class="legend" x="62" y="347">Parte que cambia con cada temporada</text>
+</svg>

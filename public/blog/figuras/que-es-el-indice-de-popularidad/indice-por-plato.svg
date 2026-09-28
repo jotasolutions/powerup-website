@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 372" width="560" height="372">
+  <title>Índice de popularidad de los cinco platos del ejemplo y corte del 14%</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .value { font-size: 17px; font-weight: 700; fill: #0F172A; }
+    .dish { font-size: 16px; fill: #334155; }
+    .legend { font-size: 15px; fill: #334155; }
+  </style>
+  <rect width="560" height="372" fill="#FFFFFF"/>
+
+  <rect x="20" y="12" width="14" height="14" rx="3" fill="#3482AA"/>
+  <text class="legend" x="40" y="25">Popular</text>
+  <rect x="120" y="12" width="14" height="14" rx="3" fill="#CBD5E1"/>
+  <text class="legend" x="140" y="25">Por debajo del corte</text>
+
+  <!-- y = 330 − índice × 7.25 (0–40 %). Corte 14 % → y 228.5 -->
+  <rect x="89" y="185" width="56" height="145" rx="6" fill="#3482AA"/>
+  <rect x="183" y="76.3" width="56" height="253.7" rx="6" fill="#3482AA"/>
+  <rect x="277" y="275.6" width="56" height="54.4" rx="6" fill="#CBD5E1"/>
+  <rect x="371" y="112.5" width="56" height="217.5" rx="6" fill="#3482AA"/>
+  <rect x="465" y="275.6" width="56" height="54.4" rx="6" fill="#CBD5E1"/>
+  <path d="M70 330H540" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+  <path d="M70 228.5H540" fill="none" stroke="#0F172A" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="540" y="220" text-anchor="end" style="font-size:16px;font-weight:700;fill:#3482AA">Corte: 14%</text>
+
+  <text class="value" x="117" y="177" text-anchor="middle">20%</text>
+  <text class="value" x="211" y="68" text-anchor="middle">35%</text>
+  <text class="value" x="305" y="267" text-anchor="middle">7,5%</text>
+  <text class="value" x="399" y="104" text-anchor="middle">30%</text>
+  <text class="value" x="493" y="267" text-anchor="middle">7,5%</text>
+
+  <text class="dish" x="117" y="356" text-anchor="middle">Arroz</text>
+  <text class="dish" x="211" y="356" text-anchor="middle">Hamburguesa</text>
+  <text class="dish" x="305" y="356" text-anchor="middle">Merluza</text>
+  <text class="dish" x="399" y="356" text-anchor="middle">Pollo</text>
+  <text class="dish" x="493" y="356" text-anchor="middle">Lasaña</text>
+</svg>

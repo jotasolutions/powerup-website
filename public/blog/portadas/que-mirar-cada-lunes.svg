@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Un calendario del lunes y una lista de platos con lo que se mira y lo que se pide</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+
+  <!-- Monday, reviewed -->
+  <rect x="52" y="82" width="104" height="120" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <path d="M52 98a16 16 0 0 1 16-16h72a16 16 0 0 1 16 16v20H52Z" fill="#3482AA"/>
+  <text x="104" y="109" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">LUN</text>
+  <path d="M82 160l15 15 27-31" fill="none" stroke="#50B27F" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Three dishes: how much each is viewed (blue) and ordered (green); the middle one is viewed and not ordered -->
+  <rect x="180" y="62" width="176" height="176" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="196" y="80" width="32" height="32" rx="8" fill="#FFEBAB"/>
+  <rect x="240" y="84" width="96" height="8" rx="4" fill="#3482AA"/>
+  <rect x="240" y="100" width="80" height="8" rx="4" fill="#50B27F"/>
+  <rect x="196" y="134" width="32" height="32" rx="8" fill="#DFFFEA"/>
+  <rect x="240" y="138" width="100" height="8" rx="4" fill="#3482AA"/>
+  <rect x="240" y="154" width="22" height="8" rx="4" fill="#FF9800"/>
+  <circle cx="276" cy="158" r="5" fill="#FF9800"/>
+  <rect x="196" y="188" width="32" height="32" rx="8" fill="#DEF8FF"/>
+  <rect x="240" y="192" width="44" height="8" rx="4" fill="#3482AA"/>
+  <rect x="240" y="208" width="52" height="8" rx="4" fill="#50B27F"/>
+</svg>

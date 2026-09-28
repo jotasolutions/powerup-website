@@ -1,0 +1,7 @@
+/* Google Places appends its suggestion list to <body>, outside the Advisor dialog's portal.
+   This class sits on <body> only while the blog's dialog is open, so the rule never reaches the
+   Advisor elsewhere on the site. */
+.advisorOpen :global(.pac-container) {
+  z-index: 1000;
+  pointer-events: auto;
+}

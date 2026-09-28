@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 284" width="560" height="284">
+  <title>El efecto de la cifra de la izquierda en los precios</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .title { font-size: 16px; font-weight: 700; fill: #0F172A; }
+    .price { font-size: 40px; font-weight: 700; fill: #0F172A; }
+    .vs { font-size: 15px; fill: #64748B; }
+    .note { font-size: 15px; fill: #334155; }
+  </style>
+  <rect width="560" height="284" fill="#FFFFFF"/>
+
+  <circle cx="30" cy="21" r="11" fill="#50B27F"/>
+  <path d="M24.5 21.5L28.5 25.5L35.5 17" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="title" x="50" y="27">Cambia la primera cifra</text>
+  <g fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5">
+    <rect x="20" y="42" width="230" height="64" rx="14"/>
+    <rect x="310" y="42" width="230" height="64" rx="14"/>
+  </g>
+  <text class="price" x="135" y="89" text-anchor="middle"><tspan fill="#3482AA">4</tspan>,99 €</text>
+  <text class="vs" x="280" y="80" text-anchor="middle">frente a</text>
+  <text class="price" x="425" y="89" text-anchor="middle"><tspan fill="#3482AA">5</tspan>,00 €</text>
+  <text class="note" x="20" y="130">4,99 € parece más barato que 5,00 €.</text>
+
+  <circle cx="30" cy="170" r="11" fill="#94A3B8"/>
+  <path d="M25.5 165.5L34.5 174.5M34.5 165.5L25.5 174.5" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+  <text class="title" x="50" y="176">La primera cifra es la misma</text>
+  <g fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5">
+    <rect x="20" y="190" width="230" height="64" rx="14"/>
+    <rect x="310" y="190" width="230" height="64" rx="14"/>
+  </g>
+  <text class="price" x="135" y="237" text-anchor="middle"><tspan fill="#3482AA">4</tspan>,59 €</text>
+  <text class="vs" x="280" y="228" text-anchor="middle">frente a</text>
+  <text class="price" x="425" y="237" text-anchor="middle"><tspan fill="#3482AA">4</tspan>,60 €</text>
+  <text class="note" x="20" y="278">4,59 € no parece más barato que 4,60 €.</text>
+</svg>

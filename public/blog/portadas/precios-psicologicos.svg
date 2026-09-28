@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Una etiqueta de precio de 9,90 € con el 9 resaltado</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <g transform="rotate(-8 200 150)">
+    <path d="M96 96H268L316 150L268 204H96C87 204 80 197 80 188V112C80 103 87 96 96 96Z" fill="#F8F0FF" stroke="#334155" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="282" cy="150" r="9" fill="#FFFFFF" stroke="#334155" stroke-width="4"/>
+    <text x="172" y="168" text-anchor="middle" style="font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:50px;font-weight:700;fill:#0F172A"><tspan fill="#3482AA">9</tspan>,90 €</text>
+  </g>
+</svg>

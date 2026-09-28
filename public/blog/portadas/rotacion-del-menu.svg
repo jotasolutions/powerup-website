@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Cuatro cartas con la misma base fija y una parte distinta en cada temporada</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <g fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2">
+    <rect x="36" y="40" width="72" height="220" rx="12"/>
+    <rect x="120" y="40" width="72" height="220" rx="12"/>
+    <rect x="204" y="40" width="72" height="220" rx="12"/>
+    <rect x="288" y="40" width="72" height="220" rx="12"/>
+  </g>
+  <g fill="#DEF8FF">
+    <rect x="44" y="50" width="56" height="84" rx="8"/>
+    <rect x="128" y="50" width="56" height="84" rx="8"/>
+    <rect x="212" y="50" width="56" height="84" rx="8"/>
+    <rect x="296" y="50" width="56" height="84" rx="8"/>
+  </g>
+  <rect x="44" y="144" width="56" height="106" rx="8" fill="#DFFFEA"/>
+  <rect x="128" y="144" width="56" height="106" rx="8" fill="#FFEBAB"/>
+  <rect x="212" y="144" width="56" height="106" rx="8" fill="#FBBD8A"/>
+  <rect x="296" y="144" width="56" height="106" rx="8" fill="#F8F0FF"/>
+</svg>
