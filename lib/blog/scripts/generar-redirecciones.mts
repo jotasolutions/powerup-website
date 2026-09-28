@@ -1,11 +1,13 @@
-// Genera el vercel.json del proyecto de redirecciones de blog.powerup.menu (plan Fase 3, C.1): un
-// proyecto de Vercel aparte, que solo atiende ese dominio, para que el blog viejo nunca llegue a
-// la app de la web. Sale de content/blog/redirects.csv y de lo que está publicado.
+// Genera la función de CloudFront que atiende blog.powerup.menu (plan Fase 3, v3.6): las
+// redirecciones del blog viejo van en la distribución de CloudFront que ya sirve ese dominio,
+// sin cambiar el DNS ni crear nada en Vercel. Sale de content/blog/redirects.csv y de lo que
+// está publicado.
 //
 // Un destino que no se publica (draft) pasa al siguiente criterio: su tema y, si tampoco se
-// publica, 410. El script lo avisa; el control estricto de C.5 lo trata como error.
+// publica, 410. El script lo avisa; el control estricto de comprobar-redirecciones.mts lo trata
+// como error.
 //
-// Uso: node lib/blog/scripts/generar-redirecciones.mts <carpeta del proyecto de redirecciones>
+// Uso: node lib/blog/scripts/generar-redirecciones.mts <archivo .js de salida>
 
 import fs from "node:fs"
 import path from "node:path"
@@ -13,12 +15,12 @@ import matter from "gray-matter"
 
 const SITE = "https://www.powerup.menu"
 const CONTENT = path.join(process.cwd(), "content/blog")
+// CloudFront Functions can't be larger than 10 KB, and the quota isn't adjustable.
+const MAX_FUNCTION_BYTES = 10 * 1024
 
-type Route = { src: string; status: number; headers?: Record<string, string> }
-
-const outDir = process.argv[2]
-if (!outDir) {
-  console.error("Uso: node lib/blog/scripts/generar-redirecciones.mts <carpeta del proyecto de redirecciones>")
+const output = process.argv[2]
+if (!output) {
+  console.error("Uso: node lib/blog/scripts/generar-redirecciones.mts <archivo .js de salida>")
   process.exit(1)
 }
 
@@ -42,27 +44,23 @@ const publishedThemes = new Set(
 
 const fallbacks: string[] = []
 
-/** The published destination, or undefined for a 410. */
-function resolve(from: string, target: string): string | undefined {
+/** The published destination, or null for a 410. */
+function resolve(from: string, target: string): string | null {
   const theme = /^\/blog\/tema\/([a-z0-9-]+)$/.exec(target)
   const post = /^\/blog\/([a-z0-9-]+)$/.exec(target)
-  let resolved: string | undefined = target
-  if (theme && !publishedThemes.has(theme[1])) resolved = undefined
+  let resolved: string | null = target
+  if (theme && !publishedThemes.has(theme[1])) resolved = null
   else if (post && !publishedPosts.has(post[1])) {
     const cluster = clusterOf.get(post[1])
-    resolved = cluster && publishedThemes.has(cluster) ? `/blog/tema/${cluster}` : undefined
+    resolved = cluster && publishedThemes.has(cluster) ? `/blog/tema/${cluster}` : null
   }
   if (resolved !== target) fallbacks.push(`/${from} → ${target} no está publicado: va a ${resolved ?? "410"}`)
   return resolved
 }
 
-const escape = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-const exact = (from: string) => (from === "" ? "^/$" : `^/${escape(from)}/?$`)
-const redirect = (from: string, to: string | undefined): Route =>
-  to ? { src: exact(from), status: 301, headers: { Location: `${SITE}${to}` } } : { src: exact(from), status: 410 }
-
-const routes: Route[] = []
-const covered = new Set<string>()
+// Old path without leading or trailing slashes ("" is the old home) → destination, or null for 410.
+const rules: Record<string, string | null> = {}
+const gonePrefixes: string[] = []
 
 const [header = "", ...rows] = fs.readFileSync(path.join(CONTENT, "redirects.csv"), "utf8").split(/\r?\n/).filter((line) => line.trim())
 const columns = header.split(",").map((column) => column.trim())
@@ -72,29 +70,57 @@ for (const row of rows) {
   const cells = row.split(",").map((cell) => cell.trim())
   const from = cells[origin] === "/" ? "" : cells[origin].replace(/^\/+|\/+$/g, "")
   if (from.endsWith("/*")) {
-    routes.push({ src: `^/${escape(from.slice(0, -1))}.*$`, status: 410 })
+    gonePrefixes.push(from.slice(0, -1))
     continue
   }
-  covered.add(from)
-  routes.push(redirect(from, cells[status] === "301" ? resolve(from, cells[destination].replace(/(.)\/+$/, "$1")) : undefined))
+  rules[from] = cells[status] === "301" ? resolve(from, cells[destination].replace(/(.)\/+$/, "$1")) : null
 }
 
 // The kept posts keep their slug: old URL → the same slug under /blog.
 for (const post of posts) {
-  if (!covered.has(post.slug)) routes.push(redirect(post.slug, resolve(post.slug, `/blog/${post.slug}`)))
+  if (!(post.slug in rules)) rules[post.slug] = resolve(post.slug, `/blog/${post.slug}`)
 }
 
-// Anything else is a 404. /.well-known/ stays out so Vercel can validate the domain's certificate.
-routes.push({ src: "^/(?!\\.well-known/).*$", status: 404 })
+// Plain ES5, which both CloudFront Functions runtimes accept. The request URI never carries the
+// query string, and whatever the map doesn't know gets a 404.
+const code = `// Redirecciones del blog viejo: blog.powerup.menu → www.powerup.menu/blog. CloudFront Function,
+// evento «viewer request». Generado por lib/blog/scripts/generar-redirecciones.mts (repo
+// powerup-website): no se edita a mano, se vuelve a generar.
+var SITE = ${JSON.stringify(SITE)};
+// Ruta vieja, sin barras al principio ni al final → destino en www, o null para 410.
+var RULES = ${JSON.stringify(rules)};
+// Prefijos que responden 410: etiquetas y páginas de autor del blog viejo.
+var GONE = ${JSON.stringify(gonePrefixes)};
 
-fs.mkdirSync(outDir, { recursive: true })
-fs.writeFileSync(
-  path.join(outDir, "vercel.json"),
-  `${JSON.stringify({ $schema: "https://openapi.vercel.sh/vercel.json", routes }, null, 2)}\n`,
+function handler(event) {
+  var path = event.request.uri.replace(/^\\/+|\\/+$/g, '');
+  if (Object.prototype.hasOwnProperty.call(RULES, path)) {
+    var to = RULES[path];
+    if (to) {
+      return { statusCode: 301, statusDescription: 'Moved Permanently', headers: { location: { value: SITE + to } } };
+    }
+    return { statusCode: 410, statusDescription: 'Gone' };
+  }
+  for (var i = 0; i < GONE.length; i++) {
+    if (path.indexOf(GONE[i]) === 0) return { statusCode: 410, statusDescription: 'Gone' };
+  }
+  return { statusCode: 404, statusDescription: 'Not Found' };
+}
+`
+
+const bytes = Buffer.byteLength(code)
+if (bytes > MAX_FUNCTION_BYTES) {
+  console.error(`La función ocupa ${bytes} bytes: CloudFront no admite más de ${MAX_FUNCTION_BYTES}.`)
+  process.exit(1)
+}
+fs.mkdirSync(path.dirname(path.resolve(output)), { recursive: true })
+fs.writeFileSync(output, code)
+
+const values = Object.values(rules)
+console.log(
+  `${output}: ${values.filter(Boolean).length} × 301, ${values.filter((value) => !value).length} × 410, ` +
+    `${gonePrefixes.length} prefijos con 410 y el 404 para lo demás (${bytes} bytes de ${MAX_FUNCTION_BYTES})`,
 )
-
-const count = (code: number) => routes.filter((route) => route.status === code).length
-console.log(`vercel.json: ${routes.length} reglas (${count(301)} × 301, ${count(410)} × 410 y el 404 final)`)
 if (fallbacks.length) {
   console.warn(`\n${fallbacks.length} destinos no publicados pasaron al siguiente criterio:`)
   for (const line of fallbacks) console.warn(`- ${line}`)

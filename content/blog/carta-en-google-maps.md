@@ -1,5 +1,5 @@
 ---
-# Nuevo (plan v3.5, 25-09-2026): reconstruye «Tu carta en Google Maps» del boceto. Del producto, lo que confirmó Fede el 25-09: en el plan Pro, la sincronización actualiza cada día la sección de menú nativa de la ficha. De Google, solo lo que dice su ayuda. La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Revisado y firmado por Fede (28-09-2026).
+# Nuevo (plan v3.5, 25-09-2026): reconstruye «Tu carta en Google Maps» del boceto. Del producto, lo que confirmó Fede el 25-09: en el plan Pro, la sincronización actualiza cada día la sección de menú nativa de la ficha. De Google, solo lo que dice su ayuda. Publicado el 28-09-2026: si el lanzamiento se retrasa, poner la fecha real. Revisado y firmado por Fede (28-09-2026).
 title: "Tu carta en Google Maps: los clientes deciden desde casa"
 slug: "carta-en-google-maps"
 seo_title: "Tu carta en Google Maps: cómo tenerla al día"
@@ -10,7 +10,7 @@ keyword_principal: "carta en Google Maps"
 content_strategy: "hybrid"
 destino_comercial: "powerup"
 cta: "medium"
-fecha_publicacion: 2026-09-25
+fecha_publicacion: 2026-09-28
 autor: "powerup-menu"
 revisado_por: "federico-bello"
 draft: false

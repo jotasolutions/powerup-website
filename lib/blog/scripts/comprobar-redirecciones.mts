@@ -1,5 +1,5 @@
-// Comprueba el proyecto de redirecciones de blog.powerup.menu (plan Fase 3, C.5), antes y después
-// del cambio de DNS. Es el control estricto: compara cada respuesta con el mapa original
+// Comprueba las redirecciones de blog.powerup.menu (plan Fase 3, C.5; desde la v3.6, la función de
+// CloudFront de generar-redirecciones.mts). Es el control estricto: compara cada respuesta con el mapa original
 // (content/blog/redirects.csv y los posts conservados), no con el vercel.json generado. Así, una
 // regla que cayó al siguiente criterio porque su destino seguía en draft sale como error.
 //
@@ -10,9 +10,8 @@
 // El inventario se lee de fuera del repo, y las páginas de autor se prueban sin escribir su
 // nombre: en la salida salen como /author/….
 //
-// Uso: node lib/blog/scripts/comprobar-redirecciones.mts <dirección del proyecto> <inventario> [web]
-// - <dirección del proyecto>: https://<proyecto>.vercel.app antes del cambio de DNS y
-//   https://blog.powerup.menu después.
+// Uso: node lib/blog/scripts/comprobar-redirecciones.mts <dirección> <inventario> [web]
+// - <dirección>: https://blog.powerup.menu, con la función ya asociada a su distribución.
 // - <inventario>: seo-recovery/wayback-cdx-full.json.
 // - [web]: dónde tiene que responder 200 cada destino; por defecto, https://www.powerup.menu.
 
@@ -27,7 +26,7 @@ type Expected = { status: 301; to: string } | { status: 404 | 410 }
 
 const [baseArg, inventoryFile, webArg = SITE] = process.argv.slice(2)
 if (!baseArg || !inventoryFile) {
-  console.error("Uso: node lib/blog/scripts/comprobar-redirecciones.mts <dirección del proyecto> <inventario> [web]")
+  console.error("Uso: node lib/blog/scripts/comprobar-redirecciones.mts <dirección> <inventario> [web]")
   process.exit(2)
 }
 const base = baseArg.replace(/\/+$/, "")

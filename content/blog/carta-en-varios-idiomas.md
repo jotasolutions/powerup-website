@@ -1,5 +1,5 @@
 ---
-# Nuevo (plan v3.5, 25-09-2026): reconstruye «Siete idiomas en la carta» del boceto, sin lo que la web no confirma (el número de idiomas, los alérgenos traducidos). La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Revisado y firmado por Fede (28-09-2026).
+# Nuevo (plan v3.5, 25-09-2026): reconstruye «Siete idiomas en la carta» del boceto, sin lo que la web no confirma (el número de idiomas, los alérgenos traducidos). Publicado el 28-09-2026: si el lanzamiento se retrasa, poner la fecha real. Revisado y firmado por Fede (28-09-2026).
 title: "Carta en varios idiomas: qué cambia cuando el turista entiende lo que pide"
 slug: "carta-en-varios-idiomas"
 seo_title: "Carta en varios idiomas: cuáles poner y cómo traducirla"
@@ -10,7 +10,7 @@ keyword_principal: "carta en varios idiomas"
 content_strategy: "hybrid"
 destino_comercial: "powerup"
 cta: "medium"
-fecha_publicacion: 2026-09-25
+fecha_publicacion: 2026-09-28
 autor: "powerup-menu"
 revisado_por: "federico-bello"
 draft: false

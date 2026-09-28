@@ -1,5 +1,5 @@
 ---
-# Nuevo (plan v3.5, 25-09-2026): reconstruye «Qué mirar cada lunes» del boceto. Lo propio frente a la matriz y el índice de popularidad: cruzar lo que se mira en la carta digital con lo que se vende en la caja. Del producto, solo lo que dice la web (analíticas avanzadas e informes semanales del plan Pro; analíticas básicas del gratis). La fecha de publicación es la del día en que se escribe: al publicar, poner la de ese día. Revisado y firmado por Fede (28-09-2026).
+# Nuevo (plan v3.5, 25-09-2026): reconstruye «Qué mirar cada lunes» del boceto. Lo propio frente a la matriz y el índice de popularidad: cruzar lo que se mira en la carta digital con lo que se vende en la caja. Del producto, solo lo que dice la web (analíticas avanzadas e informes semanales del plan Pro; analíticas básicas del gratis). Publicado el 28-09-2026: si el lanzamiento se retrasa, poner la fecha real. Revisado y firmado por Fede (28-09-2026).
 title: "Qué mirar cada lunes en tu carta: los platos que se miran y no se piden"
 slug: "que-mirar-cada-lunes"
 seo_title: "Platos más vistos y menos pedidos: qué mirar cada semana"
@@ -10,7 +10,7 @@ keyword_principal: "platos más vistos y menos pedidos"
 content_strategy: "hybrid"
 destino_comercial: "powerup"
 cta: "medium"
-fecha_publicacion: 2026-09-25
+fecha_publicacion: 2026-09-28
 autor: "powerup-menu"
 revisado_por: "federico-bello"
 draft: false
