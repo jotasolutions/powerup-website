@@ -30,6 +30,8 @@ import {
   getVisitorId,
   isGoogleScript,
   loadConsentState,
+  pickLatestConsentState,
+  readSharedConsentCookie,
   saveConsentState,
 } from "./utils";
 
@@ -149,13 +151,25 @@ export function CookieConsentProvider({
     [effectiveGoogleConsentMode]
   );
 
-  // Initialize state from localStorage
+  // Initialize state from localStorage or, if more recent, from the choice
+  // made on another powerup.menu site (shared cookie)
   React.useEffect(() => {
     const visitorId = getVisitorId();
-    const stored = loadConsentState();
+    const stored = pickLatestConsentState(
+      loadConsentState(),
+      readSharedConsentCookie(),
+      config.consentVersion
+    );
 
-    if (stored && stored.consentVersion === config.consentVersion) {
-      setState({ ...stored, visitorId });
+    if (stored) {
+      const current = { ...stored, visitorId };
+      setState(current);
+      try {
+        // Keeps localStorage and the shared cookie in sync
+        saveConsentState(current);
+      } catch {
+        // Storage unavailable: the in-memory choice still applies
+      }
       setIsBannerVisible(false);
       previousCategoriesRef.current = stored.categories;
 
