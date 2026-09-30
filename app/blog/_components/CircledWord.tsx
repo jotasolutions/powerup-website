@@ -2,7 +2,9 @@ import type { ReactNode } from "react"
 
 export function CircledWord({ children }: { children: ReactNode }) {
   return (
-    <span className="relative inline-block whitespace-nowrap">
+    // The oval reaches a little past the start of the word; the left margin keeps it off whatever
+    // comes before it (a word, the hero's QR badge) and inside the column when it starts a line.
+    <span className="relative ml-[0.25em] inline-block whitespace-nowrap">
       {children}
       <svg
         aria-hidden

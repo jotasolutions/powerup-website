@@ -1,6 +1,7 @@
 import { QrCode } from "lucide-react"
 import Image from "next/image"
 import type { Post } from "@/lib/blog/posts"
+import { cn } from "@/lib/utils"
 import { AdvisorTrigger } from "./AdvisorDialog"
 import { CircledWord } from "./CircledWord"
 import { FeaturedPostCard } from "./PostCards"
@@ -21,9 +22,7 @@ export function BlogHero({ featured }: { featured: Post }) {
             <p className="text-[13px] font-semibold uppercase tracking-[0.04em] text-slate-700">El blog de PowerUp Menu</p>
             <h1 className="font-heading text-[clamp(30px,4vw,48px)] font-medium leading-[1.15] tracking-tight text-slate-900">
               Ideas para que tu carta
-              {/* The oval reaches past the start of "venda más" in proportion to the font size, so the
-                  badge's right margin scales with it (em) to keep the tilted badge off the oval. */}
-              <span aria-hidden className="ml-2 mr-[calc(0.31em+4px)] inline-flex rotate-[11deg] rounded-md bg-primary p-1.5 align-middle text-primary-foreground shadow-lg">
+              <span aria-hidden className="mx-2 inline-flex rotate-[11deg] rounded-md bg-primary p-1.5 align-middle text-primary-foreground shadow-lg">
                 <QrCode className="size-6" />
               </span>
               <CircledWord>venda más</CircledWord>
@@ -32,11 +31,12 @@ export function BlogHero({ featured }: { featured: Post }) {
               Ingeniería de menú, neuromarketing y casos reales de restaurantes. Para dueños, no para técnicos.
             </p>
             <div className="flex flex-wrap gap-2.5">
-              <AdvisorTrigger className={buttonAdvisor}>
+              {/* Full width on mobile, as the home's hero buttons. */}
+              <AdvisorTrigger className={cn(buttonAdvisor, "w-full sm:w-auto")}>
                 <QrCode />
                 Analiza tu carta gratis
               </AdvisorTrigger>
-              <a href="#articulos" className={buttonSecondary}>
+              <a href="#articulos" className={cn(buttonSecondary, "w-full sm:w-auto")}>
                 Ver todos los artículos
               </a>
             </div>
