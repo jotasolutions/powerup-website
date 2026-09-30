@@ -1,0 +1,1820 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-30 12:41:31",
+    "containerVersion": {
+        "path": "accounts/6365406953/containers/257965932/versions/22",
+        "accountId": "6365406953",
+        "containerId": "257965932",
+        "containerVersionId": "22",
+        "container": {
+            "path": "accounts/6365406953/containers/257965932",
+            "accountId": "6365406953",
+            "containerId": "257965932",
+            "name": "powerup.menu",
+            "publicId": "GTM-WX5BXSST",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1783693909362",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6365406953/containers/257965932/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-WX5BXSST"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "31",
+                "name": "Meta · Lead (clic de alta)",
+                "type": "html",
+                "notes": "Lead en cada clic de alta, con el event_id de la web. Solo con el marketing aceptado; activa antes la base del píxel. Qué es un Lead se revisa en la fase 1.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  fbq('track', 'Lead', {\n    content_name: {{dlv.event_label}},\n    content_category: {{dlv.link_url}}\n  }, {\n    eventID: {{dlv.event_id}}\n  });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "firingTriggerId": [
+                    "26"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Meta · base del píxel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "25",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "40",
+                "name": "GA4 · Google tag · web",
+                "type": "googtag",
+                "notes": "Base de Google Analytics de la web. Se activa en «Inicialización» si se entra por la web; si no, la activan antes las etiquetas de la web. Sin página vista automática: las manda «GA4 · page_view · web». Google signals, solo con el marketing aceptado.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{const.ga4_id_web}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "allow_google_signals"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.marketing_aceptado}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "allow_ad_personalization_signals"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.marketing_aceptado}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "firingTriggerId": [
+                    "39"
+                ],
+                "parentFolderId": "33",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "44",
+                "name": "GA4 · eventos · web",
+                "type": "gaawe",
+                "notes": "Eventos propios de la web que ocurren en la web, con el nombre que manda la web y seccion = web.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "event_label"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.event_label}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.link_url_sin_parametros}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_text"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.link_text}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "section_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.section_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.form_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "billing_period"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.billing_period}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "seccion"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.seccion}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{Event}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_web}}"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "firingTriggerId": [
+                    "34"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "GA4 · Google tag · web",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "33",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "47",
+                "name": "Meta · PageView",
+                "type": "html",
+                "notes": "PageView en cada cambio de página, con el event_id de la web. Solo con el marketing aceptado; activa antes la base del píxel.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  fbq('track', 'PageView', {\n    page_path: {{Page Path}}\n  }, {\n    eventID: {{dlv.event_id}}\n  });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "firingTriggerId": [
+                    "46"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Meta · base del píxel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "25",
+                "tagFiringOption": "UNLIMITED",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "48",
+                "name": "GA4 · alta y Advisor del blog → web",
+                "type": "gaawe",
+                "notes": "Copia para la propiedad de la web de los clics de alta y del Advisor del blog, con seccion = blog. No activa la Google tag de la web: si la persona no ha pasado por la web, sale sin sus ajustes (sin el de Google signals). Hueco aceptado por Fede el 29-09.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "event_label"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.event_label}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.link_url_sin_parametros}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_text"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.link_text}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "section_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.section_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.form_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "billing_period"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.billing_period}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "seccion"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.seccion}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{Event}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_web}}"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "firingTriggerId": [
+                    "45"
+                ],
+                "parentFolderId": "33",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "50",
+                "name": "Umami tracking code",
+                "type": "html",
+                "notes": "Sin cambios en la fase 0. Sale de GTM en el plan aparte.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script defer src=\"https://umami.powerup.menu/script.js\" data-website-id=\"ff12504c-d577-4856-8279-0d84ba8d3856\"></script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "parentFolderId": "18",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "53",
+                "name": "GA4 · Google tag · blog",
+                "type": "googtag",
+                "notes": "Base de Google Analytics del blog. Se activa en «Inicialización» si se entra por el blog; si no, la activan antes las etiquetas del blog. Sin página vista automática: las manda «GA4 · page_view · blog». Google signals, solo con el marketing aceptado.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{const.ga4_id_blog}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "allow_google_signals"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.marketing_aceptado}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "allow_ad_personalization_signals"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.marketing_aceptado}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "firingTriggerId": [
+                    "52"
+                ],
+                "parentFolderId": "24",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "55",
+                "name": "GA4 · page_view · blog",
+                "type": "gaawe",
+                "notes": "Una página vista por cada cambio de página del blog, con la dirección y el título que manda la web.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.page_location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.page_title}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_blog}}"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "firingTriggerId": [
+                    "54"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "GA4 · Google tag · blog",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "24",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "56",
+                "name": "GA4 · eventos · blog",
+                "type": "gaawe",
+                "notes": "Eventos propios de la web que ocurren en el blog, con el nombre que manda la web.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "event_label"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.event_label}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.link_url_sin_parametros}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_text"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.link_text}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "section_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.section_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.form_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "billing_period"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.billing_period}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{Event}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_blog}}"
+                    }
+                ],
+                "fingerprint": "1790681008811",
+                "firingTriggerId": [
+                    "36"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "GA4 · Google tag · blog",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "24",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "58",
+                "name": "GA4 · page_view · web",
+                "type": "gaawe",
+                "notes": "Una página vista por cada cambio de página de la web, con la dirección y el título que manda la web.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.page_location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.page_title}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_web}}"
+                    }
+                ],
+                "fingerprint": "1790681008811",
+                "firingTriggerId": [
+                    "57"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "GA4 · Google tag · web",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "33",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "59",
+                "name": "Meta · base del píxel",
+                "type": "html",
+                "notes": "Carga el píxel de Meta una vez por página, sin contar él solo los cambios de página (disablePushState). Con allowDuplicatePageViews, el píxel acepta un PageView manual por cada cambio de página sin recarga: sin él, descarta todos menos el primero de cada carga. No tiene activador: la activan «Meta · PageView» y «Meta · Lead» antes de salir, y solo con el marketing aceptado.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<!-- Meta Pixel Code -->\n<script>\n!function(f,b,e,v,n,t,s)\n{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};\nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\nn.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];\ns.parentNode.insertBefore(t,s)}(window, document,'script',\n'https://connect.facebook.net/en_US/fbevents.js');\nfbq.disablePushState = true;\nfbq.allowDuplicatePageViews = true;\nfbq('init', {{const.meta_pixel_id}});\n</script>\n<!-- End Meta Pixel Code -->"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1790686107738",
+                "parentFolderId": "25",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "26",
+                "name": "Meta · sign_up_click con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "sign_up_click"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "25",
+                "notes": "Cada clic de alta, en la web y en el blog, solo con el marketing aceptado."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "34",
+                "name": "eventos · web",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(sign_up_click|login_click|nav_click|logo_click|outbound_click|example_menu_click|menu_showcase_click|menu_showcase_slide|section_view|advisor_step_1_complete|generate_lead|cookie_settings_open|pricing_billing_tab_click)$"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "33",
+                "notes": "Eventos propios de la web en páginas de la web. Para medir un evento nuevo, añádelo a esta lista y a la de «eventos · blog»."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "36",
+                "name": "eventos · blog",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(sign_up_click|login_click|nav_click|logo_click|outbound_click|example_menu_click|menu_showcase_click|menu_showcase_slide|section_view|advisor_step_1_complete|generate_lead|cookie_settings_open|pricing_billing_tab_click)$"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "blog"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "24",
+                "notes": "Eventos propios de la web en páginas del blog. Misma lista que «eventos · web»."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "39",
+                "name": "Inicialización · entrada por la web",
+                "type": "INIT",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "33",
+                "notes": "Al cargar GTM en una página de la web. Activa la Google tag de la web antes que cualquier evento."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "45",
+                "name": "alta y Advisor en el blog",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(sign_up_click|advisor_step_1_complete|generate_lead)$"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "blog"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "33",
+                "notes": "Clics de alta y Advisor (paso 1 y lead) en páginas del blog: su copia va también a la propiedad de la web."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "46",
+                "name": "Meta · page_view con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "page_view"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "25",
+                "notes": "Cada página vista, en la web y en el blog, solo con el marketing aceptado."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "52",
+                "name": "Inicialización · entrada por el blog",
+                "type": "INIT",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "blog"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "parentFolderId": "24",
+                "notes": "Al cargar GTM en una página del blog. Activa la Google tag del blog antes que cualquier evento."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "54",
+                "name": "page_view · blog",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "page_view"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "blog"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "parentFolderId": "24",
+                "notes": "Cada página vista del blog."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "57",
+                "name": "page_view · web",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "page_view"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008811",
+                "parentFolderId": "33",
+                "notes": "Cada página vista de la web."
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "19",
+                "name": "js.marketing_aceptado",
+                "type": "jsm",
+                "notes": "true solo si en el banner de cookies está aceptado el marketing. La web no avisa a GTM del consentimiento (Consent Mode roto), así que se lee de lo que guarda el banner (localStorage cookie-consent).",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  // Lee la elección que guarda el banner de cookies de la web.\n  // Devuelve true solo si la persona aceptó las cookies de marketing.\n  try {\n    var guardado = JSON.parse(window.localStorage.getItem('cookie-consent'));\n    return !!(guardado && guardado.categories && guardado.categories.marketing === true);\n  } catch (e) {\n    return false;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "20",
+                "name": "dlv.page_path",
+                "type": "v",
+                "notes": "Ruta de la página que manda la web en page_view y section_view.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_path"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "21",
+                "name": "dlv.link_url",
+                "type": "v",
+                "notes": "Enlace del elemento en el que se hizo clic, completo. Lo usa Meta.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "link_url"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "22",
+                "name": "dlv.section_name",
+                "type": "v",
+                "notes": "Sección de la home que se ha visto (section_view).",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "section_name"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "23",
+                "name": "dlv.page_title",
+                "type": "v",
+                "notes": "Título de la página que manda la web en page_view.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_title"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "27",
+                "name": "dlv.event_id",
+                "type": "v",
+                "notes": "Identificador único que la web pone a cada evento. Meta lo usa para no contar dos veces.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event_id"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "28",
+                "name": "const.meta_pixel_id",
+                "type": "c",
+                "notes": "Píxel de Meta de la web. En la fase 1 se cambia aquí por 1379933822562089.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "1582188126799857"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "25"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "30",
+                "name": "dlv.event_label",
+                "type": "v",
+                "notes": "Texto o etiqueta del elemento en el que se hizo clic.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event_label"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "32",
+                "name": "js.seccion",
+                "type": "jsm",
+                "notes": "blog o web, según la ruta de la página. Decide a qué propiedad de Google Analytics va cada cosa.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  // «blog» si la página es /blog o cuelga de /blog; si no, «web».\n  // En page_view y section_view usa la ruta que manda la web; en el resto, la de la página actual.\n  var ruta = {{dlv.page_path}} || {{Page Path}} || '';\n  return /^\\/blog(\\/|\\?|#|$)/.test(ruta) ? 'blog' : 'web';\n}"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "35",
+                "name": "dlv.link_text",
+                "type": "v",
+                "notes": "Texto visible del elemento en el que se hizo clic.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "link_text"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "37",
+                "name": "const.ga4_id_web",
+                "type": "c",
+                "notes": "Propiedad de Google Analytics de la web (545089122).",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-CFJCMZXWX7"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "33"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "38",
+                "name": "dlv.form_name",
+                "type": "v",
+                "notes": "Formulario que generó el lead (generate_lead).",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "form_name"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "41",
+                "name": "dlv.billing_period",
+                "type": "v",
+                "notes": "Periodo de pago elegido en la pestaña de precios.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "billing_period"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "42",
+                "name": "js.link_url_sin_parametros",
+                "type": "jsm",
+                "notes": "El enlace del clic sin la parte que sigue a ?, para Google Analytics (corta a 100 caracteres). Meta sigue recibiendo el enlace entero.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  // El enlace del clic sin lo que va detrás de «?» (los UTM), para Google Analytics.\n  var url = {{dlv.link_url}};\n  if (!url) {\n    return undefined;\n  }\n  return String(url).split('?')[0];\n}"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "43",
+                "name": "dlv.location",
+                "type": "v",
+                "notes": "Dónde está el elemento del clic: nav_desktop, footer, hero, blog, advisor...",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "location"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "49",
+                "name": "dlv.page_location",
+                "type": "v",
+                "notes": "Dirección completa de la página que manda la web en page_view. Antes se llamaba dlv.location.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_location"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "51",
+                "name": "const.ga4_id_blog",
+                "type": "c",
+                "notes": "Propiedad de Google Analytics del blog (407744305, la del blog viejo).",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-X22L95WE0Y"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "parentFolderId": "24"
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "18",
+                "name": "Común",
+                "fingerprint": "1790681008740"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "24",
+                "name": "GA4 blog",
+                "fingerprint": "1790681008741"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "25",
+                "name": "Meta",
+                "fingerprint": "1790681008741"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "33",
+                "name": "GA4 web",
+                "fingerprint": "1790681008741"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1790767687754",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6365406953/containers/257965932/versions/22?apiLink=version"
+    }
+}
