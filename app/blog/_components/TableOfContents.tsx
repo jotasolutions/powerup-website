@@ -5,11 +5,13 @@ import { cn } from "@/lib/utils"
 export function TableOfContents({ items }: { items: TocItem[] }) {
   if (items.length === 0) return null
   return (
-    <nav aria-labelledby="toc-title" className="flex flex-col gap-1.5 rounded-[18px] border border-border p-5">
+    // min-h-0 lets the list shrink and scroll inside the article's height-capped sticky aside; the
+    // list's padding, cancelled by its negative margin, keeps the links' focus rings inside the clip.
+    <nav aria-labelledby="toc-title" className="flex min-h-0 flex-col gap-1.5 rounded-[18px] border border-border p-5">
       <p id="toc-title" className="mb-1.5 text-xs font-semibold uppercase tracking-[0.04em] text-slate-600">
         En este artículo
       </p>
-      <ol className="flex flex-col">
+      <ol className="-m-1 flex min-h-0 flex-col overflow-y-auto p-1">
         {items.map((item) => (
           <li key={item.id}>
             <a

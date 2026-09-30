@@ -81,12 +81,15 @@ export function PostCard({ post, compact = false }: { post: Post; compact?: bool
   )
 }
 
-/** Horizontal scroller on mobile, grid from md up (as in the design). */
+/**
+ * Horizontal scroller on mobile, grid from md up (as in the design). The scroll padding matches the
+ * side padding, so the first card snaps in line with the heading instead of against the screen edge.
+ */
 export function PostGrid({ posts, compact = false }: { posts: Post[]; compact?: boolean }) {
   return (
     <ul
       className={cn(
-        "-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        "-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
         "md:mx-0 md:grid md:gap-6 md:overflow-visible md:px-0 md:pb-0",
         compact
           ? "md:grid-cols-[repeat(auto-fill,minmax(260px,1fr))]"

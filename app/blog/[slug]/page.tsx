@@ -104,10 +104,15 @@ export default async function PostPage({ params }: Props) {
             {post.fuentes && <Sources items={post.fuentes} />}
           </div>
         </article>
-        {/* The Advisor card goes on every article, Maestro ones included: the product is always present. */}
-        <aside className="flex flex-col gap-5 pt-10 lg:sticky lg:top-24 lg:col-start-2 lg:row-start-2 lg:self-start lg:pt-12">
+        {/* The Advisor card goes on every article, Maestro ones included: the product is always present.
+            From lg the sticky aside never outgrows the viewport: the contents list shrinks and scrolls
+            inside it, so the card's button stays on screen on laptop-height windows. Its offset is a
+            margin, not padding, so once stuck it starts right below the header. */}
+        <aside className="flex flex-col gap-5 pt-10 lg:sticky lg:top-24 lg:col-start-2 lg:row-start-2 lg:mt-12 lg:max-h-[calc(100dvh-7rem)] lg:self-start lg:pt-0">
           <TableOfContents items={tocItems} />
-          <AdvisorPromoSidebar />
+          <div className="lg:shrink-0">
+            <AdvisorPromoSidebar />
+          </div>
         </aside>
         {post.cta === "soft" && (
           <div className="pt-10 lg:col-start-1">
