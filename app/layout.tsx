@@ -23,7 +23,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Carta Digital QR - Potencia las ventas de tu restaurante",
-  description: "Ingenieria de menu y neuromarketing para vender más a traves de la carta digital. Sin conocimiento tecnico.",
+  description: "Ingeniería de menú y neuromarketing para vender más a través de la carta digital. Sin conocimiento técnico.",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Carta Digital QR - Potencia las ventas de tu restaurante",
-    description: "Ingenieria de menu y neuromarketing para vender más a traves de la carta digital. Sin conocimiento tecnico.",
+    description: "Ingeniería de menú y neuromarketing para vender más a través de la carta digital. Sin conocimiento técnico.",
     images: [
       "/images/og-image.png"
     ]

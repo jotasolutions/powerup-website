@@ -83,11 +83,11 @@ export function HowItWorksSection() {
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="section-title">Empezar es muy facil</h2>
+            <h2 className="section-title">Empezar es muy fácil</h2>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
             <p className="section-paragraph">
-              Es tan simple que podrias configurarlo tu solo. Pero te lo facilitamos aun mas.
+              Es tan simple que podrías configurarlo tú solo. Pero te lo facilitamos aún más.
             </p>
           </BlurFade>
         </div>

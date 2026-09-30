@@ -117,11 +117,11 @@ export function SellMoreSection() {
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="section-title">Vende mas sin esfuerzo</h2>
+            <h2 className="section-title">Vende más sin esfuerzo</h2>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
             <p className="section-paragraph">
-              Tu carta le da al cliente los motivos para gastar mas. Sola.
+              Tu carta le da al cliente los motivos para gastar más. Sola.
             </p>
           </BlurFade>
         </div>

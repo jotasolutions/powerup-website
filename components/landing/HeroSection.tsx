@@ -100,7 +100,7 @@ export function HeroSection() {
                 <div className="mx-2 inline-block rotate-11 rounded-sm md:rounded-md bg-primary p-1.5 shadow-lg sm:mx-3">
                   <QrCode className="size-4 md:size-6 text-white sm:size-7" />
                 </div>
-                de tu restaurante en una maquina de <span className="mx-0.5"></span>
+                de tu restaurante en una máquina de <span className="mx-0.5"></span>
                 <Highlighter action="circle" color="#FF9800" delay={1500} >
                   ventas
                 </Highlighter>
@@ -109,8 +109,8 @@ export function HeroSection() {
 
             <BlurFade delay={0.4}>
               <p className="text-center text-base  sm:text-sm leading-6 md:text-left md:max-w-lg md:leading-7 xl:max-w-lg font-heading md:text-base  md:leading-7 text-slate-700  md:text-base lg:text-lg xl:text-xl">
-                Ingenieria de menú y neuromarketing para vender más a traves de la carta digital.
-                Sin conocimiento tecnico.
+                Ingeniería de menú y neuromarketing para vender más a través de la carta digital.
+                Sin conocimiento técnico.
               </p>
             </BlurFade>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center justify-center md:justify-start">
