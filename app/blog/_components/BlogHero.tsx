@@ -1,6 +1,7 @@
 import { QrCode } from "lucide-react"
 import Image from "next/image"
 import type { Post } from "@/lib/blog/posts"
+import { cn } from "@/lib/utils"
 import { AdvisorTrigger } from "./AdvisorDialog"
 import { CircledWord } from "./CircledWord"
 import { FeaturedPostCard } from "./PostCards"
@@ -30,11 +31,12 @@ export function BlogHero({ featured }: { featured: Post }) {
               Ingeniería de menú, neuromarketing y casos reales de restaurantes. Para dueños, no para técnicos.
             </p>
             <div className="flex flex-wrap gap-2.5">
-              <AdvisorTrigger className={buttonAdvisor}>
+              {/* Full width on mobile, as the home's hero buttons. */}
+              <AdvisorTrigger className={cn(buttonAdvisor, "w-full sm:w-auto")}>
                 <QrCode />
                 Analiza tu carta gratis
               </AdvisorTrigger>
-              <a href="#articulos" className={buttonSecondary}>
+              <a href="#articulos" className={cn(buttonSecondary, "w-full sm:w-auto")}>
                 Ver todos los artículos
               </a>
             </div>

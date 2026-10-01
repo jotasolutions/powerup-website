@@ -75,7 +75,9 @@ export function AdvisorPromoWide() {
 export function AdvisorPromoSidebar() {
   return (
     <GradientFrame className="flex flex-col items-start gap-3 p-[22px]">
-      <ScoreMockup className="max-w-[320px] self-center" />
+      {/* In the sticky aside of a short window the decorative mockup would squeeze the contents
+          list out; the pitch and the button always stay. */}
+      <ScoreMockup className="max-w-[320px] self-center lg:[@media(max-height:720px)]:hidden" />
       <p className={eyebrow}>Advisor · IA</p>
       <p className="font-heading text-xl font-medium leading-tight tracking-tight text-slate-900">Pon nota a tu carta en 2 minutos</p>
       <p className="text-sm leading-normal text-slate-600">Oferta, marketing, contenido y diseño. Gratis.</p>

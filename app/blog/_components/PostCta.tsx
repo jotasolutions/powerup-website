@@ -57,13 +57,17 @@ export function BottomCta({ post }: { post: Post }) {
               <p className="font-heading text-[17px] leading-relaxed text-slate-700">
                 PowerUp Free es gratis para siempre. Sin conocimiento técnico.
               </p>
+              {/* As in the home's hero: on mobile both buttons are full width and as tall as the site's
+                  sign-up button (which sizes itself to its container), side by side from sm. */}
               <div className="flex flex-wrap gap-2.5">
-                <CTAButton location="blog" />
+                <div className="w-full sm:w-auto">
+                  <CTAButton location="blog" />
+                </div>
                 <a
                   href={exampleUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={buttonSecondary}
+                  className={cn(buttonSecondary, "h-13 w-full sm:h-10 sm:w-auto")}
                   {...trackAttrs(ANALYTICS_EVENTS.EXAMPLE_MENU_CLICK, {
                     label: "Ver carta de ejemplo",
                     location: "blog",

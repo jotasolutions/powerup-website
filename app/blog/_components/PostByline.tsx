@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import type { ReactNode } from "react"
 import { getAuthor, isPerson, type Author } from "@/lib/blog/authors"
 import { authorPath } from "@/lib/blog/config"
 import { formatDate, isoDate } from "@/lib/blog/format"
@@ -28,6 +29,22 @@ function AuthorAvatar({ author }: { author: Author }) {
   return null
 }
 
+/**
+ * Each item carries its "·" in a 28px slot in front, so the dot wraps with the item and no line
+ * ends in one. The row below is shifted one slot left inside a clipping box, so the dot that would
+ * start a wrapped line falls outside it and no line starts with one either.
+ */
+function Separated({ children }: { children: ReactNode }) {
+  return (
+    <span className="flex items-center whitespace-nowrap">
+      <span aria-hidden className="w-7 text-center">
+        ·
+      </span>
+      {children}
+    </span>
+  )
+}
+
 export function PostByline({ post }: { post: Post }) {
   // Author references are validated when the posts load.
   const author = getAuthor(post.autor) as Author
@@ -37,21 +54,27 @@ export function PostByline({ post }: { post: Post }) {
 
   return (
     <div className="flex flex-col gap-2 text-[13px] text-slate-600">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-        <AuthorAvatar author={author} />
-        <AuthorName author={author} />
-        <span aria-hidden>·</span>
-        <time dateTime={isoDate(post.fecha_publicacion)}>{formatDate(post.fecha_publicacion)}</time>
-        {updated && (
-          <>
-            <span aria-hidden>·</span>
-            <span>
-              Actualizado el <time dateTime={isoDate(post.fecha_modificacion)}>{formatDate(post.fecha_modificacion)}</time>
-            </span>
-          </>
-        )}
-        <span aria-hidden>·</span>
-        <span>{post.readingMinutes} min de lectura</span>
+      {/* The vertical padding (cancelled by the negative margin) keeps focus rings inside the clip. */}
+      <div className="-my-1 overflow-hidden py-1">
+        <div className="-ml-7 flex flex-wrap items-center gap-y-1.5">
+          <span className="ml-7 flex items-center gap-x-3">
+            <AuthorAvatar author={author} />
+            <AuthorName author={author} />
+          </span>
+          <Separated>
+            <time dateTime={isoDate(post.fecha_publicacion)}>{formatDate(post.fecha_publicacion)}</time>
+          </Separated>
+          {updated && (
+            <Separated>
+              <span>
+                Actualizado el <time dateTime={isoDate(post.fecha_modificacion)}>{formatDate(post.fecha_modificacion)}</time>
+              </span>
+            </Separated>
+          )}
+          <Separated>
+            <span>{post.readingMinutes} min de lectura</span>
+          </Separated>
+        </div>
       </div>
       {isPerson(reviewer) && (
         <p>
