@@ -204,40 +204,47 @@ Aquí solo se apuntan. Cada arreglo va con su propio plan y con el OK de Fede.
    en la home, que lleva a `/pagina-web`. Cuenta como `sign_up_click`, y Meta lo recibe como Lead.
 3. **En `/pagina-web`, `sign_up_click` lleva al asistente de web**, no al alta de la carta. En
    Analytics se separan por `link_url`, pero Meta los junta en Lead.
-4. **Dos secciones de `/pagina-web` tienen el mismo `id`**, `website-pages`:
+4. **En las tarjetas de precios, el botón del plan Pro y el del Free mandan lo mismo.** Son dos
+   `CTAButton` sin datos propios en `PricingCards.tsx`, dentro de la sección `pricing` de la home y
+   de `/pricing`: la misma etiqueta, el mismo enlace y la misma `location`. No se sabe cuál se
+   pulsó.
+5. **«Pregúntanos», el botón de WhatsApp de las preguntas frecuentes de la home, no hace nada.** Es
+   un `Button` sin enlace ni `trackAttrs()` en `FaqSection.tsx`: no lleva a WhatsApp y no se mide.
+   Comprobado en la web publicada el 01-10.
+6. **Dos secciones de `/pagina-web` tienen el mismo `id`**, `website-pages`:
    `WebsiteAnalyticsSection` y `WebsitePagesSection`. Solo cuenta la primera que se ve.
-5. **En el móvil, las secciones muy altas pueden no contar.** `section_view` sale cuando se ve a
+7. **En el móvil, las secciones muy altas pueden no contar.** `section_view` sale cuando se ve a
    la vez el 35 % de la sección. Medido el 01-10 en un móvil de 375 × 812 px:
    - `features` llega justo al 37 %, así que en móviles más pequeños no contaría;
    - la sección del plan Pro de `/pricing` se queda en el 23 %: aunque tuviera `id`, no contaría
      nunca.
-6. **Los valores de `location` mezclan guiones y guiones bajos**: `website-pages` frente a
+8. **Los valores de `location` mezclan guiones y guiones bajos**: `website-pages` frente a
    `website_hero`.
-7. **`logo_click` no está en `ANALYTICS_EVENTS`**, y `file_upload` está, pero no se usa.
-8. **`menu_showcase_slide` sale al cargar la home**, porque el carrusel lo manda al montarse. No
+9. **`logo_click` no está en `ANALYTICS_EVENTS`**, y `file_upload` está, pero no se usa.
+10. **`menu_showcase_slide` sale al cargar la home**, porque el carrusel lo manda al montarse. No
    siempre es un gesto de la persona.
-9. **Consent Mode no funciona** (apartado 2).
-10. **La captura de atribución guarda todos los parámetros de la URL**, no solo los UTM: también
+11. **Consent Mode no funciona** (apartado 2).
+12. **La captura de atribución guarda todos los parámetros de la URL**, no solo los UTM: también
    `gtm_debug`, `fbclid` y otros. Luego los añade a los enlaces de alta y a los del asistente de
    web.
 
 **Fuera del código:**
 
-11. **Umami solo cuenta a quien acepta la analítica**, porque se carga desde GTM. Vercel Analytics
+13. **Umami solo cuenta a quien acepta la analítica**, porque se carga desde GTM. Vercel Analytics
     sí cuenta a todos.
-12. **El dominio de Vercel, `powerup-website-chi.vercel.app`, también se mide**, porque carga el
+14. **El dominio de Vercel, `powerup-website-chi.vercel.app`, también se mide**, porque carga el
     mismo GTM.
-13. **La recogida automática de datos proporcionados por el usuario está activada** en las dos
+15. **La recogida automática de datos proporcionados por el usuario está activada** en las dos
     propiedades. Con ella, Google puede leer los emails y teléfonos que la persona escribe en la
     web, por ejemplo en el Advisor, y enviarlos cifrados. Conviene revisar si se quiere y si la
     política de privacidad lo cubre.
-14. **Meta.** El contenedor no apaga los eventos automáticos del píxel (`autoConfig`). Si están
+16. **Meta.** El contenedor no apaga los eventos automáticos del píxel (`autoConfig`). Si están
     activados en el Administrador de eventos, Meta añade eventos propios, como los clics en
     botones.
-15. **«Tiempo real» y DebugView no enseñan todos los eventos.** Se comprobó el 29-09: los eventos
+17. **«Tiempo real» y DebugView no enseñan todos los eventos.** Se comprobó el 29-09: los eventos
     llegan y se cuentan en los informes, pero no siempre salen en vivo. Para comprobar números, usa
     el informe del día siguiente.
-16. **Cuando una visita pasa de la web al blog:**
+18. **Cuando una visita pasa de la web al blog:**
     - algunos eventos automáticos de Google, como el scroll o los clics salientes, pueden llegar
       también a la otra propiedad;
     - si la visita solo ve el blog, sus clics de alta y su Advisor llegan a la web sin el ajuste
