@@ -94,7 +94,7 @@ export default async function PostPage({ params }: Props) {
               <p className="text-lg leading-relaxed text-slate-600">{post.excerpt}</p>
               <PostByline post={post} />
             </div>
-            <PostThumb post={post} className="aspect-[4/3] rounded-[24px]" priority sizes="(max-width: 768px) 100vw, 560px" />
+            <PostThumb post={post} className="aspect-[4/3] rounded-[24px]" priority sizes="(max-width: 767px) calc(100vw - 80px), 520px" />
           </header>
           <div className="flex min-w-0 max-w-[680px] flex-col gap-8 pt-12">
             {post.respuesta_corta && <ShortAnswer text={post.respuesta_corta} />}

@@ -15,7 +15,7 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
   return (
     <AdvisorDialogProvider>
       <div className="flex flex-1 flex-col bg-white text-slate-900">
-        <NavMenu />
+        <NavMenu prefetchLinks={false} />
         {children}
         <FooterSection />
       </div>
