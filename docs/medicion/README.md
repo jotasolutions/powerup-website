@@ -121,6 +121,10 @@ Notas:
   en Meta se decide en la fase 1.
 - Todos los eventos llevan `event_id` en el dataLayer. Meta lo usa como `eventID`; Analytics no lo
   recibe.
+- El formulario del Advisor llega a admin a través de la acción de servidor
+  `app/actions/advisor.ts`. El `event_id` de `generate_lead` se crea después, en el navegador. Si
+  la Conversions API (fase 2) manda el Lead desde el servidor, ese identificador tendrá que crearse
+  antes y pasarse a la acción.
 
 ## 5. Valores de `location` y `section_name`
 
@@ -280,8 +284,10 @@ Aquí solo se apuntan. Cada arreglo va con su propio plan y con el OK de Fede.
    seguir.
 8. **Scripts de medición.** No cargues ninguno fuera del banner de cookies. Las únicas excepciones
    son Vercel Analytics y Speed Insights, que no usan cookies.
-9. **Este mapa.** Actualízalo en el mismo PR que cambie la medición. Si cambia el contenedor,
-   sustituye también la copia (`gtm-WX5BXSST-vNN.json`).
+9. **`event_id`.** No lo quites ni cambies cómo se crea en `lib/analytics/track.ts`. Meta lo usa
+   para no contar dos veces el mismo evento, y la Conversions API lo necesitará.
+10. **Este mapa.** Actualízalo en el mismo PR que cambie la medición. Si cambia el contenedor,
+    sustituye también la copia (`gtm-WX5BXSST-vNN.json`).
 
 ## 10. Cómo se cambia el contenedor de GTM
 
