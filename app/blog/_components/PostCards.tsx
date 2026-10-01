@@ -8,11 +8,14 @@ import { getCluster } from "@/lib/blog/taxonomy"
 import { cn } from "@/lib/utils"
 import { eyebrow } from "./styles"
 
-/** Posts without an image fall back to their cluster's tint instead of a broken slot. */
+/**
+ * Posts without an image fall back to their cluster's tint instead of a broken slot. Every `sizes` in
+ * this folder is the image's drawn width (the slot minus the p-5 padding), measured from 360 to 1920 px.
+ */
 export function PostThumb({
   post,
   className,
-  sizes = "(max-width: 768px) 80vw, 380px",
+  sizes = "(max-width: 449px) calc(78vw - 70px), 330px",
   priority = false,
 }: {
   post: Post
@@ -31,7 +34,9 @@ export function PostThumb({
           alt={post.image_alt ?? ""}
           fill
           sizes={sizes}
-          priority={priority}
+          // Next 16 deprecated `priority`. For the LCP cover it recommends eager loading with high fetch priority.
+          loading={priority ? "eager" : undefined}
+          fetchPriority={priority ? "high" : undefined}
           className="object-contain p-5 drop-shadow-lg"
         />
       ) : (
@@ -112,7 +117,7 @@ export function FeaturedPostCard({ post }: { post: Post }) {
       className="flex w-full max-w-[520px] flex-col overflow-hidden rounded-[24px] bg-card shadow-xl transition-transform hover:-translate-y-0.5 md:justify-self-end"
     >
       <div className="relative">
-        <PostThumb post={post} className="aspect-video" priority sizes="(max-width: 768px) 100vw, 520px" />
+        <PostThumb post={post} className="aspect-video" priority sizes="(max-width: 584px) calc(100vw - 104px), 480px" />
         <span className="absolute left-3.5 top-3.5 rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground">
           Destacado
         </span>
@@ -137,7 +142,7 @@ export function PostList({ posts }: { posts: Post[] }) {
             href={postPath(post.slug)}
             className="grid grid-cols-1 items-center gap-3.5 border-b border-border py-5 transition-colors hover:bg-secondary sm:grid-cols-[200px_minmax(0,1fr)] sm:gap-6"
           >
-            <PostThumb post={post} className="aspect-video rounded-2xl sm:aspect-[16/10]" sizes="(max-width: 640px) 100vw, 200px" />
+            <PostThumb post={post} className="aspect-video rounded-2xl sm:aspect-[16/10]" sizes="(max-width: 639px) calc(100vw - 80px), 160px" />
             <div className="flex flex-col gap-1.5">
               <PostEyebrow post={post} withDate />
               <h3 className="font-heading text-[21px] font-medium leading-snug tracking-tight text-pretty text-slate-900">

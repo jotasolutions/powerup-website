@@ -20,7 +20,9 @@ const loginUrl = "https://admin.powerup.menu/sign-in"
 const SCROLL_RANGE: [number, number] = [0, 64]
 const springConfig = { stiffness: 420, damping: 42, mass: 0.55 }
 
-export function NavMenu() {
+// The blog passes prefetchLinks={false}: prefetching "/" downloads the home's code, which blog readers don't use.
+export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
+  const linkPrefetch = prefetchLinks ? undefined : false
   const { scrollY } = useScroll()
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const attributedSignUpUrl = useAttributedCtaUrl()
@@ -72,6 +74,7 @@ export function NavMenu() {
         <div className="grid h-13 grid-cols-[1fr_auto] items-center gap-2 md:grid-cols-[1fr_auto_1fr] md:gap-4">
           <Link
             href="/"
+            prefetch={linkPrefetch}
             className="flex items-center gap-2"
             {...trackAttrs("logo_click", { label: "PowerUp Menu", location: "nav" })}
           >
@@ -94,6 +97,7 @@ export function NavMenu() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
+                    prefetch={linkPrefetch}
                     className="block rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
                     {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
                       label: item.label,
@@ -159,6 +163,7 @@ export function NavMenu() {
                   <li key={`mobile-${item.href}`}>
                     <Link
                       href={item.href}
+                      prefetch={linkPrefetch}
                       className="block rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
                       onClick={() => setIsMobileOpen(false)}
                       {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
