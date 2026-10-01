@@ -26,8 +26,8 @@ export function AboutSection() {
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
             <p className="section-paragraph">
               PowerUp nace de la combinacion entre tecnologia y estrategia gastronomica. Unimos
-              ingenieria de menú, marketing y desarrollo de producto para ayudar a restaurantes a
-              vender mas con su carta digital.
+              ingeniería de menú, marketing y desarrollo de producto para ayudar a restaurantes a
+              vender más con su carta digital.
             </p>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.24}>

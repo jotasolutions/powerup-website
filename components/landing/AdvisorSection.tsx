@@ -74,7 +74,7 @@ export function AdvisorSection() {
                         </motion.div>
                     </div>
                     <div className=" space-y-3">
-                        <h3 className="plus-darker font-heading text-2xl font-medium opacity-65 sm:text-3xl">Evalua tu carta GRATIS</h3>
+                        <h3 className="plus-darker font-heading text-2xl font-medium opacity-65 sm:text-3xl">Evalúa tu carta GRATIS</h3>
                         <p className="plus-darker opacity-65">Recibe un análisis completo con sugerencias prácticas y <strong className="font-semibold">recomendaciones a medida para aumentar tus ventas hasta un 30%.</strong> Como lo haría un experto.</p>
                     </div>
                     {checkItems.map((checkItem, index) => (

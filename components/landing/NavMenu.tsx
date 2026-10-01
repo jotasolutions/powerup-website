@@ -10,7 +10,7 @@ import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 import { useAttributedCtaUrl, useCtaLabel, useIsWebsiteLanding } from "@/lib/attribution"
 
 const navItems = [
-  { label: "Evalua tu carta", href: "/#advisor" },
+  { label: "Evalúa tu carta", href: "/#advisor" },
   { label: "Página web", href: "/pagina-web" },
   { label: "Precios", href: "/pricing" },
 ]
@@ -88,7 +88,7 @@ export function NavMenu() {
             />
           </Link>
 
-          <nav className="hidden md:block" aria-label="Navegacion principal">
+          <nav className="hidden md:block" aria-label="Navegación principal">
             <ul className="flex items-center  p-1">
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -143,7 +143,7 @@ export function NavMenu() {
             variant="ghost"
             size="sm"
             className="md:hidden"
-            aria-label={isMobileOpen ? "Cerrar menu" : "Abrir menu"}
+            aria-label={isMobileOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={isMobileOpen}
             onClick={() => setIsMobileOpen((prev) => !prev)}
           >
@@ -153,7 +153,7 @@ export function NavMenu() {
 
         {isMobileOpen ? (
           <div className="border-t border-border pb-3 pt-2 md:hidden">
-            <nav aria-label="Navegacion principal mobile">
+            <nav aria-label="Navegación principal mobile">
               <ul className="space-y-1">
                 {navItems.map((item) => (
                   <li key={`mobile-${item.href}`}>

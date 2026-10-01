@@ -116,7 +116,7 @@ export function AttractPeopleSection() {
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="section-title">Atrae a mas gente</h2>
+            <h2 className="section-title">Atrae a más gente</h2>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
             <p className="section-paragraph">
