@@ -43,7 +43,6 @@ function FeatureCard({
           alt={title}
           width={imageWidth}
           height={imageHeight}
-          unoptimized
           className={`h-auto w-full object-contain${imageBottom ? " object-bottom" : ""}`}
         />
       </div>

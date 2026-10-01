@@ -160,7 +160,7 @@ export function TestimonialsSection() {
                         {testimonials.map((testimonial, key) => (
                             <div className="space-y-4 pb-12 text-left" key={key}>
                                 <div className="relative w-full h-[180px] sm:h-[200px]">
-                                    <Image src={testimonial.bgImage} alt={testimonial.place} width={1000} height={1000} className="rest-image h-[180px] w-full rounded-2xl object-cover sm:h-[200px]" />
+                                    <Image src={testimonial.bgImage} alt={testimonial.place} width={1000} height={1000} sizes="(max-width: 519px) 470px, (max-width: 1023px) calc(100vw - 48px), 512px" className="rest-image h-[180px] w-full rounded-2xl object-cover sm:h-[200px]" />
                                     <div className="absolute bottom-3 left-3 h-[64px] w-[64px] overflow-hidden rounded-lg sm:h-[80px] sm:w-[80px]">
                                         <Image src={testimonial.logo} alt={testimonial.place} width={100} height={100} className="carousel-contained-image object-cover" />
                                     </div>

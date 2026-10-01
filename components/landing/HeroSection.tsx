@@ -11,7 +11,6 @@ import widget2 from "../../public/images/hero/widget2.json";
 import widget3 from "../../public/images/hero/widget3.json";
 import widget4 from "../../public/images/hero/widget4.json";
 import Lottie, { type LottieComponentProps } from "lottie-react";
-import { BlurFade } from "../ui/blur-fade"
 import { motion } from "motion/react"
 import Link from "next/link"
 import { EXAMPLE_MENU_URL, ExampleMenuQr } from "./ExampleMenuQr"
@@ -47,6 +46,8 @@ export function HeroSection() {
             alt="hand"
             width={1000}
             height={1000}
+            sizes="650px"
+            loading="eager"
             className="absolute top-[180px] xl:top-[140px] -right-30 z-30  w-[650px] object-contain "
           />
           <Lottie
@@ -79,82 +80,71 @@ export function HeroSection() {
           />
         </div>
         <div className="relative z-20 mx-auto pt-4 sm:pt-0 flex max-w-6xl flex-col gap-6 md:gap-8 max-w-[390px] sm:max-w-[500px] md:max-w-[100%] md:min-h-[350px] lg:min-h-[500px] xl:min-h-[677px] lg:flex-row lg:items-center lg:gap-10">
-          <motion.div
-            className="block md:hidden w-full max-w-[320px] mx-auto"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          {/* The hero renders visible from the first paint: its entrance is CSS, so it doesn't wait for the JS. */}
+          <div className="block md:hidden w-full max-w-[320px] mx-auto animate-in slide-in-from-bottom-[30px] duration-600 ease-out">
             <Image
               src="/images/mobile-hero2.png"
               alt="hand"
-              width={1000}
-              height={1000}
+              width={920}
+              height={540}
+              sizes="320px"
+              loading="eager"
+              fetchPriority="high"
               className="w-full"
             />
-          </motion.div>
+          </div>
           <div className="space-y-5 lg:max-w-xl lg:space-y-6">
-            <BlurFade>
-              <h1 className="text-center max-w-[300px] mx-auto sm:max-w-none md:mx-0 font-heading text-2xl leading-8 font-medium  text-black md:text-3xl md:text-left md:leading-10 md:max-w-[400px] lg:leading-12 lg:max-w-[520px] lg:text-4xl xl:leading-14 xl:text-5xl xl:max-w-[590px]">
-                Convierte la carta
-                <div className="mx-2 inline-block rotate-11 rounded-sm md:rounded-md bg-primary p-1.5 shadow-lg sm:mx-3">
-                  <QrCode className="size-4 md:size-6 text-white sm:size-7" />
-                </div>
-                de tu restaurante en una máquina de <span className="mx-0.5"></span>
-                <Highlighter action="circle" color="#FF9800" delay={1500} >
-                  ventas
-                </Highlighter>
-              </h1>
-            </BlurFade>
+            <h1 className="text-center max-w-[300px] mx-auto sm:max-w-none md:mx-0 font-heading text-2xl leading-8 font-medium  text-black md:text-3xl md:text-left md:leading-10 md:max-w-[400px] lg:leading-12 lg:max-w-[520px] lg:text-4xl xl:leading-14 xl:text-5xl xl:max-w-[590px]">
+              Convierte la carta
+              <div className="mx-2 inline-block rotate-11 rounded-sm md:rounded-md bg-primary p-1.5 shadow-lg sm:mx-3">
+                <QrCode className="size-4 md:size-6 text-white sm:size-7" />
+              </div>
+              de tu restaurante en una máquina de <span className="mx-0.5"></span>
+              <Highlighter action="circle" color="#FF9800" delay={1500} >
+                ventas
+              </Highlighter>
+            </h1>
 
-            <BlurFade delay={0.4}>
-              <p className="text-center text-base  sm:text-sm leading-6 md:text-left md:max-w-lg md:leading-7 xl:max-w-lg font-heading md:text-base  md:leading-7 text-slate-700  md:text-base lg:text-lg xl:text-xl">
-                Ingeniería de menú y neuromarketing para vender más a través de la carta digital.
-                Sin conocimiento técnico.
-              </p>
-            </BlurFade>
+            <p className="text-center text-base  sm:text-sm leading-6 md:text-left md:max-w-lg md:leading-7 xl:max-w-lg font-heading md:text-base  md:leading-7 text-slate-700  md:text-base lg:text-lg xl:text-xl">
+              Ingeniería de menú y neuromarketing para vender más a través de la carta digital.
+              Sin conocimiento técnico.
+            </p>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center justify-center md:justify-start">
-              <BlurFade delay={0.6}>
-                <div className="w-full sm:w-auto">
-                  <CTAButton />
-                </div>
-              </BlurFade>
-              <BlurFade delay={0.8}>
-                <div className="flex w-full flex-col gap-3 sm:w-auto">
-                  <Link
-                    href={EXAMPLE_MENU_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={buttonVariants({ variant: "secondary", className: "w-full sm:min-w-40 sm:w-auto h-13 sm:h-10" })}
-                    {...trackAttrs(ANALYTICS_EVENTS.EXAMPLE_MENU_CLICK, {
-                      label: "Ver carta de ejemplo",
-                      location: "hero",
-                      linkUrl: EXAMPLE_MENU_URL,
-                    })}
-                  >
-                    Ver carta de ejemplo
-                  </Link>
-
-                </div>
-              </BlurFade>
-            </div>
-            <BlurFade delay={0.9}>
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-
-                <div className="flex -space-x-2">
-                  <Image src="/images/testimonials/marisa/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
-                  <Image src="/images/testimonials/taberna-casera/logo.webp" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
-                  <Image src="/images/testimonials/arau/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
-                  <Image src="/images/testimonials/goyos/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
-                </div>
-                <p className="text-lg md:text-2xl font-semibold text-slate-900">4.5</p>
-                <div className="scale-75 -ml-3 md:scale-100 md:-ml-0">
-                  <p className="text-xs font-semibold text-slate-700">Excellent</p>
-                  <p className="text-xs tracking-wide text-emerald-700">★★★★★</p>
-                </div>
+              <div className="w-full sm:w-auto">
+                <CTAButton />
+              </div>
+              <div className="flex w-full flex-col gap-3 sm:w-auto">
+                <Link
+                  href={EXAMPLE_MENU_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonVariants({ variant: "secondary", className: "w-full sm:min-w-40 sm:w-auto h-13 sm:h-10" })}
+                  {...trackAttrs(ANALYTICS_EVENTS.EXAMPLE_MENU_CLICK, {
+                    label: "Ver carta de ejemplo",
+                    location: "hero",
+                    linkUrl: EXAMPLE_MENU_URL,
+                  })}
+                >
+                  Ver carta de ejemplo
+                </Link>
 
               </div>
-            </BlurFade>
+            </div>
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+
+              <div className="flex -space-x-2">
+                <Image src="/images/testimonials/marisa/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+                <Image src="/images/testimonials/taberna-casera/logo.webp" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+                <Image src="/images/testimonials/arau/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+                <Image src="/images/testimonials/goyos/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+              </div>
+              <p className="text-lg md:text-2xl font-semibold text-slate-900">4.5</p>
+              <div className="scale-75 -ml-3 md:scale-100 md:-ml-0">
+                <p className="text-xs font-semibold text-slate-700">Excellent</p>
+                <p className="text-xs tracking-wide text-emerald-700">★★★★★</p>
+              </div>
+
+            </div>
           </div>
           
 

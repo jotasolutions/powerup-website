@@ -109,7 +109,6 @@ export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
                       isActive ? "opacity-100 scale-100" : "opacity-35 scale-80"
                     )}
                     sizes="251px"
-                    priority={isActive}
                   />
                 </div>
               </div>
