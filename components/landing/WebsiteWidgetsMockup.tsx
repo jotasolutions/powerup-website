@@ -220,7 +220,6 @@ export function WebsiteWidgetsMockup() {
         height={1500}
         className="relative z-20 mx-auto h-auto w-full scale-105 object-contain sm:scale-110 lg:scale-120"
         onLoad={measure}
-        priority
       />
 
       {WIDGETS.map((w, i) => (

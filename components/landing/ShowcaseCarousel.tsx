@@ -164,7 +164,6 @@ export function ShowcaseCarousel({
                       height={434}
                       className={mediaClassName}
                       sizes="201px"
-                      priority={isActive}
                     />
                   )}
                   <Image
@@ -176,7 +175,6 @@ export function ShowcaseCarousel({
                       isActive ? "opacity-100 scale-100" : "opacity-35 scale-80"
                     )}
                     sizes="251px"
-                    priority={isActive}
                   />
                 </div>
               </div>

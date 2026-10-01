@@ -42,7 +42,6 @@ export function DifferentiationSection() {
                   width={400}
                   height={400}
                   className="mx-auto h-auto w-[260px] rounded-xl object-contain sm:w-[320px] md:w-[375px]"
-                  priority
                 />
               </motion.div>
               <motion.div
@@ -64,7 +63,6 @@ export function DifferentiationSection() {
                   width={130}
                   height={130}
                   className="mx-auto h-auto w-[72px] object-contain drop-shadow-xl sm:w-[90px] md:w-[100px]"
-                  priority
                 />
               </motion.div>
             </div>
