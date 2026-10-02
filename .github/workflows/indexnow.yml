@@ -1,0 +1,71 @@
+# Avisa a IndexNow (Bing y los demás buscadores que lo usan) de los posts y textos de tema del blog
+# que cambian al llegar a main, en cuanto Vercel los publica en producción. Solo lee el repo: no usa
+# secretos ni toca el despliegue. Qué avisa y cómo está en lib/blog/scripts/indexnow.mts.
+name: IndexNow del blog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/blog/*.md"
+      - "content/blog/temas/*.md"
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "URLs del blog separadas por espacios. Vacío: todas las del sitemap."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  deployments: read
+
+concurrency:
+  group: indexnow-blog
+  cancel-in-progress: false
+
+jobs:
+  avisar:
+    # Una copia del repo en otra cuenta no publica esta web.
+    if: github.repository == 'jotasolutions/powerup-website'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Todo el historial sin el contenido de los archivos: basta para comparar dos commits cualesquiera.
+          fetch-depth: 0
+          filter: blob:none
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Esperar a que Vercel publique este commit en producción
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Un fallo puntual de la API de GitHub no corta la espera: se vuelve a mirar en 15 segundos.
+          for _ in $(seq 60); do
+            id=$(gh api "repos/$GITHUB_REPOSITORY/deployments?sha=$GITHUB_SHA&environment=Production&per_page=1" --jq '.[0].id // empty' || true)
+            if [ -n "$id" ]; then
+              state=$(gh api "repos/$GITHUB_REPOSITORY/deployments/$id/statuses?per_page=1" --jq '.[0].state // empty' || true)
+              case "$state" in
+                success) exit 0 ;;
+                failure|error) echo "::error::Vercel no pudo publicar este commit en producción"; exit 1 ;;
+              esac
+            fi
+            sleep 15
+          done
+          echo "::error::Vercel no publicó este commit en producción en 15 minutos"
+          exit 1
+      - name: Avisar de los cambios
+        if: github.event_name == 'push'
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: node lib/blog/scripts/indexnow.mts --cambios "$BEFORE" "$GITHUB_SHA"
+      - name: Avisar a mano
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          URLS: ${{ inputs.urls }}
+        run: node lib/blog/scripts/indexnow.mts ${URLS:---todo}
