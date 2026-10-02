@@ -3,7 +3,9 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { WebsiteWidgetsMockup } from "@/components/landing/WebsiteWidgetsMockup"
 import { Check, CreditCard } from "lucide-react"
-import { CTAButton } from "../CTAButton"
+import Link from "next/link"
+import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
+import { Button } from "../ui/button"
 import { BlurFade } from "../ui/blur-fade"
 
 const checklist = [
@@ -50,7 +52,13 @@ export function WebsiteSection() {
 
 
             <div className="flex w-full flex-col gap-2 sm:w-auto">
-              <CTAButton label="Más información de la web" href="/pagina-web" icon={null} target="_self" />
+              {/* Goes to another page of this site, so it counts as navigation, not as a sign-up. */}
+              <Link
+                href="/pagina-web"
+                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, { label: "Más información de la web" })}
+              >
+                <Button className="w-full sm:w-auto h-13 sm:h-10">Más información de la web</Button>
+              </Link>
             
             </div>
           </div>

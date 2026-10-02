@@ -195,7 +195,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
               )}
             </div>
 
-            <CTAButton />
+            <CTAButton location="pricing-pro" />
           </article>
         </div>
 
@@ -241,7 +241,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
               </div>
             </div>
 
-            <CTAButton />
+            <CTAButton location="pricing-free" />
           </article>
           {/*
           <Button variant="link">Ver las diferencias entre Pro y Free <ArrowRight className="size-4" /></Button>
