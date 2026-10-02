@@ -38,7 +38,7 @@ function TrialStepCard({
 
 export function PricingTrialSection() {
   return (
-    <SectionContainer className="relative overflow-hidden bg-gradient-to-br from-lime-50 via-green-50 to-emerald-100 py-24 md:py-32">
+    <SectionContainer id="prueba-gratis" className="relative overflow-hidden bg-gradient-to-br from-lime-50 via-green-50 to-emerald-100 py-24 md:py-32">
       <Image
         src="/images/cercles.svg"
         alt=""

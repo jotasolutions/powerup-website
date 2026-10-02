@@ -5,10 +5,13 @@ import { Button } from "../ui/button"
 import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 import Image from "next/image"
+import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
+
+const WHATSAPP_URL = `https://wa.me/34651332202?text=${encodeURIComponent("Hola, tengo una pregunta sobre PowerUp Menu")}`
 
 export function FaqSection() {
   return (
-    <SectionContainer >
+    <SectionContainer id="preguntas">
       <BlurFade inView inViewMargin="-80px">
         <h2 className="section-title">Te estaras preguntando</h2>
       </BlurFade>
@@ -36,10 +39,17 @@ export function FaqSection() {
               Nuestro equipo respondera todas tus preguntas en un momento.
             </p>
           </div>
-          <Button variant="whatsapp" className="w-full">
-            <Image src="/icons/whatsapp-icon.svg" alt="whatsapp" width={16} height={16} />
+          <Button variant="whatsapp" className="w-full" asChild>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, { label: "whatsapp" })}
+            >
+              <Image src="/icons/whatsapp-icon.svg" alt="whatsapp" width={16} height={16} />
 
-            Pregúntanos
+              Pregúntanos
+            </a>
           </Button>
         </aside>
       </div>

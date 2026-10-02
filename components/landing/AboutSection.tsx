@@ -15,7 +15,7 @@ const aboutImageViewport = {
 
 export function AboutSection() {
   return (
-    <SectionContainer >
+    <SectionContainer id="sobre-nosotros">
       <div className="flex flex-col-reverse gap-8 md:grid md:grid-cols-2 md:items-center gap-12 md:gap-10 ">
         <div className="space-y-4 col-span-1">
           <BlurFade inView inViewMargin="-80px">

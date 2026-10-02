@@ -13,6 +13,14 @@ export function isWebsiteLandingPath(pathname: string | null): boolean {
 
 export type AttributionParams = Record<string, string>
 
+// Only campaign data travels to the sign-up links: UTM tags and the ad click IDs of Google, Meta and
+// Microsoft. Anything else in the URL (gtm_debug, page filters…) stays out.
+const CLICK_ID_PARAMS = new Set(["gclid", "gbraid", "wbraid", "fbclid", "msclkid"])
+
+function isCampaignParam(key: string): boolean {
+  return key.startsWith("utm_") || CLICK_ID_PARAMS.has(key)
+}
+
 export function getStoredAttribution(): AttributionParams {
   if (typeof window === "undefined") return {}
 
@@ -24,8 +32,9 @@ export function getStoredAttribution(): AttributionParams {
     if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {}
 
     const result: AttributionParams = {}
+    // Filtering on read also drops what older versions stored, like gtm_debug.
     for (const [key, value] of Object.entries(parsed)) {
-      if (typeof value === "string") result[key] = value
+      if (typeof value === "string" && isCampaignParam(key)) result[key] = value
     }
     return result
   } catch {
@@ -37,16 +46,16 @@ export function captureAttributionFromSearch(search: string): void {
   if (typeof window === "undefined") return
 
   const params = new URLSearchParams(search.startsWith("?") ? search : `?${search}`)
-  if ([...params.keys()].length === 0) return
 
   const incoming: AttributionParams = {}
   params.forEach((value, key) => {
-    incoming[key] = value
+    if (isCampaignParam(key)) incoming[key] = value
   })
+  if (Object.keys(incoming).length === 0) return
 
   try {
-    const merged = { ...getStoredAttribution(), ...incoming }
-    localStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(merged))
+    // A new campaign replaces the previous one whole, so data from two visits never mixes.
+    localStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(incoming))
   } catch {
     // Ignore quota / private mode errors
   }

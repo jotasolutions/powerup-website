@@ -52,7 +52,7 @@ function ProFeaturePanel({
 
 export function PricingProIncludesSection() {
   return (
-    <SectionContainer className="relative overflow-hidden bg-zinc-900 py-16 md:py-20">
+    <SectionContainer id="incluye-pro" className="relative overflow-hidden bg-zinc-900 py-16 md:py-20">
       <Image
         src="/images/cercles.svg"
         alt=""

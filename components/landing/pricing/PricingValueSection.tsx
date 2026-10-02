@@ -60,7 +60,7 @@ export function PricingValueSection() {
   const bottomRow = pricingValueCards.slice(3)
 
   return (
-    <SectionContainer>
+    <SectionContainer id="por-que-pro">
       <div className="space-y-10 md:space-y-12">
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <BlurFade inView inViewMargin="-80px">

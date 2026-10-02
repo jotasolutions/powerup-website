@@ -12,7 +12,7 @@ import { websiteAnalyticsItems } from "./website-section-data"
 
 export function WebsiteAnalyticsSection() {
   return (
-    <SectionContainer id="website-pages">
+    <SectionContainer id="website-analytics">
       <div
         className={cn(
           "grid items-center gap-8 md:gap-10 lg:grid-cols-2",
@@ -42,7 +42,7 @@ export function WebsiteAnalyticsSection() {
               </li>
             ))}
           </ul>
-          <CTAButton label="Pruébalo gratis" location="website-pages" />
+          <CTAButton label="Pruébalo gratis" location="website-analytics" />
         </div>
 
       </div>

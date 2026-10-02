@@ -115,7 +115,7 @@ function AnalyticsCard({
 
 export function AnalyticsSection() {
   return (
-    <SectionContainer>
+    <SectionContainer id="conoce-clientes">
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
