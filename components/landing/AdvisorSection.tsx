@@ -10,10 +10,18 @@ import Image from "next/image";
 
 // The form and the Google Maps it loads on mount come in when the section gets within a screen
 // of the viewport, so they don't weigh on the page's first load (the blog's AdvisorDialog does the same).
-const AdvisorWidget = dynamic(() => import("../AdvisorWidget").then((module) => module.AdvisorWidget), {
-    ssr: false,
-    loading: () => <AdvisorWidgetPlaceholder />,
-});
+// If its code can't be downloaded (a network cut, or a deploy since the page opened), the
+// placeholder stays: a failed import here would otherwise take the whole page down.
+const AdvisorWidget = dynamic(
+    () =>
+        import("../AdvisorWidget")
+            .then((module) => module.AdvisorWidget)
+            .catch(() => AdvisorWidgetPlaceholder),
+    {
+        ssr: false,
+        loading: () => <AdvisorWidgetPlaceholder />,
+    }
+);
 
 // Same box and height as the form's first step, measured from 360 to 1440 px wide: its upload
 // box is one line shorter from about 453 px. Keeps the page from moving when the form arrives.
