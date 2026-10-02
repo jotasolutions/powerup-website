@@ -2,7 +2,7 @@
 
 Este documento es la referencia para las sesiones de IA que cambian esta web, y también para leer
 los informes. Describe lo que está publicado:
-- el código de `main` a 30-09-2026 (`5501d7b`);
+- el código de `main` a 02-10-2026 (`60b2ece`);
 - el contenedor de GTM `GTM-WX5BXSST` en su versión 22.
 
 Si cambias algo de lo que se describe aquí, actualiza este documento en el mismo PR (apartado 9).
