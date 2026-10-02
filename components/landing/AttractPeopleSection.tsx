@@ -2,10 +2,10 @@
 import { SectionContainer } from "@/components/landing/SectionContainer"
 import { attractFeatures } from "@/components/landing/section-data"
 import { CTAButton } from "../CTAButton"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import type { LottieRefCurrentProps } from "lottie-react"
 import { motion, useInView, useReducedMotion } from "motion/react"
-import Lottie from "lottie-react"
+import { LazyLottie, type LottieAnimation } from "./LazyLottie"
 import Image from "next/image"
 import { BlurFade } from "../ui/blur-fade"
 
@@ -29,7 +29,7 @@ function AttractCard({
 }: {
   title: string
   description: string
-  animation: unknown
+  animation: LottieAnimation
   index: number
 }) {
   const lottieRef = useRef<LottieRefCurrentProps | null>(null)
@@ -40,9 +40,11 @@ function AttractCard({
     once: true,
     margin: revealViewport.margin,
   })
+  // The animation arrives on its own (LazyLottie): play it once it's both in view and loaded.
+  const [isAnimationReady, setIsAnimationReady] = useState(false)
 
   useEffect(() => {
-    if (!isCardInView) return
+    if (!isCardInView || !isAnimationReady) return
 
     const play = () => lottieRef.current?.goToAndPlay(0, true)
 
@@ -53,7 +55,7 @@ function AttractCard({
 
     const id = window.setTimeout(play, (cardDelay * 1000 + 400))
     return () => window.clearTimeout(id)
-  }, [isCardInView, cardDelay, prefersReducedMotion])
+  }, [isCardInView, isAnimationReady, cardDelay, prefersReducedMotion])
 
   return (
     <article className="space-y-4">
@@ -66,11 +68,12 @@ function AttractCard({
         transition={{ duration: 0.55, ease: revealEase, delay: cardDelay }}
         onMouseEnter={() => lottieRef.current?.goToAndPlay(0, true)}
       >
-        <Lottie
+        <LazyLottie
+          animation={animation}
           lottieRef={lottieRef}
-          animationData={animation}
           loop={false}
           autoplay={false}
+          onDOMLoaded={() => setIsAnimationReady(true)}
           className="z-20 relative"
           style={{ width: '100%', height: 'auto' }}
         />

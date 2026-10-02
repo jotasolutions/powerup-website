@@ -2,32 +2,38 @@
 import { Button, buttonVariants } from "@/components/ui/button"
 import { QrCode } from "lucide-react"
 import Image from "next/image"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState, type ComponentProps } from "react"
 import type { LottieRefCurrentProps } from "lottie-react"
 import { Highlighter } from "../ui/highlighter"
 import { CTAButton } from "../CTAButton"
-import widget1 from "../../public/images/hero/widget1.json";
-import widget2 from "../../public/images/hero/widget2.json";
-import widget3 from "../../public/images/hero/widget3.json";
-import widget4 from "../../public/images/hero/widget4.json";
-import Lottie, { type LottieComponentProps } from "lottie-react";
 import { motion } from "motion/react"
 import Link from "next/link"
 import { EXAMPLE_MENU_URL, ExampleMenuQr } from "./ExampleMenuQr"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
+import { LazyLottie, type LottieAnimation } from "./LazyLottie"
+
+// The widget animations only load where they're shown, from tablet up (LazyLottie). All are 320x180.
+const heroWidget = (load: LottieAnimation["load"]): LottieAnimation => ({ load, ratio: 320 / 180 })
+const widget1 = heroWidget(() => import("../../public/images/hero/widget1.json"))
+const widget2 = heroWidget(() => import("../../public/images/hero/widget2.json"))
+const widget3 = heroWidget(() => import("../../public/images/hero/widget3.json"))
+const widget4 = heroWidget(() => import("../../public/images/hero/widget4.json"))
 
 export function DelayedLottie({
   delayMs,
   ...props
-}: LottieComponentProps & { delayMs: number }) {
+}: ComponentProps<typeof LazyLottie> & { delayMs: number }) {
   const lottieRef = useRef<LottieRefCurrentProps | null>(null)
+  // The delay counts from when the animation has loaded, not from mount.
+  const [isReady, setIsReady] = useState(false)
   useEffect(() => {
+    if (!isReady) return
     const id = window.setTimeout(() => {
       lottieRef.current?.play()
     }, delayMs)
     return () => window.clearTimeout(id)
-  }, [delayMs])
-  return <Lottie {...props} autoplay={false} lottieRef={lottieRef} />
+  }, [isReady, delayMs])
+  return <LazyLottie {...props} autoplay={false} lottieRef={lottieRef} onDOMLoaded={() => setIsReady(true)} />
 }
 
 export function HeroSection() {
@@ -50,8 +56,8 @@ export function HeroSection() {
             loading="eager"
             className="absolute top-[180px] xl:top-[140px] -right-30 z-30  w-[650px] object-contain "
           />
-          <Lottie
-            animationData={widget1}
+          <LazyLottie
+            animation={widget1}
             loop={false}
             autoplay={true}
             style={{ width: '290px', height: 'auto' }}
@@ -59,21 +65,21 @@ export function HeroSection() {
           />
           <DelayedLottie
             delayMs={400}
-            animationData={widget2}
+            animation={widget2}
             loop={false}
             style={{ width: '290px', height: 'auto' }}
             className="absolute  z-30 w-[160px] top-[290px] w-[320px] hidden lg:block"
           />
           <DelayedLottie
             delayMs={800}
-            animationData={widget3}
+            animation={widget3}
             loop={false}
             style={{ width: '290px', height: 'auto' }}
             className="absolute lg:top-[280px]  lg:right-[360px]  z-40 w-[150px] hidden md:block md:-bottom-[200px] md:right-[350px]"
           />
           <DelayedLottie
             delayMs={1200}
-            animationData={widget4}
+            animation={widget4}
             loop={false}
             style={{ width: '300px', height: 'auto' }}
             className="absolute lg:bottom-[100px] lg:right-[10px] z-40 w-[160px] hidden md:block md:bottom-[100px] md:right-[100px]"

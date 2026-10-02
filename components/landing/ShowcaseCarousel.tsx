@@ -10,6 +10,8 @@ import { ANALYTICS_EVENTS, trackAttrs, trackEvent, type AnalyticsEventName } fro
 import { cn } from "@/lib/utils"
 import { BlurFade } from "../ui/blur-fade"
 import { Button } from "../ui/button"
+import { LazyVideo } from "./LazyVideo"
+import { useNearViewport } from "./use-near-viewport"
 
 export type ShowcaseItem = {
   src: string
@@ -46,7 +48,10 @@ export function ShowcaseCarousel({
 }: ShowcaseCarouselProps) {
   const [selectedItem, setSelectedItem] = useState(1)
   const touchStartX = useRef<number | null>(null)
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+  const containerRef = useRef<HTMLDivElement>(null)
+  // Near the screen, the active slide and its neighbours fetch their first frame, so a swipe shows
+  // the next video at once. Each video plays only while it's visible (LazyVideo).
+  const isNear = useNearViewport(containerRef)
 
   const firstSlideIndex = 0
   const lastSlideIndex = items.length - 1
@@ -54,12 +59,6 @@ export function ShowcaseCarousel({
   const slideGap = 72
   const slideStep = slideWidth + slideGap
   const swipeThreshold = 40
-
-  useEffect(() => {
-    videoRefs.current.forEach((video) => {
-      void video?.play()
-    })
-  }, [])
 
   useEffect(() => {
     if (!slideTracking) return
@@ -81,7 +80,7 @@ export function ShowcaseCarousel({
   return (
 
 
-    <div className="relative w-full px-2 sm:px-6">
+    <div ref={containerRef} className="relative w-full px-2 sm:px-6">
       <button
         type="button"
         aria-label="Slide anterior"
@@ -142,20 +141,13 @@ export function ShowcaseCarousel({
               <div key={`${item.src}-${index}`} className="w-[251px] shrink-0 pb-8 sm:pb-10">
                 <div className="relative aspect-[15/32] w-[251px]">
                   {isVideo ? (
-                    <video
-                      ref={(element) => {
-                        videoRefs.current[index] = element
-                      }}
+                    <LazyVideo
+                      src={item.src}
                       className={mediaClassName}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
+                      preloadFirstFrame={isNear && Math.abs(index - selectedItem) <= 1}
                     >
-                      <source src={item.src} type="video/mp4" />
                       Tu navegador no soporta el video.
-                    </video>
+                    </LazyVideo>
                   ) : (
                     <Image
                       src={item.src}

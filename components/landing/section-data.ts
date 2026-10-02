@@ -1,12 +1,16 @@
-import feature1 from '../../public/images/features/feature1.json'
-import feature2 from '../../public/images/features/feature2.json'
-import feature3 from '../../public/images/features/feature3.json'
-import feature4 from '../../public/images/features/feature4.json'
-import feature5 from '../../public/images/features/feature5.json'
-import feature6 from '../../public/images/features/feature6.json'
-import reports from '../../public/images/features/reports.json'
-import mostViewedDishes from '../../public/images/features/most-viewed.json'
-import campaigns from '../../public/images/features/campaigns.json'
+import type { LottieAnimation } from "@/components/landing/LazyLottie"
+
+// Each card's animation is downloaded when the card gets near the screen (LazyLottie), so pages
+// that only use the rest of this file don't load them. `ratio` is each animation's `w` / `h`.
+const feature1: LottieAnimation = { load: () => import("../../public/images/features/feature1.json"), ratio: 338 / 256 }
+const feature2: LottieAnimation = { load: () => import("../../public/images/features/feature2.json"), ratio: 338 / 256 }
+const feature3: LottieAnimation = { load: () => import("../../public/images/features/feature3.json"), ratio: 338 / 256 }
+const feature4: LottieAnimation = { load: () => import("../../public/images/features/feature4.json"), ratio: 338 / 256 }
+const feature5: LottieAnimation = { load: () => import("../../public/images/features/feature5.json"), ratio: 338 / 256 }
+const feature6: LottieAnimation = { load: () => import("../../public/images/features/feature6.json"), ratio: 338 / 256 }
+const reports: LottieAnimation = { load: () => import("../../public/images/features/reports.json"), ratio: 808 / 525 }
+const mostViewedDishes: LottieAnimation = { load: () => import("../../public/images/features/most-viewed.json"), ratio: 804 / 578 }
+const campaigns: LottieAnimation = { load: () => import("../../public/images/features/campaigns.json"), ratio: 804 / 578 }
 
 export const sellMoreFeatures = [
   {
@@ -136,54 +140,55 @@ export const steps = [
   },
 ]
 
+// width and height are the videos' real size (all 958x524): AdminCarousel reserves the box with them.
 export const adminCarouselSlides = [
   {
     src: "/videos/admin-demo/create-promo.mp4",
     alt: "Panel de administración: creación de promociones",
-    width: 889,
-    height: 483,
+    width: 958,
+    height: 524,
     title: "Crea promociones",
   },
   {
     src: "/videos/admin-demo/cross-selling.mp4",
     alt: "Panel de administración: cross-selling",
-    width: 3020,
-    height: 1658,
+    width: 958,
+    height: 524,
     title: "Añade maridaje a los platos",
   },
   {
     src: "/videos/admin-demo/dishes-visibility.mp4",
     alt: "Panel de administración: activación de platos",
-    width: 3020,
-    height: 1658,
+    width: 958,
+    height: 524,
     title: "Activa o desactiva platos",
   },
   {
     src: "/videos/admin-demo/extra-ingredients.mp4",
     alt: "Panel de administración: añadir extras",
-    width: 3020,
-    height: 1658,
+    width: 958,
+    height: 524,
     title: "Añade extras a los platos",
   },
   {
     src: "/videos/admin-demo/reorder.mp4",
     alt: "Panel de administración: reordenación de platos",
-    width: 3020,
-    height: 1658,
+    width: 958,
+    height: 524,
     title: "Reordena tu carta",
   },
   {
     src: "/videos/admin-demo/schedule.mp4",
     alt: "Panel de administración: programación de platos o secciones",
-    width: 3020,
-    height: 1658,
+    width: 958,
+    height: 524,
     title: "Programa tus platos o secciones",
   },
   {
     src: "/videos/admin-demo/website.mp4",
     alt: "Panel de administración: edición de página web",
-    width: 3020,
-    height: 1658,
+    width: 958,
+    height: 524,
     title: "Edita tu página web",
   },
 ] as const
