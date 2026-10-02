@@ -11,7 +11,7 @@ type IntroSectionProps = {
 
 export function BigTextSection({ paragraph = defaultParagraph, showImages = true }: IntroSectionProps) {
   return (
-    <SectionContainer className="py-0 md:py-0 lg:py-0">
+    <SectionContainer id="texto-grande" className="py-0 md:py-0 lg:py-0">
       <div className="py-6 md:py-8">
         <div className="space-y-4 relative">
           <ScrollRevealParagraph

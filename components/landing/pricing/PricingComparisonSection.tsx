@@ -24,7 +24,7 @@ function ComparisonCellContent({ cell }: { cell: ComparisonCell }) {
 
 export function PricingComparisonSection() {
   return (
-    <SectionContainer className="bg-white">
+    <SectionContainer id="comparativa" className="bg-white">
       <div className="mx-auto max-w-5xl space-y-10 md:space-y-12">
         <BlurFade inView inViewMargin="-80px">
           <h2 className="section-title text-center">Comparativa</h2>

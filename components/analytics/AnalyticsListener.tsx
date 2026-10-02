@@ -18,6 +18,18 @@ function getLinkUrl(element: HTMLElement): string | undefined {
   return anchor?.href || undefined;
 }
 
+// A section counts as seen when 35% of it is on screen at once. One taller than about three
+// screens never gets there, so it counts when it fills at least half the screen instead.
+const SECTION_VISIBLE_SHARE = 0.35;
+const TALL_SECTION_SCREEN_SHARE = 0.5;
+const TALL_SECTION_THRESHOLDS = [0.02, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3];
+
+function fillsHalfTheScreenWhileTall(entry: IntersectionObserverEntry): boolean {
+  const screenHeight = entry.rootBounds?.height ?? window.innerHeight;
+  const isTall = entry.boundingClientRect.height * SECTION_VISIBLE_SHARE > screenHeight;
+  return isTall && entry.intersectionRect.height >= screenHeight * TALL_SECTION_SCREEN_SHARE;
+}
+
 export function AnalyticsListener() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -52,28 +64,47 @@ export function AnalyticsListener() {
   useEffect(() => {
     if (!hasAnalyticsConsent) return;
 
+    const markSectionViewed = (target: Element) => {
+      const section = (target as HTMLElement).dataset.trackSection;
+      if (!section || viewedSections.current.has(section)) return;
+
+      viewedSections.current.add(section);
+      trackEvent(ANALYTICS_EVENTS.SECTION_VIEW, {
+        section_name: section,
+        page_path: pathname,
+      });
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-
-          const section = (entry.target as HTMLElement).dataset.trackSection;
-          if (!section || viewedSections.current.has(section)) continue;
-
-          viewedSections.current.add(section);
-          trackEvent(ANALYTICS_EVENTS.SECTION_VIEW, {
-            section_name: section,
-            page_path: pathname,
-          });
+          if (entry.isIntersecting) markSectionViewed(entry.target);
         }
       },
-      { threshold: 0.35 }
+      { threshold: SECTION_VISIBLE_SHARE }
+    );
+
+    const tallSectionObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && fillsHalfTheScreenWhileTall(entry)) {
+            markSectionViewed(entry.target);
+          }
+        }
+      },
+      { threshold: TALL_SECTION_THRESHOLDS }
     );
 
     const sections = document.querySelectorAll("[data-track-section]");
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => {
+      observer.observe(section);
+      tallSectionObserver.observe(section);
+    });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      tallSectionObserver.disconnect();
+    };
   }, [hasAnalyticsConsent, pathname]);
 
   useEffect(() => {

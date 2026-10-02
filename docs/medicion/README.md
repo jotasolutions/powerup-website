@@ -2,7 +2,7 @@
 
 Este documento es la referencia para las sesiones de IA que cambian esta web, y también para leer
 los informes. Describe lo que está publicado:
-- el código de `main` a 02-10-2026 (`60b2ece`);
+- el código de `main` a 02-10-2026 (`60b2ece`), con los arreglos del bloque A (apartado 12);
 - el contenedor de GTM `GTM-WX5BXSST` en su versión 22.
 
 Si cambias algo de lo que se describe aquí, actualiza este documento en el mismo PR (apartado 9).
@@ -17,7 +17,7 @@ Si cambias algo de lo que se describe aquí, actualiza este documento en el mism
 | Píxel de Meta `1582188126799857` | `PageView` y `Lead` | GTM | Con GTM y, además, con las cookies de marketing aceptadas |
 | Umami (`umami.powerup.menu`) | Visitas, sin cookies | Etiqueta «Umami tracking code» de GTM | Con GTM: solo a quien acepta la analítica |
 | Vercel Web Analytics y Speed Insights | Visitas, sin cookies, y rendimiento | `app/layout.tsx` (`<Analytics/>` y `<SpeedInsights/>`). Los datos se ven en el panel de Vercel del equipo jotasolutions | Siempre, sin pasar por el banner |
-| Captura de atribución | Guarda los parámetros de la URL de llegada y los añade a los enlaces de alta | `components/AttributionCapture.tsx` y `lib/attribution.ts` (localStorage `powerup_attribution`) | Siempre |
+| Captura de atribución | Guarda los datos de campaña de la URL de llegada (los `utm_…` y los identificadores de clic `gclid`, `gbraid`, `wbraid`, `fbclid` y `msclkid`) y los añade a los enlaces de alta. Una campaña nueva sustituye entera a la anterior. Lo demás de la URL, como `gtm_debug`, se ignora | `components/AttributionCapture.tsx` y `lib/attribution.ts` (localStorage `powerup_attribution`) | Siempre |
 
 No hay Conversions API de Meta, y Consent Mode no funciona (apartado 2).
 
@@ -98,13 +98,13 @@ donde pasa el evento: la de la web o la del blog.
 | `page_view` | Abre o cambia de página, también sin recarga | `AnalyticsListener`, en cada cambio de ruta o de parámetros | `page_location`, `page_title` | Su parte | `PageView` (`page_path`, `eventID`) | No |
 | `sign_up_click` | Pulsa un botón de alta | `CTAButton` (casi todas las secciones), `NavMenu` (`nav_desktop`, `nav_mobile`), y `SignUpTextLink` y `PostCta` en el blog (`blog`) | `location`, `event_label`, `link_url`, `link_text` | Su parte; si pasa en el blog, también la web | `Lead` (`content_name` = etiqueta, `content_category` = enlace completo) | No |
 | `login_click` | Pulsa «Login» | `NavMenu` | Los mismos cuatro datos | Su parte | — | No |
-| `nav_click` | Usa el menú («Evalúa tu carta», «Página web», «Precios») o el pie («Blog», «Términos y condiciones», «Política de privacidad»), o pulsa «Analizar mi carta» en el blog (`label: advisor`) | `NavMenu`, `FooterSection` y `app/blog/_components/AdvisorDialog.tsx` | Los mismos cuatro datos | Su parte | — | No |
+| `nav_click` | Usa el menú («Evalúa tu carta», «Página web», «Precios») o el pie («Blog», «Términos y condiciones», «Política de privacidad»), pulsa «Más información de la web» en la home, o «Analizar mi carta» en el blog (`label: advisor`) | `NavMenu`, `FooterSection`, `WebsiteSection` y `app/blog/_components/AdvisorDialog.tsx` | Los mismos cuatro datos | Su parte | — | No |
 | `logo_click` | Pulsa el logo | `NavMenu` (`location: nav`) | Los mismos cuatro datos | Su parte | — | No |
-| `outbound_click` | Sale a otra web por un enlace marcado | Testimonios (Trustpilot, Google Maps y cartas de clientes), «Ver ejemplo» de `/pagina-web`, y en el blog Maestro, la prensa y los enlaces a Maestro dentro de los artículos (`lib/blog/markdown.ts`) | Los mismos cuatro datos | Su parte | — | No |
+| `outbound_click` | Sale a otra web por un enlace marcado | Testimonios (Trustpilot, Google Maps y cartas de clientes), «Pregúntanos» de las preguntas frecuentes de la home (WhatsApp, `label: whatsapp`), «Ver ejemplo» de `/pagina-web`, y en el blog Maestro, la prensa y los enlaces a Maestro dentro de los artículos (`lib/blog/markdown.ts`) | Los mismos cuatro datos | Su parte | — | No |
 | `example_menu_click` | Pulsa «Ver carta de ejemplo» | El hero de la home y el recuadro de los artículos | Los mismos cuatro datos | Su parte | — | No |
 | `menu_showcase_click` | Pulsa «Ver carta» en el carrusel de la home | `MenuShowcaseSection` (`menu_showcase`) | Los mismos cuatro datos | Web | — | No |
 | `menu_showcase_slide` | Cambia de diapositiva en el carrusel de la home. **También sale al cargar la home**, aunque nadie lo toque | `ShowcaseCarousel` | `location`; no llegan `slide_index` ni `menu_url` | Web | — | No |
-| `section_view` | Ve una sección: al menos el 35 % entra en pantalla. Una vez por sección y página | `AnalyticsListener`, en los elementos con `data-track-section`: un `SectionContainer` con `id`, y el hero | `section_name` | Su parte | — | No |
+| `section_view` | Ve una sección: al menos el 35 % entra en pantalla. Si la sección mide más de unas tres pantallas, eso no puede pasar, y cuenta cuando ocupa al menos media pantalla. Una vez por sección y página | `AnalyticsListener`, en los elementos con `data-track-section`: un `SectionContainer` con `id`, y el hero | `section_name` | Su parte | — | No |
 | `advisor_step_1_complete` | Completa el paso 1 del Advisor: elige su restaurante y sube archivos | `components/AdvisorWidget.tsx`, en la home (`#advisor`) y en el diálogo del blog | `location` (`advisor`); no llegan `restaurant_name` ni `files_count` | Su parte; si pasa en el blog, también la web | — | No |
 | `generate_lead` | Envía el paso 2 del Advisor (nombre, email, teléfono y rol) y el envío sale bien | `AdvisorWidget` | `location` y `form_name` (los dos `advisor`); no llegan `restaurant_name` ni `role` | Su parte; si pasa en el blog, también la web | — | **Sí**, en las dos propiedades |
 | `cookie_settings_open` | Abre «Cookies» en el pie | `components/CookieSettingsLink.tsx` | `location` (`footer`) | Su parte | — | No |
@@ -112,11 +112,9 @@ donde pasa el evento: la de la web o la del blog.
 | `file_upload` | — | Está definido en `events.ts`, pero nadie lo manda y GTM no lo recoge | — | — | — | — |
 
 Notas:
-- `sign_up_click` no siempre es un alta de carta:
-  - en `/pagina-web`, los botones llevan al asistente de web (`alta-pagina-web.powerup.menu`);
-  - el botón «Más información de la web» de la home lleva a `/pagina-web`.
-
-  En Analytics se distinguen por `link_url` (apartado 8).
+- `sign_up_click` no siempre es un alta de carta: en `/pagina-web`, los botones llevan al
+  asistente de web (`alta-pagina-web.powerup.menu`). En Analytics se distinguen por `link_url`
+  (apartado 8).
 - A Meta, el `Lead` le llega de cada `sign_up_click`, no de `generate_lead`. Qué cuenta como Lead
   en Meta se decide en la fase 1.
 - Todos los eventos llevan `event_id` en el dataLayer. Meta lo usa como `eventID`; Analytics no lo
@@ -133,25 +131,33 @@ Salen del código y los comprobé en las páginas publicadas el 30-09.
 **`location`:**
 - menú: `nav` (el logo), `nav_desktop` y `nav_mobile`;
 - pie: `footer`;
-- home: `hero`, `vende-mas`, `features`, `admin`, `diferenciacion`, `advisor`, `pagina-web`,
-  `testimonials`, `testimonials_carousel`, `menu_showcase` y `pricing`;
+- home: `hero`, `vende-mas`, `atrae-gente`, `conoce-clientes`, `como-funciona`, `features`,
+  `admin`, `diferenciacion`, `advisor`, `pagina-web`, `testimonials`, `testimonials_carousel`,
+  `menu_showcase`, `pricing`, `preguntas` y `sobre-nosotros`. En las tarjetas de precios, los
+  botones llevan `pricing-pro` y `pricing-free`;
 - `/pagina-web`: `website_hero`, `website-pain-points`, `website_benefits`, `website_outstand`,
-  `website-pages`, `website_builder`, `website_comparison` y `website_pricing`. En el código
+  `website-pages`, `website-analytics`, `website_builder`, `website_comparison` y
+  `website_pricing`. En el código
   también están `website_final_cta` (su `location`) y `website-final-cta` (su `section_name`), de
   `WebsiteFinalCtaSection`: `app/pagina-web/page.tsx` la importa, pero no la muestra;
-- `/pricing`: `pricing`;
+- `/pricing`: `pricing-pro` y `pricing-free` (las dos tarjetas), `prueba-gratis`, `incluye-free`,
+  `incluye-pro`, `comparativa` y `como-funciona`. `pricing` sigue siendo la del cambio entre pago
+  anual y mensual;
 - blog: `blog`.
 
 Una sección hecha con `SectionContainer id="…"` pasa su `id` como `location` a los botones que
 contiene. Por eso muchos valores coinciden con los de `section_name`.
 
 **`section_name`** (el `id` de cada sección):
-- home: `hero`, `vende-mas`, `features`, `admin`, `diferenciacion`, `advisor`, `pagina-web`,
-  `testimonials`, `menu-showcase`, `pricing` y `footer`;
-- `/pagina-web`: `website-hero`, `website-pain-points`, `website-benefits`, `website-showcase`,
-  `website-outstand`, `website-pages` (en dos secciones), `website-builder`, `testimonials`,
-  `website-comparison`, `website-pricing` y `footer`;
-- `/pricing`: `pricing`, `testimonials` y `footer`;
+- home: `hero`, `texto-grande`, `vende-mas`, `atrae-gente`, `conoce-clientes`, `como-funciona`,
+  `features`, `admin`, `diferenciacion`, `advisor`, `pagina-web`, `testimonials`, `menu-showcase`,
+  `pricing`, `preguntas`, `sobre-nosotros` y `footer`;
+- `/pagina-web`: `website-hero`, `website-pain-points`, `texto-grande`, `website-benefits`,
+  `website-showcase`, `website-outstand`, `website-pages`, `website-analytics`, `website-builder`,
+  `testimonials`, `website-comparison`, `website-pricing` y `footer`;
+- `/pricing`: `pricing`, `prueba-gratis`, `incluye-free`, `incluye-pro`, `texto-grande`,
+  `comparativa`, `testimonials`, `como-funciona` y `footer`. En el código también está
+  `por-que-pro`, de `PricingValueSection`: `app/pricing/page.tsx` la importa, pero no la muestra;
 - el blog y las páginas legales: solo `footer`.
 
 ## 6. Lo que añade Google por su cuenta
@@ -196,59 +202,32 @@ Es la medición mejorada, igual en los dos flujos. Lo comprobé en el `gtag/js` 
 Aquí solo se apuntan. Cada arreglo va con su propio plan y con el OK de Fede.
 
 **En el código de la web:**
-1. **Hay botones de alta sin `location`: 5 en la home y 5 en `/pricing`.**
-   - Están en secciones hechas con `SectionContainer` pero sin `id`: `AttractPeopleSection`,
-     `AnalyticsSection`, `HowItWorksSection`, `FaqSection`, `AboutSection` y las de
-     `components/landing/pricing/`.
-   - Esas secciones tampoco mandan `section_view`, como tampoco `BigTextSection`, el bloque de
-     texto grande de la home y de `/pricing`. En total, no se miden 6 de las 17 secciones de la
-     home ni 6 de las 9 de `/pricing`.
-   - En los informes, sus clics salen como «(not set)».
-2. **«Más información de la web» cuenta como clic de alta.** Es un `CTAButton` de `WebsiteSection`,
-   en la home, que lleva a `/pagina-web`. Cuenta como `sign_up_click`, y Meta lo recibe como Lead.
-3. **En `/pagina-web`, `sign_up_click` lleva al asistente de web**, no al alta de la carta. En
+1. **En `/pagina-web`, `sign_up_click` lleva al asistente de web**, no al alta de la carta. En
    Analytics se separan por `link_url`, pero Meta los junta en Lead.
-4. **En las tarjetas de precios, el botón del plan Pro y el del Free mandan lo mismo.** Son dos
-   `CTAButton` sin datos propios en `PricingCards.tsx`, dentro de la sección `pricing` de la home y
-   de `/pricing`: la misma etiqueta, el mismo enlace y la misma `location`. No se sabe cuál se
-   pulsó.
-5. **«Pregúntanos», el botón de WhatsApp de las preguntas frecuentes de la home, no hace nada.** Es
-   un `Button` sin enlace ni `trackAttrs()` en `FaqSection.tsx`: no lleva a WhatsApp y no se mide.
-   Comprobado en la web publicada el 01-10.
-6. **Dos secciones de `/pagina-web` tienen el mismo `id`**, `website-pages`:
-   `WebsiteAnalyticsSection` y `WebsitePagesSection`. Solo cuenta la primera que se ve.
-7. **En el móvil, las secciones muy altas pueden no contar.** `section_view` sale cuando se ve a
-   la vez el 35 % de la sección. Medido el 01-10 en un móvil de 375 × 812 px:
-   - `features` llega justo al 37 %, así que en móviles más pequeños no contaría;
-   - la sección del plan Pro de `/pricing` se queda en el 23 %: aunque tuviera `id`, no contaría
-     nunca.
-8. **Los valores de `location` mezclan guiones y guiones bajos**: `website-pages` frente a
+2. **Los valores de `location` mezclan guiones y guiones bajos**: `website-pages` frente a
    `website_hero`.
-9. **`logo_click` no está en `ANALYTICS_EVENTS`**, y `file_upload` está, pero no se usa.
-10. **`menu_showcase_slide` sale al cargar la home**, porque el carrusel lo manda al montarse. No
+3. **`logo_click` no está en `ANALYTICS_EVENTS`**, y `file_upload` está, pero no se usa.
+4. **`menu_showcase_slide` sale al cargar la home**, porque el carrusel lo manda al montarse. No
    siempre es un gesto de la persona.
-11. **Consent Mode no funciona** (apartado 2).
-12. **La captura de atribución guarda todos los parámetros de la URL**, no solo los UTM: también
-   `gtm_debug`, `fbclid` y otros. Luego los añade a los enlaces de alta y a los del asistente de
-   web.
+5. **Consent Mode no funciona** (apartado 2).
 
 **Fuera del código:**
 
-13. **Umami solo cuenta a quien acepta la analítica**, porque se carga desde GTM. Vercel Analytics
-    sí cuenta a todos.
-14. **El dominio de Vercel, `powerup-website-chi.vercel.app`, también se mide**, porque carga el
-    mismo GTM.
-15. **La recogida automática de datos proporcionados por el usuario está activada** en las dos
-    propiedades. Con ella, Google puede leer los emails y teléfonos que la persona escribe en la
-    web, por ejemplo en el Advisor, y enviarlos cifrados. Conviene revisar si se quiere y si la
-    política de privacidad lo cubre.
-16. **Meta.** El contenedor no apaga los eventos automáticos del píxel (`autoConfig`). Si están
-    activados en el Administrador de eventos, Meta añade eventos propios, como los clics en
-    botones.
-17. **«Tiempo real» y DebugView no enseñan todos los eventos.** Se comprobó el 29-09: los eventos
+6. **Umami solo cuenta a quien acepta la analítica**, porque se carga desde GTM. Vercel Analytics
+   sí cuenta a todos.
+7. **El dominio de Vercel, `powerup-website-chi.vercel.app`, también se mide**, porque carga el
+   mismo GTM.
+8. **La recogida automática de datos proporcionados por el usuario está activada** en las dos
+   propiedades. Con ella, Google puede leer los emails y teléfonos que la persona escribe en la
+   web, por ejemplo en el Advisor, y enviarlos cifrados. Conviene revisar si se quiere y si la
+   política de privacidad lo cubre.
+9. **Meta.** El contenedor no apaga los eventos automáticos del píxel (`autoConfig`). Si están
+   activados en el Administrador de eventos, Meta añade eventos propios, como los clics en
+   botones.
+10. **«Tiempo real» y DebugView no enseñan todos los eventos.** Se comprobó el 29-09: los eventos
     llegan y se cuentan en los informes, pero no siempre salen en vivo. Para comprobar números, usa
     el informe del día siguiente.
-18. **Cuando una visita pasa de la web al blog:**
+11. **Cuando una visita pasa de la web al blog:**
     - algunos eventos automáticos de Google, como el scroll o los clics salientes, pueden llegar
       también a la otra propiedad;
     - si la visita solo ve el blog, sus clics de alta y su Advisor llegan a la web sin el ajuste
@@ -327,3 +306,11 @@ Los cambios en Analytics o en Meta los hace Fede, o Claude in Chrome con su perm
 
   El mismo día, en Analytics: casillas del historial desmarcadas, dimensiones personalizadas,
   evento clave `generate_lead` y retención de 14 meses.
+- **02-10-2026, bloque A** (arreglos en el código de la web):
+  - nombre para las secciones que no lo tenían (apartado 5), y `website-analytics` para la segunda
+    `website-pages`;
+  - las secciones de más de unas tres pantallas cuentan cuando ocupan media pantalla;
+  - ubicaciones `pricing-pro` y `pricing-free` en las tarjetas de precios;
+  - «Más información de la web» pasa de `sign_up_click` a `nav_click`;
+  - «Pregúntanos» abre WhatsApp y manda `outbound_click`;
+  - la captura de atribución solo guarda datos de campaña.

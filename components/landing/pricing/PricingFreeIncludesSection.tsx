@@ -8,7 +8,7 @@ import { PricingFeatureCard } from "./PricingFeatureCard"
 
 export function PricingFreeIncludesSection() {
   return (
-    <SectionContainer className="bg-white">
+    <SectionContainer id="incluye-free" className="bg-white">
       <div className="mx-auto max-w-5xl space-y-10 md:space-y-14">
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <BlurFade inView inViewMargin="-80px">
