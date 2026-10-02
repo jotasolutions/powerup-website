@@ -9,6 +9,9 @@ import { AdvisorDialogProvider } from "./_components/AdvisorDialog"
 // a page that sets its own `alternates` or `openGraph` replaces the layout's whole object.
 export const metadata: Metadata = {
   title: { template: `%s | ${BLOG_NAME}`, default: BLOG_NAME },
+  // Search Console ownership (Fede's Google account); Google rechecks it, so don't remove it.
+  // It also verifies blog.powerup.menu: Google follows that home's 301 to /blog to find the tag.
+  verification: { google: "ntm9aSSyTmW9zG-OLq8FHIWLbQSRw8f5M5NyB_Ad23Y" },
 }
 
 export default function BlogLayout({ children }: { children: ReactNode }) {
