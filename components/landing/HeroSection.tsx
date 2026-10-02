@@ -111,7 +111,7 @@ export function HeroSection() {
               </Highlighter>
             </h1>
 
-            <p className="text-center text-base  sm:text-sm leading-6 md:text-left md:max-w-lg md:leading-7 xl:max-w-lg font-heading md:text-base  md:leading-7 text-slate-700  md:text-base lg:text-lg xl:text-xl">
+            <p className="text-center text-base  sm:text-sm leading-6 md:text-left md:max-w-[400px] lg:max-w-[420px] md:leading-7 xl:max-w-[480px] 2xl:max-w-lg font-heading md:text-base  md:leading-7 text-slate-700  md:text-base lg:text-lg xl:text-xl">
               Ingeniería de menú y neuromarketing para vender más a través de la carta digital.
               Sin conocimiento técnico.
             </p>
