@@ -2,9 +2,26 @@
 
 import { BadgeCheck, RotateCw } from "lucide-react";
 import { motion } from "motion/react";
-import { AdvisorWidget } from "../AdvisorWidget";
+import dynamic from "next/dynamic";
+import { useRef } from "react";
 import { SectionContainer } from "./SectionContainer";
+import { useNearViewport } from "./use-near-viewport";
 import Image from "next/image";
+
+// The form and the Google Maps it loads on mount come in when the section gets within a screen
+// of the viewport, so they don't weigh on the page's first load (the blog's AdvisorDialog does the same).
+const AdvisorWidget = dynamic(() => import("../AdvisorWidget").then((module) => module.AdvisorWidget), {
+    ssr: false,
+    loading: () => <AdvisorWidgetPlaceholder />,
+});
+
+// Same box and height as the form's first step, measured from 360 to 1440 px wide: its upload
+// box is one line shorter from about 453 px. Keeps the page from moving when the form arrives.
+function AdvisorWidgetPlaceholder() {
+    return (
+        <div className="h-[492.5px] w-full max-w-[400px] rounded-xl border border-slate-200 bg-white min-[453px]:h-[472.5px]" />
+    );
+}
 
 const advisorImageViewport = {
     once: false as const,
@@ -15,6 +32,8 @@ const advisorImageViewport = {
 }
 
 export function AdvisorSection() {
+    const widgetRef = useRef<HTMLDivElement>(null);
+    const isWidgetNear = useNearViewport(widgetRef);
     const checkItems = [
         {
             icon: <RotateCw  className="size-5 mt-1" />,
@@ -87,8 +106,8 @@ export function AdvisorSection() {
                         </div>
                     ))}
                 </div>
-                <div className="w-full lg:flex-1 flex justify-end">
-                    <AdvisorWidget />
+                <div ref={widgetRef} className="w-full lg:flex-1 flex justify-end">
+                    {isWidgetNear ? <AdvisorWidget /> : <AdvisorWidgetPlaceholder />}
                 </div>
 
             </div>

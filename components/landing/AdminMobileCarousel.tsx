@@ -6,6 +6,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import type { AdminMobileCarouselSlide } from "@/components/landing/section-data"
 import { cn } from "@/lib/utils"
+import { LazyVideo } from "./LazyVideo"
+import { useNearViewport } from "./use-near-viewport"
 
 type AdminMobileCarouselProps = {
   slides: readonly AdminMobileCarouselSlide[]
@@ -14,6 +16,10 @@ type AdminMobileCarouselProps = {
 export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
   const [selectedItem, setSelectedItem] = useState(0)
   const touchStartX = useRef<number | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  // Near the screen, the active slide and its neighbours fetch their first frame. Each video
+  // plays only while it's visible (LazyVideo).
+  const isNear = useNearViewport(containerRef)
   const firstSlideIndex = 0
   const lastSlideIndex = Math.max(slides.length - 1, 0)
   const slideWidth = 251
@@ -25,7 +31,7 @@ export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
   const goNext = () => setSelectedItem((current) => Math.min(lastSlideIndex, current + 1))
 
   return (
-    <div className="relative w-full px-2 sm:px-6">
+    <div ref={containerRef} className="relative w-full px-2 sm:px-6">
       <button
         type="button"
         aria-label="Slide anterior"
@@ -85,21 +91,17 @@ export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
             return (
               <div key={slide.src} className="w-[251px] shrink-0 pb-4">
                 <div className="relative aspect-[15/32] w-[251px]">
-                  <video
+                  <LazyVideo
+                    src={slide.src}
                     className={cn(
                       "absolute inset-y-[10.5%] left-[10%] z-10 h-[80%] w-[80%] rounded-[1.9rem] object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
                       isActive ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-35 scale-80"
                     )}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
+                    preloadFirstFrame={isNear && distanceFromActive <= 1}
                     aria-label={slide.alt}
                   >
-                    <source src={slide.src} type="video/mp4" />
                     Tu navegador no soporta el video.
-                  </video>
+                  </LazyVideo>
                   <Image
                     src={slide.frame}
                     alt="iPhone frame"
