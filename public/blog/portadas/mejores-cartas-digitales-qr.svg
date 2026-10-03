@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Una tabla comparativa de cartas digitales con marcas de verificación</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+
+  <!-- Table frame -->
+  <rect x="40" y="52" width="320" height="196" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Header row: product name column + three criteria -->
+  <rect x="40" y="52" width="320" height="40" rx="14" fill="#F1F5F9"/>
+  <rect x="40" y="78" width="320" height="14" fill="#F1F5F9"/>
+  <rect x="58" y="66" width="70" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="172" y="66" width="44" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="236" y="66" width="44" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="300" y="66" width="44" height="12" rx="6" fill="#CBD5E1"/>
+
+  <!-- Highlighted first row -->
+  <rect x="48" y="100" width="304" height="36" rx="10" fill="#DEF8FF" stroke="#3482AA" stroke-width="2"/>
+  <rect x="62" y="112" width="80" height="12" rx="6" fill="#3482AA"/>
+
+  <!-- Other rows -->
+  <line x1="56" y1="168" x2="344" y2="168" stroke="#E2E8F0" stroke-width="2"/>
+  <line x1="56" y1="208" x2="344" y2="208" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="62" y="146" width="66" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="62" y="182" width="74" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="62" y="220" width="58" height="12" rx="6" fill="#CBD5E1"/>
+
+  <!-- Check marks (green) and dashes (grey) -->
+  <g fill="none" stroke="#50B27F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M186 118 l6 6 l12 -12"/>
+    <path d="M250 118 l6 6 l12 -12"/>
+    <path d="M314 118 l6 6 l12 -12"/>
+    <path d="M186 152 l6 6 l12 -12"/>
+    <path d="M314 152 l6 6 l12 -12"/>
+    <path d="M250 188 l6 6 l12 -12"/>
+    <path d="M186 226 l6 6 l12 -12"/>
+  </g>
+  <g stroke="#CBD5E1" stroke-width="5" stroke-linecap="round">
+    <line x1="250" y1="152" x2="268" y2="152"/>
+    <line x1="186" y1="188" x2="204" y2="188"/>
+    <line x1="314" y1="188" x2="332" y2="188"/>
+    <line x1="250" y1="226" x2="268" y2="226"/>
+    <line x1="314" y1="226" x2="332" y2="226"/>
+  </g>
+</svg>
