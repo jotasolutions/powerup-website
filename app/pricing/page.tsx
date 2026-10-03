@@ -32,6 +32,7 @@ export default async function PricingPage() {
         yearlyPrice={pricingData.yearlyPrice}
         monthlyPriceInCents={pricingData.monthlyPriceInCents}
         yearlyPriceInCents={pricingData.yearlyPriceInCents}
+        titleAs="h1"
       />
       <PricingTrialSection />
       <PricingFreeIncludesSection />
