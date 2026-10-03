@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Tres tipos de carta digital con precios de menos a más</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+
+  <!-- Baseline -->
+  <line x1="48" y1="236" x2="352" y2="236" stroke="#E2E8F0" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Three bars, from cheaper to more expensive -->
+  <rect x="72" y="176" width="64" height="60" rx="10" fill="#DEF8FF" stroke="#3482AA" stroke-width="2"/>
+  <rect x="168" y="132" width="64" height="104" rx="10" fill="#DEF8FF" stroke="#3482AA" stroke-width="2"/>
+  <rect x="264" y="84" width="64" height="152" rx="10" fill="#DEF8FF" stroke="#3482AA" stroke-width="2"/>
+
+  <!-- Euro signs on top of each bar: one, two and three -->
+  <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#3482AA" text-anchor="middle">
+    <text x="104" y="166">€</text>
+    <text x="200" y="122">€€</text>
+    <text x="296" y="74">€€€</text>
+  </g>
+
+  <!-- A small QR mark inside the first bar, a phone outline in the second, a phone with extras in the third -->
+  <g fill="#0F172A">
+    <rect x="94" y="196" width="8" height="8" rx="1"/><rect x="108" y="196" width="8" height="8" rx="1"/>
+    <rect x="94" y="210" width="8" height="8" rx="1"/><rect x="108" y="214" width="4" height="4"/>
+  </g>
+  <rect x="186" y="156" width="28" height="48" rx="6" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+  <rect x="192" y="166" width="16" height="4" rx="2" fill="#CBD5E1"/>
+  <rect x="192" y="176" width="12" height="4" rx="2" fill="#CBD5E1"/>
+  <rect x="192" y="186" width="14" height="4" rx="2" fill="#CBD5E1"/>
+  <rect x="282" y="112" width="28" height="48" rx="6" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+  <rect x="288" y="122" width="16" height="4" rx="2" fill="#CBD5E1"/>
+  <rect x="288" y="132" width="12" height="4" rx="2" fill="#CBD5E1"/>
+  <circle cx="296" cy="184" r="9" fill="#50B27F"/>
+  <circle cx="296" cy="208" r="9" fill="#FF9800"/>
+</svg>
