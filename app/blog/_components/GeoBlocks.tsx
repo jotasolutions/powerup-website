@@ -47,6 +47,18 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
   )
 }
 
+// Sources are citations, not endorsements: links to other sites (some are competitors in the
+// comparison posts) get nofollow so they don't receive our link equity. Our own domain
+// (www.powerup.menu, carta.powerup.menu) stays followed.
+function sourceRel(url: string) {
+  let ownSite = false
+  try {
+    const host = new URL(url).hostname
+    ownSite = host === "powerup.menu" || host.endsWith(".powerup.menu")
+  } catch {}
+  return ownSite ? "noopener noreferrer" : "nofollow noopener noreferrer"
+}
+
 export function Sources({ items }: { items: Fuente[] }) {
   return (
     <section aria-labelledby={GEO_SECTION_IDS.sources} className={styles.prose}>
@@ -54,7 +66,7 @@ export function Sources({ items }: { items: Fuente[] }) {
       <ol>
         {items.map((item) => (
           <li key={item.url}>
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <a href={item.url} target="_blank" rel={sourceRel(item.url)}>
               {item.titulo}
             </a>
           </li>
