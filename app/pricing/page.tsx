@@ -11,13 +11,26 @@ import { PricingTrialSection } from "@/components/landing/pricing/PricingTrialSe
 import { PricingValueSection } from "@/components/landing/pricing/PricingValueSection"
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
 import { BigTextSection } from "@/components/landing/BigTextSection"
+import { jsonLdScript } from "@/lib/json-ld"
+import { softwareApplicationJsonLd } from "@/lib/product-structured-data"
+
+const title = "Precios | PowerUp Menu"
+const description =
+  "Compara los planes Free y Pro de PowerUp Menu. Prueba 30 días gratis sin tarjeta y elige el plan que mejor encaje con tu restaurante."
 
 export const metadata: Metadata = {
-  title: "Precios | PowerUp Menu",
-  description:
-    "Compara los planes Free y Pro de PowerUp Menu. Prueba 30 días gratis sin tarjeta y elige el plan que mejor encaje con tu restaurante.",
+  title,
+  description,
   alternates: {
     canonical: "/pricing",
+  },
+  // Next replaces the parent openGraph object entirely, so the image must be repeated here.
+  openGraph: {
+    title,
+    description,
+    url: "/pricing",
+    type: "website",
+    images: ["/images/og-image.png"],
   },
 }
 
@@ -26,6 +39,10 @@ export default async function PricingPage() {
 
   return (
     <main className="bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(softwareApplicationJsonLd(pricingData)) }}
+      />
       <NavMenu />
       <PricingSection
         monthlyPrice={pricingData.monthlyPrice}

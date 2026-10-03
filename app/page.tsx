@@ -19,6 +19,7 @@ import { NavMenu } from "@/components/landing/NavMenu"
 import { BigTextSection } from "@/components/landing/BigTextSection"
 import { SITE_URL } from "@/lib/site"
 import { jsonLdScript } from "@/lib/json-ld"
+import { homeFaqJsonLd, softwareApplicationJsonLd } from "@/lib/product-structured-data"
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -56,6 +57,14 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(softwareApplicationJsonLd(pricingData)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(homeFaqJsonLd()) }}
       />
       <NavMenu />
       <HeroSection />
