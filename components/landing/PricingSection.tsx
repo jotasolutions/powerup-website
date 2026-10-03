@@ -9,11 +9,14 @@ type PricingSectionProps = {
   yearlyPrice: string
   monthlyPriceInCents: number
   yearlyPriceInCents: number
+  /** The home has its <h1> in the hero; /pricing uses this title as its own. */
+  titleAs?: "h1" | "h2"
 }
 
 export function PricingSection({
   monthlyPriceInCents,
   yearlyPriceInCents,
+  titleAs: Title = "h2",
 }: PricingSectionProps) {
   return (
     <SectionContainer
@@ -23,9 +26,9 @@ export function PricingSection({
       <div className="mx-auto max-w-5xl space-y-10 md:space-y-14">
         <div className="space-y-4 text-center">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="section-title">
+            <Title className="section-title">
               Planes de precios
-            </h2>
+            </Title>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
             <p className="section-paragraph">
