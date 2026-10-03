@@ -7,6 +7,7 @@ export type PricingData = {
   yearlyPrice: string
   monthlyPriceInCents: number
   yearlyPriceInCents: number
+  currency: string
 }
 
 const stripeRepository = new StripeRepository()
@@ -41,5 +42,6 @@ export async function getPricingDataAction(): Promise<PricingData> {
     yearlyPrice: formatPrice(yearlyPrice.amountInCents, yearlyPrice.currency),
     monthlyPriceInCents: monthlyPrice.amountInCents,
     yearlyPriceInCents: yearlyPrice.amountInCents,
+    currency: monthlyPrice.currency,
   }
 }
