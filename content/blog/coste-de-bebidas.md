@@ -4,7 +4,7 @@ title: "La importancia del coste de las bebidas para la rentabilidad de tu resta
 slug: "coste-de-bebidas"
 seo_title: "Coste de las bebidas: cómo afecta a tu rentabilidad"
 seo_description: "Qué es el coste de las bebidas (beverage cost), cómo se calcula con el inventario y las ventas, y qué indica un porcentaje alto o bajo en tu restaurante."
-excerpt: "Para determinar los precios de las bebidas, al igual que con la comida, es fundamental utilizar un indicador económico para la gestión financiera de un restaurante: el coste de las bebidas o beverage cost. Este indicador se utiliza para evaluar la rentabilidad de las operaciones relacionadas con la venta de…"
+excerpt: "Qué es el coste de las bebidas (beverage cost), cómo se calcula con el inventario y las ventas, y qué indica un porcentaje alto o bajo en tu restaurante."
 cluster: "rentabilidad-y-costes"
 keyword_principal: "coste de las bebidas en un restaurante"
 content_strategy: "google-first"

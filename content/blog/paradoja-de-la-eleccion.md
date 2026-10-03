@@ -4,7 +4,7 @@ title: "La paradoja de la elección: psicología del menú en menús restaurativ
 slug: "paradoja-de-la-eleccion"
 seo_title: "La paradoja de la elección en la carta de tu restaurante"
 seo_description: "Qué es la paradoja de la elección, por qué demasiados platos frenan la decisión del cliente y tres consejos para simplificar y ordenar tu carta."
-excerpt: "¡Hola amante de la buena comida! 🍽️ ¿Alguna vez has oído hablar del Paradoxo de la Elección y de cuánto impacta en el mágico mundo de la gastronomía? 🤔 Es una situación intrigante que merece ser explorada. ¡Vamos a descubrir más acerca de qué se trata! ¿Qué es la paradoja…"
+excerpt: "Qué es la paradoja de la elección, por qué demasiados platos frenan la decisión del cliente y tres consejos para simplificar y ordenar tu carta."
 cluster: "psicologia-y-precios"
 keyword_principal: "paradoja de la elección en la carta"
 content_strategy: "google-first"
