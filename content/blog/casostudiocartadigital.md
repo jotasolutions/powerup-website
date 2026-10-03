@@ -3,7 +3,7 @@
 title: "Caso práctico: La Taberna Casera y su carta digital con fotos"
 slug: "casostudiocartadigital"
 seo_title: "Caso práctico: La Taberna Casera y su carta digital"
-seo_description: "Cómo usa La Taberna Casera, un restaurante de Valencia, la carta digital de PowerUp Menu, y qué destacó su dueño, José Luis: que el cliente ve el plato antes de pedirlo."
+seo_description: "Cómo usa La Taberna Casera, en Valencia, la carta digital de PowerUp Menu, y qué destacó su dueño, José Luis: que el cliente ve el plato antes de pedirlo."
 excerpt: "En La Taberna Casera, en Valencia, los clientes veían en la carta cómo sale cada plato de la cocina. Su dueño, José Luis, nos contó qué cambió con la carta digital."
 cluster: "casos-practicos"
 keyword_principal: "caso práctico: La Taberna Casera"
