@@ -3,7 +3,7 @@
 title: "¿Cómo calificar un plato de comida?"
 slug: "como-calificar-un-plato-de-comida"
 seo_title: "¿Cómo calificar un plato de comida?"
-seo_description: "¿No estás seguro de cómo calificar un plato de comida? Esta guía fácil te mostrará todo lo que necesitas saber para convertirte en un crítico gastronómico experto."
+seo_description: "¿Cómo calificar un plato de comida? Los cinco criterios que cuentan (sabor, presentación, textura, aroma y originalidad) y cómo evaluar tus platos."
 excerpt: "¿No estás seguro de cómo calificar un plato de comida? Esta guía fácil te mostrará todo lo que necesitas saber para convertirte en un crítico gastronómico experto."
 cluster: "fuera-de-foco"
 keyword_principal: "cómo calificar un plato de comida"

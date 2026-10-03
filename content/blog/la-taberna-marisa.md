@@ -3,7 +3,7 @@
 title: "Caso práctico: La Taberna de Marisa pasa su carta a digital"
 slug: "la-taberna-marisa"
 seo_title: "Caso práctico: La Taberna de Marisa y su carta digital"
-seo_description: "Cómo La Taberna de Marisa, un restaurante valenciano tradicional en el centro de Valencia, pasó su carta a digital: diseño con sus colores y sin reimprimir cada cambio."
+seo_description: "Cómo La Taberna de Marisa, un restaurante tradicional del centro de Valencia, pasó su carta a digital: con sus colores y sin reimprimir cada cambio."
 excerpt: "Un restaurante valenciano tradicional que pasó su carta impresa a digital: con los colores de la casa, sin reimprimir cada cambio y pudiendo cambiar platos en cualquier momento."
 cluster: "casos-practicos"
 keyword_principal: "caso práctico: La Taberna de Marisa"

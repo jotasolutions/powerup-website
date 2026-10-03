@@ -3,7 +3,7 @@
 title: "Qué es la psicología del menú: lo que está probado y lo que no"
 slug: "que-es-la-psicologia-del-menu"
 seo_title: "Qué es la psicología del menú y cómo aplicarla"
-seo_description: "La psicología del menú estudia cómo el diseño de la carta influye en lo que piden los clientes. Qué efectos están medidos, qué mito no se sostiene y cómo aplicarla."
+seo_description: "La psicología del menú estudia cómo el diseño de la carta influye en lo que se pide. Qué efectos están medidos, qué mito no se sostiene y cómo aplicarla."
 excerpt: "El orden de los platos o el formato de los precios influyen en lo que se pide, y hay estudios que lo miden. El famoso «punto dulce» de la carta, en cambio, no se ha confirmado."
 cluster: "psicologia-y-precios"
 keyword_principal: "qué es la psicología del menú"
