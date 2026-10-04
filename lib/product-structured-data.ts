@@ -11,8 +11,9 @@ function centsToPrice(amountInCents: number) {
 }
 
 // Prices come from Stripe (same source as the visible pricing cards). The site shows them
-// "+ IVA", so every paid offer declares valueAddedTaxIncluded: false.
-function paidOffer(name: string, amountInCents: number, currency: string, unitCode: "MON" | "ANN") {
+// "+ IVA", so every paid offer declares valueAddedTaxIncluded: false. Plain PriceSpecification:
+// Google's Rich Results Test flags UnitPriceSpecification on SoftwareApplication offers.
+function paidOffer(name: string, amountInCents: number, currency: string) {
   const price = centsToPrice(amountInCents)
   return {
     "@type": "Offer",
@@ -21,10 +22,9 @@ function paidOffer(name: string, amountInCents: number, currency: string, unitCo
     price,
     priceCurrency: currency,
     priceSpecification: {
-      "@type": "UnitPriceSpecification",
+      "@type": "PriceSpecification",
       price,
       priceCurrency: currency,
-      unitCode,
       valueAddedTaxIncluded: false,
     },
   }
@@ -50,8 +50,8 @@ export function softwareApplicationJsonLd(pricing: PricingData) {
         price: "0",
         priceCurrency: pricing.currency,
       },
-      paidOffer("PowerUp Pro (mensual)", pricing.monthlyPriceInCents, pricing.currency, "MON"),
-      paidOffer("PowerUp Pro (anual)", pricing.yearlyPriceInCents, pricing.currency, "ANN"),
+      paidOffer("PowerUp Pro (mensual)", pricing.monthlyPriceInCents, pricing.currency),
+      paidOffer("PowerUp Pro (anual)", pricing.yearlyPriceInCents, pricing.currency),
     ],
   }
 }
