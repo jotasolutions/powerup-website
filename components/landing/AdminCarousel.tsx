@@ -67,6 +67,18 @@ export function AdminCarousel({ slides }: AdminCarouselProps) {
             />
           </button>
         )}
+        // A real button inside each dot: the library's default puts role="button" on the <li>, which axe rejects.
+        renderIndicator={(onClickHandler, isSelected, index) => (
+          <li key={index} className="inline-block">
+            <button
+              type="button"
+              aria-label={`Ir a la diapositiva ${index + 1}`}
+              aria-current={isSelected || undefined}
+              className={cn("dot border-0 p-0", isSelected && "selected")}
+              onClick={onClickHandler}
+            />
+          </li>
+        )}
       >
         {slides.map((slide) => (
           <div key={slide.src} className="space-y-4 px-2 py-6 sm:px-10 md:px-[5rem] md:py-8">
