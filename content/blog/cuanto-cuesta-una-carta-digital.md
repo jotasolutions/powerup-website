@@ -72,7 +72,7 @@ fuentes:
 
 Si buscas una carta digital para tu restaurante, encontrarás precios desde 0 € hasta más de 50 € al mes. La diferencia no siempre se ve en el precio grande: depende de lo que incluye cada plan, de si lleva IVA y de si se cobra por local.
 
-Hemos reunido los precios de 14 herramientas que se usan en España, consultados en sus webs el 4 de octubre de 2026. PowerUp Menu es una de ellas: la nuestra.
+Hemos reunido los precios de 14 herramientas que se usan en España, consultados en sus webs el 4 de octubre de 2026. PowerUp Menu es una de ellas: la nuestra. Si quieres ver las herramientas una a una, tienes nuestra [comparativa de cartas digitales QR](/blog/mejores-cartas-digitales-qr).
 
 ## Lo que cuesta, por tipo de carta
 
@@ -102,7 +102,7 @@ Hemos reunido los precios de 14 herramientas que se usan en España, consultados
 3. **La instalación o el alta.** Last.app cobra 500 € + IVA de instalación. BuenaCarta cobra 79 € + IVA si te dan de alta ellos los platos. En PowerUp Menu, si tu carta es compleja, el equipo la monta sin coste.
 4. **Los módulos aparte.** MiCartaYa cobra los vídeos (+25 € al mes), los pedidos con impresora (+15 €), la IA (+15 €) y los alérgenos con IA (+10 €) aparte de su precio base de 12 €. CartaMóvil cobra aparte las reservas (60 € al año) o el comandero (129 € al año).
 5. **Los precios de oferta.** eatsQR muestra en octubre de 2026 precios de oferta para nuevos restaurantes, con el precio anterior tachado. Pregunta cuánto pagarás cuando acabe.
-6. **La publicidad del plan gratis.** BuenaCarta, GetFreeMenu y PowerUp Menu Free muestran publicidad en su plan gratuito. Si no quieres anuncios en tu carta, cuenta con un plan de pago.
+6. **La publicidad del plan gratis.** BuenaCarta, GetFreeMenu y PowerUp Menu Free muestran publicidad en su plan gratuito. Si no quieres anuncios en tu carta, cuenta con un plan de pago. Qué incluye cada plan gratis, en [carta digital QR gratis](/blog/carta-digital-qr-gratis).
 
 ## Cómo calcular lo que te cuesta al año
 
