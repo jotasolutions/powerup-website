@@ -131,7 +131,7 @@ eatsQR combina la carta con comandas a cocina y un módulo de reservas.
 - **Alta:** importa la carta desde una foto o un PDF con IA.
 - **Dominio propio:** en el plan Premium.
 
-Encaja si quieres reservas y comandas en la misma herramienta que la carta.
+Encaja si quieres reservas y comandas en la misma herramienta que la carta. Si eatsQR no termina de encajar, mira nuestras [alternativas a eatsQR](/blog/alternativas-a-eatsqr).
 
 ## 4. Menuda: muchos idiomas y la ficha de Google en el mismo sitio
 
