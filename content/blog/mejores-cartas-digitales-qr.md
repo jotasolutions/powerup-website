@@ -176,7 +176,7 @@ Encaja si quieres una carta sencilla, en varios idiomas, sin elegir entre planes
 - **Necesitas reservas completas:** eatsQR o Menuda (plan Pro).
 - **Tienes muchos turistas y necesitas muchos idiomas:** MenuForma (más de 70) o Menuda (16). En PowerUp Menu Pro los idiomas son ilimitados; en el plan gratis, hasta 3.
 - **Quieres la carta al día en Google Maps:** PowerUp Menu Pro o Menuda.
-- **Solo quieres una carta gratis:** WeQR, Menuda o PowerUp Menu, según cuántos idiomas necesites y si te importa la publicidad.
+- **Solo quieres una carta gratis:** WeQR, Menuda o PowerUp Menu, según cuántos idiomas necesites y si te importa la publicidad. Comparamos los planes gratis a fondo en [carta digital QR gratis](/blog/carta-digital-qr-gratis).
 
 ## Cinco preguntas antes de contratar
 

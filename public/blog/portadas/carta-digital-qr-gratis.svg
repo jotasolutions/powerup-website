@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Una carta digital con QR y una etiqueta de 0 €</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+
+  <!-- Phone with a menu -->
+  <rect x="120" y="52" width="104" height="196" rx="16" fill="#FFFFFF" stroke="#334155" stroke-width="3"/>
+  <rect x="156" y="62" width="32" height="5" rx="2.5" fill="#CBD5E1"/>
+  <rect x="136" y="84" width="72" height="8" rx="4" fill="#3482AA"/>
+  <rect x="136" y="104" width="60" height="5" rx="2.5" fill="#CBD5E1"/>
+  <rect x="136" y="116" width="48" height="5" rx="2.5" fill="#CBD5E1"/>
+  <rect x="136" y="134" width="64" height="5" rx="2.5" fill="#CBD5E1"/>
+  <rect x="136" y="146" width="40" height="5" rx="2.5" fill="#CBD5E1"/>
+
+  <!-- QR code at the bottom of the screen -->
+  <g fill="#0F172A">
+    <rect x="152" y="176" width="12" height="12" rx="1.5"/><rect x="180" y="176" width="12" height="12" rx="1.5"/>
+    <rect x="152" y="204" width="12" height="12" rx="1.5"/><rect x="170" y="194" width="6" height="6"/>
+    <rect x="182" y="206" width="6" height="6"/><rect x="170" y="210" width="6" height="6"/>
+  </g>
+
+  <!-- Price tag: 0 € -->
+  <g transform="translate(236 96) rotate(-8)">
+    <path d="M0 18 L18 0 H96 a10 10 0 0 1 10 10 V62 a10 10 0 0 1 -10 10 H18 L0 54 Z" fill="#DEF8FF" stroke="#3482AA" stroke-width="2.5"/>
+    <circle cx="16" cy="36" r="5" fill="#FFFFFF" stroke="#3482AA" stroke-width="2"/>
+    <text x="62" y="48" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#3482AA" text-anchor="middle">0 €</text>
+  </g>
+</svg>
