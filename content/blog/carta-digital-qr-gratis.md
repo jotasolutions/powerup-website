@@ -156,7 +156,7 @@ GetFreeMenu es el plan gratis con más idiomas y con pedidos, a cambio de public
 
 ## Las que parecen gratis pero son una prueba
 
-- **eatsQR:** 14 días de prueba sin tarjeta, con todas las funciones. Después, planes desde 9,95 € al mes con pago anual, a precio de oferta.
+- **eatsQR:** 14 días de prueba sin tarjeta, con todas las funciones. Después, planes desde 9,95 € al mes con pago anual, a precio de oferta. Si buscas otra opción, tienes nuestras [alternativas a eatsQR](/blog/alternativas-a-eatsqr).
 - **VirtualMenu:** 14 días de prueba sin tarjeta y un plan único de 12 € al mes. Su web no dice qué pasa al acabar la prueba.
 
 ## ¿Y un PDF con QR?
