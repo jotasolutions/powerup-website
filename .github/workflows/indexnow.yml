@@ -20,9 +20,8 @@ permissions:
   contents: read
   deployments: read
 
-concurrency:
-  group: indexnow-blog
-  cancel-in-progress: false
+# Sin concurrency: cada push tiene su propio run. Con una cola, GitHub cancelaba el run de un push
+# cuando llegaba otro, y las URLs de ese push no se avisaban nunca.
 
 jobs:
   avisar:
@@ -45,6 +44,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Si se mergean varios PRs seguidos, Vercel cancela el deploy de los commits viejos y publica solo
+          # el último: basta con que un deploy de producción terminado incluya este commit.
           # Un fallo puntual de la API de GitHub no corta la espera: se vuelve a mirar en 15 segundos.
           for _ in $(seq 60); do
             id=$(gh api "repos/$GITHUB_REPOSITORY/deployments?sha=$GITHUB_SHA&environment=Production&per_page=1" --jq '.[0].id // empty' || true)
@@ -55,6 +56,17 @@ jobs:
                 failure|error) echo "::error::Vercel no pudo publicar este commit en producción"; exit 1 ;;
               esac
             fi
+            for line in $(gh api "repos/$GITHUB_REPOSITORY/deployments?environment=Production&per_page=10" --jq '.[] | "\(.id):\(.sha)"' || true); do
+              sha=${line#*:}
+              [ "$sha" = "$GITHUB_SHA" ] && continue
+              status=$(gh api "repos/$GITHUB_REPOSITORY/compare/$GITHUB_SHA...$sha" --jq .status || true)
+              [ "$status" = ahead ] || continue
+              state=$(gh api "repos/$GITHUB_REPOSITORY/deployments/${line%%:*}/statuses?per_page=1" --jq '.[0].state // empty' || true)
+              if [ "$state" = success ]; then
+                echo "Publicado en producción con el deploy de ${sha:0:7}, que incluye este commit."
+                exit 0
+              fi
+            done
             sleep 15
           done
           echo "::error::Vercel no publicó este commit en producción en 15 minutos"
