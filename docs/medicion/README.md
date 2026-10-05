@@ -143,6 +143,12 @@ Salen del código y los comprobé en las páginas publicadas el 30-09.
 - `/pricing`: `pricing-pro` y `pricing-free` (las dos tarjetas), `prueba-gratis`, `incluye-free`,
   `incluye-pro`, `comparativa` y `como-funciona`. `pricing` sigue siendo la del cambio entre pago
   anual y mensual;
+- landings de campaña (solo para anuncios, con `noindex`):
+  - `/vende-mas`: `vende-mas-hero`, `vende-mas`, `vende-mas-detalle` y `vende-mas-testimonio`;
+  - `/visibilidad`: `visibilidad-hero`, `atrae-gente`, `visibilidad-detalle` y
+    `visibilidad-testimonio`;
+  - en las dos, además: `menu_showcase`, `como-funciona`, `testimonials`, `testimonials_carousel`
+    y `prueba-gratis`;
 - blog: `blog`.
 
 Una sección hecha con `SectionContainer id="…"` pasa su `id` como `location` a los botones que
@@ -158,6 +164,12 @@ contiene. Por eso muchos valores coinciden con los de `section_name`.
 - `/pricing`: `pricing`, `prueba-gratis`, `incluye-free`, `incluye-pro`, `texto-grande`,
   `comparativa`, `testimonials`, `como-funciona` y `footer`. En el código también está
   `por-que-pro`, de `PricingValueSection`: `app/pricing/page.tsx` la importa, pero no la muestra;
+- `/vende-mas`: `vende-mas-hero`, `texto-grande`, `vende-mas`, `vende-mas-detalle`,
+  `vende-mas-testimonio`, `menu-showcase`, `como-funciona`, `testimonials`, `prueba-gratis` y
+  `footer`;
+- `/visibilidad`: `visibilidad-hero`, `texto-grande`, `atrae-gente`, `visibilidad-detalle`,
+  `visibilidad-testimonio`, `menu-showcase`, `como-funciona`, `testimonials`, `prueba-gratis` y
+  `footer`;
 - el blog y las páginas legales: solo `footer`.
 
 ## 6. Lo que añade Google por su cuenta
