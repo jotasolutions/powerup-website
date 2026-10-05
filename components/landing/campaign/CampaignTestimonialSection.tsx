@@ -18,13 +18,13 @@ export function CampaignTestimonialSection({ landing }: { landing: CampaignLandi
       id={`${landing}-testimonio`}
       className="bg-gradient-to-b from-white via-[#E2FEFD] to-white"
     >
-      <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
+      <div className="mx-auto grid max-w-2xl items-center gap-8 md:gap-10 lg:max-w-none lg:grid-cols-2 lg:gap-12">
         <div className="relative h-[220px] w-full sm:h-[320px] lg:h-[400px]">
           <Image
             src={bgImage}
             alt={place}
             fill
-            sizes="(max-width: 1023px) calc(100vw - 56px), 540px"
+            sizes="(max-width: 1023px) min(calc(100vw - 56px), 672px), 540px"
             className="rounded-3xl object-cover"
           />
           <div className="absolute bottom-4 left-4 h-[72px] w-[72px] overflow-hidden rounded-xl sm:h-[88px] sm:w-[88px]">
@@ -33,7 +33,7 @@ export function CampaignTestimonialSection({ landing }: { landing: CampaignLandi
         </div>
         <div className="space-y-6">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="section-title">{result}</h2>
+            <h2 className="section-title text-balance">{result}</h2>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.1}>
             <blockquote className="text-lg font-medium leading-relaxed text-slate-900 sm:text-xl">

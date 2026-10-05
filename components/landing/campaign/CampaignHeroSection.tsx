@@ -20,7 +20,7 @@ function HeroVisual({ landing }: { landing: CampaignLandingKey }) {
         alt={visual.alt}
         width={visual.width}
         height={visual.height}
-        sizes="(max-width: 1023px) calc(100vw - 56px), 540px"
+        sizes="(max-width: 1023px) min(calc(100vw - 56px), 672px), 540px"
         className="absolute inset-0 h-full w-full object-cover object-top"
         priority
       />
@@ -43,10 +43,12 @@ export function CampaignHeroSection({ landing }: { landing: CampaignLandingKey }
 
   return (
     <SectionContainer id={`${landing}-hero`} className="pt-8 md:pt-12 bg-gradient-to-b from-[#E2FEFD] to-white">
-      <div className="flex flex-col-reverse items-center gap-8 md:grid md:gap-10 lg:grid-cols-2 lg:gap-12">
-        <div className="space-y-6">
+      {/* Until lg it's one column with the picture first, so the ad's hook (on the picture) comes
+          before the headline, as in the ad. */}
+      <div className="flex flex-col-reverse items-center gap-8 lg:grid lg:grid-cols-2 lg:gap-12">
+        <div className="w-full max-w-2xl space-y-6 lg:max-w-none">
           <BlurFade inView inViewMargin="-80px">
-            <h1 className="text-center md:text-left font-heading text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl lg:text-5xl lg:leading-tight">
+            <h1 className="text-balance text-center lg:text-left font-heading text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl lg:text-5xl lg:leading-tight">
               {titleStart}{" "}
               <Highlighter action="circle" color="#FF9800" delay={1000}>
                 {titleHighlight}
@@ -54,16 +56,16 @@ export function CampaignHeroSection({ landing }: { landing: CampaignLandingKey }
             </h1>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
-            <p className="section-paragraph text-center md:text-left md:max-w-[90%]">{description}</p>
+            <p className="section-paragraph text-center lg:text-left lg:max-w-[90%]">{description}</p>
           </BlurFade>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
             <CTAButton />
           </div>
           <BlurFade inView inViewMargin="-80px" delay={0.18}>
-            <p className="text-center md:text-left text-xs text-slate-600 sm:text-base">{badge}</p>
+            <p className="text-center lg:text-left text-xs text-slate-600 sm:text-base">{badge}</p>
           </BlurFade>
         </div>
-        <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden rounded-4xl bg-slate-100">
+        <div className="relative w-full max-w-2xl h-[300px] sm:h-[400px] lg:h-[500px] lg:max-w-none overflow-hidden rounded-4xl bg-slate-100">
           <HeroVisual landing={landing} />
           <p className="absolute inset-x-4 bottom-4 z-10 mx-auto w-fit whitespace-nowrap rounded-full bg-white px-5 py-2.5 text-center font-heading text-base font-medium text-slate-900 shadow-lg sm:text-2xl md:bottom-6">
             {hook} <span aria-hidden>🤔</span>

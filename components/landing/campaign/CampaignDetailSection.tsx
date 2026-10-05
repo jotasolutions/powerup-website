@@ -14,10 +14,11 @@ export function CampaignDetailSection({ landing }: { landing: CampaignLandingKey
 
   return (
     <SectionContainer id={`${landing}-detalle`}>
-      <div className="flex flex-col-reverse md:grid items-center gap-8 md:gap-10 lg:grid-cols-2">
-        <div className="space-y-6">
+      {/* One column with the picture first until lg, like on a phone */}
+      <div className="flex flex-col-reverse items-center gap-8 lg:grid lg:grid-cols-2 lg:gap-10">
+        <div className="w-full max-w-2xl space-y-6 lg:max-w-none">
           <BlurFade inView>
-            <h2 className="section-title max-w-[460px]">{title}</h2>
+            <h2 className="section-title text-balance max-w-[460px]">{title}</h2>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.1}>
             <p className="section-paragraph">{description}</p>
@@ -37,13 +38,13 @@ export function CampaignDetailSection({ landing }: { landing: CampaignLandingKey
           </ul>
           <CTAButton />
         </div>
-        <div className={cn("w-full rounded-3xl overflow-hidden px-2 py-8 sm:px-4 sm:py-12", imageBackground)}>
+        <div className={cn("w-full max-w-2xl rounded-3xl overflow-hidden py-6 sm:px-4 sm:py-12 lg:max-w-none", imageBackground)}>
           <Image
             src={image.src}
             alt={image.alt}
             width={image.width}
             height={image.height}
-            sizes="(max-width: 1023px) calc(100vw - 88px), 480px"
+            sizes="(max-width: 1023px) min(calc(100vw - 56px), 672px), 480px"
             className="h-auto w-full"
           />
         </div>
