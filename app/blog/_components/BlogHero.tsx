@@ -21,14 +21,17 @@ export function BlogHero({ featured }: { featured: Post }) {
           <div className="flex max-w-[560px] flex-col gap-[22px]">
             <p className="text-[13px] font-semibold uppercase tracking-[0.04em] text-slate-700">El blog de PowerUp Menu</p>
             <h1 className="font-heading text-[clamp(30px,4vw,48px)] font-medium leading-[1.15] tracking-tight text-slate-900">
-              Ideas para que tu carta
+              Ideas para que tu carta{" "}
               <span aria-hidden className="mx-2 inline-flex rotate-[11deg] rounded-md bg-primary p-1.5 align-middle text-primary-foreground shadow-lg">
                 <QrCode className="size-6" />
-              </span>
+              </span>{" "}
               <CircledWord>venda más</CircledWord>
             </h1>
             <p className="font-heading text-lg leading-relaxed text-slate-700">
               Ingeniería de menú, neuromarketing y casos reales de restaurantes. Para dueños, no para técnicos.
+            </p>
+            <p className="text-base leading-relaxed text-slate-600">
+              Guías prácticas sobre carta digital, costo de comida y cómo diseñar un menú que venda más sin complicarte con la tecnología.
             </p>
             <div className="flex flex-wrap gap-2.5">
               {/* Full width on mobile, as the home's hero buttons. */}

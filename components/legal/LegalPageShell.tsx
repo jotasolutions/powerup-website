@@ -10,7 +10,7 @@ type LegalPageShellProps = {
 
 export function LegalPageShell({ title, children }: LegalPageShellProps) {
   return (
-    <div className="bg-white text-slate-900">
+    <main className="bg-white text-slate-900">
       <NavMenu />
       <SectionContainer>
         <div className="max-w-4xl space-y-8">
@@ -21,6 +21,6 @@ export function LegalPageShell({ title, children }: LegalPageShellProps) {
         </div>
       </SectionContainer>
       <FooterSection />
-    </div>
+    </main>
   )
 }

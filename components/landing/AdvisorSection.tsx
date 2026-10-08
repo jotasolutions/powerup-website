@@ -46,12 +46,12 @@ export function AdvisorSection() {
         {
             icon: <RotateCw  className="size-5 mt-1" />,
             title: "Análisis 360º",
-            desc: "Para encontrar puntos de mejoras"
+            desc: "Para encontrar puntos de mejora"
         },
         {
             icon: <BadgeCheck className="size-5 mt-1" /> ,
             title: "Respaldado por estudios",
-            desc: "Marco cientifico de más de 50 publicaciones"
+            desc: "Marco científico de más de 50 publicaciones"
         }
     ]
     return (
@@ -74,7 +74,7 @@ export function AdvisorSection() {
                         >
                             <Image
                                 src="/images/advisor-widget.png"
-                                alt="cercles"
+                                alt="Vista del análisis gratuito de la carta"
                                 width={300}
                                 height={300}
                                 className="w-full h-auto object-contain rounded-3xl border border-6 shadow-xl border-white/60"
@@ -93,7 +93,7 @@ export function AdvisorSection() {
                         >
                             <Image
                                 src="/images/advisor-checks.png"
-                                alt="cercles"
+                                alt="Comprobaciones del análisis de la carta"
                                 width={300}
                                 height={300}
                                 className="w-full h-auto object-contain"

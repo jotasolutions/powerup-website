@@ -2,7 +2,7 @@ import { SITE_URL } from "@/lib/site"
 
 export const BLOG_NAME = "Blog de PowerUp Menu"
 export const BLOG_DESCRIPTION =
-  "Ingeniería de menú, neuromarketing y casos reales de restaurantes. Para dueños, no para técnicos."
+  "Ideas para que la carta de tu restaurante venda más: ingeniería de menú, neuromarketing y casos reales. Escrito para dueños, no para técnicos."
 export const POSTS_PER_PAGE = 9
 
 export const BLOG_PATH = "/blog"

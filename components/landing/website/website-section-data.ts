@@ -71,25 +71,29 @@ export const websiteShowcaseItems: ShowcaseItem[] = [
   {
     src: "/images/website-landing/websites/tropico.PNG",
     image: "/videos/iphone17-sage.png",
+    alt: "Web de Trópico Brunch en el móvil",
   },
-
   {
     src: "/images/website-landing/websites/la-fresca.PNG",
     image: "/videos/iphone17-white.png",
+    alt: "Web de La Fresca en el móvil",
   },
   {
     src: "/images/website-landing/websites/trattoria.PNG",
     image: "/videos/iphone17-blue.png",
     url: "https://trattoriapiemontese.es",
+    alt: "Web de Trattoria Piemontese en el móvil",
   },
   {
     src: "/images/website-landing/websites/casa-mediterranea.PNG",
     image: "/videos/iphone17-sage.png",
+    alt: "Web de Casa Mediterránea en el móvil",
   },
   {
     src: "/images/website-landing/websites/jafritta.PNG",
     image: "/videos/iphone17-black.png",
     url: "https://jafritta.com",
+    alt: "Web de Jafritta en el móvil",
   },
 ]
 

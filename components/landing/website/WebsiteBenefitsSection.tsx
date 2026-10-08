@@ -194,7 +194,8 @@ function StickyPhoneMockup({
           : null}
         <Image
           src={PHONE_FRAME_SRC}
-          alt="Marco de móvil"
+          alt=""
+          aria-hidden
           fill
           className="pointer-events-none z-20 object-contain"
           sizes="(max-width: 768px) 208px, 332px"

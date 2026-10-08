@@ -18,9 +18,14 @@ import { getPricingDataAction } from "@/app/actions/pricing"
 import { NavMenu } from "@/components/landing/NavMenu"
 import { BigTextSection } from "@/components/landing/BigTextSection"
 import { organizationJsonLdFields } from "@/lib/company"
-import { SITE_URL } from "@/lib/site"
+import type { Metadata } from "next"
+import { SITE_URL, HOME_DESCRIPTION, HOME_TITLE, websiteOpenGraph } from "@/lib/site"
 import { jsonLdScript } from "@/lib/json-ld"
 import { homeFaqJsonLd, softwareApplicationJsonLd } from "@/lib/product-structured-data"
+
+export const metadata: Metadata = {
+  openGraph: websiteOpenGraph({ title: HOME_TITLE, description: HOME_DESCRIPTION, url: "/" }),
+}
 
 const organizationJsonLd = {
   "@context": "https://schema.org",

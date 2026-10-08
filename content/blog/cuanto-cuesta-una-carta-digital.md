@@ -121,6 +121,4 @@ Después, compara esa cifra con lo que te da. Una carta que solo enseña los pla
 
 PowerUp Menu no gestiona pedidos ni pagos: el cliente consulta la carta y el pedido lo toma el camarero. Si necesitas que pidan y paguen desde el móvil, mira las opciones con pedidos de la tabla.
 
-## Fuentes
-
 Los precios salen de la web de cada herramienta, consultada el 4 de octubre de 2026, y pueden cambiar. Los enlaces están en la lista de fuentes.

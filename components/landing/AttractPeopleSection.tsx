@@ -79,7 +79,8 @@ function AttractCard({
         />
         <Image
           src="/images/cercles.svg"
-          alt="cercles"
+          alt=""
+          aria-hidden
           width={1000}
           height={1000}
           className="absolute top-1/4 left-0 w-full h-full object-cover mix-blend-overlay z-10 scale-150 opacity-90"

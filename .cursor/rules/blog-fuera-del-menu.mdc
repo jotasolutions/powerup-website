@@ -1,0 +1,12 @@
+---
+description: El blog no va en el menú ni junto a la CTA principal
+alwaysApply: true
+---
+
+# Blog fuera del menú
+
+El blog no se enlaza desde el menú de la home ni desde las landings (`NavMenu` y equivalentes). Ese enlace distrae de la llamada a la acción principal (alta, evaluar la carta, precios).
+
+- El enlace del footer a `/blog` y la entrada en el sitemap bastan para que Google descubra el blog. No hace falta un ítem «Blog» en la cabecera para el SEO.
+- En mejoras de la web, no añadir el blog al menú, al hero ni a un bloque que compita con esa CTA.
+- Los enlaces hacia artículos concretos, si hacen falta, van en el footer o dentro del contenido del propio blog.

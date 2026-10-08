@@ -82,7 +82,7 @@ export function AdminCarousel({ slides }: AdminCarouselProps) {
       >
         {slides.map((slide) => (
           <div key={slide.src} className="space-y-4 px-2 py-6 sm:px-10 md:px-[5rem] md:py-8">
-            <h3 className="text-base font-medium text-slate-900">{slide.title}</h3>
+            <p className="text-base font-medium text-slate-900">{slide.title}</p>
             <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-xl ">
              
               <LazyVideo

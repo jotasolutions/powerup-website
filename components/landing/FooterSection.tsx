@@ -56,8 +56,42 @@ export function FooterSection() {
                 Blog
               </Link>
             </p>
-            <p>Aprende a vender más</p>
-            <p>Prensa</p>
+            <p>
+              <Link
+                href="/blog/ingenieria-de-menu-para-restaurantes"
+                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                  label: "Ingeniería de menú",
+                  location: "footer",
+                  linkUrl: "/blog/ingenieria-de-menu-para-restaurantes",
+                })}
+              >
+                Ingeniería de menú
+              </Link>
+            </p>
+            <p>
+              <Link
+                href="/blog/costo-de-comida"
+                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                  label: "Costo de comida",
+                  location: "footer",
+                  linkUrl: "/blog/costo-de-comida",
+                })}
+              >
+                Costo de comida
+              </Link>
+            </p>
+            <p>
+              <Link
+                href="/blog/carta-restaurante"
+                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                  label: "Carta de restaurante",
+                  location: "footer",
+                  linkUrl: "/blog/carta-restaurante",
+                })}
+              >
+                Carta de restaurante
+              </Link>
+            </p>
           </div>
           <div className="space-y-2">
             <p className="font-medium">Soporte</p>

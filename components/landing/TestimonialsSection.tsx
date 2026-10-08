@@ -23,7 +23,7 @@ export function TestimonialsSection() {
             link: "https://carta.powerup.menu/taberna-marisa",
             userImage: "/images/testimonials/marisa/marisa.png",
             userName: "Marisa",
-            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">x1,2</span> Facturacion en 6 meses</div>
+            extraContent: <div className="text-lg font-medium text-gray-400"><span className="font-medium text-[#50B27F]">x1,2</span> Facturación en 6 meses</div>
         },
         {
             bgImage: "/images/testimonials/trattoria/bgimage.png",
@@ -62,7 +62,7 @@ export function TestimonialsSection() {
                 <div className="space-y-6 md:space-y-8">
                     <BlurFade inView inViewMargin="-80px">
                         <h2 className="section-title">Más de <Highlighter action="circle" color="#FF9800">
-                            <span className="font-medium text-[#50B27F]">+1500</span>
+                            <span className="font-medium text-[#50B27F]">1.500</span>
                         </Highlighter> restaurantes ya están vendiendo más</h2>
                     </BlurFade>
                     <BlurFade inView inViewMargin="-80px" delay={0.12}>
@@ -170,7 +170,7 @@ export function TestimonialsSection() {
                                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                     <div className="flex items-center gap-4">
                                         <div className="h-[44px] w-[44px] shrink-0 overflow-hidden rounded-full sm:h-[50px] sm:w-[50px]">
-                                            <Image src={testimonial.userImage} alt={testimonial.userName} width={100} height={100} className="carousel-contained-image object-cover" />
+                                            <Image src={testimonial.userImage} alt={`${testimonial.userName}, ${testimonial.place}`} width={100} height={100} className="carousel-contained-image object-cover" />
                                         </div>
                                         <div>
                                             <p className="font-medium">{testimonial.userName}</p>
