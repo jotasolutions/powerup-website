@@ -49,7 +49,7 @@ export function HeroSection() {
         <div className="absolute hidden  -top-20 w-[700px] h-full z-20 md:block md:-top-[130px] md:-right-40 md:scale-70 lg:-right-26 lg:-top-20 lg:scale-80  xl:scale-100 xl:right-0 xl:top-0">
           <Image
             src="/images/hero/hero-hand-8.png"
-            alt="hand"
+            alt="Carta digital de un restaurante en el móvil"
             width={1000}
             height={1000}
             sizes="650px"
@@ -90,7 +90,7 @@ export function HeroSection() {
           <div className="block md:hidden w-full max-w-[320px] mx-auto animate-in slide-in-from-bottom-[30px] duration-600 ease-out">
             <Image
               src="/images/mobile-hero2.png"
-              alt="hand"
+              alt="Carta digital de un restaurante en el móvil"
               width={920}
               height={540}
               sizes="320px"
@@ -101,11 +101,11 @@ export function HeroSection() {
           </div>
           <div className="space-y-5 lg:max-w-xl lg:space-y-6">
             <h1 className="text-center max-w-[300px] mx-auto sm:max-w-none md:mx-0 font-heading text-2xl leading-8 font-medium  text-black md:text-3xl md:text-left md:leading-10 md:max-w-[400px] lg:leading-12 lg:max-w-[520px] lg:text-4xl xl:leading-14 xl:text-5xl xl:max-w-[590px]">
-              Convierte la carta
-              <div className="mx-2 inline-block rotate-11 rounded-sm md:rounded-md bg-primary p-1.5 shadow-lg sm:mx-3">
+              Convierte la carta digital{" "}
+              <span aria-hidden className="mx-2 inline-block rotate-11 rounded-sm md:rounded-md bg-primary p-1.5 shadow-lg sm:mx-3">
                 <QrCode className="size-4 md:size-6 text-white sm:size-7" />
-              </div>
-              de tu restaurante en una máquina de <span className="mx-0.5"></span>
+              </span>{" "}
+              de tu restaurante en una máquina de{" "}
               <Highlighter action="circle" color="#FF9800" delay={1500} >
                 ventas
               </Highlighter>
@@ -139,10 +139,10 @@ export function HeroSection() {
             <div className="flex items-center gap-3 justify-center md:justify-start">
 
               <div className="flex -space-x-2">
-                <Image src="/images/testimonials/marisa/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
-                <Image src="/images/testimonials/taberna-casera/logo.webp" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
-                <Image src="/images/testimonials/arau/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
-                <Image src="/images/testimonials/goyos/logo.png" alt="Excellent" width={28} height={28} className="object-contain size-7 rounded-full" />
+                <Image src="/images/testimonials/marisa/logo.png" alt="La Taberna de Marisa" width={28} height={28} className="object-contain size-7 rounded-full" />
+                <Image src="/images/testimonials/taberna-casera/logo.webp" alt="La Taberna Casera" width={28} height={28} className="object-contain size-7 rounded-full" />
+                <Image src="/images/testimonials/arau/logo.png" alt="Arau" width={28} height={28} className="object-contain size-7 rounded-full" />
+                <Image src="/images/testimonials/goyos/logo.png" alt="Restaurante Goyos" width={28} height={28} className="object-contain size-7 rounded-full" />
               </div>
               <p className="text-lg md:text-2xl font-semibold text-slate-900">4.5</p>
               <div className="scale-75 -ml-3 md:scale-100 md:-ml-0">
@@ -173,7 +173,8 @@ export function HeroSection() {
         </motion.div>
         <Image
           src="/images/hero/hero-lines2.svg"
-          alt="cercles"
+          alt=""
+          aria-hidden
           width={1000}
           height={1000}
           className="absolute top-0 left-0 w-full h-full object-cover mix-blend-overlay z-10 opacity-40"
@@ -201,7 +202,7 @@ export function HeroSection() {
         />
         <Image
           src="/images/companies/orbita.png"
-          alt="Orbita"
+          alt="Órbita"
           width={94}
           height={24}
           className="hidden sm:block w-auto object-contain"

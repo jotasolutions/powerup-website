@@ -186,6 +186,4 @@ Encaja si quieres una carta sencilla, en varios idiomas, sin elegir entre planes
 4. **¿Quién sube la carta?** Importar desde un PDF, una foto o una plataforma de delivery ahorra horas.
 5. **¿Qué parte del precio es de oferta?** Algunos precios son promocionales: pregunta cuánto pagarás después.
 
-## Fuentes
-
 Los precios y las funciones salen de la web de cada herramienta, consultada el 4 de octubre de 2026. Ambra, que aparece en otras comparativas, no se ha podido incluir porque su web no respondía al consultarla. Los enlaces están en la lista de fuentes.

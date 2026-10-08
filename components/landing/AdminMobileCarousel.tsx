@@ -104,7 +104,8 @@ export function AdminMobileCarousel({ slides }: AdminMobileCarouselProps) {
                   </LazyVideo>
                   <Image
                     src={slide.frame}
-                    alt="iPhone frame"
+                    alt=""
+                    aria-hidden
                     fill
                     className={cn(
                       "pointer-events-none z-20 object-contain transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",

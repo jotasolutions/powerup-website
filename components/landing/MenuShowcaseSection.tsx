@@ -9,47 +9,56 @@ const showcaseItems = [
   {
     src: "/videos/cartas-demo/1080.mp4",
     url: "https://carta.powerup.menu/1018-pizza-las-rozas?utm_source=homepage",
-    image: "/videos/iphone17-sage.png"
+    image: "/videos/iphone17-sage.png",
+    alt: "Carta digital de 1018 Pizza Las Rozas en el móvil",
   },
   {
     src: "/videos/cartas-demo/arau.mp4",
     url: "https://carta.powerup.menu/arau-grilled-brunch?utm_source=homepage",
-    image: "/videos/iphone17-black.png"
+    image: "/videos/iphone17-black.png",
+    alt: "Carta digital de Arau Grilled Brunch en el móvil",
   },
   {
     src: "/videos/cartas-demo/casa-mediterrania.mp4",
     url: "https://carta.powerup.menu/casa-mediterrania?utm_source=homepage",
-    image: "/videos/iphone17-black.png"
+    image: "/videos/iphone17-black.png",
+    alt: "Carta digital de Casa Mediterrània en el móvil",
   },
   {
     src: "/videos/cartas-demo/chipa.mp4",
     url: "https://carta.powerup.menu/empanadas-chipa?utm_source=homepage",
-    image: "/videos/iphone17-black.png"
+    image: "/videos/iphone17-black.png",
+    alt: "Carta digital de Empanadas Chipa en el móvil",
   },
   {
     src: "/videos/cartas-demo/goyos.mp4",
     url: "https://carta.powerup.menu/restaurante-goyos?utm_source=homepage",
-    image: "/videos/iphone17-sage.png"
+    image: "/videos/iphone17-sage.png",
+    alt: "Carta digital de Restaurante Goyos en el móvil",
   },
   {
     src: "/videos/cartas-demo/marisa.mp4",
     url: "https://carta.powerup.menu/taberna-marisa?utm_source=homepage",
-    image: "/videos/iphone17-white.png"
+    image: "/videos/iphone17-white.png",
+    alt: "Carta digital de La Taberna de Marisa en el móvil",
   },
   {
     src: "/videos/cartas-demo/rinconcito.mp4",
     url: "https://carta.powerup.menu/restaurante-el-rinconcito-de-doa-juanita?utm_source=homepage",
-    image: "/videos/iphone17-sage.png"
+    image: "/videos/iphone17-sage.png",
+    alt: "Carta digital de El Rinconcito de Doña Juanita en el móvil",
   },
   {
     src: "/videos/cartas-demo/trattoria.mp4",
     url: "https://carta.powerup.menu/trattoria-piemontese?utm_source=homepage",
-    image: "/videos/iphone17-black.png"
+    image: "/videos/iphone17-black.png",
+    alt: "Carta digital de Trattoria Piemontese en el móvil",
   },
   {
     src: "/videos/cartas-demo/tropico.mp4",
     url: "https://carta.powerup.menu/trpico-brunch-barcelona-balmes?utm_source=homepage",
-    image: "/videos/iphone17-sage.png"
+    image: "/videos/iphone17-sage.png",
+    alt: "Carta digital de Trópico Brunch Barcelona en el móvil",
   },
 ] as const
 

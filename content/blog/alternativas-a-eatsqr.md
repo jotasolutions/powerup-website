@@ -175,6 +175,4 @@ Si lo que necesitas es un sistema de reservas completo (plano del local, turnos,
 
 Si quieres comparar el coste completo al año (IVA, altas, módulos y precios de oferta), lo explicamos en [cuánto cuesta una carta digital](/blog/cuanto-cuesta-una-carta-digital).
 
-## Fuentes
-
 Los precios y las funciones salen de la web de cada herramienta, consultada el 5 de octubre de 2026. Mr.Noow, que aparece en otras listas de alternativas, no se ha podido incluir porque su web no respondía al consultarla, y Menumigo se presenta todavía en acceso anticipado. Los enlaces están en la lista de fuentes.

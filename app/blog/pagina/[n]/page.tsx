@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getClusterPages } from "@/lib/blog/clusters"
-import { BLOG_DESCRIPTION, BLOG_PATH, listingPath } from "@/lib/blog/config"
+import { BLOG_PATH, listingPath } from "@/lib/blog/config"
 import { blogMetadata } from "@/lib/blog/metadata"
 import { getListingPage } from "@/lib/blog/posts"
 import { Breadcrumbs } from "../../_components/Breadcrumbs"
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return blogMetadata({
     path: listingPath(Number(n)),
     title: `Todos los artículos, página ${n}`,
-    description: BLOG_DESCRIPTION,
+    description: `Artículos del blog de PowerUp Menu, página ${n}: ingeniería de menú, neuromarketing, carta digital y rentabilidad para dueños de restaurantes.`,
   })
 }
 

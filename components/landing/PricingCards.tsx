@@ -73,7 +73,7 @@ export function PricingCards({ monthlyPriceInCents, yearlyPriceInCents }: Pricin
       <div className="relative mt-2 w-fit mx-auto">
         <Image
           src="/images/free-website-overlay.png"
-          alt="free website overlay"
+          alt="Página web incluida en el plan anual"
           width={100}
           height={100}
           className="absolute -left-24 -top-2 hidden h-auto w-[96px] sm:block md:-left-[7.5rem] md:w-[120px]"

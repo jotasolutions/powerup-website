@@ -13,6 +13,7 @@ import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
 import { BigTextSection } from "@/components/landing/BigTextSection"
 import { jsonLdScript } from "@/lib/json-ld"
 import { softwareApplicationJsonLd } from "@/lib/product-structured-data"
+import { websiteOpenGraph } from "@/lib/site"
 
 const title = "Precios | PowerUp Menu"
 const description =
@@ -24,14 +25,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/pricing",
   },
-  // Next replaces the parent openGraph object entirely, so the image must be repeated here.
-  openGraph: {
-    title,
-    description,
-    url: "/pricing",
-    type: "website",
-    images: ["/images/og-image.png"],
-  },
+  openGraph: websiteOpenGraph({ title, description, url: "/pricing" }),
 }
 
 export default async function PricingPage() {

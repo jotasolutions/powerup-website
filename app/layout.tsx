@@ -6,7 +6,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { SITE_URL } from "@/lib/site"
+import { HOME_DESCRIPTION, HOME_TITLE, SITE_URL, websiteOpenGraph } from "@/lib/site"
 
 
 const inter = Inter({
@@ -22,8 +22,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Carta Digital QR - Potencia las ventas de tu restaurante",
-  description: "Ingeniería de menú y neuromarketing para vender más a través de la carta digital. Sin conocimiento técnico.",
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -36,13 +36,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  openGraph: {
-    title: "Carta Digital QR - Potencia las ventas de tu restaurante",
-    description: "Ingeniería de menú y neuromarketing para vender más a través de la carta digital. Sin conocimiento técnico.",
-    images: [
-      "/images/og-image.png"
-    ]
-  },
+  openGraph: websiteOpenGraph({ title: HOME_TITLE, description: HOME_DESCRIPTION }),
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({
@@ -59,7 +54,7 @@ export default function RootLayout({
         <AttributionCapture />
         <Analytics/>
         <CookieConsent>
-          <main>{children}</main>
+          <div className="flex flex-1 flex-col">{children}</div>
           <Toaster />
         </CookieConsent>
         <SpeedInsights />

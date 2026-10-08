@@ -17,12 +17,12 @@ function AuthorName({ author }: { author: Author }) {
 
 function AuthorAvatar({ author }: { author: Author }) {
   if (author.kind === "person") {
-    return <Image src={author.photo} alt="" width={36} height={36} className="size-9 rounded-full bg-slate-200 object-cover" />
+    return <Image src={author.photo} alt={author.name} width={36} height={36} className="size-9 rounded-full bg-slate-200 object-cover" />
   }
   if (author.kind === "organization") {
     return (
       <span className="flex size-9 items-center justify-center rounded-full bg-primary">
-        <Image src="/images/isotipo-negativo.png" alt="" width={18} height={18} className="size-[18px] object-contain" />
+        <Image src="/images/isotipo-negativo.png" alt={author.name} width={18} height={18} className="size-[18px] object-contain" />
       </span>
     )
   }

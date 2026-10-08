@@ -17,14 +17,19 @@ import { WebsiteShowcaseSection } from "@/components/landing/website/WebsiteShow
 import { WebsitePricingSection } from "@/components/landing/website/WebsitePricingSection"
 import { WebsitePainPointSection } from "@/components/landing/website/WebsitePainPointSection"
 import { BigTextSection } from "@/components/landing/BigTextSection"
+import { websiteOpenGraph } from "@/lib/site"
+
+const title = "Página web para restaurantes | PowerUp Menu"
+const description =
+  "Crea una web moderna para tu restaurante en minutos, sin diseñadores ni código. Incluida con PowerUp Pro anual."
 
 export const metadata: Metadata = {
-  title: "Página web para restaurantes | PowerUp Menu",
-  description:
-    "Crea una web moderna para tu restaurante en minutos, sin diseñadores ni código. Incluida con PowerUp Pro anual.",
+  title,
+  description,
   alternates: {
     canonical: "/pagina-web",
   },
+  openGraph: websiteOpenGraph({ title, description, url: "/pagina-web" }),
 }
 
 export default async function WebsitePage() {

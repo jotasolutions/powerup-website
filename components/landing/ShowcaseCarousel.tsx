@@ -17,6 +17,7 @@ export type ShowcaseItem = {
   src: string
   image: string
   url?: string
+  alt?: string
 }
 
 type ShowcaseCarouselProps = {
@@ -145,13 +146,14 @@ export function ShowcaseCarousel({
                       src={item.src}
                       className={mediaClassName}
                       preloadFirstFrame={isNear && Math.abs(index - selectedItem) <= 1}
+                      aria-label={item.alt ?? "Ejemplo de carta digital de restaurante"}
                     >
                       Tu navegador no soporta el video.
                     </LazyVideo>
                   ) : (
                     <Image
                       src={item.src}
-                      alt="Ejemplo de web de restaurante"
+                      alt={item.alt ?? "Ejemplo de web de restaurante"}
                       width={201}
                       height={434}
                       className={mediaClassName}
@@ -160,7 +162,8 @@ export function ShowcaseCarousel({
                   )}
                   <Image
                     src={item.image}
-                    alt="iPhone frame"
+                    alt=""
+                    aria-hidden
                     fill
                     className={cn(
                       "pointer-events-none z-20 object-contain transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",

@@ -20,7 +20,7 @@ export function WebsiteAnalyticsSection() {
         )}
       >
         <div className="bg-purple-100 rounded-3xl overflow-hidden">
-          <Image src="/images/website-landing/website-metrics.png" alt="Páginas para todo lo que necesites" width={900} height={600} />
+          <Image src="/images/website-landing/website-metrics.png" alt="Panel de métricas de la web del restaurante" width={900} height={600} />
         </div>
         <div className="space-y-6">
           <BlurFade inView>

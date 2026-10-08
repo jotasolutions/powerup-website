@@ -247,7 +247,7 @@ export function AdvisorWidget() {
                                                 onCheckedChange={field.onChange} />
                                             <span className="leading-relaxed inline-block text-xs">
                                                 Acepto los <Link className="underline"
-                                                    href="/terms">Términos y condiciones</Link> y quiero recibir información de como mejorar mi oferta gastronomica</span>
+                                                    href="/terms">Términos y condiciones</Link> y quiero recibir información de cómo mejorar mi oferta gastronómica</span>
                                         </label>
                                         {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                                     </Field>

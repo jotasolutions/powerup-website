@@ -20,7 +20,8 @@ export function DifferentiationSection() {
       <>
         <Image
           src="/images/cercles.svg"
-          alt="cercles"
+          alt=""
+          aria-hidden
           width={1000}
           height={1000}
           className="absolute top-0 left-0 w-full h-full object-cover mix-blend-overlay z-10"
@@ -38,7 +39,7 @@ export function DifferentiationSection() {
               >
                 <Image
                   src="/images/carta-mockup2.png"
-                  alt="Carta digital mockup"
+                  alt="Carta digital de restaurante en el móvil"
                   width={400}
                   height={400}
                   className="mx-auto h-auto w-[260px] rounded-xl object-contain sm:w-[320px] md:w-[375px]"
@@ -59,7 +60,7 @@ export function DifferentiationSection() {
               >
                 <Image
                   src="/images/brain.png"
-                  alt="Ilustración cerebro"
+                  alt="Icono de cerebro sobre la carta digital"
                   width={130}
                   height={130}
                   className="mx-auto h-auto w-[72px] object-contain drop-shadow-xl sm:w-[90px] md:w-[100px]"

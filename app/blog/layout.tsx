@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 export default function BlogLayout({ children }: { children: ReactNode }) {
   return (
     <AdvisorDialogProvider>
-      <div className="flex flex-1 flex-col bg-white text-slate-900">
+      <main className="flex flex-1 flex-col bg-white text-slate-900">
         <NavMenu prefetchLinks={false} />
         {children}
         <FooterSection />
-      </div>
+      </main>
     </AdvisorDialogProvider>
   )
 }
