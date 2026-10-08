@@ -1,3 +1,4 @@
+import { organizationJsonLdFields } from "@/lib/company"
 import { SITE_URL } from "@/lib/site"
 import type { Author, PersonAuthor } from "./authors"
 import { absoluteUrl, authorPath, postPath } from "./config"
@@ -6,17 +7,9 @@ import type { FaqItem } from "./schema"
 import type { Cluster } from "./taxonomy"
 
 // Same @id as the Organization node on the homepage (app/page.tsx). Search engines evaluate
-// each page on its own, so every reference repeats name, url and logo instead of a bare @id.
-const ORGANIZATION_ID = `${SITE_URL}/#organization`
-
+// each page on its own, so every reference repeats NAP fields instead of a bare @id.
 export function organizationNode() {
-  return {
-    "@type": "Organization",
-    "@id": ORGANIZATION_ID,
-    name: "PowerUp Menu",
-    url: `${SITE_URL}/`,
-    logo: `${SITE_URL}/icons/apple-icon-180x180.png`,
-  }
+  return organizationJsonLdFields()
 }
 
 export function personNode(person: PersonAuthor) {

@@ -4,6 +4,7 @@ import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 import Link from "next/link"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
+import { COMPANY } from "@/lib/company"
 
 export function FooterSection() {
   return (
@@ -18,8 +19,28 @@ export function FooterSection() {
           <CTAButton />
         </div>
         <div className="grid gap-8 border-b border-solid border-[#CFF5FF] pb-8 text-sm sm:grid-cols-2 md:grid-cols-4 border-b-2">
-          <div>
-            <p className="font-medium text-lg">PowerUp Menu</p>
+          <div className="space-y-2">
+            <p className="font-medium text-lg">{COMPANY.brandName}</p>
+            <p className="text-xs leading-relaxed opacity-80">{COMPANY.legalName}</p>
+            <p className="text-xs leading-relaxed opacity-80">CIF {COMPANY.cif}</p>
+            <p className="text-xs leading-relaxed opacity-80">{COMPANY.addressDisplay}</p>
+            <p className="text-xs leading-relaxed opacity-80">
+              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
+            </p>
+            <p className="text-xs leading-relaxed opacity-80">
+              <a
+                href={COMPANY.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, {
+                  label: "whatsapp",
+                  location: "footer",
+                  linkUrl: COMPANY.whatsappUrl,
+                })}
+              >
+                WhatsApp {COMPANY.telephoneDisplay}
+              </a>
+            </p>
           </div>
           <div className="space-y-2">
             <p className="font-medium ">Recursos</p>
@@ -40,12 +61,27 @@ export function FooterSection() {
           </div>
           <div className="space-y-2">
             <p className="font-medium">Soporte</p>
-            <p>Contacto</p>
-            <p>Ayuda</p>
+            <p>
+              <a href={`mailto:${COMPANY.email}`}>Contacto</a>
+            </p>
+            <p>
+              <a
+                href={COMPANY.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, {
+                  label: "whatsapp-ayuda",
+                  location: "footer",
+                  linkUrl: COMPANY.whatsappUrl,
+                })}
+              >
+                Ayuda
+              </a>
+            </p>
           </div>
           <div className="space-y-2 flex flex-col gap-0">
             <p className="font-medium">Legal</p>
-            
+
             <Link
               href="/terms"
               {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
@@ -69,7 +105,9 @@ export function FooterSection() {
             <CookieSettingsLink />
           </div>
         </div>
-        <p className="text-xs plus-darker opacity-60">© 2026 PowerUP Menu. Todos los derechos reservados</p>
+        <p className="text-xs plus-darker opacity-60">
+          © 2026 {COMPANY.brandName}. Todos los derechos reservados
+        </p>
       </div>
     </SectionContainer>
   )

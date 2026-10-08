@@ -1,213 +1,228 @@
+import { COMPANY, SITE_URL_REF } from "@/components/legal/company-copy"
+
 export function PrivacyContent() {
   return (
     <>
       <p>
-        PowerUp Menu informs you about its Privacy Policy regarding the treatment and protection of personal
-        data of users and customers that may be collected by browsing or contracting services through the
-        website https://powerup.menu
+        PowerUp Menu te informa sobre su Política de privacidad respecto al tratamiento y la
+        protección de los datos personales de usuarios y clientes que puedan recogerse al navegar o
+        contratar servicios a través del sitio web {SITE_URL_REF}.
       </p>
       <p>
-        In this sense, the Owner guarantees compliance with current regulations on the protection of personal
-        data, reflected in Organic Law 3/2018, of December 5, Protection of Personal Data and Guarantee of
-        Digital Rights (LOPD GDD). It also complies with Regulation (EU) 2016/679 of the European
-        Parliament and of the Council of April 27, 2016 on the protection of natural persons (GDPR).
+        El Responsable garantiza el cumplimiento de la normativa vigente en materia de protección de
+        datos personales, recogida en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de
+        Datos Personales y garantía de los derechos digitales (LOPDGDD), y en el Reglamento (UE)
+        2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016 (RGPD).
       </p>
       <p>
-        The use of the website implies the acceptance of this Privacy Policy as well as the conditions
-        included in the Legal Notice.
+        El uso del sitio web implica la aceptación de esta Política de privacidad y de los{" "}
+        <a href="/terms">Términos y condiciones</a>.
       </p>
 
       <section className="space-y-4">
-        <h2>Identity of the person in charge</h2>
+        <h2>Identidad del responsable</h2>
         <ul>
-          <li>POWERUP MENU, SOCIEDAD LIMITADA</li>
-          <li>VAT: B75786459</li>
-          <li>Address: CALLE DEL TURIA, NUM 5, PLANTA 0, PUERTA IZ, 46008 VALÈNCIA</li>
-          <li>Email: info@powerup.menu</li>
-          <li>Website: https://powerup.menu</li>
-        </ul>
-      </section>
-
-      <section className="space-y-4">
-        <h3>Principles applied in data processing</h3>
-        <p>
-          In the processing of your personal data, the Owner will apply the following principles that comply
-          with the requirements of the new European data protection regulation:
-        </p>
-        <ul>
+          <li>{COMPANY.legalName}</li>
+          <li>CIF: {COMPANY.cif}</li>
+          <li>Domicilio: {COMPANY.addressDisplay}</li>
           <li>
-            Principle of legality, loyalty and transparency: The Holder will always require consent for the
-            processing of your personal data.
+            Email: <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
           </li>
           <li>
-            Principle of data minimization: The Owner will request only the data strictly necessary for the
-            purpose or purposes for which it is requested.
+            Teléfono / WhatsApp:{" "}
+            <a href={`tel:${COMPANY.telephone}`}>{COMPANY.telephoneDisplay}</a>
           </li>
           <li>
-            Principle of limitation of the conservation period: The data will be kept for the time strictly
-            necessary for the purpose or purposes of the treatment.
-          </li>
-          <li>
-            Principle of integrity and confidentiality: Your data will be treated in such a way that its
-            security, confidentiality and integrity is guaranteed.
+            Sitio web: <a href={SITE_URL_REF}>{SITE_URL_REF}</a>
           </li>
         </ul>
       </section>
 
       <section className="space-y-4">
-        <h3>Obtaining personal data</h3>
+        <h3>Principios aplicados al tratamiento</h3>
         <p>
-          To browse https://powerup.menu you do not need to provide any personal data. The cases in which
-          you do provide your personal data are the following:
-        </p>
-        <ul>
-          <li>By registering on the website</li>
-        </ul>
-      </section>
-
-      <section className="space-y-4">
-        <h3>Your rights</h3>
-        <p>The Holder informs you that regarding your personal data you have the right to:</p>
-        <ul>
-          <li>Request access to stored data.</li>
-          <li>Request a rectification or cancellation.</li>
-          <li>Request the limitation of your treatment.</li>
-          <li>Oppose the treatment.</li>
-          <li>Request the portability of your data.</li>
-        </ul>
-        <p>
-          To exercise your rights of access, rectification, cancellation, portability and opposition, you
-          must send an email to info@powerup.menu along with valid legal proof such as a photocopy of your
-          DNI or equivalent.
-        </p>
-      </section>
-
-      <section className="space-y-4">
-        <h3>Purpose of personal data processing</h3>
-        <p>
-          When you connect to the Website to send an email to the Owner or make a contract, you are
-          providing personal information for which the Owner is responsible.
-        </p>
-        <p>
-          By providing this information, you give your consent for your information to be collected, used,
-          managed and stored by HORIZON TECH OÜ, only as described in the Legal Notice and in this Privacy
-          Policy.
+          En el tratamiento de tus datos personales, el Responsable aplicará los siguientes
+          principios conforme al RGPD:
         </p>
         <ul>
           <li>
-            Registration form: The Holder requests the following personal information: Name and surname,
-            email address and telephone number.a
+            Licitud, lealtad y transparencia: se pedirá el consentimiento cuando sea necesario para
+            el tratamiento.
           </li>
-          <li>The data that you provide to the Owner will be located on Amazon AWS servers in Frankfurt.</li>
+          <li>
+            Minimización de datos: solo se solicitarán los datos estrictamente necesarios para la
+            finalidad correspondiente.
+          </li>
+          <li>
+            Limitación del plazo de conservación: los datos se conservarán el tiempo necesario para
+            la finalidad del tratamiento.
+          </li>
+          <li>
+            Integridad y confidencialidad: se adoptarán medidas para garantizar la seguridad y
+            confidencialidad de los datos.
+          </li>
         </ul>
       </section>
 
       <section className="space-y-4">
-        <h3>Security of personal data</h3>
+        <h3>Obtención de datos personales</h3>
         <p>
-          To protect your personal data, the Owner takes all reasonable precautions and follows the best
-          practices in the industry to prevent its loss, misuse, improper access, disclosure, alteration or
-          destruction thereof.
+          Para navegar por {SITE_URL_REF} no es necesario facilitar datos personales. Los casos en
+          los que sí los facilitas son, entre otros:
         </p>
-      </section>
-
-      <section className="space-y-4">
-        <h3>Content from other websites</h3>
-        <p>
-          The pages of this website may include embedded content (for example, videos, images, articles,
-          etc.). Embedded content from other websites behaves in exactly the same way as if you had visited
-          the other website.
-        </p>
-      </section>
-
-      <section className="space-y-4">
-        <h3 id="cookies">Cookies policy</h3>
-        <p>
-          For this website to work properly you need to use cookies, which is information that is stored in
-          your web browser.
-        </p>
-        <p>
-          On the Cookies Policy page you can consult all the information related to the collection policy,
-          the purpose and the treatment of cookies.
-        </p>
-      </section>
-
-      <section className="space-y-4">
-        <h3>Legitimation for data processing</h3>
-        <p>The legal basis for the processing of your data is: consent.</p>
-      </section>
-
-      <section className="space-y-4">
-        <h3>Categories of personal data</h3>
-        <p>The categories of personal data processed by the Holder are:</p>
         <ul>
-          <li>Identification data.</li>
+          <li>Al registrarte en el servicio o solicitar una demo o análisis de carta</li>
+          <li>Al contactar con nosotros por email o WhatsApp</li>
         </ul>
       </section>
 
       <section className="space-y-4">
-        <h3>Retention of personal data</h3>
+        <h3>Tus derechos</h3>
+        <p>Respecto a tus datos personales, tienes derecho a:</p>
+        <ul>
+          <li>Solicitar el acceso a los datos almacenados</li>
+          <li>Solicitar su rectificación o supresión</li>
+          <li>Solicitar la limitación del tratamiento</li>
+          <li>Oponerte al tratamiento</li>
+          <li>Solicitar la portabilidad de los datos</li>
+        </ul>
         <p>
-          The personal data that you provide to the Owner will be kept until you request its deletion or
-          until a reasonable time passes without access on your part.
+          Para ejercer los derechos de acceso, rectificación, cancelación, portabilidad y oposición,
+          envía un email a{" "}
+          <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> junto con una prueba de identidad
+          válida (por ejemplo, copia del DNI o documento equivalente).
         </p>
       </section>
 
       <section className="space-y-4">
-        <h3>Recipients of personal data</h3>
+        <h3>Finalidad del tratamiento</h3>
         <p>
-          Google Analytics is a web analytics service provided by Google, Inc., a Delaware company whose main
-          office is at 1600 Amphitheater Parkway, Mountain View (California), CA 94043, United States
-          ("Google"). You will find more information at: https://analytics.google.com
+          Cuando te pones en contacto con el Responsable o contratas un servicio, facilitas
+          información personal de la que PowerUp Menu es responsable.
+        </p>
+        <p>
+          Al facilitarla, das tu consentimiento para que dicha información sea recogida, usada,
+          gestionada y almacenada por {COMPANY.legalName}, únicamente según lo descrito en esta
+          Política de privacidad y en los Términos y condiciones.
+        </p>
+        <ul>
+          <li>
+            Formulario de registro: se pueden solicitar nombre y apellidos, dirección de email y
+            número de teléfono.
+          </li>
+          <li>
+            Los datos que facilites al Responsable se alojan en servidores de Amazon AWS en
+            Fráncfort (Alemania).
+          </li>
+        </ul>
+      </section>
+
+      <section className="space-y-4">
+        <h3>Seguridad de los datos personales</h3>
+        <p>
+          Para proteger tus datos personales, el Responsable adopta las precauciones razonables y
+          sigue las buenas prácticas del sector para evitar su pérdida, uso indebido, acceso no
+          autorizado, revelación, alteración o destrucción.
         </p>
       </section>
 
       <section className="space-y-4">
-        <h3>Web navegation</h3>
+        <h3>Contenido de otros sitios web</h3>
         <p>
-          When browsing https://powerup.menu, non-identifying data may be collected, which may include IP
-          address, geolocation, a record of how the services and sites are used, browsing habits and other
-          data that cannot be used to identify you.
+          Las páginas de este sitio pueden incluir contenido incrustado (vídeos, imágenes, artículos,
+          etc.). Ese contenido se comporta igual que si hubieras visitado el otro sitio web.
         </p>
-        <p>The Website uses the following third-party analytics services:</p>
+      </section>
+
+      <section className="space-y-4">
+        <h3 id="cookies">Política de cookies</h3>
+        <p>
+          Para que este sitio funcione correctamente se utilizan cookies, información que se
+          almacena en tu navegador. Puedes gestionar tus preferencias desde el enlace de Cookies del
+          pie de página.
+        </p>
+      </section>
+
+      <section className="space-y-4">
+        <h3>Legitimación del tratamiento</h3>
+        <p>
+          La base jurídica del tratamiento de tus datos es el consentimiento y, cuando proceda, la
+          ejecución de un contrato o el interés legítimo del Responsable.
+        </p>
+      </section>
+
+      <section className="space-y-4">
+        <h3>Categorías de datos personales</h3>
+        <p>Las categorías de datos personales tratados por el Responsable son:</p>
+        <ul>
+          <li>Datos de identificación y de contacto</li>
+        </ul>
+      </section>
+
+      <section className="space-y-4">
+        <h3>Conservación de los datos personales</h3>
+        <p>
+          Los datos personales que facilites se conservarán hasta que solicites su eliminación o
+          hasta que transcurra un tiempo razonable sin acceso por tu parte, salvo obligaciones
+          legales de conservación.
+        </p>
+      </section>
+
+      <section className="space-y-4">
+        <h3>Destinatarios de los datos personales</h3>
+        <p>
+          Google Analytics es un servicio de analítica web prestado por Google, Inc. (1600
+          Amphitheatre Parkway, Mountain View, California, CA 94043, Estados Unidos). Más
+          información en: https://analytics.google.com
+        </p>
+      </section>
+
+      <section className="space-y-4">
+        <h3>Navegación web</h3>
+        <p>
+          Al navegar por {SITE_URL_REF} pueden recogerse datos no identificativos, como dirección IP,
+          geolocalización, registro de uso de los servicios, hábitos de navegación u otros datos que
+          no permiten identificarte por sí solos.
+        </p>
+        <p>El sitio utiliza los siguientes servicios de analítica de terceros:</p>
         <ul>
           <li>Google Analytics</li>
         </ul>
       </section>
 
       <section className="space-y-4">
-        <h3>Accuracy and veracity of personal data</h3>
+        <h3>Exactitud y veracidad de los datos personales</h3>
         <p>
-          You agree that the data provided to the Owner is correct, complete, exact and current, as well as
-          to keep them duly updated.
+          Te comprometes a que los datos facilitados al Responsable sean correctos, completos,
+          exactos y actuales, y a mantenerlos debidamente actualizados.
         </p>
       </section>
 
       <section className="space-y-4">
-        <h3>Acceptance and consent</h3>
+        <h3>Aceptación y consentimiento</h3>
         <p>
-          As a User of the Website, you declare that you have been informed of the conditions on the
-          protection of personal data, you accept and consent to the treatment thereof by the Owner in the
-          manner and for the purposes indicated in this Privacy Policy.
+          Como usuario del sitio web, declaras haber sido informado de las condiciones sobre
+          protección de datos personales, y aceptas y consientes su tratamiento por el Responsable
+          en la forma y para las finalidades indicadas en esta Política de privacidad.
         </p>
       </section>
 
       <section className="space-y-4">
-        <h3>Revocability</h3>
+        <h3>Revocabilidad</h3>
         <p>
-          To exercise your rights of access, rectification, cancellation, portability and opposition, you
-          must send an email to info@powerup.menu along with valid legal proof such as a photocopy of your
-          DNI or equivalent.
+          Para ejercer tus derechos, envía un email a{" "}
+          <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> junto con una prueba de identidad
+          válida.
         </p>
       </section>
 
       <section className="space-y-4">
-        <h3>Privacy Policy Changes</h3>
+        <h3>Cambios en la Política de privacidad</h3>
         <p>
-          The Owner reserves the right to modify this Privacy Policy to adapt it to new legislation or
-          jurisprudence, as well as industry practices.
+          El Responsable se reserva el derecho de modificar esta Política de privacidad para
+          adaptarla a novedades legislativas o jurisprudenciales, así como a prácticas del sector.
         </p>
-        <p>These policies will be in force until they are modified by others duly published.</p>
+        <p>Estas políticas estarán vigentes hasta que se sustituyan por otras debidamente publicadas.</p>
       </section>
     </>
   )
