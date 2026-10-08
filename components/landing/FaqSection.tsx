@@ -6,8 +6,7 @@ import { CTAButton } from "../CTAButton"
 import { BlurFade } from "../ui/blur-fade"
 import Image from "next/image"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
-
-const WHATSAPP_URL = `https://wa.me/34651332202?text=${encodeURIComponent("Hola, tengo una pregunta sobre PowerUp Menu")}`
+import { COMPANY } from "@/lib/company"
 
 export function FaqSection() {
   return (
@@ -41,7 +40,7 @@ export function FaqSection() {
           </div>
           <Button variant="whatsapp" className="w-full" asChild>
             <a
-              href={WHATSAPP_URL}
+              href={COMPANY.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, { label: "whatsapp" })}

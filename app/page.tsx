@@ -17,17 +17,14 @@ import { TestimonialsSection } from "@/components/landing/TestimonialsSection"
 import { getPricingDataAction } from "@/app/actions/pricing"
 import { NavMenu } from "@/components/landing/NavMenu"
 import { BigTextSection } from "@/components/landing/BigTextSection"
+import { organizationJsonLdFields } from "@/lib/company"
 import { SITE_URL } from "@/lib/site"
 import { jsonLdScript } from "@/lib/json-ld"
 import { homeFaqJsonLd, softwareApplicationJsonLd } from "@/lib/product-structured-data"
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${SITE_URL}/#organization`,
-  name: "PowerUp Menu",
-  url: `${SITE_URL}/`,
-  logo: `${SITE_URL}/icons/apple-icon-180x180.png`,
+  ...organizationJsonLdFields(),
   sameAs: [
     "https://www.trustpilot.com/review/powerup.menu",
     "https://lanzadera.es/proyecto/powerup-menu/",
