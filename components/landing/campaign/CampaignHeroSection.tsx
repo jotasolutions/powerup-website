@@ -1,11 +1,11 @@
 "use client"
 
+import { Fragment } from "react"
 import Image from "next/image"
+import { Sparkle } from "lucide-react"
 
 import { CTAButton } from "@/components/CTAButton"
-import { LazyLottie } from "@/components/landing/LazyLottie"
 import { SectionContainer } from "@/components/landing/SectionContainer"
-import { attractFeatures } from "@/components/landing/section-data"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { Highlighter } from "@/components/ui/highlighter"
 import { campaignLandings, type CampaignLandingKey } from "./campaign-landing-data"
@@ -27,13 +27,31 @@ function HeroVisual({ landing }: { landing: CampaignLandingKey }) {
     )
   }
 
+  // The bottom padding leaves room for the hook pill.
   return (
-    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-[#F0FFF5] to-[#CBFFDC] px-6 pb-16">
-      <LazyLottie
-        animation={attractFeatures[0].animation}
-        loop
-        className="relative w-full max-w-[460px]"
-      />
+    <div
+      role="img"
+      aria-label={visual.alt}
+      className="absolute inset-0 flex flex-col justify-center gap-4 bg-gradient-to-b from-[#F8FAFC] to-[#ECF8FF] px-5 pb-20 sm:gap-6 sm:px-10 sm:pb-24"
+    >
+      <p className="max-w-[85%] self-end rounded-3xl rounded-br-md bg-slate-800 px-4 py-2.5 text-sm text-white sm:px-6 sm:py-4 sm:text-xl">
+        {visual.question}
+      </p>
+      <div className="flex max-w-[95%] items-end gap-2 sm:gap-3">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-600 sm:size-11">
+          <Sparkle className="size-4 sm:size-5" aria-hidden />
+        </span>
+        <p className="rounded-3xl rounded-bl-md bg-white px-4 py-2.5 text-sm text-slate-800 shadow-xl sm:px-6 sm:py-4 sm:text-xl">
+          {visual.answerStart}{" "}
+          {visual.places.map((place, i) => (
+            <Fragment key={place}>
+              {i > 0 && (i === visual.places.length - 1 ? " y " : ", ")}
+              <b className="font-semibold text-slate-900">{place}</b>
+            </Fragment>
+          ))}
+          .
+        </p>
+      </div>
     </div>
   )
 }

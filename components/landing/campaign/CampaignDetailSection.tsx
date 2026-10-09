@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Check } from "lucide-react"
+import { Check, Search } from "lucide-react"
 
 import { CTAButton } from "@/components/CTAButton"
 import { SectionContainer } from "@/components/landing/SectionContainer"
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 import { campaignLandings, type CampaignLandingKey } from "./campaign-landing-data"
 
 export function CampaignDetailSection({ landing }: { landing: CampaignLandingKey }) {
-  const { title, description, items, image, imageBackground } = campaignLandings[landing].detail
+  const { title, description, items, image, imageBackground, proof } = campaignLandings[landing].detail
 
   return (
     <SectionContainer id={`${landing}-detalle`}>
@@ -36,6 +36,28 @@ export function CampaignDetailSection({ landing }: { landing: CampaignLandingKey
               </li>
             ))}
           </ul>
+          {proof && (
+            <BlurFade inView inViewMargin="-80px" delay={0.1}>
+              <div className="space-y-3 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                <h3 className="font-heading text-lg font-medium text-slate-900 sm:text-xl">{proof.title}</h3>
+                <p className="text-sm text-slate-700 sm:text-base">{proof.text}</p>
+                <div className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4">
+                  <span className="shrink-0 rounded-lg bg-amber-100 px-2 py-1 font-heading text-sm font-semibold text-slate-900">
+                    1.º
+                  </span>
+                  <div className="min-w-0">
+                    <p className="flex items-center gap-1.5 text-xs text-slate-500">
+                      <Search className="size-3.5 shrink-0" aria-hidden />
+                      {proof.query}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-primary sm:text-base">{proof.resultTitle}</p>
+                    <p className="text-xs text-slate-600 sm:text-sm">{proof.resultUrl}</p>
+                  </div>
+                </div>
+                <p className="text-xs italic text-slate-500">{proof.source}</p>
+              </div>
+            </BlurFade>
+          )}
           <CTAButton />
         </div>
         <div className={cn("w-full max-w-2xl rounded-3xl overflow-hidden py-6 sm:px-4 sm:py-12 lg:max-w-none", imageBackground)}>

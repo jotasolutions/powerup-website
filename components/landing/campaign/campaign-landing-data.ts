@@ -7,8 +7,18 @@ export type CampaignLandingKey = "vende-mas" | "visibilidad"
 
 type CampaignHeroVisual =
   | { kind: "image"; src: string; alt: string; width: number; height: number }
-  // The "Haz que ChatGPT te recomiende" animation of the home's AttractPeopleSection.
-  | { kind: "chat-animation" }
+  // Generic chat, the same scene as the H1-A ad: no ChatGPT/OpenAI logo or interface.
+  | { kind: "chat"; question: string; answerStart: string; places: readonly string[]; alt: string }
+
+// A real search result, told as a dated case, never as a promise. No Google logo.
+type CampaignSearchProof = {
+  title: string
+  text: string
+  query: string
+  resultTitle: string
+  resultUrl: string
+  source: string
+}
 
 export type CampaignLanding = {
   metaTitle: string
@@ -28,6 +38,7 @@ export type CampaignLanding = {
     items: readonly string[]
     image: { src: string; alt: string; width: number; height: number }
     imageBackground: string
+    proof?: CampaignSearchProof
   }
   testimonial: {
     result: string
@@ -106,7 +117,13 @@ export const campaignLandings: Record<CampaignLandingKey, CampaignLanding> = {
       description:
         "Optimiza tu carta para aparecer en recomendaciones y comparativas antes de la visita. Y mantenla siempre actualizada en Google.",
       badge: TRIAL_BADGE,
-      visual: { kind: "chat-animation" },
+      visual: {
+        kind: "chat",
+        question: "¿Dónde ceno bien por aquí?",
+        answerStart: "Te recomiendo",
+        places: ["Casa Lola", "Bodega El Puerto", "Arrocería La Plaza"],
+        alt: "Chat con una IA: alguien pregunta dónde cenar y le recomienda otros tres restaurantes",
+      },
     },
     bigText:
       "La gente ya busca dónde comer en Google y en las IA. Fuera del restaurante, tu carta digital ayuda a que te encuentren, te comparen y te elijan antes de venir, sin que tengas que ser experto.",
@@ -126,6 +143,16 @@ export const campaignLandings: Record<CampaignLandingKey, CampaignLanding> = {
         height: 550,
       },
       imageBackground: "bg-gradient-to-b from-[#F0FFF5] to-[#CBFFDC]",
+      // Google.es, 09-10-2026: the client's PowerUp menu is the first web result (same with four
+      // other clients). Source and wording in CREATIVIDADES.md, in the campaign folder.
+      proof: {
+        title: "Busca «carta + tu restaurante»",
+        text: "Cuando alguien busca «carta La Taberna Casera» en Google, lo primero que encuentra es su carta de PowerUp: al día, con fotos y en su idioma. No un PDF viejo ni la carta de otra web.",
+        query: "carta la taberna casera",
+        resultTitle: "La taberna casera - Carta digital QR",
+        resultUrl: "carta.powerup.menu › taberna-casera",
+        source: "Búsqueda en Google.es, octubre de 2026.",
+      },
     },
     testimonial: {
       result: "Recibe visitas de ChatGPT, y lo ve en sus analíticas",
