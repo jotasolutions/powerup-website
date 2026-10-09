@@ -39,7 +39,7 @@ export default function VisibilidadPage() {
       />
       <NavMenu />
       <CampaignHeroSection landing="visibilidad" />
-      <BigTextSection showImages={false} paragraph={landing.bigText} />
+      <BigTextSection showImages={false} paragraph={landing.bigText} compact />
       <AttractPeopleSection />
       <CampaignDetailSection landing="visibilidad" />
       <CampaignTestimonialSection landing="visibilidad" />
