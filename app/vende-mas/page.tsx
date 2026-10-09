@@ -39,7 +39,7 @@ export default function VendeMasPage() {
       />
       <NavMenu />
       <CampaignHeroSection landing="vende-mas" />
-      <BigTextSection showImages={false} paragraph={landing.bigText} />
+      <BigTextSection showImages={false} paragraph={landing.bigText} compact />
       <SellMoreSection />
       <CampaignDetailSection landing="vende-mas" />
       <CampaignTestimonialSection landing="vende-mas" />
