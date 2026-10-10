@@ -3,7 +3,9 @@
 Este documento es la referencia para las sesiones de IA que cambian esta web, y también para leer
 los informes. Describe lo que está publicado:
 - el código de `main` a 02-10-2026 (`60b2ece`), con los arreglos del bloque A (apartado 12);
-- el contenedor de GTM `GTM-WX5BXSST` en su versión 22.
+- el contenedor de GTM `GTM-WX5BXSST` en su versión 22, más el cambio de Umami de la versión 26
+  (apartado 12). La copia de esta carpeta es la versión 26: lo que añadieron las versiones 23 a 25 todavía
+  no está descrito aquí (ver «Pendiente de describir» en el apartado 12).
 
 Si cambias algo de lo que se describe aquí, actualiza este documento en el mismo PR (apartado 9).
 
@@ -11,7 +13,7 @@ Si cambias algo de lo que se describe aquí, actualiza este documento en el mism
 
 | Herramienta | Qué hace | Dónde se configura | Cuándo se carga |
 |---|---|---|---|
-| Google Tag Manager `GTM-WX5BXSST` (contenedor «powerup.menu») | Reparte los eventos de la web entre Google Analytics, Meta y Umami | En GTM. Hay una copia en `gtm-WX5BXSST-v22.json` | Solo si la persona acepta las cookies de analítica (`components/GoogleTagManager.tsx`) |
+| Google Tag Manager `GTM-WX5BXSST` (contenedor «powerup.menu») | Reparte los eventos de la web entre Google Analytics, Meta y Umami | En GTM. Hay una copia en `gtm-WX5BXSST-v26.json` | Solo si la persona acepta las cookies de analítica (`components/GoogleTagManager.tsx`) |
 | Google Analytics de la web: `G-CFJCMZXWX7`, propiedad `545089122` («PowerUp Website - NEW») | Todo lo que no cuelga de `/blog` | GTM y los ajustes de la propiedad | Con GTM |
 | Google Analytics del blog: `G-X22L95WE0Y`, propiedad `407744305` («PowerUp Blog», la del blog viejo) | Todo lo que cuelga de `/blog` | GTM y los ajustes de la propiedad | Con GTM |
 | Píxel de Meta `1582188126799857` | `PageView` y `Lead` | GTM | Con GTM y, además, con las cookies de marketing aceptadas |
@@ -349,3 +351,9 @@ Los cambios en Analytics o en Meta los hace Fede, o Claude in Chrome con su perm
     </script>
     ```
   - `data-domains="www.powerup.menu"`: deja de contar el dominio de Vercel y el local.
+- **Pendiente de describir (copia de la versión 26, exportada el 10-10-2026):** el contenedor tiene piezas
+  que este mapa todavía no explica, añadidas en las versiones 23 a 25:
+  - Meta: la etiqueta «Meta · ClicAlta (clic de alta)» (evento propio `ClicAlta` en cada `sign_up_click`, con
+    el marketing aceptado), además de «Meta · PageView» y «Meta · Lead (Advisor)»;
+  - OpenAI: un píxel con cinco etiquetas («OpenAI · init», `page_viewed`, `advisor_started`,
+    `signup_started` y `lead_created`), todas solo con el marketing aceptado.

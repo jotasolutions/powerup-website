@@ -1,0 +1,2476 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-10-10 17:58:08",
+    "containerVersion": {
+        "path": "accounts/6365406953/containers/257965932/versions/26",
+        "accountId": "6365406953",
+        "containerId": "257965932",
+        "containerVersionId": "26",
+        "name": "Umami con comprobación (10-10)",
+        "description": "La etiqueta de Umami carga el script con data-website-id y no carga una segunda copia si la página ya lo tiene.",
+        "container": {
+            "path": "accounts/6365406953/containers/257965932",
+            "accountId": "6365406953",
+            "containerId": "257965932",
+            "name": "powerup.menu",
+            "publicId": "GTM-WX5BXSST",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1783693909362",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6365406953/containers/257965932/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-WX5BXSST"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "40",
+                "name": "GA4 · Google tag · web",
+                "type": "googtag",
+                "notes": "Base de Google Analytics de la web. Se activa en «Inicialización» si se entra por la web; si no, la activan antes las etiquetas de la web. Sin página vista automática: las manda «GA4 · page_view · web». Google signals, solo con el marketing aceptado.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{const.ga4_id_web}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "allow_google_signals"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.marketing_aceptado}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "allow_ad_personalization_signals"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.marketing_aceptado}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "firingTriggerId": [
+                    "39"
+                ],
+                "parentFolderId": "33",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "44",
+                "name": "GA4 · eventos · web",
+                "type": "gaawe",
+                "notes": "Eventos propios de la web que ocurren en la web, con el nombre que manda la web y seccion = web.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "event_label"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.event_label}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.link_url_sin_parametros}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_text"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.link_text}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "section_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.section_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.form_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "billing_period"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.billing_period}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "seccion"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.seccion}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{Event}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_web}}"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "firingTriggerId": [
+                    "34"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "GA4 · Google tag · web",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "33",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "48",
+                "name": "GA4 · alta y Advisor del blog → web",
+                "type": "gaawe",
+                "notes": "Copia para la propiedad de la web de los clics de alta y del Advisor del blog, con seccion = blog. No activa la Google tag de la web: si la persona no ha pasado por la web, sale sin sus ajustes (sin el de Google signals). Hueco aceptado por Fede el 29-09.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "event_label"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.event_label}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.link_url_sin_parametros}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_text"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.link_text}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "section_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.section_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.form_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "billing_period"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.billing_period}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "seccion"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.seccion}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{Event}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_web}}"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "firingTriggerId": [
+                    "45"
+                ],
+                "parentFolderId": "33",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "50",
+                "name": "Umami tracking code",
+                "type": "html",
+                "notes": "Sin cambios en la fase 0. Sale de GTM en el plan aparte.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n(function(){\n  if (window.umami || document.querySelector('script[src*=\"umami.powerup.menu/script.js\"]')) return;\n  var s = document.createElement('script');\n  s.defer = true;\n  s.src = 'https://umami.powerup.menu/script.js';\n  s.setAttribute('data-website-id', 'ff12504c-d577-4856-8279-0d84ba8d3856');\n  document.head.appendChild(s);\n})();\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1791652974408",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "parentFolderId": "18",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "53",
+                "name": "GA4 · Google tag · blog",
+                "type": "googtag",
+                "notes": "Base de Google Analytics del blog. Se activa en «Inicialización» si se entra por el blog; si no, la activan antes las etiquetas del blog. Sin página vista automática: las manda «GA4 · page_view · blog». Google signals, solo con el marketing aceptado.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{const.ga4_id_blog}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "allow_google_signals"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.marketing_aceptado}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "allow_ad_personalization_signals"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.marketing_aceptado}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "firingTriggerId": [
+                    "52"
+                ],
+                "parentFolderId": "24",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "55",
+                "name": "GA4 · page_view · blog",
+                "type": "gaawe",
+                "notes": "Una página vista por cada cambio de página del blog, con la dirección y el título que manda la web.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.page_location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.page_title}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_blog}}"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "firingTriggerId": [
+                    "54"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "GA4 · Google tag · blog",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "24",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "56",
+                "name": "GA4 · eventos · blog",
+                "type": "gaawe",
+                "notes": "Eventos propios de la web que ocurren en el blog, con el nombre que manda la web.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "event_label"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.event_label}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{js.link_url_sin_parametros}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "link_text"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.link_text}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "section_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.section_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.form_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "billing_period"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.billing_period}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{Event}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_blog}}"
+                    }
+                ],
+                "fingerprint": "1790681008811",
+                "firingTriggerId": [
+                    "36"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "GA4 · Google tag · blog",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "24",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "58",
+                "name": "GA4 · page_view · web",
+                "type": "gaawe",
+                "notes": "Una página vista por cada cambio de página de la web, con la dirección y el título que manda la web.",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.page_location}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{dlv.page_title}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{const.ga4_id_web}}"
+                    }
+                ],
+                "fingerprint": "1790681008811",
+                "firingTriggerId": [
+                    "57"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "GA4 · Google tag · web",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "33",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "63",
+                "name": "Meta · Lead (Advisor)",
+                "type": "html",
+                "notes": "Lead de Meta cuando se genera un lead en el Advisor. Solo con el marketing aceptado; activa antes la base del píxel.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  fbq('track', 'Lead', {\n    content_name: 'advisor',\n    content_category: {{Page Path}}\n  }, {\n    eventID: {{dlv.event_id}}\n  });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1791190344850",
+                "firingTriggerId": [
+                    "62"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Meta · base del píxel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "25",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "66",
+                "name": "Meta · ClicAlta (clic de alta)",
+                "type": "html",
+                "notes": "Lead en cada clic de alta, con el event_id de la web. Solo con el marketing aceptado; activa antes la base del píxel. Qué es un Lead se revisa en la fase 1.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  fbq('trackCustom', 'ClicAlta', {\n    content_name: {{dlv.event_label}},\n    content_category: {{dlv.link_url}}\n  }, {\n    eventID: {{dlv.event_id}}\n  });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1791190344851",
+                "firingTriggerId": [
+                    "65"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Meta · base del píxel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "25",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "67",
+                "name": "Meta · PageView",
+                "type": "html",
+                "notes": "PageView en cada cambio de página, con el event_id de la web. Solo con el marketing aceptado; activa antes la base del píxel.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  fbq('track', 'PageView', {\n    page_path: {{Page Path}}\n  }, {\n    eventID: {{dlv.event_id}}\n  });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1791190344851",
+                "firingTriggerId": [
+                    "64"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Meta · base del píxel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "25",
+                "tagFiringOption": "UNLIMITED",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "68",
+                "name": "Meta · base del píxel",
+                "type": "html",
+                "notes": "Carga el píxel de Meta una vez por página, sin contar él solo los cambios de página (disablePushState). Con allowDuplicatePageViews, el píxel acepta un PageView manual por cada cambio de página sin recarga: sin él, descarta todos menos el primero de cada carga. No tiene activador: la activan «Meta · PageView» y «Meta · Lead» antes de salir, y solo con el marketing aceptado.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<!-- Meta Pixel Code -->\n<script>\n!function(f,b,e,v,n,t,s)\n{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};\nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\nn.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];\ns.parentNode.insertBefore(t,s)}(window, document,'script',\n'https://connect.facebook.net/en_US/fbevents.js');\nfbq.disablePushState = true;\nfbq.allowDuplicatePageViews = true;\nfbq('init', {{const.meta_pixel_id}});\n</script>\n<!-- End Meta Pixel Code -->"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1791192028437",
+                "parentFolderId": "25",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "77",
+                "name": "OpenAI · init",
+                "type": "cvt_257965932_70",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "pixelId",
+                        "value": "{{const.openai_pixel_id}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableDebug",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEvent",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1791286716202",
+                "firingTriggerId": [
+                    "76"
+                ],
+                "parentFolderId": "69",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "78",
+                "name": "OpenAI · page_viewed",
+                "type": "cvt_257965932_70",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "pixelId",
+                        "value": "{{const.openai_pixel_id}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableDebug",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEvent",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_viewed"
+                    }
+                ],
+                "fingerprint": "1791286803604",
+                "firingTriggerId": [
+                    "72"
+                ],
+                "parentFolderId": "69",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "79",
+                "name": "OpenAI · advisor_started",
+                "type": "cvt_257965932_70",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "pixelId",
+                        "value": "{{const.openai_pixel_id}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableDebug",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEvent",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "custom"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "customEventName",
+                        "value": "advisor_started"
+                    }
+                ],
+                "fingerprint": "1791286876418",
+                "firingTriggerId": [
+                    "75"
+                ],
+                "parentFolderId": "69",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "80",
+                "name": "OpenAI · signup_started",
+                "type": "cvt_257965932_70",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "pixelId",
+                        "value": "{{const.openai_pixel_id}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableDebug",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEvent",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "custom"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "customEventName",
+                        "value": "signup_started"
+                    }
+                ],
+                "fingerprint": "1791286926395",
+                "firingTriggerId": [
+                    "73"
+                ],
+                "parentFolderId": "69",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "tagId": "81",
+                "name": "OpenAI · lead_created",
+                "type": "cvt_257965932_70",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "pixelId",
+                        "value": "{{const.openai_pixel_id}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventId",
+                        "value": "{{dlv.event_id}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableDebug",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEvent",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "lead_created"
+                    }
+                ],
+                "fingerprint": "1791286991970",
+                "firingTriggerId": [
+                    "74"
+                ],
+                "parentFolderId": "69",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "34",
+                "name": "eventos · web",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(sign_up_click|login_click|nav_click|logo_click|outbound_click|example_menu_click|menu_showcase_click|menu_showcase_slide|section_view|advisor_step_1_complete|generate_lead|cookie_settings_open|pricing_billing_tab_click)$"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "33",
+                "notes": "Eventos propios de la web en páginas de la web. Para medir un evento nuevo, añádelo a esta lista y a la de «eventos · blog»."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "36",
+                "name": "eventos · blog",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(sign_up_click|login_click|nav_click|logo_click|outbound_click|example_menu_click|menu_showcase_click|menu_showcase_slide|section_view|advisor_step_1_complete|generate_lead|cookie_settings_open|pricing_billing_tab_click)$"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "blog"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "24",
+                "notes": "Eventos propios de la web en páginas del blog. Misma lista que «eventos · web»."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "39",
+                "name": "Inicialización · entrada por la web",
+                "type": "INIT",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "33",
+                "notes": "Al cargar GTM en una página de la web. Activa la Google tag de la web antes que cualquier evento."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "45",
+                "name": "alta y Advisor en el blog",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(sign_up_click|advisor_step_1_complete|generate_lead)$"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "blog"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "33",
+                "notes": "Clics de alta y Advisor (paso 1 y lead) en páginas del blog: su copia va también a la propiedad de la web."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "52",
+                "name": "Inicialización · entrada por el blog",
+                "type": "INIT",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "blog"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "parentFolderId": "24",
+                "notes": "Al cargar GTM en una página del blog. Activa la Google tag del blog antes que cualquier evento."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "54",
+                "name": "page_view · blog",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "page_view"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "blog"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "parentFolderId": "24",
+                "notes": "Cada página vista del blog."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "57",
+                "name": "page_view · web",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "page_view"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1790681008811",
+                "parentFolderId": "33",
+                "notes": "Cada página vista de la web."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "62",
+                "name": "Meta · generate_lead con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "generate_lead"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "www.powerup.menu"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1791190344850",
+                "parentFolderId": "25",
+                "notes": "Cada lead del Advisor, solo con el marketing aceptado y en www.powerup.menu."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "64",
+                "name": "Meta · page_view con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "page_view"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "www.powerup.menu"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1791190344850",
+                "parentFolderId": "25",
+                "notes": "Cada página vista, en la web y en el blog, solo con el marketing aceptado."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "65",
+                "name": "Meta · sign_up_click con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "sign_up_click"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "www.powerup.menu"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1791190344850",
+                "parentFolderId": "25",
+                "notes": "Cada clic de alta, en la web y en el blog, solo con el marketing aceptado."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "72",
+                "name": "OpenAI · page_view con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "page_view"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1791287171354",
+                "parentFolderId": "69",
+                "notes": "Cada página vista, en la web y en el blog, solo con el marketing aceptado."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "73",
+                "name": "OpenAI · sign_up_click con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "sign_up_click"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1791287274041",
+                "parentFolderId": "69",
+                "notes": "Cada clic de alta, en la web y en el blog, solo con el marketing aceptado."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "74",
+                "name": "OpenAI · generate_lead con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "generate_lead"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1791287301623",
+                "parentFolderId": "69",
+                "notes": "Cada lead del Advisor, solo con el marketing aceptado y en www.powerup.menu."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "75",
+                "name": "OpenAI · advisor_step_1_complete con marketing",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "advisor_step_1_complete"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1791287198762",
+                "parentFolderId": "69",
+                "notes": "Primer paso del Advisor completado, solo con el marketing aceptado y en www.powerup.menu."
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "triggerId": "76",
+                "name": "OpenAI · Inicialización con marketing",
+                "type": "INIT",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.seccion}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "web"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{js.marketing_aceptado}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1791286463222",
+                "parentFolderId": "69",
+                "notes": "Al cargar GTM en la web, solo con el marketing aceptado. Activa el pixel de OpenAI una sola vez, antes que cualquier evento."
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "19",
+                "name": "js.marketing_aceptado",
+                "type": "jsm",
+                "notes": "true solo si en el banner de cookies está aceptado el marketing. La web no avisa a GTM del consentimiento (Consent Mode roto), así que se lee de lo que guarda el banner (localStorage cookie-consent).",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  // Lee la elección que guarda el banner de cookies de la web.\n  // Devuelve true solo si la persona aceptó las cookies de marketing.\n  try {\n    var guardado = JSON.parse(window.localStorage.getItem('cookie-consent'));\n    return !!(guardado && guardado.categories && guardado.categories.marketing === true);\n  } catch (e) {\n    return false;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "20",
+                "name": "dlv.page_path",
+                "type": "v",
+                "notes": "Ruta de la página que manda la web en page_view y section_view.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_path"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "21",
+                "name": "dlv.link_url",
+                "type": "v",
+                "notes": "Enlace del elemento en el que se hizo clic, completo. Lo usa Meta.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "link_url"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "22",
+                "name": "dlv.section_name",
+                "type": "v",
+                "notes": "Sección de la home que se ha visto (section_view).",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "section_name"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "23",
+                "name": "dlv.page_title",
+                "type": "v",
+                "notes": "Título de la página que manda la web en page_view.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_title"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "27",
+                "name": "dlv.event_id",
+                "type": "v",
+                "notes": "Identificador único que la web pone a cada evento. Meta lo usa para no contar dos veces.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event_id"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "30",
+                "name": "dlv.event_label",
+                "type": "v",
+                "notes": "Texto o etiqueta del elemento en el que se hizo clic.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event_label"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "32",
+                "name": "js.seccion",
+                "type": "jsm",
+                "notes": "blog o web, según la ruta de la página. Decide a qué propiedad de Google Analytics va cada cosa.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  // «blog» si la página es /blog o cuelga de /blog; si no, «web».\n  // En page_view y section_view usa la ruta que manda la web; en el resto, la de la página actual.\n  var ruta = {{dlv.page_path}} || {{Page Path}} || '';\n  return /^\\/blog(\\/|\\?|#|$)/.test(ruta) ? 'blog' : 'web';\n}"
+                    }
+                ],
+                "fingerprint": "1790681008741",
+                "parentFolderId": "18"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "35",
+                "name": "dlv.link_text",
+                "type": "v",
+                "notes": "Texto visible del elemento en el que se hizo clic.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "link_text"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "37",
+                "name": "const.ga4_id_web",
+                "type": "c",
+                "notes": "Propiedad de Google Analytics de la web (545089122).",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-CFJCMZXWX7"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "33"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "38",
+                "name": "dlv.form_name",
+                "type": "v",
+                "notes": "Formulario que generó el lead (generate_lead).",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "form_name"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "41",
+                "name": "dlv.billing_period",
+                "type": "v",
+                "notes": "Periodo de pago elegido en la pestaña de precios.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "billing_period"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "42",
+                "name": "js.link_url_sin_parametros",
+                "type": "jsm",
+                "notes": "El enlace del clic sin la parte que sigue a ?, para Google Analytics (corta a 100 caracteres). Meta sigue recibiendo el enlace entero.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () {\n  // El enlace del clic sin lo que va detrás de «?» (los UTM), para Google Analytics.\n  var url = {{dlv.link_url}};\n  if (!url) {\n    return undefined;\n  }\n  return String(url).split('?')[0];\n}"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "43",
+                "name": "dlv.location",
+                "type": "v",
+                "notes": "Dónde está el elemento del clic: nav_desktop, footer, hero, blog, advisor...",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "location"
+                    }
+                ],
+                "fingerprint": "1790681008742",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "49",
+                "name": "dlv.page_location",
+                "type": "v",
+                "notes": "Dirección completa de la página que manda la web en page_view. Antes se llamaba dlv.location.",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_location"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "parentFolderId": "18",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "51",
+                "name": "const.ga4_id_blog",
+                "type": "c",
+                "notes": "Propiedad de Google Analytics del blog (407744305, la del blog viejo).",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-X22L95WE0Y"
+                    }
+                ],
+                "fingerprint": "1790681008743",
+                "parentFolderId": "24"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "60",
+                "name": "const.meta_pixel_id",
+                "type": "c",
+                "notes": "Píxel de Meta de la web («Pixel Homepage new», con Conversions API de Meta). Se mantiene en la fase 1 (05-10-2026); unificar con 1379933822562089 cuando admin mande conversiones.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "1582188126799857"
+                    }
+                ],
+                "fingerprint": "1791190344850",
+                "parentFolderId": "25"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "variableId": "71",
+                "name": "const.openai_pixel_id",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "7JLBcqTuWXHPmEVZZPHiow"
+                    }
+                ],
+                "fingerprint": "1791286063350",
+                "parentFolderId": "69",
+                "formatValue": {}
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "18",
+                "name": "Común",
+                "fingerprint": "1790681008740"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "24",
+                "name": "GA4 blog",
+                "fingerprint": "1790681008741"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "25",
+                "name": "Meta",
+                "fingerprint": "1790681008741"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "33",
+                "name": "GA4 web",
+                "fingerprint": "1790681008741"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "folderId": "69",
+                "name": "OpenAI",
+                "fingerprint": "1791285718316"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1791653816551",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6365406953/containers/257965932/versions/26?apiLink=version",
+        "customTemplate": [
+            {
+                "accountId": "6365406953",
+                "containerId": "257965932",
+                "templateId": "70",
+                "name": "OpenAI Ads Measurement Pixel",
+                "fingerprint": "1791285929849",
+                "templateData": "___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_openai_ads_pixel\",\n  \"version\": 1,\n  \"categories\": [\n    \"ADVERTISING\",\n    \"CONVERSIONS\"\n  ],\n  \"displayName\": \"OpenAI Ads Measurement Pixel\",\n  \"brand\": {\n    \"id\": \"openai\",\n    \"displayName\": \"OpenAI\",\n    \"thumbnail\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAeGVYSWZNTQAqAAAACAAEARoABQAAAAEAAAA+ARsABQAAAAEAAABGASgAAwAAAAEAAgAAh2kABAAAAAEAAABOAAAAAAAAAEgAAAABAAAASAAAAAEAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAYKADAAQAAAABAAAAYAAAAACavGt5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAMCklEQVR4Ae2aC7BWVRXHkUJIXgIZgggMvhC4hqRJoDGROfjACDArmhhtkhkcBw1LY0oJE8sXpIaMRU0aho0kiKlQkiIGCiIQSRB4AQMEEjAgkMT6/YvlLPec833ne8A9F/ea+c1+rb323mvvsx/fvQ0aRIkeiB6IHogeiB6IHogeiB6IHogeiB6IHogeiB6IHogeiB6IHogeiB6IHogeONI9cFSOB9iOvp0FveBkaA0fgj3wd1gOi+AvcACiVMkD/bHzMGyF/xRhP+UvwjWgCYpSgQdqqDsT3oVijk8qX0O9r0NDiFKiB65CfwckOVZ52mK09ewCrfo0PeVPh7bgpQkJfSEfg5agrSwXUtdngNofDzcmeEMrejbMh9WgCdLX0Rw6Q1+4GPTlhLKUDNk9E86GjtACPgz74E2QzT/BH2AFfCDlB4w6XM06VL8GcnQx0cq+DF6GcreuvdR9Gi6FD5TIyaHzJ5HXqgwvaIWvSrAX2i+Wfhwbp5fRfr2rchI9/gd4h4wpYxQ6cIeBvpq0L0DbjcoXHmQl4Xbwbfu4bl9fhCNapjI6P+iJZYy2D3XmBHbMps6Ln8IA0HviaDBpTOQEUNlPYDNYPQv/Td5IOCJFB+N+sMEuIX5MCSPthO5k0GFqNix8h7wH4TTIKu1R/BHoLDA7CmVLX9cRJ/cwIhuoto1LMo6wKXqjIWnFyt486A/liupuAOubwrdAC+aIkY8wkrVgg9Tqb5RhdIPQka7V86Hs6QGWxQ5qBaWG0vXg7esarG3riJDPMAo9qmyAY4uMqifljzl9q6dQq/M2OA6qKX0xtht8W1dUs4HDbUsH4GCQI3Uj8QM7n3SS6NV6J4SOUF1tW49AD8gisqWJ75RF+aDOTYS+n3rY1cuvQDcNXf/8YCyuQ+8UCEXb1DNgej6UrQvDCilpvXqvBL2oZUPX3pvhWCgmLVGoBWtbk65JrDfShJ7eDX67scFYuJ1yXRFD6U6GBmx6CnU4Xg2ym0X6ofQseBsWf5X8y+EoKCTfo9DqKLyrkHKeyrR6ZoHvfFJcK7JtQsfPIE9XQKuzmLju7VmkC0pTQPd4q58W/g4d/b0hTdQPf11eQLrYpKXZOmz5us8/CeGgN5H3TXjOlWWdgB9Tp5g0R+EG0Cs2bFvpnSn5/yJ/AhwPoehrWw1mbzNxnSe5lkn0zjps4XTyOh3s9eOuPOsE3HuwblowmIJlzq61q1BOux5OBG07+knCl1t8PfkjwL+YSb7vpa3JOlmZeZUhdMwGZOFE8vxv7084nUonoBe2Zjp71qZCvZK1GDqCF22PY2AbeH2LP09+fzCZRsTKtC3WWEHewhZ0KPw18pfkhXtmNSZA24UOxD1gzrFQe/9v4WwoJFrJP4eks0KO/gV0gofAbOs86Aa5FN1QrKMK9alrtYVSyQRoe9A2sQ58Wz6ubeJa8F8dyVTpR8lc8DYsru1royvTw09bWe5EjlkK1nFdIQel9LKcCdAhfB7MB2ujWLgI3Yshi+i9MBz8gZtkX+V6o+ROetOjA2Cd1uA1qCQpZwK2YOhtMPsW7iXvPtAEJW1H0vsN9IAs0galcbADrA0fzslipC50xgQdHl2gE+VMgHeCxXWb8vu8DmTdtqzch9o6bgU5OIt0RWkq+EUle7tgOORO/MB1gH2iQA8rnYCXsH1pAfsXUbYA/ARYXFuIHJj1fBiA7srAlm5XWX8KQfXQS0OaeBlskNouPlqg2XInoBabI0GPo2LSGIVvwFqwfvnwGfLPhSzSHqVnwdfXwRxeb8mqG9Gh9DewDuoqWshJ5UzAbGy2hVJFC2EWWN98uJ/8B6AzFBPZeQV8/WnFKmUt1wquRFTf29ANSFRTXsWYvqxSRQ+9FSmVGpGvr2QhXA9NIU1k5wrQGWAylEg/S1QSeueVY0e3E91GTJoRKfQFmJ6FOjOKSdqNqlg9lfu6Whjbg0r6su4AvYA/H5T5pK7ZE1yGzpFRLl12tNIJkAPfcK3rc9VLNYs0R6kmi2IVdb6Mre+DbkZeziQxAx6Fdr7Axe8j7sd6AekurrysaKUToEb/7FrW6vfXQ1f0v6hvTw84Dfg7oMk41KK2tZ2Mhb7wCGhf9zKExG0+w8W3EdfPHCbatvpbotzQO6RcG/OCil8I0j650CeIt4Hx8AJo8BJta4dK7Aqqn0q+BLq26hbnpbtPBPFZQfq8IF0nSW07+jTtlrCbeNeUnujWpBW2C0zfh9PJ/wpoEiz/XuLlivZ3s6Mw6evUVVOr2/ReJJ4mHSjYCaarBRX+4JhWNzG/Gl+APms5zkSf5o2WCEId2NpytHIeC8qU1G/7D4E/PJV/KGUHxrUgsojGutUpavFpUZUt1ZgANa4Dao/rxTDiA106jOpWIWcPgleCQvXJ9yvLTSkw8V5SPzcXE7WVdRXLnn5xNdGjT1faXIi2Fvs0FW6Cmgw90xczGjaDr2/xl8jvCaWK2tbZYnYUJm1Bar/W6RXaguRsnR9mU/WaQS6kBb1YDNY5ha/BOZBFOqE0Gfz+b7Z0rkwE7cHFRHv6nZB0zlQ6Aa2x6887fb12sBOte+lBF8KVvJO86yDrXtkH3TlgzvfhRvL1tTSHULSSR8Hr4Ov4eKUToPraEs2mv5aSnQ/RHVvbj3XSwkXkXZKxi9qXvwp/Bavvw+XkXw62dw8hrtXodZLilU6ALhfe7g2kcymz6JXvqI8/StkZGXvdCj29XHeAt2Hx2eQ/mVK2hfyVQVklE6CH4zJnT1/CWZA7aUKPVoM5KSnU/nw7tIUsonfFVNAtJMmezzuAzq+gC9wa6FcyAcMCWzqsD+d1meayiQ5Bv2I3kF4K3kkWryV/BGh1ZZGhKGnyrH4YzqfsfGfojkC33AnQQtGFwrc33LWTq+gp9Gaf6+wM4s1A+6UeMX4QFn+B/M9Bmmivvwx0jmiFWz0La8m7CsKJrMYENMbuzKDNJaSzXipQPbxyKs35CVDnTbQt/Az2gznPQjl2KpwOXnqTeApMz4fFtrJKJ6Ap7T4ctK2+94fcSgd6pqunOWpeQk8/Td5cp2O6CrV9jYNz4X7wk+n1plP2cSgk5UzAgoMGexKq775NxcdCruUYeuf3y/Wkk+7tOsCGQ7EDO3TAYuoMhCxSzgSswrB+Wkk6a6aQn6uHV5oTnqbAHKfr2jlpiuS3gVvAfzVW14cb0bkWNMFZpBdKK8Hb+GRCRW0ztYGer2Pxyeg0Sqify6wxwYC0EotJNxR+De+CDVrhXtCKPBGyyPEo3QW7wdtRvAZC0deprzTUtbQWxqiwUt7Temj5g1a/n8gxWWQAStp7t8MTUOjrofg90ftjJKQ5cxpl4S1JlduB2jKHW6jfpFQnadLIzrfo2qhXqg1G4T0ldLkhunJMVtGk6fD07Vl8A/mamCTnk92gN/ir7SrSt4O2sHotn6X3fmB6xQ6t8oi6Y0+rNNy25Pw9cDcUm8hvo2OTpf4mPdbIrp8S3qF1xbygCkM5Dhvj4S0w5/lQb48sK1g3sUXOhlZ/bh9Y9K1kaU8NfyWVk3S9G1Gypf9X0C3kSlgD3uEWX0r+YMgqA1H0X0+Wy0JW27nR+xQ9STrkZpGvn66zin7jeQ7M2T58g/xvgX7yyCq6/SwHs6Mtq2vWyvVNT87bCjZYC/VG+COMBr18O0JraAUngO7t18Bc8CvV6r9N/gPQGUqVKVQwOwrvL9VAfdPXnrwE/KDD+D8p3wybQOdFktNVR45/CjRppYr2/Qng29ZNqV2phuqjfks6/UNIOzy9UwrF12GjG5QqJ1FhBnjbeq9cVKqh+q6vvVarcB14Z6TFdYUNy7aRdzN0hmIix98EWyC0c3WxyoeyXA+mupRjaVz7fB/oDtoGdA3U2aAtaC0sAt1uvgtDIBTpPQ/zYTUorW1GV9XTQAe9HlstwItW/nUwyWfG+Pv/Kcv742gSt8A+CFdxqek12LgQopThAR28v4dSnS79naCtL+vvUqhGSfKAtk5dbR+E16HQZOjGtAzGwamQK6nrM6AaztCboQfoVtQBtNe/A2/Ca7ACdDZoz48SPRA9ED0QPRA9ED0QPRA9ED0QPRA9ED0QPRA9ED0QPRA9ED0QPRA9ED0QPRA9cNg98F8LblZWEFZJZQAAAABJRU5ErkJggg\\u003d\\u003d\"\n  },\n  \"description\": \"Loads the OpenAI Ads Measurement Pixel SDK and sends page view or conversion events without custom HTML.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ],\n  \"securityGroups\": []\n}\n\n\n___TEMPLATE_PARAMETERS___\n\n[\n  {\n    \"type\": \"GROUP\",\n    \"name\": \"pixelSettings\",\n    \"displayName\": \"Pixel setup\",\n    \"groupStyle\": \"ZIPPY_OPEN\",\n    \"subParams\": [\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"pixelId\",\n        \"displayName\": \"Pixel ID\",\n        \"simpleValueType\": true,\n        \"valueValidators\": [\n          {\n            \"type\": \"NON_EMPTY\"\n          }\n        ],\n        \"help\": \"Paste the Pixel ID from OpenAI Ads. Example: px_123.\",\n        \"alwaysInSummary\": true\n      },\n      {\n        \"type\": \"CHECKBOX\",\n        \"name\": \"sendEvent\",\n        \"checkboxText\": \"Send a measurement event when this tag fires\",\n        \"simpleValueType\": true,\n        \"defaultValue\": true,\n        \"help\": \"Leave checked for page view and conversion tags. Clear this for a base tag that only loads and initializes the pixel.\"\n      },\n      {\n        \"type\": \"CHECKBOX\",\n        \"name\": \"enableDebug\",\n        \"checkboxText\": \"Enable setup diagnostics in the browser console\",\n        \"simpleValueType\": true,\n        \"defaultValue\": false,\n        \"help\": \"Use when support asks for diagnostics in a published container. Debug is enabled automatically in GTM Preview/Debug mode.\"\n      }\n    ]\n  },\n  {\n    \"type\": \"GROUP\",\n    \"name\": \"eventSettings\",\n    \"displayName\": \"Event\",\n    \"groupStyle\": \"ZIPPY_OPEN\",\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"sendEvent\",\n        \"paramValue\": true,\n        \"type\": \"EQUALS\"\n      }\n    ],\n    \"subParams\": [\n      {\n        \"type\": \"SELECT\",\n        \"name\": \"eventName\",\n        \"displayName\": \"Event name\",\n        \"simpleValueType\": true,\n        \"defaultValue\": \"page_viewed\",\n        \"alwaysInSummary\": true,\n        \"selectItems\": [\n          {\n            \"value\": \"page_viewed\",\n            \"displayValue\": \"Page viewed\"\n          },\n          {\n            \"value\": \"contents_viewed\",\n            \"displayValue\": \"Contents viewed\"\n          },\n          {\n            \"value\": \"items_added\",\n            \"displayValue\": \"Items added\"\n          },\n          {\n            \"value\": \"checkout_started\",\n            \"displayValue\": \"Checkout started\"\n          },\n          {\n            \"value\": \"order_created\",\n            \"displayValue\": \"Order created\"\n          },\n          {\n            \"value\": \"lead_created\",\n            \"displayValue\": \"Lead created\"\n          },\n          {\n            \"value\": \"registration_completed\",\n            \"displayValue\": \"Registration completed\"\n          },\n          {\n            \"value\": \"appointment_scheduled\",\n            \"displayValue\": \"Appointment scheduled\"\n          },\n          {\n            \"value\": \"trial_started\",\n            \"displayValue\": \"Trial started\"\n          },\n          {\n            \"value\": \"subscription_created\",\n            \"displayValue\": \"Subscription created\"\n          },\n          {\n            \"value\": \"custom\",\n            \"displayValue\": \"Custom event\"\n          }\n        ],\n        \"help\": \"Choose the business event that matches the page or conversion action.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"customEventName\",\n        \"displayName\": \"Custom event name\",\n        \"simpleValueType\": true,\n        \"valueValidators\": [\n          {\n            \"type\": \"NON_EMPTY\"\n          }\n        ],\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"custom\",\n            \"type\": \"EQUALS\"\n          }\n        ],\n        \"help\": \"Required only for Custom event. Use a stable lowercase name such as check_availability.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"eventId\",\n        \"displayName\": \"Event ID\",\n        \"simpleValueType\": true,\n        \"help\": \"Optional deduplication ID. Leave blank unless another system will send the same conversion server-side.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"optOut\",\n        \"displayName\": \"Per-event opt-out flag\",\n        \"simpleValueType\": true,\n        \"valueHint\": \"true, false, or GTM variable\",\n        \"help\": \"Optional. Enter true or false, or choose a GTM variable that resolves to boolean true, boolean false, or empty. This reports opt_out metadata downstream; it does not block transport.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"amount\",\n        \"displayName\": \"Amount\",\n        \"simpleValueType\": true,\n        \"help\": \"Optional integer amount in minor currency units, for example 4200 for $42.00. If set, Currency is required.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"currency\",\n        \"displayName\": \"Currency\",\n        \"simpleValueType\": true,\n        \"help\": \"Optional 3-letter ISO 4217 currency code such as USD. Required when Amount is set.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"planId\",\n        \"displayName\": \"Plan ID\",\n        \"simpleValueType\": true,\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"custom\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"subscription_created\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"trial_started\",\n            \"type\": \"EQUALS\"\n          }\n        ],\n        \"help\": \"Optional plan or subscription identifier. Used for trial and subscription events.\"\n      },\n      {\n        \"type\": \"SIMPLE_TABLE\",\n        \"name\": \"contents\",\n        \"displayName\": \"Contents\",\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"checkout_started\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"contents_viewed\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"custom\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"items_added\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"order_created\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"page_viewed\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"subscription_created\",\n            \"type\": \"EQUALS\"\n          },\n          {\n            \"paramName\": \"eventName\",\n            \"paramValue\": \"trial_started\",\n            \"type\": \"EQUALS\"\n          }\n        ],\n        \"simpleTableColumns\": [\n          {\n            \"defaultValue\": \"\",\n            \"displayName\": \"Content type\",\n            \"name\": \"contentType\",\n            \"type\": \"TEXT\"\n          },\n          {\n            \"defaultValue\": \"\",\n            \"displayName\": \"ID\",\n            \"name\": \"id\",\n            \"type\": \"TEXT\"\n          },\n          {\n            \"defaultValue\": \"\",\n            \"displayName\": \"Name\",\n            \"name\": \"name\",\n            \"type\": \"TEXT\"\n          },\n          {\n            \"defaultValue\": \"\",\n            \"displayName\": \"Quantity\",\n            \"name\": \"quantity\",\n            \"type\": \"TEXT\"\n          },\n          {\n            \"defaultValue\": \"\",\n            \"displayName\": \"Amount\",\n            \"name\": \"amount\",\n            \"type\": \"TEXT\"\n          },\n          {\n            \"defaultValue\": \"\",\n            \"displayName\": \"Currency\",\n            \"name\": \"currency\",\n            \"type\": \"TEXT\"\n          }\n        ],\n        \"newRowButtonText\": \"Add content item\",\n        \"help\": \"Optional. Add content items associated with the event. Content type is optional; examples include product, plan, page, and subscription.\"\n      }\n    ]\n  },\n  {\n    \"type\": \"GROUP\",\n    \"name\": \"userSettings\",\n    \"displayName\": \"User matching\",\n    \"groupStyle\": \"ZIPPY_CLOSED\",\n    \"subParams\": [\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"emailSha256\",\n        \"displayName\": \"Email SHA-256\",\n        \"simpleValueType\": true,\n        \"help\": \"Optional. Use only a SHA-256 hash of a normalized lowercase email. Do not pass raw email.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"externalIdSha256\",\n        \"displayName\": \"External ID SHA-256\",\n        \"simpleValueType\": true,\n        \"help\": \"Optional. Use only a SHA-256 hash of an advertiser-defined pseudonymous ID.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"country\",\n        \"displayName\": \"Country\",\n        \"simpleValueType\": true,\n        \"help\": \"Optional ISO 3166-1 country code such as US.\"\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"city\",\n        \"displayName\": \"City\",\n        \"simpleValueType\": true\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"zipCode\",\n        \"displayName\": \"Zip code\",\n        \"simpleValueType\": true\n      }\n    ]\n  }\n]\n\n\n___SANDBOXED_JS_FOR_WEB_TEMPLATE___\n\nconst callInWindow = require('callInWindow');\nconst copyFromWindow = require('copyFromWindow');\nconst createArgumentsQueue = require('createArgumentsQueue');\nconst getContainerVersion = require('getContainerVersion');\nconst injectScript = require('injectScript');\nconst logToConsole = require('logToConsole');\nconst makeInteger = require('makeInteger');\nconst makeString = require('makeString');\n\nconst SDK_URL = 'https://bzrcdn.openai.com/sdk/oaiq.min.js';\nconst CACHE_TOKEN = 'openai_ads_pixel_sdk';\nconst containerVersion = getContainerVersion() || {};\nconst debugEnabled =\n  data.enableDebug === true ||\n  containerVersion.debugMode === true ||\n  containerVersion.previewMode === true;\n\nconst EVENT_DATA_TYPES = {\n  appointment_scheduled: 'customer_action',\n  checkout_started: 'contents',\n  contents_viewed: 'contents',\n  custom: 'custom',\n  items_added: 'contents',\n  lead_created: 'customer_action',\n  order_created: 'contents',\n  page_viewed: 'contents',\n  registration_completed: 'customer_action',\n  subscription_created: 'plan_enrollment',\n  trial_started: 'plan_enrollment'\n};\n\nconst hasValue = value => value !== undefined && value !== null && value !== '';\nconst isOptOutLike = value =>\n  !hasValue(value) || value === 'omit' || value === true || value === false ||\n  value === 'true' || value === 'false';\nconst parseOptOut = value => {\n  if (value === true || value === 'true') {\n    return true;\n  }\n  if (value === false || value === 'false') {\n    return false;\n  }\n  return null;\n};\nconst isContentsCapableType = dataType =>\n  dataType === 'contents' || dataType === 'custom' || dataType === 'plan_enrollment';\nconst isPlanCapableType = dataType => dataType === 'custom' || dataType === 'plan_enrollment';\nconst isCurrencyLike = value => {\n  if (!hasValue(value)) {\n    return true;\n  }\n  return makeString(value).length === 3;\n};\nconst isIntegerLike = value => {\n  if (!hasValue(value)) {\n    return true;\n  }\n  const text = makeString(value);\n  if (text.length === 0) {\n    return true;\n  }\n  const digits = '0123456789';\n  for (let i = 0; i < text.length; i += 1) {\n    if (digits.indexOf(text.charAt(i)) < 0) {\n      return false;\n    }\n  }\n  return true;\n};\n\nconst addString = (target, key, value) => {\n  if (hasValue(value)) {\n    target[key] = makeString(value);\n  }\n};\n\nconst addInteger = (target, key, value) => {\n  if (hasValue(value)) {\n    target[key] = makeInteger(value);\n  }\n};\n\nconst hasKeys = object => {\n  for (const key in object) {\n    return true;\n  }\n  return false;\n};\n\nconst hasAnyValue = object => {\n  if (!object) {\n    return false;\n  }\n  for (const key in object) {\n    if (hasValue(object[key])) {\n      return true;\n    }\n  }\n  return false;\n};\n\nconst callOaiq = (command, arg1, arg2, arg3) => {\n  if (copyFromWindow('oaiq')) {\n    if (arg3 !== undefined) {\n      callInWindow('oaiq', command, arg1, arg2, arg3);\n    } else if (arg2 !== undefined) {\n      callInWindow('oaiq', command, arg1, arg2);\n    } else if (arg1 !== undefined) {\n      callInWindow('oaiq', command, arg1);\n    } else {\n      callInWindow('oaiq', command);\n    }\n    return;\n  }\n\n  const oaiq = createArgumentsQueue('oaiq', 'oaiq.queue');\n  if (arg3 !== undefined) {\n    oaiq(command, arg1, arg2, arg3);\n  } else if (arg2 !== undefined) {\n    oaiq(command, arg1, arg2);\n  } else if (arg1 !== undefined) {\n    oaiq(command, arg1);\n  } else {\n    oaiq(command);\n  }\n};\n\nconst buildInitConfig = () => {\n  const initConfig = {\n    pixelId: makeString(data.pixelId)\n  };\n\n  if (debugEnabled) {\n    initConfig.debug = true;\n  }\n\n  const user = {};\n  addString(user, 'email_sha256', data.emailSha256);\n  addString(user, 'external_id_sha256', data.externalIdSha256);\n  addString(user, 'country', data.country);\n  addString(user, 'city', data.city);\n  addString(user, 'zip_code', data.zipCode);\n\n  if (hasKeys(user)) {\n    initConfig.user = user;\n  }\n\n  return initConfig;\n};\n\nconst buildContents = () => {\n  const rows = data.contents || [];\n  const contents = [];\n  for (let i = 0; i < rows.length; i += 1) {\n    const row = rows[i];\n    if (!hasAnyValue(row)) {\n      continue;\n    }\n    const content = {};\n    addString(content, 'content_type', row.contentType);\n    addString(content, 'id', row.id);\n    addString(content, 'name', row.name);\n    addInteger(content, 'quantity', row.quantity);\n    addInteger(content, 'amount', row.amount);\n    addString(content, 'currency', row.currency);\n    if (hasKeys(content)) {\n      contents.push(content);\n    }\n  }\n  return contents;\n};\n\nconst buildEventProps = eventName => {\n  const dataType = EVENT_DATA_TYPES[eventName] || 'custom';\n  const eventProps = {\n    type: dataType\n  };\n\n  addInteger(eventProps, 'amount', data.amount);\n  addString(eventProps, 'currency', data.currency);\n  if (isPlanCapableType(dataType)) {\n    addString(eventProps, 'plan_id', data.planId);\n  }\n\n  if (isContentsCapableType(dataType)) {\n    const contents = buildContents();\n    if (contents.length > 0) {\n      eventProps.contents = contents;\n    }\n  }\n\n  return eventProps;\n};\n\nconst buildEventOptions = eventName => {\n  const eventOptions = {};\n  addString(eventOptions, 'event_id', data.eventId);\n\n  if (eventName === 'custom') {\n    addString(eventOptions, 'custom_event_name', data.customEventName);\n  }\n\n  const optOut = parseOptOut(data.optOut);\n  if (optOut !== null) {\n    eventOptions.opt_out = optOut;\n  }\n\n  return eventOptions;\n};\n\nconst fail = message => {\n  if (debugEnabled) {\n    logToConsole('[OpenAI Ads Measurement Pixel] ' + message);\n  }\n  data.gtmOnFailure();\n};\n\nconst validateEventConfig = eventName => {\n  const dataType = EVENT_DATA_TYPES[eventName];\n  if (!dataType) {\n    return 'Choose a documented OpenAI Ads event name.';\n  }\n\n  if (eventName === 'custom' && !hasValue(data.customEventName)) {\n    return 'Custom event name is required for Custom event.';\n  }\n\n  if (!isOptOutLike(data.optOut)) {\n    return 'Per-event opt-out flag must resolve to true, false, or be empty.';\n  }\n\n  if (!isIntegerLike(data.amount)) {\n    return 'Amount must be an integer in minor currency units, for example 4200 for $42.00.';\n  }\n\n  if (hasValue(data.amount) && !hasValue(data.currency)) {\n    return 'Currency is required when Amount is set.';\n  }\n\n  if (!isCurrencyLike(data.currency)) {\n    return 'Currency must be a 3-letter ISO 4217 code, for example USD.';\n  }\n\n  if (!isContentsCapableType(dataType)) {\n    return null;\n  }\n\n  const rows = data.contents || [];\n  for (let i = 0; i < rows.length; i += 1) {\n    const row = rows[i];\n    if (!hasAnyValue(row)) {\n      continue;\n    }\n    if (!isIntegerLike(row.quantity)) {\n      return 'Content Quantity must be an integer.';\n    }\n    if (!isIntegerLike(row.amount)) {\n      return 'Content Amount must be an integer in minor currency units.';\n    }\n    if (hasValue(row.amount) && !hasValue(row.currency) && !hasValue(data.currency)) {\n      return 'Content Currency or top-level Currency is required when a content Amount is set.';\n    }\n    if (!isCurrencyLike(row.currency)) {\n      return 'Content Currency must be a 3-letter ISO 4217 code, for example USD.';\n    }\n  }\n\n  return null;\n};\n\ncallOaiq('init', buildInitConfig());\n\nif (data.sendEvent === true) {\n  const eventName = data.eventName || 'page_viewed';\n  const validationError = validateEventConfig(eventName);\n  if (validationError) {\n    fail(validationError);\n    return;\n  }\n  callOaiq('measure', eventName, buildEventProps(eventName), buildEventOptions(eventName));\n}\n\ninjectScript(SDK_URL, data.gtmOnSuccess, () => fail('Failed to load ' + SDK_URL), CACHE_TOKEN);\n\n\n___WEB_PERMISSIONS___\n\n[\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"read_container_data\",\n        \"versionId\": \"1\"\n      },\n      \"param\": []\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"logging\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"environments\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"debug\"\n          }\n        }\n      ]\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"access_globals\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keys\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"oaiq\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"oaiq.queue\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"inject_script\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"urls\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 1,\n                \"string\": \"https://bzrcdn.openai.com/sdk/oaiq.min.js\"\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"isRequired\": true\n  }\n]\n\n\n___TESTS___\n\nscenarios:\n- name: queues conversion\n  code: |-\n    let queued = [];\n    let oaiq;\n    let injectedUrl;\n    let injectedCacheToken;\n\n    mock('getContainerVersion', function() {\n      return {debugMode: false, previewMode: false};\n    });\n    mock('copyFromWindow', function(path) {\n      assertThat(path).isEqualTo('oaiq');\n      return oaiq;\n    });\n    mock('createArgumentsQueue', function(fnKey, arrayKey) {\n      assertThat(fnKey).isEqualTo('oaiq');\n      assertThat(arrayKey).isEqualTo('oaiq.queue');\n      oaiq = function(command, arg1, arg2, arg3) {\n        queued.push([command, arg1, arg2, arg3]);\n      };\n      return oaiq;\n    });\n    mock('callInWindow', function(path, command, arg1, arg2, arg3) {\n      assertThat(path).isEqualTo('oaiq');\n      oaiq(command, arg1, arg2, arg3);\n    });\n    mock('injectScript', function(url, onSuccess, onFailure, cacheToken) {\n      injectedUrl = url;\n      injectedCacheToken = cacheToken;\n      onSuccess();\n    });\n\n    runCode({\n      pixelId: 'px_123',\n      sendEvent: true,\n      enableDebug: false,\n      eventName: 'order_created',\n      amount: '4200',\n      currency: 'USD',\n      optOut: true,\n      gtmOnSuccess: function() {},\n      gtmOnFailure: function() {}\n    });\n\n    assertThat(queued).hasLength(2);\n    assertThat(queued[0][0]).isEqualTo('init');\n    assertThat(queued[0][1]).isEqualTo({pixelId: 'px_123'});\n    assertThat(queued[1][0]).isEqualTo('measure');\n    assertThat(queued[1][1]).isEqualTo('order_created');\n    assertThat(queued[1][2]).isEqualTo({type: 'contents', amount: 4200, currency: 'USD'});\n    assertThat(queued[1][3]).isEqualTo({opt_out: true});\n    assertThat(injectedUrl).isEqualTo('https://bzrcdn.openai.com/sdk/oaiq.min.js');\n    assertThat(injectedCacheToken).isEqualTo('openai_ads_pixel_sdk');\n- name: blocks invalid opt_out variable values\n  code: |-\n    let queued = [];\n    let oaiq;\n\n    mock('getContainerVersion', function() {\n      return {debugMode: false, previewMode: false};\n    });\n    mock('copyFromWindow', function() {\n      return oaiq;\n    });\n    mock('createArgumentsQueue', function() {\n      oaiq = function(command, arg1, arg2, arg3) {\n        queued.push([command, arg1, arg2, arg3]);\n      };\n      return oaiq;\n    });\n    mock('callInWindow', function(path, command, arg1, arg2, arg3) {\n      oaiq(command, arg1, arg2, arg3);\n    });\n    mock('injectScript', function(url, onSuccess) {\n      onSuccess();\n    });\n\n    runCode({\n      pixelId: 'px_123',\n      sendEvent: true,\n      enableDebug: false,\n      eventName: 'lead_created',\n      optOut: 'yes',\n      gtmOnSuccess: function() {},\n      gtmOnFailure: function() {}\n    });\n\n    assertThat(queued).hasLength(1);\n    assertThat(queued[0][0]).isEqualTo('init');\n- name: enables sdk debug in GTM preview mode\n  code: |-\n    let queued = [];\n    let oaiq;\n\n    mock('getContainerVersion', function() {\n      return {debugMode: false, previewMode: true};\n    });\n    mock('copyFromWindow', function() {\n      return oaiq;\n    });\n    mock('createArgumentsQueue', function() {\n      oaiq = function(command, arg1, arg2, arg3) {\n        queued.push([command, arg1, arg2, arg3]);\n      };\n      return oaiq;\n    });\n    mock('callInWindow', function(path, command, arg1, arg2, arg3) {\n      oaiq(command, arg1, arg2, arg3);\n    });\n    mock('injectScript', function(url, onSuccess) {\n      onSuccess();\n    });\n\n    runCode({\n      pixelId: 'px_123',\n      sendEvent: false,\n      enableDebug: false,\n      gtmOnSuccess: function() {},\n      gtmOnFailure: function() {}\n    });\n\n    assertThat(queued).hasLength(1);\n    assertThat(queued[0][0]).isEqualTo('init');\n    assertThat(queued[0][1]).isEqualTo({pixelId: 'px_123', debug: true});\n- name: queues content rows without content_type\n  code: |-\n    let queued = [];\n    let oaiq;\n\n    mock('getContainerVersion', function() {\n      return {debugMode: false, previewMode: false};\n    });\n    mock('copyFromWindow', function() {\n      return oaiq;\n    });\n    mock('createArgumentsQueue', function() {\n      oaiq = function(command, arg1, arg2, arg3) {\n        queued.push([command, arg1, arg2, arg3]);\n      };\n      return oaiq;\n    });\n    mock('callInWindow', function(path, command, arg1, arg2, arg3) {\n      oaiq(command, arg1, arg2, arg3);\n    });\n    mock('injectScript', function(url, onSuccess) {\n      onSuccess();\n    });\n\n    runCode({\n      pixelId: 'px_123',\n      sendEvent: true,\n      enableDebug: false,\n      eventName: 'order_created',\n      amount: '4200',\n      currency: 'USD',\n      contents: [{id: 'sku_123', name: 'Test Product', quantity: '2'}],\n      optOut: 'omit',\n      gtmOnSuccess: function() {},\n      gtmOnFailure: function() {}\n    });\n\n    assertThat(queued).hasLength(2);\n    assertThat(queued[1][0]).isEqualTo('measure');\n    assertThat(queued[1][1]).isEqualTo('order_created');\n    assertThat(queued[1][2]).isEqualTo({\n      type: 'contents',\n      amount: 4200,\n      currency: 'USD',\n      contents: [{id: 'sku_123', name: 'Test Product', quantity: 2}]\n    });\n    assertThat(queued[1][3]).isEqualTo({});\n- name: queues page_viewed data\n  code: |-\n    let queued = [];\n    let oaiq;\n\n    mock('getContainerVersion', function() {\n      return {debugMode: false, previewMode: false};\n    });\n    mock('copyFromWindow', function() {\n      return oaiq;\n    });\n    mock('createArgumentsQueue', function() {\n      oaiq = function(command, arg1, arg2, arg3) {\n        queued.push([command, arg1, arg2, arg3]);\n      };\n      return oaiq;\n    });\n    mock('callInWindow', function(path, command, arg1, arg2, arg3) {\n      oaiq(command, arg1, arg2, arg3);\n    });\n    mock('injectScript', function(url, onSuccess) {\n      onSuccess();\n    });\n\n    runCode({\n      pixelId: 'px_123',\n      sendEvent: true,\n      enableDebug: false,\n      eventName: 'page_viewed',\n      amount: '100',\n      currency: 'USD',\n      contents: [{contentType: 'page', id: 'pricing', name: 'Pricing page'}],\n      optOut: 'omit',\n      gtmOnSuccess: function() {},\n      gtmOnFailure: function() {}\n    });\n\n    assertThat(queued).hasLength(2);\n    assertThat(queued[1][0]).isEqualTo('measure');\n    assertThat(queued[1][1]).isEqualTo('page_viewed');\n    assertThat(queued[1][2]).isEqualTo({\n      type: 'contents',\n      amount: 100,\n      currency: 'USD',\n      contents: [{content_type: 'page', id: 'pricing', name: 'Pricing page'}]\n    });\n    assertThat(queued[1][3]).isEqualTo({});\nsetup: ''\n\n\n___NOTES___\n\nInitial OpenAI Ads Measurement Pixel GTM template. Uses sandboxed JavaScript, fixed SDK URL, minimal global/script permissions, and automatic SDK debug mode during GTM Preview/Debug.\n\n\n"
+            }
+        ]
+    }
+}
