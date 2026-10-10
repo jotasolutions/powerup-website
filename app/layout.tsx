@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { AttributionCapture } from "@/components/AttributionCapture";
 import { CookieConsent } from "@/components/CookieConsent";
+import { UmamiScript } from "@/components/analytics/UmamiScript";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -51,6 +52,7 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
+        <UmamiScript />
         <AttributionCapture />
         <Analytics/>
         <CookieConsent>
