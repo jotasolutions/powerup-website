@@ -15,7 +15,7 @@ Si cambias algo de lo que se describe aquí, actualiza este documento en el mism
 | Google Analytics de la web: `G-CFJCMZXWX7`, propiedad `545089122` («PowerUp Website - NEW») | Todo lo que no cuelga de `/blog` | GTM y los ajustes de la propiedad | Con GTM |
 | Google Analytics del blog: `G-X22L95WE0Y`, propiedad `407744305` («PowerUp Blog», la del blog viejo) | Todo lo que cuelga de `/blog` | GTM y los ajustes de la propiedad | Con GTM |
 | Píxel de Meta `1582188126799857` | `PageView` y `Lead` | GTM | Con GTM y, además, con las cookies de marketing aceptadas |
-| Umami (`umami.powerup.menu`) | Visitas, sin cookies | Etiqueta «Umami tracking code» de GTM | Con GTM: solo a quien acepta la analítica |
+| Umami (`umami.powerup.menu`) | Visitas, sin cookies, por `utm_content`. Es la fuente de las visitas de las campañas de Meta | `components/analytics/UmamiScript.tsx`, en `app/layout.tsx`. La etiqueta «Umami tracking code» de GTM queda de respaldo: solo carga Umami si la página no lo tiene ya | Siempre, sin pasar por el banner. Solo cuenta en `www.powerup.menu` (`data-domains`) |
 | Vercel Web Analytics y Speed Insights | Visitas, sin cookies, y rendimiento | `app/layout.tsx` (`<Analytics/>` y `<SpeedInsights/>`). Los datos se ven en el panel de Vercel del equipo jotasolutions | Siempre, sin pasar por el banner |
 | Captura de atribución | Guarda los datos de campaña de la URL de llegada (los `utm_…` y los identificadores de clic `gclid`, `gbraid`, `wbraid`, `fbclid` y `msclkid`) y los añade a los enlaces de alta. Una campaña nueva sustituye entera a la anterior. Lo demás de la URL, como `gtm_debug`, se ignora | `components/AttributionCapture.tsx` y `lib/attribution.ts` (localStorage `powerup_attribution`) | Siempre |
 
@@ -34,7 +34,7 @@ Otras webs del ecosistema tienen su propia medición y no entran en este mapa:
   la página gana la elección más reciente, y `cookie-consent` se reescribe antes de que se cargue
   GTM.
 - GTM solo se monta con la analítica aceptada. Sin ella no se carga Google Analytics, ni Meta, ni
-  Umami. Vercel Analytics sí se carga.
+  Umami desde GTM. Vercel Analytics y Umami (desde el código) sí se cargan.
 - Meta necesita además el marketing aceptado. La variable de GTM `js.marketing_aceptado` lee
   `cookie-consent` (`categories.marketing === true`). Las Google tags pasan ese mismo valor a
   `allow_google_signals` y a `allow_ad_personalization_signals`.
@@ -225,8 +225,8 @@ Aquí solo se apuntan. Cada arreglo va con su propio plan y con el OK de Fede.
 
 **Fuera del código:**
 
-6. **Umami solo cuenta a quien acepta la analítica**, porque se carga desde GTM. Vercel Analytics
-   sí cuenta a todos.
+6. **Umami contaba solo a quien aceptaba la analítica**, porque se cargaba desde GTM. Resuelto el
+   10-10-2026: se carga desde el código (apartado 12).
 7. **El dominio de Vercel, `powerup-website-chi.vercel.app`, también se mide**, porque carga el
    mismo GTM.
 8. **La recogida automática de datos proporcionados por el usuario está activada** en las dos
@@ -274,7 +274,8 @@ Aquí solo se apuntan. Cada arreglo va con su propio plan y con el OK de Fede.
    teléfonos. `restaurant_name` va al dataLayer, pero GTM no lo pasa a Analytics, y así debe
    seguir.
 8. **Scripts de medición.** No cargues ninguno fuera del banner de cookies. Las únicas excepciones
-   son Vercel Analytics y Speed Insights, que no usan cookies.
+   son Vercel Analytics, Speed Insights y Umami, que no usan cookies. Umami se carga una sola vez:
+   desde `UmamiScript`, nunca con un `<Script>` de cliente ni desde otra etiqueta de GTM (apartado 12).
 9. **`event_id`.** No lo quites ni cambies cómo se crea en `lib/analytics/track.ts`. Meta lo usa
    para no contar dos veces el mismo evento, y la Conversions API lo necesitará.
 10. **Este mapa.** Actualízalo en el mismo PR que cambie la medición. Si cambia el contenedor,
@@ -305,7 +306,9 @@ Los cambios en Analytics o en Meta los hace Fede, o Claude in Chrome con su perm
   - a `facebook.com/tr`, con `ev=PageView` o `ev=Lead`.
 - **Los informes de Analytics del día siguiente**, por «Ruta de la página». «Tiempo real» sirve
   para ver que nada llega a la propiedad que no toca, no para contar.
-- **Sin cookies de analítica**, no debe salir nada hacia Google, Meta ni Umami. Hacia Vercel, sí.
+- **Sin cookies de analítica**, no debe salir nada hacia Google ni Meta. Hacia Vercel y Umami, sí.
+- **Umami, una sola vez:** en las peticiones de red, una sola `umami.powerup.menu/api/send` al
+  entrar y otra por cada cambio de página, con las cookies aceptadas y sin ellas.
 
 ## 12. Historial
 
@@ -326,3 +329,23 @@ Los cambios en Analytics o en Meta los hace Fede, o Claude in Chrome con su perm
   - «Más información de la web» pasa de `sign_up_click` a `nav_click`;
   - «Pregúntanos» abre WhatsApp y manda `outbound_click`;
   - la captura de atribución solo guarda datos de campaña.
+- **10-10-2026, Umami sin banner** (campañas de Meta, fuente de las visitas):
+  - Umami se carga desde el código (`UmamiScript`), fuera del banner, porque no usa cookies. Antes
+    solo contaba a quien aceptaba la analítica.
+  - La etiqueta «Umami tracking code» de GTM pasa a ser de respaldo: solo carga Umami si la página
+    no lo tiene ya. Sin esa comprobación, quien acepta la analítica contaría doble (probado en
+    local el 10-10: dos copias del script mandan dos visitas por página). Su HTML:
+
+    ```html
+    <script>
+    (function(){
+      if (window.umami || document.querySelector('script[src*="umami.powerup.menu/script.js"]')) return;
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://umami.powerup.menu/script.js';
+      s.setAttribute('data-website-id', 'ff12504c-d577-4856-8279-0d84ba8d3856');
+      document.head.appendChild(s);
+    })();
+    </script>
+    ```
+  - `data-domains="www.powerup.menu"`: deja de contar el dominio de Vercel y el local.
