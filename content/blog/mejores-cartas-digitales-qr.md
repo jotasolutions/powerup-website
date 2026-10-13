@@ -118,7 +118,7 @@ MenuForma es la opción más económica de pago de esta lista y la que más idio
 - **Alta:** importa la carta desde un PDF, una foto o un enlace a tu web.
 - **Google:** ayuda a conseguir reseñas.
 
-Encaja si quieres una carta barata con pedidos desde la mesa o muchos idiomas.
+Encaja si quieres una carta barata con pedidos desde la mesa o muchos idiomas. Si ya la usas y te falta algo, mira las [alternativas a MenuForma](/blog/alternativas-a-menuforma).
 
 ## 3. eatsQR: carta con reservas y comandas
 

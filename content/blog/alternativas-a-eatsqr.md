@@ -134,7 +134,7 @@ MenuForma es la opción de pago más económica de esta lista y la que más idio
 - **Alta:** importa la carta desde un PDF, una foto o un enlace a tu web.
 - **Google:** ayuda a conseguir reseñas.
 
-**Dónde no encaja:** su web no habla de reservas, y en Google se limita a las reseñas.
+**Dónde no encaja:** su web no habla de reservas, y en Google se limita a las reseñas. Si es MenuForma la que no te convence, tenemos las [alternativas a MenuForma](/blog/alternativas-a-menuforma).
 
 ## 4. MiCartaYa: una carta base y módulos sueltos
 
