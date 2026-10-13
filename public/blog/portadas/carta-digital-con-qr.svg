@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Un código QR en la mesa y la carta abierta en el móvil</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+
+  <!-- Table stand with the QR code, on the left -->
+  <path d="M62 236 L150 236" stroke="#CBD5E1" stroke-width="4" stroke-linecap="round"/>
+  <rect x="72" y="92" width="68" height="136" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+  <g fill="#0F172A">
+    <rect x="84" y="108" width="16" height="16" rx="2"/><rect x="112" y="108" width="16" height="16" rx="2"/>
+    <rect x="84" y="136" width="16" height="16" rx="2"/>
+    <rect x="114" y="138" width="5" height="5"/><rect x="122" y="138" width="5" height="5"/>
+    <rect x="114" y="146" width="5" height="5"/><rect x="104" y="128" width="5" height="5"/>
+  </g>
+  <g fill="#FFFFFF">
+    <rect x="88" y="112" width="8" height="8"/><rect x="116" y="112" width="8" height="8"/><rect x="88" y="140" width="8" height="8"/>
+  </g>
+  <rect x="84" y="170" width="44" height="6" rx="3" fill="#CBD5E1"/>
+  <rect x="84" y="184" width="32" height="6" rx="3" fill="#CBD5E1"/>
+
+  <!-- Scan line towards the phone -->
+  <path d="M154 150 C 190 130, 214 130, 246 146" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6 6" stroke-linecap="round" fill="none"/>
+
+  <!-- Phone with the menu open; one dish highlighted -->
+  <rect x="252" y="56" width="104" height="188" rx="16" fill="#FFFFFF" stroke="#334155" stroke-width="2.5"/>
+  <rect x="288" y="66" width="32" height="5" rx="2.5" fill="#CBD5E1"/>
+  <rect x="266" y="84" width="76" height="8" rx="4" fill="#334155"/>
+  <rect x="266" y="104" width="76" height="34" rx="8" fill="#DEF8FF" stroke="#3482AA" stroke-width="2"/>
+  <rect x="274" y="114" width="44" height="6" rx="3" fill="#3482AA"/>
+  <rect x="274" y="124" width="30" height="5" rx="2.5" fill="#3482AA" opacity="0.5"/>
+  <g fill="#CBD5E1">
+    <rect x="266" y="150" width="60" height="6" rx="3"/><rect x="266" y="162" width="44" height="5" rx="2.5"/>
+    <rect x="266" y="180" width="66" height="6" rx="3"/><rect x="266" y="192" width="40" height="5" rx="2.5"/>
+    <rect x="266" y="210" width="54" height="6" rx="3"/>
+  </g>
+</svg>
