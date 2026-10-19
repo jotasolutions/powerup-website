@@ -44,3 +44,4 @@ Una carta digital es una página web pensada para el móvil que el cliente abre 
 - **Cambiar de herramienta:** [alternativas a eatsQR](/blog/alternativas-a-eatsqr).
 - **Atender a turistas:** [la carta en varios idiomas](/blog/carta-en-varios-idiomas).
 - **Aparecer en Google:** [la carta en Google Maps](/blog/carta-en-google-maps).
+- **Que Google y ChatGPT lean tu carta:** [carta digital y SEO](/blog/carta-digital-y-seo).
