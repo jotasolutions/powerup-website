@@ -115,7 +115,7 @@ Como la carta se edita al momento, puedes cambiar el menú del día cada mañana
 
 ## La carta en Google
 
-La carta digital no se queda en la mesa. Si la conectas con tu ficha de Google, quien busca dónde comer ve tus platos y precios antes de llegar. Lo explicamos en [cómo poner la carta en Google Maps](/blog/carta-en-google-maps).
+La carta digital no se queda en la mesa. Si la conectas con tu ficha de Google, quien busca dónde comer ve tus platos y precios antes de llegar. Lo explicamos en [cómo poner la carta en Google Maps](/blog/carta-en-google-maps), y qué hace falta para que Google y ChatGPT puedan leerla, en [carta digital y SEO](/blog/carta-digital-y-seo).
 
 ## Cómo lo resuelve PowerUp Menu
 
