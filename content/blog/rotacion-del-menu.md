@@ -88,7 +88,7 @@ No hay una frecuencia que sirva para todos: depende de tu cocina, de tu producto
 - **Planifica las compras con la carta nueva.** Antes de retirar un plato, mira qué género te queda en el almacén y dale salida, por ejemplo como sugerencia.
 - **Aprovecha ingredientes entre platos.** Si un ingrediente sirve para varios platos, es más fácil ajustar las compras cuando uno de ellos sale de la carta.
 - **Revisa lo obligatorio en cada cambio:**
-  - Cada plato nuevo necesita su información sobre alérgenos, que el Real Decreto 126/2015 obliga a tener a disposición del cliente. En [carta digital o carta en PDF](/blog/carta-restaurante) explicamos qué dice.
+  - Cada plato nuevo necesita su información sobre alérgenos, que el Real Decreto 126/2015 obliga a tener a disposición del cliente. En [alérgenos en la carta del restaurante](/blog/alergenos-en-la-carta) explicamos qué dice.
   - La Ley 1/2025, de prevención de las pérdidas y el desperdicio alimentario, obliga a los restaurantes a facilitar que el cliente se lleve la comida que no ha consumido, salvo en los bufés libres. No se puede cobrar por ello, aparte del envase si es de plástico de un solo uso. Y hay que informar de esta posibilidad de forma clara y visible, preferentemente en la carta o el menú.
 
 ## Rotar la carta con una carta digital

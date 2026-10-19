@@ -64,7 +64,7 @@ Una traducción palabra por palabra puede dejar un plato sin sentido. Tres conse
 
 ## Los alérgenos, también para quien no habla español
 
-Los restaurantes están obligados a informar de los 14 alérgenos que recoge el Reglamento (UE) 1169/2011, también en los platos que se sirven sin envasar. El propio reglamento recuerda que hay indicios de que la mayoría de los incidentes de alergia alimentaria tienen su origen en alimentos no envasados.
+Los restaurantes están obligados a informar de los 14 alérgenos que recoge el Reglamento (UE) 1169/2011, también en los platos que se sirven sin envasar. El propio reglamento recuerda que hay indicios de que la mayoría de los incidentes de alergia alimentaria tienen su origen en alimentos no envasados. Qué obliga la ley exactamente lo explicamos en [alérgenos en la carta del restaurante](/blog/alergenos-en-la-carta).
 
 Para un turista con alergia, esa información solo sirve si la entiende. Si la das por escrito, tenla también en los idiomas de tu carta; si la da el camarero, que sepa explicarla.
 

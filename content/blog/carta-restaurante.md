@@ -76,7 +76,7 @@ Una carta digital puede ofrecer la carta en varios idiomas y dejar que cada clie
 
 ## Alérgenos: lo que dice la ley
 
-En España, el Real Decreto 126/2015 obliga a los restaurantes a informar de los alérgenos de sus platos. La información puede darse por escrito, con etiquetas o carteles, o de palabra. En este último caso, tiene que estar registrada por escrito o en formato electrónico en el local, y el cliente tiene que poder pedirla antes de hacer el pedido.
+En España, el Real Decreto 126/2015 obliga a los restaurantes a informar de los alérgenos de sus platos. La información puede darse por escrito, con etiquetas o carteles, o de palabra. En este último caso, tiene que estar registrada por escrito o en formato electrónico en el local, y el cliente tiene que poder pedirla antes de hacer el pedido. Los 14 alérgenos, los símbolos y los errores habituales los repasamos en [alérgenos en la carta del restaurante](/blog/alergenos-en-la-carta).
 
 Tanto en un PDF como en una carta digital puedes poner los alérgenos de cada plato por escrito. La diferencia está en mantenerla al día: si cambias un ingrediente, en la carta digital actualizas ese plato y ya está.
 
