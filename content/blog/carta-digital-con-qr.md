@@ -98,7 +98,7 @@ Un PDF detrás de un código QR también se abre en el móvil, pero se pensó pa
 ## Qué debe tener una carta digital
 
 - **Precios al día.** El motivo principal para pasarte a la carta digital es poder cambiarlos al momento.
-- **Alérgenos en cada plato.** En España es obligatorio informar de los 14 alérgenos del Reglamento (UE) 1169/2011 también en la comida que se sirve sin envasar (Real Decreto 126/2015). La información puede darse por escrito o de palabra; en este caso, tiene que estar registrada por escrito o en formato electrónico en el local, y el cliente tiene que saber dónde consultarla o que puede preguntar al personal.
+- **Alérgenos en cada plato.** En España es obligatorio informar de los 14 alérgenos del Reglamento (UE) 1169/2011 también en la comida que se sirve sin envasar (Real Decreto 126/2015). La información puede darse por escrito o de palabra; en este caso, tiene que estar registrada por escrito o en formato electrónico en el local, y el cliente tiene que saber dónde consultarla o que puede preguntar al personal. Lo explicamos a fondo en [alérgenos en la carta del restaurante](/blog/alergenos-en-la-carta).
 - **Idiomas.** En 2025 llegaron a España 96,8 millones de turistas, y los tres países de los que llegaron más fueron Reino Unido, Francia y Alemania, según el INE. Cómo elegirlos y traducir bien los platos típicos lo contamos en [la carta en varios idiomas](/blog/carta-en-varios-idiomas).
 - **Fotos** de los platos que más quieres vender, no de todos.
 - **Un orden pensado.** El orden de las secciones y los platos influye en lo que se pide. Lo explicamos en [qué es la psicología del menú](/blog/que-es-la-psicologia-del-menu).
