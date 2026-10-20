@@ -2,7 +2,7 @@
 # MANTENER: texto de WordPress (Wayback). En la Etapa B solo se corrigen erratas, encabezados y enlaces.
 title: "La importancia del coste de las bebidas para la rentabilidad de tu restaurante"
 slug: "coste-de-bebidas"
-seo_title: "Coste de las bebidas: cómo afecta a tu rentabilidad"
+seo_title: "Beverage cost: qué es y cómo calcular el coste de bebidas"
 seo_description: "Qué es el coste de las bebidas (beverage cost), cómo se calcula con el inventario y las ventas, y qué indica un porcentaje alto o bajo en tu restaurante."
 excerpt: "Qué es el coste de las bebidas (beverage cost), cómo se calcula con el inventario y las ventas, y qué indica un porcentaje alto o bajo en tu restaurante."
 cluster: "rentabilidad-y-costes"
