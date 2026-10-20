@@ -2,7 +2,7 @@
 # Reescrito en la Etapa B (tanda 2, 24-09-2026) sobre el original de WordPress. Sin fecha original en Wayback: la de publicación es la de la reescritura (aprobado por Fede). Revisado y firmado por Fede (28-09-2026).
 title: "Cómo calcular el food cost de tu restaurante"
 slug: "costo-de-comida"
-seo_title: "Cómo calcular el food cost de tu restaurante"
+seo_title: "Food cost: qué es y cómo calcularlo en tu restaurante"
 seo_description: "Qué es el food cost, cómo se calcula plato a plato con el escandallo y para todo el restaurante en un mes, y qué hacer cuando sube."
 excerpt: "El food cost es lo que te cuesta la comida que vendes. Así se calcula plato a plato y para todo el restaurante, con ejemplos."
 cluster: "rentabilidad-y-costes"
