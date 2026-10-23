@@ -1,8 +1,8 @@
 ---
-# Redactado en la Etapa B (24-09-2026). Revisado por Fede (28-09-2026). Ampliado con B8 (13-10-2026): las búsquedas amplias de «carta digital» caen aquí (254 impresiones en 28 días, posición 10,6), así que la página reparte al lector hacia la guía y las comparativas.
-descripcion: "Qué es una carta digital, en qué se diferencia de un PDF con código QR, qué exige la ley sobre alérgenos y cómo dar el paso en tu restaurante."
+# Redactado en la Etapa B (24-09-2026). Revisado por Fede (28-09-2026). Ampliado con B8 (13-10-2026): las búsquedas amplias de «carta digital» caen aquí (254 impresiones en 28 días, posición 10,6), así que la página reparte al lector hacia la guía y las comparativas. Título, descripción y primer párrafo cambiados el 23-10-2026 (OK de Fede): 1.200 impresiones y 1 clic en 28 días, en la posición 8,8; quien busca «carta digital restaurante» quiere elegir herramienta (gratis, precio), y «guía completa» ya es el título de B8.
+descripcion: "Qué carta digital elegir para tu restaurante: opciones gratis, cuánto cuesta, las mejores de España comparadas y cómo crearla con código QR, paso a paso."
 keyword_principal: "carta digital para restaurantes"
-seo_title: "Carta digital para restaurantes: guía completa (2026)"
+seo_title: "Carta digital para restaurantes: precios y opciones gratis"
 draft: false
 faq:
   - pregunta: "¿Qué es una carta digital para restaurantes?"
@@ -19,7 +19,9 @@ faq:
     respuesta: "Depende de lo que necesites: vender más desde la carta, reservas, pedidos, muchos idiomas o un plan gratis. En nuestra comparativa de las mejores cartas digitales QR en España explicamos cuál encaja en cada caso, con precios consultados y fuentes."
 ---
 
-Una carta digital es una página web pensada para el móvil que el cliente abre al escanear un código QR, sin instalar nada. No es lo mismo que un PDF detrás de un código QR: se adapta a la pantalla, se cambia al momento y puede ofrecer la carta en varios idiomas.
+Una carta digital es una página web pensada para el móvil que el cliente abre al escanear un código QR, sin instalar nada. Hay planes gratis, con límites o publicidad, y de pago desde unos 7 € al mes.
+
+No es lo mismo que un PDF detrás de un código QR: se adapta a la pantalla, se cambia al momento y puede ofrecer la carta en varios idiomas.
 
 ## Lo que cambia frente al papel o al PDF
 
