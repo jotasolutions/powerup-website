@@ -1,10 +1,9 @@
 "use client"
 
-import { motion, useInView, useReducedMotion } from "motion/react"
-import { useRef } from "react"
+import { motion, useReducedMotion } from "motion/react"
 
 // Drawn in SVG (it used to be advisor-checks.png) so the first two tasks can tick themselves
-// off after the score card fills up. Shown between 200 and 280 px wide; sizes live in the viewBox.
+// off: the last beat of the Advisor story. Shown between 200 and 280 px wide; sizes live in the viewBox.
 
 const tasks = [
     { label: "Mejorar descripciones", done: true, opacity: 1 },
@@ -17,20 +16,18 @@ const CARD_W = 360
 const CARD_H = 64
 const GAP = 16
 const PAD = 12
-// After the score card's gauge (AdvisorScoreCard) is mostly full.
-const FIRST_CHECK_DELAY = 1.1
+// Once the list has slid in (AdvisorSection).
+const FIRST_CHECK_DELAY = 0.55
 const CHECK_STEP = 0.45
 
-export function AdvisorChecklist() {
-    const ref = useRef<SVGSVGElement>(null)
-    const isInView = useInView(ref, { once: true, amount: 0.45 })
+/** `play`: AdvisorSection says when this beat of the story starts. */
+export function AdvisorChecklist({ play }: { play: boolean }) {
     const prefersReducedMotion = useReducedMotion()
-    const run = isInView || prefersReducedMotion
+    const run = play || prefersReducedMotion
     const height = PAD * 2 + tasks.length * CARD_H + (tasks.length - 1) * GAP
 
     return (
         <svg
-            ref={ref}
             viewBox={`0 0 ${CARD_W + PAD * 2} ${height}`}
             role="img"
             aria-label="Comprobaciones del análisis de la carta"

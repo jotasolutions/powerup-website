@@ -1,7 +1,7 @@
 "use client"
 
-import { animate, motion, useInView, useMotionValue, useReducedMotion, useTransform } from "motion/react"
-import { useEffect, useRef } from "react"
+import { animate, motion, useMotionValue, useReducedMotion, useTransform } from "motion/react"
+import { useEffect } from "react"
 
 // Drawn in SVG (it used to be advisor-widget.png) so the gauge and the four sub-scores can fill
 // up when the section comes into view. The card is shown between 150 and 214 px wide, so all
@@ -36,14 +36,13 @@ const subScores = [
 
 const ease = [0.22, 1, 0.36, 1] as const
 // Starts once the card has popped in (AdvisorSection's entrance takes 0.5 s).
-const GAUGE_DELAY = 0.45
+const GAUGE_DELAY = 0.35
 const GAUGE_DURATION = 1.4
 
-export function AdvisorScoreCard() {
-    const ref = useRef<SVGSVGElement>(null)
-    const isInView = useInView(ref, { once: true, amount: 0.45 })
+/** `play`: AdvisorSection says when this beat of the story starts. */
+export function AdvisorScoreCard({ play }: { play: boolean }) {
     const prefersReducedMotion = useReducedMotion()
-    const run = isInView || prefersReducedMotion
+    const run = play || prefersReducedMotion
     const instant = prefersReducedMotion ? { duration: 0 } : null
 
     const score = useMotionValue(prefersReducedMotion ? SCORE : 0)
@@ -61,7 +60,6 @@ export function AdvisorScoreCard() {
 
     return (
         <svg
-            ref={ref}
             viewBox="0 0 420 440"
             role="img"
             aria-label={`Vista del análisis gratuito de la carta: nota ${SCORE} sobre 10`}
