@@ -47,3 +47,4 @@
 - GTM routes everything under `/blog` to the blog GA4 property (variable `js.seccion`).
 - AI sessions never log into GTM, Google Analytics or Meta. They prepare an import file from a fresh export, and Fede publishes it.
 - Never send personal data in event params. Update the measurement map in the same PR as any tracking change.
+- The floating WhatsApp bubble (`components/landing/WhatsAppBubble.tsx`) opens and closes by rules written in `docs/burbuja-whatsapp.md` (in Spanish). Read it before changing the bubble, and keep it in sync.
