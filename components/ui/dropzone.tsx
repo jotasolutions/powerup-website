@@ -1,6 +1,10 @@
 import { Upload } from "lucide-react";
 import React, { RefObject } from "react";
 
+export type DropzoneLabels = { title: string; or: string; browse: string };
+
+const defaultLabels: DropzoneLabels = { title: "Sube tu carta", or: "o,", browse: "haz click para buscar" };
+
 interface FileDropzoneProps {
   accept: string;
   fileInputRef: RefObject<HTMLInputElement | null>;
@@ -8,6 +12,7 @@ interface FileDropzoneProps {
   handleDragOver: (e: React.DragEvent) => void;
   handleDrop: (e: React.DragEvent) => void;
   handleFileSelect: (files: FileList | null) => void;
+  labels?: DropzoneLabels;
 }
 
 export function FileDropzone({
@@ -17,6 +22,7 @@ export function FileDropzone({
   handleDragOver,
   handleDrop,
   handleFileSelect,
+  labels = defaultLabels,
 }: FileDropzoneProps) {
   return (
     <div className="">
@@ -30,16 +36,16 @@ export function FileDropzone({
           <Upload className="h-5 w-5 text-muted-foreground" />
         </div>
         <p className="text-sm font-medium text-foreground">
-          Sube tu carta
+          {labels.title}
         </p>
         <p className="text-sm text-muted-foreground mt-1">
-          o,{" "}
+          {labels.or}{" "}
           <label
             htmlFor="fileUpload"
             className="text-primary hover:text-primary/90 font-medium cursor-pointer"
             onClick={(e) => e.stopPropagation()} // Prevent triggering handleBoxClick
           >
-            haz click para buscar
+            {labels.browse}
           </label>{" "}
           (4MB max)
         </p>
