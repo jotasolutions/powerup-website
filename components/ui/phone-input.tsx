@@ -72,16 +72,19 @@ const CountrySelect = ({
   onChange,
   options,
 }: CountrySelectProps) => {
+  const [open, setOpen] = React.useState(false);
+
   const handleSelect = React.useCallback(
     (country: RPNInput.Country) => {
       onChange(country);
+      setOpen(false);
     },
     [onChange],
   );
 
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger
         disabled={disabled}
         render={
@@ -100,7 +103,8 @@ const CountrySelect = ({
           )}
         />
       </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
+      {/* Fixed so cmdk's scrollIntoView on mount can't scroll the page before the popup is positioned */}
+      <PopoverContent className="w-[300px] p-0" align="start" positionMethod="fixed">
         <Command>
           <CommandList>
             <ScrollArea className="h-72">
