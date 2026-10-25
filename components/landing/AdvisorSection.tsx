@@ -6,7 +6,8 @@ import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { SectionContainer } from "./SectionContainer";
 import { useNearViewport } from "./use-near-viewport";
-import Image from "next/image";
+import { AdvisorScoreCard } from "./AdvisorScoreCard";
+import { AdvisorChecklist } from "./AdvisorChecklist";
 
 // The form and the Google Maps it loads on mount come in when the section gets within a screen
 // of the viewport, so they don't weigh on the page's first load (the blog's AdvisorDialog does the same).
@@ -27,7 +28,7 @@ const AdvisorWidget = dynamic(
 // box is one line shorter from about 453 px. Keeps the page from moving when the form arrives.
 function AdvisorWidgetPlaceholder() {
     return (
-        <div className="h-[492.5px] w-full max-w-[400px] rounded-xl border border-slate-200 bg-white min-[453px]:h-[472.5px]" />
+        <div className="h-[530.5px] w-full max-w-[400px] rounded-xl border border-slate-200 bg-white min-[453px]:h-[510.5px]" />
     );
 }
 
@@ -72,18 +73,14 @@ export function AdvisorSection() {
                                 ease: [0.7, -0.6, 0.32, 1.6]
                             }}
                         >
-                            <Image
-                                src="/images/advisor-widget.png"
-                                alt="Vista del análisis gratuito de la carta"
-                                width={300}
-                                height={300}
-                                className="w-full h-auto object-contain rounded-3xl border border-6 shadow-xl border-white/60"
-                            />
+                            <div className="overflow-hidden rounded-3xl border border-6 shadow-xl border-white/60">
+                                <AdvisorScoreCard />
+                            </div>
                         </motion.div>
                         <motion.div
-                            className="absolute z-10 w-[200px] origin-bottom-right sm:w-[280px]"
-                            initial={{ rotate: 0, opacity: 0, bottom: -50, right: 70, scale: 0.8 }}
-                            whileInView={{ rotate: 6, opacity: 1, bottom: -2, right: 6, scale: 1 }}
+                            className="absolute z-10 w-[134px] origin-bottom-right sm:w-[188px]"
+                            initial={{ rotate: 0, opacity: 0, bottom: -50, right: 68, scale: 0.8 }}
+                            whileInView={{ rotate: 6, opacity: 1, bottom: -2, right: 4, scale: 1 }}
                             viewport={advisorImageViewport}
                             transition={{
                                 delay: 0.12,
@@ -91,13 +88,7 @@ export function AdvisorSection() {
                                 ease: [0.7, -0.6, 0.32, 1.6]
                             }}
                         >
-                            <Image
-                                src="/images/advisor-checks.png"
-                                alt="Comprobaciones del análisis de la carta"
-                                width={300}
-                                height={300}
-                                className="w-full h-auto object-contain"
-                            />
+                            <AdvisorChecklist />
                         </motion.div>
                     </div>
                     <div className=" space-y-3">
@@ -114,7 +105,7 @@ export function AdvisorSection() {
                         </div>
                     ))}
                 </div>
-                <div ref={widgetRef} className="w-full lg:flex-1 flex justify-end">
+                <div ref={widgetRef} className="w-full lg:flex-1 flex justify-center lg:justify-end">
                     {isWidgetNear ? <AdvisorWidget /> : <AdvisorWidgetPlaceholder />}
                 </div>
 
