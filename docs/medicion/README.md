@@ -353,8 +353,8 @@ Los cambios en Analytics o en Meta los hace Fede, o Claude in Chrome con su perm
     ```
   - `data-domains="www.powerup.menu"`: deja de contar el dominio de Vercel y el local.
 - **25-10-2026, burbuja de WhatsApp** (`components/landing/WhatsAppBubble.tsx`):
-  - botón flotante abajo a la derecha en toda la web menos `/vende-mas` y `/visibilidad`, con un
-    bocadillo que sale una vez por visita;
+  - botón flotante abajo a la derecha (foto de Fede, «¿Hablamos?») en toda la web menos `/vende-mas`
+    y `/visibilidad`; una vez por visita se abre en una tarjeta con el botón «Escribir a Fede»;
   - sus dos enlaces mandan el `outbound_click` de siempre con `label: whatsapp` y
     `location: burbuja`. Sin cambios en GTM.
 - **Pendiente de describir (copia de la versión 26, exportada el 10-10-2026):** el contenedor tiene piezas
