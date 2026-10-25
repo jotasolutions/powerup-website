@@ -8,6 +8,7 @@ import { SectionContainer } from "./SectionContainer";
 import { useNearViewport } from "./use-near-viewport";
 import { AdvisorScoreCard } from "./AdvisorScoreCard";
 import { AdvisorChecklist } from "./AdvisorChecklist";
+import { BorderBeam } from "./BorderBeam";
 
 // The form and the Google Maps it loads on mount come in when the section gets within a screen
 // of the viewport, so they don't weigh on the page's first load (the blog's AdvisorDialog does the same).
@@ -106,7 +107,9 @@ export function AdvisorSection() {
                     ))}
                 </div>
                 <div ref={widgetRef} className="w-full lg:flex-1 flex justify-center lg:justify-end">
-                    {isWidgetNear ? <AdvisorWidget /> : <AdvisorWidgetPlaceholder />}
+                    <BorderBeam className="w-full max-w-[404px]">
+                        {isWidgetNear ? <AdvisorWidget /> : <AdvisorWidgetPlaceholder />}
+                    </BorderBeam>
                 </div>
 
             </div>
