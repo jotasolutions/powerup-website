@@ -17,17 +17,20 @@ type PhoneInputProps = Omit<
 > &
   Omit<RPNInput.Props<typeof RPNInput.default>, "onChange"> & {
     onChange?: (value: RPNInput.Value | string) => void;
+    searchPlaceholder?: string;
+    emptyText?: string;
   };
 
 const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
   React.forwardRef<React.ElementRef<typeof RPNInput.default>, PhoneInputProps>(
-    ({ className, onChange, ...props }, ref) => {
+    ({ className, onChange, searchPlaceholder, emptyText, ...props }, ref) => {
       return (
         <RPNInput.default
           ref={ref}
           className={cn("flex", className)}
           flagComponent={FlagComponent}
           countrySelectComponent={CountrySelect}
+          countrySelectProps={{ searchPlaceholder, emptyText }}
           inputComponent={InputComponent}
           /**
            * Handles the onChange event.
@@ -64,6 +67,8 @@ type CountrySelectProps = {
   value: RPNInput.Country;
   onChange: (value: RPNInput.Country) => void;
   options: CountrySelectOption[];
+  searchPlaceholder?: string;
+  emptyText?: string;
 };
 
 const CountrySelect = ({
@@ -71,6 +76,8 @@ const CountrySelect = ({
   value,
   onChange,
   options,
+  searchPlaceholder = "Buscar país...",
+  emptyText = "No se encontró ningún país.",
 }: CountrySelectProps) => {
   const [open, setOpen] = React.useState(false);
 
@@ -108,8 +115,8 @@ const CountrySelect = ({
         <Command>
           <CommandList>
             <ScrollArea className="h-72">
-              <CommandInput placeholder="Buscar país..." />
-              <CommandEmpty>No se encontró ningún país.</CommandEmpty>
+              <CommandInput placeholder={searchPlaceholder} />
+              <CommandEmpty>{emptyText}</CommandEmpty>
               <CommandGroup>
                 {options
                   .filter((x) => x.value)

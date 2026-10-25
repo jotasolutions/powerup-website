@@ -7,6 +7,8 @@ import { useRef } from "react";
 import { SectionContainer } from "./SectionContainer";
 import { useNearViewport } from "./use-near-viewport";
 import Image from "next/image";
+import { useLocale } from "@/lib/locale";
+import { advisorCopy } from "../advisor-copy";
 
 // The form and the Google Maps it loads on mount come in when the section gets within a screen
 // of the viewport, so they don't weigh on the page's first load (the blog's AdvisorDialog does the same).
@@ -42,18 +44,9 @@ const advisorImageViewport = {
 export function AdvisorSection() {
     const widgetRef = useRef<HTMLDivElement>(null);
     const isWidgetNear = useNearViewport(widgetRef);
-    const checkItems = [
-        {
-            icon: <RotateCw  className="size-5 mt-1" />,
-            title: "Análisis 360º",
-            desc: "Para encontrar puntos de mejora"
-        },
-        {
-            icon: <BadgeCheck className="size-5 mt-1" /> ,
-            title: "Respaldado por estudios",
-            desc: "Marco científico de más de 50 publicaciones"
-        }
-    ]
+    const copy = advisorCopy[useLocale()].section;
+    const checkIcons = [<RotateCw key="360" className="size-5 mt-1" />, <BadgeCheck key="studies" className="size-5 mt-1" />]
+    const checkItems = copy.checks.map((check, index) => ({ icon: checkIcons[index], ...check }))
     return (
         <SectionContainer
             id="advisor"
@@ -74,7 +67,7 @@ export function AdvisorSection() {
                         >
                             <Image
                                 src="/images/advisor-widget.png"
-                                alt="Vista del análisis gratuito de la carta"
+                                alt={copy.widgetImageAlt}
                                 width={300}
                                 height={300}
                                 className="w-full h-auto object-contain rounded-3xl border border-6 shadow-xl border-white/60"
@@ -93,7 +86,7 @@ export function AdvisorSection() {
                         >
                             <Image
                                 src="/images/advisor-checks.png"
-                                alt="Comprobaciones del análisis de la carta"
+                                alt={copy.checksImageAlt}
                                 width={300}
                                 height={300}
                                 className="w-full h-auto object-contain"
@@ -101,8 +94,8 @@ export function AdvisorSection() {
                         </motion.div>
                     </div>
                     <div className=" space-y-3">
-                        <h3 className="plus-darker font-heading text-2xl font-medium opacity-65 sm:text-3xl">Evalúa tu carta GRATIS</h3>
-                        <p className="plus-darker opacity-65">Recibe un análisis completo con sugerencias prácticas y <strong className="font-semibold">recomendaciones a medida para aumentar tus ventas hasta un 30%.</strong> Como lo haría un experto.</p>
+                        <h3 className="plus-darker font-heading text-2xl font-medium opacity-65 sm:text-3xl">{copy.title}</h3>
+                        <p className="plus-darker opacity-65">{copy.intro}<strong className="font-semibold">{copy.introStrong}</strong>{copy.introEnd}</p>
                     </div>
                     {checkItems.map((checkItem, index) => (
                         <div key={index} className="flex flex-row gap-2 plus-darker opacity-65">
