@@ -10,7 +10,7 @@ import { AdvisorChecklist } from "./AdvisorChecklist";
 import { BorderBeam } from "./BorderBeam";
 import { AdvisorMenuScan } from "./AdvisorMenuScan";
 import { AdvisorProcessSteps } from "./AdvisorProcessSteps";
-import { AdvisorProof } from "./AdvisorProof";
+import { AdvisorClaims, AdvisorPressSeal } from "./AdvisorProof";
 
 // The form and the Google Maps it loads on mount come in when the section gets within a screen
 // of the viewport, so they don't weigh on the page's first load (the blog's AdvisorDialog does the same).
@@ -107,12 +107,15 @@ export function AdvisorSection() {
                         <h3 className="plus-darker font-heading text-2xl font-medium opacity-65 sm:text-3xl">Evalúa tu carta GRATIS</h3>
                         <p className="plus-darker opacity-65">Recibe un análisis completo con sugerencias prácticas y <strong className="font-semibold">recomendaciones a medida para aumentar tus ventas hasta un 30%.</strong> Como lo haría un experto.</p>
                     </div>
-                    <AdvisorProof />
+                    <AdvisorClaims />
                 </div>
                 <div ref={widgetRef} className="w-full lg:flex-1 flex justify-center lg:justify-end">
-                    <BorderBeam className="w-full max-w-[404px]">
-                        {isWidgetNear ? <AdvisorWidget /> : <AdvisorWidgetPlaceholder />}
-                    </BorderBeam>
+                    <div className="w-full max-w-[404px] space-y-4">
+                        <BorderBeam>
+                            {isWidgetNear ? <AdvisorWidget /> : <AdvisorWidgetPlaceholder />}
+                        </BorderBeam>
+                        <AdvisorPressSeal />
+                    </div>
                 </div>
 
             </div>
