@@ -65,7 +65,7 @@ export function AdvisorSection() {
 
                 <div className="flex-1 space-y-6 lg:space-y-7">
                     <div className="space-y-4">
-                        <div ref={storyRef} className="relative h-[110px] w-full sm:h-[130px]">
+                        <div ref={storyRef} className="relative h-[200px] w-full sm:h-[270px]">
                             <AnimatePresence>
                                 {phase === 1 && (
                                     <motion.div
