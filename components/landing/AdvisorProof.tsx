@@ -6,15 +6,18 @@ import { BadgeCheck, RotateCw } from "lucide-react"
 // Not a link on purpose: it should build trust, not send people away from the form.
 export function AdvisorPressSeal() {
     return (
-        <div className="flex items-center justify-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500">
-            Como se vio en
-            <Image
-                src="/images/press/profesional-horeca.png"
-                alt="Profesional Horeca"
-                width={496}
-                height={82}
-                className="h-5 w-auto grayscale"
-            />
+        <div className="flex justify-center">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white bg-white/70 py-2 pl-4 pr-5 shadow-sm shadow-[#1F4D3A]/5">
+                <span className="text-xs text-slate-500">Destacado en</span>
+                <span className="h-4 w-px bg-slate-200" aria-hidden />
+                <Image
+                    src="/images/press/profesional-horeca.png"
+                    alt="Profesional Horeca"
+                    width={496}
+                    height={82}
+                    className="h-[22px] w-auto"
+                />
+            </div>
         </div>
     )
 }
