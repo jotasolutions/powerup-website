@@ -4,18 +4,19 @@ import { Check } from "lucide-react"
 import { motion } from "motion/react"
 
 // The three beats of the Advisor animation, lit in step with it (AdvisorSection's `phase`).
+// Three equal columns so each label sits under its piece of the animation.
 const steps = ["Tu carta", "Método PowerUp", "Mejoras"]
 
 export function AdvisorProcessSteps({ phase }: { phase: number }) {
     return (
-        // Phones: three columns, number above the label. From sm: one row of pills with arrows.
-        <ol className="grid grid-cols-3 gap-1 whitespace-nowrap text-[11px] font-medium sm:flex sm:items-center sm:text-[13px]">
+        // Phones: number above the label. From sm: number beside it, as a pill.
+        <ol className="grid grid-cols-3 gap-1 whitespace-nowrap text-[11px] font-medium sm:text-[13px]">
             {steps.map((label, i) => {
                 const step = i + 1
                 const done = phase > step
                 const active = phase === step
                 return (
-                    <li key={label} className="flex items-center justify-center gap-1 sm:justify-start">
+                    <li key={label} className="flex justify-center">
                         <motion.span
                             className="flex w-full flex-col items-center gap-1 rounded-xl px-1 py-1.5 sm:w-auto sm:flex-row sm:gap-1.5 sm:rounded-full sm:px-2 sm:py-1"
                             animate={{
@@ -34,7 +35,6 @@ export function AdvisorProcessSteps({ phase }: { phase: number }) {
                             </span>
                             {label}
                         </motion.span>
-                        {step < steps.length && <span className="hidden text-slate-400 sm:inline" aria-hidden>›</span>}
                     </li>
                 )
             })}

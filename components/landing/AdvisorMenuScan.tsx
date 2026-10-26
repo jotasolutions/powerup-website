@@ -2,15 +2,16 @@
 
 import { motion, useReducedMotion } from "motion/react"
 
-// First beat of the Advisor story: a menu being scanned. Same size and spot as the score card
-// that replaces it (AdvisorSection), so the menu seems to turn into its score.
+// First beat of the Advisor story: a menu being scanned. It stays in place, above «Tu carta»,
+// while the score and the tasks come in beside it (AdvisorSection).
 
 const sections = [
     { y: 92, dishes: [0.62, 0.48, 0.7] },
     { y: 214, dishes: [0.55, 0.66] },
 ]
 
-export function AdvisorMenuScan() {
+/** `play`: AdvisorSection says when this beat of the story starts. */
+export function AdvisorMenuScan({ play }: { play: boolean }) {
     const prefersReducedMotion = useReducedMotion()
 
     return (
@@ -46,7 +47,7 @@ export function AdvisorMenuScan() {
             <rect x="66" y="370" width="100" height="9" rx="4.5" fill="#E2E8F0" />
 
             {!prefersReducedMotion && (
-                <motion.g initial={{ y: -60 }} animate={{ y: 440 }} transition={{ duration: 1.3, ease: "easeInOut", delay: 0.2 }}>
+                <motion.g initial={{ y: -60 }} animate={play ? { y: 440 } : undefined} transition={{ duration: 1.3, ease: "easeInOut", delay: 0.2 }}>
                     <rect x="0" y="0" width="420" height="60" fill="url(#advisor-scan-glow)" />
                     <rect x="0" y="58" width="420" height="3" fill="#25946F" />
                 </motion.g>
