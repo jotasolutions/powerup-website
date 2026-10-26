@@ -25,6 +25,16 @@ export function AdvisorStoryMini({ variant, className }: { variant: "full" | "sc
   const prefersReducedMotion = useReducedMotion()
   const [storyPhase, setStoryPhase] = useState(0)
   const phase = prefersReducedMotion ? 3 : storyPhase
+  // On phones the full scene's step labels only fit in the compact layout ("Método PowerUp" is long).
+  const [isPhone, setIsPhone] = useState(false)
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 639px)")
+    const update = () => setIsPhone(query.matches)
+    update()
+    query.addEventListener("change", update)
+    return () => query.removeEventListener("change", update)
+  }, [])
 
   useEffect(() => {
     if (!isInView || prefersReducedMotion) return
@@ -74,7 +84,7 @@ export function AdvisorStoryMini({ variant, className }: { variant: "full" | "sc
           </div>
         </div>
       )}
-      <AdvisorProcessSteps phase={phase} steps={copy.steps} compact={variant === "score"} />
+      <AdvisorProcessSteps phase={phase} steps={copy.steps} compact={variant === "score" || isPhone} />
     </div>
   )
 }
