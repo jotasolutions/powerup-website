@@ -191,6 +191,13 @@ export default function FilesInput2({
 
     return (
         <div className="w-full">
+            {uploadedFiles.length > 0 && (
+                <FileList
+                    uploadedFiles={uploadedFiles}
+                    fileProgresses={fileProgresses}
+                    removeFile={removeFile}
+                />
+            )}
             <FileDropzone
                 accept={accept}
                 fileInputRef={fileInputRef}
@@ -199,11 +206,7 @@ export default function FilesInput2({
                 handleDrop={handleDrop}
                 handleFileSelect={handleFileSelect}
                 labels={labels}
-            />
-            <FileList
-                uploadedFiles={uploadedFiles}
-                fileProgresses={fileProgresses}
-                removeFile={removeFile}
+                compact={uploadedFiles.length > 0}
             />
         </div>
     );

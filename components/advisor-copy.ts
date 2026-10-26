@@ -46,6 +46,7 @@ export const advisorCopy = {
       title: "Sube tu carta",
       or: "o,",
       browse: "haz click para buscar",
+      addMore: "Añadir otra página",
     },
     restaurant: {
       label: "Restaurante",
@@ -120,6 +121,7 @@ export const advisorCopy = {
       title: "Carica il tuo menù",
       or: "oppure",
       browse: "clicca per sceglierlo",
+      addMore: "Aggiungi un'altra pagina",
     },
     restaurant: {
       label: "Ristorante",
