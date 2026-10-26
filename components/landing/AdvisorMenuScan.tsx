@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "motion/react"
+import type { AdvisorCopy } from "../advisor-copy"
 
 // First beat of the Advisor story: a menu being scanned. It stays in place, above «Tu carta»,
 // while the score and the tasks come in beside it (AdvisorSection).
@@ -11,11 +12,11 @@ const sections = [
 ]
 
 /** `play`: AdvisorSection says when this beat of the story starts. */
-export function AdvisorMenuScan({ play }: { play: boolean }) {
+export function AdvisorMenuScan({ play, copy }: { play: boolean; copy: AdvisorCopy["section"]["story"] }) {
     const prefersReducedMotion = useReducedMotion()
 
     return (
-        <svg viewBox="0 0 420 440" role="img" aria-label="Tu carta, mientras se analiza" className="block h-auto w-full bg-white">
+        <svg viewBox="0 0 420 440" role="img" aria-label={copy.menuAlt} className="block h-auto w-full bg-white">
             <defs>
                 <linearGradient id="advisor-scan-glow" x1="0" x2="0" y1="0" y2="1">
                     <stop offset="0" stopColor="#7BCB5A" stopOpacity="0" />
@@ -24,7 +25,7 @@ export function AdvisorMenuScan({ play }: { play: boolean }) {
             </defs>
 
             <text x="210" y="56" textAnchor="middle" fontSize="26" fontWeight="600" letterSpacing="6" fill="#1F4D3A" className="font-heading">
-                CARTA
+                {copy.menuLabel}
             </text>
             <line x1="170" x2="250" y1="72" y2="72" stroke="#CDE9A0" strokeWidth="3" strokeLinecap="round" />
 

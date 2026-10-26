@@ -2,6 +2,7 @@
 
 import { animate, motion, useMotionValue, useReducedMotion, useTransform } from "motion/react"
 import { useEffect } from "react"
+import type { AdvisorCopy } from "../advisor-copy"
 
 // Drawn in SVG (it used to be advisor-widget.png) so the gauge and the four sub-scores can fill
 // up when the section comes into view. The card is shown between 150 and 214 px wide, so all
@@ -27,11 +28,12 @@ const gaugePath = `M ${arcStart.x} ${arcStart.y} A ${R} ${R} 0 1 1 ${arcEnd.x} $
 const ticks = Array.from({ length: 21 }, (_, i) => i / 2)
 const tickLabels = [0, 3, 5, 7, 10]
 
+// Names come from the copy, in this order (advisorCopy … story.subScores).
 const subScores = [
-    { lines: ["Oferta", "gastronómica"], detail: "5 de 14", value: 3.5, color: "#EF6461", x: 52, y: 300 },
-    { lines: ["Marketing"], detail: "3 de 4", value: 7.5, color: "#8BD46A", x: 258, y: 300 },
-    { lines: ["Contenido"], detail: "2 de 4", value: 5, color: "#F3DF5C", x: 52, y: 392 },
-    { lines: ["Diseño"], detail: "4 de 4", value: 10, color: "#8BD46A", x: 258, y: 392 },
+    { done: 5, total: 14, value: 3.5, color: "#EF6461", x: 52, y: 300 },
+    { done: 3, total: 4, value: 7.5, color: "#8BD46A", x: 258, y: 300 },
+    { done: 2, total: 4, value: 5, color: "#F3DF5C", x: 52, y: 392 },
+    { done: 4, total: 4, value: 10, color: "#8BD46A", x: 258, y: 392 },
 ]
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -40,7 +42,7 @@ const GAUGE_DELAY = 0.35
 const GAUGE_DURATION = 1.4
 
 /** `play`: AdvisorSection says when this beat of the story starts. */
-export function AdvisorScoreCard({ play }: { play: boolean }) {
+export function AdvisorScoreCard({ play, copy }: { play: boolean; copy: AdvisorCopy["section"]["story"] }) {
     const prefersReducedMotion = useReducedMotion()
     const run = play || prefersReducedMotion
     const instant = prefersReducedMotion ? { duration: 0 } : null
@@ -62,7 +64,7 @@ export function AdvisorScoreCard({ play }: { play: boolean }) {
         <svg
             viewBox="0 -22 420 462"
             role="img"
-            aria-label={`Vista del análisis gratuito de la carta: nota ${SCORE} sobre 10`}
+            aria-label={copy.scoreAlt(SCORE)}
             className="block h-auto w-full bg-white"
         >
             <defs>
@@ -112,13 +114,13 @@ export function AdvisorScoreCard({ play }: { play: boolean }) {
                 {scoreText}
             </motion.text>
             <text x={CX} y={222} textAnchor="middle" fontSize="21" fill="#1F4D3A" className="font-heading">
-                nota de tu menú
+                {copy.scoreLabel}
             </text>
 
             {subScores.map((s, i) => {
                 const delay = GAUGE_DELAY + 0.5 + i * 0.15
                 return (
-                    <g key={s.detail + s.color + i}>
+                    <g key={i}>
                         <circle cx={s.x} cy={s.y} r="26" fill="none" stroke="#F1F3F5" strokeWidth="6" />
                         <motion.circle
                             cx={s.x}
@@ -136,13 +138,13 @@ export function AdvisorScoreCard({ play }: { play: boolean }) {
                         <text x={s.x} y={s.y + 6} textAnchor="middle" fontSize="16" fill="#1E293B" className="font-sans">
                             {s.value}
                         </text>
-                        {s.lines.map((line, li) => (
-                            <text key={line} x={s.x + 46} y={s.y - 12 + li * 19 - (s.lines.length - 1) * 8} fontSize="16" fill="#1E293B" className="font-sans">
+                        {copy.subScores[i].map((line, li, lines) => (
+                            <text key={line} x={s.x + 46} y={s.y - 12 + li * 19 - (lines.length - 1) * 8} fontSize="16" fill="#1E293B" className="font-sans">
                                 {line}
                             </text>
                         ))}
-                        <text x={s.x + 46} y={s.y + 16 + (s.lines.length - 1) * 11} fontSize="15" fill="#64748B" className="font-sans">
-                            {s.detail}
+                        <text x={s.x + 46} y={s.y + 16 + (copy.subScores[i].length - 1) * 11} fontSize="15" fill="#64748B" className="font-sans">
+                            {`${s.done} ${copy.of} ${s.total}`}
                         </text>
                     </g>
                 )

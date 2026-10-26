@@ -2,12 +2,12 @@
 
 import { Check } from "lucide-react"
 import { motion } from "motion/react"
+import type { AdvisorCopy } from "../advisor-copy"
 
 // The three beats of the Advisor animation, lit in step with it (AdvisorSection's `phase`).
 // Three equal columns so each label sits under its piece of the animation.
-const steps = ["Tu carta", "Método PowerUp", "Mejoras"]
 
-export function AdvisorProcessSteps({ phase }: { phase: number }) {
+export function AdvisorProcessSteps({ phase, steps }: { phase: number; steps: AdvisorCopy["section"]["story"]["steps"] }) {
     return (
         // Phones: number above the label. From sm: number beside it, as a pill.
         <ol className="grid grid-cols-3 gap-1 whitespace-nowrap text-[11px] font-medium sm:text-[13px]">

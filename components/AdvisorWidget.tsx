@@ -19,37 +19,47 @@ import { PhoneInput } from "@/components/ui/phone-input"
 
 import RegisterGoogleRestForm from "./forms/RegisterGoogleRestForm"
 import FilesInput2, { S3UploadedFile } from "./files-input2"
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { CircleCheck } from "lucide-react"
 import { motion, useReducedMotion } from "motion/react"
 import { Checkbox } from "./ui/checkbox"
 import { Place } from "@/utils/types"
 import { submitAdvisorLeadAction } from "@/app/actions/advisor"
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics"
+import { useLocale } from "@/lib/locale"
+import { advisorCopy, type AdvisorCopy } from "./advisor-copy"
+import italianCountryNames from "react-phone-number-input/locale/it.json"
 
-const step1Schema = z.object({
-    name: z
-        .string()
-        .min(2, "Tu nombre debe tener al menos 2 caracteres.")
-        .max(32, "Tu nombre debe tener menos de 32 caracteres."),
-})
+function makeStep1Schema(copy: AdvisorCopy) {
+    return z.object({
+        name: z
+            .string()
+            .min(2, copy.step1.nameTooShort)
+            .max(32, copy.step1.nameTooLong),
+    })
+}
 
-const step2Schema = z.object({
-    email: z.string().email("Introduce un email válido."),
-    phone: z.string().min(9, "Introduce un número de teléfono válido."),
-    role: z.enum(["owner", "manager", "other"]),
-    acceptTerms: z.boolean().refine((value) => value, {
-        message: "Debes aceptar los términos y condiciones.",
-    }),
-})
+function makeStep2Schema(copy: AdvisorCopy) {
+    return z.object({
+        email: z.string().email(copy.step2.invalidEmail),
+        phone: z.string().min(9, copy.step2.invalidPhone),
+        role: z.enum(["owner", "manager", "other"]),
+        acceptTerms: z.boolean().refine((value) => value, {
+            message: copy.step2.termsRequired,
+        }),
+    })
+}
+
+type Step1Values = z.infer<ReturnType<typeof makeStep1Schema>>
+type Step2Values = z.infer<ReturnType<typeof makeStep2Schema>>
 
 // Darker than the brand green so the button stands out on the light green section.
 const submitButtonClass = "h-10 w-full border-none bg-[#1E7F5F] font-semibold shadow-md shadow-[#1E7F5F]/25 hover:bg-[#186A4F]"
 
-function StepProgress({ step }: { step: 1 | 2 }) {
+function StepProgress({ step, label }: { step: 1 | 2; label: string }) {
     return (
-        <div className="mb-3 space-y-1.5" aria-label={`Paso ${step} de 2`}>
-            <div className="text-xs font-medium text-slate-500">Paso {step} de 2</div>
+        <div className="mb-3 space-y-1.5">
+            <div className="text-xs font-medium text-slate-500">{label}</div>
             <div className="flex gap-1.5">
                 <div className="h-1 flex-1 rounded-full bg-[#25946F]" />
                 <div className="h-1 flex-1 overflow-hidden rounded-full bg-slate-200">
@@ -66,6 +76,10 @@ function StepProgress({ step }: { step: 1 | 2 }) {
 }
 
 export function AdvisorWidget() {
+    const locale = useLocale();
+    const copy = advisorCopy[locale];
+    const step1Schema = useMemo(() => makeStep1Schema(copy), [copy]);
+    const step2Schema = useMemo(() => makeStep2Schema(copy), [copy]);
     const prefersReducedMotion = useReducedMotion()
     // Each step slides in when it appears; the first one is already on screen.
     const stepEnter = prefersReducedMotion
@@ -77,14 +91,14 @@ export function AdvisorWidget() {
     const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
     const importerS3Directory = `advisor`;
 
-    const step1Form = useForm<z.infer<typeof step1Schema>>({
+    const step1Form = useForm<Step1Values>({
         resolver: zodResolver(step1Schema),
         defaultValues: {
             name: "",
         },
     });
 
-    const step2Form = useForm<z.infer<typeof step2Schema>>({
+    const step2Form = useForm<Step2Values>({
         resolver: zodResolver(step2Schema),
         defaultValues: {
             email: "",
@@ -96,11 +110,11 @@ export function AdvisorWidget() {
 
     function onStep1Submit() {
         if (uploadedFiles.length === 0) {
-            toast.error("Sube al menos un archivo antes de continuar.");
+            toast.error(copy.step1.noFiles);
             return;
         }
         if (!selectedPlace?.placeId || !selectedPlace.name) {
-            toast.error("Selecciona un restaurante válido antes de continuar.");
+            toast.error(copy.step1.noPlace);
             return;
         }
         trackEvent(ANALYTICS_EVENTS.ADVISOR_STEP_1, {
@@ -113,7 +127,7 @@ export function AdvisorWidget() {
 
 
 
-    async function onStep2Submit(values: z.infer<typeof step2Schema>) {
+    async function onStep2Submit(values: Step2Values) {
         setStatus("submitting");
         try {
             const actionResult = await submitAdvisorLeadAction({
@@ -131,8 +145,8 @@ export function AdvisorWidget() {
                 throw new Error(actionResult.error || "advisor_submit_failed");
             }
 
-            toast.success("Formulario completado", {
-                description: `Gracias ${step1Form.getValues("name")}, te contactaremos pronto.`,
+            toast.success(copy.sentTitle, {
+                description: copy.sentDescription(step1Form.getValues("name")),
             });
             trackEvent(ANALYTICS_EVENTS.GENERATE_LEAD, {
                 location: "advisor",
@@ -144,9 +158,9 @@ export function AdvisorWidget() {
         } catch (error) {
             console.log(error);
             if (error instanceof Error && error.message === "invalid_whatsapp_number") {
-                toast.error("El número ingresado no es un número válido de WhatsApp.");
+                toast.error(copy.invalidWhatsapp);
             } else {
-                toast.error("No hemos podido enviar tu solicitud. Inténtalo de nuevo.");
+                toast.error(copy.sendFailed);
             }
             setStatus("step2");
         }
@@ -158,10 +172,10 @@ export function AdvisorWidget() {
 
             {status === "step1" && (
                 <div className="space-y-2">
-                    <StepProgress step={1} />
-                    <h3 className="text-xl font-base font-medium">Calcula tu nota ahora</h3>
+                    <StepProgress step={1} label={copy.stepOf(1)} />
+                    <h3 className="text-xl font-base font-medium">{copy.step1.title}</h3>
                     <p className="text-sm text-slate-500">
-                        Descubre cómo mejorar tu carta para aumentar tus ventas
+                        {copy.step1.subtitle}
                     </p>
 
                     <FilesInput2
@@ -169,8 +183,9 @@ export function AdvisorWidget() {
                         s3BucketDirectory={importerS3Directory}
                         onUploadedFiles={setUploadedFiles}
                         onUploadingChange={setIsUploadingFiles}
+                        labels={copy.upload}
                     />
-                    <RegisterGoogleRestForm onCompleted={setSelectedPlace} />
+                    <RegisterGoogleRestForm onCompleted={setSelectedPlace} copy={copy.restaurant} />
                     <form id="advisor-step1" onSubmit={step1Form.handleSubmit(onStep1Submit)}>
                         <FieldGroup>
                             <Controller
@@ -179,13 +194,13 @@ export function AdvisorWidget() {
                                 render={({ field, fieldState }) => (
                                     <Field data-invalid={fieldState.invalid}>
                                         <FieldLabel htmlFor="advisor-step1-name">
-                                            Tu nombre
+                                            {copy.step1.nameLabel}
                                         </FieldLabel>
                                         <Input
                                             {...field}
                                             id="advisor-step1-name"
                                             aria-invalid={fieldState.invalid}
-                                            placeholder="Juan Pérez"
+                                            placeholder={copy.step1.namePlaceholder}
                                             autoComplete="off"
                                         />
                                         {fieldState.invalid && (
@@ -202,15 +217,15 @@ export function AdvisorWidget() {
                         disabled={isUploadingFiles}
                         className={submitButtonClass}
                     >
-                        Calcular mi nota
+                        {copy.step1.cta}
                     </Button>
                 </div>
             )}
 
             {(status === "step2" || status === "submitting") && (
                 <motion.div className="space-y-2" {...stepEnter}>
-                    <StepProgress step={2} />
-                    <h3 className="text-xl font-base font-medium">Recibe tu informe</h3>
+                    <StepProgress step={2} label={copy.stepOf(2)} />
+                    <h3 className="text-xl font-base font-medium">{copy.step2.title}</h3>
 
 
                     <form id="advisor-step2" onSubmit={step2Form.handleSubmit(onStep2Submit)}>
@@ -220,10 +235,13 @@ export function AdvisorWidget() {
                                 control={step2Form.control}
                                 render={({ field, fieldState }) => (
                                     <Field data-invalid={fieldState.invalid}>
-                                        <FieldLabel htmlFor="advisor-step2-phone">Teléfono</FieldLabel>
+                                        <FieldLabel htmlFor="advisor-step2-phone">{copy.step2.phoneLabel}</FieldLabel>
                                         <PhoneInput
-                                            defaultCountry="ES"
-                                            placeholder="646 87 63 91"
+                                            defaultCountry={copy.step2.phoneCountry}
+                                            placeholder={copy.step2.phonePlaceholder}
+                                            labels={locale === "it" ? italianCountryNames : undefined}
+                                            searchPlaceholder={copy.step2.countrySearch}
+                                            emptyText={copy.step2.countryEmpty}
                                             value={field.value}
                                             onChange={field.onChange}
                                         />
@@ -241,7 +259,7 @@ export function AdvisorWidget() {
                                             {...field}
                                             id="advisor-step2-email"
                                             type="email"
-                                            placeholder="juan@email.com"
+                                            placeholder={copy.step2.emailPlaceholder}
                                             autoComplete="email"
                                         />
                                         {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -253,14 +271,14 @@ export function AdvisorWidget() {
                                 control={step2Form.control}
                                 render={({ field }) => (
                                     <Field>
-                                        <FieldLabel>Qué rol te define mejor</FieldLabel>
+                                        <FieldLabel>{copy.step2.roleLabel}</FieldLabel>
                                         <AnimatedTabs
                                             className="w-full"
                                             fullWidth
                                             tabs={[
-                                                { label: "Propietario", value: "owner" },
-                                                { label: "Gerente", value: "manager" },
-                                                { label: "Otro", value: "other" },
+                                                { label: copy.step2.roles.owner, value: "owner" },
+                                                { label: copy.step2.roles.manager, value: "manager" },
+                                                { label: copy.step2.roles.other, value: "other" },
                                             ]}
                                             value={field.value}
                                             onValueChange={field.onChange}
@@ -277,8 +295,8 @@ export function AdvisorWidget() {
                                             <Checkbox id="advisor-step2-accept-terms" checked={field.value}
                                                 onCheckedChange={field.onChange} />
                                             <span className="leading-relaxed inline-block text-xs">
-                                                Acepto los <Link className="underline"
-                                                    href="/terms">Términos y condiciones</Link> y quiero recibir información de cómo mejorar mi oferta gastronómica</span>
+                                                {copy.step2.termsBefore}<Link className="underline"
+                                                    href="/terms">{copy.step2.termsLink}</Link>{copy.step2.termsAfter}</span>
                                         </label>
                                         {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                                     </Field>
@@ -292,7 +310,7 @@ export function AdvisorWidget() {
                         className={submitButtonClass}
                         disabled={status === "submitting"}
                     >
-                        {status === "submitting" ? "Enviando..." : "Recibir mi informe"}
+                        {status === "submitting" ? copy.submitting : copy.step2.cta}
                     </Button>
                 </motion.div>
             )}
@@ -306,7 +324,7 @@ export function AdvisorWidget() {
                     >
                         <CircleCheck className="size-12 text-[#25946F]" strokeWidth={1.75} />
                     </motion.div>
-                    Solicitud enviada correctamente. Te contactaremos en breve.
+                    {copy.success}
                 </motion.div>
             )}
         </div>

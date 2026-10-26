@@ -1,6 +1,6 @@
 "use client";
 
-import { FileDropzone } from "./ui/dropzone";
+import { FileDropzone, type DropzoneLabels } from "./ui/dropzone";
 import { FileList } from "./ui/filelist";
 import { toast } from "sonner";
 import { useEffect, useRef, useState } from "react";
@@ -26,6 +26,7 @@ interface FilesInput2Props {
     s3BucketDirectory: string;
     onUploadedFiles?: (files: S3UploadedFile[]) => void;
     onUploadingChange?: (isUploading: boolean) => void;
+    labels?: DropzoneLabels;
 }
 
 function uploadFileToS3(
@@ -76,6 +77,7 @@ export default function FilesInput2({
     s3BucketDirectory,
     onUploadedFiles,
     onUploadingChange,
+    labels,
 }: FilesInput2Props) {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
@@ -196,6 +198,7 @@ export default function FilesInput2({
                 handleDragOver={handleDragOver}
                 handleDrop={handleDrop}
                 handleFileSelect={handleFileSelect}
+                labels={labels}
             />
             <FileList
                 uploadedFiles={uploadedFiles}

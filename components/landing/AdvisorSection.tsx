@@ -11,6 +11,8 @@ import { BorderBeam } from "./BorderBeam";
 import { AdvisorMenuScan } from "./AdvisorMenuScan";
 import { AdvisorProcessSteps } from "./AdvisorProcessSteps";
 import { AdvisorClaims, AdvisorPressSeal } from "./AdvisorProof";
+import { useLocale } from "@/lib/locale";
+import { advisorCopy } from "../advisor-copy";
 
 // The form and the Google Maps it loads on mount come in when the section gets within a screen
 // of the viewport, so they don't weigh on the page's first load (the blog's AdvisorDialog does the same).
@@ -45,6 +47,7 @@ const pop = { duration: 0.5, ease: [0.7, -0.6, 0.32, 1.6] as const }
 export function AdvisorSection() {
     const widgetRef = useRef<HTMLDivElement>(null);
     const isWidgetNear = useNearViewport(widgetRef);
+    const copy = advisorCopy[useLocale()].section;
     const storyRef = useRef<HTMLDivElement>(null);
     const isStoryInView = useInView(storyRef, STORY_VIEWPORT);
     const prefersReducedMotion = useReducedMotion();
@@ -66,7 +69,7 @@ export function AdvisorSection() {
                 <div className="flex-1 space-y-6 lg:space-y-7">
                     <div className="space-y-4">
                         {/* Each piece sits above its step (AdvisorProcessSteps uses the same three columns):
-                            the menu over «Tu carta», the score over «Método PowerUp», the tasks over «Mejoras». */}
+                            the menu over the first, the score over the second, the tasks over the third. */}
                         <div ref={storyRef} className="relative aspect-[16/9] w-full">
                             <div className="absolute bottom-1 left-0 z-10 w-[27%]">
                                 <motion.div
@@ -76,7 +79,7 @@ export function AdvisorSection() {
                                     transition={pop}
                                 >
                                     <div className="overflow-hidden rounded-xl border-[3px] border-white/70 shadow-lg sm:rounded-2xl sm:border-[5px]">
-                                        <AdvisorMenuScan play={phase >= 1} />
+                                        <AdvisorMenuScan play={phase >= 1} copy={copy.story} />
                                     </div>
                                 </motion.div>
                             </div>
@@ -88,7 +91,7 @@ export function AdvisorSection() {
                                     transition={pop}
                                 >
                                     <div className="overflow-hidden rounded-2xl border-[3px] border-white/70 shadow-xl sm:rounded-3xl sm:border-[6px]">
-                                        <AdvisorScoreCard play={phase >= 2} />
+                                        <AdvisorScoreCard play={phase >= 2} copy={copy.story} />
                                     </div>
                                 </motion.div>
                             </div>
@@ -99,24 +102,24 @@ export function AdvisorSection() {
                                     animate={phase >= 3 ? { y: 0, opacity: 1, scale: 1, rotate: 4 } : undefined}
                                     transition={pop}
                                 >
-                                    <AdvisorChecklist play={phase >= 3} />
+                                    <AdvisorChecklist play={phase >= 3} copy={copy.story} />
                                 </motion.div>
                             </div>
                         </div>
-                        <AdvisorProcessSteps phase={phase} />
+                        <AdvisorProcessSteps phase={phase} steps={copy.story.steps} />
                     </div>
                     <div className=" space-y-3">
-                        <h3 className="plus-darker font-heading text-2xl font-medium opacity-65 sm:text-3xl">Evalúa tu carta GRATIS</h3>
-                        <p className="plus-darker opacity-65">Recibe un análisis completo con sugerencias prácticas y <strong className="font-semibold">recomendaciones a medida para aumentar tus ventas hasta un 30%.</strong> Como lo haría un experto.</p>
+                        <h3 className="plus-darker font-heading text-2xl font-medium opacity-65 sm:text-3xl">{copy.title}</h3>
+                        <p className="plus-darker opacity-65">{copy.intro}<strong className="font-semibold">{copy.introStrong}</strong>{copy.introEnd}</p>
                     </div>
-                    <AdvisorClaims />
+                    <AdvisorClaims claims={copy.claims} />
                 </div>
                 <div ref={widgetRef} className="w-full lg:flex-1 flex justify-center lg:justify-end">
                     <div className="w-full max-w-[404px] space-y-4">
                         <BorderBeam>
                             {isWidgetNear ? <AdvisorWidget /> : <AdvisorWidgetPlaceholder />}
                         </BorderBeam>
-                        <AdvisorPressSeal />
+                        <AdvisorPressSeal label={copy.pressLabel} />
                     </div>
                 </div>
 

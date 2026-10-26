@@ -1,15 +1,17 @@
 "use client"
 
 import { motion, useReducedMotion } from "motion/react"
+import type { AdvisorCopy } from "../advisor-copy"
 
 // Drawn in SVG (it used to be advisor-checks.png) so the first two tasks can tick themselves
 // off: the last beat of the Advisor story. Shown between 200 and 280 px wide; sizes live in the viewBox.
 
-const tasks = [
-    { label: "Mejorar descripciones", done: true, opacity: 1 },
-    { label: "Agrega todos los alérgenos", done: true, opacity: 1 },
-    { label: "Ofrece promociones temporales", done: false, opacity: 0.75 },
-    { label: "Añade ingredientes extra a los platos", done: false, opacity: 0.5 },
+// Labels come from the copy, in this order (advisorCopy … story.tasks).
+const taskStyles = [
+    { done: true, opacity: 1 },
+    { done: true, opacity: 1 },
+    { done: false, opacity: 0.75 },
+    { done: false, opacity: 0.5 },
 ]
 
 const CARD_W = 360
@@ -21,7 +23,8 @@ const FIRST_CHECK_DELAY = 0.55
 const CHECK_STEP = 0.45
 
 /** `play`: AdvisorSection says when this beat of the story starts. */
-export function AdvisorChecklist({ play }: { play: boolean }) {
+export function AdvisorChecklist({ play, copy }: { play: boolean; copy: AdvisorCopy["section"]["story"] }) {
+    const tasks = taskStyles.map((style, i) => ({ ...style, label: copy.tasks[i] }))
     const prefersReducedMotion = useReducedMotion()
     const run = play || prefersReducedMotion
     const height = PAD * 2 + tasks.length * CARD_H + (tasks.length - 1) * GAP
@@ -30,7 +33,7 @@ export function AdvisorChecklist({ play }: { play: boolean }) {
         <svg
             viewBox={`0 0 ${CARD_W + PAD * 2} ${height}`}
             role="img"
-            aria-label="Comprobaciones del análisis de la carta"
+            aria-label={copy.tasksAlt}
             className="block h-auto w-full overflow-visible"
         >
             <defs>

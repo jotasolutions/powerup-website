@@ -8,8 +8,12 @@ import { Place } from '@/utils/types';
 import { toast } from "sonner"
 import { Field, FieldError, FieldGroup, FieldLabel } from '../ui/field';
 import SelectedPlaceCard from '../SelectedPlaceCard';
+import type { AdvisorCopy } from '../advisor-copy';
 
-function RegisterGoogleRestForm({ onCompleted }: { onCompleted: (place: Place | null) => void }) {
+function RegisterGoogleRestForm({ onCompleted, copy }: {
+    onCompleted: (place: Place | null) => void,
+    copy: AdvisorCopy["restaurant"],
+}) {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY!,
         libraries: ["places"]
@@ -65,7 +69,7 @@ function RegisterGoogleRestForm({ onCompleted }: { onCompleted: (place: Place | 
 
         if (!place || !place.geometry || !place.types?.length || !allowedTypes.includes(place.types[0])) {
             setInput({});
-            toast.error('No se encontró un lugar válido');
+            toast.error(copy.invalidPlace);
             return;
         }
         if (place) {
@@ -105,12 +109,12 @@ function RegisterGoogleRestForm({ onCompleted }: { onCompleted: (place: Place | 
             })
         }
         formData(place);
-    }, [formData, isLoaded]);
+    }, [formData, isLoaded, copy.invalidPlace]);
 
     useEffect(() => {
         if (!isLoaded || loadError) return;
         const options = {
-            componentRestrictions: { country: "es" },
+            componentRestrictions: { country: copy.searchCountry },
             fields: ["address_components", "geometry", "name", "photos", "business_status", "type", "place_id"]
         };
         if (inputRef.current) {
@@ -118,7 +122,7 @@ function RegisterGoogleRestForm({ onCompleted }: { onCompleted: (place: Place | 
             autocomplete.addListener("place_changed", () => handlePlaceChanged(autocomplete));
         }
 
-    }, [handlePlaceChanged, isLoaded, loadError]);
+    }, [handlePlaceChanged, isLoaded, loadError, copy.searchCountry]);
 
     useEffect(() => {
         onCompleted(selectedPlace);
@@ -131,7 +135,7 @@ function RegisterGoogleRestForm({ onCompleted }: { onCompleted: (place: Place | 
 
     const formSchema = z.object({
         name: z.string().min(2, {
-            message: 'El nombre es requerido',
+            message: copy.required,
         })
 
 
@@ -163,11 +167,11 @@ function RegisterGoogleRestForm({ onCompleted }: { onCompleted: (place: Place | 
                                 render={({ field, fieldState }) => (
                                     <Field data-invalid={fieldState.invalid}>
                                         <FieldLabel htmlFor="form-rhf-demo-title">
-                                            Restaurante
+                                            {copy.label}
                                         </FieldLabel>
                                         <Input
                                             onChangeCapture={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)}
-                                            placeholder="La Taberna de las brasas"
+                                            placeholder={copy.placeholder}
                                             {...field}
                                             ref={inputRef}
                                         />
