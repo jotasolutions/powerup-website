@@ -20,6 +20,8 @@ import { PhoneInput } from "@/components/ui/phone-input"
 import RegisterGoogleRestForm from "./forms/RegisterGoogleRestForm"
 import FilesInput2, { S3UploadedFile } from "./files-input2"
 import { useMemo, useState } from "react"
+import { CircleCheck } from "lucide-react"
+import { motion, useReducedMotion } from "motion/react"
 import { Checkbox } from "./ui/checkbox"
 import { Place } from "@/utils/types"
 import { submitAdvisorLeadAction } from "@/app/actions/advisor"
@@ -51,11 +53,38 @@ function makeStep2Schema(copy: AdvisorCopy) {
 type Step1Values = z.infer<ReturnType<typeof makeStep1Schema>>
 type Step2Values = z.infer<ReturnType<typeof makeStep2Schema>>
 
+// Darker than the brand green so the button stands out on the light green section.
+const submitButtonClass = "h-10 w-full border-none bg-[#1E7F5F] font-semibold shadow-md shadow-[#1E7F5F]/25 hover:bg-[#186A4F]"
+
+function StepProgress({ step, label }: { step: 1 | 2; label: string }) {
+    return (
+        <div className="mb-3 space-y-1.5">
+            <div className="text-xs font-medium text-slate-500">{label}</div>
+            <div className="flex gap-1.5">
+                <div className="h-1 flex-1 rounded-full bg-[#25946F]" />
+                <div className="h-1 flex-1 overflow-hidden rounded-full bg-slate-200">
+                    <motion.div
+                        className="h-full rounded-full bg-[#25946F]"
+                        initial={{ width: 0 }}
+                        animate={{ width: step === 2 ? "100%" : 0 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
+                    />
+                </div>
+            </div>
+        </div>
+    )
+}
+
 export function AdvisorWidget() {
     const locale = useLocale();
     const copy = advisorCopy[locale];
     const step1Schema = useMemo(() => makeStep1Schema(copy), [copy]);
     const step2Schema = useMemo(() => makeStep2Schema(copy), [copy]);
+    const prefersReducedMotion = useReducedMotion()
+    // Each step slides in when it appears; the first one is already on screen.
+    const stepEnter = prefersReducedMotion
+        ? {}
+        : { initial: { opacity: 0, x: 16 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.3, ease: "easeOut" as const } }
     const [status, setStatus] = useState<"step1" | "step2" | "submitting" | "success">("step1");
     const [uploadedFiles, setUploadedFiles] = useState<S3UploadedFile[]>([]);
     const [isUploadingFiles, setIsUploadingFiles] = useState(false);
@@ -143,6 +172,7 @@ export function AdvisorWidget() {
 
             {status === "step1" && (
                 <div className="space-y-2">
+                    <StepProgress step={1} label={copy.stepOf(1)} />
                     <h3 className="text-xl font-base font-medium">{copy.step1.title}</h3>
                     <p className="text-sm text-slate-500">
                         {copy.step1.subtitle}
@@ -185,15 +215,16 @@ export function AdvisorWidget() {
                         type="submit"
                         form="advisor-step1"
                         disabled={isUploadingFiles}
-                        className="w-full border-none bg-[#25946F] hover:bg-[#25946F]/90"
+                        className={submitButtonClass}
                     >
-                        {copy.submit}
+                        {copy.step1.cta}
                     </Button>
                 </div>
             )}
 
             {(status === "step2" || status === "submitting") && (
-                <div className="space-y-2">
+                <motion.div className="space-y-2" {...stepEnter}>
+                    <StepProgress step={2} label={copy.stepOf(2)} />
                     <h3 className="text-xl font-base font-medium">{copy.step2.title}</h3>
 
 
@@ -273,24 +304,28 @@ export function AdvisorWidget() {
                             />
                         </FieldGroup>
                     </form>
-                    <div className="flex gap-2">
-
-                        <Button
-                            type="submit"
-                            form="advisor-step2"
-                            className="flex-1 border-none bg-[#25946F] hover:bg-[#25946F]/90"
-                            disabled={status === "submitting"}
-                        >
-                            {status === "submitting" ? copy.submitting : copy.submit}
-                        </Button>
-                    </div>
-                </div>
+                    <Button
+                        type="submit"
+                        form="advisor-step2"
+                        className={submitButtonClass}
+                        disabled={status === "submitting"}
+                    >
+                        {status === "submitting" ? copy.submitting : copy.step2.cta}
+                    </Button>
+                </motion.div>
             )}
 
             {status === "success" && (
-                <div className="p-4 text-sm text-emerald-900">
+                <motion.div className="flex flex-col items-center gap-3 p-4 text-center text-sm text-emerald-900" {...stepEnter}>
+                    <motion.div
+                        initial={prefersReducedMotion ? false : { scale: 0, rotate: -30 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }}
+                    >
+                        <CircleCheck className="size-12 text-[#25946F]" strokeWidth={1.75} />
+                    </motion.div>
                     {copy.success}
-                </div>
+                </motion.div>
             )}
         </div>
     )
