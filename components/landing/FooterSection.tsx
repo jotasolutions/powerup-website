@@ -100,6 +100,25 @@ export function FooterSection({ locale = "es" }: { locale?: Locale }) {
               </p>
             </div>
           ) : null}
+          {copy.italianBlogLinks ? (
+            <div className="space-y-2">
+              <p className="font-medium ">{copy.resources}</p>
+              {copy.italianBlogLinks.map((link) => (
+                <p key={link.href}>
+                  <Link
+                    href={link.href}
+                    {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                      label: link.label,
+                      location: "footer",
+                      linkUrl: link.href,
+                    })}
+                  >
+                    {link.label}
+                  </Link>
+                </p>
+              ))}
+            </div>
+          ) : null}
           <div className="space-y-2">
             <p className="font-medium">{copy.support}</p>
             <p>

@@ -1,15 +1,17 @@
 import type { TocItem } from "@/lib/blog/markdown"
 import { cn } from "@/lib/utils"
+import { blogUiCopy } from "@/lib/blog/ui-copy"
+import type { Locale } from "@/lib/locale"
 
 /** Built from the same pass that assigns heading ids, so every link matches its heading. */
-export function TableOfContents({ items }: { items: TocItem[] }) {
+export function TableOfContents({ items, locale = "es" }: { items: TocItem[]; locale?: Locale }) {
   if (items.length === 0) return null
   return (
     // min-h-0 lets the list shrink and scroll inside the article's height-capped sticky aside; the
     // list's padding, cancelled by its negative margin, keeps the links' focus rings inside the clip.
     <nav aria-labelledby="toc-title" className="flex min-h-0 flex-col gap-1.5 rounded-[18px] border border-border p-5">
       <p id="toc-title" className="mb-1.5 text-xs font-semibold uppercase tracking-[0.04em] text-slate-600">
-        En este artículo
+        {blogUiCopy[locale].toc}
       </p>
       <ol className="-m-1 flex min-h-0 flex-col overflow-y-auto p-1">
         {items.map((item) => (

@@ -2,24 +2,26 @@ import { Check } from "lucide-react"
 import type { FaqItem, Fuente } from "@/lib/blog/schema"
 import styles from "./prose.module.css"
 import { eyebrow } from "./styles"
+import { blogUiCopy } from "@/lib/blog/ui-copy"
+import type { Locale } from "@/lib/locale"
 
 // Section ids rendered outside the Markdown body; the heading pass skips them to avoid duplicates.
 export const GEO_SECTION_IDS = { keyPoints: "puntos-clave", faq: "preguntas-frecuentes", sources: "fuentes" }
 
-export function ShortAnswer({ text }: { text: string }) {
+export function ShortAnswer({ text, locale = "es" }: { text: string; locale?: Locale }) {
   return (
     <div className="rounded-[18px] bg-[#DEF8FF] px-6 py-5">
-      <p className={eyebrow}>En pocas palabras</p>
+      <p className={eyebrow}>{blogUiCopy[locale].shortAnswer}</p>
       <p className="mt-2 font-heading text-lg font-medium leading-snug text-slate-900">{text}</p>
     </div>
   )
 }
 
-export function KeyPoints({ items }: { items: string[] }) {
+export function KeyPoints({ items, locale = "es" }: { items: string[]; locale?: Locale }) {
   return (
     <section aria-labelledby={GEO_SECTION_IDS.keyPoints} className="rounded-[18px] border border-border p-6">
       <h2 id={GEO_SECTION_IDS.keyPoints} className="font-heading text-lg font-medium text-slate-900">
-        Puntos clave
+        {blogUiCopy[locale].keyPoints}
       </h2>
       <ul className="mt-3 flex flex-col gap-2.5 text-[15px] leading-relaxed text-slate-700">
         {items.map((item) => (
@@ -33,10 +35,10 @@ export function KeyPoints({ items }: { items: string[] }) {
   )
 }
 
-export function FaqSection({ items }: { items: FaqItem[] }) {
+export function FaqSection({ items, locale = "es" }: { items: FaqItem[]; locale?: Locale }) {
   return (
     <section aria-labelledby={GEO_SECTION_IDS.faq} className={styles.prose}>
-      <h2 id={GEO_SECTION_IDS.faq}>Preguntas frecuentes</h2>
+      <h2 id={GEO_SECTION_IDS.faq}>{blogUiCopy[locale].faq}</h2>
       {items.map((item) => (
         <div key={item.pregunta}>
           <h3>{item.pregunta}</h3>
@@ -59,10 +61,10 @@ function sourceRel(url: string) {
   return ownSite ? "noopener noreferrer" : "nofollow noopener noreferrer"
 }
 
-export function Sources({ items }: { items: Fuente[] }) {
+export function Sources({ items, locale = "es" }: { items: Fuente[]; locale?: Locale }) {
   return (
     <section aria-labelledby={GEO_SECTION_IDS.sources} className={styles.prose}>
-      <h2 id={GEO_SECTION_IDS.sources}>Fuentes</h2>
+      <h2 id={GEO_SECTION_IDS.sources}>{blogUiCopy[locale].sources}</h2>
       <ol>
         {items.map((item) => (
           <li key={item.url}>

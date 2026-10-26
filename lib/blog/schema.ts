@@ -21,52 +21,62 @@ const GEO_FIELDS = {
   "llm-first": ["respuesta_corta", "puntos_clave", "fuentes", "faq"],
 } as const
 
-export const postFrontmatterSchema = z
-  .strictObject({
-    title: text,
-    slug: slug.refine((value) => !RESERVED_SLUGS.includes(value), "slug reservado por una ruta del blog"),
-    seo_title: text,
-    seo_description: text,
-    excerpt: text,
-    cluster: z.enum(CLUSTER_SLUGS),
-    keyword_principal: text,
-    content_strategy: z.enum(["google-first", "hybrid", "llm-first"]),
-    destino_comercial: z.enum(["powerup", "maestro"]),
-    cta: z.enum(["soft", "medium", "strong"]),
-    fecha_publicacion: z.coerce.date(),
-    fecha_modificacion: z.coerce.date().optional(),
-    autor: slug,
-    autor_original: slug.optional(),
-    revisado_por: slug.optional(),
-    draft: z.boolean().default(true),
-    image: z.string().startsWith("/").optional(),
-    image_alt: text.optional(),
-    respuesta_corta: text.optional(),
-    puntos_clave: z.array(text).min(1).optional(),
-    faq: z.array(faqItem).min(1).optional(),
-    fuentes: z.array(fuente).min(1).optional(),
-  })
-  .superRefine((post, ctx) => {
-    if (post.image && !post.image_alt) {
-      ctx.addIssue({ code: "custom", path: ["image_alt"], message: "obligatorio cuando hay image" })
-    }
-    if (!post.draft && !post.revisado_por) {
-      ctx.addIssue({ code: "custom", path: ["revisado_por"], message: "obligatorio para publicar (draft: false)" })
-    }
-    if (post.fecha_modificacion && post.fecha_modificacion < post.fecha_publicacion) {
-      ctx.addIssue({ code: "custom", path: ["fecha_modificacion"], message: "no puede ser anterior a fecha_publicacion" })
-    }
-    // Like revisado_por, the GEO blocks are part of finishing a post: a draft may lack them.
-    if (!post.draft) {
-      for (const field of GEO_FIELDS[post.content_strategy]) {
-        if (post[field] === undefined) {
-          ctx.addIssue({ code: "custom", path: [field], message: `obligatorio para publicar con content_strategy: ${post.content_strategy}` })
-        }
+const postFields = {
+  title: text,
+  slug: slug.refine((value) => !RESERVED_SLUGS.includes(value), "slug reservado por una ruta del blog"),
+  seo_title: text,
+  seo_description: text,
+  excerpt: text,
+  cluster: z.enum(CLUSTER_SLUGS),
+  keyword_principal: text,
+  content_strategy: z.enum(["google-first", "hybrid", "llm-first"]),
+  destino_comercial: z.enum(["powerup", "maestro"]),
+  cta: z.enum(["soft", "medium", "strong"]),
+  fecha_publicacion: z.coerce.date(),
+  fecha_modificacion: z.coerce.date().optional(),
+  autor: slug,
+  autor_original: slug.optional(),
+  revisado_por: slug.optional(),
+  draft: z.boolean().default(true),
+  image: z.string().startsWith("/").optional(),
+  image_alt: text.optional(),
+  respuesta_corta: text.optional(),
+  puntos_clave: z.array(text).min(1).optional(),
+  faq: z.array(faqItem).min(1).optional(),
+  fuentes: z.array(fuente).min(1).optional(),
+}
+
+type PostFields = z.infer<z.ZodObject<typeof postFields>>
+
+function checkPost(post: PostFields, ctx: z.RefinementCtx) {
+  if (post.image && !post.image_alt) {
+    ctx.addIssue({ code: "custom", path: ["image_alt"], message: "obligatorio cuando hay image" })
+  }
+  if (!post.draft && !post.revisado_por) {
+    ctx.addIssue({ code: "custom", path: ["revisado_por"], message: "obligatorio para publicar (draft: false)" })
+  }
+  if (post.fecha_modificacion && post.fecha_modificacion < post.fecha_publicacion) {
+    ctx.addIssue({ code: "custom", path: ["fecha_modificacion"], message: "no puede ser anterior a fecha_publicacion" })
+  }
+  // Like revisado_por, the GEO blocks are part of finishing a post: a draft may lack them.
+  if (!post.draft) {
+    for (const field of GEO_FIELDS[post.content_strategy]) {
+      if (post[field] === undefined) {
+        ctx.addIssue({ code: "custom", path: [field], message: `obligatorio para publicar con content_strategy: ${post.content_strategy}` })
       }
     }
-  })
+  }
+}
+
+export const postFrontmatterSchema = z.strictObject(postFields).superRefine(checkPost)
+
+/** Italian posts (content/blog-it): the same fields plus the Spanish post they adapt, for hreflang. */
+export const italianPostFrontmatterSchema = z
+  .strictObject({ ...postFields, traduzione_di: slug })
+  .superRefine(checkPost)
 
 export type PostFrontmatter = z.infer<typeof postFrontmatterSchema>
+export type ItalianPostFrontmatter = z.infer<typeof italianPostFrontmatterSchema>
 
 export const clusterTextSchema = z.strictObject({
   descripcion: text,

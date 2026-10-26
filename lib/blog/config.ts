@@ -17,6 +17,10 @@ export const listingPath = (page: number) =>
 
 export const absoluteUrl = (path: string) => `${SITE_URL}${path}`
 
+export const ITALIAN_BLOG_PATH = "/it/blog"
+export const ITALIAN_BLOG_NAME = "Blog di PowerUp Menu"
+export const italianPostPath = (slug: string) => `${ITALIAN_BLOG_PATH}/${slug}`
+
 const MAESTRO_URL = "https://maestro.powerup.menu/"
 const EXAMPLE_MENU_URL = "https://carta.powerup.menu/trpico-brunch-barcelona-balmes"
 

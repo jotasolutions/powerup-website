@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getAuthor, isPerson, type Author } from "@/lib/blog/authors"
-import { BLOG_PATH, clusterPath, markdownPath, postPath } from "@/lib/blog/config"
+import { BLOG_PATH, clusterPath, italianPostPath, markdownPath, postPath } from "@/lib/blog/config"
 import { blogMetadata } from "@/lib/blog/metadata"
-import { getPost, getRelatedPosts, getVisiblePosts } from "@/lib/blog/posts"
+import { getItalianVersionOf, getPost, getRelatedPosts, getVisiblePosts } from "@/lib/blog/posts"
 import { renderPostBody } from "@/lib/blog/render"
 import { blogPostingJsonLd, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/blog/structured-data"
 import { getCluster } from "@/lib/blog/taxonomy"
@@ -30,8 +30,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost((await params).slug)
   if (!post) return {}
   const cluster = getCluster(post.cluster)
+  const italian = getItalianVersionOf(post.slug)
   return blogMetadata({
     path: postPath(post.slug),
+    languages: italian ? { es: postPath(post.slug), it: italianPostPath(italian.slug) } : undefined,
     title: { absolute: post.seo_title },
     description: post.seo_description,
     noindex: post.draft,

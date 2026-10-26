@@ -21,7 +21,10 @@ export const navCopy = {
     closeMenu: "Cerrar menú",
   },
   it: {
-    items: [{ label: "Valuta il tuo menù", href: "/it#advisor" }],
+    items: [
+      { label: "Valuta il tuo menù", href: "/it#advisor" },
+      { label: "Blog", href: "/it/blog" },
+    ],
     homeHref: "/it",
     login: "Accedi",
     cta: "Crea il tuo menù",
@@ -171,7 +174,7 @@ export const faqCopy = {
       },
       {
         question: "Quanto costa il menù digitale? C'è un piano gratis?",
-        answer: `Il piano Free è gratis per sempre: menù digitale fino a 3 lingue e statistiche di base, con pubblicità non invasiva del settore della ristorazione. Il piano Pro costa ${prices.monthly} al mese: toglie la pubblicità e aggiunge più lingue e strumenti per vendere di più, come consigli e promozioni. Con il pagamento annuale (${prices.yearly} all'anno) include anche il tuo sito web.`,
+        answer: `Il piano Free è gratis per sempre: menù digitale fino a 3 lingue e statistiche di base, con pubblicità non invasiva del settore della ristorazione. Il piano Pro costa ${prices.monthly} al mese + IVA: toglie la pubblicità e aggiunge più lingue e strumenti per vendere di più, come consigli e promozioni. Con il pagamento annuale (${prices.yearly} all'anno + IVA) include anche il tuo sito web.`,
       },
     ],
     helpTitle: "Hai ancora dubbi?",
@@ -188,6 +191,7 @@ export const footerCopy = {
     resources: "Recursos",
     // The Spanish footer links to the blog and three of its posts; /it has no Italian posts yet.
     showBlogLinks: true,
+    italianBlogLinks: null,
     support: "Soporte",
     contact: "Contacto",
     help: "Ayuda",
@@ -200,6 +204,10 @@ export const footerCopy = {
     title: "Il menù è la leva più potente per far crescere le vendite di un ristorante",
     resources: "Risorse",
     showBlogLinks: false,
+    italianBlogLinks: [
+      { label: "Blog", href: "/it/blog" },
+      { label: "Menù digitale con QR code", href: "/it/blog/menu-digitale-qr-code" },
+    ],
     support: "Assistenza",
     contact: "Contatti",
     help: "Assistenza WhatsApp",

@@ -1,10 +1,12 @@
 import Link from "next/link"
+import { blogUiCopy } from "@/lib/blog/ui-copy"
+import type { Locale } from "@/lib/locale"
 
 export type Crumb = { name: string; path?: string }
 
-export function Breadcrumbs({ items }: { items: Crumb[] }) {
+export function Breadcrumbs({ items, locale = "es" }: { items: Crumb[]; locale?: Locale }) {
   return (
-    <nav aria-label="Ruta de navegación" className="text-[13px] text-slate-600">
+    <nav aria-label={blogUiCopy[locale].breadcrumbs} className="text-[13px] text-slate-600">
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item, index) => (
           <li key={item.name} className="flex items-center gap-2">

@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils"
 import { CircledWord } from "./CircledWord"
 import { MaestroLink, SignUpTextLink } from "./CtaLinks"
 import { buttonPrimary, buttonSecondary, eyebrow } from "./styles"
+import { blogUiCopy } from "@/lib/blog/ui-copy"
+import type { Locale } from "@/lib/locale"
 
 // The CTA after each article, decided per article (never per theme): the carta digital by
 // default, Maestro when `destino_comercial: maestro`. `cta` only picks its form:
@@ -41,8 +43,9 @@ export function InlineCta({ post }: { post: Post }) {
   )
 }
 
-export function BottomCta({ post }: { post: Post }) {
+export function BottomCta({ post, locale = "es" }: { post: Post; locale?: Locale }) {
   if (post.cta === "soft") return null
+  const copy = blogUiCopy[locale]
   const exampleUrl = exampleMenuUrl(post.slug)
 
   return (
@@ -52,10 +55,10 @@ export function BottomCta({ post }: { post: Post }) {
           <>
             <div className="flex flex-col gap-4">
               <h2 className="font-heading text-[clamp(26px,3vw,36px)] font-medium leading-tight tracking-tight text-slate-900">
-                Convierte tu carta en una máquina de <CircledWord>ventas</CircledWord>
+                {copy.ctaTitleStart} <CircledWord>{copy.ctaTitleHighlight}</CircledWord>
               </h2>
               <p className="font-heading text-[17px] leading-relaxed text-slate-700">
-                PowerUp Free es gratis para siempre. Sin conocimiento técnico.
+                {copy.ctaText}
               </p>
               {/* As in the home's hero: on mobile both buttons are full width and as tall as the site's
                   sign-up button (which sizes itself to its container), side by side from sm. */}
@@ -69,18 +72,18 @@ export function BottomCta({ post }: { post: Post }) {
                   rel="noopener noreferrer"
                   className={cn(buttonSecondary, "h-13 w-full sm:h-10 sm:w-auto")}
                   {...trackAttrs(ANALYTICS_EVENTS.EXAMPLE_MENU_CLICK, {
-                    label: "Ver carta de ejemplo",
+                    label: copy.ctaExample,
                     location: "blog",
                     linkUrl: exampleUrl,
                   })}
                 >
-                  Ver carta de ejemplo
+                  {copy.ctaExample}
                 </a>
               </div>
             </div>
             <Image
               src="/images/carta-mockup2.png"
-              alt="Carta digital de PowerUp Menu en el móvil"
+              alt={copy.ctaImageAlt}
               width={376}
               height={258}
               className="w-full max-w-[380px] justify-self-center"
