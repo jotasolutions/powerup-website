@@ -175,4 +175,6 @@ El plan gratis se te queda corto cuando:
 
 Para comparar lo que cuesta cada plan de pago al año, con IVA y altas incluidos, mira [cuánto cuesta una carta digital](/blog/cuanto-cuesta-una-carta-digital).
 
+Si tienes un local pequeño y dudas qué te hace falta, mira [carta QR para un restaurante pequeño](/blog/carta-qr-restaurante-pequeno).
+
 Las condiciones de cada plan salen de la web de cada herramienta, consultada el 5 de octubre de 2026. Los enlaces están en la lista de fuentes.
