@@ -146,26 +146,20 @@ export function WhatsAppBubble() {
     const sectionId = AUTO_OPEN_AFTER_SECTION[pathname]
     if (hidden || !sectionId || !mayAutoOpen()) return
 
-    let frame = 0
+    // Checked straight on each scroll, not in requestAnimationFrame: browsers pause that in
+    // background tabs, and a few rect reads per scroll cost nothing.
     const check = () => {
-      frame = 0
       const section = document.getElementById(sectionId)
       if (!section || !sectionIsPast(section)) return
       if (!mayAutoOpen() || visitorIsBusy()) return
       writeStorage(session, SEEN_THIS_VISIT_KEY, "1")
       setCardOpen(true)
-      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("scroll", check)
     }
-    const onScroll = () => {
-      if (!frame) frame = window.requestAnimationFrame(check)
-    }
-    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("scroll", check, { passive: true })
     // Arriving already past the section (anchor link, back navigation) counts too.
     check()
-    return () => {
-      window.removeEventListener("scroll", onScroll)
-      window.cancelAnimationFrame(frame)
-    }
+    return () => window.removeEventListener("scroll", check)
   }, [hidden, pathname])
 
   // Keep scrolling past the open card, or bring a sign-up button under it, and it folds back into
