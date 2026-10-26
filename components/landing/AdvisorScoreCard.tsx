@@ -60,7 +60,7 @@ export function AdvisorScoreCard({ play }: { play: boolean }) {
 
     return (
         <svg
-            viewBox="0 0 420 440"
+            viewBox="0 -22 420 462"
             role="img"
             aria-label={`Vista del análisis gratuito de la carta: nota ${SCORE} sobre 10`}
             className="block h-auto w-full bg-white"
