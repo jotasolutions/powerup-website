@@ -20,7 +20,7 @@ Un restaurante puede estar lleno y no ganar dinero. Para saber si es rentable ha
 - **Margen de contribución:** lo que deja cada plato para pagar los gastos fijos, es decir, su precio sin IVA menos su coste variable.
 - **Food cost:** el coste de los ingredientes de lo que vendes, como porcentaje de las ventas. El de la bebida se calcula aparte.
 - **Coste de personal:** los sueldos más las cotizaciones a la Seguridad Social a cargo de la empresa.
-- **Margen neto:** lo que queda de cada euro vendido después de todos los gastos.
+- **Margen neto:** lo que queda de cada euro vendido después de todos los gastos. Cuánto gana de media un restaurante en España, en [cuánto gana un restaurante](/blog/cuanto-gana-un-restaurante).
 - **Punto de equilibrio:** lo que tienes que vender para cubrir los gastos fijos.
 
 ## Por dónde empezar

@@ -55,6 +55,8 @@ Ejemplo: si en un mes vendes 60.000 € sin IVA y, después de pagar compras, su
 
 El margen neto responde a la pregunta de fondo: ¿el negocio gana dinero? Pero no te dice dónde se pierde. Para eso están las otras dos cifras.
 
+¿Cómo está el sector? Las cifras del INE de facturación y margen de los restaurantes en España están en [cuánto gana un restaurante](/blog/cuanto-gana-un-restaurante).
+
 ## 3. El punto de equilibrio
 
 El punto de equilibrio es lo que tienes que vender para cubrir todos los gastos, sin ganar ni perder. Se calcula dividiendo los gastos fijos entre el margen de contribución por unidad vendida.
