@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" width="560" height="300">
+  <title>Lo que necesita la carta QR de un restaurante pequeño, y lo que no</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <rect width="560" height="300" rx="16" fill="#DEF8FF"/>
+  <text x="24" y="40" style="font-size:18px;font-weight:700;fill:#0F172A">Lo que necesita</text>
+  <g style="font-size:16px;fill:#334155">
+    <circle cx="36" cy="72" r="11" fill="#50B27F"/><path d="M31 72 l4 4 l7 -8" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="56" y="78">Editarla tú, desde el móvil</text>
+    <circle cx="36" cy="108" r="11" fill="#50B27F"/><path d="M31 108 l4 4 l7 -8" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="56" y="114">Los alérgenos de cada plato</text>
+    <circle cx="36" cy="144" r="11" fill="#50B27F"/><path d="M31 144 l4 4 l7 -8" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="56" y="150">Un QR que se lea bien (2 × 2 cm como mínimo)</text>
+    <circle cx="36" cy="180" r="11" fill="#50B27F"/><path d="M31 180 l4 4 l7 -8" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="56" y="186">2 o 3 idiomas, si recibes turistas</text>
+  </g>
+  <line x1="24" y1="210" x2="536" y2="210" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="24" y="242" style="font-size:18px;font-weight:700;fill:#0F172A">Lo que no necesita para la carta</text>
+  <g style="font-size:16px;fill:#475569">
+    <circle cx="36" cy="272" r="11" fill="#FFFFFF" stroke="#475569" stroke-width="2"/><path d="M32 268 l8 8 M40 268 l-8 8" stroke="#475569" stroke-width="2"/>
+    <text x="56" y="278">Pedidos, pagos ni un TPV nuevo: el pedido lo toma el camarero</text>
+  </g>
+</svg>

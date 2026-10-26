@@ -43,6 +43,7 @@ No es lo mismo que un PDF detrás de un código QR: se adapta a la pantalla, se 
 - **Comparar herramientas:** [las mejores cartas digitales QR en España](/blog/mejores-cartas-digitales-qr), con precios consultados y fuentes.
 - **Saber cuánto vas a pagar:** [cuánto cuesta una carta digital](/blog/cuanto-cuesta-una-carta-digital), con IVA, altas y costes ocultos.
 - **Empezar sin pagar:** [carta digital QR gratis](/blog/carta-digital-qr-gratis), qué incluye cada plan gratis.
+- **Si tu local es pequeño:** [carta QR para un restaurante pequeño](/blog/carta-qr-restaurante-pequeno), qué necesitas de verdad y cuánto cuesta.
 - **Cambiar de herramienta:** [alternativas a eatsQR](/blog/alternativas-a-eatsqr).
 - **Atender a turistas:** [la carta en varios idiomas](/blog/carta-en-varios-idiomas).
 - **Aparecer en Google:** [la carta en Google Maps](/blog/carta-en-google-maps).
