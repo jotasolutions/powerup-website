@@ -4,7 +4,8 @@ const button =
 
 export const buttonPrimary = `${button} bg-gradient-to-b from-primary/90 to-primary text-primary-foreground hover:brightness-110`
 export const buttonSecondary = `${button} bg-secondary text-slate-900 hover:bg-slate-100`
-export const buttonAdvisor = `${button} bg-[#25946F] text-white hover:bg-[#25946F]/90`
+// Same dark green as the Advisor form's own buttons (AdvisorWidget), which stands out on the light green cards.
+export const buttonAdvisor = `${button} bg-[#1E7F5F] text-white hover:bg-[#186A4F]`
 
 export const container = "mx-auto w-full max-w-[1200px] px-5 md:px-6"
 export const eyebrow = "text-xs font-semibold uppercase tracking-[0.04em] text-primary"

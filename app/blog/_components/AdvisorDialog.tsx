@@ -2,6 +2,9 @@
 
 import dynamic from "next/dynamic"
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react"
+import { advisorCopy } from "@/components/advisor-copy"
+import { AdvisorPressSeal } from "@/components/landing/AdvisorProof"
+import { BorderBeam } from "@/components/landing/BorderBeam"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 import styles from "./advisor-dialog.module.css"
@@ -10,7 +13,10 @@ import { useLocale } from "@/lib/locale"
 
 const AdvisorWidget = dynamic(() => import("@/components/AdvisorWidget").then((module) => module.AdvisorWidget), {
   ssr: false,
-  loading: () => <div className="h-[420px] w-full max-w-[400px] rounded-xl border border-slate-200 bg-white" />,
+  // Same heights as the home's placeholder (AdvisorSection): the form's first step, 360 to 1440 px wide.
+  loading: () => (
+    <div className="h-[490.5px] w-full max-w-[400px] rounded-xl border border-slate-200 bg-white min-[372px]:h-[470.5px] min-[470px]:h-[450.5px] sm:h-[510.5px]" />
+  ),
 })
 
 const OpenAdvisorContext = createContext<() => void>(() => {})
@@ -22,7 +28,8 @@ const OpenAdvisorContext = createContext<() => void>(() => {})
 export function AdvisorDialogProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
   const openAdvisor = useCallback(() => setOpen(true), [])
-  const copy = blogUiCopy[useLocale()]
+  const locale = useLocale()
+  const copy = blogUiCopy[locale]
 
   useEffect(() => {
     if (!open) return
@@ -44,9 +51,17 @@ export function AdvisorDialogProvider({ children }: { children: ReactNode }) {
           setOpen(nextOpen)
         }}
       >
-        <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto bg-transparent p-0 ring-0 sm:max-w-[400px]">
+        {/* As on the home: the green light around the form and the press seal under it. */}
+        <DialogContent className="max-h-[calc(100dvh-2rem)] gap-3 overflow-y-auto bg-transparent p-0 ring-0 sm:max-w-[404px]">
           <DialogTitle className="sr-only">{copy.advisorDialogTitle}</DialogTitle>
-          {open && <AdvisorWidget />}
+          {open && (
+            <>
+              <BorderBeam>
+                <AdvisorWidget />
+              </BorderBeam>
+              <AdvisorPressSeal label={advisorCopy[locale].section.pressLabel} />
+            </>
+          )}
         </DialogContent>
       </Dialog>
     </OpenAdvisorContext.Provider>

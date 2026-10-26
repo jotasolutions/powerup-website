@@ -1,50 +1,10 @@
 import { QrCode } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { AdvisorTrigger } from "./AdvisorDialog"
+import { AdvisorStoryMini } from "./AdvisorStoryMini"
 import { buttonAdvisor, eyebrow } from "./styles"
 import { blogUiCopy } from "@/lib/blog/ui-copy"
 import type { Locale } from "@/lib/locale"
-
-const SCORES = [
-  { label: "Oferta gastronómica", value: "3.5", width: "35%", color: "#EF4444" },
-  { label: "Marketing", value: "7.5", width: "75%", color: "#F59E0B" },
-  { label: "Contenido", value: "5", width: "50%", color: "#F59E0B" },
-  { label: "Diseño", value: "10", width: "100%", color: "#059669" },
-]
-
-/** Static illustration of an Advisor report, from the design. */
-function ScoreMockup({ className, locale = "es" }: { className?: string; locale?: Locale }) {
-  const copy = blogUiCopy[locale]
-  return (
-    <div aria-hidden className={cn("flex w-full flex-col gap-3.5 rounded-[20px] border border-border bg-card p-[18px] shadow-xl", className)}>
-      <div className="flex items-center gap-3.5">
-        <div
-          className="flex size-[72px] flex-none items-center justify-center rounded-full"
-          style={{ background: "conic-gradient(#50B27F 0 85%, #F3F4F6 85% 100%)" }}
-        >
-          <div className="flex size-14 items-center justify-center rounded-full bg-card font-heading text-xl font-semibold tracking-tight text-slate-900">
-            8.5
-          </div>
-        </div>
-        <div className="flex min-w-0 flex-col gap-0.5">
-          <span className="text-xs text-slate-600">{copy.mockupScoreLabel}</span>
-          <span className="font-heading text-[15px] font-medium leading-tight text-slate-900">{copy.mockupScoreText}</span>
-        </div>
-      </div>
-      <div className="flex flex-col gap-2">
-        {SCORES.map((score, index) => (
-          <div key={score.label} className="grid grid-cols-[minmax(0,1fr)_44px_28px] items-center gap-2.5 text-xs text-slate-700">
-            <span className="truncate">{copy.mockupScores[index]}</span>
-            <span className="block h-1.5 overflow-hidden rounded-full bg-[#F3F4F6]">
-              <span className="block h-full rounded-full" style={{ width: score.width, backgroundColor: score.color }} />
-            </span>
-            <span className="text-right font-semibold text-slate-900">{score.value}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 function GradientFrame({ className, children }: { className?: string; children: React.ReactNode }) {
   return (
@@ -57,7 +17,7 @@ function GradientFrame({ className, children }: { className?: string; children: 
 export function AdvisorPromoWide() {
   return (
     <div className="@container">
-      <GradientFrame className="grid items-center gap-5 p-6 sm:p-8 @lg:grid-cols-[1fr_auto]">
+      <GradientFrame className="grid items-center gap-5 p-6 sm:p-8 @lg:grid-cols-[1fr_1.1fr]">
         <div className="flex flex-col gap-3">
           <p className={eyebrow}>Advisor · Análisis con IA</p>
           <h2 className="font-heading text-[26px] font-medium leading-tight tracking-tight text-slate-900">¿Qué nota tiene tu carta?</h2>
@@ -69,7 +29,7 @@ export function AdvisorPromoWide() {
             Analizar mi carta
           </AdvisorTrigger>
         </div>
-        <ScoreMockup className="max-w-[250px] justify-self-start @lg:justify-self-center" />
+        <AdvisorStoryMini variant="full" className="max-w-[460px] justify-self-center" />
       </GradientFrame>
     </div>
   )
@@ -79,9 +39,9 @@ export function AdvisorPromoSidebar({ locale = "es" }: { locale?: Locale }) {
   const copy = blogUiCopy[locale]
   return (
     <GradientFrame className="flex flex-col items-start gap-3 p-[22px]">
-      {/* In the sticky aside of a short window the decorative mockup would squeeze the contents
+      {/* In the sticky aside of a short window the Advisor animation would squeeze the contents
           list out; the pitch and the button always stay. */}
-      <ScoreMockup locale={locale} className="max-w-[320px] self-center lg:[@media(max-height:720px)]:hidden" />
+      <AdvisorStoryMini variant="score" className="max-w-[320px] self-center px-1 lg:[@media(max-height:720px)]:hidden" />
       <p className={eyebrow}>{copy.advisorEyebrow}</p>
       <p className="font-heading text-xl font-medium leading-tight tracking-tight text-slate-900">{copy.advisorTitle}</p>
       <p className="text-sm leading-normal text-slate-600">{copy.advisorText}</p>
