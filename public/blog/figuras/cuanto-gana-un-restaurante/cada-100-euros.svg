@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240" width="560" height="240">
+  <title>A dónde fueron cada 100 € que facturaron los restaurantes en 2024</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+  <rect width="560" height="240" rx="16" fill="#DFFFEA"/>
+  <text x="24" y="38" style="font-size:18px;font-weight:700;fill:#0F172A">De cada 100 € facturados (restaurantes, 2024)</text>
+  <!-- 4,4 px per € -->
+  <text x="24" y="80" style="font-size:16px;fill:#334155">Compras de bienes y servicios</text>
+  <rect x="24" y="88" width="260" height="22" rx="6" fill="#3482AA"/>
+  <text x="294" y="105" style="font-size:16px;font-weight:700;fill:#0F172A">unos 59 €</text>
+  <text x="24" y="138" style="font-size:16px;fill:#334155">Personal</text>
+  <rect x="24" y="146" width="146" height="22" rx="6" fill="#FF9800"/>
+  <text x="180" y="163" style="font-size:16px;font-weight:700;fill:#0F172A">unos 33 €</text>
+  <text x="24" y="196" style="font-size:16px;fill:#334155">Excedente bruto de explotación (lo que queda)</text>
+  <rect x="24" y="204" width="42" height="22" rx="6" fill="#50B27F"/>
+  <text x="76" y="221" style="font-size:16px;font-weight:700;fill:#0F172A">unos 9,5 €</text>
+</svg>
