@@ -1,4 +1,5 @@
 import { QrCode } from "lucide-react"
+import { BorderBeam } from "@/components/landing/BorderBeam"
 import { cn } from "@/lib/utils"
 import { AdvisorTrigger } from "./AdvisorDialog"
 import { AdvisorStoryMini } from "./AdvisorStoryMini"
@@ -20,16 +21,20 @@ export function AdvisorPromoWide() {
     // under the animation had no room to breathe.
     <div className="@container">
       <GradientFrame className="flex flex-col gap-6 p-4 sm:p-8">
-        <div className="flex flex-col gap-3">
+        {/* Centred, with the button big and inside the home's moving green light, so it's what
+            the eye lands on. */}
+        <div className="flex flex-col items-center gap-3 text-center">
           <p className={eyebrow}>Advisor · Análisis con IA</p>
           <h2 className="font-heading text-[26px] font-medium leading-tight tracking-tight text-slate-900">¿Qué nota tiene tu carta?</h2>
-          <p className="text-[15px] leading-relaxed text-slate-600">
+          <p className="max-w-[460px] text-[15px] leading-relaxed text-slate-600">
             Sube tu carta actual y recibe una nota del 1 al 10 con acciones concretas para vender más.
           </p>
-          <AdvisorTrigger className={cn(buttonAdvisor, "self-start")}>
-            <QrCode />
-            Analizar mi carta
-          </AdvisorTrigger>
+          <BorderBeam className="mt-2 w-full sm:w-fit">
+            <AdvisorTrigger className={cn(buttonAdvisor, "h-14 w-full rounded-[12px] px-9 text-base [&_svg]:size-5")}>
+              <QrCode />
+              Analizar mi carta
+            </AdvisorTrigger>
+          </BorderBeam>
         </div>
         <AdvisorStoryMini variant="full" className="mx-auto max-w-[600px] p-3 sm:p-5" />
       </GradientFrame>
