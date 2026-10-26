@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { Settings } from "lucide-react";
 import { useCookieConsent } from "./cookie-provider";
+import { useLocale } from "@/lib/locale";
+import { cookieCopy } from "./copy";
 
 export interface CookieBannerProps {
   className?: string;
@@ -13,6 +15,7 @@ export interface CookieBannerProps {
 export function CookieBanner({ className }: CookieBannerProps) {
   const { isBannerVisible, acceptAll, rejectAll, openSettings, config } =
     useCookieConsent();
+  const copy = cookieCopy[useLocale()];
 
   const positionClasses = {
     bottom: "inset-x-0 bottom-0",
@@ -47,8 +50,7 @@ export function CookieBanner({ className }: CookieBannerProps) {
             )}
           >
             <p className="text-sm leading-relaxed text-neutral-800">
-              Usamos cookies en este sitio web para rendimiento, personalización
-              y marketing.{" "}
+              {copy.banner}{" "}
               {config.privacyPolicyUrl && (
                 <a
                   href={config.privacyPolicyUrl}
@@ -56,7 +58,7 @@ export function CookieBanner({ className }: CookieBannerProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Más información en nuestra política de cookies.
+                  {copy.moreInfo}
                 </a>
               )}
             </p>
@@ -67,15 +69,15 @@ export function CookieBanner({ className }: CookieBannerProps) {
                 size="icon"
                 onClick={openSettings}
                 className="bg-transparent"
-                aria-label="Personalizar cookies"
+                aria-label={copy.customize}
               >
                 <Settings className="h-4 w-4" />
               </Button>
               <Button variant="outline" size="sm" onClick={rejectAll}>
-                Rechazar todo
+                {copy.rejectAll}
               </Button>
               <Button size="sm" onClick={acceptAll}>
-                Aceptar todo
+                {copy.acceptAll}
               </Button>
             </div>
           </div>

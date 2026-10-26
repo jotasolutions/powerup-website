@@ -9,6 +9,8 @@ import { BlurFade } from "../ui/blur-fade"
 
 import { LazyLottie, type LottieAnimation } from "./LazyLottie"
 import Image from "next/image"
+import { useLocale } from "@/lib/locale"
+import { sellMoreCopy } from "./home-copy"
 
 const revealViewport = {
   once: true,
@@ -115,22 +117,24 @@ function SellMoreCard({
 
 export function SellMoreSection() {
   const prefersReducedMotion = useReducedMotion()
+  const copy = sellMoreCopy[useLocale()]
+  const features = sellMoreFeatures.map((item, index) => ({ ...item, ...copy.features?.[index] }))
 
   return (
     <SectionContainer id="vende-mas">
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="section-title">Vende más sin esfuerzo</h2>
+            <h2 className="section-title">{copy.title}</h2>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
             <p className="section-paragraph">
-              Tu carta le da al cliente los motivos para gastar más. Sola.
+              {copy.paragraph}
             </p>
           </BlurFade>
         </div>
         <div className="grid gap-12 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {sellMoreFeatures.map((item, index) => (
+          {features.map((item, index) => (
             <SellMoreCard
               key={item.title}
               index={index}

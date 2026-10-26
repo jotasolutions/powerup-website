@@ -272,6 +272,14 @@ Aquí solo se apuntan. Cada arreglo va con su propio plan y con el OK de Fede.
    del historial de los flujos de Analytics: saldrían dobles.
 6. **El blog.** Todo lo que cuelga de `/blog` va a la propiedad del blog. Si cambia esa ruta, hay
    que cambiar `js.seccion` en GTM.
+   **Italia (`/it`, desde el 26-10-2026).** `/it` y todo lo que cuelga de ella, también `/it/blog`
+   cuando exista, va a la propiedad de la web: `js.seccion` solo marca `blog` lo que empieza por
+   `/blog`. Los eventos son los mismos que en español, con estas diferencias:
+   - las etiquetas (`label`) van en italiano: «Crea il menù gratis», «Valuta il tuo menù», «Accedi»…;
+   - el enlace de WhatsApp abre con un saludo en italiano.
+
+   Para medir Italia se filtra `page_path` que empieza por `/it`, y los informes de España la
+   excluyen. No hace falta tocar GTM.
 7. **Datos personales.** No mandes datos personales en los eventos: ni nombres, ni emails, ni
    teléfonos. `restaurant_name` va al dataLayer, pero GTM no lo pasa a Analytics, y así debe
    seguir.

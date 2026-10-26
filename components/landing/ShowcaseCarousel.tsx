@@ -26,6 +26,8 @@ type ShowcaseCarouselProps = {
   items: readonly ShowcaseItem[]
   sectionClassName?: string
   ctaLabel?: string
+  previousLabel?: string
+  nextLabel?: string
   slideTracking?: {
     eventName?: AnalyticsEventName
     location: string
@@ -44,6 +46,8 @@ export function ShowcaseCarousel({
   items,
   sectionClassName,
   ctaLabel,
+  previousLabel = "Slide anterior",
+  nextLabel = "Siguiente slide",
   slideTracking,
   ctaTracking,
 }: ShowcaseCarouselProps) {
@@ -84,7 +88,7 @@ export function ShowcaseCarousel({
     <div ref={containerRef} className="relative w-full px-2 sm:px-6">
       <button
         type="button"
-        aria-label="Slide anterior"
+        aria-label={previousLabel}
         className={cn(
           "absolute left-0 top-1/2 z-30 inline-flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-slate-100 transition-colors sm:size-10",
           selectedItem > firstSlideIndex ? "hover:bg-slate-200" : "pointer-events-none opacity-40"
@@ -96,7 +100,7 @@ export function ShowcaseCarousel({
 
       <button
         type="button"
-        aria-label="Siguiente slide"
+        aria-label={nextLabel}
         className={cn(
           "absolute right-0 top-1/2 z-30 inline-flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-slate-100 transition-colors sm:size-10",
           selectedItem < lastSlideIndex ? "hover:bg-slate-200" : "pointer-events-none opacity-40"

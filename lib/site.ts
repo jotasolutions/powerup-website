@@ -7,6 +7,13 @@ export const HOME_TITLE = "Carta Digital QR - Potencia las ventas de tu restaura
 export const HOME_DESCRIPTION =
   "Convierte la carta digital QR de tu restaurante en una máquina de ventas. Ingeniería de menú y neuromarketing para vender más, sin conocimiento técnico."
 
+/** hreflang for the home and its Italian version; only these two pages declare it. */
+export const HOME_LANGUAGES = {
+  es: "/",
+  it: "/it",
+  "x-default": "/",
+}
+
 const OG_IMAGE = {
   url: "/images/og-image.jpg",
   width: 1200,
@@ -23,13 +30,15 @@ export function websiteOpenGraph(page: {
   title: string
   description: string
   url?: string
+  /** Open Graph locale; the Spanish pages leave it unset. */
+  locale?: string
 }): NonNullable<Metadata["openGraph"]> {
   return {
     title: page.title,
     description: page.description,
     ...(page.url ? { url: page.url } : {}),
     siteName: "PowerUp Menu",
-    locale: "es_ES",
+    locale: page.locale ?? "es_ES",
     type: "website",
     images: [OG_IMAGE],
   }

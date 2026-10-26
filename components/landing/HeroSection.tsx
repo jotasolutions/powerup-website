@@ -11,6 +11,8 @@ import Link from "next/link"
 import { EXAMPLE_MENU_URL, ExampleMenuQr } from "./ExampleMenuQr"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 import { LazyLottie, type LottieAnimation } from "./LazyLottie"
+import { useLocale } from "@/lib/locale"
+import { heroCopy } from "./home-copy"
 
 // The widget animations only load where they're shown, from tablet up (LazyLottie). All are 320x180.
 const heroWidget = (load: LottieAnimation["load"]): LottieAnimation => ({ load, ratio: 320 / 180 })
@@ -37,6 +39,7 @@ export function DelayedLottie({
 }
 
 export function HeroSection() {
+  const copy = heroCopy[useLocale()]
   return (
     <section
       id="hero-section"
@@ -49,7 +52,7 @@ export function HeroSection() {
         <div className="absolute hidden  -top-20 w-[700px] h-full z-20 md:block md:-top-[130px] md:-right-40 md:scale-70 lg:-right-26 lg:-top-20 lg:scale-80  xl:scale-100 xl:right-0 xl:top-0">
           <Image
             src="/images/hero/hero-hand-8.png"
-            alt="Carta digital de un restaurante en el móvil"
+            alt={copy.imageAlt}
             width={1000}
             height={1000}
             sizes="650px"
@@ -90,7 +93,7 @@ export function HeroSection() {
           <div className="block md:hidden w-full max-w-[320px] mx-auto animate-in slide-in-from-bottom-[30px] duration-600 ease-out">
             <Image
               src="/images/mobile-hero2.png"
-              alt="Carta digital de un restaurante en el móvil"
+              alt={copy.imageAlt}
               width={920}
               height={540}
               sizes="320px"
@@ -101,19 +104,19 @@ export function HeroSection() {
           </div>
           <div className="space-y-5 lg:max-w-xl lg:space-y-6">
             <h1 className="text-center max-w-[300px] mx-auto sm:max-w-none md:mx-0 font-heading text-2xl leading-8 font-medium  text-black md:text-3xl md:text-left md:leading-10 md:max-w-[400px] lg:leading-12 lg:max-w-[520px] lg:text-4xl xl:leading-14 xl:text-5xl xl:max-w-[590px]">
-              Convierte la carta digital{" "}
+              {copy.titleStart}{" "}
               <span aria-hidden className="mx-2 inline-block rotate-11 rounded-sm md:rounded-md bg-primary p-1.5 shadow-lg sm:mx-3">
                 <QrCode className="size-4 md:size-6 text-white sm:size-7" />
               </span>{" "}
-              de tu restaurante en una máquina de{" "}
+              {copy.titleMiddle}{" "}
               <Highlighter action="circle" color="#FF9800" delay={1500} >
-                ventas
+                {copy.titleHighlight}
               </Highlighter>
+              {copy.titleEnd ? <>{" "}{copy.titleEnd}</> : null}
             </h1>
 
             <p className="text-center text-base  sm:text-sm leading-6 md:text-left md:max-w-[400px] lg:max-w-[420px] md:leading-7 xl:max-w-[480px] 2xl:max-w-lg font-heading md:text-base  md:leading-7 text-slate-700  md:text-base lg:text-lg xl:text-xl">
-              Ingeniería de menú y neuromarketing para vender más a través de la carta digital.
-              Sin conocimiento técnico.
+              {copy.subtitle}
             </p>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center justify-center md:justify-start">
               <div className="w-full sm:w-auto">
@@ -126,12 +129,12 @@ export function HeroSection() {
                   rel="noopener noreferrer"
                   className={buttonVariants({ variant: "secondary", className: "w-full sm:min-w-40 sm:w-auto h-13 sm:h-10" })}
                   {...trackAttrs(ANALYTICS_EVENTS.EXAMPLE_MENU_CLICK, {
-                    label: "Ver carta de ejemplo",
+                    label: copy.exampleMenu,
                     location: "hero",
                     linkUrl: EXAMPLE_MENU_URL,
                   })}
                 >
-                  Ver carta de ejemplo
+                  {copy.exampleMenu}
                 </Link>
 
               </div>
@@ -146,7 +149,7 @@ export function HeroSection() {
               </div>
               <p className="text-lg md:text-2xl font-semibold text-slate-900">4.5</p>
               <div className="scale-75 -ml-3 md:scale-100 md:-ml-0">
-                <p className="text-xs font-semibold text-slate-700">Excellent</p>
+                <p className="text-xs font-semibold text-slate-700">{copy.ratingLabel}</p>
                 <p className="text-xs tracking-wide text-emerald-700">★★★★★</p>
               </div>
 
@@ -168,7 +171,7 @@ export function HeroSection() {
             mass: 0.85,
           }}
         >
-          <p className="text-xs font-medium">Ver ejemplo</p>
+          <p className="text-xs font-medium">{copy.seeExample}</p>
           <ExampleMenuQr size={60} />
         </motion.div>
         <Image

@@ -9,42 +9,29 @@ import {
 import { GoogleTagManager } from "@/components/GoogleTagManager";
 import { AnalyticsListener } from "@/components/analytics/AnalyticsListener";
 import { Suspense } from "react";
+import { useLocale, type Locale } from "@/lib/locale";
+import { cookieCopy } from "@/components/cookie-consent/copy";
 
-const cookieCategories: CategoryConfig[] = [
-  {
-    key: "necessary",
-    title: "Necesarias",
-    description:
-      "Cookies esenciales para el funcionamiento del sitio web. No se pueden desactivar.",
-    required: true,
-  },
-  {
-    key: "analytics",
-    title: "Analíticas",
-    description:
-      "Cookies que nos ayudan a entender cómo los visitantes interactúan con el sitio.",
-  },
-  {
-    key: "marketing",
-    title: "Marketing",
-    description:
-      "Cookies utilizadas para publicidad y seguimiento en distintos sitios web.",
-  },
-  {
-    key: "preferences",
-    title: "Preferencias",
-    description: "Cookies que recuerdan tu configuración y preferencias.",
-  },
-];
+const categoryKeys = ["necessary", "analytics", "marketing", "preferences"] as const;
+
+function cookieCategories(locale: Locale): CategoryConfig[] {
+  const texts = cookieCopy[locale].categories;
+  return categoryKeys.map((key) => ({
+    key,
+    ...texts[key],
+    ...(key === "necessary" ? { required: true } : {}),
+  }));
+}
 
 export function CookieConsent({ children }: { children: React.ReactNode }) {
+  const locale = useLocale();
   return (
     <CookieConsentProvider
       config={{
         consentVersion: "1.0.0",
         privacyPolicyUrl: "/privacy#cookies",
         position: "bottom-left",
-        categories: cookieCategories,
+        categories: cookieCategories(locale),
         googleConsentMode: {
           enabled: true,
           mapping: {

@@ -5,15 +5,20 @@ import { BlurFade } from "../ui/blur-fade"
 import Link from "next/link"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 import { COMPANY } from "@/lib/company"
+import type { Locale } from "@/lib/locale"
+import { footerCopy, whatsappUrlFor } from "./home-copy"
 
-export function FooterSection() {
+// A server component, so the page passes its language (the blog and the Spanish pages use the default).
+export function FooterSection({ locale = "es" }: { locale?: Locale }) {
+  const copy = footerCopy[locale]
+  const whatsappUrl = whatsappUrlFor(locale)
   return (
     <SectionContainer id="footer" className="bg-gradient-to-b from-white to-[#DEF8FF] via-[#DEF8FF]">
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-4 border-b border-solid border-[#CFF5FF] pb-8 border-b-2">
           <BlurFade inView inViewMargin="-80px">
             <h2 className="max-w-xl text-2xl font-medium max-w-md">
-              La carta es la palanca más potente para impulsar las ventas de los restaurantes
+              {copy.title}
             </h2>
           </BlurFade>
           <CTAButton />
@@ -29,118 +34,120 @@ export function FooterSection() {
             </p>
             <p className="text-xs leading-relaxed opacity-80">
               <a
-                href={COMPANY.whatsappUrl}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, {
                   label: "whatsapp",
                   location: "footer",
-                  linkUrl: COMPANY.whatsappUrl,
+                  linkUrl: whatsappUrl,
                 })}
               >
                 WhatsApp {COMPANY.telephoneDisplay}
               </a>
             </p>
           </div>
+          {copy.showBlogLinks ? (
+            <div className="space-y-2">
+              <p className="font-medium ">{copy.resources}</p>
+              <p>
+                <Link
+                  href="/blog"
+                  {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                    label: "Blog",
+                    location: "footer",
+                    linkUrl: "/blog",
+                  })}
+                >
+                  Blog
+                </Link>
+              </p>
+              <p>
+                <Link
+                  href="/blog/ingenieria-de-menu-para-restaurantes"
+                  {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                    label: "Ingeniería de menú",
+                    location: "footer",
+                    linkUrl: "/blog/ingenieria-de-menu-para-restaurantes",
+                  })}
+                >
+                  Ingeniería de menú
+                </Link>
+              </p>
+              <p>
+                <Link
+                  href="/blog/costo-de-comida"
+                  {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                    label: "Costo de comida",
+                    location: "footer",
+                    linkUrl: "/blog/costo-de-comida",
+                  })}
+                >
+                  Costo de comida
+                </Link>
+              </p>
+              <p>
+                <Link
+                  href="/blog/carta-restaurante"
+                  {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
+                    label: "Carta de restaurante",
+                    location: "footer",
+                    linkUrl: "/blog/carta-restaurante",
+                  })}
+                >
+                  Carta de restaurante
+                </Link>
+              </p>
+            </div>
+          ) : null}
           <div className="space-y-2">
-            <p className="font-medium ">Recursos</p>
+            <p className="font-medium">{copy.support}</p>
             <p>
-              <Link
-                href="/blog"
-                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
-                  label: "Blog",
-                  location: "footer",
-                  linkUrl: "/blog",
-                })}
-              >
-                Blog
-              </Link>
-            </p>
-            <p>
-              <Link
-                href="/blog/ingenieria-de-menu-para-restaurantes"
-                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
-                  label: "Ingeniería de menú",
-                  location: "footer",
-                  linkUrl: "/blog/ingenieria-de-menu-para-restaurantes",
-                })}
-              >
-                Ingeniería de menú
-              </Link>
-            </p>
-            <p>
-              <Link
-                href="/blog/costo-de-comida"
-                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
-                  label: "Costo de comida",
-                  location: "footer",
-                  linkUrl: "/blog/costo-de-comida",
-                })}
-              >
-                Costo de comida
-              </Link>
-            </p>
-            <p>
-              <Link
-                href="/blog/carta-restaurante"
-                {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
-                  label: "Carta de restaurante",
-                  location: "footer",
-                  linkUrl: "/blog/carta-restaurante",
-                })}
-              >
-                Carta de restaurante
-              </Link>
-            </p>
-          </div>
-          <div className="space-y-2">
-            <p className="font-medium">Soporte</p>
-            <p>
-              <a href={`mailto:${COMPANY.email}`}>Contacto</a>
+              <a href={`mailto:${COMPANY.email}`}>{copy.contact}</a>
             </p>
             <p>
               <a
-                href={COMPANY.whatsappUrl}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 {...trackAttrs(ANALYTICS_EVENTS.OUTBOUND_CLICK, {
                   label: "whatsapp-ayuda",
                   location: "footer",
-                  linkUrl: COMPANY.whatsappUrl,
+                  linkUrl: whatsappUrl,
                 })}
               >
-                Ayuda
+                {copy.help}
               </a>
             </p>
           </div>
           <div className="space-y-2 flex flex-col gap-0">
-            <p className="font-medium">Legal</p>
+            <p className="font-medium">{copy.legal}</p>
 
             <Link
               href="/terms"
               {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
-                label: "Términos y condiciones",
+                label: copy.terms,
                 location: "footer",
                 linkUrl: "/terms",
               })}
             >
-              Términos y condiciones
+              {copy.terms}
             </Link>
             <Link
               href="/privacy"
               {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, {
-                label: "Política de privacidad",
+                label: copy.privacy,
                 location: "footer",
                 linkUrl: "/privacy",
               })}
             >
-              Política de privacidad
+              {copy.privacy}
             </Link>
             <CookieSettingsLink />
           </div>
         </div>
         <p className="text-xs plus-darker opacity-60">
-          © 2026 {COMPANY.brandName}. Todos los derechos reservados
+          © 2026 {COMPANY.brandName}. {copy.rights}
         </p>
       </div>
     </SectionContainer>

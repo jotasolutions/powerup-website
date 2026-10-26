@@ -19,11 +19,13 @@ import { NavMenu } from "@/components/landing/NavMenu"
 import { BigTextSection } from "@/components/landing/BigTextSection"
 import { organizationJsonLdFields } from "@/lib/company"
 import type { Metadata } from "next"
-import { SITE_URL, HOME_DESCRIPTION, HOME_TITLE, websiteOpenGraph } from "@/lib/site"
+import { SITE_URL, HOME_DESCRIPTION, HOME_LANGUAGES, HOME_TITLE, websiteOpenGraph } from "@/lib/site"
 import { jsonLdScript } from "@/lib/json-ld"
 import { homeFaqJsonLd, softwareApplicationJsonLd } from "@/lib/product-structured-data"
 
+// A page-level `alternates` replaces the root layout's, so the canonical is repeated here.
 export const metadata: Metadata = {
+  alternates: { canonical: "/", languages: HOME_LANGUAGES },
   openGraph: websiteOpenGraph({ title: HOME_TITLE, description: HOME_DESCRIPTION, url: "/" }),
 }
 
