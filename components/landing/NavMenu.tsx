@@ -8,12 +8,8 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 import { useAttributedCtaUrl, useCtaLabel, useIsWebsiteLanding } from "@/lib/attribution"
-
-const navItems = [
-  { label: "Evalúa tu carta", href: "/#advisor" },
-  { label: "Página web", href: "/pagina-web" },
-  { label: "Precios", href: "/pricing" },
-]
+import { useLocale } from "@/lib/locale"
+import { navCopy } from "./home-copy"
 
 const loginUrl = "https://admin.powerup.menu/sign-in"
 
@@ -26,7 +22,9 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
   const { scrollY } = useScroll()
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const attributedSignUpUrl = useAttributedCtaUrl()
-  const ctaLabel = useCtaLabel("Crea tu carta")
+  const copy = navCopy[useLocale()]
+  const navItems = copy.items
+  const ctaLabel = useCtaLabel(copy.cta)
   const isWebsiteLanding = useIsWebsiteLanding()
 
   const maxWidthRaw = useTransform(scrollY, SCROLL_RANGE, [1450, 960])
@@ -73,7 +71,7 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
 
         <div className="grid h-13 grid-cols-[1fr_auto] items-center gap-2 md:grid-cols-[1fr_auto_1fr] md:gap-4">
           <Link
-            href="/"
+            href={copy.homeHref}
             prefetch={linkPrefetch}
             className="flex items-center gap-2"
             {...trackAttrs("logo_click", { label: "PowerUp Menu", location: "nav" })}
@@ -91,7 +89,7 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
             />
           </Link>
 
-          <nav className="hidden md:block" aria-label="Navegación principal">
+          <nav className="hidden md:block" aria-label={copy.navLabel}>
             <ul className="flex items-center  p-1">
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -119,12 +117,12 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
               rel="noopener noreferrer"
               className={buttonVariants({ variant: "ghost", size: "sm" })}
               {...trackAttrs(ANALYTICS_EVENTS.LOGIN_CLICK, {
-                label: "Login",
+                label: copy.login,
                 location: "nav_desktop",
                 linkUrl: loginUrl,
               })}
             >
-              Login
+              {copy.login}
             </Link>
             <Link
               href={attributedSignUpUrl}
@@ -147,7 +145,7 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
             variant="ghost"
             size="sm"
             className="md:hidden"
-            aria-label={isMobileOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={isMobileOpen ? copy.closeMenu : copy.openMenu}
             aria-expanded={isMobileOpen}
             onClick={() => setIsMobileOpen((prev) => !prev)}
           >
@@ -157,7 +155,7 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
 
         {isMobileOpen ? (
           <div className="border-t border-border pb-3 pt-2 md:hidden">
-            <nav aria-label="Navegación principal mobile">
+            <nav aria-label={copy.mobileNavLabel}>
               <ul className="space-y-1">
                 {navItems.map((item) => (
                   <li key={`mobile-${item.href}`}>
@@ -185,12 +183,12 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
                 rel="noopener noreferrer"
                 className={buttonVariants({ variant: "ghost", className: "w-full" })}
                 {...trackAttrs(ANALYTICS_EVENTS.LOGIN_CLICK, {
-                  label: "Login",
+                  label: copy.login,
                   location: "nav_mobile",
                   linkUrl: loginUrl,
                 })}
               >
-                Login
+                {copy.login}
               </Link>
               <Link
                 href={attributedSignUpUrl}
