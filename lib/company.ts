@@ -1,5 +1,10 @@
 import { SITE_URL } from "@/lib/site"
 
+/** wa.me link to the public WhatsApp number, with the message already typed. */
+export function whatsappUrlWithText(text: string): string {
+  return `https://wa.me/34651332202?text=${encodeURIComponent(text)}`
+}
+
 /** Canonical NAP and legal identity for PowerUp Menu (Registro Mercantil). */
 export const COMPANY = {
   brandName: "PowerUp Menu",
@@ -9,9 +14,7 @@ export const COMPANY = {
   /** E.164 — public WhatsApp / contact number used on the site. */
   telephone: "+34651332202",
   telephoneDisplay: "+34 651 332 202",
-  whatsappUrl: `https://wa.me/34651332202?text=${encodeURIComponent(
-    "Hola, tengo una pregunta sobre PowerUp Menu",
-  )}`,
+  whatsappUrl: whatsappUrlWithText("Hola, tengo una pregunta sobre PowerUp Menu"),
   address: {
     streetAddress: "Calle del Turia, 53, planta 0, puerta izquierda",
     addressLocality: "València",

@@ -135,8 +135,11 @@ export const faqCopy = {
     // Spanish questions live in section-data.ts (`faqs`), shared with the home's FAQ JSON-LD.
     items: null,
     helpTitle: "¿Sigues con dudas?",
-    helpText: "Nuestro equipo responderá todas tus preguntas en un momento.",
-    helpButton: "Pregúntanos",
+    // Fede answers the Spanish WhatsApp himself, as in the floating bubble (WhatsAppBubble.tsx).
+    helpPhoto: "/images/about-fede.png",
+    helpPhotoAlt: "Fede, CEO de PowerUp",
+    helpText: "Escríbeme por WhatsApp y te contesto yo mismo. Fede, CEO de PowerUp.",
+    helpButton: "Pregúntame",
   },
   it: {
     title: "Forse ti stai chiedendo",
@@ -172,6 +175,8 @@ export const faqCopy = {
       },
     ],
     helpTitle: "Hai ancora dubbi?",
+    helpPhoto: "/images/about-jordi.png",
+    helpPhotoAlt: "Jordi Puig",
     helpText: "Scrivici su WhatsApp: rispondiamo in italiano.",
     helpButton: "Scrivici",
   },

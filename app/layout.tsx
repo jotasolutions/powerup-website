@@ -4,6 +4,7 @@ import "./globals.css";
 import { AttributionCapture } from "@/components/AttributionCapture";
 import { CookieConsent } from "@/components/CookieConsent";
 import { UmamiScript } from "@/components/analytics/UmamiScript";
+import { WhatsAppBubble } from "@/components/landing/WhatsAppBubble";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -57,6 +58,7 @@ export default function RootLayout({
         <Analytics/>
         <CookieConsent>
           <div className="flex flex-1 flex-col">{children}</div>
+          <WhatsAppBubble />
           <Toaster />
         </CookieConsent>
         <SpeedInsights />

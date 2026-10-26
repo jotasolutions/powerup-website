@@ -40,7 +40,7 @@ export function FaqSection({
         </aside>
         <aside className="h-fit w-full rounded-2xl border border-slate-200 p-4 space-y-4   lg:w-[300px] ">
         <div className="relative size-8 shrink-0">
-              <Image src="/images/about-jordi.png" alt="Jordi Puig" width={32} height={32} className="rounded-full size-8" />
+              <Image src={copy.helpPhoto} alt={copy.helpPhotoAlt} width={32} height={32} className="rounded-full size-8 object-cover" />
               <div className="absolute bottom-0 right-0 size-3 border border-white border-2 translate-x-1/4 translate-y-1/4 rounded-full border border-white bg-green-500" />
           </div>
           <div className="space-y-2">
