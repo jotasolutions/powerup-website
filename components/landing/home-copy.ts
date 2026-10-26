@@ -207,6 +207,7 @@ export const footerCopy = {
     italianBlogLinks: [
       { label: "Blog", href: "/it/blog" },
       { label: "Menù digitale con QR code", href: "/it/blog/menu-digitale-qr-code" },
+      { label: "Allergeni nel menù", href: "/it/blog/allergeni-menu-ristorante" },
     ],
     support: "Assistenza",
     contact: "Contatti",
