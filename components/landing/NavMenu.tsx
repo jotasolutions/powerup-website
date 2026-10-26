@@ -51,8 +51,10 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
     return () => window.removeEventListener("resize", closeMenu)
   }, [isMobileOpen])
 
+  // Phones: pinned to the top edge, full width and solid, so nothing shows through above it.
+  // From sm it floats 16 px down, as a translucent pill.
   return (
-    <header className="sticky top-4 z-50 px-2 sm:px-4 mb-2">
+    <header className="sticky top-0 z-50 mb-2 sm:top-4 sm:px-4">
       <motion.div
         className="relative mx-auto w-full"
         transition={{ duration: 0.28, ease: [0.68, -0.55, 0.27, 1.55] }}
@@ -67,11 +69,11 @@ export function NavMenu({ prefetchLinks = true }: { prefetchLinks?: boolean }) {
       >
         <motion.div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-background/70 shadow-md backdrop-blur-md rounded-xl"
+          className="pointer-events-none absolute inset-0 -z-10 bg-background shadow-md sm:rounded-xl sm:bg-background/70 sm:backdrop-blur-md"
           style={{ opacity: shellOpacity,  }}
         />
 
-        <div className="grid h-13 grid-cols-[1fr_auto] items-center gap-2 md:grid-cols-[1fr_auto_1fr] md:gap-4">
+        <div className="grid h-13 grid-cols-[1fr_auto] items-center gap-2 px-3 sm:px-0 md:grid-cols-[1fr_auto_1fr] md:gap-4">
           <Link
             href="/"
             prefetch={linkPrefetch}

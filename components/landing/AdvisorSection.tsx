@@ -29,11 +29,12 @@ const AdvisorWidget = dynamic(
     }
 );
 
-// Same box and height as the form's first step, measured from 360 to 1440 px wide: its upload
-// box is one line shorter from about 453 px. Keeps the page from moving when the form arrives.
+// Same box and height as the form's first step, measured from 360 to 1440 px wide. On phones the
+// upload box is a single row whose text wraps less as the screen widens (the 372/470 px steps are
+// approximate); from sm it's the tall box. Keeps the page from moving when the form arrives.
 function AdvisorWidgetPlaceholder() {
     return (
-        <div className="h-[530.5px] w-full max-w-[400px] rounded-xl border border-slate-200 bg-white min-[453px]:h-[510.5px]" />
+        <div className="h-[490.5px] w-full max-w-[400px] rounded-xl border border-slate-200 bg-white min-[372px]:h-[470.5px] min-[470px]:h-[450.5px] sm:h-[510.5px]" />
     );
 }
 
