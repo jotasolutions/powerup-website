@@ -7,6 +7,7 @@ import { getListingPage } from "@/lib/blog/posts"
 import { collectionPageJsonLd } from "@/lib/blog/structured-data"
 import { AdvisorPromoWide } from "./_components/AdvisorPromo"
 import { BlogHero } from "./_components/BlogHero"
+import { ClientQuote } from "./_components/ClientQuote"
 import { JsonLd } from "./_components/JsonLd"
 import { ListingSection } from "./_components/ListingSection"
 import { PressSection } from "./_components/PressSection"
@@ -31,7 +32,12 @@ export default function BlogHomePage() {
       <ListingSection title="Últimos artículos" posts={posts} clusters={getClusterPages()} page={1} totalPages={totalPages} />
       <section className="mt-10 bg-gradient-to-b from-[#F0FFF5] to-[#CBFFDC] py-12 md:py-16">
         <div className={container}>
-          <div className="mx-auto max-w-[760px]">
+          {/* A customer's words beside the Advisor, as in the blog's first design. On phones the
+              Advisor comes first, so the quote never pushes the button down. */}
+          <div className="mx-auto grid max-w-[760px] gap-6 lg:max-w-none lg:grid-cols-[1fr_1.25fr] lg:items-stretch">
+            <div className="order-last lg:order-none">
+              <ClientQuote />
+            </div>
             <AdvisorPromoWide />
           </div>
         </div>

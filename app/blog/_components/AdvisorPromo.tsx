@@ -17,7 +17,7 @@ function GradientFrame({ className, children }: { className?: string; children: 
 export function AdvisorPromoWide() {
   return (
     <div className="@container">
-      <GradientFrame className="grid items-center gap-5 p-6 sm:p-8 @lg:grid-cols-[1fr_1.1fr]">
+      <GradientFrame className="grid items-center gap-5 p-6 sm:p-8 @2xl:grid-cols-[1fr_1.1fr]">
         <div className="flex flex-col gap-3">
           <p className={eyebrow}>Advisor · Análisis con IA</p>
           <h2 className="font-heading text-[26px] font-medium leading-tight tracking-tight text-slate-900">¿Qué nota tiene tu carta?</h2>
