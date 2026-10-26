@@ -102,7 +102,7 @@ donde pasa el evento: la de la web o la del blog.
 | `login_click` | Pulsa «Login» | `NavMenu` | Los mismos cuatro datos | Su parte | — | No |
 | `nav_click` | Usa el menú («Evalúa tu carta», «Página web», «Precios») o el pie («Blog», «Términos y condiciones», «Política de privacidad»), pulsa «Más información de la web» en la home, o «Analizar mi carta» en el blog (`label: advisor`) | `NavMenu`, `FooterSection`, `WebsiteSection` y `app/blog/_components/AdvisorDialog.tsx` | Los mismos cuatro datos | Su parte | — | No |
 | `logo_click` | Pulsa el logo | `NavMenu` (`location: nav`) | Los mismos cuatro datos | Su parte | — | No |
-| `outbound_click` | Sale a otra web por un enlace marcado | Testimonios (Trustpilot, Google Maps y cartas de clientes), «Pregúntame» (antes «Pregúntanos») de las preguntas frecuentes de la home (WhatsApp, `label: whatsapp`), la burbuja flotante de WhatsApp (`label: whatsapp`; `location: burbuja` en la píldora y `burbuja_tarjeta` en la tarjeta, ver `docs/burbuja-whatsapp.md`), «Ver ejemplo» de `/pagina-web`, y en el blog Maestro, la prensa y los enlaces a Maestro dentro de los artículos (`lib/blog/markdown.ts`) | Los mismos cuatro datos | Su parte | — | No |
+| `outbound_click` | Sale a otra web por un enlace marcado | Testimonios (Trustpilot, Google Maps y cartas de clientes), «Pregúntame» (antes «Pregúntanos») de las preguntas frecuentes de la home (WhatsApp, `label: whatsapp`), la burbuja flotante de WhatsApp (`label: whatsapp`, `location: burbuja`, ver `docs/burbuja-whatsapp.md`), «Ver ejemplo» de `/pagina-web`, y en el blog Maestro, la prensa y los enlaces a Maestro dentro de los artículos (`lib/blog/markdown.ts`) | Los mismos cuatro datos | Su parte | — | No |
 | `example_menu_click` | Pulsa «Ver carta de ejemplo» | El hero de la home y el recuadro de los artículos | Los mismos cuatro datos | Su parte | — | No |
 | `menu_showcase_click` | Pulsa «Ver carta» en el carrusel de la home | `MenuShowcaseSection` (`menu_showcase`) | Los mismos cuatro datos | Web | — | No |
 | `menu_showcase_slide` | Cambia de diapositiva en el carrusel de la home. **También sale al cargar la home**, aunque nadie lo toque | `ShowcaseCarousel` | `location`; no llegan `slide_index` ni `menu_url` | Web | — | No |
@@ -133,8 +133,7 @@ Salen del código y los comprobé en las páginas publicadas el 30-09.
 **`location`:**
 - menú: `nav` (el logo), `nav_desktop` y `nav_mobile`;
 - pie: `footer`;
-- burbuja flotante de WhatsApp (todas las páginas menos las landings de campaña): `burbuja` (la
-  píldora) y `burbuja_tarjeta` (el botón de la tarjeta);
+- burbuja flotante de WhatsApp (todas las páginas menos las landings de campaña): `burbuja`;
 - home: `hero`, `vende-mas`, `atrae-gente`, `conoce-clientes`, `como-funciona`, `features`,
   `admin`, `diferenciacion`, `advisor`, `pagina-web`, `testimonials`, `testimonials_carousel`,
   `menu_showcase`, `pricing`, `preguntas` y `sobre-nosotros`. En las tarjetas de precios, los
@@ -355,10 +354,9 @@ Los cambios en Analytics o en Meta los hace Fede, o Claude in Chrome con su perm
   - `data-domains="www.powerup.menu"`: deja de contar el dominio de Vercel y el local.
 - **25-10-2026, burbuja de WhatsApp** (`components/landing/WhatsAppBubble.tsx`):
   - botón flotante abajo a la derecha (foto de Fede, «¿Hablamos?») en toda la web menos `/vende-mas`
-    y `/visibilidad`; una vez por visita se abre en una tarjeta con el botón «Escribir a Fede»;
-  - sus enlaces mandan el `outbound_click` de siempre con `label: whatsapp` y `location: burbuja`
-    (píldora) o `burbuja_tarjeta` (tarjeta). Sin cambios en GTM. Cómo funciona:
-    `docs/burbuja-whatsapp.md`;
+    y `/visibilidad`; nunca se abre solo;
+  - su enlace manda el `outbound_click` de siempre con `label: whatsapp` y `location: burbuja`. Sin
+    cambios en GTM. Cómo funciona: `docs/burbuja-whatsapp.md`;
   - el botón de WhatsApp de las preguntas frecuentes pasa de «Pregúntanos» a «Pregúntame» (foto de
     Fede).
 - **Pendiente de describir (copia de la versión 26, exportada el 10-10-2026):** el contenedor tiene piezas
