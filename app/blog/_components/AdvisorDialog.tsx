@@ -5,6 +5,8 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { ANALYTICS_EVENTS, trackAttrs } from "@/lib/analytics"
 import styles from "./advisor-dialog.module.css"
+import { blogUiCopy } from "@/lib/blog/ui-copy"
+import { useLocale } from "@/lib/locale"
 
 const AdvisorWidget = dynamic(() => import("@/components/AdvisorWidget").then((module) => module.AdvisorWidget), {
   ssr: false,
@@ -20,6 +22,7 @@ const OpenAdvisorContext = createContext<() => void>(() => {})
 export function AdvisorDialogProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
   const openAdvisor = useCallback(() => setOpen(true), [])
+  const copy = blogUiCopy[useLocale()]
 
   useEffect(() => {
     if (!open) return
@@ -42,7 +45,7 @@ export function AdvisorDialogProvider({ children }: { children: ReactNode }) {
         }}
       >
         <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto bg-transparent p-0 ring-0 sm:max-w-[400px]">
-          <DialogTitle className="sr-only">Analiza tu carta gratis</DialogTitle>
+          <DialogTitle className="sr-only">{copy.advisorDialogTitle}</DialogTitle>
           {open && <AdvisorWidget />}
         </DialogContent>
       </Dialog>

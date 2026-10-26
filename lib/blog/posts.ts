@@ -10,17 +10,27 @@ import { isProductionBuild } from "./draft"
 import { imagePathProblem } from "./images"
 import { readMarkdownFile, reportContentErrors, withProductionFallback } from "./isolation"
 import { readingMinutes } from "./reading-time"
-import { postFrontmatterSchema, type PostFrontmatter } from "./schema"
+import {
+  italianPostFrontmatterSchema,
+  postFrontmatterSchema,
+  type ItalianPostFrontmatter,
+  type PostFrontmatter,
+} from "./schema"
 import { getCluster } from "./taxonomy"
 
 const CONTENT_DIR = path.join(process.cwd(), "content/blog")
+// Italian posts (/it/blog) adapt a Spanish one; they never mix with the Spanish listings, feed or sitemap entries.
+const ITALIAN_CONTENT_DIR = path.join(process.cwd(), "content/blog-it")
 const SEO_TITLE_MAX = 60
 
-export type Post = Omit<PostFrontmatter, "fecha_modificacion"> & {
+type LoadedPost<T extends PostFrontmatter> = Omit<T, "fecha_modificacion"> & {
   fecha_modificacion: Date
   body: string
   readingMinutes: number
 }
+
+export type Post = LoadedPost<PostFrontmatter>
+export type ItalianPost = LoadedPost<ItalianPostFrontmatter>
 
 const warned = new Set<string>()
 export function warnOnce(message: string) {
@@ -40,18 +50,27 @@ function checkAuthorRefs(post: PostFrontmatter, file: string, errors: string[]) 
 }
 
 function loadPosts(): Post[] {
+  return loadPostsFrom(CONTENT_DIR, postFrontmatterSchema, "Contenido del blog inválido")
+}
+
+function loadPostsFrom<T extends PostFrontmatter>(
+  contentDir: string,
+  schema: z.ZodType<T>,
+  errorTitle: string,
+  extraChecks?: (post: T, file: string, errors: string[]) => void,
+): LoadedPost<T>[] {
   const files = fs
-    .readdirSync(CONTENT_DIR, { withFileTypes: true })
+    .readdirSync(contentDir, { withFileTypes: true })
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
     .map((entry) => entry.name)
   const errors: string[] = []
-  const posts: Post[] = []
+  const posts: LoadedPost<T>[] = []
 
   for (const file of files) {
-    const source = readMarkdownFile(path.join(CONTENT_DIR, file), file, errors)
+    const source = readMarkdownFile(path.join(contentDir, file), file, errors)
     if (!source) continue
     const { data, content } = source
-    const parsed = postFrontmatterSchema.safeParse(data)
+    const parsed = schema.safeParse(data)
     if (!parsed.success) {
       errors.push(`${file}:\n${z.prettifyError(parsed.error)}`)
       continue
@@ -60,6 +79,7 @@ function loadPosts(): Post[] {
     const fileErrors: string[] = []
     if (file !== `${post.slug}.md`) fileErrors.push(`${file}: el slug "${post.slug}" no coincide con el nombre del archivo`)
     checkAuthorRefs(post, file, fileErrors)
+    extraChecks?.(post, file, fileErrors)
     if (fileErrors.length > 0) {
       errors.push(...fileErrors)
       continue
@@ -100,11 +120,39 @@ function loadPosts(): Post[] {
     return false
   })
 
-  reportContentErrors("Contenido del blog inválido", errors)
+  reportContentErrors(errorTitle, errors)
   return valid.sort((a, b) => b.fecha_publicacion.getTime() - a.fecha_publicacion.getTime())
 }
 
 export const getAllPosts = cache(() => withProductionFallback("Posts del blog", loadPosts, (): Post[] => []))
+
+function loadItalianPosts(): ItalianPost[] {
+  if (!fs.existsSync(ITALIAN_CONTENT_DIR)) return []
+  const spanishSlugs = new Set(getAllPosts().map((post) => post.slug))
+  return loadPostsFrom(ITALIAN_CONTENT_DIR, italianPostFrontmatterSchema, "Contenido del blog italiano inválido", (post, file, errors) => {
+    if (!spanishSlugs.has(post.traduzione_di)) {
+      errors.push(`${file}: traduzione_di "${post.traduzione_di}" no es ningún post de content/blog`)
+    }
+  })
+}
+
+export const getAllItalianPosts = cache(() =>
+  withProductionFallback("Posts del blog italiano", loadItalianPosts, (): ItalianPost[] => []),
+)
+
+/** Drafts are hidden only in production, as in Spanish. */
+export const getVisibleItalianPosts = cache(() =>
+  getAllItalianPosts().filter((post) => !post.draft || !isProductionBuild()),
+)
+
+export function getItalianPost(slug: string): ItalianPost | undefined {
+  return getVisibleItalianPosts().find((post) => post.slug === slug)
+}
+
+/** The published Italian version of a Spanish post, for hreflang. */
+export function getItalianVersionOf(spanishSlug: string): ItalianPost | undefined {
+  return getVisibleItalianPosts().find((post) => post.traduzione_di === spanishSlug)
+}
 
 /** Drafts are hidden only in production; see isProductionBuild(). */
 export const getVisiblePosts = cache(() =>

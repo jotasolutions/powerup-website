@@ -32,8 +32,14 @@ function authorNode(author: Author) {
   return organizationNode()
 }
 
-export function blogPostingJsonLd(post: Post, author: Author, reviewer: PersonAuthor | undefined, cluster: Cluster) {
-  const path = postPath(post.slug)
+export function blogPostingJsonLd(
+  post: Post,
+  author: Author,
+  reviewer: PersonAuthor | undefined,
+  cluster: Cluster,
+  // Italian posts live under /it/blog and are written in Italian.
+  { path = postPath(post.slug), inLanguage = "es-ES" }: { path?: string; inLanguage?: string } = {},
+) {
   const url = absoluteUrl(path)
   return {
     "@context": "https://schema.org",
@@ -45,7 +51,7 @@ export function blogPostingJsonLd(post: Post, author: Author, reviewer: PersonAu
     image: absoluteUrl(`${path}/opengraph-image`),
     datePublished: post.fecha_publicacion.toISOString(),
     dateModified: post.fecha_modificacion.toISOString(),
-    inLanguage: "es-ES",
+    inLanguage,
     keywords: post.keyword_principal,
     ...(cluster.hub ? { articleSection: cluster.label } : {}),
     author: authorNode(author),

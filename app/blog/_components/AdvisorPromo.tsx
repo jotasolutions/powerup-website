@@ -2,6 +2,8 @@ import { QrCode } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { AdvisorTrigger } from "./AdvisorDialog"
 import { buttonAdvisor, eyebrow } from "./styles"
+import { blogUiCopy } from "@/lib/blog/ui-copy"
+import type { Locale } from "@/lib/locale"
 
 const SCORES = [
   { label: "Oferta gastronómica", value: "3.5", width: "35%", color: "#EF4444" },
@@ -11,7 +13,8 @@ const SCORES = [
 ]
 
 /** Static illustration of an Advisor report, from the design. */
-function ScoreMockup({ className }: { className?: string }) {
+function ScoreMockup({ className, locale = "es" }: { className?: string; locale?: Locale }) {
+  const copy = blogUiCopy[locale]
   return (
     <div aria-hidden className={cn("flex w-full flex-col gap-3.5 rounded-[20px] border border-border bg-card p-[18px] shadow-xl", className)}>
       <div className="flex items-center gap-3.5">
@@ -24,14 +27,14 @@ function ScoreMockup({ className }: { className?: string }) {
           </div>
         </div>
         <div className="flex min-w-0 flex-col gap-0.5">
-          <span className="text-xs text-slate-600">Nota de tu carta</span>
-          <span className="font-heading text-[15px] font-medium leading-tight text-slate-900">Buena, con 3 mejoras claras</span>
+          <span className="text-xs text-slate-600">{copy.mockupScoreLabel}</span>
+          <span className="font-heading text-[15px] font-medium leading-tight text-slate-900">{copy.mockupScoreText}</span>
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        {SCORES.map((score) => (
+        {SCORES.map((score, index) => (
           <div key={score.label} className="grid grid-cols-[minmax(0,1fr)_44px_28px] items-center gap-2.5 text-xs text-slate-700">
-            <span className="truncate">{score.label}</span>
+            <span className="truncate">{copy.mockupScores[index]}</span>
             <span className="block h-1.5 overflow-hidden rounded-full bg-[#F3F4F6]">
               <span className="block h-full rounded-full" style={{ width: score.width, backgroundColor: score.color }} />
             </span>
@@ -72,16 +75,17 @@ export function AdvisorPromoWide() {
   )
 }
 
-export function AdvisorPromoSidebar() {
+export function AdvisorPromoSidebar({ locale = "es" }: { locale?: Locale }) {
+  const copy = blogUiCopy[locale]
   return (
     <GradientFrame className="flex flex-col items-start gap-3 p-[22px]">
       {/* In the sticky aside of a short window the decorative mockup would squeeze the contents
           list out; the pitch and the button always stay. */}
-      <ScoreMockup className="max-w-[320px] self-center lg:[@media(max-height:720px)]:hidden" />
-      <p className={eyebrow}>Advisor · IA</p>
-      <p className="font-heading text-xl font-medium leading-tight tracking-tight text-slate-900">Pon nota a tu carta en 2 minutos</p>
-      <p className="text-sm leading-normal text-slate-600">Oferta, marketing, contenido y diseño. Gratis.</p>
-      <AdvisorTrigger className={cn(buttonAdvisor, "h-10 px-4")}>Analizar mi carta</AdvisorTrigger>
+      <ScoreMockup locale={locale} className="max-w-[320px] self-center lg:[@media(max-height:720px)]:hidden" />
+      <p className={eyebrow}>{copy.advisorEyebrow}</p>
+      <p className="font-heading text-xl font-medium leading-tight tracking-tight text-slate-900">{copy.advisorTitle}</p>
+      <p className="text-sm leading-normal text-slate-600">{copy.advisorText}</p>
+      <AdvisorTrigger className={cn(buttonAdvisor, "h-10 px-4")}>{copy.advisorButton}</AdvisorTrigger>
     </GradientFrame>
   )
 }
