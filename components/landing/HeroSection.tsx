@@ -159,7 +159,9 @@ export function HeroSection() {
 
 
         </div>
+        {/* data-example-qr: the floating WhatsApp pill steps aside while this QR is on screen. */}
         <motion.div
+          data-example-qr
           className="absolute bottom-3 right-3 z-30 hidden origin-center flex-col items-center gap-2 rounded-lg bg-slate-800 p-3 text-white lg:flex"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
