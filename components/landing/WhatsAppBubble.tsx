@@ -12,8 +12,9 @@ const TEAM_MEMBER = {
   photo: "/images/about-fede.png",
 }
 
-// Campaign landings stay free of anything that pulls away from sign-up.
-const HIDDEN_PATHS = ["/vende-mas", "/visibilidad"]
+// Campaign landings stay free of anything that pulls away from sign-up. The Italian site (/it) has
+// its own WhatsApp copy in home-copy.ts and no bubble yet.
+const HIDDEN_PATHS = ["/vende-mas", "/visibilidad", "/it"]
 
 // The typed message tells whoever answers which page the lead was on.
 function whatsappUrlFor(pathname: string): string {
@@ -35,7 +36,7 @@ function whatsappUrlFor(pathname: string): string {
  */
 export function WhatsAppBubble() {
   const pathname = usePathname()
-  if (HIDDEN_PATHS.some((path) => pathname.startsWith(path))) return null
+  if (HIDDEN_PATHS.some((path) => pathname === path || pathname.startsWith(`${path}/`))) return null
 
   const href = whatsappUrlFor(pathname)
 

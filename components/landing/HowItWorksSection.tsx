@@ -6,6 +6,8 @@ import { CTAButton } from "../CTAButton"
 import { useRef } from "react"
 import { motion, useInView, useReducedMotion } from "motion/react"
 import { BlurFade } from "../ui/blur-fade"
+import { useLocale } from "@/lib/locale"
+import { howItWorksCopy } from "./home-copy"
 
 const revealViewport = {
   once: true,
@@ -77,23 +79,25 @@ function HiwVectorLine({ className }: { className?: string }) {
 
 export function HowItWorksSection() {
   const prefersReducedMotion = useReducedMotion()
+  const copy = howItWorksCopy[useLocale()]
+  const localizedSteps = steps.map((item, index) => ({ ...item, ...copy.steps?.[index] }))
 
   return (
     <SectionContainer id="como-funciona">
       <div className="space-y-8 sm:space-y-10">
         <div className="space-y-3 text-center">
           <BlurFade inView inViewMargin="-80px">
-            <h2 className="section-title">Empezar es muy fácil</h2>
+            <h2 className="section-title">{copy.title}</h2>
           </BlurFade>
           <BlurFade inView inViewMargin="-80px" delay={0.12}>
             <p className="section-paragraph">
-              Es tan simple que podrías configurarlo tú solo. Pero te lo facilitamos aún más.
+              {copy.paragraph}
             </p>
           </BlurFade>
         </div>
         <div className="relative flex flex-col gap-10 md:flex-row md:justify-between md:gap-8 lg:gap-12">
           <HiwVectorLine className="pointer-events-none absolute -top-24 left-[2%] hidden h-full w-[80%] md:block" />
-          {steps.map((item, index) => (
+          {localizedSteps.map((item, index) => (
             <article key={item.title} className="w-full space-y-3 md:w-1/3 md:space-y-4">
               <div className="md:relative md:h-[15rem]">
                 <motion.div

@@ -18,6 +18,8 @@ import { useCookieConsent, defaultCategories } from "./cookie-provider"
 import type { ConsentCategories, ConsentCategory } from "./types"
 import { getDefaultCategories, getAllAcceptedCategories } from "./utils"
 import { cn } from "@/lib/utils"
+import { useLocale } from "@/lib/locale"
+import { cookieCopy } from "./copy"
 
 export interface CookieSettingsProps {
   className?: string
@@ -25,6 +27,7 @@ export interface CookieSettingsProps {
 
 export function CookieSettings({ className }: CookieSettingsProps) {
   const { isSettingsOpen, closeSettings, state, updateConsent, config, acceptAll, rejectAll } = useCookieConsent()
+  const copy = cookieCopy[useLocale()]
 
   const categories = config.categories ?? defaultCategories
 
@@ -74,9 +77,9 @@ export function CookieSettings({ className }: CookieSettingsProps) {
               <Shield className="h-5 w-5 text-muted-foreground" />
             </div>
             <div>
-              <DialogTitle>Configuración de cookies</DialogTitle>
+              <DialogTitle>{copy.settingsTitle}</DialogTitle>
               <DialogDescription>
-                Gestiona tus preferencias de cookies a continuación.
+                {copy.settingsDescription}
               </DialogDescription>
             </div>
           </div>
@@ -104,7 +107,7 @@ export function CookieSettings({ className }: CookieSettingsProps) {
                     </Label>
                     {isRequired && (
                       <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">
-                        Obligatorias
+                        {copy.required}
                       </span>
                     )}
                   </div>
@@ -126,27 +129,27 @@ export function CookieSettings({ className }: CookieSettingsProps) {
 
         <DialogFooter className="flex-col gap-2 sm:flex-row">
           <Button variant="outline" size="sm" onClick={handleRejectAll} className="w-full sm:w-auto bg-transparent">
-            Rechazar todo
+            {copy.rejectAll}
           </Button>
           <Button variant="outline" size="sm" onClick={handleAcceptAll} className="w-full sm:w-auto bg-transparent">
-            Aceptar todo
+            {copy.acceptAll}
           </Button>
           <Button size="sm" onClick={handleSave} className="w-full sm:w-auto gap-2">
             <Check className="h-4 w-4" />
-            Guardar preferencias
+            {copy.save}
           </Button>
         </DialogFooter>
 
         {config.privacyPolicyUrl && (
           <p className="text-xs text-center text-muted-foreground">
-            Consulta nuestra{" "}
+            {copy.privacyBefore}{" "}
             <a
               href={config.privacyPolicyUrl}
               className="underline underline-offset-4 hover:text-foreground transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
-              política de privacidad
+              {copy.privacyLink}
             </a>
           </p>
         )}

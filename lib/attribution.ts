@@ -1,11 +1,13 @@
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import { localeFromPath } from "./locale"
 
 export const ATTRIBUTION_STORAGE_KEY = "powerup_attribution"
 export const SIGN_UP_URL = "https://admin.powerup.menu/sign-up"
 export const WEBSITE_WIZARD_URL = "https://alta-pagina-web.powerup.menu/"
 export const WEBSITE_CTA_LABEL = "Crear mi web gratis"
 export const DEFAULT_CTA_LABEL = "Crear carta gratis"
+export const ITALIAN_CTA_LABEL = "Crea il menù gratis"
 
 export function isWebsiteLandingPath(pathname: string | null): boolean {
   return Boolean(pathname?.startsWith("/pagina-web"))
@@ -103,7 +105,7 @@ export function useAttributedCtaUrl(href?: string): string {
 export function useCtaLabel(label?: string): string {
   const pathname = usePathname()
   if (isWebsiteLandingPath(pathname)) return WEBSITE_CTA_LABEL
-  return label ?? DEFAULT_CTA_LABEL
+  return label ?? (localeFromPath(pathname) === "it" ? ITALIAN_CTA_LABEL : DEFAULT_CTA_LABEL)
 }
 
 export function useIsWebsiteLanding(): boolean {

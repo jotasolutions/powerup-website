@@ -16,13 +16,17 @@ objetivo de cada página (el alta y el Advisor).
 
 Quién contesta está en `TEAM_MEMBER`, al principio del componente (nombre y foto). Si cambia la
 persona, se cambia ahí y en la tarjeta de las preguntas frecuentes de la home
-(`components/landing/FaqSection.tsx`), que también lleva la foto de Fede y el botón «Pregúntame».
+(`components/landing/FaqSection.tsx`, textos en `faqCopy.es` de `components/landing/home-copy.ts`),
+que también lleva la foto de Fede y el botón «Pregúntame». La versión italiana de esa tarjeta
+(`faqCopy.it`) no cambia.
 
 ## 2. Dónde aparece
 
 - En toda la web: home, `/pricing`, `/pagina-web`, blog y páginas legales.
-- **No** en las landings de Meta (`/vende-mas`, `/visibilidad`): ahí nada debe distraer del alta. La
-  lista está en `HIDDEN_PATHS`.
+- **No** en las landings de Meta (`/vende-mas`, `/visibilidad`): ahí nada debe distraer del alta.
+- **No** en la web italiana (`/it`): sus textos y el mensaje de WhatsApp están en italiano en
+  `home-copy.ts`, y la burbuja solo existe en español.
+- La lista está en `HIDDEN_PATHS`.
 
 ## 3. Mensaje ya escrito
 

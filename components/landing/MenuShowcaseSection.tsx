@@ -4,6 +4,8 @@ import { ANALYTICS_EVENTS } from "@/lib/analytics"
 import { ShowcaseCarousel } from "./ShowcaseCarousel"
 import { SectionContainer } from "./SectionContainer"
 import { BlurFade } from "@/components/ui/blur-fade"
+import { useLocale } from "@/lib/locale"
+import { showcaseCopy } from "./home-copy"
 
 const showcaseItems = [
   {
@@ -63,19 +65,27 @@ const showcaseItems = [
 ] as const
 
 export function MenuShowcaseSection() {
+  const copy = showcaseCopy[useLocale()]
+  const altFor = copy.altFor
+  // The Spanish alts read "Carta digital de <restaurant> en el móvil"; other languages rebuild them around the name.
+  const items = altFor
+    ? showcaseItems.map((item) => ({ ...item, alt: altFor(item.alt.replace(/^Carta digital de (.+) en el móvil$/, "$1")) }))
+    : showcaseItems
   return (
     <SectionContainer id="menu-showcase" className="bg-gradient-to-b from-white via-[#E2FEFD]  to-white">
       <div className="space-y-10 text-center sm:space-y-14 md:space-y-20">
         <BlurFade inView inViewMargin="-80px">
           <h2 className="section-title text-2xl md:text-3xl lg:text-4xl max-w-lg mx-auto">
-            Esta puede ser tu carta
+            {copy.title}
           </h2>
         </BlurFade>
         <ShowcaseCarousel
           sectionId="menu-showcase"
-          title="Esta puede ser tu carta"
-          items={showcaseItems}
-          ctaLabel="Ver carta"
+          title={copy.title}
+          items={items}
+          ctaLabel={copy.cta}
+          previousLabel={copy.previous}
+          nextLabel={copy.next}
           slideTracking={{
             eventName: ANALYTICS_EVENTS.MENU_SHOWCASE_SLIDE,
             location: "menu_showcase",
@@ -84,7 +94,7 @@ export function MenuShowcaseSection() {
           ctaTracking={{
             eventName: ANALYTICS_EVENTS.MENU_SHOWCASE_CLICK,
             location: "menu_showcase",
-            label: "Ver carta",
+            label: copy.cta,
           }}
         />
       </div>
