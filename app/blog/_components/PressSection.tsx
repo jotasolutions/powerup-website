@@ -5,12 +5,12 @@ import incibeSeal from "../_assets/incibe-ventures.png"
 import startupValenciaLogo from "../_assets/startup-valencia.png"
 import { container, sectionTitle } from "./styles"
 
-// Quotes checked verbatim against each article. Outlet logos are initials on purpose:
-// the design hotlinked third-party thumbnails.
+// Quotes checked verbatim against each article. The outlets' logos are served from here
+// (public/images/press), never hotlinked from their sites.
 const PRESS = [
   {
     outlet: "Profesional Horeca",
-    initials: "PH",
+    logo: { src: "/images/press/profesional-horeca.png", width: 496, height: 82 },
     headline: "El servicio gratuito que ayuda a los restaurantes a mejorar sus cartas",
     quote:
       "“Vemos una urgente necesidad de digitalizar el sector, por eso nos centramos en ofrecer soluciones que faciliten el trabajo de los restauradores.” — Federico Bello, CEO de PowerUp Menu.",
@@ -19,7 +19,7 @@ const PRESS = [
   },
   {
     outlet: "El Español · Invertia",
-    initials: "EE",
+    logo: { src: "/images/press/el-espanol.svg", width: 571, height: 110 },
     headline: "Lanzadera aglutina con más de cien startups una de las ‘hornadas’ más numerosas de talento emprendedor",
     quote: "“PowerUp Menu redefine la carta de restaurante, fusionando gestión y marketing para potenciar beneficios y satisfacción del cliente.”",
     date: "Marzo 2024",
@@ -98,10 +98,7 @@ export function PressSection() {
                 </span>
                 <span className="text-[15px] leading-relaxed text-slate-700">{item.quote}</span>
                 <span className="mt-auto flex items-center gap-2.5 text-[13px] text-slate-600">
-                  <span className="flex size-9 flex-none items-center justify-center rounded-full bg-[#DEF8FF] font-heading text-sm font-semibold text-primary">
-                    {item.initials}
-                  </span>
-                  <span className="font-semibold text-slate-900">{item.outlet}</span>
+                  <Image src={item.logo.src} alt={item.outlet} width={item.logo.width} height={item.logo.height} className="h-6 w-auto" />
                   <span aria-hidden>·</span>
                   <span>{item.date}</span>
                   <span className="ml-auto font-medium text-primary">Leer ↗</span>
