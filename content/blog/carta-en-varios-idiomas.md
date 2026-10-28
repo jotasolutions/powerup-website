@@ -2,8 +2,8 @@
 # Nuevo (plan v3.5, 25-09-2026): reconstruye «Siete idiomas en la carta» del boceto, sin lo que la web no confirma (el número de idiomas, los alérgenos traducidos). Publicado el 28-09-2026: si el lanzamiento se retrasa, poner la fecha real. Revisado y firmado por Fede (28-09-2026).
 title: "Carta en varios idiomas: qué cambia cuando el turista entiende lo que pide"
 slug: "carta-en-varios-idiomas"
-seo_title: "Carta en varios idiomas: cuáles poner y cómo traducirla"
-seo_description: "Qué idiomas poner en la carta según de dónde vienen los turistas, cómo traducir los platos típicos sin perderlos y qué hacer con los alérgenos."
+seo_title: "Traducir la carta del restaurante: idiomas y alérgenos"
+seo_description: "Cómo traducir la carta del restaurante sin perder los platos típicos, qué idiomas poner según de dónde vienen los turistas y cómo explicar los alérgenos."
 excerpt: "En 2025 llegaron a España 96,8 millones de turistas. Qué idiomas poner en la carta, cómo traducir los platos típicos y por qué los alérgenos también tienen que entenderse."
 cluster: "carta-digital"
 keyword_principal: "carta en varios idiomas"
