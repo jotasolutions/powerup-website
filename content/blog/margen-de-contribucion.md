@@ -2,8 +2,8 @@
 # Reescrito en la Etapa B (tanda 1, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Cómo calcular el margen de contribución de cada plato"
 slug: "margen-de-contribucion"
-seo_title: "Cómo calcular el margen de contribución de tus platos"
-seo_description: "Qué es el margen de contribución, cómo se calcula plato a plato (sin IVA) y cómo usarlo para decidir precios y qué destacar en la carta."
+seo_title: "Margen de contribución: la rentabilidad de cada plato"
+seo_description: "Cuánto te deja de verdad cada plato: qué es el margen de contribución, cómo se calcula (precio sin IVA menos ingredientes) y cómo usarlo para fijar precios."
 excerpt: "El margen de contribución te dice cuánto deja cada plato para pagar los gastos fijos. Así se calcula, plato a plato, y así se usa en la carta."
 cluster: "rentabilidad-y-costes"
 keyword_principal: "cómo calcular el margen de contribución"

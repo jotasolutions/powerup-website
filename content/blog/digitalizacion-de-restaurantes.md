@@ -2,8 +2,8 @@
 # Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
 title: "Digitalización de restaurantes: qué digitalizar y por dónde empezar"
 slug: "digitalizacion-de-restaurantes"
-seo_title: "Digitalización de restaurantes: por dónde empezar"
-seo_description: "Qué se puede digitalizar en un restaurante, qué dice el estudio de SEGITTUR y Hostelería de España de 2026 y por dónde empezar, con la carta como primer paso."
+seo_title: "Digitalización de restaurantes: qué digitalizar primero"
+seo_description: "Qué digitalizar primero en un restaurante: carta, reservas, cobro, facturación y costes, con datos del estudio de SEGITTUR y Hostelería de España de 2026."
 excerpt: "Digitalizar un restaurante no es comprar herramientas, sino resolver problemas concretos con ellas. Qué áreas se pueden digitalizar, cómo está el sector y por dónde empezar."
 cluster: "carta-digital"
 keyword_principal: "digitalización de restaurantes"
