@@ -83,6 +83,10 @@ export const clusterTextSchema = z.strictObject({
   // The broad term: posts take the more specific searches (unique across posts and themes).
   keyword_principal: text,
   seo_title: text.optional(),
+  // The page heading, when the theme's label alone ("Carta digital") is broader than the search.
+  h1: text.optional(),
+  // The Advisor card between the text and the article list.
+  advisor: z.boolean().default(false),
   draft: z.boolean().default(true),
   faq: z.array(faqItem).min(1).optional(),
 })

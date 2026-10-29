@@ -161,4 +161,4 @@ La gravedad depende de cada caso; por ejemplo, de si hay riesgo para la salud o 
 
 En PowerUp Menu, los alérgenos van en cada plato de la carta digital, y los cambias al momento desde el móvil si cambia un ingrediente. El plan gratis incluye hasta 3 idiomas.
 
-PowerUp Menu no gestiona pedidos ni pagos: el pedido lo sigue tomando el camarero. Si estás eligiendo herramienta, comparamos las opciones del mercado en [las mejores cartas digitales QR en España](/blog/mejores-cartas-digitales-qr), y si quieres ver qué más puedes digitalizar, en [digitalización de restaurantes](/blog/digitalizacion-de-restaurantes).
+PowerUp Menu no gestiona pedidos ni pagos: el pedido lo sigue tomando el camarero. Si estás eligiendo herramienta, en [carta digital para restaurantes](/blog/tema/carta-digital) explicamos qué mirar, y comparamos las opciones del mercado en [las mejores cartas digitales QR en España](/blog/mejores-cartas-digitales-qr), y si quieres ver qué más puedes digitalizar, en [digitalización de restaurantes](/blog/digitalizacion-de-restaurantes).

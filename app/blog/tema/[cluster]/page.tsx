@@ -8,6 +8,7 @@ import { getPostsByCluster } from "@/lib/blog/posts"
 import { renderClusterText } from "@/lib/blog/render"
 import { breadcrumbJsonLd, collectionPageJsonLd, faqPageJsonLd } from "@/lib/blog/structured-data"
 import { cn } from "@/lib/utils"
+import { AdvisorPromoWide } from "../../_components/AdvisorPromo"
 import { Breadcrumbs } from "../../_components/Breadcrumbs"
 import { ClusterChips } from "../../_components/ClusterChips"
 import { FaqSection, GEO_SECTION_IDS } from "../../_components/GeoBlocks"
@@ -61,7 +62,7 @@ export default async function ClusterPage({ params }: Props) {
       <section className="bg-gradient-to-b from-[#F8F0FF] to-[#ECDFF7] pb-10 pt-12 md:pt-14">
         <div className={`${container} flex flex-col gap-5`}>
           <Breadcrumbs items={[{ name: "Blog", path: BLOG_PATH }, { name: cluster.label }]} />
-          <h1 className={pageTitle}>{cluster.label}</h1>
+          <h1 className={pageTitle}>{text?.h1 ?? cluster.label}</h1>
           <p className="max-w-[560px] text-[17px] leading-relaxed text-slate-600">{description}</p>
           <ClusterChips clusters={getClusterPages()} active={cluster.slug} />
         </div>
@@ -69,6 +70,11 @@ export default async function ClusterPage({ params }: Props) {
 
       <div className={`${container} flex flex-col gap-12 pb-16 pt-10`}>
         {text && <div className={cn(styles.prose, "max-w-[720px]")} dangerouslySetInnerHTML={{ __html: text.html }} />}
+        {text?.advisor && (
+          <div className="max-w-[720px]">
+            <AdvisorPromoWide />
+          </div>
+        )}
         <section aria-labelledby="articulos-del-tema" className="flex flex-col gap-3">
           <h2 id="articulos-del-tema" className={sectionTitle}>
             Artículos sobre {cluster.label.toLowerCase()}

@@ -2,7 +2,7 @@
 # Nuevo (plan orgánico LLM, 04-10-2026). Datos de competidores verificados en sus webs el 04-10-2026 (scratchpad competidores_verificados.json, copia en analisis-chatgpt-competidores-datos/). De PowerUp: lo que dice www.powerup.menu/pricing y, sobre alérgenos por plato, la confirmación de Fede del 04-10. Ambra no se pudo verificar (su web no responde) y queda fuera. Revisado y firmado por Fede (04-10-2026). Refrescar precios cada mes.
 title: "Las mejores cartas digitales QR en España (2026): comparativa"
 slug: "mejores-cartas-digitales-qr"
-seo_title: "Mejores cartas digitales QR en España (2026): comparativa"
+seo_title: "Mejores cartas digitales QR y online en España: comparativa 2026"
 seo_description: "Comparamos seis cartas digitales QR para restaurantes en España: precios con fecha, plan gratis, idiomas, alérgenos, reservas y Google."
 excerpt: "Seis cartas digitales QR comparadas con precios consultados en octubre de 2026: qué ofrece gratis cada una, cuánto cuesta el plan de pago y cuál encaja según lo que necesites."
 cluster: "carta-digital"
@@ -79,7 +79,7 @@ Hemos mirado ocho cosas en cada herramienta:
 
 Ordenamos la lista por el primer criterio, porque es el que más nos importa: una carta digital que solo enseña los platos ahorra imprenta, pero una que ayuda a vender más se paga sola. Si tu prioridad es otra (el precio, los pedidos, las reservas), ve directamente a «Cuál elegir según tu caso», más abajo.
 
-## Comparativa rápida
+## Comparativa rápida de cartas digitales online
 
 | Herramienta | Plan gratis | Plan de pago, desde | Idiomas | Alérgenos | Reservas | Google | Pedidos y pagos |
 |---|---|---|---|---|---|---|---|
@@ -177,6 +177,7 @@ Encaja si quieres una carta sencilla, en varios idiomas, sin elegir entre planes
 - **Tienes muchos turistas y necesitas muchos idiomas:** MenuForma (más de 70) o Menuda (16). En PowerUp Menu Pro los idiomas son ilimitados; en el plan gratis, hasta 3.
 - **Quieres la carta al día en Google Maps:** PowerUp Menu Pro o Menuda.
 - **Solo quieres una carta gratis:** WeQR, Menuda o PowerUp Menu, según cuántos idiomas necesites y si te importa la publicidad. Comparamos los planes gratis a fondo en [carta digital QR gratis](/blog/carta-digital-qr-gratis).
+- **Aún no sabes qué necesitas:** empieza por [carta digital para restaurantes](/blog/tema/carta-digital), con los criterios para elegir.
 - **Tienes un restaurante pequeño y poco tiempo:** mira [carta QR para un restaurante pequeño](/blog/carta-qr-restaurante-pequeno), qué necesitas de verdad y cómo tenerla lista en un día.
 
 ## Cinco preguntas antes de contratar

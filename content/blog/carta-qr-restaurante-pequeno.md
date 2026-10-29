@@ -127,7 +127,7 @@ Si quieres ver más herramientas comparadas, mira [las mejores cartas digitales 
 4. **Imprime el QR** y ponlo en cada mesa.
 5. **Pruébalo** con un par de móviles antes de abrir.
 
-Lo explicamos paso a paso en [carta digital con QR: guía completa](/blog/carta-digital-con-qr).
+Lo explicamos paso a paso en [cómo crear una carta digital con QR](/blog/carta-digital-con-qr). Y si quieres comparar más opciones antes de elegir, en [carta digital para restaurantes](/blog/tema/carta-digital) tienes qué mirar en cada una.
 
 ## El QR en la mesa: tamaño y sitio
 

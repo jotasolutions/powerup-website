@@ -81,4 +81,4 @@ La ficha es solo una parte. Qué más hace falta para que Google y las IA como C
 
 ## En resumen
 
-La pestaña «Menú» de tu ficha enseña tu carta antes de que el cliente llegue. Revisa de dónde la saca Google, elige la fuente buena y tenla al día: a mano o sincronizada con tu carta digital. Si todavía dudas entre un PDF y una carta digital, en [carta digital o carta en PDF](/blog/carta-restaurante) comparamos las dos, y en el tema [Carta digital](/blog/tema/carta-digital) tienes el resto de artículos.
+La pestaña «Menú» de tu ficha enseña tu carta antes de que el cliente llegue. Revisa de dónde la saca Google, elige la fuente buena y tenla al día: a mano o sincronizada con tu carta digital. Si todavía dudas entre un PDF y una carta digital, en [carta digital o carta en PDF](/blog/carta-restaurante) comparamos las dos, y en [carta digital para restaurantes](/blog/tema/carta-digital) tienes cómo elegir una y el resto de artículos.

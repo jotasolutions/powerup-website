@@ -58,7 +58,7 @@ fuentes:
 
 eatsQR es una de las cartas digitales con QR más conocidas en España: une la carta con comandas a cocina y un módulo de reservas. Pero no le encaja a todo el mundo. No tiene plan gratis, sus precios de octubre de 2026 son de oferta y algunas cosas, como la analítica de la carta o la conexión con la ficha de Google, no aparecen en su web.
 
-Hemos comparado eatsQR con cinco alternativas, con los datos de sus propias webs consultados el 5 de octubre de 2026. Si buscas el panorama completo, tienes también nuestra [comparativa de las mejores cartas digitales QR](/blog/mejores-cartas-digitales-qr).
+Hemos comparado eatsQR con cinco alternativas, con los datos de sus propias webs consultados el 5 de octubre de 2026. Si buscas el panorama completo, tienes también nuestra [comparativa de las mejores cartas digitales QR](/blog/mejores-cartas-digitales-qr) y qué mirar para elegir en [carta digital para restaurantes](/blog/tema/carta-digital).
 
 **Antes de empezar, un aviso:** esta comparativa la escribe PowerUp Menu, que es una de las alternativas. Por eso explicamos con qué criterios ordenamos, damos los datos de todas y enlazamos las fuentes al final, para que puedas comprobarlo.
 
