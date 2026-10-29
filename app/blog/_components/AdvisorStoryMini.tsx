@@ -7,7 +7,7 @@ import { AdvisorChecklist } from "@/components/landing/AdvisorChecklist"
 import { AdvisorMenuScan } from "@/components/landing/AdvisorMenuScan"
 import { AdvisorProcessSteps } from "@/components/landing/AdvisorProcessSteps"
 import { AdvisorScoreCard } from "@/components/landing/AdvisorScoreCard"
-import { useLocale } from "@/lib/locale"
+import { useLocale, type Locale } from "@/lib/locale"
 import { cn } from "@/lib/utils"
 
 // The home's Advisor story (AdvisorSection) for the blog's promo cards, same pieces and timing:
@@ -18,8 +18,18 @@ const STORY_VIEWPORT = { once: true, amount: 0.45 } as const
 const PHASE_STARTS_MS = [0, 1700, 3400]
 const pop = { duration: 0.5, ease: [0.7, -0.6, 0.32, 1.6] as const }
 
-export function AdvisorStoryMini({ variant, className }: { variant: "full" | "score"; className?: string }) {
-  const copy = advisorCopy[useLocale()].section.story
+// `locale` overrides the address for pages that only know it after hydration (the 404).
+export function AdvisorStoryMini({
+  variant,
+  className,
+  locale,
+}: {
+  variant: "full" | "score"
+  className?: string
+  locale?: Locale
+}) {
+  const pathLocale = useLocale()
+  const copy = advisorCopy[locale ?? pathLocale].section.story
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, STORY_VIEWPORT)
   const prefersReducedMotion = useReducedMotion()
