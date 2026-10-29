@@ -1,7 +1,7 @@
-import { Check } from "lucide-react"
+import { Check, ChevronDown } from "lucide-react"
 import type { FaqItem, Fuente } from "@/lib/blog/schema"
 import styles from "./prose.module.css"
-import { eyebrow } from "./styles"
+import { eyebrow, sectionTitle } from "./styles"
 import { blogUiCopy } from "@/lib/blog/ui-copy"
 import type { Locale } from "@/lib/locale"
 
@@ -35,7 +35,28 @@ export function KeyPoints({ items, locale = "es" }: { items: string[]; locale?: 
   )
 }
 
-export function FaqSection({ items, locale = "es" }: { items: FaqItem[]; locale?: Locale }) {
+export function FaqSection({ items, locale = "es", collapsible = false }: { items: FaqItem[]; locale?: Locale; collapsible?: boolean }) {
+  if (collapsible) {
+    // Folded answers stay in the HTML (and in the FAQPage JSON-LD): only how they show changes.
+    return (
+      <section aria-labelledby={GEO_SECTION_IDS.faq} className="flex flex-col gap-3">
+        <h2 id={GEO_SECTION_IDS.faq} className={sectionTitle}>
+          {blogUiCopy[locale].faq}
+        </h2>
+        <div className="flex flex-col border-t border-border">
+          {items.map((item, index) => (
+            <details key={item.pregunta} open={index === 0} className="group border-b border-border">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 py-4 [&::-webkit-details-marker]:hidden">
+                <h3 className="font-heading text-[17px] font-medium leading-snug text-slate-900">{item.pregunta}</h3>
+                <ChevronDown className="mt-0.5 size-5 shrink-0 text-slate-500 transition-transform group-open:rotate-180" aria-hidden />
+              </summary>
+              <p className="pb-4 leading-relaxed text-slate-700">{item.respuesta}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )
+  }
   return (
     <section aria-labelledby={GEO_SECTION_IDS.faq} className={styles.prose}>
       <h2 id={GEO_SECTION_IDS.faq}>{blogUiCopy[locale].faq}</h2>

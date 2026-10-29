@@ -7,6 +7,12 @@ export const RESERVED_SLUGS: readonly string[] = ["tema", "autor", "md", "feed.x
 const text = z.string().trim().min(1)
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "solo minúsculas sin acentos, números y guiones")
 
+// A blog page, optionally with an anchor ("/blog/mejores-cartas-digitales-qr#cinco-preguntas").
+const blogHref = z.string().regex(/^\/blog\/[a-z0-9/-]+(?:#[a-z0-9-]+)?$/, "enlace interno del blog")
+
+/** The icons a theme's route cards may use; TopicBlocks maps each name to a lucide-react icon. */
+export const TOPIC_ICONS = ["comparar", "precio", "gratis", "qr", "local", "idiomas", "google", "seo", "cambiar"] as const
+
 const faqItem = z.strictObject({ pregunta: text, respuesta: text })
 export type FaqItem = z.infer<typeof faqItem>
 
@@ -89,6 +95,15 @@ export const clusterTextSchema = z.strictObject({
   advisor: z.boolean().default(false),
   draft: z.boolean().default(true),
   faq: z.array(faqItem).min(1).optional(),
+  // Scannable blocks (app/blog/_components/TopicBlocks.tsx). Each one is optional, so a theme
+  // without them keeps the plain layout.
+  respuesta_rapida: z.array(z.strictObject({ etiqueta: text, valor: text })).min(1).optional(),
+  rutas: z.array(z.strictObject({ titulo: text, texto: text, href: blogHref, icono: z.enum(TOPIC_ICONS) })).min(1).optional(),
+  criterios: z.array(z.strictObject({ criterio: text, que_mirar: text, pregunta: text })).min(1).optional(),
+  // A step may link inside the blog with "[texto](/blog/...)"; nothing else is parsed.
+  pasos: z.array(z.strictObject({ texto: text })).min(1).optional(),
+  grupos: z.array(z.strictObject({ titulo: text, slugs: z.array(slug).min(1) })).min(1).optional(),
+  faq_plegable: z.boolean().default(false),
 })
 
 export type ClusterTextFrontmatter = z.infer<typeof clusterTextSchema>
