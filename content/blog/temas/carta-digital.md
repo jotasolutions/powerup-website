@@ -1,5 +1,5 @@
 ---
-# Redactado en la Etapa B (24-09-2026). Revisado por Fede (28-09-2026). Ampliado con B8 (13-10-2026): las búsquedas amplias de «carta digital» caen aquí (254 impresiones en 28 días, posición 10,6), así que la página reparte al lector hacia la guía y las comparativas. Título, descripción y primer párrafo cambiados el 23-10-2026 (OK de Fede): 1.200 impresiones y 1 clic en 28 días, en la posición 8,8; quien busca «carta digital restaurante» quiere elegir herramienta (gratis, precio), y «guía completa» ya es el título de B8. Ampliado el 29-10-2026 (plan aprobado por Fede): H1 con el término completo, tabla de criterios, pasos para elegir, tarjeta del Advisor y dos preguntas de la FAQ formuladas como los huecos R1 y de alérgenos e idiomas del panel de IA del 28-10 (analisis-chatgpt-competidores-datos/2026-10-28/). Search Console: 1.818 impresiones y 1 clic en 28 días, posición 8,5, casi todo «carta digital (para) restaurante(s)». El título y la descripción no se tocan: el cambio del 23-10 se mide el 26-11. Datos de la tabla y la FAQ: B1 y B2, consultados el 04-10-2026.
+# Redactado en la Etapa B (24-09-2026). Revisado por Fede (28-09-2026). Ampliado con B8 (13-10-2026): las búsquedas amplias de «carta digital» caen aquí (254 impresiones en 28 días, posición 10,6), así que la página reparte al lector hacia la guía y las comparativas. Título, descripción y primer párrafo cambiados el 23-10-2026 (OK de Fede): 1.200 impresiones y 1 clic en 28 días, en la posición 8,8; quien busca «carta digital restaurante» quiere elegir herramienta (gratis, precio), y «guía completa» ya es el título de B8. Ampliado el 29-10-2026 (plan aprobado por Fede): H1 con el término completo, tabla de criterios, pasos para elegir, tarjeta del Advisor y dos preguntas de la FAQ formuladas como los huecos R1 y de alérgenos e idiomas del panel de IA del 28-10 (analisis-chatgpt-competidores-datos/2026-10-28/). Search Console: 1.818 impresiones y 1 clic en 28 días, posición 8,5, casi todo «carta digital (para) restaurante(s)». El título y la descripción no se tocan: el cambio del 23-10 se mide el 26-11. Datos de la tabla y la FAQ: B1 y B2, consultados el 04-10-2026. Rediseño para leer y escanear (29-10-2026, PLAN-HUB-REDISENO.md): la tabla, los pasos y las dos listas de enlaces pasan a los campos de abajo con las mismas frases; solo «respuesta_rapida» resume el primer párrafo en tres datos cortos.
 h1: "Carta digital para restaurantes"
 advisor: true
 descripcion: "Qué carta digital elegir para tu restaurante: opciones gratis, cuánto cuesta, las mejores de España comparadas y cómo crearla con código QR, paso a paso."
@@ -21,6 +21,83 @@ faq:
     respuesta: "Depende de lo que necesites. Para vender más desde la carta y saber qué platos se miran, PowerUp Menu; para pagar lo mínimo o tener pedidos online, MenuForma (desde 7,19 € al mes); para reservas, eatsQR o Menuda; para muchos idiomas, MenuForma o Menuda. Lo escribimos en PowerUp Menu, que es una de las herramientas comparadas: en nuestra comparativa de las mejores cartas digitales QR en España están los criterios, los precios y las fuentes, consultados el 4 de octubre de 2026."
   - pregunta: "¿Qué cartas digitales tienen alérgenos y varios idiomas?"
     respuesta: "Las seis que comparamos (PowerUp Menu, MenuForma, eatsQR, Menuda, WeQR y VirtualMenu) muestran los alérgenos de cada plato. En idiomas cambian mucho: MenuForma ofrece más de 70 y Menuda 16 en sus planes de pago, VirtualMenu 6, WeQR hasta 6 en su plan Pro, eatsQR 1, 2 o 10 según el plan, y PowerUp Menu 3 en el plan gratis e ilimitados en el Pro. Datos de la web de cada herramienta, consultados el 4 de octubre de 2026."
+faq_plegable: true
+respuesta_rapida:
+  - etiqueta: "Qué es"
+    valor: "Una web para el móvil que se abre con un QR"
+  - etiqueta: "Cuánto cuesta"
+    valor: "Gratis o de pago desde unos 7 € al mes"
+  - etiqueta: "Qué mirar"
+    valor: "Idiomas, alérgenos, cambios, analítica, Google y precio"
+rutas:
+  - titulo: "Comparar herramientas"
+    texto: "Las mejores cartas digitales QR en España, con precios consultados y fuentes."
+    href: "/blog/mejores-cartas-digitales-qr"
+    icono: "comparar"
+  - titulo: "Saber cuánto vas a pagar"
+    texto: "Cuánto cuesta una carta digital, con IVA, altas y costes ocultos."
+    href: "/blog/cuanto-cuesta-una-carta-digital"
+    icono: "precio"
+  - titulo: "Empezar sin pagar"
+    texto: "Carta digital QR gratis: qué incluye cada plan gratis."
+    href: "/blog/carta-digital-qr-gratis"
+    icono: "gratis"
+  - titulo: "Cómo crear una carta digital con QR"
+    texto: "Paso a paso, qué tamaño dar al código QR y qué tiene que incluir."
+    href: "/blog/carta-digital-con-qr"
+    icono: "qr"
+  - titulo: "Si tu local es pequeño"
+    texto: "Carta QR para un restaurante pequeño: qué necesitas de verdad y cuánto cuesta."
+    href: "/blog/carta-qr-restaurante-pequeno"
+    icono: "local"
+  - titulo: "Cambiar de herramienta"
+    texto: "Alternativas a eatsQR."
+    href: "/blog/alternativas-a-eatsqr"
+    icono: "cambiar"
+  - titulo: "Atender a turistas"
+    texto: "La carta en varios idiomas."
+    href: "/blog/carta-en-varios-idiomas"
+    icono: "idiomas"
+  - titulo: "Aparecer en Google"
+    texto: "La carta en Google Maps."
+    href: "/blog/carta-en-google-maps"
+    icono: "google"
+  - titulo: "Que Google y ChatGPT lean tu carta"
+    texto: "Carta digital y SEO."
+    href: "/blog/carta-digital-y-seo"
+    icono: "seo"
+criterios:
+  - criterio: "Idiomas"
+    que_mirar: "Cuántos entran en el plan que vas a pagar: según la herramienta, van de 1 a más de 70"
+    pregunta: "¿Cuántos idiomas incluye mi plan?"
+  - criterio: "Alérgenos"
+    que_mirar: "Que se marquen en cada plato y cambien cuando cambia la receta"
+    pregunta: "¿Los alérgenos van plato a plato o en una lista aparte?"
+  - criterio: "Cambios al momento"
+    que_mirar: "Precios, platos agotados y menú del día sin reimprimir nada"
+    pregunta: "¿El QR sigue siendo el mismo si cambio la carta?"
+  - criterio: "Analítica"
+    que_mirar: "Qué platos se miran y cuáles se ignoran; algunos planes gratis no la incluyen o la dan básica"
+    pregunta: "¿Qué datos voy a ver de mi carta?"
+  - criterio: "Google"
+    que_mirar: "Que la carta de tu ficha de Google Maps se actualice sola"
+    pregunta: "¿La carta se sincroniza con Google Maps?"
+  - criterio: "Precio"
+    que_mirar: "Gratis con límites o publicidad; 7–15 € al mes una de pago sencilla; 20–50 € una completa; desde 50 € por local si va dentro de un TPV"
+    pregunta: "¿El precio lleva IVA? ¿Es de oferta?"
+pasos:
+  - texto: "Apunta lo que necesitas de verdad: idiomas, alérgenos, reservas, Google o pedidos."
+  - texto: "Descarta las herramientas que no lo incluyen en el plan que vas a pagar. En [la comparativa de cartas digitales QR](/blog/mejores-cartas-digitales-qr) está lo que trae cada una."
+  - texto: "Calcula lo que pagarás al año, con IVA, altas y módulos aparte: lo explicamos en [cuánto cuesta una carta digital](/blog/cuanto-cuesta-una-carta-digital)."
+  - texto: "Antes de contratar, haz [las cinco preguntas](/blog/mejores-cartas-digitales-qr#cinco-preguntas-antes-de-contratar) que evitan sorpresas."
+  - texto: "Prueba la carta en tu móvil, como la verá el cliente, antes de imprimir el QR."
+grupos:
+  - titulo: "Elegir y comparar"
+    slugs: ["mejores-cartas-digitales-qr", "cuanto-cuesta-una-carta-digital", "carta-digital-qr-gratis", "alternativas-a-eatsqr", "alternativas-a-menuforma"]
+  - titulo: "Crear y usar"
+    slugs: ["carta-digital-con-qr", "carta-qr-restaurante-pequeno", "carta-restaurante", "digitalizacion-de-restaurantes"]
+  - titulo: "Ley, idiomas y Google"
+    slugs: ["alergenos-en-la-carta", "carta-en-varios-idiomas", "carta-en-google-maps", "carta-digital-y-seo"]
 ---
 
 Una carta digital es una página web pensada para el móvil que el cliente abre al escanear un código QR, sin instalar nada. Hay planes gratis, con límites o publicidad, y de pago desde unos 7 € al mes.
@@ -39,37 +116,3 @@ No es lo mismo que un PDF detrás de un código QR: se adapta a la pantalla, se 
 
 Todas las cartas digitales se abren con un QR y se ven en el móvil. Lo que las diferencia está en estos seis puntos:
 
-| Criterio | Qué mirar | Qué preguntar |
-|---|---|---|
-| Idiomas | Cuántos entran en el plan que vas a pagar: según la herramienta, van de 1 a más de 70 | ¿Cuántos idiomas incluye mi plan? |
-| Alérgenos | Que se marquen en cada plato y cambien cuando cambia la receta | ¿Los alérgenos van plato a plato o en una lista aparte? |
-| Cambios al momento | Precios, platos agotados y menú del día sin reimprimir nada | ¿El QR sigue siendo el mismo si cambio la carta? |
-| Analítica | Qué platos se miran y cuáles se ignoran; algunos planes gratis no la incluyen o la dan básica | ¿Qué datos voy a ver de mi carta? |
-| Google | Que la carta de tu ficha de Google Maps se actualice sola | ¿La carta se sincroniza con Google Maps? |
-| Precio | Gratis con límites o publicidad; 7–15 € al mes una de pago sencilla; 20–50 € una completa; desde 50 € por local si va dentro de un TPV | ¿El precio lleva IVA? ¿Es de oferta? |
-
-### Los pasos para elegir
-
-1. Apunta lo que necesitas de verdad: idiomas, alérgenos, reservas, Google o pedidos.
-2. Descarta las herramientas que no lo incluyen en el plan que vas a pagar. En [la comparativa de cartas digitales QR](/blog/mejores-cartas-digitales-qr) está lo que trae cada una.
-3. Calcula lo que pagarás al año, con IVA, altas y módulos aparte: lo explicamos en [cuánto cuesta una carta digital](/blog/cuanto-cuesta-una-carta-digital).
-4. Antes de contratar, haz [las cinco preguntas](/blog/mejores-cartas-digitales-qr#cinco-preguntas-antes-de-contratar) que evitan sorpresas.
-5. Prueba la carta en tu móvil, como la verá el cliente, antes de imprimir el QR.
-
-## Por dónde empezar
-
-1. [Cómo crear una carta digital con QR](/blog/carta-digital-con-qr): paso a paso, qué tamaño dar al código QR y qué tiene que incluir.
-2. [Carta digital o carta en PDF](/blog/carta-restaurante): las diferencias y cuándo basta un PDF.
-3. [Digitalización de restaurantes](/blog/digitalizacion-de-restaurantes): qué digitalizar y por dónde empezar.
-4. [Casos prácticos](/blog/tema/casos-practicos): restaurantes que ya han dado el paso.
-
-## Elige según lo que buscas
-
-- **Comparar herramientas:** [las mejores cartas digitales QR en España](/blog/mejores-cartas-digitales-qr), con precios consultados y fuentes.
-- **Saber cuánto vas a pagar:** [cuánto cuesta una carta digital](/blog/cuanto-cuesta-una-carta-digital), con IVA, altas y costes ocultos.
-- **Empezar sin pagar:** [carta digital QR gratis](/blog/carta-digital-qr-gratis), qué incluye cada plan gratis.
-- **Si tu local es pequeño:** [carta QR para un restaurante pequeño](/blog/carta-qr-restaurante-pequeno), qué necesitas de verdad y cuánto cuesta.
-- **Cambiar de herramienta:** [alternativas a eatsQR](/blog/alternativas-a-eatsqr).
-- **Atender a turistas:** [la carta en varios idiomas](/blog/carta-en-varios-idiomas).
-- **Aparecer en Google:** [la carta en Google Maps](/blog/carta-en-google-maps).
-- **Que Google y ChatGPT lean tu carta:** [carta digital y SEO](/blog/carta-digital-y-seo).

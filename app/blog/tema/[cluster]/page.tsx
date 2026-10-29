@@ -7,6 +7,7 @@ import { blogMetadata } from "@/lib/blog/metadata"
 import { getPostsByCluster } from "@/lib/blog/posts"
 import { renderClusterText } from "@/lib/blog/render"
 import { breadcrumbJsonLd, collectionPageJsonLd, faqPageJsonLd } from "@/lib/blog/structured-data"
+import { getTopicBlocks } from "@/lib/blog/topic-blocks"
 import { cn } from "@/lib/utils"
 import { AdvisorPromoWide } from "../../_components/AdvisorPromo"
 import { Breadcrumbs } from "../../_components/Breadcrumbs"
@@ -16,8 +17,11 @@ import { JsonLd } from "../../_components/JsonLd"
 import { PostList } from "../../_components/PostCards"
 import styles from "../../_components/prose.module.css"
 import { container, pageTitle, sectionTitle } from "../../_components/styles"
+import { CriteriaCards, GroupedPosts, QuickAnswer, RouteTiles, StepList, TopicIndex } from "../../_components/TopicBlocks"
 
 type Props = { params: Promise<{ cluster: string }> }
+
+const BLOCK_IDS = { quickAnswer: "respuesta-rapida", routes: "que-buscas", steps: "los-pasos-para-elegir" }
 
 export const dynamicParams = false
 
@@ -46,12 +50,29 @@ export default async function ClusterPage({ params }: Props) {
   if (!cluster) notFound()
 
   const posts = getPostsByCluster(cluster.slug)
-  const text = await renderClusterText(cluster.slug, [GEO_SECTION_IDS.faq, "articulos-del-tema"])
+  const text = await renderClusterText(cluster.slug, [GEO_SECTION_IDS.faq, "articulos-del-tema", ...Object.values(BLOCK_IDS)])
   // In production a cluster page only exists with a finished text, so a missing one here means it
   // failed to render: the page is left out rather than published without its text.
   if (!text && isProductionBuild()) notFound()
   const description = text?.descripcion ?? `Artículos de PowerUp Menu sobre ${cluster.label.toLowerCase()}.`
   const path = clusterPath(cluster.slug)
+  const blocks: Partial<ReturnType<typeof getTopicBlocks>> = text ? getTopicBlocks(cluster.slug, text, posts) : {}
+
+  // The quick answer and the route cards go after the opening paragraph, which stays the first
+  // text on the page (Google shows it as the snippet); the criteria and steps close the text,
+  // under its last heading.
+  const html = text?.html ?? ""
+  const firstHeading = html.indexOf("<h2")
+  const intro = firstHeading === -1 ? html : html.slice(0, firstHeading)
+  const rest = firstHeading === -1 ? "" : html.slice(firstHeading)
+  const lastHeadingId = [...rest.matchAll(/<h2[^>]*\sid="([^"]+)"/g)].at(-1)?.[1]
+  const index = [
+    text?.respuesta_rapida && { id: BLOCK_IDS.quickAnswer, label: "Respuesta rápida" },
+    blocks.rutas?.length && { id: BLOCK_IDS.routes, label: "¿Qué buscas?" },
+    text?.criterios && lastHeadingId && { id: lastHeadingId, label: "Cómo elegir" },
+    blocks.grupos && { id: "articulos-del-tema", label: "Artículos" },
+    text?.faq_plegable && text.faq && { id: GEO_SECTION_IDS.faq, label: "Preguntas" },
+  ].filter((item) => typeof item === "object")
 
   return (
     <>
@@ -65,11 +86,29 @@ export default async function ClusterPage({ params }: Props) {
           <h1 className={pageTitle}>{text?.h1 ?? cluster.label}</h1>
           <p className="max-w-[560px] text-[17px] leading-relaxed text-slate-600">{description}</p>
           <ClusterChips clusters={getClusterPages()} active={cluster.slug} />
+          {index.length > 1 && <TopicIndex items={index} />}
         </div>
       </section>
 
       <div className={`${container} flex flex-col gap-12 pb-16 pt-10`}>
-        {text && <div className={cn(styles.prose, "max-w-[720px]")} dangerouslySetInnerHTML={{ __html: text.html }} />}
+        {intro && <div className={cn(styles.prose, "max-w-[720px]")} dangerouslySetInnerHTML={{ __html: intro }} />}
+        {text?.respuesta_rapida && (
+          <div className="-mt-4 max-w-[720px]">
+            <QuickAnswer id={BLOCK_IDS.quickAnswer} items={text.respuesta_rapida} />
+          </div>
+        )}
+        {blocks.rutas && blocks.rutas.length > 0 && (
+          <div className="max-w-[720px]">
+            <RouteTiles id={BLOCK_IDS.routes} rutas={blocks.rutas} />
+          </div>
+        )}
+        {(rest || text?.criterios || blocks.pasos) && (
+          <div className="flex max-w-[720px] flex-col gap-6">
+            {rest && <div className={styles.prose} dangerouslySetInnerHTML={{ __html: rest }} />}
+            {text?.criterios && <CriteriaCards criterios={text.criterios} />}
+            {blocks.pasos && <StepList id={BLOCK_IDS.steps} pasos={blocks.pasos} />}
+          </div>
+        )}
         {text?.advisor && (
           <div className="max-w-[720px]">
             <AdvisorPromoWide />
@@ -82,11 +121,19 @@ export default async function ClusterPage({ params }: Props) {
           <p className="text-[13px] text-slate-600">
             {posts.length} {posts.length === 1 ? "artículo" : "artículos"}
           </p>
-          {posts.length > 0 ? <PostList posts={posts} /> : <p className="text-slate-600">Todavía no hay artículos en este tema.</p>}
+          {posts.length === 0 ? (
+            <p className="text-slate-600">Todavía no hay artículos en este tema.</p>
+          ) : blocks.grupos ? (
+            <div className="mt-3 max-w-[720px]">
+              <GroupedPosts grupos={blocks.grupos} />
+            </div>
+          ) : (
+            <PostList posts={posts} />
+          )}
         </section>
         {text?.faq && (
           <div className="max-w-[720px]">
-            <FaqSection items={text.faq} />
+            <FaqSection items={text.faq} collapsible={text.faq_plegable} />
           </div>
         )}
       </div>
