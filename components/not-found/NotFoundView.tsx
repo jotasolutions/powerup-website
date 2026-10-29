@@ -76,8 +76,9 @@ export function NotFoundView({ showLogo = false }: { showLogo?: boolean }) {
           </p>
         </div>
 
-        {/* The home's Advisor story (menu scanned, score, improvements) shows what you get before you ask for it. */}
-        <div className="@container w-full">
+        {/* The home's Advisor story (menu scanned, score, improvements) shows what you get before you ask for it.
+            Below lg the card sits under the message, capped so on tablets the animation doesn't fill the screen. */}
+        <div className="@container mx-auto w-full max-w-[540px] lg:max-w-none">
           <GradientFrame className="flex flex-col gap-4 p-3 sm:p-4">
             <AdvisorStoryMini variant="full" locale={locale} />
             <div className="flex flex-col gap-3 px-2 pb-1 sm:px-3">
