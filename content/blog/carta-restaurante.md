@@ -100,4 +100,4 @@ Otra cosa es la carta que enseña tu ficha de Google Maps: de dónde la saca Goo
 
 Si tu carta casi nunca cambia, tus clientes hablan todos el mismo idioma y la carta de papel ya te funciona, un PDF puede bastarte como copia para el móvil. En cuanto cambias precios a menudo, recibes clientes de fuera o quieres saber qué se mira de tu carta, una carta digital te ahorra trabajo.
 
-Si estás pensando en dar el paso, en [la digitalización de restaurantes](/blog/digitalizacion-de-restaurantes) repasamos por dónde empezar. Y en el tema de [carta digital](/blog/tema/carta-digital) tienes todo lo que hemos publicado sobre el tema.
+Si estás pensando en dar el paso, en [la digitalización de restaurantes](/blog/digitalizacion-de-restaurantes) repasamos por dónde empezar. Y en [carta digital para restaurantes](/blog/tema/carta-digital) tienes cómo elegir una y todo lo que hemos publicado sobre el tema.

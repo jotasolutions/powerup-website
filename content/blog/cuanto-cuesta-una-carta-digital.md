@@ -72,7 +72,7 @@ fuentes:
 
 Si buscas una carta digital para tu restaurante, encontrarás precios desde 0 € hasta más de 50 € al mes. La diferencia no siempre se ve en el precio grande: depende de lo que incluye cada plan, de si lleva IVA y de si se cobra por local.
 
-Hemos reunido los precios de 14 herramientas que se usan en España, consultados en sus webs el 4 de octubre de 2026. PowerUp Menu es una de ellas: la nuestra. Si quieres ver las herramientas una a una, tienes nuestra [comparativa de cartas digitales QR](/blog/mejores-cartas-digitales-qr).
+Hemos reunido los precios de 14 herramientas que se usan en España, consultados en sus webs el 4 de octubre de 2026. PowerUp Menu es una de ellas: la nuestra. Si quieres ver las herramientas una a una, tienes nuestra [comparativa de cartas digitales QR](/blog/mejores-cartas-digitales-qr), y si aún no sabes qué necesitas, empieza por [carta digital para restaurantes](/blog/tema/carta-digital).
 
 ## Lo que cuesta, por tipo de carta
 

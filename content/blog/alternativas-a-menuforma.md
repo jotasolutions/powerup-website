@@ -60,7 +60,7 @@ fuentes:
 
 MenuForma es una de las cartas digitales con QR que más aparecen cuando alguien busca una en España: tiene plan gratis con pedidos online y un plan de pago muy barato. Pero no le encaja a todo el mundo. Su plan gratis tiene un solo idioma y muestra su marca, la analítica es de pago y, en Google, se limita a las reseñas.
 
-Hemos comparado MenuForma con cinco alternativas, con los datos de sus propias webs consultados el 13 de octubre de 2026. Si buscas el panorama completo, tienes también nuestra [comparativa de las mejores cartas digitales QR](/blog/mejores-cartas-digitales-qr).
+Hemos comparado MenuForma con cinco alternativas, con los datos de sus propias webs consultados el 13 de octubre de 2026. Si buscas el panorama completo, tienes también nuestra [comparativa de las mejores cartas digitales QR](/blog/mejores-cartas-digitales-qr) y qué mirar para elegir en [carta digital para restaurantes](/blog/tema/carta-digital).
 
 **Antes de empezar, un aviso:** esta comparativa la escribe PowerUp Menu, que es una de las alternativas. Por eso explicamos con qué criterios ordenamos, damos los datos de todas y enlazamos las fuentes al final, para que puedas comprobarlo.
 

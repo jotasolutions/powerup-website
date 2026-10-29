@@ -1,17 +1,17 @@
 ---
 # Nuevo (plan orgánico LLM, B8, miniplan aprobado el 13-10-2026). Índice sacado de las consultas reales de Search Console (rutina-blog/2026-10-12-search-console.md). Fuentes verificadas el 13-10-2026 (analisis-chatgpt-competidores-datos/fuentes_b8_2026-10-13.json): la información oral de alérgenos está en el art. 6.5 del RD 126/2015, no en el 4; el contraste del QR no tiene fuente y va sin cifra. De PowerUp: lib/llms.ts, la home y /pricing; alérgenos por plato, confirmados por Fede el 04-10. Revisado y firmado por Fede (13-10-2026).
-title: "Carta digital con QR: guía completa (2026)"
+title: "Cómo crear una carta digital con QR, paso a paso (2026)"
 slug: "carta-digital-con-qr"
-seo_title: "Carta digital con QR: guía completa (2026)"
+seo_title: "Cómo crear una carta digital con QR, paso a paso (2026)"
 seo_description: "Cómo hacer la carta digital con QR de tu restaurante en 2026: pasos, qué tamaño dar al código, qué debe incluir (idiomas, alérgenos), precio y errores."
 excerpt: "Todo lo que necesitas para pasar la carta del restaurante a un código QR: cómo hacerla paso a paso, qué tamaño dar al código, qué tiene que incluir y cuánto cuesta."
 cluster: "carta-digital"
-keyword_principal: "carta digital con QR"
+keyword_principal: "crear carta digital con QR"
 content_strategy: "llm-first"
 destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2026-10-13
-fecha_modificacion: 2026-10-13
+fecha_modificacion: 2026-10-29
 autor: "powerup-menu"
 draft: false
 revisado_por: "federico-bello"
@@ -139,5 +139,7 @@ PowerUp Menu no gestiona pedidos ni pagos: el pedido lo sigue tomando el camarer
 - **Alérgenos sin revisar** después de cambiar un ingrediente o un proveedor.
 - **Traducciones automáticas sin repasar** en los platos típicos.
 - **Olvidar la carta de papel** para quien la pida: no todos los clientes quieren usar el móvil.
+
+Si todavía no has elegido herramienta, en [carta digital para restaurantes](/blog/tema/carta-digital) tienes qué mirar en cada una y cuánto cuesta.
 
 Para dar el siguiente paso, en [digitalización de restaurantes](/blog/digitalizacion-de-restaurantes) explicamos qué más digitalizar y por dónde empezar.
