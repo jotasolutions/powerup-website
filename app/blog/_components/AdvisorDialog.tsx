@@ -68,14 +68,27 @@ export function AdvisorDialogProvider({ children }: { children: ReactNode }) {
   )
 }
 
-export function AdvisorTrigger({ className, children }: { className?: string; children: ReactNode }) {
+export function AdvisorTrigger({
+  className,
+  children,
+  location = "blog",
+  onOpen,
+}: {
+  className?: string
+  children: ReactNode
+  location?: string
+  onOpen?: () => void
+}) {
   const openAdvisor = useContext(OpenAdvisorContext)
   return (
     <button
       type="button"
-      onClick={openAdvisor}
+      onClick={() => {
+        onOpen?.()
+        openAdvisor()
+      }}
       className={className}
-      {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, { label: "advisor", location: "blog" })}
+      {...trackAttrs(ANALYTICS_EVENTS.NAV_CLICK, { label: "advisor", location })}
     >
       {children}
     </button>

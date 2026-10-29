@@ -100,14 +100,14 @@ donde pasa el evento: la de la web o la del blog.
 | `page_view` | Abre o cambia de página, también sin recarga | `AnalyticsListener`, en cada cambio de ruta o de parámetros | `page_location`, `page_title` | Su parte | `PageView` (`page_path`, `eventID`) | No |
 | `sign_up_click` | Pulsa un botón de alta | `CTAButton` (casi todas las secciones), `NavMenu` (`nav_desktop`, `nav_mobile`), y `SignUpTextLink` y `PostCta` en el blog (`blog`) | `location`, `event_label`, `link_url`, `link_text` | Su parte; si pasa en el blog, también la web | `Lead` (`content_name` = etiqueta, `content_category` = enlace completo) | No |
 | `login_click` | Pulsa «Login» | `NavMenu` | Los mismos cuatro datos | Su parte | — | No |
-| `nav_click` | Usa el menú («Evalúa tu carta», «Página web», «Precios») o el pie («Blog», «Términos y condiciones», «Política de privacidad»), pulsa «Más información de la web» en la home, o «Analizar mi carta» en el blog (`label: advisor`) | `NavMenu`, `FooterSection`, `WebsiteSection` y `app/blog/_components/AdvisorDialog.tsx` | Los mismos cuatro datos | Su parte | — | No |
+| `nav_click` | Usa el menú («Evalúa tu carta», «Página web», «Precios») o el pie («Blog», «Términos y condiciones», «Política de privacidad»), pulsa «Más información de la web» en la home, o «Analizar mi carta» en el blog y en la página 404 (`label: advisor`) | `NavMenu`, `FooterSection`, `WebsiteSection` y `app/blog/_components/AdvisorDialog.tsx` (también desde `components/not-found/NotFoundView.tsx`) | Los mismos cuatro datos | Su parte | — | No |
 | `logo_click` | Pulsa el logo | `NavMenu` (`location: nav`) | Los mismos cuatro datos | Su parte | — | No |
 | `outbound_click` | Sale a otra web por un enlace marcado | Testimonios (Trustpilot, Google Maps y cartas de clientes), «Pregúntame» (antes «Pregúntanos») de las preguntas frecuentes de la home (WhatsApp, `label: whatsapp`), la burbuja flotante de WhatsApp (`label: whatsapp`, `location: burbuja`, ver `docs/burbuja-whatsapp.md`), «Ver ejemplo» de `/pagina-web`, y en el blog Maestro, la prensa y los enlaces a Maestro dentro de los artículos (`lib/blog/markdown.ts`) | Los mismos cuatro datos | Su parte | — | No |
 | `example_menu_click` | Pulsa «Ver carta de ejemplo» | El hero de la home y el recuadro de los artículos | Los mismos cuatro datos | Su parte | — | No |
 | `menu_showcase_click` | Pulsa «Ver carta» en el carrusel de la home | `MenuShowcaseSection` (`menu_showcase`) | Los mismos cuatro datos | Web | — | No |
 | `menu_showcase_slide` | Cambia de diapositiva en el carrusel de la home. **También sale al cargar la home**, aunque nadie lo toque | `ShowcaseCarousel` | `location`; no llegan `slide_index` ni `menu_url` | Web | — | No |
 | `section_view` | Ve una sección: al menos el 35 % entra en pantalla. Si la sección mide más de unas tres pantallas, eso no puede pasar, y cuenta cuando ocupa al menos media pantalla. Una vez por sección y página | `AnalyticsListener`, en los elementos con `data-track-section`: un `SectionContainer` con `id`, y el hero | `section_name` | Su parte | — | No |
-| `advisor_step_1_complete` | Completa el paso 1 del Advisor: elige su restaurante y sube archivos | `components/AdvisorWidget.tsx`, en la home (`#advisor`) y en el diálogo del blog | `location` (`advisor`); no llegan `restaurant_name` ni `files_count` | Su parte; si pasa en el blog, también la web | — | No |
+| `advisor_step_1_complete` | Completa el paso 1 del Advisor: elige su restaurante y sube archivos | `components/AdvisorWidget.tsx`, en la home (`#advisor`) y en el diálogo del blog y de la página 404 | `location` (`advisor`); no llegan `restaurant_name` ni `files_count` | Su parte; si pasa en el blog, también la web | — | No |
 | `generate_lead` | Envía el paso 2 del Advisor (nombre, email, teléfono y rol) y el envío sale bien | `AdvisorWidget` | `location` y `form_name` (los dos `advisor`); no llegan `restaurant_name` ni `role` | Su parte; si pasa en el blog, también la web | — | **Sí**, en las dos propiedades |
 | `cookie_settings_open` | Abre «Cookies» en el pie | `components/CookieSettingsLink.tsx` | `location` (`footer`) | Su parte | — | No |
 | `pricing_billing_tab_click` | Cambia entre pago anual y mensual | `components/landing/PricingCards.tsx` | `billing_period`, `event_label`, `location` (`pricing`) | Su parte | — | No |
@@ -153,6 +153,9 @@ Salen del código y los comprobé en las páginas publicadas el 30-09.
   - en las dos, además: `menu_showcase`, `como-funciona`, `testimonials`, `testimonials_carousel`
     y `prueba-gratis`;
 - blog: `blog`.
+- página 404 (cualquier dirección que no existe, también bajo `/blog` e `/it`): `not_found`, en
+  «Analizar mi carta». Su `page_title` es siempre «Página no encontrada · PowerUp Menu» (en `/it`,
+  «Pagina non trovata · PowerUp Menu»), así que todas las 404 se filtran por título.
 
 Una sección hecha con `SectionContainer id="…"` pasa su `id` como `location` a los botones que
 contiene. Por eso muchos valores coinciden con los de `section_name`.

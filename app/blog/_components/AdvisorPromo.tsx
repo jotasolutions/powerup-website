@@ -7,7 +7,7 @@ import { buttonAdvisor, eyebrow } from "./styles"
 import { blogUiCopy } from "@/lib/blog/ui-copy"
 import type { Locale } from "@/lib/locale"
 
-function GradientFrame({ className, children }: { className?: string; children: React.ReactNode }) {
+export function GradientFrame({ className, children }: { className?: string; children: React.ReactNode }) {
   return (
     <div className="rounded-[24px] bg-gradient-to-b from-[#92E0B8] to-white p-[3px] shadow-xl">
       <div className={cn("h-full rounded-[21px] bg-[linear-gradient(180deg,#DFFFEA,#FFFFFF_60%,#FFFFFF)]", className)}>{children}</div>
