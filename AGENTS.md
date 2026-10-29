@@ -47,4 +47,5 @@
 - GTM routes everything under `/blog` to the blog GA4 property (variable `js.seccion`).
 - AI sessions never log into GTM, Google Analytics or Meta. They prepare an import file from a fresh export, and Fede publishes it.
 - Never send personal data in event params. Update the measurement map in the same PR as any tracking change.
+- Some pages are part of running SEO and AI-visibility experiments (which pages ChatGPT and Perplexity cite, titles whose clicks are being measured). Before changing a blog page, its title or description, or a page's SEO, check Fede's Notion «Campañas y experimentos» if you have access. If the change touches a measured page, say so in the plan or PR.
 - The floating WhatsApp bubble (`components/landing/WhatsAppBubble.tsx`) is described in `docs/burbuja-whatsapp.md` (in Spanish), including why it never opens by itself. Read it before changing the bubble, and keep it in sync.
