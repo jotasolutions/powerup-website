@@ -19,7 +19,7 @@ import { FaqSection, GEO_SECTION_IDS } from "../../_components/GeoBlocks"
 import { JsonLd } from "../../_components/JsonLd"
 import { PostList } from "../../_components/PostCards"
 import styles from "../../_components/prose.module.css"
-import { buttonPrimary, buttonSecondary, container, eyebrow, pageTitle, sectionTitle } from "../../_components/styles"
+import { buttonAdvisor, buttonPrimary, buttonSecondary, container, eyebrow, pageTitle, sectionTitle } from "../../_components/styles"
 import { TableOfContents } from "../../_components/TableOfContents"
 import {
   CriteriaCards,
@@ -111,17 +111,19 @@ export default async function ClusterPage({ params }: Props) {
                 </p>
                 <h1 className={pageTitle}>{heading}</h1>
                 <p className="text-lg leading-relaxed text-slate-600">{description}</p>
+                {/* The Advisor is the main action when the theme shows it, in its own green as
+                    everywhere on the blog; the first route card is the secondary one. */}
                 <div className="flex flex-wrap gap-3 pt-1">
-                  <Link href={firstRoute.href} className={buttonPrimary}>
-                    {firstRoute.titulo}
-                    <ArrowRight />
-                  </Link>
                   {text.advisor && (
-                    <AdvisorTrigger className={buttonSecondary}>
+                    <AdvisorTrigger className={buttonAdvisor}>
                       <QrCode />
                       Analizar mi carta
                     </AdvisorTrigger>
                   )}
+                  <Link href={firstRoute.href} className={text.advisor ? buttonSecondary : buttonPrimary}>
+                    {firstRoute.titulo}
+                    <ArrowRight />
+                  </Link>
                 </div>
               </div>
               {covers.length > 0 && <HeroCovers posts={covers} />}
