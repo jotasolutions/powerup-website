@@ -2,8 +2,9 @@ import { ArrowLeftRight, Euro, Gift, Languages, MapPin, QrCode, Scale, Search, S
 import Link from "next/link"
 import { Fragment, type ReactNode } from "react"
 import type { ClusterTextFrontmatter, TOPIC_ICONS } from "@/lib/blog/schema"
-import { postPath } from "@/lib/blog/config"
+import type { Post } from "@/lib/blog/posts"
 import { INLINE_LINK, type PostGroup } from "@/lib/blog/topic-blocks"
+import { PostGrid, PostThumb } from "./PostCards"
 import { sectionTitle } from "./styles"
 
 // The scannable blocks of a theme page: the same words as the text, laid out to be skimmed.
@@ -140,28 +141,40 @@ export function StepList({ id, pasos }: { id: string; pasos: { texto: string }[]
   )
 }
 
+/** One row of article cards per group, with the blog's usual cards (scroller on phones, grid from md). */
 export function GroupedPosts({ grupos }: { grupos: PostGroup[] }) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-10">
       {grupos.map((grupo) => (
-        <section key={grupo.titulo} className="flex flex-col gap-1">
-          <h3 className="text-sm font-semibold text-slate-600">
-            {grupo.titulo} <span className="font-normal text-slate-500">· {grupo.posts.length}</span>
+        <section key={grupo.titulo} className="flex flex-col gap-4">
+          <h3 className="font-heading text-xl font-medium text-slate-900">
+            {grupo.titulo} <span className="text-base font-normal text-slate-500">· {grupo.posts.length}</span>
           </h3>
-          <ul className="flex flex-col">
-            {grupo.posts.map((post) => (
-              <li key={post.slug}>
-                <Link href={postPath(post.slug)} className="group flex flex-col gap-0.5 border-b border-border py-3">
-                  <span className="font-heading text-[17px] font-medium leading-snug text-slate-900 group-hover:text-primary">
-                    {post.title}
-                  </span>
-                  <span className="line-clamp-1 text-sm text-slate-600">{post.excerpt}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <PostGrid posts={grupo.posts} compact />
         </section>
       ))}
+    </div>
+  )
+}
+
+/** Three of the theme's covers, fanned out beside the hero text. Decorative: the cards below link them. */
+export function HeroCovers({ posts }: { posts: Post[] }) {
+  const [front, left, right] = posts
+  const thumb = "aspect-[4/3] rounded-[20px] shadow-xl ring-1 ring-black/5"
+  return (
+    <div aria-hidden className="relative mx-auto hidden aspect-[6/5] w-full max-w-[460px] sm:block">
+      {left && (
+        <PostThumb post={left} className={`${thumb} absolute left-0 top-[18%] w-[56%] -rotate-6`} sizes="260px" />
+      )}
+      {right && (
+        <PostThumb post={right} className={`${thumb} absolute right-0 top-[24%] w-[56%] rotate-6`} sizes="260px" />
+      )}
+      <PostThumb
+        post={front}
+        className={`${thumb} absolute left-1/2 top-0 z-10 w-[64%] -translate-x-1/2`}
+        sizes="300px"
+        priority
+      />
     </div>
   )
 }
