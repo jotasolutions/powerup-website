@@ -22,7 +22,7 @@ import styles from "../../_components/prose.module.css"
 import { buttonAdvisor, buttonPrimary, buttonSecondary, container, eyebrow, pageTitle, sectionTitle } from "../../_components/styles"
 import { TableOfContents } from "../../_components/TableOfContents"
 import {
-  CriteriaCards,
+  CriteriaTable,
   GroupedPosts,
   HeroCovers,
   QuickAnswer,
@@ -149,7 +149,7 @@ export default async function ClusterPage({ params }: Props) {
             <RouteTiles id={BLOCK_IDS.routes} rutas={blocks.rutas} />
             <div className="flex flex-col gap-6">
               {rest && <div className={styles.prose} dangerouslySetInnerHTML={{ __html: rest }} />}
-              {text.criterios && <CriteriaCards criterios={text.criterios} />}
+              {text.criterios && <CriteriaTable criterios={text.criterios} />}
               {blocks.pasos && <StepList id={BLOCK_IDS.steps} pasos={blocks.pasos} />}
             </div>
             {text.advisor && (

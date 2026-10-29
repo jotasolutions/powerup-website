@@ -87,17 +87,46 @@ export function RouteTiles({ id, rutas }: { id: string; rutas: NonNullable<Clust
   )
 }
 
-export function CriteriaCards({ criterios }: { criterios: NonNullable<ClusterTextFrontmatter["criterios"]> }) {
+/**
+ * A real table, so search engines and AI assistants read it as rows and columns. From md up it
+ * looks like a table; below md only the CSS changes, turning each row into a card.
+ */
+export function CriteriaTable({ criterios }: { criterios: NonNullable<ClusterTextFrontmatter["criterios"]> }) {
+  const cell = "px-4 py-3.5 align-top max-md:p-0"
   return (
-    <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
-      {criterios.map((item) => (
-        <li key={item.criterio} className={`${card} flex flex-col gap-1.5 p-4`}>
-          <h3 className="font-heading text-[17px] font-medium text-slate-900">{item.criterio}</h3>
-          <p className="text-sm leading-relaxed text-slate-600">{item.que_mirar}</p>
-          <p className="mt-auto border-t border-border pt-2 text-sm font-medium text-primary">{item.pregunta}</p>
-        </li>
-      ))}
-    </ul>
+    <div className="overflow-hidden rounded-2xl border border-border max-md:overflow-visible max-md:rounded-none max-md:border-0">
+      <table className="w-full border-collapse text-left text-sm max-md:block">
+        <thead className="bg-secondary text-[13px] text-slate-600 max-md:hidden">
+          <tr>
+            <th scope="col" className="w-[22%] px-4 py-3 font-semibold">
+              Criterio
+            </th>
+            <th scope="col" className="px-4 py-3 font-semibold">
+              Qué mirar
+            </th>
+            <th scope="col" className="w-[34%] px-4 py-3 font-semibold">
+              Qué preguntar
+            </th>
+          </tr>
+        </thead>
+        <tbody className="max-md:flex max-md:flex-col max-md:gap-3">
+          {criterios.map((item) => (
+            <tr
+              key={item.criterio}
+              className={`border-t border-border max-md:flex max-md:flex-col max-md:gap-1.5 max-md:p-4 ${card} md:rounded-none md:border-x-0 md:border-b-0 md:bg-transparent`}
+            >
+              <th scope="row" className={`${cell} font-heading text-[15px] font-medium text-slate-900 max-md:text-[17px]`}>
+                {item.criterio}
+              </th>
+              <td className={`${cell} leading-relaxed text-slate-600`}>{item.que_mirar}</td>
+              <td className={`${cell} font-medium text-primary max-md:mt-1 max-md:border-t max-md:border-border max-md:pt-2`}>
+                {item.pregunta}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
