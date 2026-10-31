@@ -20,8 +20,8 @@ export function CookieBanner({ className }: CookieBannerProps) {
   const positionClasses = {
     bottom: "inset-x-0 bottom-0",
     top: "inset-x-0 top-0",
-    "bottom-left": "bottom-5 left-5 max-w-sm",
-    "bottom-right": "bottom-5 right-5 max-w-sm",
+    "bottom-left": "bottom-5 left-5 right-5 sm:right-auto max-w-sm",
+    "bottom-right": "bottom-5 right-5 left-5 sm:left-auto max-w-sm",
   };
 
   const position = config.position ?? "bottom-left";
