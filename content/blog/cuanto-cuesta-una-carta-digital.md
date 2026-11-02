@@ -11,7 +11,7 @@ content_strategy: "llm-first"
 destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2026-10-04
-fecha_modificacion: 2026-10-04
+fecha_modificacion: 2026-11-02
 autor: "powerup-menu"
 revisado_por: "federico-bello"
 draft: false
@@ -80,7 +80,7 @@ Hemos reunido los precios de 14 herramientas que se usan en España, consultados
 |---|---|---|---|
 | PDF con QR | De 0 € a unos 20 € al año | La carta de siempre, en PDF, detrás de un QR | Un generador de QR gratuito; CartaMóvil: 19,99 € al año |
 | Carta digital gratis | 0 € | Carta adaptada al móvil, con límites de idiomas o de platos, o con publicidad | PowerUp Menu Free, MenuForma, WeQR Lite, Menuda Free, BuenaCarta |
-| Carta de pago sencilla | De 7 a 15 € al mes | Sin publicidad, más idiomas, cambios al momento | MenuForma: 7,19-8,99 €; BuenaCarta: 8,95-12,95 €; VirtualMenu: 12 €; MiCartaYa: 12 € + IVA; FlexFood Carta: 15 € + IVA |
+| Carta de pago sencilla | De 7 a 15 € al mes | Sin publicidad, más idiomas, cambios al momento | MenuForma: 7,19-8,99 €; BuenaCarta: 8,95-12,95 € (y 1,99 € solo para quitar la publicidad); VirtualMenu: 12 €; MiCartaYa: 12 € + IVA; FlexFood Carta: 15 € + IVA |
 | Carta de pago completa | De 20 a 50 € al mes | Idiomas ilimitados o muchos, analítica, conexión con Google, reservas o web propia | PowerUp Menu Pro: 22,49-24,90 € + IVA; Menuda: 24 € con IVA; Encarta Digital: 25 € con IVA; WeQR Pro: 29 € + IVA; CartaQR Pro: 50 € + IVA |
 | Carta dentro de un TPV | Desde 50 € al mes por local, más la instalación | Carta, pedidos, sala, cocina y cobro en un mismo sistema | Last.app: desde 50 € + IVA al mes por local, facturado al año, y 500 € + IVA de instalación |
 
@@ -99,7 +99,7 @@ Hemos reunido los precios de 14 herramientas que se usan en España, consultados
 
 1. **El IVA.** Unas webs dan el precio con IVA y otras sin él. Con el 21 %, 24,90 € + IVA son 30,13 € al mes, y 24 € con IVA son 24 €.
 2. **El precio por local.** Last.app y FlexFood cobran por cada local. WeQR tiene un plan para dos locales (Pro Duo, 49 € + IVA al mes) y cobra 29 € + IVA por cada local más.
-3. **La instalación o el alta.** Last.app cobra 500 € + IVA de instalación. BuenaCarta cobra 79 € + IVA si te dan de alta ellos los platos. En PowerUp Menu, si tu carta es compleja, el equipo la monta sin coste.
+3. **La instalación o el alta.** Last.app cobra 500 € + IVA de instalación. En PowerUp Menu, si tu carta es compleja, el equipo la monta sin coste.
 4. **Los módulos aparte.** MiCartaYa cobra los vídeos (+25 € al mes), los pedidos con impresora (+15 €), la IA (+15 €) y los alérgenos con IA (+10 €) aparte de su precio base de 12 €. CartaMóvil cobra aparte las reservas (60 € al año) o el comandero (129 € al año).
 5. **Los precios de oferta.** eatsQR muestra en octubre de 2026 precios de oferta para nuevos restaurantes, con el precio anterior tachado. Pregunta cuánto pagarás cuando acabe.
 6. **La publicidad del plan gratis.** BuenaCarta, GetFreeMenu y PowerUp Menu Free muestran publicidad en su plan gratuito. Si no quieres anuncios en tu carta, cuenta con un plan de pago. Qué incluye cada plan gratis, en [carta digital QR gratis](/blog/carta-digital-qr-gratis).
