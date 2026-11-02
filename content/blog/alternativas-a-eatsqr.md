@@ -11,7 +11,7 @@ content_strategy: "llm-first"
 destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2026-10-05
-fecha_modificacion: 2026-10-05
+fecha_modificacion: 2026-11-02
 autor: "powerup-menu"
 draft: false
 revisado_por: "federico-bello"
@@ -34,7 +34,7 @@ faq:
   - pregunta: "¿Cuánto cuesta eatsQR?"
     respuesta: "El 5 de octubre de 2026, su plan Estándar costaba 12,95 € al mes (9,95 € al mes con pago anual), el Pro 19,95 € (15,95 €) y el Premium 29,90 € (24,90 €). Son precios de oferta para nuevos restaurantes, y la web no indica si llevan IVA. Las reservas son un módulo aparte de 54 €, también de oferta."
   - pregunta: "¿Qué pasa cuando se acaba la oferta de eatsQR?"
-    respuesta: "Su web dice que el precio de lanzamiento dura mientras queden plazas y que, cuando se completen, se aplica la tarifa normal, pero no dice cuál es. Muestra tachados como precio anterior 19,45 €, 34,95 € y 59,90 € al mes. Pregúntales cuánto pagarás después antes de contratar."
+    respuesta: "Su web dice que el precio de lanzamiento dura mientras queden plazas y que, cuando se completen, se aplica la tarifa normal, pero no dice cuál es. Con pago anual, muestra tachados como precio anterior 14,95 €, 27,95 € y 49,95 € al mes (consultado el 2 de noviembre de 2026). Pregúntales cuánto pagarás después antes de contratar."
   - pregunta: "¿Alguna alternativa toma pedidos desde la mesa?"
     respuesta: "MenuForma incluye pedidos online en su plan gratis y añade pagos online en el plan Regular. MiCartaYa los ofrece como módulo, por 15 € al mes + IVA. eatsQR incluye comandas a cocina en el precio de la carta. PowerUp Menu no gestiona pedidos ni pagos: el pedido lo toma el camarero."
   - pregunta: "¿Cuánto cuesta PowerUp Menu?"
@@ -76,7 +76,7 @@ Hemos comparado eatsQR con cinco alternativas, con los datos de sus propias webs
 Estos son los motivos más habituales, todos comprobados en su web el 5 de octubre de 2026:
 
 1. **No tiene plan gratis.** Ofrece 14 días de prueba sin tarjeta. Después, hay que pagar.
-2. **Los precios son de oferta.** La web anuncia una «oferta limitada» para 500 nuevos restaurantes y dice que, cuando se completen las plazas, se aplica la tarifa normal, sin decir cuál es. Como precio anterior muestra tachados 19,45 €, 34,95 € y 59,90 € al mes.
+2. **Los precios son de oferta.** La web anuncia una «oferta limitada» para 500 nuevos restaurantes y dice que, cuando se completen las plazas, se aplica la tarifa normal, sin decir cuál es. Con pago anual, muestra tachados como precio anterior 14,95 €, 27,95 € y 49,95 € al mes (consultado el 2 de noviembre de 2026).
 3. **No indica si el precio lleva IVA.** Con el 21 %, la diferencia se nota.
 4. **Los idiomas van por plan.** Si tienes turistas y necesitas más de 2 idiomas, tienes que ir al Premium.
 5. **No habla de analítica de la carta.** Su web no menciona qué platos se miran ni cuáles pasan desapercibidos; los informes que cita son de ocupación y cancelaciones de reservas.

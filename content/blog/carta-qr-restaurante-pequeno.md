@@ -11,7 +11,7 @@ content_strategy: "llm-first"
 destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2026-10-26
-fecha_modificacion: 2026-10-26
+fecha_modificacion: 2026-11-02
 autor: "powerup-menu"
 draft: false
 revisado_por: "federico-bello"
@@ -102,7 +102,7 @@ Estas son las herramientas que suelen salir cuando se pregunta por una carta QR 
 | Herramienta | Plan gratis | De pago, desde | Idiomas | Alérgenos |
 |---|---|---|---|---|
 | PowerUp Menu | Sí, para siempre (con publicidad del sector) | 24,90 €/mes + IVA, o 269,90 €/año + IVA | Hasta 3 gratis; más en Pro | Por plato |
-| MenuForma | Sí: 1 restaurante, 1 idioma | 8,81 €/mes (IVA no indicado) | 1 gratis; más de pago | Por plato, las 14 categorías |
+| MenuForma | Sí: 1 restaurante, 1 idioma | 8,99 €/mes (IVA no indicado) | 1 gratis; más de pago | Por plato, las 14 categorías |
 | eatsQR | No: 14 días de prueba | 9,95 €/mes en oferta, facturado al año (IVA no indicado) | 1 en el plan Estándar | Filtrado de alérgenos |
 | MiCartaYa | No lo indica | 12 €/mes + IVA | 16 | 14 alérgenos por plato |
 | CartaMóvil | No lo indica | 19,99 €/año (PDF con QR) | Español e inglés en los planes dinámicos | En los planes dinámicos |
