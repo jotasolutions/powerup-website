@@ -147,7 +147,7 @@ WeQR destaca por un plan gratis sin límite de platos ni de escaneos.
 - **Pro:** dominio propio y análisis avanzados.
 - **Pago en mesa:** lo anuncia como «próximamente».
 
-**Dónde no encaja:** su plan gratis tiene el mismo único idioma que MenuForma, y su web no habla de reservas ni de Google.
+**Dónde no encaja:** su plan gratis tiene el mismo único idioma que MenuForma, y su web no habla de reservas ni de Google. Si dudas entre las dos, lo comparamos en [alternativas a WeQR](/blog/alternativas-a-weqr).
 
 ## 5. VirtualMenu: un solo plan, sin complicaciones
 

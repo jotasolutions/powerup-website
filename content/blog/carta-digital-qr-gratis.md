@@ -118,7 +118,7 @@ Si un día quieres más, el plan Pro (24,90 € al mes + IVA, o 22,49 € al mes
 - **Límites:** 1 local, 1 usuario y hasta 2 menús, con platos y escaneos ilimitados.
 - **Sin tarjeta ni permanencia.**
 
-**Dónde no encaja:** si necesitas varios idiomas o análisis avanzados, que están en su plan Pro (29 € al mes + IVA).
+**Dónde no encaja:** si necesitas varios idiomas o análisis avanzados, que están en su plan Pro (29 € al mes + IVA). Si ya usas WeQR y se te queda corto, mira [alternativas a WeQR](/blog/alternativas-a-weqr).
 
 ## Las que parecen gratis pero son una prueba
 
