@@ -55,8 +55,8 @@ Llaman la atención, pero no convencen. Aquí el sitio en la carta no es el prob
 Para comparar platos, divide los pedidos de cada uno entre las veces que se miró. No es una cifra exacta, porque hay quien pide sin mirar la carta en el móvil, pero sirve para comparar platos entre sí y semana a semana.
 
 <figure>
-<img src="/blog/figuras/que-mirar-cada-lunes/miradas-y-pedidos.svg" width="560" height="452" alt="Matriz con los platos según cuánto se miran en la carta digital y cuánto se piden. Si se mira y se pide, funciona y se mantiene; si se mira mucho y se pide poco, no convence y hay que revisar su descripción, su foto y su precio; si se pide sin que se mire, se vende solo; y si ni se mira ni se pide, pasa desapercibido y se mueve o se retira según su margen.">
-<figcaption>Cruzar lo que se mira con lo que se pide dice en qué punto se queda cada plato.</figcaption>
+<img src="/blog/figuras/que-mirar-cada-lunes/miradas-y-pedidos.svg" width="560" height="484" alt="Matriz con los platos según cuánto se miran en la carta digital y cuánto se piden. Si se mira y se pide, funciona y se mantiene; si se mira mucho y se pide poco, no convence y hay que revisar su descripción, su foto y su precio; si se pide sin que se mire, se vende solo; y si ni se mira ni se pide, pasa desapercibido y se mueve o se retira según su margen.">
+<figcaption>Cruzar lo que se mira con lo que se pide dice en qué punto se queda cada plato. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## 2. ¿Qué no mira casi nadie?

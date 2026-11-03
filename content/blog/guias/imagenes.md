@@ -77,6 +77,14 @@ dice, sin cambiar ninguna palabra.
   del sistema. Tampoco carga otros archivos: una imagen dentro de un SVG va en base64.
 - Peso: los SVG, por debajo de 50 KB. Lo que lleve fotos o capturas va en JPEG, hasta unos
   130 KB.
+- Logo: toda figura SVG propia lleva el logo de la web (`public/images/powerup-logo.png`) abajo a
+  la derecha, en una franja de 32 px que se añade debajo de la figura. Así, si alguien copia la
+  figura, la marca va con ella. Fede lo aprobó el 03-11-2026.
+  - El fondo de la figura se alarga esos 32 px y el `height` del `<img>` en el Markdown también.
+  - El logo va en base64, a 142×15, con `x` = 394 e `y` = alto original + 4, y `opacity="0.85"`.
+    La línea `<image …><title>PowerUp Menu</title></image>` se copia de cualquier figura que ya
+    lo lleve. No se hace más grande: el archivo solo existe a 237×25 y se vería borroso.
+  - Las capturas de cartas de clientes no llevan logo: la carta es suya.
 
 ## Dónde van y cómo se escriben
 
@@ -88,16 +96,25 @@ dice, sin cambiar ninguna palabra.
   ```html
   <figure>
   <img src="/blog/figuras/<slug>/<nombre>.svg" width="560" height="380" alt="Qué muestra y qué conclusión saca.">
-  <figcaption>De dónde salen los datos.</figcaption>
+  <figcaption>De dónde salen los datos. Gráfico: PowerUp Menu.</figcaption>
   </figure>
   ```
+
+- El pie termina en «Gráfico: PowerUp Menu.». Es «Gráfico» y no «Fuente» porque los datos
+  pueden ser de otros (el INE, un estudio): lo nuestro es el dibujo. Si el pie ya nombra a
+  PowerUp Menu, como en las imágenes del producto, no se repite.
+- Cada SVG de `public/blog/figuras/` sale solo en el JSON-LD del artículo como `ImageObject`, con
+  PowerUp Menu como autor y en el crédito: Google Imágenes lo enseña junto a la imagen. Lo hacen
+  `figuresJsonLd` (`lib/blog/structured-data.ts`) y `renderMarkdown` (`lib/blog/markdown.ts`).
+  Los JPEG de esa carpeta quedan fuera, porque son capturas de clientes.
 
 - Cada `<img>` lleva `width`, `height` y `alt`, y el archivo tiene que existir. Si no, la
   compilación estricta falla, y en producción la imagen se omite con un aviso. Lo comprueba
   `lib/blog/images.ts`.
 - El texto alternativo dice qué muestra la imagen y qué conclusión saca, no solo su título.
 - La imagen para buscadores y redes (el JSON-LD y `og:image`) es siempre el PNG de 1200×630 que
-  se genera solo. La portada no la sustituye.
+  se genera solo, con el isotipo y el logo de la web (`lib/blog/og-image.tsx`). La portada no la
+  sustituye.
 
 ## Herramientas en el Mac de Fede
 

@@ -84,8 +84,8 @@ Supón una sección de cinco principales, con estas ventas en un mes:
 Se vendieron 200 raciones. Con cinco platos, el corte está en el 14%: el arroz, la hamburguesa y el pollo son populares; la merluza y la lasaña, no. En [qué es la ingeniería de menú](/blog/ingenieria-de-menu-para-restaurantes) tienes este mismo ejemplo con los márgenes y la clasificación completa.
 
 <figure>
-<img src="/blog/figuras/que-es-el-indice-de-popularidad/indice-por-plato.svg" width="560" height="372" alt="Gráfico de barras con el índice de popularidad de los cinco platos del ejemplo y la línea del corte en el 14%: la hamburguesa (35%), el pollo (30%) y el arroz (20%) lo superan y son populares; la merluza y la lasaña, con un 7,5% cada una, quedan por debajo.">
-<figcaption>Los cinco platos del ejemplo. Con cinco platos, el corte está en el 14%.</figcaption>
+<img src="/blog/figuras/que-es-el-indice-de-popularidad/indice-por-plato.svg" width="560" height="404" alt="Gráfico de barras con el índice de popularidad de los cinco platos del ejemplo y la línea del corte en el 14%: la hamburguesa (35%), el pollo (30%) y el arroz (20%) lo superan y son populares; la merluza y la lasaña, con un 7,5% cada una, quedan por debajo.">
+<figcaption>Los cinco platos del ejemplo. Con cinco platos, el corte está en el 14%. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## Un mismo nombre para dos cosas

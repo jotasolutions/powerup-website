@@ -65,8 +65,8 @@ Esta guía te dice qué necesitas de verdad, cuánto cuesta y cómo tenerla list
 ## Qué necesita la carta de un restaurante pequeño (y qué no)
 
 <figure>
-<img src="/blog/figuras/carta-qr-restaurante-pequeno/checklist.svg" width="560" height="300" alt="Lista de lo que necesita la carta QR de un restaurante pequeño: editarla desde el móvil, alérgenos en cada plato, un QR que se lea bien y dos o tres idiomas si hay turistas. Y lo que no necesita para la carta: pedidos, pagos ni TPV.">
-<figcaption>Resumen de esta sección.</figcaption>
+<img src="/blog/figuras/carta-qr-restaurante-pequeno/checklist.svg" width="560" height="332" alt="Lista de lo que necesita la carta QR de un restaurante pequeño: editarla desde el móvil, alérgenos en cada plato, un QR que se lea bien y dos o tres idiomas si hay turistas. Y lo que no necesita para la carta: pedidos, pagos ni TPV.">
+<figcaption>Resumen de esta sección. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 **Lo imprescindible:**

@@ -58,8 +58,8 @@ El PDF se pensó para imprimir. La consultora de usabilidad Nielsen Norman Group
 Una carta digital se lee como cualquier web: con el texto a buen tamaño, desplazándose hacia abajo y saltando de una sección a otra.
 
 <figure>
-<img src="/blog/figuras/carta-restaurante/pdf-y-carta-digital.svg" width="560" height="412" alt="Dos móviles con la misma carta: en PDF, la página impresa entera se ve diminuta y hay que ampliar para leerla; en la carta digital, los platos se ven a buen tamaño y se leen sin ampliar.">
-<figcaption>Ilustración: el PDF reproduce en pequeño la página impresa; la carta digital se adapta a la pantalla.</figcaption>
+<img src="/blog/figuras/carta-restaurante/pdf-y-carta-digital.svg" width="560" height="444" alt="Dos móviles con la misma carta: en PDF, la página impresa entera se ve diminuta y hay que ampliar para leerla; en la carta digital, los platos se ven a buen tamaño y se leen sin ampliar.">
+<figcaption>Ilustración de PowerUp Menu: el PDF reproduce en pequeño la página impresa; la carta digital se adapta a la pantalla.</figcaption>
 </figure>
 
 ## Cambiarla

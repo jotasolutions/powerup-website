@@ -76,8 +76,8 @@ Lo vemos con un arroz de marisco. **Es un ejemplo:** las cantidades y los precio
 4. **Multiplica y suma.** Cantidad por precio útil de cada ingrediente, y el total es el coste por ración: **4,20 €**.
 
 <figure>
-<img src="/blog/figuras/escandallo-de-un-plato/escandallo-arroz.svg" width="560" height="400" alt="Escandallo del arroz de marisco del ejemplo: arroz 0,40 €, calamar limpio 1,50 € (comprado a 10 € el kilo, se aprovecha el 80 %, así que el kilo útil cuesta 12,50 €), gamba 1,20 €, caldo 0,30 € y sofrito y aceite 0,80 €. El coste por ración es de 4,20 €.">
-<figcaption>Ejemplo del artículo, con cantidades y precios inventados. El precio útil del calamar ya lleva la merma.</figcaption>
+<img src="/blog/figuras/escandallo-de-un-plato/escandallo-arroz.svg" width="560" height="432" alt="Escandallo del arroz de marisco del ejemplo: arroz 0,40 €, calamar limpio 1,50 € (comprado a 10 € el kilo, se aprovecha el 80 %, así que el kilo útil cuesta 12,50 €), gamba 1,20 €, caldo 0,30 € y sofrito y aceite 0,80 €. El coste por ración es de 4,20 €.">
+<figcaption>Ejemplo del artículo, con cantidades y precios inventados. El precio útil del calamar ya lleva la merma. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 **Lo que cambia la merma:** si hubieras usado el precio de compra del calamar, el plato te saldría a 3,90 €, 30 céntimos menos por ración. Si vendes 40 arroces al mes, son 12 € al mes que no verías en tus cuentas, solo en un plato.

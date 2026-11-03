@@ -89,8 +89,8 @@ Supón una sección de cinco principales, con estas ventas en un mes:
 Se vendieron 200 raciones en total. El corte de popularidad está en el 14%: el arroz, la hamburguesa y el pollo lo superan. Entre todas las raciones dejaron 1.439 €, así que el margen medio es de unos 7,20 €: el arroz y la merluza están por encima.
 
 <figure>
-<img src="/blog/figuras/ingenieria-de-menu-para-restaurantes/popularidad-y-margen.svg" width="560" height="444" alt="Gráfico de los cinco platos del ejemplo según su popularidad y su margen: el arroz es la única estrella; la hamburguesa y el pollo, caballos de batalla; la merluza, enigma; la lasaña, perro.">
-<figcaption>Los cinco platos del ejemplo. Las líneas marcan los cortes: 14% de popularidad y 7,20 € de margen medio.</figcaption>
+<img src="/blog/figuras/ingenieria-de-menu-para-restaurantes/popularidad-y-margen.svg" width="560" height="476" alt="Gráfico de los cinco platos del ejemplo según su popularidad y su margen: el arroz es la única estrella; la hamburguesa y el pollo, caballos de batalla; la merluza, enigma; la lasaña, perro.">
+<figcaption>Los cinco platos del ejemplo. Las líneas marcan los cortes: 14% de popularidad y 7,20 € de margen medio. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 Las decisiones que salen de la tabla:

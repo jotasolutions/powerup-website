@@ -70,8 +70,8 @@ Se ha repetido mucho que hay una zona de la carta que el cliente mira primero, e
 - Ninguna zona con platos se miró más que las demás. Solo la parte de abajo de cada página se miró menos, aunque el estudio no aclara si fue por la posición o por lo que había en ella.
 
 <figure>
-<img src="/blog/figuras/que-es-la-psicologia-del-menu/recorrido-de-la-mirada.svg" width="560" height="392" alt="Carta de dos páginas dividida en seis zonas, tres por página: el recorrido medio de la mirada va de arriba abajo por la página izquierda (zonas 1, 2 y 3) y después por la derecha (4, 5 y 6), como al leer un libro. Las zonas de abajo de cada página, la 3 y la 6, se miraron menos.">
-<figcaption>Recorrido medio de la mirada en el estudio de Yang (2012), con 25 personas y una carta impresa de dos páginas.</figcaption>
+<img src="/blog/figuras/que-es-la-psicologia-del-menu/recorrido-de-la-mirada.svg" width="560" height="424" alt="Carta de dos páginas dividida en seis zonas, tres por página: el recorrido medio de la mirada va de arriba abajo por la página izquierda (zonas 1, 2 y 3) y después por la derecha (4, 5 y 6), como al leer un libro. Las zonas de abajo de cada página, la 3 y la 6, se miraron menos.">
+<figcaption>Recorrido medio de la mirada en el estudio de Yang (2012), con 25 personas y una carta impresa de dos páginas. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 La autora concluye que el «punto dulce» tradicional puede no existir. El estudio es pequeño y usó una carta impresa de dos páginas, así que no dice cómo se lee una carta en el móvil. Pero es un buen motivo para desconfiar de las reglas de diseño que no se han medido.

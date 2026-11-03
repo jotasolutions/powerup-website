@@ -54,8 +54,8 @@ La ingeniería de menú clasifica cada plato de la carta según dos datos: cuán
 | Perros | Baja | Bajo | Retirarlos |
 
 <figure>
-<img src="/blog/figuras/matriz-de-ingenieria-del-menu/cuadrantes.svg" width="560" height="452" alt="Matriz de ingeniería de menú: arriba a la derecha, las estrellas, con popularidad y margen altos, que se mantienen; abajo a la derecha, los caballos de batalla, populares pero con poco margen, a los que se revisa el precio; arriba a la izquierda, los enigmas, con margen pero poco populares, que se cambian de sitio en la carta; y abajo a la izquierda, los perros, que se retiran.">
-<figcaption>Los cuatro cuadrantes de la matriz y qué hacer en cada uno.</figcaption>
+<img src="/blog/figuras/matriz-de-ingenieria-del-menu/cuadrantes.svg" width="560" height="484" alt="Matriz de ingeniería de menú: arriba a la derecha, las estrellas, con popularidad y margen altos, que se mantienen; abajo a la derecha, los caballos de batalla, populares pero con poco margen, a los que se revisa el precio; arriba a la izquierda, los enigmas, con margen pero poco populares, que se cambian de sitio en la carta; y abajo a la izquierda, los perros, que se retiran.">
+<figcaption>Los cuatro cuadrantes de la matriz y qué hacer en cada uno. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## Cómo colocar tus platos, paso a paso

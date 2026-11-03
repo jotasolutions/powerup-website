@@ -56,8 +56,8 @@ Manoj Thomas y Vicki Morwitz estudiaron en cinco experimentos por qué un precio
 En la carta, un 9 al final solo ayuda si hace bajar la primera cifra del precio: 19,90 € frente a 20 €, por ejemplo.
 
 <figure>
-<img src="/blog/figuras/precios-psicologicos/cifra-de-la-izquierda.svg" width="560" height="284" alt="Comparación de precios: 4,99 € frente a 5,00 € cambian la primera cifra, y el primero parece más barato; 4,59 € frente a 4,60 € empiezan por la misma cifra, y el primero no parece más barato. Es el efecto de la cifra de la izquierda.">
-<figcaption>El efecto de la cifra de la izquierda, según Thomas y Morwitz (2005).</figcaption>
+<img src="/blog/figuras/precios-psicologicos/cifra-de-la-izquierda.svg" width="560" height="316" alt="Comparación de precios: 4,99 € frente a 5,00 € cambian la primera cifra, y el primero parece más barato; 4,59 € frente a 4,60 € empiezan por la misma cifra, y el primero no parece más barato. Es el efecto de la cifra de la izquierda.">
+<figcaption>El efecto de la cifra de la izquierda, según Thomas y Morwitz (2005). Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## Precios redondos: cuando se decide por gusto

@@ -55,8 +55,8 @@ Muchos ingredientes no se aprovechan enteros: el pescado se limpia, la verdura s
 Ejemplo: si compras merluza a 14 € el kilo y, una vez limpia, aprovechas 600 gramos de cada kilo, el kilo que de verdad usas te cuesta 23,33 €. Ese es el precio que va al escandallo.
 
 <figure>
-<img src="/blog/figuras/costo-de-comida/merma.svg" width="560" height="200" alt="Un kilo de merluza comprado a 14 €: se aprovechan 600 gramos y 400 son merma, así que el kilo que de verdad usas cuesta 14 € ÷ 0,6 = 23,33 €, el precio que va al escandallo.">
-<figcaption>Ejemplo del artículo: la merma sube el coste de cada kilo que de verdad usas.</figcaption>
+<img src="/blog/figuras/costo-de-comida/merma.svg" width="560" height="232" alt="Un kilo de merluza comprado a 14 €: se aprovechan 600 gramos y 400 son merma, así que el kilo que de verdad usas cuesta 14 € ÷ 0,6 = 23,33 €, el precio que va al escandallo.">
+<figcaption>Ejemplo del artículo: la merma sube el coste de cada kilo que de verdad usas. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## Food cost del restaurante en un periodo
@@ -70,8 +70,8 @@ El escandallo te dice lo que *debería* costar cada plato. Para saber lo que te 
 Ejemplo: empiezas el mes con 3.000 € de género en cámaras y almacén, compras 9.500 € y lo terminas con 2.700 €. Has consumido 9.800 € de comida. Si ese mes vendes 32.000 € en comida sin IVA, tu food cost es del 30,6%.
 
 <figure>
-<img src="/blog/figuras/costo-de-comida/food-cost-del-mes.svg" width="560" height="220" alt="Cálculo del food cost del mes del ejemplo: 3.000 € de género al empezar, más 9.500 € de compras, menos 2.700 € al terminar, dan 9.800 € de comida consumida; dividida entre 32.000 € de ventas de comida sin IVA, el food cost es del 30,6%.">
-<figcaption>Ejemplo del artículo: el food cost del restaurante en un mes.</figcaption>
+<img src="/blog/figuras/costo-de-comida/food-cost-del-mes.svg" width="560" height="252" alt="Cálculo del food cost del mes del ejemplo: 3.000 € de género al empezar, más 9.500 € de compras, menos 2.700 € al terminar, dan 9.800 € de comida consumida; dividida entre 32.000 € de ventas de comida sin IVA, el food cost es del 30,6%.">
+<figcaption>Ejemplo del artículo: el food cost del restaurante en un mes. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## Lo que te dice la diferencia entre los dos
