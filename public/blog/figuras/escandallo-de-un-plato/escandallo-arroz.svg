@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400">
+  <title>Escandallo de un plato de ejemplo: arroz de marisco</title>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .h { font-size:14px; font-weight:700; fill:#475569; }
+    .c { font-size:16px; fill:#0F172A; }
+    .n { font-size:16px; fill:#334155; text-anchor:end; }
+    .t { font-size:16px; font-weight:700; fill:#0F172A; text-anchor:end; }
+  </style>
+  <rect width="560" height="400" fill="#FFFFFF"/>
+
+  <text x="20" y="32" style="font-size:18px;font-weight:700;fill:#0F172A">Arroz de marisco, 1 ración (ejemplo)</text>
+
+  <!-- Header -->
+  <rect x="20" y="48" width="520" height="34" rx="8" fill="#DFFFEA"/>
+  <text x="32" y="70" class="h">Ingrediente</text>
+  <text x="290" y="70" class="h" text-anchor="end">Cantidad</text>
+  <text x="420" y="70" class="h" text-anchor="end">Precio útil</text>
+  <text x="528" y="70" class="h" text-anchor="end">Coste</text>
+
+  <!-- Rows -->
+  <text x="32" y="112" class="c">Arroz</text>
+  <text x="290" y="112" class="n">100 g</text>
+  <text x="420" y="112" class="n">4,00 €/kg</text>
+  <text x="528" y="112" class="n">0,40 €</text>
+  <line x1="20" y1="126" x2="540" y2="126" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="32" y="152" class="c">Calamar limpio</text>
+  <text x="290" y="152" class="n">120 g</text>
+  <text x="420" y="152" style="font-size:16px;font-weight:700;fill:#3482AA;text-anchor:end">12,50 €/kg</text>
+  <text x="528" y="152" class="n">1,50 €</text>
+  <line x1="20" y1="166" x2="540" y2="166" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="32" y="192" class="c">Gamba</text>
+  <text x="290" y="192" class="n">80 g</text>
+  <text x="420" y="192" class="n">15,00 €/kg</text>
+  <text x="528" y="192" class="n">1,20 €</text>
+  <line x1="20" y1="206" x2="540" y2="206" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="32" y="232" class="c">Caldo de pescado</text>
+  <text x="290" y="232" class="n">300 ml</text>
+  <text x="420" y="232" class="n">1,00 €/l</text>
+  <text x="528" y="232" class="n">0,30 €</text>
+  <line x1="20" y1="246" x2="540" y2="246" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <text x="32" y="272" class="c">Sofrito y aceite</text>
+  <text x="290" y="272" class="n">1 ración</text>
+  <text x="420" y="272" class="n">—</text>
+  <text x="528" y="272" class="n">0,80 €</text>
+
+  <!-- Total -->
+  <rect x="20" y="288" width="520" height="40" rx="8" fill="#F1F5F9"/>
+  <text x="32" y="314" style="font-size:16px;font-weight:700;fill:#0F172A">Coste por ración</text>
+  <text x="528" y="315" style="font-size:20px;font-weight:700;fill:#50B27F;text-anchor:end">4,20 €</text>
+
+  <!-- Note on the waste -->
+  <text x="20" y="358" style="font-size:15px;fill:#3482AA">Calamar: comprado a 10 €/kg; se aprovecha el 80 %.</text>
+  <text x="20" y="382" style="font-size:15px;fill:#475569">10 € ÷ 0,80 = 12,50 € por kilo limpio.</text>
+</svg>
