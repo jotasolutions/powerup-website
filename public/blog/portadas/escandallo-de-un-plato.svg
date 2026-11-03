@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Una ficha de escandallo con el coste de cada ingrediente y el total destacado</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+
+  <!-- The cost sheet -->
+  <rect x="90" y="30" width="220" height="240" rx="14" fill="#DFFFEA" stroke="#334155" stroke-width="3"/>
+  <text x="200" y="72" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#0F172A">Escandallo</text>
+  <!-- Rows: ingredient and cost -->
+  <g fill="#94A3B8">
+    <rect x="112" y="98" width="96" height="10" rx="5"/><rect x="248" y="98" width="40" height="10" rx="5"/>
+    <rect x="112" y="126" width="76" height="10" rx="5"/><rect x="248" y="126" width="40" height="10" rx="5"/>
+    <rect x="112" y="154" width="104" height="10" rx="5"/><rect x="248" y="154" width="40" height="10" rx="5"/>
+    <rect x="112" y="182" width="64" height="10" rx="5"/><rect x="248" y="182" width="40" height="10" rx="5"/>
+  </g>
+  <line x1="112" y1="210" x2="288" y2="210" stroke="#334155" stroke-width="2"/>
+  <!-- Total -->
+  <rect x="112" y="230" width="72" height="14" rx="7" fill="#334155"/>
+  <rect x="236" y="226" width="52" height="22" rx="8" fill="#50B27F"/>
+</svg>

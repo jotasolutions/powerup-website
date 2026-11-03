@@ -49,7 +49,7 @@ En un restaurante, el coste variable de un plato son sobre todo sus ingredientes
 ## Cómo se calcula, paso a paso
 
 1. **Quita el IVA al precio de la carta.** En España, los servicios de restaurante y, en general, las comidas y bebidas para consumir en el local tributan al 10%. El precio sin IVA es el precio de la carta dividido entre 1,10.
-2. **Calcula el coste de los ingredientes por ración.** Es el escandallo del plato. Si todavía no lo tienes, empieza por [cómo calcular el food cost](/blog/costo-de-comida).
+2. **Calcula el coste de los ingredientes por ración.** Es el escandallo del plato. Si todavía no lo tienes, mira [cómo hacer el escandallo de un plato](/blog/escandallo-de-un-plato), paso a paso, y [cómo calcular el food cost](/blog/costo-de-comida).
 3. **Resta.** Precio sin IVA menos coste de los ingredientes: ese es el margen de contribución del plato.
 
 Ejemplo: un arroz que cuesta 16,50 € en carta sale a 15,00 € sin IVA. Si sus ingredientes por ración cuestan 4,20 €, su margen de contribución es de 10,80 €.

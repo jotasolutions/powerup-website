@@ -40,7 +40,7 @@ El food cost es el coste de los ingredientes de lo que vendes. Es una cifra que 
 
 ## Food cost de un plato: el escandallo
 
-El escandallo es la ficha de coste de un plato: cada ingrediente, la cantidad que lleva una ración y lo que cuesta. Con él, el food cost del plato es:
+El escandallo es la ficha de coste de un plato: cada ingrediente, la cantidad que lleva una ración y lo que cuesta. Cómo hacerlo con un ejemplo completo, en [escandallo de un plato, paso a paso](/blog/escandallo-de-un-plato). Con él, el food cost del plato es:
 
 **Food cost del plato = coste de los ingredientes por ración ÷ precio sin IVA × 100**
 

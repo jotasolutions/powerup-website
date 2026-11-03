@@ -28,5 +28,6 @@ Un restaurante puede estar lleno y no ganar dinero. Para saber si es rentable ha
 1. [Cómo calcular la rentabilidad de un restaurante](/blog/rentabilidad-de-restaurante): las tres cifras que dicen si ganas dinero.
 2. [Cómo calcular el margen de contribución](/blog/margen-de-contribucion) de cada plato.
 3. [Cómo calcular el food cost](/blog/costo-de-comida), plato a plato y para todo el restaurante.
-4. [El coste de las bebidas](/blog/coste-de-bebidas) y cómo calcularlo.
-5. [Organigrama y coste de personal](/blog/organigrama-de-un-restaurante): cuánto cuesta de verdad cada puesto.
+4. [El escandallo de un plato](/blog/escandallo-de-un-plato), paso a paso y con las mermas.
+5. [El coste de las bebidas](/blog/coste-de-bebidas) y cómo calcularlo.
+6. [Organigrama y coste de personal](/blog/organigrama-de-un-restaurante): cuánto cuesta de verdad cada puesto.
