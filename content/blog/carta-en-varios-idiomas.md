@@ -42,8 +42,8 @@ Cuando un turista abre una carta que no entiende, tiene que preguntar al camarer
 En 2025 llegaron a España 96,8 millones de turistas internacionales, la cifra más alta de la serie histórica del INE. Los tres primeros países fueron Reino Unido (19,1 millones), Francia (12,8) y Alemania (12,0). Después vienen Italia, los países nórdicos, Países Bajos, Estados Unidos y Portugal.
 
 <figure>
-<img src="/blog/figuras/carta-en-varios-idiomas/turistas-por-pais.svg" width="560" height="392" alt="Gráfico de barras con los turistas que llegaron a España en 2025 según su país y el idioma que hablan: Reino Unido, 19,1 millones (inglés); Francia, 12,8 (francés); Alemania, 12,0 (alemán); Italia, 5,7; países nórdicos, 5,2; Países Bajos, 5,0; Estados Unidos, 4,5 (inglés), y Portugal, 3,4. Inglés, francés y alemán son los idiomas de los tres primeros países.">
-<figcaption>Turistas internacionales que llegaron a España en 2025, en millones, por país o grupo de países de residencia. No se muestran los grupos «resto de Europa», «resto de América» y «resto del mundo». Fuente: INE, FRONTUR.</figcaption>
+<img src="/blog/figuras/carta-en-varios-idiomas/turistas-por-pais.svg" width="560" height="424" alt="Gráfico de barras con los turistas que llegaron a España en 2025 según su país y el idioma que hablan: Reino Unido, 19,1 millones (inglés); Francia, 12,8 (francés); Alemania, 12,0 (alemán); Italia, 5,7; países nórdicos, 5,2; Países Bajos, 5,0; Estados Unidos, 4,5 (inglés), y Portugal, 3,4. Inglés, francés y alemán son los idiomas de los tres primeros países.">
+<figcaption>Turistas internacionales que llegaron a España en 2025, en millones, por país o grupo de países de residencia. No se muestran los grupos «resto de Europa», «resto de América» y «resto del mundo». Fuente: INE, FRONTUR. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 Solo de Reino Unido, Estados Unidos e Irlanda, tres países de habla inglesa, llegaron 26,6 millones de turistas: más de uno de cada cuatro.

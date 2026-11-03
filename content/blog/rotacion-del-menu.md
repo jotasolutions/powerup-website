@@ -49,8 +49,8 @@ Rotar la carta, o rotación del menú, es renovar una parte de los platos cada c
 - **Una parte que cambia:** los platos de temporada, las sugerencias o el menú del día.
 
 <figure>
-<img src="/blog/figuras/rotacion-del-menu/base-fija-y-temporada.svg" width="560" height="360" alt="Esquema de una carta que rota por temporadas: en primavera, verano, otoño e invierno se mantiene la misma base fija de platos y solo cambia la parte de temporada.">
-<figcaption>Rotar la carta: una base fija que se queda todo el año y una parte que cambia con cada temporada.</figcaption>
+<img src="/blog/figuras/rotacion-del-menu/base-fija-y-temporada.svg" width="560" height="392" alt="Esquema de una carta que rota por temporadas: en primavera, verano, otoño e invierno se mantiene la misma base fija de platos y solo cambia la parte de temporada.">
+<figcaption>Rotar la carta: una base fija que se queda todo el año y una parte que cambia con cada temporada. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 En hostelería, la palabra *rotación* se usa también para otras dos cosas que no tienen que ver con la carta:

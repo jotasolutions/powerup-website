@@ -53,8 +53,8 @@ Un organigrama sencillo para un restaurante mediano podría ser este:
   - **Sala:** encargado o encargada de sala y camareros.
 
 <figure>
-<img src="/blog/figuras/organigrama-de-un-restaurante/organigrama.svg" width="560" height="372" alt="Organigrama de un restaurante mediano: de la dirección o gerencia dependen las dos áreas principales, la cocina (jefe o jefa de cocina, cocineros y ayudantes) y la sala (encargado o encargada de sala y camareros).">
-<figcaption>Un organigrama sencillo para un restaurante mediano.</figcaption>
+<img src="/blog/figuras/organigrama-de-un-restaurante/organigrama.svg" width="560" height="404" alt="Organigrama de un restaurante mediano: de la dirección o gerencia dependen las dos áreas principales, la cocina (jefe o jefa de cocina, cocineros y ayudantes) y la sala (encargado o encargada de sala y camareros).">
+<figcaption>Un organigrama sencillo para un restaurante mediano. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 El tamaño y los puestos cambian con cada local. Lo importante es que cada persona sepa a quién responde y que tú sepas cuánto cuesta cada área.
@@ -78,8 +78,8 @@ En un contrato indefinido, eso suma un 30,65% de la base de cotización, más la
 Ejemplo: para un puesto con una base de cotización de 1.800 € al mes, la empresa paga 551,70 € de cotizaciones, sin contar la tarifa de accidentes. El puesto cuesta unos 2.351,70 € al mes, no 1.800 €.
 
 <figure>
-<img src="/blog/figuras/organigrama-de-un-restaurante/coste-de-un-puesto.svg" width="560" height="184" alt="Barra con el coste mensual de un puesto con una base de cotización de 1.800 €: la empresa paga además 551,70 € de cotizaciones, así que el puesto le cuesta unos 2.351,70 € al mes, un 30,65% más que la base.">
-<figcaption>Ejemplo del artículo: contrato indefinido, cotizaciones de 2026, sin contar la tarifa de accidentes de trabajo.</figcaption>
+<img src="/blog/figuras/organigrama-de-un-restaurante/coste-de-un-puesto.svg" width="560" height="216" alt="Barra con el coste mensual de un puesto con una base de cotización de 1.800 €: la empresa paga además 551,70 € de cotizaciones, así que el puesto le cuesta unos 2.351,70 € al mes, un 30,65% más que la base.">
+<figcaption>Ejemplo del artículo: contrato indefinido, cotizaciones de 2026, sin contar la tarifa de accidentes de trabajo. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## El coste de personal sobre las ventas

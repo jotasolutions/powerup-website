@@ -18,8 +18,19 @@ import { asciiSlug } from "./slug"
 
 export type TocItem = { id: string; text: string; level: 2 | 3 }
 
+/** A figure drawn for the blog: an SVG under /blog/figuras/. Captures of clients' menus are left out. */
+export type OwnFigure = { src: string; alt: string }
+
 /** `imageErrors` lists images left out of `html`; callers report them like any content error. */
-export type RenderedMarkdown = { html: string; toc: TocItem[]; warnings: string[]; imageErrors: string[] }
+export type RenderedMarkdown = {
+  html: string
+  toc: TocItem[]
+  warnings: string[]
+  imageErrors: string[]
+  figures: OwnFigure[]
+}
+
+const OWN_FIGURE = /^\/blog\/figuras\/.+\.svg$/
 
 // GitHub's default allowlist drops <figure>/<figcaption>, which WordPress uses for every captioned image.
 const sanitizeSchema = {
@@ -58,6 +69,7 @@ function rewriteLegacyContent(
   campaign: string,
   warnings: string[],
   imageErrors: string[],
+  figures: OwnFigure[],
 ) {
   visit(tree, "element", (node, index, parent) => {
     if (!parent || index === undefined) return
@@ -74,6 +86,8 @@ function rewriteLegacyContent(
       }
       node.properties.loading = "lazy"
       node.properties.decoding = "async"
+      const src = String(node.properties.src)
+      if (OWN_FIGURE.test(src)) figures.push({ src, alt: String(node.properties.alt) })
       return
     }
     if (node.tagName !== "a") return
@@ -161,6 +175,7 @@ export async function renderMarkdown(
 ): Promise<RenderedMarkdown> {
   const warnings: string[] = []
   const imageErrors: string[] = []
+  const figures: OwnFigure[] = []
   let toc: TocItem[] = []
 
   const file = await unified()
@@ -171,7 +186,7 @@ export async function renderMarkdown(
     .use(rehypeSanitize, sanitizeSchema)
     .use(() => (tree: Root) => {
       collapseDoubleClobberPrefix(tree)
-      rewriteLegacyContent(tree, links, campaign, warnings, imageErrors)
+      rewriteLegacyContent(tree, links, campaign, warnings, imageErrors, figures)
       pruneEmptyBlocks(tree)
       wrapTables(tree)
       toc = addHeadingIds(tree, reservedIds)
@@ -179,5 +194,5 @@ export async function renderMarkdown(
     .use(rehypeStringify)
     .process(markdown)
 
-  return { html: String(file), toc, warnings, imageErrors }
+  return { html: String(file), toc, warnings, imageErrors, figures }
 }

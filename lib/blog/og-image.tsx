@@ -24,23 +24,13 @@ async function loadFonts() {
   ]
 }
 
-function QrIcon() {
-  return (
-    <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="3" width="5" height="5" rx="1" />
-      <rect x="3" y="16" width="5" height="5" rx="1" />
-      <rect x="16" y="3" width="5" height="5" rx="1" />
-      <path d="M21 16h-3a2 2 0 0 0-2 2v3" />
-      <path d="M21 21v.01" />
-      <path d="M12 7v3a2 2 0 0 1-2 2H7" />
-      <path d="M3 12h.01" />
-      <path d="M12 3h.01" />
-      <path d="M12 16v.01" />
-      <path d="M16 12h1" />
-      <path d="M21 12v.01" />
-      <path d="M12 21v-1" />
-    </svg>
-  )
+// The header's isotipo and wordmark. The wordmark only exists at 237×25, so it is drawn at that
+// size: scaling it up would blur it.
+const LOGO = { width: 237, height: 25 }
+
+async function pngDataUri(publicPath: string) {
+  const data = await readFile(path.join(process.cwd(), "public", publicPath))
+  return `data:image/png;base64,${data.toString("base64")}`
 }
 
 /** In production a failure returns a 404 for this image instead of failing the build. */
@@ -58,6 +48,11 @@ export async function renderOgImage({ eyebrow, title }: { eyebrow: string; title
 }
 
 async function buildOgImage({ eyebrow, title }: { eyebrow: string; title: string }) {
+  const [fonts, isotipo, logo] = await Promise.all([
+    loadFonts(),
+    pngDataUri("images/isotipo-negativo.png"),
+    pngDataUri("images/powerup-logo.png"),
+  ])
   return new ImageResponse(
     (
       <div
@@ -82,10 +77,10 @@ async function buildOgImage({ eyebrow, title }: { eyebrow: string; title: string
               height: 76,
               borderRadius: 18,
               backgroundColor: PRIMARY,
-              transform: "rotate(11deg)",
             }}
           >
-            <QrIcon />
+            {/* eslint-disable-next-line @next/next/no-img-element -- next/og renders plain <img> only. */}
+            <img src={isotipo} alt="" width={42} height={42} />
           </div>
           <div style={{ display: "flex", fontSize: 30, fontWeight: 500, color: "#334155" }}>{eyebrow}</div>
         </div>
@@ -101,12 +96,13 @@ async function buildOgImage({ eyebrow, title }: { eyebrow: string; title: string
         >
           {title}
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 28, fontWeight: 500, color: "#475569" }}>
-          <div style={{ display: "flex" }}>PowerUp Menu</div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 28, fontWeight: 500, color: "#475569" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- next/og renders plain <img> only. */}
+          <img src={logo} alt="PowerUp Menu" width={LOGO.width} height={LOGO.height} />
           <div style={{ display: "flex", color: PRIMARY }}>powerup.menu/blog</div>
         </div>
       </div>
     ),
-    { ...OG_SIZE, fonts: await loadFonts() },
+    { ...OG_SIZE, fonts },
   )
 }

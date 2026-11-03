@@ -70,8 +70,8 @@ Ejemplo: tus gastos fijos son de 30.000 € al mes. Cada comensal gasta de media
 Es la cifra más útil para decidir: te dice cuánto tiene que vender el restaurante antes de empezar a ganar, y cuánto cambia esa cifra si subes un precio o bajas un gasto.
 
 <figure>
-<img src="/blog/figuras/rentabilidad-de-restaurante/punto-de-equilibrio.svg" width="560" height="408" alt="Gráfico del punto de equilibrio del ejemplo: los gastos fijos son 30.000 € al mes y cada comensal deja 17 € de margen; la línea del margen acumulado cruza la de los gastos fijos en unos 1.765 comensales al mes. Por debajo de esa cifra hay pérdidas y, por encima, beneficio.">
-<figcaption>Ejemplo del artículo: 25 € de ticket medio sin IVA y 8 € de ingredientes dejan 17 € de margen por comensal.</figcaption>
+<img src="/blog/figuras/rentabilidad-de-restaurante/punto-de-equilibrio.svg" width="560" height="440" alt="Gráfico del punto de equilibrio del ejemplo: los gastos fijos son 30.000 € al mes y cada comensal deja 17 € de margen; la línea del margen acumulado cruza la de los gastos fijos en unos 1.765 comensales al mes. Por debajo de esa cifra hay pérdidas y, por encima, beneficio.">
+<figcaption>Ejemplo del artículo: 25 € de ticket medio sin IVA y 8 € de ingredientes dejan 17 € de margen por comensal. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## Dónde mirar cuando no salen las cuentas

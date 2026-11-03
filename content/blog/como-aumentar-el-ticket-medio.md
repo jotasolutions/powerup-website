@@ -63,8 +63,8 @@ Aprovéchalo:
 - Deja en el medio los platos que se venden solos, sin necesidad de empujarlos.
 
 <figure>
-<img src="/blog/figuras/como-aumentar-el-ticket-medio/principio-y-final.svg" width="560" height="380" alt="Una sección de la carta con seis platos: el primero y el último están resaltados, porque ahí van los platos que más te interesa vender; en el medio quedan los que se venden solos. En el estudio, los productos del principio y del final de su sección se eligieron más que los del medio.">
-<figcaption>En el estudio de Dayan y Bar-Hillel (2011), los extremos de cada sección se eligieron más que el medio.</figcaption>
+<img src="/blog/figuras/como-aumentar-el-ticket-medio/principio-y-final.svg" width="560" height="412" alt="Una sección de la carta con seis platos: el primero y el último están resaltados, porque ahí van los platos que más te interesa vender; en el medio quedan los que se venden solos. En el estudio, los productos del principio y del final de su sección se eligieron más que los del medio.">
+<figcaption>En el estudio de Dayan y Bar-Hillel (2011), los extremos de cada sección se eligieron más que el medio. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 Para saber qué platos son cuáles, la [ingeniería de menú](/blog/tema/ingenieria-de-menu) cruza el margen de cada plato con su popularidad.
@@ -88,7 +88,7 @@ La venta cruzada consiste en proponer algo que complementa lo que el cliente ya 
 En PowerUp Menu, el plan Pro permite mostrar en cada plato recomendaciones, maridajes y extras: el cliente los ve en la carta y se los pide al camarero. Sea cual sea la herramienta, mide el efecto: compara el ticket medio de las semanas con sugerencias con el de las semanas sin ellas.
 
 <figure>
-<img src="/blog/figuras/como-aumentar-el-ticket-medio/maridaje-recomendado.svg" width="560" height="300" alt="Un plato de la carta con un maridaje recomendado: una botella de vino, Viñas del Vero, sugerida por 16,23 € más. La sugerencia aparece en el propio plato mientras el cliente decide, y el cliente se la pide al camarero.">
+<img src="/blog/figuras/como-aumentar-el-ticket-medio/maridaje-recomendado.svg" width="560" height="332" alt="Un plato de la carta con un maridaje recomendado: una botella de vino, Viñas del Vero, sugerida por 16,23 € más. La sugerencia aparece en el propio plato mientras el cliente decide, y el cliente se la pide al camarero.">
 <figcaption>Un maridaje recomendado en un plato de PowerUp Menu (plan Pro). El cliente lo ve en la carta y lo pide al camarero.</figcaption>
 </figure>
 

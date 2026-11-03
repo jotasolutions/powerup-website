@@ -66,8 +66,8 @@ Es tentador comparar los platos por porcentaje de margen, pero lo que paga las f
 La ensalada tiene más margen en porcentaje, pero cada arroz que vendes deja 3,60 € más.
 
 <figure>
-<img src="/blog/figuras/margen-de-contribucion/del-precio-al-margen.svg" width="560" height="290" alt="Barras con el precio en carta de dos platos dividido en ingredientes, margen de contribución e IVA: el arroz, de 16,50 €, deja 10,80 € de margen, un 72%; la ensalada, de 9,90 €, deja 7,20 €, un 80%. El arroz deja 3,60 € más por ración, aunque su porcentaje sea menor.">
-<figcaption>Los dos platos del ejemplo: lo que paga el cliente, dividido en ingredientes, margen e IVA.</figcaption>
+<img src="/blog/figuras/margen-de-contribucion/del-precio-al-margen.svg" width="560" height="322" alt="Barras con el precio en carta de dos platos dividido en ingredientes, margen de contribución e IVA: el arroz, de 16,50 €, deja 10,80 € de margen, un 72%; la ensalada, de 9,90 €, deja 7,20 €, un 80%. El arroz deja 3,60 € más por ración, aunque su porcentaje sea menor.">
+<figcaption>Los dos platos del ejemplo: lo que paga el cliente, dividido en ingredientes, margen e IVA. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 ## Margen unitario y margen total

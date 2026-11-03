@@ -15,7 +15,7 @@ import { ITALIAN_BLOG_PATH, italianPostPath, postPath } from "@/lib/blog/config"
 import { blogMetadata } from "@/lib/blog/metadata"
 import { getItalianPost, getVisibleItalianPosts } from "@/lib/blog/posts"
 import { renderPostBody } from "@/lib/blog/render"
-import { blogPostingJsonLd, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/blog/structured-data"
+import { blogPostingJsonLd, breadcrumbJsonLd, faqPageJsonLd, figuresJsonLd } from "@/lib/blog/structured-data"
 import { getCluster } from "@/lib/blog/taxonomy"
 import { blogUiCopy } from "@/lib/blog/ui-copy"
 import { ItalianPostCard } from "../ItalianPostCard"
@@ -58,7 +58,7 @@ export default async function ItalianPostPage({ params }: Props) {
   const reviewer = post.revisado_por ? getAuthor(post.revisado_por) : undefined
   const rendered = await renderPostBody(post, [...Object.values(GEO_SECTION_IDS), "toc-title", "continua-a-leggere"])
   if (!rendered) notFound()
-  const { html, toc } = rendered
+  const { html, toc, figures } = rendered
   const tocItems = [
     ...toc,
     ...(post.faq ? [{ id: GEO_SECTION_IDS.faq, text: copy.faq, level: 2 as const }] : []),
@@ -76,6 +76,7 @@ export default async function ItalianPostPage({ params }: Props) {
       />
       <JsonLd data={breadcrumbJsonLd([...crumbs.map((crumb) => ({ name: crumb.name, path: crumb.path as string })), { name: post.title, path }])} />
       {post.faq && <JsonLd data={faqPageJsonLd(post.faq, path)} />}
+      {figures.length > 0 && <JsonLd data={figuresJsonLd(figures)} />}
 
       <div className={`${container} pt-8`}>
         <Breadcrumbs items={crumbs} locale="it" />

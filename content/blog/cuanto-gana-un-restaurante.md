@@ -89,8 +89,8 @@ Cómo calcular el tuyo, con un ejemplo, en [cómo calcular la rentabilidad de un
 ## A dónde va cada 100 € que factura un restaurante
 
 <figure>
-<img src="/blog/figuras/cuanto-gana-un-restaurante/cada-100-euros.svg" width="560" height="240" alt="De cada 100 € que facturaron los restaurantes en 2024: unos 59 € fueron a compras de bienes y servicios, unos 33 € a personal y quedaron unos 9,5 € de excedente bruto de explotación. Datos del INE.">
-<figcaption>Restaurantes y puestos de comidas, 2024. Fuente: INE, Estadística Estructural de Empresas: Sector Servicios. Las tres cifras no suman exactamente 100 porque el INE las mide sobre bases algo distintas.</figcaption>
+<img src="/blog/figuras/cuanto-gana-un-restaurante/cada-100-euros.svg" width="560" height="272" alt="De cada 100 € que facturaron los restaurantes en 2024: unos 59 € fueron a compras de bienes y servicios, unos 33 € a personal y quedaron unos 9,5 € de excedente bruto de explotación. Datos del INE.">
+<figcaption>Restaurantes y puestos de comidas, 2024. Fuente: INE, Estadística Estructural de Empresas: Sector Servicios. Las tres cifras no suman exactamente 100 porque el INE las mide sobre bases algo distintas. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 - **Compras de bienes y servicios, unos 59 €.** Aquí va casi todo lo que no es personal: la comida y la bebida, el alquiler, la luz y el gas, y los servicios de fuera. El INE no las separa, así que no hay una cifra oficial solo de comida. Para la tuya, mira [cómo calcular el food cost](/blog/costo-de-comida) y [el coste de las bebidas](/blog/coste-de-bebidas).

@@ -2,6 +2,7 @@ import { organizationJsonLdFields } from "@/lib/company"
 import { SITE_URL } from "@/lib/site"
 import type { Author, PersonAuthor } from "./authors"
 import { absoluteUrl, authorPath, postPath } from "./config"
+import type { OwnFigure } from "./markdown"
 import type { Post } from "./posts"
 import type { FaqItem } from "./schema"
 import type { Cluster } from "./taxonomy"
@@ -75,6 +76,25 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
       position: index + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  }
+}
+
+/**
+ * The blog's own figures with their credit, which Google Images shows next to the image.
+ * Kept apart from BlogPosting so the post's `image` stays the 1200×630 PNG.
+ */
+export function figuresJsonLd(figures: OwnFigure[]) {
+  const organization = organizationNode()
+  return {
+    "@context": "https://schema.org",
+    "@graph": figures.map((figure) => ({
+      "@type": "ImageObject",
+      contentUrl: absoluteUrl(figure.src),
+      description: figure.alt,
+      creator: organization,
+      creditText: organization.name,
+      copyrightNotice: `© ${organization.name}`,
     })),
   }
 }

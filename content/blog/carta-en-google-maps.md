@@ -54,8 +54,8 @@ La sección «Menú» no siempre la escribe el restaurante. Según la ayuda de G
 - las fotos de la carta que suben los clientes.
 
 <figure>
-<img src="/blog/figuras/carta-en-google-maps/fuentes-del-menu.svg" width="560" height="330" alt="Esquema de las cinco fuentes de las que Google puede sacar la carta de un restaurante: el editor de la ficha, una foto o un PDF de la carta, la web del restaurante, un proveedor externo y las fotos que suben los clientes. Todas llegan a la pestaña Menú de la ficha, y si hay varias, el dueño elige cuál se muestra.">
-<figcaption>De dónde puede sacar Google la carta de tu ficha. Fuente: ayuda de Perfil de Empresa en Google.</figcaption>
+<img src="/blog/figuras/carta-en-google-maps/fuentes-del-menu.svg" width="560" height="362" alt="Esquema de las cinco fuentes de las que Google puede sacar la carta de un restaurante: el editor de la ficha, una foto o un PDF de la carta, la web del restaurante, un proveedor externo y las fotos que suben los clientes. Todas llegan a la pestaña Menú de la ficha, y si hay varias, el dueño elige cuál se muestra.">
+<figcaption>De dónde puede sacar Google la carta de tu ficha. Fuente: ayuda de Perfil de Empresa en Google. Gráfico: PowerUp Menu.</figcaption>
 </figure>
 
 Por eso se queda desfasada: una foto antigua o un PDF viejo pueden seguir ahí aunque hayas cambiado la carta. Si Google encuentra varias fuentes, en la pestaña «Menú» de tu perfil verás cada opción con la fecha de su última actualización, y podrás elegir cuál se muestra.
