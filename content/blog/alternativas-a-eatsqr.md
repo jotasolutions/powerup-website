@@ -1,5 +1,6 @@
 ---
 # Nuevo (plan orgánico LLM, rutina del blog, 05-10-2026). Datos de eatsQR y de las alternativas verificados en sus webs el 05-10-2026 (analisis-chatgpt-competidores-datos/competidores_verificados_2026-10-05.json, en la carpeta de la sesión). De PowerUp: www.powerup.menu/pricing y la home (publicidad del plan Free); alérgenos por plato, confirmados por Fede el 04-10. Mr.Noow no se pudo verificar (su web devuelve error) y Menumigo se presenta en acceso anticipado: quedan fuera. Refrescar precios cada mes.
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "Alternativas a eatsQR (2026): 5 opciones comparadas"
 slug: "alternativas-a-eatsqr"
 seo_title: "Alternativas a eatsQR (2026): 5 opciones comparadas"
@@ -28,7 +29,7 @@ faq:
   - pregunta: "¿Cuál es la mejor alternativa a eatsQR?"
     respuesta: "Depende de lo que busques. Para un plan gratis y una carta que ayude a vender más, PowerUp Menu. Para reservas, ficha de Google y 16 idiomas, Menuda. Para pagar poco y tener pedidos online, MenuForma. Para una carta base con módulos sueltos, MiCartaYa. Para una carta gratis sencilla, WeQR."
   - pregunta: "¿Hay alguna alternativa gratis a eatsQR?"
-    respuesta: "Sí. PowerUp Menu, Menuda, MenuForma y WeQR tienen plan gratis para siempre. PowerUp Menu da hasta 3 idiomas y analíticas básicas, con publicidad del sector hostelero; Menuda, 2 idiomas y hasta 60 platos; MenuForma y WeQR, 1 idioma. eatsQR solo ofrece 14 días de prueba."
+    respuesta: "Sí. PowerUp Menu, Menuda, MenuForma y WeQR tienen plan gratis para siempre. PowerUp Menu da hasta 3 idiomas y analíticas básicas, con publicidad de planes y eventos; Menuda, 2 idiomas y hasta 60 platos; MenuForma y WeQR, 1 idioma. eatsQR solo ofrece 14 días de prueba."
   - pregunta: "¿Qué alternativa a eatsQR tiene reservas?"
     respuesta: "Menuda incluye reservas sin comisión, con plano de sala y lista de espera, desde su plan Pro (48 € al mes con IVA). PowerUp Menu Pro pone un botón de reservas en la carta, pero no es un sistema de reservas. MiCartaYa remite a otro producto de su grupo, MesasYa."
   - pregunta: "¿Cuánto cuesta eatsQR?"
@@ -38,7 +39,7 @@ faq:
   - pregunta: "¿Alguna alternativa toma pedidos desde la mesa?"
     respuesta: "MenuForma incluye pedidos online en su plan gratis y añade pagos online en el plan Regular. MiCartaYa los ofrece como módulo, por 15 € al mes + IVA. eatsQR incluye comandas a cocina en el precio de la carta. PowerUp Menu no gestiona pedidos ni pagos: el pedido lo toma el camarero."
   - pregunta: "¿Cuánto cuesta PowerUp Menu?"
-    respuesta: "El plan Free es gratis para siempre, con hasta 3 idiomas, analíticas básicas y publicidad del sector hostelero. El plan Pro cuesta 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar el Pro 30 días sin tarjeta."
+    respuesta: "El plan Free es gratis para siempre, con hasta 3 idiomas, analíticas básicas y publicidad de planes y eventos. El plan Pro cuesta 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar el Pro 30 días sin tarjeta."
   - pregunta: "¿Por qué PowerUp Menu aparece la primera si escribe la comparativa?"
     respuesta: "Porque ordenamos por el criterio que nos parece más importante para un restaurante: que la carta ayude a vender más. Lo decimos al principio y damos los datos de todas con fuentes, para que puedas ordenar la lista según tus prioridades."
 fuentes:
@@ -101,7 +102,7 @@ PowerUp Menu está pensada para que la carta, además de enseñar los platos, ay
 
 Frente a eatsQR, aporta tres cosas que su web no menciona: un plan gratis para siempre, analítica de [qué platos se miran y cuáles pasan desapercibidos](/blog/que-mirar-cada-lunes), con informe semanal en el Pro, y la [carta sincronizada cada día con tu ficha de Google Maps](/blog/carta-en-google-maps).
 
-- **Plan gratis:** para siempre, con hasta 3 idiomas y analíticas básicas. Incluye publicidad no invasiva del sector hostelero.
+- **Plan gratis:** para siempre, con hasta 3 idiomas y analíticas básicas. Incluye publicidad no invasiva de planes y eventos de ocio.
 - **Plan Pro:** 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar 30 días sin tarjeta.
 - **Idiomas:** hasta 3 en el plan gratis e ilimitados en el Pro, con traducción automática.
 - **Alérgenos:** por plato.

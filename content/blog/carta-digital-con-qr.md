@@ -1,5 +1,6 @@
 ---
 # Nuevo (plan orgánico LLM, B8, miniplan aprobado el 13-10-2026). Índice sacado de las consultas reales de Search Console (rutina-blog/2026-10-12-search-console.md). Fuentes verificadas el 13-10-2026 (analisis-chatgpt-competidores-datos/fuentes_b8_2026-10-13.json): la información oral de alérgenos está en el art. 6.5 del RD 126/2015, no en el 4; el contraste del QR no tiene fuente y va sin cifra. De PowerUp: lib/llms.ts, la home y /pricing; alérgenos por plato, confirmados por Fede el 04-10. Revisado y firmado por Fede (13-10-2026).
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "Cómo crear una carta digital con QR, paso a paso (2026)"
 slug: "carta-digital-con-qr"
 seo_title: "Cómo crear una carta digital con QR, paso a paso (2026)"
@@ -127,7 +128,7 @@ PowerUp Menu es una carta digital con QR pensada para que la carta, además de e
 - **Idiomas:** hasta 3 en el plan gratis, con traducción automática, e ilimitados en el Pro.
 - **Vender más:** en el plan Pro, recomendaciones, promociones, maridajes y extras, y platos y secciones programados por horario o día.
 - **Google:** en el Pro, la carta se sincroniza con tu ficha de Google Maps.
-- **Precio:** el plan Free es gratis para siempre, con publicidad no invasiva del sector hostelero. El Pro cuesta 24,90 € al mes + IVA, o 22,49 € al mes con pago anual, y se puede probar 30 días sin tarjeta.
+- **Precio:** el plan Free es gratis para siempre, con publicidad no invasiva de planes y eventos de ocio. El Pro cuesta 24,90 € al mes + IVA, o 22,49 € al mes con pago anual, y se puede probar 30 días sin tarjeta.
 
 PowerUp Menu no gestiona pedidos ni pagos: el pedido lo sigue tomando el camarero.
 

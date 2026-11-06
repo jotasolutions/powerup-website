@@ -1,5 +1,6 @@
 ---
 # Reescrito en la Etapa B (tanda 3, 24-09-2026) sobre el original de WordPress. Revisado y firmado por Fede (28-09-2026).
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "Digitalización de restaurantes: qué digitalizar y por dónde empezar"
 slug: "digitalizacion-de-restaurantes"
 seo_title: "Digitalización de restaurantes: qué digitalizar primero"
@@ -24,7 +25,7 @@ puntos_clave:
   - "La carta es un buen primer paso: una carta digital que no gestiona pedidos no cambia cómo trabaja la sala."
 faq:
   - pregunta: "¿Cuánto cuesta digitalizar un restaurante?"
-    respuesta: "Depende de qué digitalices y de la herramienta. Algunas tienen planes gratuitos: el plan Free de PowerUp Menu, por ejemplo, incluye la carta digital con código QR y hasta tres idiomas, sin permanencia y con publicidad del sector hostelero."
+    respuesta: "Depende de qué digitalices y de la herramienta. Algunas tienen planes gratuitos: el plan Free de PowerUp Menu, por ejemplo, incluye la carta digital con código QR y hasta tres idiomas, sin permanencia y con publicidad de planes y eventos."
   - pregunta: "¿Por dónde empiezo si no tengo tiempo?"
     respuesta: "Por lo que más tiempo te quita hoy. Si es la carta, en PowerUp Menu puedes importarla desde Uber Eats o Just Eat, o subir un PDF o una foto; si tu caso es más complejo, el equipo de PowerUp la monta sin coste en 24-48 horas laborables."
 fuentes:
@@ -73,7 +74,7 @@ La carta es de las partes más fáciles de digitalizar. Una carta digital que no
 
 - Puedes importar la carta desde Uber Eats o Just Eat, con las fotos de los platos, o subir un PDF o una foto. Si tu caso es más complejo, el equipo de PowerUp la monta sin coste en 24-48 horas laborables.
 - Los cambios se hacen al momento, también desde el móvil: precios, platos y disponibilidad.
-- El plan Free es gratuito y sin permanencia, con publicidad del sector hostelero, e incluye la carta con código QR y hasta tres idiomas.
+- El plan Free es gratuito y sin permanencia, con publicidad de planes y eventos, e incluye la carta con código QR y hasta tres idiomas.
 
 En [carta digital o carta en PDF](/blog/carta-restaurante) comparamos las dos opciones.
 

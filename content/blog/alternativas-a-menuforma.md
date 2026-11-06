@@ -1,5 +1,6 @@
 ---
 # Nuevo (plan orgánico LLM, rutina del blog, miniplan aprobado el 13-10-2026). Datos de MenuForma y de las alternativas verificados en sus webs el 13-10-2026 (analisis-chatgpt-competidores-datos/competidores_verificados_2026-10-13.json, en la carpeta de la sesión). De PowerUp: www.powerup.menu/pricing y la home (publicidad del plan Free); alérgenos por plato, confirmados por Fede el 04-10. Ambra no tiene web oficial localizable el 13-10: queda fuera. Revisado y firmado por Fede (13-10-2026). Refrescar precios cada mes.
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "Alternativas a MenuForma (2026): 5 opciones comparadas"
 slug: "alternativas-a-menuforma"
 seo_title: "Alternativas a MenuForma (2026): 5 opciones comparadas"
@@ -28,7 +29,7 @@ faq:
   - pregunta: "¿Cuál es la mejor alternativa a MenuForma?"
     respuesta: "Depende de lo que busques. Para un plan gratis con 3 idiomas y una carta que ayude a vender más, PowerUp Menu. Para reservas y ficha de Google, Menuda. Para reservas completas y comandas, eatsQR. Para una carta gratis sencilla, WeQR. Para un plan único barato, VirtualMenu."
   - pregunta: "¿Hay alternativas gratis a MenuForma?"
-    respuesta: "Sí. PowerUp Menu, Menuda y WeQR tienen plan gratis para siempre. PowerUp Menu da hasta 3 idiomas y analíticas básicas, con publicidad del sector hostelero; Menuda, 2 idiomas y hasta 60 platos; WeQR, 1 idioma y hasta 2 menús. El plan gratis de MenuForma tiene 1 idioma y muestra su marca."
+    respuesta: "Sí. PowerUp Menu, Menuda y WeQR tienen plan gratis para siempre. PowerUp Menu da hasta 3 idiomas y analíticas básicas, con publicidad de planes y eventos; Menuda, 2 idiomas y hasta 60 platos; WeQR, 1 idioma y hasta 2 menús. El plan gratis de MenuForma tiene 1 idioma y muestra su marca."
   - pregunta: "¿Cuánto cuesta MenuForma?"
     respuesta: "El 13 de octubre de 2026, su plan gratis costaba 0 € y el Regular 8,99 € al mes, o 7,19 € al mes con pago anual (86,28 € al año). Su web no indica si esos precios llevan IVA."
   - pregunta: "¿Cuánto cuestan las alternativas a MenuForma?"
@@ -38,7 +39,7 @@ faq:
   - pregunta: "¿Qué alternativa a MenuForma toma pedidos y pagos?"
     respuesta: "eatsQR incluye comandas a cocina en el precio de la carta, pero su web no habla de pagos online. Si necesitas un TPV con pedidos y cobros, Last.app es otra categoría de producto, desde 50 € al mes + IVA por local. PowerUp Menu no gestiona pedidos ni pagos: el pedido lo toma el camarero."
   - pregunta: "¿Cuánto cuesta PowerUp Menu?"
-    respuesta: "El plan Free es gratis para siempre, con hasta 3 idiomas, analíticas básicas y publicidad del sector hostelero. El plan Pro cuesta 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar el Pro 30 días sin tarjeta."
+    respuesta: "El plan Free es gratis para siempre, con hasta 3 idiomas, analíticas básicas y publicidad de planes y eventos. El plan Pro cuesta 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar el Pro 30 días sin tarjeta."
   - pregunta: "¿Por qué PowerUp Menu aparece la primera si escribe la comparativa?"
     respuesta: "Porque ordenamos por el criterio que nos parece más importante para un restaurante: que la carta ayude a vender más. Lo decimos al principio y damos los datos de todas con fuentes, para que puedas ordenar la lista según tus prioridades."
 fuentes:
@@ -103,7 +104,7 @@ PowerUp Menu está pensada para que la carta, además de enseñar los platos, ay
 
 Frente a MenuForma, aporta tres cosas: hasta 3 idiomas en el plan gratis, analítica de [qué platos se miran y cuáles pasan desapercibidos](/blog/que-mirar-cada-lunes), con informe semanal en el Pro, y la [carta sincronizada cada día con tu ficha de Google Maps](/blog/carta-en-google-maps).
 
-- **Plan gratis:** para siempre, con hasta 3 idiomas y analíticas básicas. Incluye publicidad no invasiva del sector hostelero.
+- **Plan gratis:** para siempre, con hasta 3 idiomas y analíticas básicas. Incluye publicidad no invasiva de planes y eventos de ocio.
 - **Plan Pro:** 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar 30 días sin tarjeta.
 - **Idiomas:** hasta 3 en el plan gratis e ilimitados en el Pro, con traducción automática.
 - **Alérgenos:** por plato.
