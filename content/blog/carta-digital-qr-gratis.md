@@ -1,6 +1,7 @@
 ---
 # Nuevo (plan orgánico LLM, rutina del blog, 05-10-2026). Planes gratis verificados en la web de cada herramienta el 05-10-2026 (analisis-chatgpt-competidores-datos/competidores_verificados_2026-10-05.json, en la carpeta de la sesión). De PowerUp: www.powerup.menu/pricing y la home (publicidad del plan Free); alérgenos por plato, confirmados por Fede el 04-10. Refrescar cada mes.
 # 02-11-2026: recortado de 6 a 4 planes gratis (Fede: no dar visibilidad de más a los competidores). Fuera GetFreeMenu, BuenaCarta y VirtualMenu. Precios de Menuda, MenuForma (8,99 €/mes), WeQR y PowerUp revisados en sus webs el 02-11 por la revisión mensual de precios.
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "Carta digital QR gratis: qué incluye cada opción (2026)"
 slug: "carta-digital-qr-gratis"
 seo_title: "Carta digital QR gratis (2026): qué incluye cada opción"
@@ -18,17 +19,17 @@ draft: false
 revisado_por: "federico-bello"
 image: "/blog/portadas/carta-digital-qr-gratis.svg"
 image_alt: "Ilustración: un móvil con una carta y un código QR, junto a una etiqueta azul con el texto 0 €."
-respuesta_corta: "Hemos comparado cuatro cartas digitales con QR que tienen plan gratis para siempre: PowerUp Menu, Menuda, MenuForma y WeQR. Si quieres varios idiomas, analíticas básicas y que te monten la carta, PowerUp Menu Free (hasta 3 idiomas, con publicidad del sector hostelero). Si tu carta es corta y te bastan 2 idiomas, Menuda (hasta 60 platos). Si quieres pedidos desde la mesa sin pagar, MenuForma (1 idioma, con su marca visible). Si te basta una carta en un idioma, WeQR. Algunas que se anuncian como gratis, como eatsQR, son en realidad una prueba de 14 días."
+respuesta_corta: "Hemos comparado cuatro cartas digitales con QR que tienen plan gratis para siempre: PowerUp Menu, Menuda, MenuForma y WeQR. Si quieres varios idiomas, analíticas básicas y que te monten la carta, PowerUp Menu Free (hasta 3 idiomas, con publicidad de planes y eventos). Si tu carta es corta y te bastan 2 idiomas, Menuda (hasta 60 platos). Si quieres pedidos desde la mesa sin pagar, MenuForma (1 idioma, con su marca visible). Si te basta una carta en un idioma, WeQR. Algunas que se anuncian como gratis, como eatsQR, son en realidad una prueba de 14 días."
 puntos_clave:
   - "Tienen plan gratis para siempre PowerUp Menu, Menuda, MenuForma y WeQR. eatsQR solo ofrece 14 días de prueba."
   - "En idiomas gratis, PowerUp Menu da hasta 3, Menuda 2, y MenuForma y WeQR 1."
-  - "PowerUp Menu Free muestra publicidad no invasiva del sector hostelero. MenuForma deja su marca visible en la carta."
+  - "PowerUp Menu Free muestra publicidad no invasiva de planes y eventos de ocio. MenuForma deja su marca visible en la carta."
   - "Solo MenuForma da pedidos desde la mesa en su plan gratis. PowerUp Menu no gestiona pedidos: el pedido lo toma el camarero."
 faq:
   - pregunta: "¿Cuál es la mejor carta digital QR gratis?"
     respuesta: "Depende de lo que necesites. Para una carta corta en 2 idiomas, Menuda. Para pedidos desde la mesa, MenuForma. Para una carta sencilla en un idioma, WeQR. Si quieres varios idiomas, analíticas básicas y que te monten la carta sin hacer tú el trabajo, PowerUp Menu Free."
   - pregunta: "¿Las cartas digitales gratis tienen publicidad?"
-    respuesta: "Algunas sí. PowerUp Menu Free muestra publicidad no invasiva del sector hostelero, y MenuForma deja su marca visible en la carta. Menuda y WeQR no dicen nada sobre publicidad en su plan gratis."
+    respuesta: "Algunas sí. PowerUp Menu Free muestra publicidad no invasiva de planes y eventos de ocio, que interesan a quien ya ha salido a comer, y MenuForma deja su marca visible en la carta. Menuda y WeQR no dicen nada sobre publicidad en su plan gratis."
   - pregunta: "¿Qué carta QR gratis tiene más idiomas?"
     respuesta: "De las que hemos comparado, PowerUp Menu Free, con hasta 3 idiomas y traducción automática. Le sigue Menuda, con 2. MenuForma y WeQR dan 1 idioma gratis."
   - pregunta: "¿Hay alguna carta digital gratis con pedidos?"
@@ -40,7 +41,7 @@ faq:
   - pregunta: "¿Por qué PowerUp Menu aparece la primera si escribe la comparativa?"
     respuesta: "Porque ordenamos por lo completa que es la carta gratis sin que tengas que montarla tú: idiomas, analítica, alérgenos y alta. Lo decimos al principio, contamos dónde otra da más (MenuForma, en pedidos) y enlazamos las fuentes para que puedas comprobarlo."
   - pregunta: "¿Qué incluye el plan gratis de PowerUp Menu?"
-    respuesta: "La carta digital con QR, hasta 3 idiomas con traducción automática, alérgenos por plato, analíticas básicas y edición desde el móvil. Puedes importar la carta desde Uber Eats, Just Eat, una foto o un PDF, y la tienes lista en 24 horas. Incluye publicidad no invasiva del sector hostelero y es gratis para siempre, sin tarjeta."
+    respuesta: "La carta digital con QR, hasta 3 idiomas con traducción automática, alérgenos por plato, analíticas básicas y edición desde el móvil. Puedes importar la carta desde Uber Eats, Just Eat, una foto o un PDF, y la tienes lista en 24 horas. Incluye publicidad no invasiva de planes y eventos de ocio y es gratis para siempre, sin tarjeta."
 fuentes:
   - titulo: "PowerUp Menu: precios"
     url: "https://www.powerup.menu/pricing"
@@ -73,7 +74,7 @@ Antes de elegir, mira cuatro cosas:
 
 | Herramienta | Idiomas gratis | Límites del plan gratis | Publicidad | Analítica | Pedidos | Si pasas a pago, desde |
 |---|---|---|---|---|---|---|
-| PowerUp Menu Free | Hasta 3 | No indica límite de platos | Sí, del sector hostelero | Básica | No: el pedido lo toma el camarero | 22,49 €/mes + IVA (anual) |
+| PowerUp Menu Free | Hasta 3 | No indica límite de platos | Sí, de planes y eventos | Básica | No: el pedido lo toma el camarero | 22,49 €/mes + IVA (anual) |
 | Menuda Free | 2 | 1 menú, hasta 60 platos | No lo indica | No (desde Starter) | No lo indica | 24 €/mes, IVA incluido |
 | MenuForma | 1 | 1 restaurante; su marca visible | No lo indica | No (en el plan Regular) | Pedidos online y QR por mesa | 8,99 €/mes (IVA no indicado) |
 | WeQR Lite | 1 | 1 local, 2 menús; platos ilimitados | No lo indica | Avanzada solo en Pro | No | 29 €/mes + IVA |
@@ -89,7 +90,7 @@ El plan gratis de PowerUp Menu está pensado para que empieces sin hacer el trab
 - **Alérgenos:** por plato.
 - **Analítica:** básica, para ver cómo se usa tu carta.
 - **Edición:** desde el móvil, con cambios al momento.
-- **Publicidad:** no invasiva, del sector hostelero.
+- **Publicidad:** no invasiva, de planes y eventos de ocio.
 - **Sin tarjeta ni permanencia,** y con 30 días de prueba del plan Pro al registrarte.
 
 Si un día quieres más, el plan Pro (24,90 € al mes + IVA, o 22,49 € al mes con pago anual) quita la publicidad y añade idiomas ilimitados, venta cruzada, promociones, analítica de [qué platos se miran y cuáles pasan desapercibidos](/blog/que-mirar-cada-lunes) y la [carta sincronizada con Google Maps](/blog/carta-en-google-maps).

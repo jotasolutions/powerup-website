@@ -54,7 +54,7 @@ PowerUp Menu es la carta digital del restaurante. El dueño o el equipo la edita
 - Carta digital QR
 - Hasta 3 idiomas
 - Estadísticas simples de uso
-- Publicidad no invasiva del sector hostelero
+- Publicidad no invasiva de planes y eventos de ocio
 
 ### Pro
 - Sin publicidad
@@ -89,7 +89,7 @@ No. El camarero toma el pedido. PowerUp ayuda a decidir qué pedir (ticket medio
 Sí, colores y aspectos básicos. Diseños más a medida con el equipo de PowerUp.
 
 ### ¿Free vs Pro?
-Free: carta + 3 idiomas + stats simples + publicidad sectorial. Pro: sin ads, más idiomas, ventas, analíticas; web incluida con pago anual.
+Free: carta + 3 idiomas + stats simples + publicidad de planes y eventos. Pro: sin ads, más idiomas, ventas, analíticas; web incluida con pago anual.
 
 ${BLOG_SECTION}## Enlaces útiles
 - Sitio: ${SITE_URL}/

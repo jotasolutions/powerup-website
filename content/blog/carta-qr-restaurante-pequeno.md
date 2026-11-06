@@ -1,5 +1,6 @@
 ---
 # Nuevo (cola de temas, tema 1; miniplan aprobado por Fede el 26-10-2026). Datos de las herramientas verificados en su web el 26-10-2026 (analisis-chatgpt-competidores-datos/fuentes_t1_2026-10-26.json, en la carpeta de la sesión). Rangos de precio: los de cuanto-cuesta-una-carta-digital (04-10), revisados el 26-10. De PowerUp: www.powerup.menu/pricing, lib/llms.ts y pricing-section-data.ts; alérgenos por plato, confirmados por Fede el 04-10. Refrescar cada mes. Revisado y firmado por Fede (26-10-2026).
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "Carta QR para un restaurante pequeño: qué necesitas y cuánto cuesta (2026)"
 slug: "carta-qr-restaurante-pequeno"
 seo_title: "Carta QR para un restaurante pequeño: qué necesitas (2026)"
@@ -26,7 +27,7 @@ puntos_clave:
   - "Esta guía la escribe PowerUp Menu, que es una de las herramientas citadas. Por eso enlazamos las fuentes de cada dato."
 faq:
   - pregunta: "¿Hay carta QR gratis para un restaurante pequeño?"
-    respuesta: "Sí. PowerUp Menu Free es gratis para siempre, con hasta 3 idiomas, analíticas básicas y publicidad no invasiva del sector hostelero. MenuForma tiene un plan gratis con 1 restaurante y 1 idioma. Otras, como eatsQR, solo dan 14 días de prueba. Comparamos todos los planes gratis en nuestra guía de cartas QR gratis."
+    respuesta: "Sí. PowerUp Menu Free es gratis para siempre, con hasta 3 idiomas, analíticas básicas y publicidad no invasiva de planes y eventos de ocio. MenuForma tiene un plan gratis con 1 restaurante y 1 idioma. Otras, como eatsQR, solo dan 14 días de prueba. Comparamos todos los planes gratis en nuestra guía de cartas QR gratis."
   - pregunta: "¿Cuánto cuesta una carta digital para un restaurante pequeño?"
     respuesta: "Puede no costar nada con un plan gratis. De pago, una carta sencilla cuesta entre 7 y 15 € al mes, y una completa, con analítica, venta cruzada o Google Maps, entre 20 y 50 € al mes. Mira si el precio lleva IVA y si hay pago anual."
   - pregunta: "¿Qué carta QR es mejor para un restaurante pequeño?"
@@ -101,7 +102,7 @@ Estas son las herramientas que suelen salir cuando se pregunta por una carta QR 
 
 | Herramienta | Plan gratis | De pago, desde | Idiomas | Alérgenos |
 |---|---|---|---|---|
-| PowerUp Menu | Sí, para siempre (con publicidad del sector) | 24,90 €/mes + IVA, o 269,90 €/año + IVA | Hasta 3 gratis; más en Pro | Por plato |
+| PowerUp Menu | Sí, para siempre (con publicidad de planes y eventos) | 24,90 €/mes + IVA, o 269,90 €/año + IVA | Hasta 3 gratis; más en Pro | Por plato |
 | MenuForma | Sí: 1 restaurante, 1 idioma | 8,99 €/mes (IVA no indicado) | 1 gratis; más de pago | Por plato, las 14 categorías |
 | eatsQR | No: 14 días de prueba | 9,95 €/mes en oferta, facturado al año (IVA no indicado) | 1 en el plan Estándar | Filtrado de alérgenos |
 | MiCartaYa | No lo indica | 12 €/mes + IVA | 16 | 14 alérgenos por plato |
@@ -147,7 +148,7 @@ PowerUp Menu tiene un plan Free gratis para siempre, sin tarjeta ni permanencia:
 - **Alérgenos por plato.**
 - **Analíticas básicas** para ver cómo se usa tu carta.
 - **Te cargamos nosotros los platos:** importas la carta desde Uber Eats o Just Eat, o subes una foto o un PDF, y la tienes lista en 24 horas.
-- **Publicidad no invasiva** del sector hostelero.
+- **Publicidad no invasiva** de planes y eventos de ocio.
 
 Al registrarte tienes 30 días del plan Pro sin tarjeta. Pro quita la publicidad y añade más idiomas, venta cruzada, menús cerrados e informes semanales, y con el pago anual incluye la web del restaurante. PowerUp Menu no gestiona pedidos ni pagos: el pedido lo sigue tomando el camarero.
 

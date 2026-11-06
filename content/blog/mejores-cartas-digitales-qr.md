@@ -1,5 +1,6 @@
 ---
 # Nuevo (plan orgánico LLM, 04-10-2026). Datos de competidores verificados en sus webs el 04-10-2026 (scratchpad competidores_verificados.json, copia en analisis-chatgpt-competidores-datos/). De PowerUp: lo que dice www.powerup.menu/pricing y, sobre alérgenos por plato, la confirmación de Fede del 04-10. Ambra no se pudo verificar (su web no responde) y queda fuera. Revisado y firmado por Fede (04-10-2026). Refrescar precios cada mes.
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "Las mejores cartas digitales QR en España (2026): comparativa"
 slug: "mejores-cartas-digitales-qr"
 seo_title: "Mejores cartas digitales QR y online en España: comparativa 2026"
@@ -26,7 +27,7 @@ puntos_clave:
   - "Esta comparativa la escribe PowerUp Menu, que es una de las herramientas comparadas. Por eso explicamos los criterios y enlazamos las fuentes."
 faq:
   - pregunta: "¿Cuál es la mejor carta digital QR gratis?"
-    respuesta: "Entre las que hemos comparado, tienen plan gratis para siempre PowerUp Menu (hasta 3 idiomas y analíticas básicas, con publicidad del sector), Menuda (hasta 60 platos y 2 idiomas), MenuForma (1 idioma, sin analítica) y WeQR (1 idioma, hasta 2 menús). Si necesitas varios idiomas sin pagar, la de PowerUp Menu es la que más incluye; si no quieres publicidad, mira las otras."
+    respuesta: "Entre las que hemos comparado, tienen plan gratis para siempre PowerUp Menu (hasta 3 idiomas y analíticas básicas, con publicidad de planes y eventos), Menuda (hasta 60 platos y 2 idiomas), MenuForma (1 idioma, sin analítica) y WeQR (1 idioma, hasta 2 menús). Si necesitas varios idiomas sin pagar, la de PowerUp Menu es la que más incluye; si no quieres publicidad, mira las otras."
   - pregunta: "¿Cuál es la carta digital QR más barata de pago?"
     respuesta: "MenuForma: su plan Regular cuesta 8,99 € al mes, o 7,19 € al mes si se factura al año (su web no indica si el IVA está incluido). Le siguen eatsQR Estándar, con un precio de oferta de 9,95 € al mes al año, y VirtualMenu, con 120 € al año."
   - pregunta: "¿Qué carta digital tiene reservas?"
@@ -98,7 +99,7 @@ PowerUp Menu está pensada para que la carta, además de enseñar los platos, ay
 
 Las analíticas te dicen qué platos se miran y cuáles pasan desapercibidos, y en el Pro recibes un informe cada semana. También en el Pro, la sección «Menú» de tu ficha de Google se actualiza cada día con la carta digital, para que lo que ve quien te busca en Google Maps coincida con lo que sirves.
 
-- **Plan gratis:** para siempre, con hasta 3 idiomas y analíticas básicas. Incluye publicidad no invasiva del sector hostelero.
+- **Plan gratis:** para siempre, con hasta 3 idiomas y analíticas básicas. Incluye publicidad no invasiva de planes y eventos de ocio.
 - **Plan Pro:** 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar 30 días sin tarjeta.
 - **Idiomas:** hasta 3 en el plan gratis e ilimitados en el Pro, con traducción automática.
 - **Alérgenos:** por plato.

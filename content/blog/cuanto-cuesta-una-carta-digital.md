@@ -1,5 +1,6 @@
 ---
 # Nuevo (plan orgánico LLM, 04-10-2026). Precios verificados en la web de cada herramienta el 04-10-2026 (copia de los datos en analisis-chatgpt-competidores-datos/). De PowerUp: www.powerup.menu/pricing. Sin cifras de imprenta: no hay una fuente fiable. Revisado y firmado por Fede (04-10-2026). Refrescar precios cada mes.
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "¿Cuánto cuesta una carta digital para un restaurante? Precios 2026"
 slug: "cuanto-cuesta-una-carta-digital"
 seo_title: "¿Cuánto cuesta una carta digital? Precios 2026"
@@ -34,7 +35,7 @@ faq:
   - pregunta: "¿Cuánto cuesta hacer una carta con QR yo mismo?"
     respuesta: "Puedes generar un QR que lleve a un PDF sin pagar nada, pero cada cambio de precio o de plato te obliga a rehacer el PDF y, si cambia el enlace, a reimprimir el QR. CartaMóvil, por ejemplo, ofrece una carta estática en PDF por 19,99 € al año."
   - pregunta: "¿Cuánto cuesta PowerUp Menu?"
-    respuesta: "El plan Free es gratis para siempre, con hasta 3 idiomas, analíticas básicas y publicidad del sector hostelero. El plan Pro cuesta 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar el Pro 30 días sin tarjeta."
+    respuesta: "El plan Free es gratis para siempre, con hasta 3 idiomas, analíticas básicas y publicidad de planes y eventos. El plan Pro cuesta 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar el Pro 30 días sin tarjeta."
   - pregunta: "¿Una carta digital con pedidos cuesta más?"
     respuesta: "Normalmente sí. MenuForma incluye pedidos online en su plan Regular, de 8,99 € al mes. En un TPV como Last.app, los pedidos por QR cuestan hasta 25 € al mes más un 4 % y 0,20 € por venta, además del plan del TPV."
   - pregunta: "¿Qué cuesta más de lo que parece?"
@@ -116,7 +117,7 @@ Después, compara esa cifra con lo que te da. Una carta que solo enseña los pla
 
 ## Dónde está PowerUp Menu
 
-- **Plan Free:** 0 €, para siempre. Hasta 3 idiomas, analíticas básicas, alérgenos por plato y la carta lista en 24 horas. Con publicidad no invasiva del sector hostelero.
+- **Plan Free:** 0 €, para siempre. Hasta 3 idiomas, analíticas básicas, alérgenos por plato y la carta lista en 24 horas. Con publicidad no invasiva de planes y eventos de ocio.
 - **Plan Pro:** 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Idiomas ilimitados, venta cruzada, promociones, menús cerrados, analíticas avanzadas con informe semanal, sincronización diaria con Google Maps, botón de reservas y, en el plan anual, página web incluida. Sin permanencia y con 30 días de prueba sin tarjeta.
 
 PowerUp Menu no gestiona pedidos ni pagos: el cliente consulta la carta y el pedido lo toma el camarero. Si necesitas que pidan y paguen desde el móvil, mira las opciones con pedidos de la tabla.

@@ -1,5 +1,6 @@
 ---
 # Nuevo (cola de temas, tema 3; miniplan aprobado por Fede el 02-11-2026, versión con 3 alternativas). Datos de WeQR y de las alternativas comprobados en sus webs el 03-11-2026 (analisis-chatgpt-competidores-datos/fuentes_t3_t4_2026-11-03.json, en la carpeta de la sesión). De PowerUp: www.powerup.menu/pricing y lib/llms.ts. Sin enlaces a competidores en el texto: solo en Fuentes (nofollow). Revisado y firmado por Fede (03-11-2026). Refrescar precios cada mes.
+# 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
 title: "Alternativas a WeQR (2026): 4 opciones comparadas"
 slug: "alternativas-a-weqr"
 seo_title: "Alternativas a WeQR (2026): 4 opciones comparadas"
@@ -20,7 +21,7 @@ image_alt: "Ilustración: una carta digital a la izquierda y una flecha hacia cu
 respuesta_corta: "Depende de qué te falta en WeQR. Si quieres más idiomas sin pagar y que la carta te ayude a vender más (sugerencias de acompañamientos, promociones, analítica de qué platos se miran y la carta al día en Google Maps), PowerUp Menu: su plan Free da hasta 3 idiomas y el Pro cuesta 22,49 € al mes + IVA con pago anual. Si quieres que el cliente pida desde la mesa, MenuForma. Si quieres la ficha de Google y las reservas en la misma herramienta, y no te importa pagar, Menuda. Si quieres reservas sin pagar y te basta un idioma, BuenaCarta. Si quieres empezar ya, el plan Free de PowerUp Menu es gratis para siempre y no pide tarjeta. Datos consultados el 3 de noviembre de 2026."
 puntos_clave:
   - "El plan gratis de WeQR (Lite) tiene platos y escaneos ilimitados, pero 1 idioma, 1 local y hasta 2 menús. Su plan Pro cuesta 29 € al mes + IVA."
-  - "Más idiomas gratis: PowerUp Menu Free da hasta 3, con traducción automática y publicidad del sector hostelero."
+  - "Más idiomas gratis: PowerUp Menu Free da hasta 3, con traducción automática y publicidad de planes y eventos."
   - "Para vender más desde la carta y saber qué platos se miran: PowerUp Menu Pro, desde 22,49 € al mes + IVA con pago anual, con 30 días de prueba sin tarjeta."
   - "Pedidos desde la mesa sin pagar: MenuForma, con 1 idioma y su marca visible. PowerUp Menu no gestiona pedidos: el pedido lo toma el camarero."
   - "Esta comparativa la escribe PowerUp Menu, que es una de las alternativas. Por eso explicamos los criterios y enlazamos las fuentes."
@@ -77,7 +78,7 @@ Hemos comparado WeQR con cuatro alternativas, con los datos de sus propias webs 
 | Herramienta | Plan gratis | Plan de pago, desde | Idiomas | Lo que la distingue |
 |---|---|---|---|---|
 | WeQR | Sí: 1 local, 2 menús, 1 idioma | 29 €/mes + IVA | 1 gratis; hasta 6 en Pro | Platos y escaneos ilimitados gratis; pago en mesa «próximamente» |
-| PowerUp Menu | Sí: hasta 3 idiomas, con publicidad del sector | 22,49 €/mes + IVA (anual) | 3 gratis; ilimitados en Pro | Vender más desde la carta (venta cruzada, promociones, extras), qué platos se miran y la carta en Google Maps (Pro). Sin pedidos: el pedido lo toma el camarero |
+| PowerUp Menu | Sí: hasta 3 idiomas, con publicidad de planes y eventos | 22,49 €/mes + IVA (anual) | 3 gratis; ilimitados en Pro | Vender más desde la carta (venta cruzada, promociones, extras), qué platos se miran y la carta en Google Maps (Pro). Sin pedidos: el pedido lo toma el camarero |
 | MenuForma | Sí: 1 idioma, con su marca visible | 8,99 €/mes (IVA no indicado) | 1 gratis | Pedidos online y QR por mesa en el plan gratis |
 | Menuda | Sí: 1 menú, hasta 60 platos, 2 idiomas | 24 €/mes, IVA incluido | 2 gratis; 16 de pago | Ficha de Google desde Starter; reservas desde Pro (48 €/mes) |
 | BuenaCarta | Sí: 1 carta, 1 idioma, con anuncios | 1,99 €/mes + IVA (solo quita los anuncios) | 1; varios solo en su plan más caro | Reservas online en el plan gratis |
@@ -95,7 +96,7 @@ PowerUp Menu está pensada para que la carta, además de enseñar los platos, te
 
 Y lo básico:
 
-- **Plan Free:** gratis para siempre, con la carta digital con QR, hasta 3 idiomas, alérgenos por plato y estadísticas sencillas. Incluye publicidad no invasiva del sector hostelero.
+- **Plan Free:** gratis para siempre, con la carta digital con QR, hasta 3 idiomas, alérgenos por plato y estadísticas sencillas. Incluye publicidad no invasiva de planes y eventos de ocio.
 - **Plan Pro:** 24,90 € al mes + IVA, o 22,49 € al mes con pago anual (269,90 € al año + IVA). Quita la publicidad y añade idiomas ilimitados, las herramientas para vender más, la analítica avanzada con informes semanales y un botón de reservas. Se puede probar 30 días sin tarjeta.
 - **Alta:** importas la carta desde Uber Eats o Just Eat, o subes una foto o un PDF. Si tu carta es compleja, el equipo te la monta sin coste en 24–48 horas laborables.
 

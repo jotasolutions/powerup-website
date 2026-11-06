@@ -292,6 +292,6 @@ export const faqs = [
   {
     question: "¿Qué diferencia hay entre el plan gratuito y el Pro?",
     answer:
-      "El plan Free es gratis para siempre: carta digital con hasta 3 idiomas y estadísticas simples de uso, con publicidad no invasiva del sector hostelero. El plan Pro quita la publicidad y añade más idiomas, herramientas para vender más como recomendaciones y promociones, y si lo pagas al año, tu propia página web.",
+      "El plan Free es gratis para siempre: carta digital con hasta 3 idiomas y estadísticas simples de uso, con publicidad no invasiva de planes y eventos de ocio. El plan Pro quita la publicidad y añade más idiomas, herramientas para vender más como recomendaciones y promociones, y si lo pagas al año, tu propia página web.",
   },
 ]
