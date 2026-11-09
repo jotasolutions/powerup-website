@@ -174,7 +174,7 @@ export const faqCopy = {
       },
       {
         question: "Quanto costa il menù digitale? C'è un piano gratis?",
-        answer: `Il piano Free è gratis per sempre: menù digitale fino a 3 lingue e statistiche di base, con pubblicità non invasiva del settore della ristorazione. Il piano Pro costa ${prices.monthly} al mese + IVA: toglie la pubblicità e aggiunge più lingue e strumenti per vendere di più, come consigli e promozioni. Con il pagamento annuale (${prices.yearly} all'anno + IVA) include anche il tuo sito web.`,
+        answer: `Il piano Free è gratis per sempre: menù digitale fino a 3 lingue e statistiche di base, con pubblicità non invasiva. Il piano Pro costa ${prices.monthly} al mese + IVA: toglie la pubblicità e aggiunge più lingue e strumenti per vendere di più, come consigli e promozioni. Con il pagamento annuale (${prices.yearly} all'anno + IVA) include anche il tuo sito web.`,
       },
     ],
     helpTitle: "Hai ancora dubbi?",

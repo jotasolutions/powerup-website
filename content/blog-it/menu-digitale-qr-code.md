@@ -118,7 +118,7 @@ Dato che il menù si modifica subito, puoi cambiare il menù del giorno ogni mat
 ## Quanto costa e se esiste un menù digitale gratis
 
 - **PDF con QR:** praticamente gratis, ma con i problemi di lettura e di modifica che abbiamo visto.
-- **Menù digitale gratis:** esiste, con limiti di lingue o di piatti, oppure con pubblicità.
+- **Menù digitale gratis:** esiste, con limiti di lingue, di piatti o di visite, oppure con pubblicità. Cosa include ogni opzione, in [menù digitale gratis](/it/blog/menu-digitale-gratis).
 - **Menù digitale a pagamento:** aggiunge più lingue, statistiche su cosa si guarda, promozioni e il collegamento con Google. Prima di scegliere, controlla se il prezzo è con o senza IVA e se ci sono costi di attivazione.
 
 ## Il menù su Google
@@ -135,7 +135,7 @@ Il menù digitale non resta sul tavolo. Se lo colleghi alla tua scheda di Google
 - **Lingue:** fino a 3 nel piano gratuito, con traduzione automatica, e di più nel Pro.
 - **Vendere di più:** nel piano Pro, consigli, promozioni, abbinamenti ed extra, e piatti e sezioni programmati per orario o giorno.
 - **Google:** nel Pro, il menù si sincronizza con la tua scheda di Google Maps.
-- **Prezzo:** il piano Free è gratis per sempre, con pubblicità non invasiva del settore della ristorazione. Il Pro costa 22,49 € al mese + IVA con pagamento annuale e si può provare 30 giorni senza carta.
+- **Prezzo:** il piano Free è gratis per sempre, con pubblicità non invasiva. Il Pro costa 22,49 € al mese + IVA con pagamento annuale e si può provare 30 giorni senza carta.
 
 PowerUp Menu non gestisce ordini né pagamenti: l'ordine lo prende sempre il cameriere. Se vuoi sapere quanto vende oggi il tuo menù, puoi [farlo valutare gratis](/it#advisor): siamo a Valencia, ma parliamo la tua lingua.
 
