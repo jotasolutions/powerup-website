@@ -35,9 +35,9 @@ export const metadata: Metadata = {
 }
 
 const WHAT_WE_LOOK_FOR = [
-  { icon: UtensilsCrossed, title: "Foto de platos", text: "Platos, bebidas y producto." },
-  { icon: Clapperboard, title: "Vídeo y reels", text: "Piezas cortas para redes." },
-  { icon: Store, title: "Locales y equipo", text: "El ambiente y las personas." },
+  { icon: UtensilsCrossed, label: "Foto de platos" },
+  { icon: Clapperboard, label: "Vídeo y reels" },
+  { icon: Store, label: "Locales y equipo" },
 ]
 
 const STEPS = [
@@ -83,6 +83,17 @@ export default function ColaboradoresPage() {
               Buscamos colaboradores para proyectos gastronómicos. Déjanos tu portfolio y te
               escribimos.
             </p>
+            <ul className="flex flex-wrap gap-2" aria-label="Qué buscamos">
+              {WHAT_WE_LOOK_FOR.map(({ icon: Icon, label }) => (
+                <li
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 font-medium text-slate-900"
+                >
+                  <Icon className="size-4 text-[#1d5a7a]" aria-hidden />
+                  {label}
+                </li>
+              ))}
+            </ul>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button asChild className="h-13 w-full from-[#246b90] to-[#1d5a7a] text-base font-semibold sm:h-12 sm:w-auto sm:px-6">
                 <a href="#formulario">
@@ -106,20 +117,7 @@ export default function ColaboradoresPage() {
         </div>
       </SectionContainer>
 
-      <SectionContainer id="colaboradores-que-buscamos" className="!pt-4">
-        <h2 className="font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Qué buscamos</h2>
-        <ul className="mt-8 grid gap-4 md:grid-cols-3">
-          {WHAT_WE_LOOK_FOR.map(({ icon: Icon, title, text }) => (
-            <li key={title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <Icon className="size-7 text-primary" aria-hidden />
-              <h3 className="mt-4 font-heading text-xl font-semibold text-slate-950">{title}</h3>
-              <p className="mt-1 text-lg text-slate-800">{text}</p>
-            </li>
-          ))}
-        </ul>
-      </SectionContainer>
-
-      <SectionContainer id="colaboradores-como-funciona" className="!pt-0">
+      <SectionContainer id="colaboradores-como-funciona" className="!pt-4">
         <h2 className="font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Cómo funciona</h2>
         <ol className="mt-8 grid gap-4 md:grid-cols-3">
           {STEPS.map(({ icon: Icon, title }, i) => (
