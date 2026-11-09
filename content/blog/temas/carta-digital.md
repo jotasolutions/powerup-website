@@ -93,7 +93,7 @@ pasos:
   - texto: "Prueba la carta en tu móvil, como la verá el cliente, antes de imprimir el QR."
 grupos:
   - titulo: "Elegir y comparar"
-    slugs: ["mejores-cartas-digitales-qr", "cuanto-cuesta-una-carta-digital", "carta-digital-qr-gratis", "alternativas-a-eatsqr", "alternativas-a-menuforma", "alternativas-a-weqr"]
+    slugs: ["mejores-cartas-digitales-qr", "cuanto-cuesta-una-carta-digital", "carta-digital-qr-gratis", "alternativas-a-eatsqr", "alternativas-a-menuforma", "alternativas-a-weqr", "alternativas-a-menuda"]
   - titulo: "Crear y usar"
     slugs: ["carta-digital-con-qr", "carta-qr-restaurante-pequeno", "carta-restaurante", "digitalizacion-de-restaurantes"]
   - titulo: "Ley, idiomas y Google"
