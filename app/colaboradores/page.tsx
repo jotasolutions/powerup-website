@@ -13,8 +13,8 @@ import { Button } from "@/components/ui/button"
 // Indexable, but not in the sitemap or the menu. No links to the rest of the site except the
 // privacy policy, so the form is the only thing to do here.
 
-// TODO(colaboradores): replace with the Tally form id once the form exists.
-const TALLY_FORM_ID = "TALLY_FORM_ID"
+// Tally form «Colaboradores de foto y vídeo gastronómico · Valencia» (tally.so/r/kb9Bro).
+const TALLY_FORM_ID = "kb9Bro"
 
 const TITLE = "Fotógrafos y videomakers gastronómicos en Valencia | PowerUp Menu"
 const DESCRIPTION =

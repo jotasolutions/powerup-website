@@ -28,29 +28,30 @@ export function TallyEmbed({ formId, title }: { formId: string; title: string })
       if (value) params.set(key, value)
     }
     const src = `https://tally.so/embed/${formId}?${params.toString()}`
+    // Tally's script loads every iframe that has data-tally-src and no src (when it comes near the
+    // screen) and keeps its height in sync with the form. If the script fails to load, the form
+    // still loads, with a fixed height.
     iframe.dataset.tallySrc = src
+    const loadWithoutScript = () => {
+      if (!iframe.getAttribute("src")) iframe.src = src
+    }
 
     const tallyWindow = window as TallyWindow
     if (tallyWindow.Tally) {
       tallyWindow.Tally.loadEmbeds()
-      return
+    } else if (!document.querySelector(`script[src="${EMBED_SCRIPT}"]`)) {
+      const script = document.createElement("script")
+      script.src = EMBED_SCRIPT
+      script.async = true
+      script.onload = () => tallyWindow.Tally?.loadEmbeds()
+      script.onerror = loadWithoutScript
+      document.body.appendChild(script)
     }
-    if (document.querySelector(`script[src="${EMBED_SCRIPT}"]`)) return
-    const script = document.createElement("script")
-    script.src = EMBED_SCRIPT
-    script.async = true
-    // If the script fails to load, the form still shows, just with a fixed height.
-    script.onload = () => tallyWindow.Tally?.loadEmbeds()
-    script.onerror = () => {
-      iframe.src = src
-    }
-    document.body.appendChild(script)
   }, [formId])
 
   return (
     <iframe
       ref={iframeRef}
-      loading="lazy"
       width="100%"
       height="900"
       title={title}
