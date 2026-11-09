@@ -49,7 +49,7 @@ const STEPS = [
 export default function ColaboradoresPage() {
   return (
     <main className="relative bg-white text-slate-900">
-      <header className="mx-auto flex h-16 w-full max-w-6xl items-center px-7 sm:px-6 md:px-8 lg:px-10">
+      <header className="mx-auto flex h-16 w-full max-w-6xl items-center justify-center px-7 sm:px-6 md:px-8 lg:px-10">
         <div className="flex items-center gap-2">
           <div className="flex size-9 items-center justify-center rounded-lg bg-primary">
             <Image src="/images/isotipo-negativo.png" alt="" width={20} height={20} className="object-contain" />
@@ -66,8 +66,8 @@ export default function ColaboradoresPage() {
       </header>
 
       <SectionContainer id="colaboradores-hero" className="!pt-6 md:!pt-10 bg-gradient-to-b from-[#E2FEFD] to-white">
-        <div className="flex flex-col items-center gap-8 lg:grid lg:grid-cols-2 lg:gap-12">
-          <div className="w-full max-w-2xl space-y-6 lg:max-w-none">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-10 text-center">
+          <div className="flex w-full flex-col items-center space-y-6">
             <p className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white">
               <MapPin className="size-4" aria-hidden />
               Se buscan colaboradores
@@ -79,11 +79,11 @@ export default function ColaboradoresPage() {
               </span>
               ?
             </h1>
-            <p className="text-lg font-medium leading-relaxed text-slate-800 sm:text-xl">
+            <p className="max-w-2xl text-balance text-lg font-medium leading-relaxed text-slate-800 sm:text-xl">
               Buscamos colaboradores para proyectos gastronómicos. Déjanos tu portfolio y te
               escribimos.
             </p>
-            <ul className="flex flex-wrap gap-2" aria-label="Qué buscamos">
+            <ul className="flex flex-wrap justify-center gap-2" aria-label="Qué buscamos">
               {WHAT_WE_LOOK_FOR.map(({ icon: Icon, label }) => (
                 <li
                   key={label}
@@ -94,22 +94,22 @@ export default function ColaboradoresPage() {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="flex w-full flex-col items-center gap-3">
               <Button asChild className="h-13 w-full from-[#246b90] to-[#1d5a7a] text-base font-semibold sm:h-12 sm:w-auto sm:px-6">
                 <a href="#formulario">
                   <Camera className="size-5" aria-hidden />
                   Enviar mi portfolio
                 </a>
               </Button>
-              <p className="text-center font-medium text-slate-700 sm:text-left">2 minutos</p>
+              <p className="font-medium text-slate-700">2 minutos</p>
             </div>
           </div>
-          <div className="relative h-[360px] w-full max-w-2xl overflow-hidden rounded-4xl bg-slate-100 sm:h-[460px] lg:h-[560px] lg:max-w-none">
+          <div className="relative h-[360px] w-full max-w-2xl overflow-hidden rounded-4xl bg-slate-100 sm:h-[460px] lg:h-[520px]">
             <Image
               src="/images/colaboradores/tacos-mesa-roja.jpg"
               alt="Plato de tacos sobre una mesa metálica roja, con una mano exprimiendo lima"
               fill
-              sizes="(max-width: 1023px) min(calc(100vw - 56px), 672px), 540px"
+              sizes="min(calc(100vw - 56px), 672px)"
               className="object-cover"
               priority
             />
@@ -118,10 +118,10 @@ export default function ColaboradoresPage() {
       </SectionContainer>
 
       <SectionContainer id="colaboradores-como-funciona" className="!pt-4">
-        <h2 className="font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Cómo funciona</h2>
-        <ol className="mt-8 grid gap-4 md:grid-cols-3">
+        <h2 className="text-center font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Cómo funciona</h2>
+        <ol className="mx-auto mt-8 grid max-w-md gap-4 md:max-w-none md:grid-cols-3">
           {STEPS.map(({ icon: Icon, title }, i) => (
-            <li key={title} className="flex items-center gap-4 rounded-3xl bg-[#E2FEFD] p-6">
+            <li key={title} className="flex items-center justify-center gap-4 rounded-3xl bg-[#E2FEFD] p-6">
               <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-lg font-semibold text-white">
                 {i + 1}
               </span>
@@ -136,8 +136,8 @@ export default function ColaboradoresPage() {
 
       <SectionContainer id="formulario" className="!pt-0 scroll-mt-4">
         <div className="mx-auto max-w-2xl rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Cuéntanos sobre ti</h2>
-          <p className="mt-2 text-lg font-medium text-slate-800">Son 2 minutos. Todos los campos son obligatorios.</p>
+          <h2 className="text-center font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Cuéntanos sobre ti</h2>
+          <p className="mt-2 text-center text-lg font-medium text-slate-800">Son 2 minutos. Todos los campos son obligatorios.</p>
           <div className="mt-6">
             <TallyEmbed formId={TALLY_FORM_ID} title="Formulario para colaboradores de foto y vídeo" />
           </div>
