@@ -75,6 +75,21 @@ function StepProgress({ step, label }: { step: 1 | 2; label: string }) {
     )
 }
 
+// Maestro shows this form inside its own window (/embed/advisor). When a lead goes through, it is
+// told so it can count it; the message is only delivered to these origins, never anywhere else.
+const EMBEDDING_ORIGINS = [
+    "https://maestro.powerup.menu",
+    "https://maestro-web-two.vercel.app",
+    ...(process.env.NODE_ENV === "development" ? ["http://localhost:3200"] : []),
+];
+
+function notifyEmbeddingPage() {
+    if (window.parent === window) return;
+    for (const origin of EMBEDDING_ORIGINS) {
+        window.parent.postMessage({ type: "powerup:advisor_lead" }, origin);
+    }
+}
+
 export function AdvisorWidget() {
     const locale = useLocale();
     const copy = advisorCopy[locale];
@@ -155,6 +170,7 @@ export function AdvisorWidget() {
                 role: values.role,
             });
             setStatus("success");
+            notifyEmbeddingPage();
         } catch (error) {
             console.log(error);
             if (error instanceof Error && error.message === "invalid_whatsapp_number") {
@@ -296,7 +312,7 @@ export function AdvisorWidget() {
                                                 onCheckedChange={field.onChange} />
                                             <span className="leading-relaxed inline-block text-xs">
                                                 {copy.step2.termsBefore}<Link className="underline"
-                                                    href="/terms">{copy.step2.termsLink}</Link>{copy.step2.termsAfter}</span>
+                                                    href="/terms" target="_blank" rel="noopener">{copy.step2.termsLink}</Link>{copy.step2.termsAfter}</span>
                                         </label>
                                         {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                                     </Field>

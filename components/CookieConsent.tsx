@@ -9,6 +9,7 @@ import {
 import { GoogleTagManager } from "@/components/GoogleTagManager";
 import { AnalyticsListener } from "@/components/analytics/AnalyticsListener";
 import { Suspense } from "react";
+import { usePathname } from "next/navigation";
 import { useLocale, type Locale } from "@/lib/locale";
 import { cookieCopy } from "@/components/cookie-consent/copy";
 
@@ -25,6 +26,9 @@ function cookieCategories(locale: Locale): CategoryConfig[] {
 
 export function CookieConsent({ children }: { children: React.ReactNode }) {
   const locale = useLocale();
+  // /embed pages live inside another PowerUp site's window (Maestro), which shows its own banner;
+  // the choice made there reaches www through the shared pu_consent cookie.
+  const embedded = usePathname()?.startsWith("/embed/") ?? false;
   return (
     <CookieConsentProvider
       config={{
@@ -48,7 +52,7 @@ export function CookieConsent({ children }: { children: React.ReactNode }) {
         <AnalyticsListener />
       </Suspense>
       {children}
-      <CookieBanner />
+      {!embedded && <CookieBanner />}
       <CookieSettings />
     </CookieConsentProvider>
   );

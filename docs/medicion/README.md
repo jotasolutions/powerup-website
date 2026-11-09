@@ -107,7 +107,7 @@ donde pasa el evento: la de la web o la del blog.
 | `menu_showcase_click` | Pulsa «Ver carta» en el carrusel de la home | `MenuShowcaseSection` (`menu_showcase`) | Los mismos cuatro datos | Web | — | No |
 | `menu_showcase_slide` | Cambia de diapositiva en el carrusel de la home. **También sale al cargar la home**, aunque nadie lo toque | `ShowcaseCarousel` | `location`; no llegan `slide_index` ni `menu_url` | Web | — | No |
 | `section_view` | Ve una sección: al menos el 35 % entra en pantalla. Si la sección mide más de unas tres pantallas, eso no puede pasar, y cuenta cuando ocupa al menos media pantalla. Una vez por sección y página | `AnalyticsListener`, en los elementos con `data-track-section`: un `SectionContainer` con `id`, y el hero | `section_name` | Su parte | — | No |
-| `advisor_step_1_complete` | Completa el paso 1 del Advisor: elige su restaurante y sube archivos | `components/AdvisorWidget.tsx`, en la home (`#advisor`) y en el diálogo del blog y de la página 404 | `location` (`advisor`); no llegan `restaurant_name` ni `files_count` | Su parte; si pasa en el blog, también la web | — | No |
+| `advisor_step_1_complete` | Completa el paso 1 del Advisor: elige su restaurante y sube archivos | `components/AdvisorWidget.tsx`, en la home (`#advisor`), en el diálogo del blog y de la página 404, y en `/embed/advisor` (el Advisor dentro de la ventana de Maestro) | `location` (`advisor`); no llegan `restaurant_name` ni `files_count` | Su parte; si pasa en el blog, también la web | — | No |
 | `generate_lead` | Envía el paso 2 del Advisor (nombre, email, teléfono y rol) y el envío sale bien | `AdvisorWidget` | `location` y `form_name` (los dos `advisor`); no llegan `restaurant_name` ni `role` | Su parte; si pasa en el blog, también la web | — | **Sí**, en las dos propiedades |
 | `cookie_settings_open` | Abre «Cookies» en el pie | `components/CookieSettingsLink.tsx` | `location` (`footer`) | Su parte | — | No |
 | `pricing_billing_tab_click` | Cambia entre pago anual y mensual | `components/landing/PricingCards.tsx` | `billing_period`, `event_label`, `location` (`pricing`) | Su parte | — | No |
@@ -125,6 +125,12 @@ Notas:
   `app/actions/advisor.ts`. El `event_id` de `generate_lead` se crea después, en el navegador. Si
   la Conversions API (fase 2) manda el Lead desde el servidor, ese identificador tendrá que crearse
   antes y pasarse a la acción.
+- **`/embed/advisor`** es solo el formulario del Advisor, para que Maestro (`maestro.powerup.menu`)
+  lo abra en su ventana. Es una página de la web, así que sus eventos van a la propiedad de la web
+  (`seccion = web`) y se separan por «Ruta de la página». No tiene banner de cookies: lo decide
+  Maestro y llega por la cookie compartida `pu_consent`. Cuando `generate_lead` sale bien, el
+  formulario avisa a Maestro con un `postMessage` (`powerup:advisor_lead`), solo a los orígenes de
+  `EMBEDDING_ORIGINS` en `AdvisorWidget.tsx`. Maestro lo cuenta como `advisor_lead` en su Umami.
 
 ## 5. Valores de `location` y `section_name`
 
@@ -370,6 +376,10 @@ Los cambios en Analytics o en Meta los hace Fede, o Claude in Chrome con su perm
     cambios en GTM. Cómo funciona: `docs/burbuja-whatsapp.md`;
   - el botón de WhatsApp de las preguntas frecuentes pasa de «Pregúntanos» a «Pregúntame» (foto de
     Fede).
+- **09-11-2026, el Advisor dentro de Maestro** (`app/embed/advisor`):
+  - página nueva con solo el formulario, sin indexar, sin burbuja y sin banner de cookies;
+  - el enlace a los términos del formulario se abre en otra pestaña (en toda la web);
+  - aviso `powerup:advisor_lead` a Maestro al enviar el lead. Sin cambios en GTM.
 - **Pendiente de describir (copia de la versión 26, exportada el 10-10-2026):** el contenedor tiene piezas
   que este mapa todavía no explica, añadidas en las versiones 23 a 25:
   - Meta: la etiqueta «Meta · ClicAlta (clic de alta)» (evento propio `ClicAlta` en cada `sign_up_click`, con

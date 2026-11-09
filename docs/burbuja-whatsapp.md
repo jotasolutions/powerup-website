@@ -26,6 +26,7 @@ que también lleva la foto de Fede y el botón «Pregúntame». La versión ital
 - **No** en las landings de Meta (`/vende-mas`, `/visibilidad`): ahí nada debe distraer del alta.
 - **No** en la web italiana (`/it`): sus textos y el mensaje de WhatsApp están en italiano en
   `home-copy.ts`, y la burbuja solo existe en español.
+- **No** en `/embed/advisor`: es solo el formulario del Advisor, que Maestro abre en su ventana.
 - La lista está en `HIDDEN_PATHS`.
 
 **Se aparta del QR de la home.** En ordenador, el hero de la home tiene abajo a la derecha el QR
