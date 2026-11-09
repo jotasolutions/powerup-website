@@ -1,0 +1,141 @@
+/* Maestro's look (maestro.powerup.menu) for the blog's Maestro banner only, so the reader recognises
+   Maestro before leaving the blog. Values copied from maestro-web/app/globals.css (its source of
+   truth); scoped to this module, nothing global. */
+.section {
+  margin: 40px auto 0;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+}
+
+.card {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 20px 28px;
+  background: #fcf5c7;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.isotipo {
+  width: 36px;
+  height: 36px;
+}
+
+.kicker {
+  display: inline-block;
+  background: #000;
+  color: #fcf5c7;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.title {
+  font-family: var(--font-maestro-display), "Arial Black", sans-serif;
+  font-weight: 400;
+  font-size: clamp(26px, 3.2vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+}
+
+.lead {
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+.button {
+  display: inline-block;
+  font-family: var(--font-maestro-display), "Arial Black", sans-serif;
+  font-size: 17px;
+  line-height: 1;
+  color: #000;
+  background: #adf7b6;
+  border: 3px solid #000;
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 4px 4px 0 #000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background: #c4fac9;
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.button:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}
+
+/* Cut-out photo, as in Maestro's hero: blue panel with a dot pattern. The black-and-white, white
+   border and peach shadow are baked into fede.webp. */
+.photo {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  justify-self: center;
+  overflow: hidden;
+  background: #a0ced9;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, #000 1.3px, transparent 1.6px);
+  background-size: 11px 11px;
+  opacity: 0.14;
+}
+
+.fig {
+  position: absolute;
+  right: -2%;
+  bottom: 0;
+  width: 90%;
+  height: auto;
+  transform: rotate(-3deg);
+  transform-origin: bottom right;
+}
+
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .photo {
+    order: 2;
+    max-width: 280px;
+  }
+}
