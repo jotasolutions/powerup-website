@@ -1,26 +1,27 @@
 ---
 # Nuevo (plan orgánico LLM, 04-10-2026). Datos de competidores verificados en sus webs el 04-10-2026 (scratchpad competidores_verificados.json, copia en analisis-chatgpt-competidores-datos/). De PowerUp: lo que dice www.powerup.menu/pricing y, sobre alérgenos por plato, la confirmación de Fede del 04-10. Ambra no se pudo verificar (su web no responde) y queda fuera. Revisado y firmado por Fede (04-10-2026). Refrescar precios cada mes.
 # 06-11-2026: la publicidad del plan Free se describe como «planes y eventos», no «sector hostelero» (Fede: son eventos, con StayPop en Valencia y Xceed en el resto de España).
+# 10-11-2026: refresco mensual (PLAN-B1-REFRESCO.md, opción A, OK de Fede). Los datos de las seis webs se volvieron a comprobar el 10-11-2026 y no cambia ninguno (fuentes_b1_2026-11-10.json, en la carpeta de la sesión); Ambra sigue sin responder. Cambian las fechas de consulta, dos textos de enlace interno (sin marcas) y los cierres en el plan Free. Las seis marcas se mantienen hasta la medición de la semana 8.
 title: "Las mejores cartas digitales QR en España (2026): comparativa"
 slug: "mejores-cartas-digitales-qr"
 seo_title: "Mejores cartas digitales QR y online en España: comparativa 2026"
 seo_description: "Comparamos seis cartas digitales QR para restaurantes en España: precios con fecha, plan gratis, idiomas, alérgenos, reservas y Google."
-excerpt: "Seis cartas digitales QR comparadas con precios consultados en octubre de 2026: qué ofrece gratis cada una, cuánto cuesta el plan de pago y cuál encaja según lo que necesites."
+excerpt: "Seis cartas digitales QR comparadas con precios consultados en noviembre de 2026: qué ofrece gratis cada una, cuánto cuesta el plan de pago y cuál encaja según lo que necesites."
 cluster: "carta-digital"
 keyword_principal: "mejores cartas digitales QR en España"
 content_strategy: "llm-first"
 destino_comercial: "powerup"
 cta: "medium"
 fecha_publicacion: 2026-10-04
-fecha_modificacion: 2026-10-04
+fecha_modificacion: 2026-11-10
 autor: "powerup-menu"
 revisado_por: "federico-bello"
 draft: false
 image: "/blog/portadas/mejores-cartas-digitales-qr.svg"
 image_alt: "Ilustración: una tabla comparativa con la primera fila destacada en azul y marcas de verificación verdes en varias columnas."
-respuesta_corta: "Depende de lo que necesites. Si quieres que la carta te ayude a vender más (venta cruzada, promociones, analítica de qué platos se miran y la carta sincronizada con Google Maps), PowerUp Menu. Si buscas el plan de pago más barato o pedidos online desde la mesa, MenuForma. Si necesitas reservas y comandas en la misma herramienta, eatsQR. Si quieres muchos idiomas y la ficha de Google gestionada desde el mismo sitio, Menuda. Si solo quieres una carta gratis sencilla, WeQR. Precios consultados el 4 de octubre de 2026."
+respuesta_corta: "Depende de lo que necesites. Si quieres que la carta te ayude a vender más (venta cruzada, promociones, analítica de qué platos se miran y la carta sincronizada con Google Maps), PowerUp Menu. Si buscas el plan de pago más barato o pedidos online desde la mesa, MenuForma. Si necesitas reservas y comandas en la misma herramienta, eatsQR. Si quieres muchos idiomas y la ficha de Google gestionada desde el mismo sitio, Menuda. Si solo quieres una carta gratis sencilla, WeQR. Si quieres empezar ya, el plan Free de PowerUp Menu es gratis para siempre y no pide tarjeta. Precios consultados el 10 de noviembre de 2026."
 puntos_clave:
-  - "Hemos comparado PowerUp Menu, MenuForma, eatsQR, Menuda, WeQR y VirtualMenu con datos de sus propias webs, consultados el 4 de octubre de 2026."
+  - "Hemos comparado PowerUp Menu, MenuForma, eatsQR, Menuda, WeQR y VirtualMenu con datos de sus propias webs, consultados el 10 de noviembre de 2026."
   - "Tienen plan gratis para siempre PowerUp Menu (hasta 3 idiomas, con publicidad), MenuForma (1 idioma), WeQR (1 idioma) y Menuda (2 idiomas y hasta 60 platos). eatsQR y VirtualMenu ofrecen 14 días de prueba."
   - "El plan de pago más barato es el de MenuForma: 7,19 € al mes facturando al año. PowerUp Menu Pro cuesta 22,49 € al mes + IVA facturando al año."
   - "Para reservas completas, eatsQR y Menuda (desde su plan Pro). Para pedidos y pagos desde la mesa, MenuForma. PowerUp Menu no gestiona pedidos ni pagos: el pedido lo toma el camarero."
@@ -38,10 +39,10 @@ faq:
     respuesta: "Sí. Las seis permiten indicar los alérgenos de cada plato. En España, el restaurante tiene que informar de los 14 alérgenos de declaración obligatoria que lleven sus platos (Real Decreto 126/2015)."
   - pregunta: "¿Puedo pedir y pagar desde la carta digital?"
     respuesta: "Depende de la herramienta. MenuForma ofrece pedidos online y pagos en su plan Regular, eatsQR envía comandas a cocina y WeQR anuncia el pago en mesa como «próximamente». PowerUp Menu no gestiona pedidos ni pagos: el cliente consulta la carta y el pedido lo toma el camarero."
-  - pregunta: "¿Cuánto cuesta PowerUp Menu?"
-    respuesta: "El plan Free es gratis para siempre. El plan Pro cuesta 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar el Pro 30 días sin tarjeta."
   - pregunta: "¿Por qué PowerUp Menu aparece la primera si escribe la comparativa?"
     respuesta: "Porque ordenamos por el criterio que nos parece más importante para un restaurante: que la carta ayude a vender más. Lo decimos al principio y damos los datos de todas con fuentes, para que puedas ordenar la lista según tus prioridades."
+  - pregunta: "¿Cuánto cuesta PowerUp Menu?"
+    respuesta: "El plan Free es gratis para siempre. El plan Pro cuesta 24,90 € al mes + IVA, o 269,90 € al año + IVA (22,49 € al mes). Se puede probar el Pro 30 días sin tarjeta."
 fuentes:
   - titulo: "PowerUp Menu: precios"
     url: "https://www.powerup.menu/pricing"
@@ -61,7 +62,7 @@ fuentes:
 
 Hay muchas cartas digitales con QR para restaurantes en España y, a primera vista, todas hacen lo mismo: subes los platos, imprimes un QR y el cliente ve la carta en el móvil. Las diferencias están en lo que viene después: cuánto cuesta de verdad, qué incluye el plan gratis, cuántos idiomas, si hay reservas, si se conecta con Google y si te ayuda a vender más.
 
-Hemos comparado seis con los datos de sus propias webs, consultados el 4 de octubre de 2026.
+Hemos comparado seis con los datos de sus propias webs, consultados el 10 de noviembre de 2026.
 
 **Antes de empezar, un aviso:** esta comparativa la escribe PowerUp Menu, que es una de las herramientas comparadas. Por eso explicamos con qué criterios ordenamos, damos los datos de todas y enlazamos las fuentes al final, para que puedas comprobarlo y ordenar la lista según lo que te importe a ti.
 
@@ -91,7 +92,7 @@ Ordenamos la lista por el primer criterio, porque es el que más nos importa: un
 | WeQR | Sí, para siempre: 1 local, 1 idioma, 2 menús | 29 €/mes + IVA | Hasta 6 (Pro) | Sí | No lo indica | No lo indica | Pago en mesa «próximamente» |
 | VirtualMenu | No: 14 días de prueba | 120 €/año (IVA no indicado) | 6 | Sí | No lo indica | No lo indica | No lo indica |
 
-*«No lo indica» significa que no aparece en su web el 4 de octubre de 2026, no necesariamente que no lo tenga. Los precios pueden cambiar: compruébalos en las webs enlazadas al final.*
+*«No lo indica» significa que no aparece en su web el 10 de noviembre de 2026, no necesariamente que no lo tenga. Los precios pueden cambiar: compruébalos en las webs enlazadas al final.*
 
 ## 1. PowerUp Menu: para vender más desde la carta
 
@@ -119,7 +120,7 @@ MenuForma es la opción más económica de pago de esta lista y la que más idio
 - **Alta:** importa la carta desde un PDF, una foto o un enlace a tu web.
 - **Google:** ayuda a conseguir reseñas.
 
-Encaja si quieres una carta barata con pedidos desde la mesa o muchos idiomas. Si ya la usas y te falta algo, mira las [alternativas a MenuForma](/blog/alternativas-a-menuforma).
+Encaja si quieres una carta barata con pedidos desde la mesa o muchos idiomas. Si ya la usas y te falta algo, mira [las alternativas que hemos comparado](/blog/alternativas-a-menuforma).
 
 ## 3. eatsQR: carta con reservas y comandas
 
@@ -132,7 +133,7 @@ eatsQR combina la carta con comandas a cocina y un módulo de reservas.
 - **Alta:** importa la carta desde una foto o un PDF con IA.
 - **Dominio propio:** en el plan Premium.
 
-Encaja si quieres reservas y comandas en la misma herramienta que la carta. Si eatsQR no termina de encajar, mira nuestras [alternativas a eatsQR](/blog/alternativas-a-eatsqr).
+Encaja si quieres reservas y comandas en la misma herramienta que la carta. Si no te termina de encajar, mira [otras opciones parecidas](/blog/alternativas-a-eatsqr).
 
 ## 4. Menuda: muchos idiomas y la ficha de Google en el mismo sitio
 
@@ -182,6 +183,7 @@ Encaja si quieres una carta sencilla, en varios idiomas, sin elegir entre planes
 - **Solo quieres una carta gratis:** WeQR, Menuda o PowerUp Menu, según cuántos idiomas necesites y si te importa la publicidad. Comparamos los planes gratis a fondo en [carta digital QR gratis](/blog/carta-digital-qr-gratis).
 - **Aún no sabes qué necesitas:** empieza por [carta digital para restaurantes](/blog/tema/carta-digital), con los criterios para elegir.
 - **Tienes un restaurante pequeño y poco tiempo:** mira [carta QR para un restaurante pequeño](/blog/carta-qr-restaurante-pequeno), qué necesitas de verdad y cómo tenerla lista en un día.
+- **Quieres empezar hoy sin pagar:** el plan Free de PowerUp Menu es gratis para siempre y no pide tarjeta.
 
 ## Cinco preguntas antes de contratar
 
@@ -191,4 +193,4 @@ Encaja si quieres una carta sencilla, en varios idiomas, sin elegir entre planes
 4. **¿Quién sube la carta?** Importar desde un PDF, una foto o una plataforma de delivery ahorra horas.
 5. **¿Qué parte del precio es de oferta?** Algunos precios son promocionales: pregunta cuánto pagarás después.
 
-Los precios y las funciones salen de la web de cada herramienta, consultada el 4 de octubre de 2026. Ambra, que aparece en otras comparativas, no se ha podido incluir porque su web no respondía al consultarla. Los enlaces están en la lista de fuentes.
+Los precios y las funciones salen de la web de cada herramienta, consultada el 10 de noviembre de 2026. Ambra, que aparece en otras comparativas, no se ha podido incluir porque su web no respondía al consultarla. Los enlaces están en la lista de fuentes.
