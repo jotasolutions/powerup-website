@@ -144,6 +144,8 @@ Menuda une la carta con la gestión de la ficha de Google y, en el plan Pro, las
 - **Google:** desde Starter sincroniza la ficha (carta, fotos, horarios y publicaciones) y ayuda a responder reseñas con IA.
 - **Reservas:** sin comisión, desde el plan Pro.
 
+Si ya la usas y te falta algo, lo vemos en [las alternativas a esta carta](/blog/alternativas-a-menuda).
+
 Encaja si quieres muchos idiomas y la ficha de Google gestionada desde la misma herramienta.
 
 ## 5. WeQR: una carta gratis sencilla
