@@ -89,7 +89,7 @@ Sea cual sea la estrategia, el precio tiene que cubrir el coste del plato y deja
 
 ## Cómo aplicarlos en tu carta
 
-1. **Calcula primero el precio que necesitas**, con el coste de cada plato y el margen que quieres.
+1. **Calcula primero el precio que necesitas**, con el coste de cada plato y el margen que quieres. Lo explicamos paso a paso en [cómo poner precio a un plato](/blog/como-poner-precio-a-un-plato).
 2. **Elige un estilo para cada tipo de plato:** acabado en 9 donde baje la primera cifra, redondo en lo que se elige por capricho.
 3. **Quita el símbolo de la moneda** de la carta.
 4. **Mide el efecto:** compara el ticket medio de unas semanas antes y después del cambio.
