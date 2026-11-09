@@ -108,7 +108,7 @@ Con el coste por ración ya puedes hacer las dos cuentas que importan. Para el a
 - **Food cost del plato** = 4,20 € ÷ 15,00 € = **28 %**.
 - **Margen de contribución** = 15,00 € − 4,20 € = **10,80 €** por ración. Es lo que el plato deja para pagar los gastos fijos. Cómo usarlo para comparar platos, en [cómo calcular el margen de contribución](/blog/margen-de-contribucion).
 
-También puedes hacerlo al revés y partir del food cost que te marques para un plato nuevo: **precio sin IVA = coste por ración ÷ food cost objetivo**. Con un objetivo del 30 %, también de ejemplo, el arroz debería venderse a 14,00 € sin IVA, 15,40 € en carta. Luego queda decidir cómo presentarlo: lo vemos en [precios psicológicos](/blog/precios-psicologicos).
+También puedes hacerlo al revés y partir del food cost que te marques para un plato nuevo: **precio sin IVA = coste por ración ÷ food cost objetivo**. Con un objetivo del 30 %, también de ejemplo, el arroz debería venderse a 14,00 € sin IVA, 15,40 € en carta. Luego queda decidir cómo presentarlo: lo vemos en [precios psicológicos](/blog/precios-psicologicos). El proceso completo, del coste al precio de carta, está en [cómo poner precio a un plato](/blog/como-poner-precio-a-un-plato).
 
 Para las bebidas, la cuenta equivalente está en [el coste de las bebidas](/blog/coste-de-bebidas).
 
