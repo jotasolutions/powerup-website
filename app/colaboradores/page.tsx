@@ -65,59 +65,67 @@ export default function ColaboradoresPage() {
         </div>
       </header>
 
-      <SectionContainer id="colaboradores-hero" className="!pt-6 md:!pt-10 bg-gradient-to-b from-[#E2FEFD] to-white">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-10 text-center">
-          <div className="flex w-full flex-col items-center space-y-6">
-            <p className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white">
-              <MapPin className="size-4" aria-hidden />
-              Se buscan colaboradores
-            </p>
-            <h1 className="text-balance font-heading text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl lg:leading-[1.05]">
-              ¿Eres fotógrafo o videomaker en{" "}
-              <span className="underline decoration-[#FF9800] decoration-[6px] underline-offset-[10px]">
-                Valencia
-              </span>
-              ?
-            </h1>
-            <p className="max-w-2xl text-balance text-lg font-medium leading-relaxed text-slate-800 sm:text-xl">
-              Buscamos colaboradores para proyectos gastronómicos. Déjanos tu portfolio y te
-              escribimos.
-            </p>
-            <ul className="flex flex-wrap justify-center gap-2" aria-label="Qué buscamos">
+      {/* The hero fills the first screen below the logo (100svh minus the 4rem header): text on
+          top, the photo takes whatever height is left, and the button stays visible at the bottom. */}
+      <section
+        id="colaboradores-hero"
+        data-track-section="colaboradores-hero"
+        data-track-location="colaboradores-hero"
+        className="w-full bg-gradient-to-b from-[#E2FEFD] to-white px-5 sm:px-6"
+      >
+        <div className="mx-auto flex h-[calc(100svh-4rem)] max-h-[960px] min-h-[540px] max-w-3xl flex-col items-center gap-3 pb-5 pt-1 text-center sm:gap-5 sm:pb-8">
+          <p className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white">
+            <MapPin className="size-4" aria-hidden />
+            Se buscan colaboradores
+          </p>
+          <h1 className="text-balance font-heading text-[2rem] font-semibold leading-[1.1] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl lg:leading-[1.05]">
+            ¿Eres fotógrafo o videomaker en{" "}
+            <span className="underline decoration-[#FF9800] decoration-[5px] underline-offset-[8px]">
+              Valencia
+            </span>
+            ?
+          </h1>
+          <p className="max-w-2xl text-balance text-base font-medium leading-snug text-slate-800 sm:text-xl">
+            Buscamos colaboradores para proyectos gastronómicos. Déjanos tu portfolio y te
+            escribimos.
+          </p>
+          <div className="relative min-h-[150px] w-full flex-1 overflow-hidden rounded-3xl bg-slate-100">
+            <Image
+              src="/images/colaboradores/tacos-mesa-roja.jpg"
+              alt="Plato de tacos sobre una mesa metálica roja, con una mano exprimiendo lima"
+              fill
+              sizes="min(calc(100vw - 40px), 768px)"
+              className="object-cover object-[center_65%]"
+              priority
+            />
+            <ul
+              className="absolute inset-x-2 bottom-2 flex flex-wrap justify-center gap-1.5 sm:bottom-4 sm:gap-2"
+              aria-label="Qué buscamos"
+            >
               {WHAT_WE_LOOK_FOR.map(({ icon: Icon, label }) => (
                 <li
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 font-medium text-slate-900"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-slate-900 shadow-md sm:gap-2 sm:px-4 sm:py-2 sm:text-base"
                 >
                   <Icon className="size-4 text-[#1d5a7a]" aria-hidden />
                   {label}
                 </li>
               ))}
             </ul>
-            <div className="flex w-full flex-col items-center gap-3">
-              <Button asChild className="h-13 w-full from-[#246b90] to-[#1d5a7a] text-base font-semibold sm:h-12 sm:w-auto sm:px-6">
-                <a href="#formulario">
-                  <Camera className="size-5" aria-hidden />
-                  Enviar mi portfolio
-                </a>
-              </Button>
-              <p className="font-medium text-slate-700">2 minutos</p>
-            </div>
           </div>
-          <div className="relative h-[360px] w-full max-w-2xl overflow-hidden rounded-4xl bg-slate-100 sm:h-[460px] lg:h-[520px]">
-            <Image
-              src="/images/colaboradores/tacos-mesa-roja.jpg"
-              alt="Plato de tacos sobre una mesa metálica roja, con una mano exprimiendo lima"
-              fill
-              sizes="min(calc(100vw - 56px), 672px)"
-              className="object-cover"
-              priority
-            />
+          <div className="flex w-full flex-col items-center gap-1.5">
+            <Button asChild className="h-13 w-full from-[#246b90] to-[#1d5a7a] text-base font-semibold sm:h-12 sm:w-auto sm:px-8">
+              <a href="#formulario">
+                <Camera className="size-5" aria-hidden />
+                Enviar mi portfolio
+              </a>
+            </Button>
+            <p className="text-sm font-medium text-slate-700">2 minutos</p>
           </div>
         </div>
-      </SectionContainer>
+      </section>
 
-      <SectionContainer id="colaboradores-como-funciona" className="!pt-4">
+      <SectionContainer id="colaboradores-como-funciona" className="!pt-10">
         <h2 className="text-center font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Cómo funciona</h2>
         <ol className="mx-auto mt-8 grid max-w-md gap-4 md:max-w-none md:grid-cols-3">
           {STEPS.map(({ icon: Icon, title }, i) => (
