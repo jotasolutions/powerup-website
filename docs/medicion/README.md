@@ -37,6 +37,10 @@ Otras webs del ecosistema tienen su propia medición y no entran en este mapa:
   GTM.
 - GTM solo se monta con la analítica aceptada. Sin ella no se carga Google Analytics, ni Meta, ni
   Umami desde GTM. Vercel Analytics y Umami (desde el código) sí se cargan.
+- **`/colaboradores` nunca carga GTM**, acepte o no las cookies (`NO_GTM_PATHS` en
+  `components/GoogleTagManager.tsx`). Es la landing para buscar fotógrafos y videomakers: sus
+  visitas no deben entrar en las audiencias del píxel de Meta. Allí solo miden Umami y Vercel; las
+  solicitudes se cuentan en Tally.
 - Meta necesita además el marketing aceptado. La variable de GTM `js.marketing_aceptado` lee
   `cookie-consent` (`categories.marketing === true`). Las Google tags pasan ese mismo valor a
   `allow_google_signals` y a `allow_ad_personalization_signals`.
