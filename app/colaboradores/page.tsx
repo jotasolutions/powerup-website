@@ -35,27 +35,15 @@ export const metadata: Metadata = {
 }
 
 const WHAT_WE_LOOK_FOR = [
-  {
-    icon: UtensilsCrossed,
-    title: "Foto de platos y producto",
-    text: "Platos, bebidas y producto, listos para cartas digitales, webs y redes.",
-  },
-  {
-    icon: Clapperboard,
-    title: "Vídeo y reels",
-    text: "Piezas cortas para Instagram y TikTok: el plato, la cocina, el servicio.",
-  },
-  {
-    icon: Store,
-    title: "Locales y equipo",
-    text: "El ambiente del restaurante y las personas que lo hacen posible.",
-  },
+  { icon: UtensilsCrossed, title: "Foto de platos", text: "Platos, bebidas y producto." },
+  { icon: Clapperboard, title: "Vídeo y reels", text: "Piezas cortas para redes." },
+  { icon: Store, title: "Locales y equipo", text: "El ambiente y las personas." },
 ]
 
 const STEPS = [
-  { icon: ClipboardList, title: "Rellenas el formulario", text: "Dos minutos: tus datos, tu tarifa y tu portfolio." },
-  { icon: Search, title: "Revisamos tu trabajo", text: "Miramos tu portfolio y la experiencia que nos cuentes." },
-  { icon: Mail, title: "Te escribimos si encaja", text: "Cuando haya un proyecto que encaje contigo, te contactamos." },
+  { icon: ClipboardList, title: "Rellenas el formulario" },
+  { icon: Search, title: "Revisamos tu portfolio" },
+  { icon: Mail, title: "Te escribimos si encaja" },
 ]
 
 export default function ColaboradoresPage() {
@@ -80,30 +68,29 @@ export default function ColaboradoresPage() {
       <SectionContainer id="colaboradores-hero" className="!pt-6 md:!pt-10 bg-gradient-to-b from-[#E2FEFD] to-white">
         <div className="flex flex-col items-center gap-8 lg:grid lg:grid-cols-2 lg:gap-12">
           <div className="w-full max-w-2xl space-y-6 lg:max-w-none">
-            <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-slate-700 shadow-sm">
-              <MapPin className="size-4 text-primary" aria-hidden />
-              Colaboradores · Valencia y alrededores
+            <p className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white">
+              <MapPin className="size-4" aria-hidden />
+              Se buscan colaboradores
             </p>
-            <h1 className="text-balance font-heading text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl lg:text-5xl lg:leading-tight">
-              ¿Eres fotógrafo/a o videomaker{" "}
-              <span className="underline decoration-[#FF9800] decoration-4 underline-offset-[10px]">
-                gastronómico
-              </span>{" "}
-              en Valencia?
+            <h1 className="text-balance font-heading text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl lg:leading-[1.05]">
+              ¿Eres fotógrafo o videomaker en{" "}
+              <span className="underline decoration-[#FF9800] decoration-[6px] underline-offset-[10px]">
+                Valencia
+              </span>
+              ?
             </h1>
-            <p className="section-paragraph lg:max-w-[90%]">
-              Buscamos colaboradores de foto y vídeo para proyectos con restaurantes en Valencia y
-              hasta 20 km alrededor. Somos un equipo internacional: déjanos tu portfolio y tu tarifa, y
-              te escribimos si encaja.
+            <p className="text-lg font-medium leading-relaxed text-slate-800 sm:text-xl">
+              Buscamos colaboradores para proyectos gastronómicos. Déjanos tu portfolio y te
+              escribimos.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button asChild className="h-13 w-full sm:h-10 sm:w-auto">
+              <Button asChild className="h-13 w-full from-[#246b90] to-[#1d5a7a] text-base font-semibold sm:h-12 sm:w-auto sm:px-6">
                 <a href="#formulario">
-                  <Camera className="size-4" aria-hidden />
+                  <Camera className="size-5" aria-hidden />
                   Enviar mi portfolio
                 </a>
               </Button>
-              <p className="text-center text-sm text-slate-600 sm:text-left">Dos minutos · Sin compromiso</p>
+              <p className="text-center font-medium text-slate-700 sm:text-left">2 minutos</p>
             </div>
           </div>
           <div className="relative h-[360px] w-full max-w-2xl overflow-hidden rounded-4xl bg-slate-100 sm:h-[460px] lg:h-[560px] lg:max-w-none">
@@ -120,33 +107,30 @@ export default function ColaboradoresPage() {
       </SectionContainer>
 
       <SectionContainer id="colaboradores-que-buscamos" className="!pt-4">
-        <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">Qué buscamos</h2>
+        <h2 className="font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Qué buscamos</h2>
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
           {WHAT_WE_LOOK_FOR.map(({ icon: Icon, title, text }) => (
             <li key={title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <Icon className="size-6 text-primary" aria-hidden />
-              <h3 className="mt-4 font-heading text-lg font-medium">{title}</h3>
-              <p className="mt-2 text-slate-600">{text}</p>
+              <Icon className="size-7 text-primary" aria-hidden />
+              <h3 className="mt-4 font-heading text-xl font-semibold text-slate-950">{title}</h3>
+              <p className="mt-1 text-lg text-slate-800">{text}</p>
             </li>
           ))}
         </ul>
       </SectionContainer>
 
       <SectionContainer id="colaboradores-como-funciona" className="!pt-0">
-        <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">Cómo funciona</h2>
+        <h2 className="font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Cómo funciona</h2>
         <ol className="mt-8 grid gap-4 md:grid-cols-3">
-          {STEPS.map(({ icon: Icon, title, text }, i) => (
-            <li key={title} className="flex gap-4 rounded-3xl bg-[#E2FEFD] p-6">
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-white">
+          {STEPS.map(({ icon: Icon, title }, i) => (
+            <li key={title} className="flex items-center gap-4 rounded-3xl bg-[#E2FEFD] p-6">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-lg font-semibold text-white">
                 {i + 1}
               </span>
-              <div>
-                <h3 className="flex items-center gap-2 font-heading text-lg font-medium">
-                  <Icon className="size-5 text-primary" aria-hidden />
-                  {title}
-                </h3>
-                <p className="mt-2 text-slate-600">{text}</p>
-              </div>
+              <h3 className="flex items-center gap-2 font-heading text-xl font-semibold text-slate-950">
+                <Icon className="size-5 shrink-0 text-primary" aria-hidden />
+                {title}
+              </h3>
             </li>
           ))}
         </ol>
@@ -154,20 +138,17 @@ export default function ColaboradoresPage() {
 
       <SectionContainer id="formulario" className="!pt-0 scroll-mt-4">
         <div className="mx-auto max-w-2xl rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
-          <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">Cuéntanos sobre ti</h2>
-          <p className="mt-2 text-slate-600">
-            Todos los campos son obligatorios. Para el portfolio, mejor un enlace; si no tienes, puedes
-            subir archivos.
-          </p>
+          <h2 className="font-heading text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Cuéntanos sobre ti</h2>
+          <p className="mt-2 text-lg font-medium text-slate-800">Son 2 minutos. Todos los campos son obligatorios.</p>
           <div className="mt-6">
             <TallyEmbed formId={TALLY_FORM_ID} title="Formulario para colaboradores de foto y vídeo" />
           </div>
         </div>
       </SectionContainer>
 
-      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-700">
         © PowerUp Menu ·{" "}
-        <Link href="/privacy" className="underline underline-offset-4 hover:text-slate-700">
+        <Link href="/privacy" className="underline underline-offset-4 hover:text-slate-950">
           Política de privacidad
         </Link>
       </footer>
