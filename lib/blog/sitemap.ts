@@ -2,7 +2,7 @@ import "server-only"
 
 import type { MetadataRoute } from "next"
 import { getClusterPages } from "./clusters"
-import { BLOG_PATH, ITALIAN_BLOG_PATH, absoluteUrl, authorPath, clusterPath, italianPostPath, postPath } from "./config"
+import { BLOG_PATH, FIGURE_LICENSE_PATH, ITALIAN_BLOG_PATH, absoluteUrl, authorPath, clusterPath, italianPostPath, postPath } from "./config"
 import { withProductionFallback } from "./isolation"
 import { getAuthorPages, getPostsByCluster, getPostsByPerson, getVisibleItalianPosts, getVisiblePosts, type Post } from "./posts"
 
@@ -64,5 +64,7 @@ function buildSitemapEntries(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
+    // No lastModified: the page only changes when the licence does.
+    { url: absoluteUrl(FIGURE_LICENSE_PATH), changeFrequency: "yearly" as const, priority: 0.2 },
   ]
 }

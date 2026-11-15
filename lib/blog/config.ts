@@ -12,6 +12,9 @@ export const postPath = (slug: string) => `${BLOG_PATH}/${slug}`
 export const clusterPath = (cluster: string) => `${BLOG_PATH}/tema/${cluster}`
 export const authorPath = (id: string) => `${BLOG_PATH}/autor/${id}`
 export const markdownPath = (slug: string) => `${BLOG_PATH}/md/${slug}`
+/** Terms for reusing the blog's own figures; every figure's ImageObject points here. */
+export const FIGURE_LICENSE_PATH = `${BLOG_PATH}/licencia-figuras`
+export const FIGURE_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 export const listingPath = (page: number) =>
   page <= 1 ? BLOG_PATH : `${BLOG_PATH}/pagina/${page}`
 
