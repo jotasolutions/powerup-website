@@ -1,7 +1,7 @@
 import { organizationJsonLdFields } from "@/lib/company"
 import { SITE_URL } from "@/lib/site"
 import type { Author, PersonAuthor } from "./authors"
-import { absoluteUrl, authorPath, postPath } from "./config"
+import { FIGURE_LICENSE_PATH, FIGURE_LICENSE_URL, absoluteUrl, authorPath, postPath } from "./config"
 import type { OwnFigure } from "./markdown"
 import type { Post } from "./posts"
 import type { FaqItem } from "./schema"
@@ -83,6 +83,7 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
 /**
  * The blog's own figures with their credit, which Google Images shows next to the image.
  * Kept apart from BlogPosting so the post's `image` stays the 1200×630 PNG.
+ * All figures share one licence (CC BY 4.0), explained on the page at FIGURE_LICENSE_PATH.
  */
 export function figuresJsonLd(figures: OwnFigure[]) {
   const organization = organizationNode()
@@ -95,6 +96,8 @@ export function figuresJsonLd(figures: OwnFigure[]) {
       creator: organization,
       creditText: organization.name,
       copyrightNotice: `© ${organization.name}`,
+      license: FIGURE_LICENSE_URL,
+      acquireLicensePage: absoluteUrl(FIGURE_LICENSE_PATH),
     })),
   }
 }
