@@ -62,7 +62,7 @@ En hostelería, la palabra *rotación* se usa también para otras dos cosas que 
 
 - **Por temporadas:** cambias los platos que dependen del producto de cada época del año.
 - **Con sugerencias:** mantienes la carta y ofreces, además, unos pocos platos que cambian cada semana o cada día.
-- **Con un menú del día:** los platos cambian cada día o siguen un ciclo de varias semanas.
+- **Con un menú del día:** los platos cambian cada día o siguen un ciclo de varias semanas. Cómo ponerle precio, en [el precio del menú del día](/blog/precio-menu-del-dia).
 
 Se pueden combinar: por ejemplo, una carta con una base fija, una parte que cambia con cada temporada y sugerencias semanales.
 

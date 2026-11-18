@@ -105,7 +105,7 @@ Un precio deja de valer cuando cambia su coste:
 - **Cambias la receta** o el tamaño de la ración.
 - **Cambia la temporada** y, con ella, el coste de un producto.
 
-Empieza por los platos que más vendes: un desvío pequeño en un plato que sale cada día pesa más que uno grande en un plato que casi no se pide. Para las bebidas, la cuenta equivalente está en [el coste de las bebidas](/blog/coste-de-bebidas).
+Empieza por los platos que más vendes: un desvío pequeño en un plato que sale cada día pesa más que uno grande en un plato que casi no se pide. Para las bebidas, la cuenta equivalente está en [el coste de las bebidas](/blog/coste-de-bebidas), y para un menú cerrado, en [el precio del menú del día](/blog/precio-menu-del-dia).
 
 ## Errores comunes
 
