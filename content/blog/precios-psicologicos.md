@@ -82,7 +82,7 @@ En España, la ley de defensa de los consumidores exige que una oferta con preci
 Los precios psicológicos son solo una parte de la estrategia de precios. Otras que se usan en restauración:
 
 - **Precio de penetración:** precios por debajo del mercado para atraer clientes. En un restaurante, por ejemplo, al abrir o al estrenar un menú.
-- **Menús y combos:** varios productos juntos por un precio único, como el menú del día o una hamburguesa con bebida.
+- **Menús y combos:** varios productos juntos por un precio único, como el menú del día o una hamburguesa con bebida. Cómo calcular el del menú del día, en [el precio del menú del día](/blog/precio-menu-del-dia).
 - **Precios por franja horaria:** precios distintos según el momento, como una oferta de mediodía. En PowerUp Menu, el plan Pro permite activar ofertas por horario, día o stock.
 
 Sea cual sea la estrategia, el precio tiene que cubrir el coste del plato y dejar margen. En [cómo calcular el margen de contribución](/blog/margen-de-contribucion) y en [cómo calcular el food cost](/blog/costo-de-comida) explicamos cómo comprobarlo.

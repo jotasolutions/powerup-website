@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Una pizarra de menú del día con un precio destacado, junto a un plato</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <!-- Board -->
+  <rect x="52" y="44" width="170" height="212" rx="12" fill="#334155"/>
+  <rect x="64" y="56" width="146" height="188" rx="8" fill="#DFFFEA"/>
+  <rect x="84" y="76" width="106" height="12" rx="6" fill="#334155"/>
+  <g fill="#94A3B8">
+    <rect x="84" y="108" width="80" height="9" rx="4.5"/>
+    <rect x="84" y="130" width="96" height="9" rx="4.5"/>
+    <rect x="84" y="152" width="70" height="9" rx="4.5"/>
+    <rect x="84" y="174" width="88" height="9" rx="4.5"/>
+  </g>
+  <rect x="104" y="200" width="66" height="26" rx="8" fill="#50B27F"/>
+  <!-- Plate -->
+  <circle cx="300" cy="166" r="62" fill="#FFFFFF" stroke="#334155" stroke-width="3"/>
+  <circle cx="300" cy="166" r="42" fill="#DFFFEA" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M286 160 q14 -18 28 0 q-14 18 -28 0z" fill="#3482AA"/>
+  <rect x="226" y="120" width="5" height="92" rx="2.5" fill="#94A3B8"/>
+  <rect x="370" y="120" width="5" height="92" rx="2.5" fill="#94A3B8"/>
+</svg>
