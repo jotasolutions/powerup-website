@@ -4,6 +4,7 @@ import { FooterSection } from "@/components/landing/FooterSection"
 import { NavMenu } from "@/components/landing/NavMenu"
 import { BLOG_NAME } from "@/lib/blog/config"
 import { AdvisorDialogProvider } from "./_components/AdvisorDialog"
+import { BlogUmamiEvents } from "./_components/BlogUmamiEvents"
 
 // Canonical, RSS link, Open Graph and robots are set per page through blogMetadata():
 // a page that sets its own `alternates` or `openGraph` replaces the layout's whole object.
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function BlogLayout({ children }: { children: ReactNode }) {
   return (
     <AdvisorDialogProvider>
+      <BlogUmamiEvents />
       <main className="flex flex-1 flex-col bg-white text-slate-900">
         <NavMenu prefetchLinks={false} />
         {children}

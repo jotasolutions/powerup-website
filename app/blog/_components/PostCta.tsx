@@ -22,7 +22,7 @@ export function InlineCta({ post }: { post: Post }) {
   if (post.cta !== "soft") return null
   const link = "font-medium text-primary underline underline-offset-4 hover:text-slate-900"
   return (
-    <p className="max-w-[680px] border-t border-border pt-6 text-[17px] leading-relaxed text-slate-700">
+    <p data-cta-slot="enlace-final" className="max-w-[680px] border-t border-border pt-6 text-[17px] leading-relaxed text-slate-700">
       {post.destino_comercial === "powerup" ? (
         <>
           ¿Quieres aplicarlo en tu restaurante?{" "}
@@ -52,7 +52,7 @@ export function BottomCta({ post, locale = "es" }: { post: Post; locale?: Locale
   const exampleUrl = exampleMenuUrl(post.slug)
 
   return (
-    <section className="mx-auto mt-10 w-full max-w-[1200px] px-4">
+    <section data-cta-slot="final" className="mx-auto mt-10 w-full max-w-[1200px] px-4">
       <div className="hero-container grid items-center gap-6 overflow-hidden rounded-3xl px-6 py-8 sm:px-10 sm:py-12 md:grid-cols-[minmax(0,1fr)_auto]">
         <div className="flex flex-col gap-4">
           <h2 className="font-heading text-[clamp(26px,3vw,36px)] font-medium leading-tight tracking-tight text-slate-900">

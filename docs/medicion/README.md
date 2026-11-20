@@ -136,6 +136,26 @@ Notas:
   formulario avisa a Maestro con un `postMessage` (`powerup:advisor_lead`), solo a los orígenes de
   `EMBEDDING_ORIGINS` en `AdvisorWidget.tsx`. Maestro lo cuenta como `advisor_lead` en su Umami.
 
+### Clics en los CTA del blog, en Umami (desde el 21-11-2026)
+
+GA4 solo ve a quien acepta las cookies. Por eso los clics en los CTA del blog también se cuentan en
+Umami, que no usa cookies. No es un evento de `ANALYTICS_EVENTS` y no pasa por GTM: no hace falta
+cambiar el contenedor.
+
+- **Quién lo manda:** `app/blog/_components/BlogUmamiEvents.tsx`, montado solo en
+  `app/blog/layout.tsx`. Fuera de `/blog` (la home, `/it/blog`) no se manda nada.
+- **Qué cuenta:** el clic en un elemento con `data-track-event` que está dentro de un
+  `data-cta-slot`. Los mismos clics siguen llegando a GA4 como hasta ahora.
+- **Nombre:** `cta-<sitio>-<destino>`, por ejemplo `cta-lateral-advisor`.
+  - Sitios: `lateral` (tarjeta del Advisor de la columna), `final` (banner tras el artículo, de
+    PowerUp o de Maestro), `enlace-final` (artículos `soft`) y `hub` (tarjeta ancha del Advisor en
+    `/blog/tema/<tema>`).
+  - Destinos: `advisor` (abre el Advisor), `alta` (`sign_up_click`), `ejemplo`
+    (`example_menu_click`) y `maestro`. Cualquier otro sale con el nombre del evento de GA4.
+- **Datos:** `slug` (la ruta tras `/blog/`) y `label`. Ningún dato personal.
+- **Un CTA nuevo en el blog** se mide en Umami con solo ponerlo dentro de un `data-cta-slot`.
+- **Lectura:** `herramientas/umami-blog.py`, en la carpeta del blog, apartado «Clics en CTA».
+
 ## 5. Valores de `location` y `section_name`
 
 Salen del código y los comprobé en las páginas publicadas el 30-09.
@@ -390,3 +410,5 @@ Los cambios en Analytics o en Meta los hace Fede, o Claude in Chrome con su perm
     el marketing aceptado), además de «Meta · PageView» y «Meta · Lead (Advisor)»;
   - OpenAI: un píxel con cinco etiquetas («OpenAI · init», `page_viewed`, `advisor_started`,
     `signup_started` y `lead_created`), todas solo con el marketing aceptado.
+- **21-11-2026, clics en los CTA del blog en Umami:** `BlogUmamiEvents` y los atributos
+  `data-cta-slot` (apartado 4). No cambian GA4, GTM ni la home.

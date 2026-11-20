@@ -19,7 +19,7 @@ export function AdvisorPromoWide() {
   return (
     // The animation goes under the pitch, at the card's full width: beside it, the three steps
     // under the animation had no room to breathe.
-    <div className="@container">
+    <div data-cta-slot="hub" className="@container">
       <GradientFrame className="flex flex-col gap-6 p-4 sm:p-8">
         {/* Centred, with the button big and inside the home's moving green light, so it's what
             the eye lands on. */}
@@ -45,6 +45,7 @@ export function AdvisorPromoWide() {
 export function AdvisorPromoSidebar({ locale = "es" }: { locale?: Locale }) {
   const copy = blogUiCopy[locale]
   return (
+    <div data-cta-slot="lateral">
     <GradientFrame className="flex flex-col items-start gap-3 p-[22px]">
       {/* In the sticky aside of a short window the Advisor animation would squeeze the contents
           list out; the pitch and the button always stay. */}
@@ -54,5 +55,6 @@ export function AdvisorPromoSidebar({ locale = "es" }: { locale?: Locale }) {
       <p className="text-sm leading-normal text-slate-600">{copy.advisorText}</p>
       <AdvisorTrigger className={cn(buttonAdvisor, "h-10 px-4")}>{copy.advisorButton}</AdvisorTrigger>
     </GradientFrame>
+    </div>
   )
 }
