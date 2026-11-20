@@ -1,9 +1,10 @@
 ---
 # Nuevo (cola de temas, tema 4; miniplan aprobado por Fede el 02-11-2026). Definición y fuentes comprobadas el 03-11-2026 (analisis-chatgpt-competidores-datos/fuentes_t3_t4_2026-11-03.json, en la carpeta de la sesión). Las cifras del ejemplo son inventadas y redondas, y lo dice el texto; cuadran con el arroz de margen-de-contribucion (16,50 € en carta, 4,20 € de ingredientes). Revisado y firmado por Fede (03-11-2026).
+# Actualización A2 (ritmo 1 + 1, adelantada; miniplan aprobado por Fede el 20-11-2026): seo_title y seo_description para «cómo hacer un escandallo», tabla del ejemplo en texto, enlace a la plantilla de Excel de Maestro y una FAQ. Responde a «escandallo», «cómo hacer un escandallo» y «escandallo ejemplo» (Search Console, 28 días hasta el 18-11: 1.560 impresiones, 4 clics, posición 16,8). H1, URL, keyword y cifras sin cambios.
 title: "Escandallo de un plato: cómo hacerlo, paso a paso"
 slug: "escandallo-de-un-plato"
-seo_title: "Escandallo de un plato: cómo hacerlo, paso a paso"
-seo_description: "Qué es el escandallo de un plato y cómo hacerlo en 4 pasos: ingredientes, cantidades, mermas y coste por ración, con un ejemplo calculado."
+seo_title: "Cómo hacer un escandallo de un plato: paso a paso y ejemplo"
+seo_description: "Cómo hacer un escandallo en 4 pasos: ingredientes, precio, mermas y coste por ración. Con un ejemplo calculado y una plantilla de Excel gratis."
 excerpt: "El escandallo es la ficha de coste de un plato: lo que te cuesta de verdad cada ración. Así se hace en 4 pasos, con las mermas, y así se usa para fijar el precio."
 cluster: "rentabilidad-y-costes"
 keyword_principal: "escandallo de un plato"
@@ -11,7 +12,7 @@ content_strategy: "hybrid"
 destino_comercial: "maestro"
 cta: "medium"
 fecha_publicacion: 2026-11-03
-fecha_modificacion: 2026-11-03
+fecha_modificacion: 2026-11-20
 autor: "powerup-menu"
 draft: false
 revisado_por: "federico-bello"
@@ -35,6 +36,8 @@ faq:
     respuesta: "Lo que se pierde de un ingrediente entre que lo compras y llega al plato: la piel, las espinas, los huesos, lo que se recorta o el peso que pierde al cocinarse. Por eso el kilo que de verdad usas cuesta más que el que compras."
   - pregunta: "¿Qué food cost es bueno?"
     respuesta: "Depende del tipo de cocina y de los precios de tu carta: no hay una cifra que valga para todos. Más útil que compararte con una media es fijarte un objetivo para cada plato y vigilar que el escandallo lo cumpla."
+  - pregunta: "¿Hay una plantilla de escandallo gratis?"
+    respuesta: "Sí. Maestro, el servicio de consultoría de rentabilidad de PowerUp Menu, tiene una plantilla de escandallo en Excel que se descarga gratis en maestro.powerup.menu/descargas/escandallos. Apuntas los ingredientes, las cantidades y el precio por kilo, y te da el coste del plato y su porcentaje de coste."
 fuentes:
   - titulo: "RAE: Diccionario de la lengua española, «escandallo»"
     url: "https://dle.rae.es/escandallo"
@@ -79,6 +82,19 @@ Lo vemos con un arroz de marisco. **Es un ejemplo:** las cantidades y los precio
 <img src="/blog/figuras/escandallo-de-un-plato/escandallo-arroz.svg" width="560" height="432" alt="Escandallo del arroz de marisco del ejemplo: arroz 0,40 €, calamar limpio 1,50 € (comprado a 10 € el kilo, se aprovecha el 80 %, así que el kilo útil cuesta 12,50 €), gamba 1,20 €, caldo 0,30 € y sofrito y aceite 0,80 €. El coste por ración es de 4,20 €.">
 <figcaption>Ejemplo del artículo, con cantidades y precios inventados. El precio útil del calamar ya lleva la merma. Gráfico: PowerUp Menu.</figcaption>
 </figure>
+
+El mismo escandallo, en tabla:
+
+| Ingrediente | Cantidad por ración | Precio de compra | Se aprovecha | Precio útil | Coste por ración |
+|---|---|---|---|---|---|
+| Arroz | 100 g | 4,00 €/kg | 100 % | 4,00 €/kg | 0,40 € |
+| Calamar | 120 g | 10,00 €/kg | 80 % | 12,50 €/kg | 1,50 € |
+| Gamba | 80 g | 15,00 €/kg | 100 % | 15,00 €/kg | 1,20 € |
+| Caldo de pescado | 300 ml | 1,00 €/l | 100 % | 1,00 €/l | 0,30 € |
+| Sofrito y aceite | 1 ración | — | — | — | 0,80 € |
+| **Total** | | | | | **4,20 €** |
+
+Si prefieres no empezar de cero, descarga la [plantilla de escandallo gratis en Excel](https://maestro.powerup.menu/descargas/escandallos) de Maestro: apuntas los ingredientes, las cantidades y el precio por kilo, y hace las cuentas.
 
 **Lo que cambia la merma:** si hubieras usado el precio de compra del calamar, el plato te saldría a 3,90 €, 30 céntimos menos por ración. Si vendes 40 arroces al mes, son 12 € al mes que no verías en tus cuentas, solo en un plato.
 
@@ -134,4 +150,4 @@ Con el escandallo de cada plato puedes ir un paso más allá y cruzar su margen 
 
 ## Si quieres hacerlo con alguien
 
-Escandallar una carta entera lleva tiempo: pesar, revisar facturas y cuadrar las mermas. [Maestro](https://maestro.powerup.menu/), el servicio de consultoría de rentabilidad de PowerUp Menu, trabaja contigo los escandallos, el food cost y los precios de tu carta.
+Escandallar una carta entera lleva tiempo: pesar, revisar facturas y cuadrar las mermas. [Maestro](https://maestro.powerup.menu/), el servicio de consultoría de rentabilidad de PowerUp Menu, trabaja contigo los escandallos, el food cost y los precios de tu carta. Si prefieres empezar solo, su [plantilla de escandallo en Excel](https://maestro.powerup.menu/descargas/escandallos) es gratis.
