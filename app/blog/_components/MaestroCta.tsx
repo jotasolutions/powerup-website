@@ -19,7 +19,7 @@ const maestroDisplay = Archivo_Black({
 // are copies of maestro-web/public/img, so a change there never breaks the blog.
 export function MaestroCta({ post }: { post: Post }) {
   return (
-    <section className={`${styles.section} ${maestroDisplay.variable}`}>
+    <section data-cta-slot="final" className={`${styles.section} ${maestroDisplay.variable}`}>
       <div className={styles.card}>
         <figure className={styles.photo}>
           <Image
