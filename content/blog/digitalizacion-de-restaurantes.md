@@ -48,7 +48,7 @@ Digitalizar un restaurante no consiste en comprar herramientas, sino en usarlas 
 | Control económico | Costes, compras e inventario | Escandallos, food cost, pedidos a proveedores |
 | Clientes | La relación con quien ya ha venido | Programas de fidelización, gestión de reseñas |
 
-No hace falta digitalizarlo todo a la vez. Lo importante es que cada herramienta resuelva un problema que tengas de verdad.
+No hace falta digitalizarlo todo a la vez. Lo importante es que cada herramienta resuelva un problema que tengas de verdad. Qué tipo de herramienta conviene en cada área, y cuándo compensa, lo vemos en [herramientas digitales para restaurantes](/blog/herramientas-digitales-para-restaurantes).
 
 PowerUp Menu se ocupa solo de la primera fila, la carta: no gestiona pedidos ni pagos.
 

@@ -77,7 +77,7 @@ En el plan Pro, PowerUp Menu sincroniza tu carta con tu ficha: cada día actuali
 
 Con cualquier plan, también con el gratis, tu carta digital tiene su propia dirección, y puedes ponerla como enlace al menú de la ficha.
 
-La ficha es solo una parte. Qué más hace falta para que Google y las IA como ChatGPT encuentren y entiendan tu carta lo explicamos en [carta digital y SEO](/blog/carta-digital-y-seo).
+La ficha es solo una parte. Qué más hace falta para que Google y las IA como ChatGPT encuentren y entiendan tu carta lo explicamos en [carta digital y SEO](/blog/carta-digital-y-seo). Y qué otras herramientas digitales compensan en un restaurante, en [herramientas digitales para restaurantes](/blog/herramientas-digitales-para-restaurantes).
 
 ## En resumen
 

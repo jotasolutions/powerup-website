@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <title>Un móvil con una carta, una tableta de cobro y un calendario de reservas, juntos</title>
+  <rect width="400" height="300" rx="24" fill="#FFFFFF"/>
+  <!-- Phone with a menu -->
+  <rect x="48" y="64" width="84" height="164" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="3"/>
+  <rect x="62" y="88" width="56" height="8" rx="4" fill="#3482AA"/>
+  <g fill="#CBD5E1"><rect x="62" y="108" width="48" height="5" rx="2.5"/><rect x="62" y="120" width="36" height="5" rx="2.5"/><rect x="62" y="138" width="52" height="5" rx="2.5"/><rect x="62" y="150" width="30" height="5" rx="2.5"/></g>
+  <g fill="#0F172A"><rect x="72" y="176" width="10" height="10" rx="1.5"/><rect x="96" y="176" width="10" height="10" rx="1.5"/><rect x="72" y="198" width="10" height="10" rx="1.5"/><rect x="88" y="190" width="5" height="5"/><rect x="98" y="200" width="5" height="5"/></g>
+  <!-- Tablet: cash register -->
+  <rect x="152" y="96" width="120" height="96" rx="12" fill="#DEF8FF" stroke="#334155" stroke-width="3"/>
+  <g fill="#94A3B8"><rect x="166" y="112" width="40" height="9" rx="4.5"/><rect x="166" y="130" width="60" height="9" rx="4.5"/><rect x="166" y="148" width="50" height="9" rx="4.5"/></g>
+  <rect x="226" y="160" width="34" height="20" rx="6" fill="#50B27F"/>
+  <rect x="196" y="192" width="32" height="26" fill="#334155"/>
+  <rect x="176" y="216" width="72" height="8" rx="4" fill="#334155"/>
+  <!-- Calendar: reservations -->
+  <rect x="292" y="80" width="72" height="72" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="3"/>
+  <rect x="292" y="80" width="72" height="18" rx="9" fill="#FF9800"/>
+  <g fill="#CBD5E1"><rect x="302" y="108" width="10" height="10" rx="2"/><rect x="323" y="108" width="10" height="10" rx="2"/><rect x="344" y="108" width="10" height="10" rx="2"/><rect x="302" y="128" width="10" height="10" rx="2"/><rect x="344" y="128" width="10" height="10" rx="2"/></g>
+  <rect x="323" y="128" width="10" height="10" rx="2" fill="#3482AA"/>
+  <!-- Star: reviews -->
+  <path d="M328 176 l7 14 15 2 -11 10 3 15 -14 -7 -14 7 3 -15 -11 -10 15 -2z" fill="#FFEBAB" stroke="#FF9800" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
