@@ -79,7 +79,7 @@ PowerUp Menu è un menù digitale con QR code pensato perché il menù, oltre a 
 - **Allergeni per ogni piatto,** come chiede la legge. Ne parliamo in [allergeni nel menù del ristorante](/it/blog/allergeni-menu-ristorante).
 - **Statistiche di base** su come si usa il menù.
 - **Attivazione semplice:** importi il menù da Uber Eats o Just Eat, oppure carichi una foto o un PDF. Se il menù è complesso, il team te lo prepara gratis in 24–48 ore lavorative.
-- **Modifiche subito,** dallo smartphone: prezzi, piatti e disponibilità, senza ristampare.
+- **Modifiche subito,** dallo smartphone: prezzi, piatti e disponibilità, senza ristampare. Utile quando il [food cost](/it/blog/food-cost-ristorante) ti dice di cambiare un prezzo.
 
 Il piano Free mostra una pubblicità non invasiva. Il Pro la toglie e aggiunge più lingue, gli strumenti per vendere di più (consigli, promozioni, abbinamenti ed extra), le statistiche avanzate e la sincronizzazione del menù con la tua scheda di Google Maps. Costa 22,49 € al mese + IVA con pagamento annuale e si può provare 30 giorni senza carta.
 
